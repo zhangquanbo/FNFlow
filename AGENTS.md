@@ -6,5 +6,7 @@
 - Distinguish full historical results, pilot subsets, clamp metrics and float-normal metrics.
 - FaceScape is a historical diagnostic domain, not a new generalization claim.
 - Do not commit data, portraits, predicted image arrays, weights, credentials or machine inventories.
-- Preserve experiment ordering and decision criteria; do not add calendar schedules.
+- Future public updates include code/configuration, operational instructions and aggregate results only.
+- Keep research plans, interpretations, sample manifests and per-image records local.
+- Do not change repository visibility or rewrite published history without user instruction.
 - Record failures explicitly; never silently change masks or omit failed images.

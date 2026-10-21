@@ -1,0 +1,15 @@
+{
+  "run_id": "D2_D3_full_multiseed",
+  "subset_subjects": 0,
+  "selection_seed": 20261021,
+  "image_size": 256,
+  "precision": "fp16",
+  "reference": "p05_best",
+  "inference_seeds": [42, 43, 44, 45, 46, 47, 48, 49],
+  "steps": [1, 2, 4, 8],
+  "cfg_scale": 1.5,
+  "models": {
+    "p05_best": {"dropout": 0.5, "checkpoint": "checkpoints/repro_p05_full_exact/epoch_500.pth"}
+  },
+  "note": "Full historical development domain. One-step Geom-CFG x 8 seeds; no-CFG x 4 step counts x 8 paired seeds. Predeclared checkpoint, no seed selection, no training-seed claims."
+}

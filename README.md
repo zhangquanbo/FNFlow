@@ -2,17 +2,14 @@
 
 Pixel-space conditional Flow Matching for face normals, with isolated research code for general object and indoor-scene normal estimation.
 
-This repository contains the historical UNet baseline, research code, revised plan and numerical results from the first diagnostic experiments. **No new general-domain model has been trained yet.**
+This repository contains the historical UNet baseline, experiment code and aggregate numerical results. **No new general-domain model has been trained yet.** Future public updates are limited to code/configuration, operational instructions and aggregate results.
 
 ## Contents
 
-- [Research plan](docs/研究方案.md)
-- [Code and experiment record](docs/代码与实验记录.md)
-- [First diagnostic findings](docs/首轮诊断结论.md)
-- [Dataset source audit](docs/数据来源初查.md)
 - [Historical baseline](baseline/)
 - [Full results](results/D1_full/summary.json)
 - [Pilot results](results/P0_D1_D5_pilot/summary.json)
+- [Full eight-seed results](results/D2_D3_full_multiseed/multiseed_summary.json)
 - [Publication scope](PUBLICATION.md)
 
 ## First diagnostic results
@@ -32,6 +29,20 @@ Mean angular error in degrees; lower is better. A checkpoint trained without con
 Step-count, eight-seed and averaging diagnostics use a fixed **32-identity pilot**, not all 1,998 images. They show remaining noise dependence and do not establish calibrated uncertainty.
 
 ![Pilot diagnostics](figures/D2_D4_pilot.png)
+
+## Full eight-seed follow-up
+
+The follow-up uses the fixed p05_best checkpoint, all 1,998 historical images and inference seeds 42–49. Each score is first averaged over images, then over seeds. SD is the sample SD of the eight dataset MAEs (ddof=1), not training-seed variation or a generalization confidence interval. Identical initial fields are paired across step counts; the historical evaluator resets a seed per image.
+
+| Inference | Euler steps | Float-normal MAE mean ± seed SD, degrees |
+|---|---:|---:|
+| Geom-CFG | 1 | 19.2632 ± 1.0382 |
+| Conditional | 1 | 19.5688 ± 1.1633 |
+| Conditional | 2 | 19.8400 ± 1.4971 |
+| Conditional | 4 | 20.2608 ± 1.9732 |
+| Conditional | 8 | 20.5925 ± 2.3104 |
+
+All 40 configurations completed. Per-seed aggregate scores and paired step differences are in the linked JSON. No sample identifiers or per-image results are added by this follow-up release.
 
 ## Setup
 
@@ -57,6 +68,7 @@ python -m pytest -q tests -o cache_dir=outputs/.pytest_cache
 python scripts/preflight.py
 python scripts/run_diagnostics.py
 python scripts/run_diagnostics.py --stage d1 --subjects 0 --run-id D1_full
+python scripts/run_multiseed_diagnostics.py
 python scripts/verify_best.py
 python scripts/plot_diagnostics.py
 python scripts/summarize_diagnostics.py
@@ -71,6 +83,6 @@ Report scripts regenerate workspace-oriented documents. This publication export 
 
 baseline/ preserves the historical face pipeline and checkpoint-zoo configurations. Its command snapshots require local path adaptation; they are not the new general training entry point.
 
-There are 13 passing protocol tests. The research direction remains a hypothesis: reliable geometric detail under mixed-quality supervision, tested against matched regression/FM controls.
+The source and output protocols are covered by the included tests. Full-set and pilot measurements are distinct and should not be pooled.
 
 No dataset, pretrained-weight license or new software-license grant is implied by repository visibility. See [NOTICE.md](NOTICE.md).

@@ -39,6 +39,9 @@ def render():
         "| [normal_geometry.py](${FNFLOW_ROOT}/src/normal_geometry.py) | 有效区域法线插值、镜像及连续坐标 K 变换 |",
         "| [losses.py](${FNFLOW_ROOT}/src/losses.py) | masked 速度与法线损失、raw endpoint unit 项、无效批次跳过 |",
         "| [run_diagnostics.py](${FNFLOW_ROOT}/scripts/run_diagnostics.py) | D0 历史兼容、D1–D5、逐图结果、失败与 Best 审计 |",
+        "| [run_multiseed_diagnostics.py](${FNFLOW_ROOT}/scripts/run_multiseed_diagnostics.py) | 全量 8 seed 的单步 CFG 及 no-CFG 步数配对补做 |",
+        "| [补做配置](${FNFLOW_ROOT}/configs/diagnostics_full_multiseed.json) | 固定参考权重、8 seed、4 步数与无筛选协议 |",
+        "| [反馈核对与补实验](${FNFLOW_ROOT}/docs/反馈核对与补实验.md) | 修正解释边界、训练重复设计与发布范围记录 |",
         "| [test_protocol.py](${FNFLOW_ROOT}/tests/test_protocol.py) | 有明确几何/数值期望的协议测试 |",
         "| [pilot 配置](${FNFLOW_ROOT}/configs/diagnostics_pilot.json) | 固定 checkpoint、子集选择、seed 与步数 |",
         "| [preflight.py](${FNFLOW_ROOT}/scripts/preflight.py) | 环境、来源哈希和 Best 改动前清单 |",
@@ -79,6 +82,16 @@ def render():
                 f"{row['float']['std_image_mean']:.4f} | {timing} |")
         lines.extend(["",
                       "耗时为缓存输入后、包含诊断统计的推理耗时，未包含数据读取和 mask 预处理；不是正式部署端到端基准。", ""])
+        if run.get("multiseed"):
+            lines.extend(["### 推理 seed 汇总", "",
+                          "标准差在数据集 MAE 的 8 个推理 seed 间计算，采用样本标准差（ddof=1）；不代表训练 seed 方差。", "",
+                          "| 模式与步数 | 已完成 seed | 浮点 MAE 均值° | seed 标准差° |",
+                          "|---|---:|---:|---:|"])
+            for name, group in run["multiseed"].get("groups", {}).items():
+                score = group["protocols"]["float"]
+                lines.append(f"| {name} | {group['num_seeds']} | {score['mean_mae_deg']:.4f} | {score['std_seed_ddof1_deg']:.4f} |")
+            lines.extend(["", "只列已完成全部预定 seed 的组；完整步数矩阵是否完成："
+                          + str(run["multiseed"].get("matrix_completed", False)) + "。", ""])
         if run.get("noise"):
             noise = run["noise"]
             lines.extend([f"D3：平均角度离散度 {noise['mean_angular_dispersion_deg']:.4f}°；"

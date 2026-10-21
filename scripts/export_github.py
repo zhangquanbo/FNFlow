@@ -76,15 +76,14 @@ def text_file(destination, text, category="release_metadata"):
 
 
 def main():
+    files.clear()
     EXPORT.mkdir(parents=True, exist_ok=True)
     for directory in ["src", "scripts", "tests", "configs"]:
         for path in sorted((ROOT / directory).rglob("*")):
             if path.is_file() and path.suffix in {".py", ".json", ".yaml", ".yml"}:
                 add(path, path.relative_to(ROOT).as_posix(), "research_code")
-    for path in sorted((ROOT / "docs").glob("*.md")):
-        add(path, path.relative_to(ROOT).as_posix(), "research_document")
-    add(BEST / "docs/general_normal_research_2026-10-21.md",
-        "docs/原始代码审计与文献.md", "research_document")
+    # User policy: future public updates contain code and aggregate results only.
+    # Existing published documents are neither re-exported nor rewritten here.
     add(BEST / "train_unet.py", "baseline/train_unet.py", "historical_baseline")
     for directory in ["src", "scripts", "configs", "commands", "experiments/checkpoint_zoo"]:
         for path in sorted((BEST / directory).rglob("*")):
@@ -98,17 +97,22 @@ def main():
         "baseline/results/historical_summary.md", "historical_metrics")
     header = (BEST / "logs/repro_p05_full_exact.log").read_text(encoding="utf-8").splitlines()[:8]
     text_file("reproducibility/baseline_training_header.txt", scrub("\n".join(header)) + "\n")
-    for run in ["D1_full", "P0_D1_D5_pilot"]:
-        for filename in ["summary.json", "subset.json"]:
-            add(ROOT / "outputs" / run / filename, f"results/{run}/{filename}", "diagnostic_summary")
-        for path in sorted((ROOT / "outputs" / run).rglob("*.csv")):
-            add(path, "results/" + path.relative_to(ROOT / "outputs").as_posix(), "per_image_metrics")
-        if (ROOT / "outputs" / run / "ensemble_metrics.json").exists():
-            add(ROOT / "outputs" / run / "ensemble_metrics.json",
-                f"results/{run}/ensemble_metrics.json", "ensemble_metrics")
+    for run in ["D1_full", "P0_D1_D5_pilot", "D2_D3_full_multiseed"]:
+        source = ROOT / "outputs" / run / "summary.json"
+        if not source.exists():
+            continue
+        state = json.loads(source.read_text(encoding="utf-8"))
+        if state.get("status") != "completed":
+            continue
+        add(source, f"results/{run}/summary.json", "diagnostic_summary")
+        aggregate_file = source.with_name("multiseed_summary.json")
+        if aggregate_file.exists():
+            add(aggregate_file, f"results/{run}/multiseed_summary.json", "diagnostic_summary")
     add(ROOT / "outputs/protocol_tests.txt", "results/protocol_tests.txt", "test_result")
-    for path in sorted((ROOT / "figures").glob("*.png")):
-        add(path, path.relative_to(ROOT).as_posix(), "aggregate_plot")
+    for filename in ["D1_full.png", "D2_D4_pilot.png", "D2_D3_full_multiseed.png"]:
+        path = ROOT / "figures" / filename
+        if path.exists():
+            add(path, path.relative_to(ROOT).as_posix(), "aggregate_plot")
     add(ROOT / "provenance/historical_reproduction.json",
         "reproducibility/historical_reproduction.json", "reproducibility")
     audit = json.loads((ROOT / "provenance/best_after.json").read_text())
@@ -144,6 +148,10 @@ logs/
 outputs/
 provenance/
 publish/
+docs/
+**/per_image/
+**/subset.json
+**/ensemble_metrics.json
 *.pth
 *.pt
 *.ckpt
@@ -165,24 +173,23 @@ publish/
 - Distinguish full historical results, pilot subsets, clamp metrics and float-normal metrics.
 - FaceScape is a historical diagnostic domain, not a new generalization claim.
 - Do not commit data, portraits, predicted image arrays, weights, credentials or machine inventories.
-- Preserve experiment ordering and decision criteria; do not add calendar schedules.
+- Future public updates include code/configuration, operational instructions and aggregate results only.
+- Keep research plans, interpretations, sample manifests and per-image records local.
+- Do not change repository visibility or rewrite published history without user instruction.
 - Record failures explicitly; never silently change masks or omit failed images.
 """)
     text_file("README.md", """# FNFlow
 
 Pixel-space conditional Flow Matching for face normals, with isolated research code for general object and indoor-scene normal estimation.
 
-This repository contains the historical UNet baseline, research code, revised plan and numerical results from the first diagnostic experiments. **No new general-domain model has been trained yet.**
+This repository contains the historical UNet baseline, experiment code and aggregate numerical results. **No new general-domain model has been trained yet.** Future public updates are limited to code/configuration, operational instructions and aggregate results.
 
 ## Contents
 
-- [Research plan](docs/研究方案.md)
-- [Code and experiment record](docs/代码与实验记录.md)
-- [First diagnostic findings](docs/首轮诊断结论.md)
-- [Dataset source audit](docs/数据来源初查.md)
 - [Historical baseline](baseline/)
 - [Full results](results/D1_full/summary.json)
 - [Pilot results](results/P0_D1_D5_pilot/summary.json)
+- [Full eight-seed results](results/D2_D3_full_multiseed/multiseed_summary.json)
 - [Publication scope](PUBLICATION.md)
 
 ## First diagnostic results
@@ -202,6 +209,20 @@ Mean angular error in degrees; lower is better. A checkpoint trained without con
 Step-count, eight-seed and averaging diagnostics use a fixed **32-identity pilot**, not all 1,998 images. They show remaining noise dependence and do not establish calibrated uncertainty.
 
 ![Pilot diagnostics](figures/D2_D4_pilot.png)
+
+## Full eight-seed follow-up
+
+The follow-up uses the fixed p05_best checkpoint, all 1,998 historical images and inference seeds 42–49. Each score is first averaged over images, then over seeds. SD is the sample SD of the eight dataset MAEs (ddof=1), not training-seed variation or a generalization confidence interval. Identical initial fields are paired across step counts; the historical evaluator resets a seed per image.
+
+| Inference | Euler steps | Float-normal MAE mean ± seed SD, degrees |
+|---|---:|---:|
+| Geom-CFG | 1 | 19.2632 ± 1.0382 |
+| Conditional | 1 | 19.5688 ± 1.1633 |
+| Conditional | 2 | 19.8400 ± 1.4971 |
+| Conditional | 4 | 20.2608 ± 1.9732 |
+| Conditional | 8 | 20.5925 ± 2.3104 |
+
+All 40 configurations completed. Per-seed aggregate scores and paired step differences are in the linked JSON. No sample identifiers or per-image results are added by this follow-up release.
 
 ## Setup
 
@@ -227,6 +248,7 @@ python -m pytest -q tests -o cache_dir=outputs/.pytest_cache
 python scripts/preflight.py
 python scripts/run_diagnostics.py
 python scripts/run_diagnostics.py --stage d1 --subjects 0 --run-id D1_full
+python scripts/run_multiseed_diagnostics.py
 python scripts/verify_best.py
 python scripts/plot_diagnostics.py
 python scripts/summarize_diagnostics.py
@@ -241,7 +263,7 @@ Report scripts regenerate workspace-oriented documents. This publication export 
 
 baseline/ preserves the historical face pipeline and checkpoint-zoo configurations. Its command snapshots require local path adaptation; they are not the new general training entry point.
 
-There are 13 passing protocol tests. The research direction remains a hypothesis: reliable geometric detail under mixed-quality supervision, tested against matched regression/FM controls.
+The source and output protocols are covered by the included tests. Full-set and pilot measurements are distinct and should not be pooled.
 
 No dataset, pretrained-weight license or new software-license grant is implied by repository visibility. See [NOTICE.md](NOTICE.md).
 """)
@@ -257,13 +279,15 @@ Publication normalizes machine-specific paths, command examples and document lin
 """)
     text_file("PUBLICATION.md", """# Publication scope
 
-Included: research Python code, tests/configuration, historical baseline source/configuration, research documents, aggregate plots, all completed per-image CSVs, selected summaries/sample manifests and reproducibility checks.
+Future updates include Python code, tests/configuration, operational instructions, historical baseline source/configuration, aggregate plots, completed numerical summaries and reproducibility checks.
 
-Excluded: RGB/normal/depth data, portrait visualizations, predicted normal arrays, checkpoints, landmark binaries, raw machine inventories, private environment details, caches and repetitive per-image JSON (equivalent per-image CSVs and aggregate JSONs are included).
+Excluded from future exports: research plans/interpretations, sample manifests, per-image CSV/JSON, RGB/normal/depth data, portrait visualizations, predicted normal arrays, checkpoints, landmark binaries, raw machine inventories, private environment details and caches.
+
+The user chose to keep this repository public on 2026-10-22. Previously published files and history remain; this policy changes future updates and does not retract the original snapshot. Old tracked documents/sample-level files are not re-exported or updated.
 
 Local absolute paths are replaced with placeholders/relative links. Original source remains under the isolated workspace. FaceFlux-Best was not modified.
 
-results/ stores published snapshots; new experiments write outputs/ and should be exported/reviewed before publication. PUBLICATION_MANIFEST.json records exported sizes and hashes, excluding itself.
+results/ stores published snapshots; new experiments write outputs/ and should be exported/reviewed before publication. PUBLICATION_MANIFEST.json records the files approved for the current export, excluding itself; it is not an inventory of unchanged legacy files. The upload bundle uses that exact allowlist, never a recursive scan of an existing export directory.
 """)
     text_file("baseline/README.md", """# Historical baseline
 
@@ -271,7 +295,7 @@ Read-only copies of the canonical face model, training/evaluation/inference code
 
 Historical reproduction metrics are in results/. Machine-specific command paths are normalized and require adaptation. Some historical commands clean intermediate checkpoints; these snapshots are preserved as evidence and are not automatically executed.
 
-Use the top-level research scripts and revised plan for new experiments.
+Use the top-level experiment scripts for new runs.
 """)
     patterns = {
         "private_key": r"-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----",
@@ -281,10 +305,23 @@ Use the top-level research scripts and revised plan for new experiments.
     }
     violations = []
     for name, record in files.items():
+        if name.startswith("docs/") or "/per_image/" in name or name.endswith(("/subset.json", "/ensemble_metrics.json")):
+            violations.append({"file": name, "rule": "private_research_or_sample_records"})
         if name.lower().endswith((".pth", ".pt", ".npy", ".npz", ".dat", ".pem", ".key")):
             violations.append({"file": name, "rule": "excluded_binary"})
         if name.startswith(("data/", "datasets/", "checkpoints/")):
             violations.append({"file": name, "rule": "excluded_directory"})
+        if name.startswith("results/") and name.endswith(".json"):
+            def inspect(value):
+                if isinstance(value, dict):
+                    for key, child in value.items():
+                        if key in {"subject", "subject_id", "rgb_path", "normal_path", "pairs", "per_image", "filename", "sample_id"}:
+                            violations.append({"file": name, "rule": "sample_identifier_key"})
+                        inspect(child)
+                elif isinstance(value, list):
+                    for child in value:
+                        inspect(child)
+            inspect(json.loads(record["data"]))
         if not name.endswith(".png"):
             content = record["data"].decode("utf-8")
             for rule, pattern in patterns.items():
@@ -302,16 +339,19 @@ Use the top-level research scripts and revised plan for new experiments.
                          "exported_sha256": hashlib.sha256(record["data"]).hexdigest(),
                          **({"source_sha256": record["source_sha256"]} if "source_sha256" in record else {})})
     (EXPORT / "PUBLICATION_MANIFEST.json").write_text(json.dumps(
-        {"created_at": now(), "scan_passed": True, "files": manifest},
+        {"created_at": now(), "scan_passed": True,
+         "scope": "current code-and-aggregate export; unchanged legacy files are not re-exported",
+         "files": manifest},
         ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     bundle = []
-    for path in sorted(EXPORT.rglob("*")):
-        if path.is_file() and ".git" not in path.parts:
-            raw = path.read_bytes()
-            encoding = "base64" if path.suffix == ".png" else "utf-8"
-            bundle.append({"path": path.relative_to(EXPORT).as_posix(), "encoding": encoding,
-                           "content": base64.b64encode(raw).decode() if encoding == "base64" else raw.decode("utf-8"),
-                           "sha256": hashlib.sha256(raw).hexdigest(), "bytes": len(raw)})
+    # Never scoop up stale research documents, sample manifests or unreviewed files.
+    for name in sorted([*files, "PUBLICATION_MANIFEST.json"]):
+        path = EXPORT / name
+        raw = path.read_bytes()
+        encoding = "base64" if path.suffix == ".png" else "utf-8"
+        bundle.append({"path": name, "encoding": encoding,
+                       "content": base64.b64encode(raw).decode() if encoding == "base64" else raw.decode("utf-8"),
+                       "sha256": hashlib.sha256(raw).hexdigest(), "bytes": len(raw)})
     transport = json.dumps(bundle, ensure_ascii=True, separators=(",", ":"))
     (ROOT / "publish/upload_bundle.json").write_text(transport, encoding="ascii")
     info = {"export_root": str(EXPORT), "files": len(bundle),

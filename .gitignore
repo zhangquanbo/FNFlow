@@ -16,6 +16,10 @@ logs/
 outputs/
 provenance/
 publish/
+docs/
+**/per_image/
+**/subset.json
+**/ensemble_metrics.json
 *.pth
 *.pt
 *.ckpt
