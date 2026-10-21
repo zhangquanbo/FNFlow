@@ -1,0 +1,19 @@
+{
+  "run_id": "P0_D1_D5_pilot",
+  "subset_subjects": 32,
+  "selection_seed": 20261021,
+  "image_size": 256,
+  "precision": "fp16",
+  "reference": "p05_best",
+  "inference_seeds": [42, 43, 44, 45, 46, 47, 48, 49],
+  "steps": [1, 2, 4, 8],
+  "cfg_scale": 1.5,
+  "models": {
+    "p0": {"dropout": 0.0, "checkpoint": "experiments/checkpoint_zoo/08_full_p00/checkpoint.pth"},
+    "p03": {"dropout": 0.3, "checkpoint": "experiments/checkpoint_zoo/09_full_p03/checkpoint.pth"},
+    "p05_original": {"dropout": 0.5, "checkpoint": "experiments/checkpoint_zoo/10_full_p05_original/checkpoint.pth"},
+    "p07": {"dropout": 0.7, "checkpoint": "experiments/checkpoint_zoo/11_full_p07/checkpoint.pth"},
+    "p05_best": {"dropout": 0.5, "checkpoint": "checkpoints/repro_p05_full_exact/epoch_500.pth"}
+  },
+  "note": "Exploratory historical-domain subset. Not 1998-image reproduction or general-domain evidence."
+}

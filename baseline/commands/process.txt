@@ -1,0 +1,201 @@
+FaceFlux-Best 完整操作流程
+==========================
+
+0. 进入项目
+-----------
+
+cd ${FACEFLUX_BEST_ROOT}
+
+
+1. 从头训练最终最优配置
+-----------------------
+
+# 后台启动训练。
+bash commands/01_train_from_scratch.sh
+
+# 查看训练进度；Ctrl+C只停止查看，不会停止训练。
+bash commands/04_follow_training_log.sh
+
+# 最终保留：
+# checkpoints/repro_p05_full_exact/epoch_500.pth
+
+
+2. 评估最终最优 checkpoint
+--------------------------
+
+# 统一协议：
+# FacescapeRender1、UNet-B、256px、1 step、
+# no_tta、推理seed=42、dlib face-hull。
+#
+# 预期：
+# mean约17.899514°
+# 1998张有效结果
+# 38张dlib失败并回退到GT前景mask
+
+bash commands/02_eval_epoch500.sh
+
+
+3. 对普通 RGB 图片进行通用推理
+------------------------------
+
+# 默认：
+# 输入：data/test_images_1/imgs
+# 输出：outputs/general_inference
+# checkpoint：最终最优epoch_500.pth
+
+bash commands/05_infer_images.sh
+
+# 自定义输入、输出和checkpoint：
+bash commands/05_infer_images.sh \
+  /path/to/input_images \
+  /path/to/output_dir \
+  /path/to/checkpoint.pth
+
+
+4. 查看 checkpoint_zoo 配置
+----------------------------
+
+column -t -s $'\t' \
+  experiments/checkpoint_zoo/INDEX.tsv
+
+# 每个配置目录包含：
+# checkpoint.pth      已迁移的最终权重
+# checkpoint.sha256   权重哈希
+# config.yaml         完整配置记录
+# train.sh            独立训练入口
+# command.txt         训练命令
+# training_code/      训练代码和模型代码快照
+
+
+5. 验证 checkpoint_zoo 完整性
+-----------------------------
+
+find experiments/checkpoint_zoo \
+  -mindepth 2 \
+  -maxdepth 2 \
+  -type f \
+  -name checkpoint.pth \
+  -printf '%P\n' |
+sort
+
+while IFS= read -r checksum_file; do
+  (
+    cd "$(dirname "$checksum_file")"
+    sha256sum -c checkpoint.sha256
+  )
+done < <(
+  find experiments/checkpoint_zoo \
+    -mindepth 2 \
+    -maxdepth 2 \
+    -name checkpoint.sha256 |
+  sort
+)
+
+
+6. 重新训练 checkpoint_zoo 中的单个配置
+----------------------------------------
+
+# 示例：重新训练最终最优配置。
+bash \
+  experiments/checkpoint_zoo/13_repro_full_p05_best/train.sh
+
+# 示例：重新训练真正去掉L_flow的配置。
+bash \
+  experiments/checkpoint_zoo/07_no_flow_p01/train.sh
+
+# 重训结果保存在对应目录的：
+# retrained/epoch_500.pth
+
+
+7. 统一评估 checkpoint_zoo 的13个最终模型
+-----------------------------------------
+
+# 前台运行：
+GPU=0 bash commands/07_eval_checkpoint_zoo.sh
+
+# 后台运行：
+mkdir -p logs
+
+nohup env GPU=0 \
+  bash commands/07_eval_checkpoint_zoo.sh \
+  > logs/eval_checkpoint_zoo.log 2>&1 &
+
+echo $! > logs/eval_checkpoint_zoo.pid
+
+# 查看进度：
+tail -f logs/eval_checkpoint_zoo.log
+
+# 检查进程：
+PID="$(cat logs/eval_checkpoint_zoo.pid)"
+kill -0 "$PID" 2>/dev/null && \
+  echo "评估正在运行" || \
+  echo "评估已经结束"
+
+# 输出目录：
+# outputs/checkpoint_zoo_finals_YYYYMMDD_HHMMSS/
+
+
+8. 使用 checkpoint_zoo 中的指定模型推理
+---------------------------------------
+
+bash commands/05_infer_images.sh \
+  /path/to/input_images \
+  outputs/inference_flow_only \
+  experiments/checkpoint_zoo/01_flow_only_p01/checkpoint.pth
+
+bash commands/05_infer_images.sh \
+  /path/to/input_images \
+  outputs/inference_best \
+  experiments/checkpoint_zoo/13_repro_full_p05_best/checkpoint.pth
+
+
+9. 使用归档的 Clean 工具脚本
+----------------------------
+
+# 查看脚本分类：
+column -t -s $'\t' \
+  legacy/faceflux_clean_scripts/SCRIPT_CATALOG.tsv
+
+# 验证归档完整性：
+(
+  cd legacy/faceflux_clean_scripts
+  sha256sum -c SHA256SUMS
+)
+
+# 生成误差颜色条：
+bash legacy/run_clean_script.sh \
+  scripts/eval/gen_colorbar.py \
+  --maxangle 45 \
+  --output outputs/colorbar_45.png
+
+# 生成网络结构图：
+bash legacy/run_clean_script.sh \
+  scripts/tools/gen_architecture_diagram.py \
+  --format png \
+  --dpi 300
+
+
+10. 代码与路径检查
+------------------
+
+bash -n commands/*.sh
+
+python -m py_compile \
+  train_unet.py \
+  scripts/eval/eval_facescape_modes.py \
+  scripts/inference/inference_unet.py
+
+# 正式主流程不应依赖FaceFlux-Clean：
+grep -R -n \
+  --include='*.py' \
+  --include='*.sh' \
+  --exclude='original_launcher.sh' \
+  '${WORKSPACE_ROOT}/FaceFlux-Clean' \
+  commands scripts train_unet.py experiments/checkpoint_zoo || true
+
+# 数据目录不应依赖FaceFlux-Clean：
+find datasets data \
+  -type l \
+  -printf '%p -> %l\n' |
+grep 'FaceFlux-Clean' || \
+echo "数据目录不依赖FaceFlux-Clean"

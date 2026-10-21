@@ -1,0 +1,1465 @@
+{
+  "created_at": "2026-10-21T23:39:14+08:00",
+  "scan_passed": true,
+  "files": [
+    {
+      "path": ".gitignore",
+      "category": "release_metadata",
+      "bytes": 251,
+      "exported_sha256": "5f22992761ae1bf6629848d3c555bb0c8941797899b7db70c23c1014c9aa9f2e"
+    },
+    {
+      "path": "AGENTS.md",
+      "category": "release_metadata",
+      "bytes": 698,
+      "exported_sha256": "951cc207227883719fa141ba5847549f9905bed12a25c11bdc454f18d4af638a"
+    },
+    {
+      "path": "NOTICE.md",
+      "category": "release_metadata",
+      "bytes": 623,
+      "exported_sha256": "d387bfd89bedbc3387685a98e3aa30e0143616d2e18c54c56f571068904ba68a"
+    },
+    {
+      "path": "PUBLICATION.md",
+      "category": "release_metadata",
+      "bytes": 871,
+      "exported_sha256": "0bfcf040eda57b90f793540aa087a1a602cfbb2325aa5700803c7627abc74287"
+    },
+    {
+      "path": "README.md",
+      "category": "release_metadata",
+      "bytes": 3682,
+      "exported_sha256": "7a13a4c89eda7b05469c36baf93f442ccd7ba1e9e972935f2eb47adcd6ca4c50"
+    },
+    {
+      "path": "baseline/README.md",
+      "category": "release_metadata",
+      "bytes": 509,
+      "exported_sha256": "75a175335ef757bdb1a8199be66c64f273524dd50f2a4e48726d5dc07381f5b3"
+    },
+    {
+      "path": "baseline/commands/01_train_from_scratch.sh",
+      "category": "historical_baseline",
+      "bytes": 1578,
+      "exported_sha256": "0f20910d7f91296161801d19f30aa15792c0bc29b183b1d19cb542bd395d4a27",
+      "source_sha256": "0f20910d7f91296161801d19f30aa15792c0bc29b183b1d19cb542bd395d4a27"
+    },
+    {
+      "path": "baseline/commands/01_train_worker.sh",
+      "category": "historical_baseline",
+      "bytes": 1836,
+      "exported_sha256": "25957f12e3998b128702e8ee1db8a80e6f0bfd9cd095542b860540a139631705",
+      "source_sha256": "25957f12e3998b128702e8ee1db8a80e6f0bfd9cd095542b860540a139631705"
+    },
+    {
+      "path": "baseline/commands/02_eval_epoch500.sh",
+      "category": "historical_baseline",
+      "bytes": 1191,
+      "exported_sha256": "748a820064e385194edf40f4a92a2aefc78c0c778521483bc4b8585e7f271ef2",
+      "source_sha256": "748a820064e385194edf40f4a92a2aefc78c0c778521483bc4b8585e7f271ef2"
+    },
+    {
+      "path": "baseline/commands/04_follow_training_log.sh",
+      "category": "historical_baseline",
+      "bytes": 752,
+      "exported_sha256": "caf9cc10cb44a2a140236f5f734cb2b626c458533811aa2ba8b01ef6a3c567c2",
+      "source_sha256": "caf9cc10cb44a2a140236f5f734cb2b626c458533811aa2ba8b01ef6a3c567c2"
+    },
+    {
+      "path": "baseline/commands/05_infer_images.sh",
+      "category": "historical_baseline",
+      "bytes": 947,
+      "exported_sha256": "d8061ebe42e60b9b762df332b06f41584a707a8ea77c1412d634c18b4db8a80f",
+      "source_sha256": "d8061ebe42e60b9b762df332b06f41584a707a8ea77c1412d634c18b4db8a80f"
+    },
+    {
+      "path": "baseline/commands/07_eval_checkpoint_zoo.sh",
+      "category": "historical_baseline",
+      "bytes": 5722,
+      "exported_sha256": "7e563e4c440991b56b9f773b6ecfd4b14a7642a93337429d4adda40bf030ca84",
+      "source_sha256": "7e563e4c440991b56b9f773b6ecfd4b14a7642a93337429d4adda40bf030ca84"
+    },
+    {
+      "path": "baseline/commands/process.txt",
+      "category": "historical_baseline",
+      "bytes": 4523,
+      "exported_sha256": "6b3106d1a4b5a4d6be93e61a8317d5484a99743c2d031eb57dcc1a6f914787c0",
+      "source_sha256": "eb8c2fc3d701fa555320fda23e62e5e673e41212b3cd4963955a741df4e1a7f9"
+    },
+    {
+      "path": "baseline/configs/best_reproduction.yaml",
+      "category": "historical_baseline",
+      "bytes": 1137,
+      "exported_sha256": "3968afee8aea4aeaa8c2bdc5dc34ba98cf14c29dcd2dd25bb4ff66ceb4d26d73",
+      "source_sha256": "b8c88997c82b7802de25f272a5c1216714ddb2c94188eeb1ede5a91d67218687"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/01_flow_only_p01/checkpoint.sha256",
+      "category": "historical_baseline",
+      "bytes": 81,
+      "exported_sha256": "81115f4abadea38f7166528a808d3db0c6bd471b41080947da69a90200d40acb",
+      "source_sha256": "81115f4abadea38f7166528a808d3db0c6bd471b41080947da69a90200d40acb"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/01_flow_only_p01/command.txt",
+      "category": "historical_baseline",
+      "bytes": 83,
+      "exported_sha256": "4938250b0304527ee4b14ff9cbab0893842cf1ee9d9c27768cf1571bffec0676",
+      "source_sha256": "d0e807e95efd58fa712f8f726dce22a1266fe0a003669fd0ec4c995fd61dc7f8"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/01_flow_only_p01/config.yaml",
+      "category": "historical_baseline",
+      "bytes": 1832,
+      "exported_sha256": "e6a6c4c044fec731cd85b8769a00f433f0802df0d4569ce04f8fe24c13cafbdf",
+      "source_sha256": "2322a582594796b648e9f1aecea39672b70e28298146c98515b49c9905e92da2"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/01_flow_only_p01/original_launcher.sh",
+      "category": "historical_baseline",
+      "bytes": 1362,
+      "exported_sha256": "857ab9f994c95dc8646ffe9d18cc8c5fb2270cadba3564bfa70d4c8ae74ac77d",
+      "source_sha256": "d86b54a6a21611635b4e40182ed9f2640bd08daa161e58863c2a9e089c6d0cfe"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/01_flow_only_p01/train.sh",
+      "category": "historical_baseline",
+      "bytes": 1540,
+      "exported_sha256": "0d0adfa4e2d1c2c3bd65bd085f85287b442f3e449fd9152ea82e57faaf08d6d6",
+      "source_sha256": "67df82d03399c74221b6c21b0c0d35061ac1681974f79b27a5f80f8885ff57ce"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/01_flow_only_p01/training_code/src/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/01_flow_only_p01/training_code/src/models/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/01_flow_only_p01/training_code/src/models/model_unet.py",
+      "category": "historical_baseline",
+      "bytes": 11196,
+      "exported_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "source_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/01_flow_only_p01/training_code/train_unet.py",
+      "category": "historical_baseline",
+      "bytes": 14567,
+      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/02_no_angular_p01/checkpoint.sha256",
+      "category": "historical_baseline",
+      "bytes": 81,
+      "exported_sha256": "f9f83ca44ee2db1f4fbbde521c1eade1447071bfb85eb66d407cdde0723dfc76",
+      "source_sha256": "f9f83ca44ee2db1f4fbbde521c1eade1447071bfb85eb66d407cdde0723dfc76"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/02_no_angular_p01/command.txt",
+      "category": "historical_baseline",
+      "bytes": 84,
+      "exported_sha256": "3d4af7c53b3c6f7815e5b505a0c73b295843d79c44d8f2a819a94c45ea6c22e5",
+      "source_sha256": "cf74a8c92e4a99b1cc9652f14399903ea0f570a184f5fc8c59439bc98633625b"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/02_no_angular_p01/config.yaml",
+      "category": "historical_baseline",
+      "bytes": 1810,
+      "exported_sha256": "f9e728b8d681c28e2c59f9aa7aa0a77ea14d4cdebf0667d5092a4b32dd7e828c",
+      "source_sha256": "9aa3f8b0c44aa6ce55416a51f8198bb63196db9c6652bb640912f04dc8d068b1"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/02_no_angular_p01/original_launcher.sh",
+      "category": "historical_baseline",
+      "bytes": 1362,
+      "exported_sha256": "857ab9f994c95dc8646ffe9d18cc8c5fb2270cadba3564bfa70d4c8ae74ac77d",
+      "source_sha256": "d86b54a6a21611635b4e40182ed9f2640bd08daa161e58863c2a9e089c6d0cfe"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/02_no_angular_p01/train.sh",
+      "category": "historical_baseline",
+      "bytes": 1540,
+      "exported_sha256": "0f5d3add33a752557847bcd66bf29d797f06567ef4c0278b05ba9f53af5f78d1",
+      "source_sha256": "cf3a933f5da14fad713de2bc8bfcfba173d8e6be1f01f01302cccfc517889451"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/02_no_angular_p01/training_code/src/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/02_no_angular_p01/training_code/src/models/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/02_no_angular_p01/training_code/src/models/model_unet.py",
+      "category": "historical_baseline",
+      "bytes": 11196,
+      "exported_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "source_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/02_no_angular_p01/training_code/train_unet.py",
+      "category": "historical_baseline",
+      "bytes": 14567,
+      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/03_flow_angular_w01_p01/checkpoint.sha256",
+      "category": "historical_baseline",
+      "bytes": 81,
+      "exported_sha256": "307ac1673192991efca6804e9a138dafb200e636b7863a299eb0aacdb64e4191",
+      "source_sha256": "307ac1673192991efca6804e9a138dafb200e636b7863a299eb0aacdb64e4191"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/03_flow_angular_w01_p01/command.txt",
+      "category": "historical_baseline",
+      "bytes": 90,
+      "exported_sha256": "ed5268e605afa01cda5a34a5886d4d8373e96c6c0ebddefe57830b035ddc3350",
+      "source_sha256": "10b044311fc29055f264c37c6dcf1ee1424777d79f1d046fd8446cfbabb53719"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/03_flow_angular_w01_p01/config.yaml",
+      "category": "historical_baseline",
+      "bytes": 1819,
+      "exported_sha256": "42d1ced2fd6d908dbf032b0ba4929b7426e16ec602f642eb2a6cee763821d069",
+      "source_sha256": "27a33bf380c89d9cdee747833f468e0ae0d30c503c58c6dd618800cf2245e933"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/03_flow_angular_w01_p01/original_launcher.sh",
+      "category": "historical_baseline",
+      "bytes": 1362,
+      "exported_sha256": "857ab9f994c95dc8646ffe9d18cc8c5fb2270cadba3564bfa70d4c8ae74ac77d",
+      "source_sha256": "d86b54a6a21611635b4e40182ed9f2640bd08daa161e58863c2a9e089c6d0cfe"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/03_flow_angular_w01_p01/train.sh",
+      "category": "historical_baseline",
+      "bytes": 1538,
+      "exported_sha256": "9f89be1927df19da6a3eef4876e7d62ee472b250223eda5c7b098c00c9dbe0e8",
+      "source_sha256": "d66bd0792e345b3888bc64dcf8fba9038ee3c6c2075cf0849f086a98676b3c33"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/03_flow_angular_w01_p01/training_code/src/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/03_flow_angular_w01_p01/training_code/src/models/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/03_flow_angular_w01_p01/training_code/src/models/model_unet.py",
+      "category": "historical_baseline",
+      "bytes": 11196,
+      "exported_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "source_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/03_flow_angular_w01_p01/training_code/train_unet.py",
+      "category": "historical_baseline",
+      "bytes": 14567,
+      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/04_flow_angular_w05_p01/checkpoint.sha256",
+      "category": "historical_baseline",
+      "bytes": 81,
+      "exported_sha256": "280abc70ce911ad1dc48bd72a9b9df1265ca3e9a81fad57b4a0455e85b123cff",
+      "source_sha256": "280abc70ce911ad1dc48bd72a9b9df1265ca3e9a81fad57b4a0455e85b123cff"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/04_flow_angular_w05_p01/command.txt",
+      "category": "historical_baseline",
+      "bytes": 90,
+      "exported_sha256": "bb3d734b02b48def16b6cb433853ff078cfd1b86791d59e8b793b7999645d000",
+      "source_sha256": "eaac174fce47f2004da0ba6bbf46b6f57395f0cd6d07e82a4707b452c27dbfe8"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/04_flow_angular_w05_p01/config.yaml",
+      "category": "historical_baseline",
+      "bytes": 1822,
+      "exported_sha256": "d4f739f55d9031ea64ad516f6c9a8c07a8e53ca74c3493e2c6b8648c6532c9e3",
+      "source_sha256": "2c31154441c3b4383a425a9afd4f090628d0566da42a3775c6c2e764b54a5800"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/04_flow_angular_w05_p01/original_launcher.sh",
+      "category": "historical_baseline",
+      "bytes": 1362,
+      "exported_sha256": "857ab9f994c95dc8646ffe9d18cc8c5fb2270cadba3564bfa70d4c8ae74ac77d",
+      "source_sha256": "d86b54a6a21611635b4e40182ed9f2640bd08daa161e58863c2a9e089c6d0cfe"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/04_flow_angular_w05_p01/train.sh",
+      "category": "historical_baseline",
+      "bytes": 1538,
+      "exported_sha256": "47bbed827c07763ea48faf689619755e3bd6328cfef20c6049da67b1192c3c65",
+      "source_sha256": "45ef97593d736e456373e1b019a35f25704d0808ea54ece7a9c83696c7646e30"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/04_flow_angular_w05_p01/training_code/src/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/04_flow_angular_w05_p01/training_code/src/models/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/04_flow_angular_w05_p01/training_code/src/models/model_unet.py",
+      "category": "historical_baseline",
+      "bytes": 11196,
+      "exported_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "source_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/04_flow_angular_w05_p01/training_code/train_unet.py",
+      "category": "historical_baseline",
+      "bytes": 14567,
+      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/05_full_wunit_wang_01_p01/checkpoint.sha256",
+      "category": "historical_baseline",
+      "bytes": 81,
+      "exported_sha256": "e5be5d28b157867c7a8066f999739799a268d5fda6792bb576552411b9cd7f24",
+      "source_sha256": "e5be5d28b157867c7a8066f999739799a268d5fda6792bb576552411b9cd7f24"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/05_full_wunit_wang_01_p01/command.txt",
+      "category": "historical_baseline",
+      "bytes": 92,
+      "exported_sha256": "25f31fb621efb072bff7cd9731ca179239337d584c06094f265387691137c494",
+      "source_sha256": "ae8da23a9eaa868888f6719963deaf5fc9e2b30b1011ae955c67fe323a9e18ea"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/05_full_wunit_wang_01_p01/config.yaml",
+      "category": "historical_baseline",
+      "bytes": 1835,
+      "exported_sha256": "8a85690697369c91a436c3af62af3db6487d2adc596909373692ca7d3d9295b1",
+      "source_sha256": "1607e59e1f4654865740889df1f76f6767dcabd215eb70f4369f73503c4e9234"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/05_full_wunit_wang_01_p01/original_launcher.sh",
+      "category": "historical_baseline",
+      "bytes": 1957,
+      "exported_sha256": "0e8d28ad32a39bd00e9a39cb7dda46527d2572367979c690b76d6a601de9cfee",
+      "source_sha256": "fad1902fd82d03bb5f3e8c83fa3cd5ad30e849c6b29cf2daf595f05d2573ebe9"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/05_full_wunit_wang_01_p01/train.sh",
+      "category": "historical_baseline",
+      "bytes": 1536,
+      "exported_sha256": "89e9f82115732e84f7c09236c3fca0af22c71e7b7142e4999c056b9534b0049c",
+      "source_sha256": "7f039b608239114101af2c09e707ee57449ef04f79eaee4f9a9daec5aeab7f05"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/05_full_wunit_wang_01_p01/training_code/src/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/05_full_wunit_wang_01_p01/training_code/src/models/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/05_full_wunit_wang_01_p01/training_code/src/models/model_unet.py",
+      "category": "historical_baseline",
+      "bytes": 11196,
+      "exported_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "source_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/05_full_wunit_wang_01_p01/training_code/train_unet.py",
+      "category": "historical_baseline",
+      "bytes": 14567,
+      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/06_full_wunit_wang_05_p01/checkpoint.sha256",
+      "category": "historical_baseline",
+      "bytes": 81,
+      "exported_sha256": "3228690dedc7ab58d0ceb2e616ed8670d7b946ca662d6831d7a8b940a53da70e",
+      "source_sha256": "3228690dedc7ab58d0ceb2e616ed8670d7b946ca662d6831d7a8b940a53da70e"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/06_full_wunit_wang_05_p01/command.txt",
+      "category": "historical_baseline",
+      "bytes": 92,
+      "exported_sha256": "164bd96bf434172695690d205736f16bb79bb9b69a8250d4916d532df6900f48",
+      "source_sha256": "7b6d726850743f3c5dc5375c0340ac4b34f0c4ae6ba8ff7d7939c1e5af51ed4b"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/06_full_wunit_wang_05_p01/config.yaml",
+      "category": "historical_baseline",
+      "bytes": 1835,
+      "exported_sha256": "1a6fcbb4c4919e84ab49d7912a0fa29906880b1c88fc42194eb4b7c31f5ff4fa",
+      "source_sha256": "43936d381133b53a4d2fc6c1c98d54b9be6b6c9bb0255b93be49ea04f0d0cbac"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/06_full_wunit_wang_05_p01/original_launcher.sh",
+      "category": "historical_baseline",
+      "bytes": 1957,
+      "exported_sha256": "0e8d28ad32a39bd00e9a39cb7dda46527d2572367979c690b76d6a601de9cfee",
+      "source_sha256": "fad1902fd82d03bb5f3e8c83fa3cd5ad30e849c6b29cf2daf595f05d2573ebe9"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/06_full_wunit_wang_05_p01/train.sh",
+      "category": "historical_baseline",
+      "bytes": 1536,
+      "exported_sha256": "5f5ff74497c572832eec89003c60e8d4a03544998bd1d73455c33aa5b936f1e2",
+      "source_sha256": "cea309320325dfd9b97be7943197fc7dc90ff8185c97247e7000b3a880a9207f"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/06_full_wunit_wang_05_p01/training_code/src/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/06_full_wunit_wang_05_p01/training_code/src/models/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/06_full_wunit_wang_05_p01/training_code/src/models/model_unet.py",
+      "category": "historical_baseline",
+      "bytes": 11196,
+      "exported_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "source_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/06_full_wunit_wang_05_p01/training_code/train_unet.py",
+      "category": "historical_baseline",
+      "bytes": 14567,
+      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/07_no_flow_p01/checkpoint.sha256",
+      "category": "historical_baseline",
+      "bytes": 81,
+      "exported_sha256": "4b41c7aae0aac54213d2176c794cb485670ca7085ef3eb35e0c99fb1de79fb48",
+      "source_sha256": "4b41c7aae0aac54213d2176c794cb485670ca7085ef3eb35e0c99fb1de79fb48"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/07_no_flow_p01/command.txt",
+      "category": "historical_baseline",
+      "bytes": 81,
+      "exported_sha256": "f519d75d0e9e5363959f600b7d356bf291fafe894e250edd2f04c34a865c8352",
+      "source_sha256": "43d6f1616b4b6a02465f40dd96a37845523ec3b13580f47b17fd00368aea4d75"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/07_no_flow_p01/config.yaml",
+      "category": "historical_baseline",
+      "bytes": 1839,
+      "exported_sha256": "849b5fa25cd010f9714c103fb482d7bd8e64ca3997fde6b6ff3dcff20a6961cb",
+      "source_sha256": "592b57de6ab82a5cbbf6cf16fe49589692027ae14a4478535c6bdf5af6fac6e1"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/07_no_flow_p01/train.sh",
+      "category": "historical_baseline",
+      "bytes": 1539,
+      "exported_sha256": "e60a062f522112bd575dd2bb4c8b6b66316ae01dc09b6d9a7652aa79d92f6795",
+      "source_sha256": "bd7a094531aaf920682236fc8572a818198b2eb8de5abc6148d054d934efc5dc"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/07_no_flow_p01/training_code/src/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/07_no_flow_p01/training_code/src/models/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/07_no_flow_p01/training_code/src/models/model_unet.py",
+      "category": "historical_baseline",
+      "bytes": 11196,
+      "exported_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "source_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/07_no_flow_p01/training_code/train_unet.py",
+      "category": "historical_baseline",
+      "bytes": 14567,
+      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/08_full_p00/checkpoint.sha256",
+      "category": "historical_baseline",
+      "bytes": 81,
+      "exported_sha256": "d4226f4cd801d96a62ea5db678bc7734f8052e12f5aeab8296a25e8cf2832d5d",
+      "source_sha256": "d4226f4cd801d96a62ea5db678bc7734f8052e12f5aeab8296a25e8cf2832d5d"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/08_full_p00/command.txt",
+      "category": "historical_baseline",
+      "bytes": 78,
+      "exported_sha256": "a4102444110455bfe70ad80dbfb40e6377a34f4f5e858cb2a0fd62c2d3abbd1c",
+      "source_sha256": "319208ad11e68c2425e75fde8b23fb07b6e061b97045e74d3e0404bc45dbcccc"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/08_full_p00/config.yaml",
+      "category": "historical_baseline",
+      "bytes": 1836,
+      "exported_sha256": "19ff00223acf39970aba56f6e9097cbc86eb3148a2abe03d17c59334149cf2a9",
+      "source_sha256": "7600df146d45f7bb653906a6c1f625361381191563c080141b1fd7f1e31848c5"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/08_full_p00/original_launcher.sh",
+      "category": "historical_baseline",
+      "bytes": 1957,
+      "exported_sha256": "0e8d28ad32a39bd00e9a39cb7dda46527d2572367979c690b76d6a601de9cfee",
+      "source_sha256": "fad1902fd82d03bb5f3e8c83fa3cd5ad30e849c6b29cf2daf595f05d2573ebe9"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/08_full_p00/train.sh",
+      "category": "historical_baseline",
+      "bytes": 1537,
+      "exported_sha256": "0ca062fa68c57b2438f667c109643b18eb7c48a099321019475bb9f91c67c3e6",
+      "source_sha256": "44feb4eb05e0b12c571540d5189e1ab362bb2399c629800c89314248abf3225b"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/08_full_p00/training_code/src/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/08_full_p00/training_code/src/models/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/08_full_p00/training_code/src/models/model_unet.py",
+      "category": "historical_baseline",
+      "bytes": 11196,
+      "exported_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "source_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/08_full_p00/training_code/train_unet.py",
+      "category": "historical_baseline",
+      "bytes": 14567,
+      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/09_full_p03/checkpoint.sha256",
+      "category": "historical_baseline",
+      "bytes": 81,
+      "exported_sha256": "d894f5c19bba9141ac656fc84129d88baf04429b2dd1078d43da637614132520",
+      "source_sha256": "d894f5c19bba9141ac656fc84129d88baf04429b2dd1078d43da637614132520"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/09_full_p03/command.txt",
+      "category": "historical_baseline",
+      "bytes": 78,
+      "exported_sha256": "69716ed190b7891fd935100769fa8e00451bb340709e000c0fc9f123a22be6f9",
+      "source_sha256": "805b05af01d2c3d1e981737a62ee20935f444a47c4c1fcef34f408f255361f55"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/09_full_p03/config.yaml",
+      "category": "historical_baseline",
+      "bytes": 1837,
+      "exported_sha256": "d556355d3278becbe3635503c39ebe7f293b3742a4d7764a01545574689c9313",
+      "source_sha256": "ed94622a85cafa9abcb331a4f992f48acc41fc334c41d65409d3c86d95717f61"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/09_full_p03/original_launcher.sh",
+      "category": "historical_baseline",
+      "bytes": 1957,
+      "exported_sha256": "0e8d28ad32a39bd00e9a39cb7dda46527d2572367979c690b76d6a601de9cfee",
+      "source_sha256": "fad1902fd82d03bb5f3e8c83fa3cd5ad30e849c6b29cf2daf595f05d2573ebe9"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/09_full_p03/train.sh",
+      "category": "historical_baseline",
+      "bytes": 1537,
+      "exported_sha256": "36ec82516d48f01b96b5de3439d47c0e2de0a7f94bc694a9ee1330f40aa7c368",
+      "source_sha256": "65849bdc246100a261090b71967e356d5a0ba670b7e1d6f0f9e19e2d61b2100f"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/09_full_p03/training_code/src/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/09_full_p03/training_code/src/models/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/09_full_p03/training_code/src/models/model_unet.py",
+      "category": "historical_baseline",
+      "bytes": 11196,
+      "exported_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "source_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/09_full_p03/training_code/train_unet.py",
+      "category": "historical_baseline",
+      "bytes": 14567,
+      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/10_full_p05_original/checkpoint.sha256",
+      "category": "historical_baseline",
+      "bytes": 81,
+      "exported_sha256": "ffd6005332fbdbef98b3cc992fca04a41894207f6b4026f8fc11316afeab73f9",
+      "source_sha256": "ffd6005332fbdbef98b3cc992fca04a41894207f6b4026f8fc11316afeab73f9"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/10_full_p05_original/command.txt",
+      "category": "historical_baseline",
+      "bytes": 87,
+      "exported_sha256": "d1570aa4bffc0cdc7e9dbda9e0bf2124f3c7cf2f66aa745030deda5911194a0f",
+      "source_sha256": "09cb5712bdfaa33fd1061208b7f9b6b13395c1bad016bb4cea22b360ed19f3f7"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/10_full_p05_original/config.yaml",
+      "category": "historical_baseline",
+      "bytes": 1818,
+      "exported_sha256": "4500cc409e0f30df9888a5366c1939928142de50fbf57c178411215fb93d6f6e",
+      "source_sha256": "106cc39bb03ee70931a302110519abd6f71997f2e9479c0791c8b787902b0797"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/10_full_p05_original/original_launcher.sh",
+      "category": "historical_baseline",
+      "bytes": 1957,
+      "exported_sha256": "0e8d28ad32a39bd00e9a39cb7dda46527d2572367979c690b76d6a601de9cfee",
+      "source_sha256": "fad1902fd82d03bb5f3e8c83fa3cd5ad30e849c6b29cf2daf595f05d2573ebe9"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/10_full_p05_original/train.sh",
+      "category": "historical_baseline",
+      "bytes": 1537,
+      "exported_sha256": "907f77afd3d151295d780d2ebd165a864fe3769e2fd0cf22a014eb103e0115ba",
+      "source_sha256": "979c5a684c573bb75190b32066c052da69c1f91cf089b0351961e18ee4e6bfef"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/10_full_p05_original/training_code/src/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/10_full_p05_original/training_code/src/models/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/10_full_p05_original/training_code/src/models/model_unet.py",
+      "category": "historical_baseline",
+      "bytes": 11196,
+      "exported_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "source_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/10_full_p05_original/training_code/train_unet.py",
+      "category": "historical_baseline",
+      "bytes": 14567,
+      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/11_full_p07/checkpoint.sha256",
+      "category": "historical_baseline",
+      "bytes": 81,
+      "exported_sha256": "894700cc02bb2ff9f32c2701b4d56e12c2efc6b2b240d9f5a03fe7c77cce3060",
+      "source_sha256": "894700cc02bb2ff9f32c2701b4d56e12c2efc6b2b240d9f5a03fe7c77cce3060"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/11_full_p07/command.txt",
+      "category": "historical_baseline",
+      "bytes": 78,
+      "exported_sha256": "256b61c2e1529e6c944ff17c6449b6555a661f6e019a2c50733a73ee403280d9",
+      "source_sha256": "c30ab98ea8523e20c44f1ce8645c1dd6a7d3434c33b22d168552881ea3b3f9c6"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/11_full_p07/config.yaml",
+      "category": "historical_baseline",
+      "bytes": 1812,
+      "exported_sha256": "28922eb51c2b4ab4f37692d2e18ab48902372250c249b745f2da987b551bb71b",
+      "source_sha256": "c7ff208728a9153e1b5d8c81ac67495b130dcf194377f5b3ff6db8c23682d0dd"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/11_full_p07/original_launcher.sh",
+      "category": "historical_baseline",
+      "bytes": 1957,
+      "exported_sha256": "efeae99c60d832f811ad57a2c5014820903d36ca906cf38d2007303c49848d22",
+      "source_sha256": "d90ead95b817a11553f86298f5eecfe1b0ecee888ecdaf810a6367cf071812ca"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/11_full_p07/train.sh",
+      "category": "historical_baseline",
+      "bytes": 1537,
+      "exported_sha256": "b890898207858c7f5f239a3af046bc9c401b60efd4aabf96fdee641a4dfb886b",
+      "source_sha256": "1e51c870a80f4607f3b1efbd685f446b6fbe65faf366ef32be60fa9cb0669b5c"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/11_full_p07/training_code/src/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/11_full_p07/training_code/src/models/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/11_full_p07/training_code/src/models/model_unet.py",
+      "category": "historical_baseline",
+      "bytes": 11196,
+      "exported_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "source_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/11_full_p07/training_code/train_unet.py",
+      "category": "historical_baseline",
+      "bytes": 14567,
+      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/12_repro_l2cos_p05/checkpoint.sha256",
+      "category": "historical_baseline",
+      "bytes": 81,
+      "exported_sha256": "141de882fd5c60e110dd3e7cc683bacf58f83a4c8a9fab12cd6d4d00768d3ce3",
+      "source_sha256": "141de882fd5c60e110dd3e7cc683bacf58f83a4c8a9fab12cd6d4d00768d3ce3"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/12_repro_l2cos_p05/command.txt",
+      "category": "historical_baseline",
+      "bytes": 85,
+      "exported_sha256": "5bc6a140e7782355d84298cafe22bbac66cfbde8bee77a090dd227e58662fd73",
+      "source_sha256": "61d69eafc36199140547cc376f061fadc0d147829ac0be9ac83d298bb423e20f"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/12_repro_l2cos_p05/config.yaml",
+      "category": "historical_baseline",
+      "bytes": 1832,
+      "exported_sha256": "71ea92afebf1f12ea5a1e255edde13db58a73c4d75aa2857c0ef0b3bce9a03cc",
+      "source_sha256": "612d257bf1e6400f8b0f95ee7a7015f9ea197af5de972c15a9300c954880d0d7"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/12_repro_l2cos_p05/train.sh",
+      "category": "historical_baseline",
+      "bytes": 1538,
+      "exported_sha256": "6ce2c0837feda06ed01828a3393277162cd49984f744830bbaac988bccb3fea7",
+      "source_sha256": "e777514e6ced5dbdb292aa061c72dac9053b015e2e487de3a3cb888f0cb309c2"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/12_repro_l2cos_p05/training_code/src/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/12_repro_l2cos_p05/training_code/src/models/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/12_repro_l2cos_p05/training_code/src/models/model_unet.py",
+      "category": "historical_baseline",
+      "bytes": 11196,
+      "exported_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "source_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/12_repro_l2cos_p05/training_code/train_unet.py",
+      "category": "historical_baseline",
+      "bytes": 14567,
+      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/13_repro_full_p05_best/checkpoint.sha256",
+      "category": "historical_baseline",
+      "bytes": 81,
+      "exported_sha256": "f08701785ef75ff9482513db6278ea3fa56c365c6e55cd274a728ff18cb50e3b",
+      "source_sha256": "f08701785ef75ff9482513db6278ea3fa56c365c6e55cd274a728ff18cb50e3b"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/13_repro_full_p05_best/command.txt",
+      "category": "historical_baseline",
+      "bytes": 89,
+      "exported_sha256": "92d9cb77051a5ae3414708434f75e63041516e819c0bc82f0d615f49541564a1",
+      "source_sha256": "1ed5ab7bd23c10e9219b989d1f1b77db9eac5433fa3b5b21b34dc984b0a25b7a"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/13_repro_full_p05_best/config.yaml",
+      "category": "historical_baseline",
+      "bytes": 1855,
+      "exported_sha256": "875391619abdc4fa53926ddc80b90cccf0522a4d5718e35812b676e969dfcad3",
+      "source_sha256": "f5487c9e7d93ae8406c93bd15cffe82f9ee59d016864c9e6805c3724276b0fdf"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/13_repro_full_p05_best/train.sh",
+      "category": "historical_baseline",
+      "bytes": 1536,
+      "exported_sha256": "c8253f42e895e802d8628be51f30038f9e3cd8d808c2b57ef6b84ed36e2f02be",
+      "source_sha256": "493fd59a33f406975013d191153549a8e2288ef5032f2c1b106276fec52734fb"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/13_repro_full_p05_best/training_code/src/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/13_repro_full_p05_best/training_code/src/models/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/13_repro_full_p05_best/training_code/src/models/model_unet.py",
+      "category": "historical_baseline",
+      "bytes": 11196,
+      "exported_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "source_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/13_repro_full_p05_best/training_code/train_unet.py",
+      "category": "historical_baseline",
+      "bytes": 14567,
+      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
+    },
+    {
+      "path": "baseline/experiments/checkpoint_zoo/INDEX.tsv",
+      "category": "historical_baseline",
+      "bytes": 741,
+      "exported_sha256": "10a20ecd8db3c76e11d35b0178fc481d0a7e07cfed78195252d6ab2a18552079",
+      "source_sha256": "10a20ecd8db3c76e11d35b0178fc481d0a7e07cfed78195252d6ab2a18552079"
+    },
+    {
+      "path": "baseline/results/historical_eval_results.json",
+      "category": "historical_metrics",
+      "bytes": 4964,
+      "exported_sha256": "8a050937ab05dc2f9d60084b4c51076a91584e0620c781b08b214fc6abab34d1",
+      "source_sha256": "8a050937ab05dc2f9d60084b4c51076a91584e0620c781b08b214fc6abab34d1"
+    },
+    {
+      "path": "baseline/results/historical_summary.md",
+      "category": "historical_metrics",
+      "bytes": 1240,
+      "exported_sha256": "f514679015b4d40e952b06380df59f8940175bf7fd0bd5088bcd49fcffe1d36f",
+      "source_sha256": "f514679015b4d40e952b06380df59f8940175bf7fd0bd5088bcd49fcffe1d36f"
+    },
+    {
+      "path": "baseline/scripts/eval/eval_facescape_modes.py",
+      "category": "historical_baseline",
+      "bytes": 24117,
+      "exported_sha256": "7b528d8f49a363c0fbe3e41e55511c2c8f3019e971f7544eeee59d8cf5966714",
+      "source_sha256": "c955a2d964482033209f31ea96708115dec2a8b53231097a335247a3ee20013e"
+    },
+    {
+      "path": "baseline/scripts/inference/inference_unet.py",
+      "category": "historical_baseline",
+      "bytes": 3991,
+      "exported_sha256": "f203bc76253a855d2737217e86094d6d4d5d5e7105aef18afdb422bbf6f622bb",
+      "source_sha256": "f8dd81f79ac1ba2f245b95fb7df9a80546bc1bf82a35ab0bdfedb8f2bc9e0239"
+    },
+    {
+      "path": "baseline/src/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/src/models/__init__.py",
+      "category": "historical_baseline",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "baseline/src/models/model_unet.py",
+      "category": "historical_baseline",
+      "bytes": 11196,
+      "exported_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "source_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3"
+    },
+    {
+      "path": "baseline/train_unet.py",
+      "category": "historical_baseline",
+      "bytes": 14447,
+      "exported_sha256": "37ecb82d3449f4b48c2226e34935479ae93ffe072e8edc456a715ba1e8475795",
+      "source_sha256": "37ecb82d3449f4b48c2226e34935479ae93ffe072e8edc456a715ba1e8475795"
+    },
+    {
+      "path": "configs/diagnostics_pilot.json",
+      "category": "research_code",
+      "bytes": 899,
+      "exported_sha256": "22e3ce836d275d6d8e0cb769da2bd56b0405f468360af741689f96c663a8fcfc",
+      "source_sha256": "22e3ce836d275d6d8e0cb769da2bd56b0405f468360af741689f96c663a8fcfc"
+    },
+    {
+      "path": "docs/代码与实验记录.md",
+      "category": "research_document",
+      "bytes": 8638,
+      "exported_sha256": "8046a48da877468e652431f19127395a24234e7f9ff7f66a16296bc626094f01",
+      "source_sha256": "b104463b9e881f7cebc76fe162910d4d233b32aca5e1a0401449903ad8edd264"
+    },
+    {
+      "path": "docs/原始代码审计与文献.md",
+      "category": "research_document",
+      "bytes": 28116,
+      "exported_sha256": "c4b7f98396f0f23006494df6131185f5e8cf6dda710cf64b27727f448a6eaa55",
+      "source_sha256": "af500f2202db0a1ceac30ffc7d4336fcbcbd71ae06fec9d553861f9beb4bc6a4"
+    },
+    {
+      "path": "docs/数据来源初查.md",
+      "category": "research_document",
+      "bytes": 2050,
+      "exported_sha256": "49ca33273a41f0bd77dbdfbbb01e82ca3a39f29f9a823552bb7a832453c46403",
+      "source_sha256": "f1cdf2b120f39bc4c27127ba2d5f35ac02d8139932ca4588c93d9eb3ac60d1b0"
+    },
+    {
+      "path": "docs/研究方案.md",
+      "category": "research_document",
+      "bytes": 19165,
+      "exported_sha256": "ded7dd1a638515ae72d545030d119513dddb8bcda671fca95b19d43e01467e08",
+      "source_sha256": "ded7dd1a638515ae72d545030d119513dddb8bcda671fca95b19d43e01467e08"
+    },
+    {
+      "path": "docs/首轮诊断结论.md",
+      "category": "research_document",
+      "bytes": 4550,
+      "exported_sha256": "a52c57e987e6a3c3e337ce6103bf8990be153e6d6503e50fe118c35f43d681bc",
+      "source_sha256": "4a4e8c5d999f1a69229956329569ca47b7286d3b806a398369c34fbb92869915"
+    },
+    {
+      "path": "figures/D1_full.png",
+      "category": "aggregate_plot",
+      "bytes": 76303,
+      "exported_sha256": "006e7d894b7b2b043b70d134b884d7cd0947dd0aa0a8f534e3c9128507910811",
+      "source_sha256": "006e7d894b7b2b043b70d134b884d7cd0947dd0aa0a8f534e3c9128507910811"
+    },
+    {
+      "path": "figures/D2_D4_pilot.png",
+      "category": "aggregate_plot",
+      "bytes": 113660,
+      "exported_sha256": "3da761227612e35408ae17d11f6c6b96aec765c049047b4f50c0224a015ecb85",
+      "source_sha256": "3da761227612e35408ae17d11f6c6b96aec765c049047b4f50c0224a015ecb85"
+    },
+    {
+      "path": "reproducibility/baseline_training_header.txt",
+      "category": "release_metadata",
+      "bytes": 247,
+      "exported_sha256": "50b87662a259fd5df9df58e14cda9fdec58f27f3922deffd71b9c07c0ad6a01b"
+    },
+    {
+      "path": "reproducibility/historical_reproduction.json",
+      "category": "reproducibility",
+      "bytes": 1311,
+      "exported_sha256": "9605cc4d66c6da99bec5ecfbb27396e1a3bc78e3ad73ce06b4c80f60425c025a",
+      "source_sha256": "79fd607a218e295bd819ca9f6a47ac4a6bb1350c08275df7d3a5ac859adde275"
+    },
+    {
+      "path": "reproducibility/protected_reference_check.json",
+      "category": "release_metadata",
+      "bytes": 1770,
+      "exported_sha256": "d40c91cae4cb02ef675b43fa5828212eaf72646fdcb8f7e130238df32cadc4fd"
+    },
+    {
+      "path": "reproducibility/tested_environment.json",
+      "category": "release_metadata",
+      "bytes": 554,
+      "exported_sha256": "08ca89ee00a96b6e0a43f5a5a6a37b4cf767170417c7249619c6a7b940e744f5"
+    },
+    {
+      "path": "requirements-torch.txt",
+      "category": "release_metadata",
+      "bytes": 33,
+      "exported_sha256": "bc7d9ffde6fa3309832d12e760197f913204c28787c0fffd4b1fbc6fb9b9d0b6"
+    },
+    {
+      "path": "requirements.txt",
+      "category": "release_metadata",
+      "bytes": 132,
+      "exported_sha256": "b8b6217b44ad1590c02c761049b54723666479cebd40a547027464adbbe86796"
+    },
+    {
+      "path": "results/D1_full/per_image/p03_fixed_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 265413,
+      "exported_sha256": "9c1d9f6d0de5946900e0758c1c726eca125f52b089eacb8196653cbd53ee9259",
+      "source_sha256": "c08de1fb352afba824e0e27aa5fec31755ea021338d9fb009705ff7bb9835cc6"
+    },
+    {
+      "path": "results/D1_full/per_image/p03_geom_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 265503,
+      "exported_sha256": "7f45282eb6981fbb31d2486ceeedb4ff517a17042046d9a47e98e35e6f073b56",
+      "source_sha256": "6e5ada623b980d6006f9a531fbe2a670ec36b40ac3808c1eec74944b908de159"
+    },
+    {
+      "path": "results/D1_full/per_image/p03_no_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 263895,
+      "exported_sha256": "54fd521ec4b15a4856c2e41af2d2005a31e27a07a8fbf4cfdf970457f6947b49",
+      "source_sha256": "a778dd403338322dc4c4204b3efea26c7eeb939a9acf5bd312e6f3c341dd5eb4"
+    },
+    {
+      "path": "results/D1_full/per_image/p05_best_geom_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 265773,
+      "exported_sha256": "de2d9dfe25a3f25c452df44b6151c0f069f6d07f45715a232b7857a9c1cfb118",
+      "source_sha256": "cdbc09fc4ee5d31fada9edc054697842e3730c6a0bcc915f496c262282f88793"
+    },
+    {
+      "path": "results/D1_full/per_image/p05_original_fixed_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 265596,
+      "exported_sha256": "b7c740186f83e14bbf8ed71945598cca01c0aebd77bbcb749fbb0e6e11380399",
+      "source_sha256": "e280e7ac6f2f4ced201762f2af9f52913ee383507897e3c13b73d26778546583"
+    },
+    {
+      "path": "results/D1_full/per_image/p05_original_geom_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 265769,
+      "exported_sha256": "85a44bdeea7080aec04c535ee5144f0425c627584991d94ab935b069d6db9235",
+      "source_sha256": "25a63c9a6ac51becf4fd4ff7b6418d0abfaea66c2fae99f7a9088e67f8a6283e"
+    },
+    {
+      "path": "results/D1_full/per_image/p05_original_no_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 264162,
+      "exported_sha256": "15457595508eaa6767b34d9991ec039a2aacfe51aeb9070dd716e0af8571de40",
+      "source_sha256": "8132feb7e00e2822d8c9e5cbcbd108eb5533121c91736fb9046a30d4148192fe"
+    },
+    {
+      "path": "results/D1_full/per_image/p07_fixed_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 264262,
+      "exported_sha256": "706c16120c970969fead8ae3e76f2ef456b9755bf582dbcc14b366a56510cc9c",
+      "source_sha256": "ecf4f1a36fa8db8def4e49a85570f134156cbd08cfa3257c81adda0d8a76dd86"
+    },
+    {
+      "path": "results/D1_full/per_image/p07_geom_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 264877,
+      "exported_sha256": "c3eed5890ad9cb61fa204a69e4b1cc5d207862fc66fc2998efbe651c32366898",
+      "source_sha256": "eaf97fd364e4c353b65f007c9a42a16e26c68088d18bfc14bab52807fa90929f"
+    },
+    {
+      "path": "results/D1_full/per_image/p07_no_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 263790,
+      "exported_sha256": "c0895356ab809abfec4e9ec9524cf21b9c9d7a8d18c13ef252c6b827e46ccf4b",
+      "source_sha256": "f6404236035bad84f404f2aa93b46b7cfc4b3bb820933d224359e5a02669ab1c"
+    },
+    {
+      "path": "results/D1_full/per_image/p0_no_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 263652,
+      "exported_sha256": "e23024d6ca3ec2b66a621cd9d14a5a1c66282a11c12342c44af5a0042627a127",
+      "source_sha256": "d3259f2d028cb1ca7bebed30220659dfd945188f4795f0c59f557e94b760743f"
+    },
+    {
+      "path": "results/D1_full/subset.json",
+      "category": "diagnostic_summary",
+      "bytes": 577565,
+      "exported_sha256": "35b081f7a6afc4226672e6c95d0c68875dd16ff7fd3c9fb66aaa2b230162b67c",
+      "source_sha256": "537d34f4dcdbd17b9db71d0579e3554c94af601ec5e798e85eb8280f20606ebc"
+    },
+    {
+      "path": "results/D1_full/summary.json",
+      "category": "diagnostic_summary",
+      "bytes": 16979,
+      "exported_sha256": "76b247e8e26e6924e97b8fb2b02abb29ac71ce98e4142996297405fe33e2eaa5",
+      "source_sha256": "064df9cfe3e75b7bf29531a73fffc119e33def5addabe027249df7383487a2b5"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/ensemble_metrics.json",
+      "category": "ensemble_metrics",
+      "bytes": 20850,
+      "exported_sha256": "3c74098ef50f1d168281faab0e73c3770ac7cd67086bd7e061115121c261a306",
+      "source_sha256": "3c74098ef50f1d168281faab0e73c3770ac7cd67086bd7e061115121c261a306"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/ood/guidance.csv",
+      "category": "per_image_metrics",
+      "bytes": 3041,
+      "exported_sha256": "cc334765e1183e9f45b483ef94c376de80f3bf8fb7a8b0a966adb5d9f0db557d",
+      "source_sha256": "c3fc375c1600d0e45a6574256cb5a88fc27407cb8e0fbeb4cc5acc1e1992d94d"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/per_image/p03_fixed_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 4326,
+      "exported_sha256": "826479b06795132c34b97052eff481a59cf1d07246817867d022d968378cd8af",
+      "source_sha256": "aaf3ec7853a8098d0f433838bd99b4cee3a63157e22009d16c187bd61015898e"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/per_image/p03_geom_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 4327,
+      "exported_sha256": "c7263e5a6d9abcd79623b314bbf20349e03eded4e807fb6f0bf488b5302b0b01",
+      "source_sha256": "7bb7c0e3881fb1d87d6bd83ecb023515e3d2a06c4b9d186b24a2952470b4541c"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/per_image/p03_no_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 4307,
+      "exported_sha256": "5bfb66aef1f18c5102f89ba02775fd0dc6d877e349aa732c03e0742e669d1a41",
+      "source_sha256": "6679e260f78eaafba59654095e52f253ea67f91172f24cf602b95abe1496a7a9"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/per_image/p05_best_geom_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 4338,
+      "exported_sha256": "34675c1928793d4c129876895f7634dafa513c27319f0dce26bc70586c73fb2b",
+      "source_sha256": "8f2f40e7b8d7fab12a84ab1aae041d23e9b09813e839570f832e5d3e1d717f99"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/per_image/p05_best_geom_cfg_k1_seed43.csv",
+      "category": "per_image_metrics",
+      "bytes": 4332,
+      "exported_sha256": "25c8469a8aa0272d453143ea5dab025b0ba6ee1a4b1f64043c6e4311a5dd3651",
+      "source_sha256": "40553eca21088303eb626157e481d0ee9ee41513dbb1fd4fba3316ef686714e5"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/per_image/p05_best_geom_cfg_k1_seed44.csv",
+      "category": "per_image_metrics",
+      "bytes": 4334,
+      "exported_sha256": "790b1bb3455c8a21a1fd6f50a611fbb631a177be0971e94c632e85803afd8708",
+      "source_sha256": "7ca14e726b8563cb78e991a5f13479ddf97b8ee5fe59750be0fac289cfed4d8e"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/per_image/p05_best_geom_cfg_k1_seed45.csv",
+      "category": "per_image_metrics",
+      "bytes": 4335,
+      "exported_sha256": "fa1735f9b2f1f346b5574c5b0a6ba5763971c7b9fa103a89a5c0e6f5f8bb7dc9",
+      "source_sha256": "b747101c904ae0d983deb8187d273cf03282dc1fe594311e6edf72d8d920bc6a"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/per_image/p05_best_geom_cfg_k1_seed46.csv",
+      "category": "per_image_metrics",
+      "bytes": 4338,
+      "exported_sha256": "862d10f8a52bf8245189382f198d14f2336332acfc7fcfab1e7effc8864d9f84",
+      "source_sha256": "a93495d364c6b53b1cf6a2b1747060990bae4e4d2c849b9e20060be160c62381"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/per_image/p05_best_geom_cfg_k1_seed47.csv",
+      "category": "per_image_metrics",
+      "bytes": 4328,
+      "exported_sha256": "4902823dab3d52534008340c88a1e088616435e96e1e13aec739d41120ba0aa1",
+      "source_sha256": "1330ed1cc9f117305175721731542ab1cae1cee6daa19b78fbacb2eb333406a4"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/per_image/p05_best_geom_cfg_k1_seed48.csv",
+      "category": "per_image_metrics",
+      "bytes": 4342,
+      "exported_sha256": "5502e5759e70c994b793adb6cf1606ba313640f3196f04edcd2d461e8e80be24",
+      "source_sha256": "af8c259cf104e1e8eca138092ce823385ccbb893a5d26e9e39909eb9902c7c9b"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/per_image/p05_best_geom_cfg_k1_seed49.csv",
+      "category": "per_image_metrics",
+      "bytes": 4324,
+      "exported_sha256": "4d1518905699e431806eb85181f622e4eecefe687f2dc1c34cacb5d1ea7b0f9e",
+      "source_sha256": "97093e7c849a90b88c31bbe48189aa7dbd90e32bd38c820837ed535a6e3b166a"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/per_image/p05_best_geom_cfg_k2_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 4324,
+      "exported_sha256": "c91ac3c10bb6d612bbd64ce6aa4a049268ffcc8bbdb74896c546b12fb43e35dc",
+      "source_sha256": "42bc5ebd9f1813dd633ef287dcc9f6a0ac70df3f95b4c9381b82c1e853ac8864"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/per_image/p05_best_geom_cfg_k4_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 4315,
+      "exported_sha256": "2aeb38aef6ec6012a75d7449225e699de76cb52c693f4f26e66736a9b2f4eb9f",
+      "source_sha256": "7812d568d847c77a0c23c9669a8d658a31b13e53a9a81ffc28c1141d2b86ad11"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/per_image/p05_best_geom_cfg_k8_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 4302,
+      "exported_sha256": "6b2a11dcde7d2f7034d7699d07fbf283938e1955ffbe74a111afd3b366de5ab4",
+      "source_sha256": "3a7fec1c830be37f8eeb8674baca6de01775b3b4334c9a8d90fecc5a8feeaa07"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/per_image/p05_original_fixed_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 4346,
+      "exported_sha256": "0b06c21986a0c8f18758b774a765f4199769e883257c4b7eec038b3be6a73e8d",
+      "source_sha256": "2bc93f69c7dcb6d327ee50d84caced3f3f301964ac218784dcc06793266b481f"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/per_image/p05_original_geom_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 4339,
+      "exported_sha256": "87cf71be843d60b6a229d2f4f6f780d19f7ee55db5d268a53f95112c4a917aac",
+      "source_sha256": "72690ba92f59c9e66e526a51e588bdd682dc72af43b5e427ac2401dcb602aaeb"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/per_image/p05_original_no_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 4312,
+      "exported_sha256": "a03e8eef93f9f96c896ceaed8807975f5fd04f7133e22dea0e604ea78598b714",
+      "source_sha256": "c51e91ca9f0c30349d74de40dcec8349579650083a2589d964101f27bc8a2ace"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/per_image/p07_fixed_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 4311,
+      "exported_sha256": "98dca7d55bfd76dc937494fe00f74ac62440da859f3215e7c224d0fa31773f8b",
+      "source_sha256": "e72b21875a330dfc5d3a20eee714a54da2333572b96359a6d487af3546fe41dd"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/per_image/p07_geom_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 4320,
+      "exported_sha256": "c96882bd631e63129f578ade2be5d00f1aa858f14b7fdbe46343c3671c3e70e5",
+      "source_sha256": "4423bb12e49dc5023d9c16efb978896471b0f4e07ad65f9ad253567d5add2678"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/per_image/p07_no_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 4308,
+      "exported_sha256": "41cd26f1a700b6237a790a6f11bdb8363c8adb86b13a91b205346d3747cd154c",
+      "source_sha256": "222a594e6e784c67e749eb365ce3ac81379f25317665c481643495a68ebd63e5"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/per_image/p0_no_cfg_k1_seed42.csv",
+      "category": "per_image_metrics",
+      "bytes": 4309,
+      "exported_sha256": "9da594bd9ab5ed6bc06e2b68dc1796031d0ac7029a4d3feb09c9ce6e02dadab2",
+      "source_sha256": "14743f321e01827e777d237106fe2bd12055b73970712bdc94bb6a299a7713fb"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/subset.json",
+      "category": "diagnostic_summary",
+      "bytes": 9417,
+      "exported_sha256": "add2b514037536e34be63322c4f1b6f5743456041b33628e4a697a03e90eff67",
+      "source_sha256": "ac5d998b6e8a2754bf8fec9339982060c3cbccb7c5a4e5938d1f0b15c6aad478"
+    },
+    {
+      "path": "results/P0_D1_D5_pilot/summary.json",
+      "category": "diagnostic_summary",
+      "bytes": 30559,
+      "exported_sha256": "187ccc2678d8af866194b820c4ddc2242a24228c2fba0b7f8e803c92a857cdf4",
+      "source_sha256": "2ae56fc266df3355007a06ca12300196b5739982f68c68cad514f11361254f86"
+    },
+    {
+      "path": "results/protocol_tests.txt",
+      "category": "test_result",
+      "bytes": 99,
+      "exported_sha256": "c09a087f4a05a30b71b3db60f19d5b0521c06280ee7f2b29b569fdd620478700",
+      "source_sha256": "b77d2c6739314db3e99fd3ea7d70adb589ae778de911b65e20f13b69dd4be2fe"
+    },
+    {
+      "path": "scripts/__init__.py",
+      "category": "research_code",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "scripts/export_github.py",
+      "category": "research_code",
+      "bytes": 16667,
+      "exported_sha256": "8a979b94b4554dc53129893b60e336b0f74e17b849ca7ab5daf70608e6d40e10",
+      "source_sha256": "bdb08ed9e3134336edfefe263cbf76822561c9c2986d2802ea3473a6e600fa92"
+    },
+    {
+      "path": "scripts/legacy/__init__.py",
+      "category": "research_code",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "scripts/legacy/eval_facescape_modes.py",
+      "category": "research_code",
+      "bytes": 24117,
+      "exported_sha256": "7b528d8f49a363c0fbe3e41e55511c2c8f3019e971f7544eeee59d8cf5966714",
+      "source_sha256": "c955a2d964482033209f31ea96708115dec2a8b53231097a335247a3ee20013e"
+    },
+    {
+      "path": "scripts/plot_diagnostics.py",
+      "category": "research_code",
+      "bytes": 3677,
+      "exported_sha256": "d337df58fb949db831e7222c418d554055af48e8814c9fe6169ab132c382a6bd",
+      "source_sha256": "d337df58fb949db831e7222c418d554055af48e8814c9fe6169ab132c382a6bd"
+    },
+    {
+      "path": "scripts/preflight.py",
+      "category": "research_code",
+      "bytes": 3539,
+      "exported_sha256": "5cd0d5bd346fcaddd75199d23507cb2e0dbdc25772ac73b6ac3f1088c06f193f",
+      "source_sha256": "5cd0d5bd346fcaddd75199d23507cb2e0dbdc25772ac73b6ac3f1088c06f193f"
+    },
+    {
+      "path": "scripts/render_record.py",
+      "category": "research_code",
+      "bytes": 9097,
+      "exported_sha256": "8f5eb7650c8c11d6a5302cea73a3350e74ee2cccb9c0e8ec1f83e5360e963458",
+      "source_sha256": "98168dcae6bf35bbc4f59b2afad1975d016ad60836e68b361f51f5def4cece46"
+    },
+    {
+      "path": "scripts/run_diagnostics.py",
+      "category": "research_code",
+      "bytes": 18731,
+      "exported_sha256": "71de4eb54dda4cf32bfd2aa362dd99ff7071659f4ecca845995f0d1395f8c716",
+      "source_sha256": "71de4eb54dda4cf32bfd2aa362dd99ff7071659f4ecca845995f0d1395f8c716"
+    },
+    {
+      "path": "scripts/summarize_diagnostics.py",
+      "category": "research_code",
+      "bytes": 8757,
+      "exported_sha256": "c969b3e692ebbc6d3741529fca721f056835486f77906e96c237f0dcfc2cf6a3",
+      "source_sha256": "19e8b382bd94a45f4629f2b9ae2e1f0c6cc08f0991d0b0601878400a93245623"
+    },
+    {
+      "path": "scripts/verify_best.py",
+      "category": "research_code",
+      "bytes": 1436,
+      "exported_sha256": "6609b8dbb64a9cf888d6b1875c4d0a29652dbbd2f6d0a86de0f95168f64a7b0a",
+      "source_sha256": "6609b8dbb64a9cf888d6b1875c4d0a29652dbbd2f6d0a86de0f95168f64a7b0a"
+    },
+    {
+      "path": "src/__init__.py",
+      "category": "research_code",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/diagnostic_data.py",
+      "category": "research_code",
+      "bytes": 3824,
+      "exported_sha256": "71108b98ae9b062230838679fb1087e0f41988f75ea3a2abe3637a20a05587f0",
+      "source_sha256": "71108b98ae9b062230838679fb1087e0f41988f75ea3a2abe3637a20a05587f0"
+    },
+    {
+      "path": "src/flow_inference.py",
+      "category": "research_code",
+      "bytes": 2996,
+      "exported_sha256": "2e24c2b404823c52052cd7e618655c0ce297fe7fec79144032f59e17b0b01f99",
+      "source_sha256": "2e24c2b404823c52052cd7e618655c0ce297fe7fec79144032f59e17b0b01f99"
+    },
+    {
+      "path": "src/losses.py",
+      "category": "research_code",
+      "bytes": 2202,
+      "exported_sha256": "85a2d802b5cb0cf44a1adfe7be2a4a4f796a075df772e64d875beef568acf135",
+      "source_sha256": "85a2d802b5cb0cf44a1adfe7be2a4a4f796a075df772e64d875beef568acf135"
+    },
+    {
+      "path": "src/models/__init__.py",
+      "category": "research_code",
+      "bytes": 0,
+      "exported_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "src/models/model_unet.py",
+      "category": "research_code",
+      "bytes": 11196,
+      "exported_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "source_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3"
+    },
+    {
+      "path": "src/normal_geometry.py",
+      "category": "research_code",
+      "bytes": 1690,
+      "exported_sha256": "d913d2e867596e9f31c0e612e2264ca5a345b21012799327613f79ffbc6072a8",
+      "source_sha256": "d913d2e867596e9f31c0e612e2264ca5a345b21012799327613f79ffbc6072a8"
+    },
+    {
+      "path": "src/research_io.py",
+      "category": "research_code",
+      "bytes": 2777,
+      "exported_sha256": "674a8deb419672e0b68583fa49f5f5f1e25e25260ce90225e9bb49c1d3a3355b",
+      "source_sha256": "674a8deb419672e0b68583fa49f5f5f1e25e25260ce90225e9bb49c1d3a3355b"
+    },
+    {
+      "path": "tests/conftest.py",
+      "category": "research_code",
+      "bytes": 128,
+      "exported_sha256": "0baac0f85c6cd20c6d0c359ebad0e374af296683066878a154308a64bed993c5",
+      "source_sha256": "0baac0f85c6cd20c6d0c359ebad0e374af296683066878a154308a64bed993c5"
+    },
+    {
+      "path": "tests/test_protocol.py",
+      "category": "research_code",
+      "bytes": 4819,
+      "exported_sha256": "1ac2e0625a1263e1815652c4ab4f191be86bb40799a9bb741f9fb80f1efe14a1",
+      "source_sha256": "1ac2e0625a1263e1815652c4ab4f191be86bb40799a9bb741f9fb80f1efe14a1"
+    }
+  ]
+}

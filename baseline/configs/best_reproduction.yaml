@@ -1,0 +1,50 @@
+project:
+  name: FaceFlux-Best
+  source: ${WORKSPACE_ROOT}/FaceFlux-Clean
+  environment: faceflux
+
+training:
+  method: Flow Matching
+  model: UNet-B
+  model_size: B
+  loss: full
+  drop_prob: 0.5
+  weight_cos: 0.25
+  image_size: 256
+  batch_size: 8
+  grad_accum_steps: 2
+  effective_batch_size: 16
+  learning_rate: 1.0e-4
+  epochs: 500
+  start_save_epoch: 200
+  save_interval: 10
+  eval_steps: 1
+  seed: 1247
+  seed_source: fixed_inside_training_script
+
+evaluation:
+  dataset: FacescapeRender1
+  eval_size: 256
+  euler_steps: 1
+  inference_mode: no_tta
+  tta: false
+  seed: 42
+  seed_source: fixed_inside_evaluation_script
+  seed_argument_allowed: false
+
+datasets:
+  rgb_dir: datasets/ffhq_rgb_crop256
+  normal_dir: datasets/ffhq_rgb_crop256N
+  training_eval_images: data/test_images_1/imgs
+  evaluation_dir: datasets/FacescapeRender1
+
+best_checkpoint:
+  path: checkpoints/repro_p05_full_exact/epoch_500.pth
+  sha256: 8b6656b0241497f1aae20dac28bd7ed2434108659f2a4b229a0185ee6381e61f
+
+best_result:
+  mean_degrees: 17.90
+  std_degrees: 2.17
+  below_20_degrees_percent: 63.6
+  below_25_degrees_percent: 78.8
+  below_30_degrees_percent: 88.9

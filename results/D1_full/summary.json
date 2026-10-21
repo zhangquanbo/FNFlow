@@ -1,0 +1,523 @@
+{
+  "run_id": "D1_full",
+  "signature": "88127c8abc8d9fb04871d6516a47bf1eeab4fe4427383d8cf3332aa22baeb3a0",
+  "stage": "d1",
+  "created_at": "2026-10-21T23:04:19+08:00",
+  "rows": [
+    {
+      "task": "D1",
+      "model": "p0",
+      "mode": "no_cfg",
+      "steps": 1,
+      "seed": 42,
+      "legacy": {
+        "mean": 26.452945329871547,
+        "median": 24.570480870691117,
+        "rmse": 29.079714624247224,
+        "lt_11_25": 6.184977367904122,
+        "lt_20": 30.680435775756173,
+        "lt_22_5": 41.10953590087279,
+        "lt_25": 51.51306644214198,
+        "lt_30": 68.94742865036861,
+        "std_image_mean": 2.3902281073372076,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "float": {
+        "mean": 26.452958070671077,
+        "median": 24.570503742527958,
+        "rmse": 29.07972254583633,
+        "lt_11_25": 6.184952498150485,
+        "lt_20": 30.6804806646127,
+        "lt_22_5": 41.10949460916684,
+        "lt_25": 51.51286885247705,
+        "lt_30": 68.94730960144572,
+        "std_image_mean": 2.3902332865149822,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "mean_ms": 6.463443934525903,
+      "p95_ms": 6.490631215274334,
+      "nfe": 1,
+      "mask_fallbacks": 38
+    },
+    {
+      "task": "D1",
+      "model": "p03",
+      "mode": "no_cfg",
+      "steps": 1,
+      "seed": 42,
+      "legacy": {
+        "mean": 19.75265211826364,
+        "median": 18.340249255857703,
+        "rmse": 22.68153482983758,
+        "lt_11_25": 21.28846534317,
+        "lt_20": 56.92740072744927,
+        "lt_22_5": 66.52022205764493,
+        "lt_25": 74.66091041957299,
+        "lt_30": 86.07737206430042,
+        "std_image_mean": 2.1227294342099112,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "float": {
+        "mean": 19.75263476991378,
+        "median": 18.340246957367736,
+        "rmse": 22.681514085692683,
+        "lt_11_25": 21.288469091323375,
+        "lt_20": 56.92752945401362,
+        "lt_22_5": 66.520381823396,
+        "lt_25": 74.6609640102268,
+        "lt_30": 86.07745377706082,
+        "std_image_mean": 2.1227295852432695,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "mean_ms": 6.460807747669048,
+      "p95_ms": 6.48576351813972,
+      "nfe": 1,
+      "mask_fallbacks": 38
+    },
+    {
+      "task": "D1",
+      "model": "p03",
+      "mode": "fixed_cfg",
+      "steps": 1,
+      "seed": 42,
+      "legacy": {
+        "mean": 21.62117835273301,
+        "median": 19.713299582284368,
+        "rmse": 25.150216951183285,
+        "lt_11_25": 20.567504148913756,
+        "lt_20": 51.36189077547143,
+        "lt_22_5": 59.79549705348819,
+        "lt_25": 67.3751311087808,
+        "lt_30": 79.33091715340912,
+        "std_image_mean": 2.6635448304681693,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "float": {
+        "mean": 21.679471161314623,
+        "median": 19.820613029605756,
+        "rmse": 25.19939786642225,
+        "lt_11_25": 20.508563686387472,
+        "lt_20": 50.90524558853255,
+        "lt_22_5": 59.29144566627202,
+        "lt_25": 66.94945351407966,
+        "lt_30": 79.21680166274584,
+        "std_image_mean": 2.6575561774770615,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "mean_ms": 12.14018276751832,
+      "p95_ms": 12.171010905876756,
+      "nfe": 2,
+      "mask_fallbacks": 38
+    },
+    {
+      "task": "D1",
+      "model": "p03",
+      "mode": "geom_cfg",
+      "steps": 1,
+      "seed": 42,
+      "legacy": {
+        "mean": 19.86658410331465,
+        "median": 18.377818823423443,
+        "rmse": 23.15949977802643,
+        "lt_11_25": 23.841715297523862,
+        "lt_20": 56.47159717699328,
+        "lt_22_5": 65.2062145783119,
+        "lt_25": 72.85476267197357,
+        "lt_30": 84.17567522996627,
+        "std_image_mean": 2.4246205431564047,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "float": {
+        "mean": 19.86588354562474,
+        "median": 18.379725745134426,
+        "rmse": 23.157518832275578,
+        "lt_11_25": 23.836115566747935,
+        "lt_20": 56.46733016385152,
+        "lt_22_5": 65.20644693551253,
+        "lt_25": 72.85824795323005,
+        "lt_30": 84.18384135062404,
+        "std_image_mean": 2.4248183530313208,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "mean_ms": 12.363426668384859,
+      "p95_ms": 12.40124492906034,
+      "nfe": 2,
+      "mask_fallbacks": 38
+    },
+    {
+      "task": "D1",
+      "model": "p05_original",
+      "mode": "no_cfg",
+      "steps": 1,
+      "seed": 42,
+      "legacy": {
+        "mean": 17.990586325860153,
+        "median": 16.36799058860327,
+        "rmse": 20.938312450388082,
+        "lt_11_25": 26.422529395918005,
+        "lt_20": 65.1830792870611,
+        "lt_22_5": 73.95651455728576,
+        "lt_25": 80.89908779193112,
+        "lt_30": 89.90661383838466,
+        "std_image_mean": 2.2643360772707815,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "float": {
+        "mean": 17.990584991529673,
+        "median": 16.367996917415546,
+        "rmse": 20.938309877464885,
+        "lt_11_25": 26.422513022168015,
+        "lt_20": 65.18304743719915,
+        "lt_22_5": 73.95655004795691,
+        "lt_25": 80.89907109141568,
+        "lt_30": 89.90662703099389,
+        "std_image_mean": 2.2643436595581337,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "mean_ms": 6.46813673193793,
+      "p95_ms": 6.493964046239853,
+      "nfe": 1,
+      "mask_fallbacks": 38
+    },
+    {
+      "task": "D1",
+      "model": "p05_original",
+      "mode": "fixed_cfg",
+      "steps": 1,
+      "seed": 42,
+      "legacy": {
+        "mean": 19.318470295818006,
+        "median": 17.16880884114766,
+        "rmse": 23.062144964016024,
+        "lt_11_25": 27.905325506745303,
+        "lt_20": 60.17301914773554,
+        "lt_22_5": 67.78542288561069,
+        "lt_25": 74.31775834385894,
+        "lt_30": 84.10560855366401,
+        "std_image_mean": 2.2708505205578224,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "float": {
+        "mean": 19.407798769487005,
+        "median": 17.32559946191385,
+        "rmse": 23.13888132560939,
+        "lt_11_25": 27.71382007466071,
+        "lt_20": 59.48027169236507,
+        "lt_22_5": 67.18047587664792,
+        "lt_25": 73.91398703573167,
+        "lt_30": 84.04492611442991,
+        "std_image_mean": 2.256084141564986,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "mean_ms": 12.144929296835825,
+      "p95_ms": 12.178624700754881,
+      "nfe": 2,
+      "mask_fallbacks": 38
+    },
+    {
+      "task": "D1",
+      "model": "p05_original",
+      "mode": "geom_cfg",
+      "steps": 1,
+      "seed": 42,
+      "legacy": {
+        "mean": 17.95128190560158,
+        "median": 15.96476261720844,
+        "rmse": 21.522269443845737,
+        "lt_11_25": 31.263911704088525,
+        "lt_20": 64.72233580365122,
+        "lt_22_5": 72.21879475949973,
+        "lt_25": 78.44324472862253,
+        "lt_30": 87.43774317925153,
+        "std_image_mean": 2.263466993771515,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "float": {
+        "mean": 17.952847835587924,
+        "median": 15.968770680909438,
+        "rmse": 21.522863046619353,
+        "lt_11_25": 31.25508401294546,
+        "lt_20": 64.70926558745667,
+        "lt_22_5": 72.20988952368897,
+        "lt_25": 78.43795560576396,
+        "lt_30": 87.4382031394274,
+        "std_image_mean": 2.264772973683597,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "mean_ms": 12.364007318644104,
+      "p95_ms": 12.401087349280715,
+      "nfe": 2,
+      "mask_fallbacks": 38
+    },
+    {
+      "task": "D1",
+      "model": "p07",
+      "mode": "no_cfg",
+      "steps": 1,
+      "seed": 42,
+      "legacy": {
+        "mean": 25.60526281714137,
+        "median": 24.088315549087106,
+        "rmse": 29.176429667967334,
+        "lt_11_25": 16.00103834196842,
+        "lt_20": 38.819223271015105,
+        "lt_22_5": 45.75761953719002,
+        "lt_25": 52.468913402014074,
+        "lt_30": 64.79707213841425,
+        "std_image_mean": 2.80804263521743,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "float": {
+        "mean": 25.605260955123693,
+        "median": 24.08831580177657,
+        "rmse": 29.176428717962736,
+        "lt_11_25": 16.00103477231932,
+        "lt_20": 38.81923290374223,
+        "lt_22_5": 45.75762678933239,
+        "lt_25": 52.468913402014074,
+        "lt_30": 64.79707990880155,
+        "std_image_mean": 2.808042937069067,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "mean_ms": 6.468732473538355,
+      "p95_ms": 6.496727652847767,
+      "nfe": 1,
+      "mask_fallbacks": 38
+    },
+    {
+      "task": "D1",
+      "model": "p07",
+      "mode": "fixed_cfg",
+      "steps": 1,
+      "seed": 42,
+      "legacy": {
+        "mean": 29.22247729286035,
+        "median": 28.653971443163222,
+        "rmse": 33.18338108740089,
+        "lt_11_25": 14.168761509735097,
+        "lt_20": 32.82323755800156,
+        "lt_22_5": 38.04806936346941,
+        "lt_25": 43.23728077757906,
+        "lt_30": 53.83331328149601,
+        "std_image_mean": 3.5535165370549526,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "float": {
+        "mean": 29.299727888260524,
+        "median": 28.772766800124696,
+        "rmse": 33.23313570571584,
+        "lt_11_25": 14.081971831694156,
+        "lt_20": 32.19395772552979,
+        "lt_22_5": 37.49784595394743,
+        "lt_25": 42.8641105651856,
+        "lt_30": 53.70524806394192,
+        "std_image_mean": 3.5430778253797968,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "mean_ms": 12.144675222435245,
+      "p95_ms": 12.177159497514367,
+      "nfe": 2,
+      "mask_fallbacks": 38
+    },
+    {
+      "task": "D1",
+      "model": "p07",
+      "mode": "geom_cfg",
+      "steps": 1,
+      "seed": 42,
+      "legacy": {
+        "mean": 27.317777629839526,
+        "median": 26.496123054061247,
+        "rmse": 31.452718588163002,
+        "lt_11_25": 18.361489427459077,
+        "lt_20": 36.24037030252607,
+        "lt_22_5": 41.861584426957506,
+        "lt_25": 47.574253767218295,
+        "lt_30": 58.37875522163725,
+        "std_image_mean": 3.289676372771003,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "float": {
+        "mean": 27.317480130005233,
+        "median": 26.497370866815842,
+        "rmse": 31.452130672041516,
+        "lt_11_25": 18.36104169567816,
+        "lt_20": 36.23836360210357,
+        "lt_22_5": 41.85816291084909,
+        "lt_25": 47.56968564373318,
+        "lt_30": 58.37599755396724,
+        "std_image_mean": 3.2889417493030466,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "mean_ms": 12.363240345137882,
+      "p95_ms": 12.401545653119683,
+      "nfe": 2,
+      "mask_fallbacks": 38
+    },
+    {
+      "task": "D1",
+      "model": "p05_best",
+      "mode": "geom_cfg",
+      "steps": 1,
+      "seed": 42,
+      "legacy": {
+        "mean": 17.899513816179915,
+        "median": 16.617950914052123,
+        "rmse": 21.008587912014526,
+        "lt_11_25": 29.198789322508812,
+        "lt_20": 63.620326135086664,
+        "lt_22_5": 71.83353432588656,
+        "lt_25": 78.81987006080963,
+        "lt_30": 88.89126036958372,
+        "std_image_mean": 2.1657282680439693,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "float": {
+        "mean": 17.90190015603803,
+        "median": 16.62327394755423,
+        "rmse": 21.010311440989707,
+        "lt_11_25": 29.188845625148,
+        "lt_20": 63.60247677776229,
+        "lt_22_5": 71.82169735643524,
+        "lt_25": 78.81371541171657,
+        "lt_30": 88.8916510492678,
+        "std_image_mean": 2.166409273286927,
+        "num_images": 1998,
+        "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+      },
+      "mean_ms": 12.361983095087835,
+      "p95_ms": 12.398709869012237,
+      "nfe": 2,
+      "mask_fallbacks": 38
+    }
+  ],
+  "num_images": 1998,
+  "num_subjects": 100,
+  "scope": "full historical FaceScape set",
+  "checkpoints": {
+    "p05_best": {
+      "path": "${FACEFLUX_BEST_ROOT}/checkpoints/repro_p05_full_exact/epoch_500.pth",
+      "sha256": "8b6656b0241497f1aae20dac28bd7ed2434108659f2a4b229a0185ee6381e61f"
+    },
+    "p0": {
+      "path": "${FACEFLUX_BEST_ROOT}/experiments/checkpoint_zoo/08_full_p00/checkpoint.pth",
+      "sha256": "651ab15d5575162ee211ae1e2beca600a455d04cc9236f2648ea1f758ddcc23a"
+    },
+    "p03": {
+      "path": "${FACEFLUX_BEST_ROOT}/experiments/checkpoint_zoo/09_full_p03/checkpoint.pth",
+      "sha256": "aa6201561ca146bb75ae84e1cea7021ad59f83fe44cc95ad86522c0458c4f24e"
+    },
+    "p05_original": {
+      "path": "${FACEFLUX_BEST_ROOT}/experiments/checkpoint_zoo/10_full_p05_original/checkpoint.pth",
+      "sha256": "307590081e065a9247bb154abdbfe894a11f137764ebdbb45f05d63be1dc38a5"
+    },
+    "p07": {
+      "path": "${FACEFLUX_BEST_ROOT}/experiments/checkpoint_zoo/11_full_p07/checkpoint.pth",
+      "sha256": "188a5f2346f6000179e9331c421359441956c087b6fc3554bb01b6ad053518e9"
+    }
+  },
+  "config": {
+    "run_id": "P0_D1_D5_pilot",
+    "subset_subjects": 32,
+    "selection_seed": 20261021,
+    "image_size": 256,
+    "precision": "fp16",
+    "reference": "p05_best",
+    "inference_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49
+    ],
+    "steps": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "cfg_scale": 1.5,
+    "models": {
+      "p0": {
+        "dropout": 0.0,
+        "checkpoint": "experiments/checkpoint_zoo/08_full_p00/checkpoint.pth"
+      },
+      "p03": {
+        "dropout": 0.3,
+        "checkpoint": "experiments/checkpoint_zoo/09_full_p03/checkpoint.pth"
+      },
+      "p05_original": {
+        "dropout": 0.5,
+        "checkpoint": "experiments/checkpoint_zoo/10_full_p05_original/checkpoint.pth"
+      },
+      "p07": {
+        "dropout": 0.7,
+        "checkpoint": "experiments/checkpoint_zoo/11_full_p07/checkpoint.pth"
+      },
+      "p05_best": {
+        "dropout": 0.5,
+        "checkpoint": "checkpoints/repro_p05_full_exact/epoch_500.pth"
+      }
+    },
+    "note": "Exploratory historical-domain subset. Not 1998-image reproduction or general-domain evidence."
+  },
+  "code_sha256": {
+    "scripts/run_diagnostics.py": "71de4eb54dda4cf32bfd2aa362dd99ff7071659f4ecca845995f0d1395f8c716",
+    "src/flow_inference.py": "2e24c2b404823c52052cd7e618655c0ce297fe7fec79144032f59e17b0b01f99",
+    "src/diagnostic_data.py": "71108b98ae9b062230838679fb1087e0f41988f75ea3a2abe3637a20a05587f0",
+    "src/models/model_unet.py": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+    "scripts/legacy/eval_facescape_modes.py": "c955a2d964482033209f31ea96708115dec2a8b53231097a335247a3ee20013e"
+  },
+  "mask_policy": "historical dlib hull intersect closed/eroded GT; explicit fallback",
+  "metric_protocols": {
+    "legacy": "raw channel clamp, encode, then normalize; no PNG roundtrip",
+    "float": "FP32 normal normalized before export; same GT mask"
+  },
+  "status": "completed",
+  "current_task": "completed",
+  "updated_at": "2026-10-21T23:10:27+08:00",
+  "mask_fallbacks": 38,
+  "parity": {
+    "max_abs_encoded_difference": 0.0,
+    "angular_mean_difference_deg": 0.0,
+    "modes": [
+      "no_cfg",
+      "geom_cfg"
+    ],
+    "tolerance_encoded": 1e-06,
+    "tolerance_angle_deg": 1e-05
+  },
+  "best_audit": {
+    "checked_at": "2026-10-21T23:10:27+08:00",
+    "entry_count": 540,
+    "added": [],
+    "removed": [],
+    "changed": [],
+    "verified_unchanged": true,
+    "scope": "all non-followed entries: size/mtime/type; code/config/document content hashes"
+  }
+}

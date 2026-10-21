@@ -1,0 +1,8 @@
+numpy==1.26.4
+Pillow==12.3.0
+opencv-python==4.11.0.86
+dlib==20.0.0
+accelerate==1.11.0
+pytest==9.1.1
+matplotlib==3.10.7
+tqdm==4.67.1

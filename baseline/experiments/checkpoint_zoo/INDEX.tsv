@@ -1,0 +1,14 @@
+folder	checkpoint_label	loss	weight	drop_prob	mean_deg
+01_flow_only_p01	flow_only	l2_only	0.25_unused	0.1	25.90
+02_no_angular_p01	no_L_ang	l2_norm	0.25	0.1	24.71
+03_flow_angular_w01_p01	flow_plus_ang	l2_cos	0.1	0.1	23.32
+04_flow_angular_w05_p01	flow_plus_ang	l2_cos	0.5	0.1	23.35
+05_full_wunit_wang_01_p01	full	full	0.1	0.1	27.63
+06_full_wunit_wang_05_p01	full	full	0.5	0.1	22.98
+07_no_flow_p01	true_no_L_flow	no_flow	0.25	0.1	25.68
+08_full_p00	cfg_ablation	full	0.25	0.0	26.45
+09_full_p03	cfg_ablation	full	0.25	0.3	19.87
+10_full_p05_original	cfg_ablation	full	0.25	0.5	17.95
+11_full_p07	cfg_ablation	full	0.25	0.7	27.32
+12_repro_l2cos_p05	reproduction	l2_cos	0.25	0.5	22.95
+13_repro_full_p05_best	best_reproduction	full	0.25	0.5	17.899514

@@ -1,0 +1,48 @@
+{
+  "created_at": "2026-10-21T23:15:05+08:00",
+  "source": "${FACEFLUX_BEST_ROOT}/outputs/clean_experiment_finals_20260801_212431/eval_results.json",
+  "source_sha256": "8a050937ab05dc2f9d60084b4c51076a91584e0620c781b08b214fc6abab34d1",
+  "checks": [
+    {
+      "model": "p0",
+      "historical": 26.452945329871547,
+      "current": 26.452945329871547,
+      "abs_difference_deg": 0.0,
+      "num_images": 1998,
+      "same_fallback_count": true
+    },
+    {
+      "model": "p03",
+      "historical": 19.86658410331465,
+      "current": 19.86658410331465,
+      "abs_difference_deg": 0.0,
+      "num_images": 1998,
+      "same_fallback_count": true
+    },
+    {
+      "model": "p05_original",
+      "historical": 17.95128190560158,
+      "current": 17.95128190560158,
+      "abs_difference_deg": 0.0,
+      "num_images": 1998,
+      "same_fallback_count": true
+    },
+    {
+      "model": "p07",
+      "historical": 27.317777629839526,
+      "current": 27.317777629839526,
+      "abs_difference_deg": 0.0,
+      "num_images": 1998,
+      "same_fallback_count": true
+    },
+    {
+      "model": "p05_best",
+      "historical": 17.899513816179915,
+      "current": 17.899513816179915,
+      "abs_difference_deg": 0.0,
+      "num_images": 1998,
+      "same_fallback_count": true
+    }
+  ],
+  "all_passed": true
+}

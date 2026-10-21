@@ -1,0 +1,199 @@
+{
+  "selection_seed": 20261021,
+  "all_available": 1998,
+  "selection": "exploratory subset: one fixed image per sampled identity",
+  "pairs": [
+    {
+      "subject": "1",
+      "expression": "11_chin_raiser",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/1/11_chin_raiser_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/1/11_chin_raiser_NormalCV_000.png"
+    },
+    {
+      "subject": "10",
+      "expression": "13_lip_funneler",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/10/13_lip_funneler_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/10/13_lip_funneler_NormalCV_000.png"
+    },
+    {
+      "subject": "100",
+      "expression": "11_chin_raiser",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/100/11_chin_raiser_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/100/11_chin_raiser_NormalCV_000.png"
+    },
+    {
+      "subject": "14",
+      "expression": "18_eye_closed",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/14/18_eye_closed_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/14/18_eye_closed_NormalCV_000.png"
+    },
+    {
+      "subject": "15",
+      "expression": "15_lip_roll",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/15/15_lip_roll_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/15/15_lip_roll_NormalCV_000.png"
+    },
+    {
+      "subject": "19",
+      "expression": "20_brow_lower",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/19/20_brow_lower_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/19/20_brow_lower_NormalCV_000.png"
+    },
+    {
+      "subject": "20",
+      "expression": "10_dimpler",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/20/10_dimpler_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/20/10_dimpler_NormalCV_000.png"
+    },
+    {
+      "subject": "22",
+      "expression": "8_mouth_left",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/22/8_mouth_left_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/22/8_mouth_left_NormalCV_000.png"
+    },
+    {
+      "subject": "25",
+      "expression": "7_jaw_forward",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/25/7_jaw_forward_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/25/7_jaw_forward_NormalCV_000.png"
+    },
+    {
+      "subject": "26",
+      "expression": "20_brow_lower",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/26/20_brow_lower_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/26/20_brow_lower_NormalCV_000.png"
+    },
+    {
+      "subject": "29",
+      "expression": "18_eye_closed",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/29/18_eye_closed_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/29/18_eye_closed_NormalCV_000.png"
+    },
+    {
+      "subject": "34",
+      "expression": "6_jaw_right",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/34/6_jaw_right_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/34/6_jaw_right_NormalCV_000.png"
+    },
+    {
+      "subject": "35",
+      "expression": "13_lip_funneler",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/35/13_lip_funneler_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/35/13_lip_funneler_NormalCV_000.png"
+    },
+    {
+      "subject": "39",
+      "expression": "14_sadness",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/39/14_sadness_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/39/14_sadness_NormalCV_000.png"
+    },
+    {
+      "subject": "44",
+      "expression": "13_lip_funneler",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/44/13_lip_funneler_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/44/13_lip_funneler_NormalCV_000.png"
+    },
+    {
+      "subject": "45",
+      "expression": "19_brow_raiser",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/45/19_brow_raiser_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/45/19_brow_raiser_NormalCV_000.png"
+    },
+    {
+      "subject": "52",
+      "expression": "4_anger",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/52/4_anger_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/52/4_anger_NormalCV_000.png"
+    },
+    {
+      "subject": "53",
+      "expression": "12_lip_puckerer",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/53/12_lip_puckerer_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/53/12_lip_puckerer_NormalCV_000.png"
+    },
+    {
+      "subject": "55",
+      "expression": "13_lip_funneler",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/55/13_lip_funneler_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/55/13_lip_funneler_NormalCV_000.png"
+    },
+    {
+      "subject": "56",
+      "expression": "8_mouth_left",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/56/8_mouth_left_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/56/8_mouth_left_NormalCV_000.png"
+    },
+    {
+      "subject": "62",
+      "expression": "16_grin",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/62/16_grin_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/62/16_grin_NormalCV_000.png"
+    },
+    {
+      "subject": "64",
+      "expression": "8_mouth_left",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/64/8_mouth_left_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/64/8_mouth_left_NormalCV_000.png"
+    },
+    {
+      "subject": "71",
+      "expression": "2_smile",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/71/2_smile_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/71/2_smile_NormalCV_000.png"
+    },
+    {
+      "subject": "76",
+      "expression": "13_lip_funneler",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/76/13_lip_funneler_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/76/13_lip_funneler_NormalCV_000.png"
+    },
+    {
+      "subject": "77",
+      "expression": "2_smile",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/77/2_smile_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/77/2_smile_NormalCV_000.png"
+    },
+    {
+      "subject": "8",
+      "expression": "3_mouth_stretch",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/8/3_mouth_stretch_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/8/3_mouth_stretch_NormalCV_000.png"
+    },
+    {
+      "subject": "80",
+      "expression": "16_grin",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/80/16_grin_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/80/16_grin_NormalCV_000.png"
+    },
+    {
+      "subject": "81",
+      "expression": "10_dimpler",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/81/10_dimpler_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/81/10_dimpler_NormalCV_000.png"
+    },
+    {
+      "subject": "82",
+      "expression": "15_lip_roll",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/82/15_lip_roll_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/82/15_lip_roll_NormalCV_000.png"
+    },
+    {
+      "subject": "83",
+      "expression": "1_neutral",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/83/1_neutral_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/83/1_neutral_NormalCV_000.png"
+    },
+    {
+      "subject": "89",
+      "expression": "7_jaw_forward",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/89/7_jaw_forward_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/89/7_jaw_forward_NormalCV_000.png"
+    },
+    {
+      "subject": "94",
+      "expression": "18_eye_closed",
+      "rgb_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RImage/94/18_eye_closed_Image_000.png",
+      "normal_path": "${FACEFLUX_BEST_ROOT}/datasets/FacescapeRender1/RNormal/94/18_eye_closed_NormalCV_000.png"
+    }
+  ]
+}

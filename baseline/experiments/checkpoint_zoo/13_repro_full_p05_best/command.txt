@@ -1,0 +1,2 @@
+cd ${FACEFLUX_BEST_ROOT}
+bash experiments/checkpoint_zoo/13_repro_full_p05_best/train.sh
