@@ -40,6 +40,8 @@ def render():
         "| [losses.py](${FNFLOW_ROOT}/src/losses.py) | masked 速度与法线损失、raw endpoint unit 项、无效批次跳过 |",
         "| [run_diagnostics.py](${FNFLOW_ROOT}/scripts/run_diagnostics.py) | D0 历史兼容、D1–D5、逐图结果、失败与 Best 审计 |",
         "| [run_multiseed_diagnostics.py](${FNFLOW_ROOT}/scripts/run_multiseed_diagnostics.py) | 全量 8 seed 的单步 CFG 及 no-CFG 步数配对补做 |",
+        "| [run_imagewise_noise.py](${FNFLOW_ROOT}/scripts/run_imagewise_noise.py) | 逐图独立噪声、配对引导及逐图/像素敏感度 |",
+        "| [noise_protocol.py](${FNFLOW_ROOT}/src/noise_protocol.py) | 稳定图片 seed 与分层噪声统计 |",
         "| [补做配置](${FNFLOW_ROOT}/configs/diagnostics_full_multiseed.json) | 固定参考权重、8 seed、4 步数与无筛选协议 |",
         "| [反馈核对与补实验](${FNFLOW_ROOT}/docs/反馈核对与补实验.md) | 修正解释边界、训练重复设计与发布范围记录 |",
         "| [test_protocol.py](${FNFLOW_ROOT}/tests/test_protocol.py) | 有明确几何/数值期望的协议测试 |",
@@ -90,8 +92,17 @@ def render():
             for name, group in run["multiseed"].get("groups", {}).items():
                 score = group["protocols"]["float"]
                 lines.append(f"| {name} | {group['num_seeds']} | {score['mean_mae_deg']:.4f} | {score['std_seed_ddof1_deg']:.4f} |")
-            lines.extend(["", "只列已完成全部预定 seed 的组；完整步数矩阵是否完成："
+            lines.extend(["", "只列已完成全部预定 seed 的组；当前预定矩阵是否完成："
                           + str(run["multiseed"].get("matrix_completed", False)) + "。", ""])
+            if run["multiseed"].get("noise_sensitivity"):
+                lines.extend(["| 模式 | 逐图 MAE 标准差的宏平均° | 像素方向角离散度° | 方向方差 1-R |",
+                              "|---|---:|---:|---:|"])
+                for mode, stats in run["multiseed"]["noise_sensitivity"].items():
+                    angle = stats["mean_pixel_angular_dispersion_deg"]
+                    angle_text = "未定义；见 JSON 计数" if angle is None else f"{angle:.4f}"
+                    lines.append(f"| {mode} | {stats['mean_image_mae_sd_ddof1_deg']:.4f} | "
+                                 f"{angle_text} | {stats['mean_pixel_directional_variance_1_minus_R']:.6f} |")
+                lines.extend(["", "以上为逐图噪声敏感度；与数据集均值的 Monte Carlo 波动、训练 seed 方差分开解释。", ""])
         if run.get("noise"):
             noise = run["noise"]
             lines.extend([f"D3：平均角度离散度 {noise['mean_angular_dispersion_deg']:.4f}°；"

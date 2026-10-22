@@ -1,0 +1,176 @@
+{
+  "groups": {
+    "no_cfg_k1": {
+      "num_seeds": 8,
+      "protocols": {
+        "legacy": {
+          "mean_mae_deg": 19.837134579857022,
+          "std_seed_ddof1_deg": 0.019850528018211393,
+          "std_seed_ddof0_deg": 0.018568468697675936,
+          "seed_maes_deg": {
+            "42": 19.846206903212277,
+            "43": 19.800881908043895,
+            "44": 19.83279794851091,
+            "45": 19.82288887730567,
+            "46": 19.82952878370301,
+            "47": 19.864293220970346,
+            "48": 19.85097327322229,
+            "49": 19.849505723887773
+          }
+        },
+        "float": {
+          "mean_mae_deg": 19.837141077436936,
+          "std_seed_ddof1_deg": 0.019850482618064623,
+          "std_seed_ddof0_deg": 0.018568426229727306,
+          "seed_maes_deg": {
+            "42": 19.846213302897766,
+            "43": 19.80088876263727,
+            "44": 19.832804466792425,
+            "45": 19.82289523800993,
+            "46": 19.829534898617705,
+            "47": 19.864299654715772,
+            "48": 19.850980268070252,
+            "49": 19.849512027754372
+          }
+        }
+      },
+      "mean_ms_per_image": 6.5068031335622445
+    },
+    "geom_cfg_k1": {
+      "num_seeds": 8,
+      "protocols": {
+        "legacy": {
+          "mean_mae_deg": 19.409867999989245,
+          "std_seed_ddof1_deg": 0.020225543195916722,
+          "std_seed_ddof0_deg": 0.018919263275129307,
+          "seed_maes_deg": {
+            "42": 19.419391446850796,
+            "43": 19.37427308412332,
+            "44": 19.417213417994358,
+            "45": 19.38726967605504,
+            "46": 19.405625583430652,
+            "47": 19.42558446081798,
+            "48": 19.435532074424366,
+            "49": 19.414054256217426
+          }
+        },
+        "float": {
+          "mean_mae_deg": 19.412241710076074,
+          "std_seed_ddof1_deg": 0.020219632642114276,
+          "std_seed_ddof0_deg": 0.018913734458305596,
+          "seed_maes_deg": {
+            "42": 19.421812283850695,
+            "43": 19.37667723470037,
+            "44": 19.419590894636862,
+            "45": 19.389625407667577,
+            "46": 19.40797589641209,
+            "47": 19.42790618199242,
+            "48": 19.43790709337085,
+            "49": 19.416438687977752
+          }
+        }
+      },
+      "mean_ms_per_image": 12.399202727237707
+    }
+  },
+  "noise_sensitivity": {
+    "no_cfg": {
+      "num_images": 1998,
+      "num_inference_replicates": 8,
+      "mean_mae_deg": 19.837141077436936,
+      "dataset_mae_sd_ddof1_deg": 0.019850482618064623,
+      "mean_image_mae_sd_ddof1_deg": 1.35001575073448,
+      "median_image_mae_sd_ddof1_deg": 1.2660319328834189,
+      "p95_image_mae_sd_ddof1_deg": 2.410120678128477,
+      "dataset_maes_deg": [
+        19.846213302897766,
+        19.80088876263727,
+        19.832804466792425,
+        19.82289523800993,
+        19.829534898617705,
+        19.864299654715772,
+        19.850980268070252,
+        19.849512027754372
+      ],
+      "mean_pixel_directional_variance_1_minus_R": 0.002443160170302221,
+      "mean_pixel_angular_dispersion_deg": 3.317535634082257,
+      "undefined_mean_direction_pixels": 0,
+      "aggregation": "macro mean over images; pixel direction statistics use each image's historical mask"
+    },
+    "geom_cfg": {
+      "num_images": 1998,
+      "num_inference_replicates": 8,
+      "mean_mae_deg": 19.412241710076074,
+      "dataset_mae_sd_ddof1_deg": 0.020219632642114276,
+      "mean_image_mae_sd_ddof1_deg": 1.3227552330447467,
+      "median_image_mae_sd_ddof1_deg": 1.2081540070885692,
+      "p95_image_mae_sd_ddof1_deg": 2.3545813544909455,
+      "dataset_maes_deg": [
+        19.421812283850695,
+        19.37667723470037,
+        19.419590894636862,
+        19.389625407667577,
+        19.40797589641209,
+        19.42790618199242,
+        19.43790709337085,
+        19.416438687977752
+      ],
+      "mean_pixel_directional_variance_1_minus_R": 0.003731504644076328,
+      "mean_pixel_angular_dispersion_deg": 4.087333115302596,
+      "undefined_mean_direction_pixels": 0,
+      "aggregation": "macro mean over images; pixel direction statistics use each image's historical mask"
+    }
+  },
+  "shared_noise_reference": {
+    "run_id": "D2_D3_full_multiseed",
+    "statistics": {
+      "no_cfg": {
+        "num_images": 1998,
+        "num_inference_replicates": 8,
+        "mean_mae_deg": 19.56881517451661,
+        "dataset_mae_sd_ddof1_deg": 1.1632978606812434,
+        "mean_image_mae_sd_ddof1_deg": 1.2581611935558215,
+        "median_image_mae_sd_ddof1_deg": 1.1973418405635217,
+        "p95_image_mae_sd_ddof1_deg": 1.8965225810237287,
+        "dataset_maes_deg": [
+          18.29348014200387,
+          19.787166302851745,
+          19.186666703323297,
+          20.445056992808105,
+          19.62941786358026,
+          18.406636584260212,
+          18.961381168981344,
+          21.840715638324063
+        ]
+      },
+      "geom_cfg": {
+        "num_images": 1998,
+        "num_inference_replicates": 8,
+        "mean_mae_deg": 19.263159636272466,
+        "dataset_mae_sd_ddof1_deg": 1.038213843189081,
+        "mean_image_mae_sd_ddof1_deg": 1.200257401598535,
+        "median_image_mae_sd_ddof1_deg": 1.1350309449527858,
+        "p95_image_mae_sd_ddof1_deg": 1.8959516381787203,
+        "dataset_maes_deg": [
+          17.90190015603803,
+          19.293837744284584,
+          18.677700866581887,
+          20.331778925516158,
+          19.141879251745493,
+          18.86475605568588,
+          18.70200001460461,
+          21.19142407572309
+        ]
+      }
+    }
+  },
+  "paired_cfg_delta_mae_deg": {
+    "mean_geom_minus_no_cfg": -0.42489936736085987,
+    "std_replicate_ddof1": 0.00892259643180239,
+    "replicates_geom_better": 8
+  },
+  "seed_policy": "SHA256([protocol, base_seed, namespace/dataset-relative RGB path]) first 63 bits; modes paired",
+  "std_definition": "dataset MAE SD is Monte Carlo variation across imagewise-noise replicates; image MAE SD and pixel dispersion measure within-image sensitivity; not training SD or generalization CI",
+  "scope": "fixed checkpoint, historical development set, one-step only",
+  "matrix_completed": true
+}

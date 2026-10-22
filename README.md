@@ -44,6 +44,20 @@ The follow-up uses the fixed p05_best checkpoint, all 1,998 historical images an
 
 All 40 configurations completed. Per-seed aggregate scores and paired step differences are in the linked JSON. No sample identifiers or per-image results are added by this follow-up release.
 
+## Image-specific noise follow-up
+
+Same fixed checkpoint and full 1,998-image set, one Euler step, eight inference replicates. A versioned SHA256 of the base seed and dataset-relative RGB key derives a different initial field for each image. The fields are paired across guidance modes; the historical shared-field results above are retained.
+
+| Inference | MAE mean ± dataset-replicate SD, degrees | Mean within-image MAE SD, degrees | Mean pixel angular dispersion, degrees |
+|---|---:|---:|---:|
+| no_cfg | 19.8371 ± 0.0199 | 1.3500 | 3.3175 |
+| geom_cfg | 19.4122 ± 0.0202 | 1.3228 | 4.0873 |
+
+The dataset-replicate SD measures Monte Carlo variation of the dataset mean. Within-image MAE SD and pixel directional dispersion measure noise sensitivity; they are distinct statistics. Displayed SDs use ddof=1. None is training-seed SD or a generalization confidence interval. Pixel dispersion is the mean angle to the directional sample mean within each evaluation mask, then macro-averaged over images.
+
+[Aggregate results](results/D3_full_imagewise_noise_v1/multiseed_summary.json) include the shared-field reference and the mean directional variance 1-R. Sample keys, seed mappings and per-image records are not exported.
+
+
 ## Setup
 
 Tested on Linux, Python 3.10.19, PyTorch 2.1.2 + CUDA 12.1, torchvision 0.16.2 and RTX 4090 (24 GB). Observed versions are in [tested_environment.json](reproducibility/tested_environment.json).
@@ -69,6 +83,7 @@ python scripts/preflight.py
 python scripts/run_diagnostics.py
 python scripts/run_diagnostics.py --stage d1 --subjects 0 --run-id D1_full
 python scripts/run_multiseed_diagnostics.py
+python scripts/run_imagewise_noise.py
 python scripts/verify_best.py
 python scripts/plot_diagnostics.py
 python scripts/summarize_diagnostics.py

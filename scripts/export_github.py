@@ -97,7 +97,7 @@ def main():
         "baseline/results/historical_summary.md", "historical_metrics")
     header = (BEST / "logs/repro_p05_full_exact.log").read_text(encoding="utf-8").splitlines()[:8]
     text_file("reproducibility/baseline_training_header.txt", scrub("\n".join(header)) + "\n")
-    for run in ["D1_full", "P0_D1_D5_pilot", "D2_D3_full_multiseed"]:
+    for run in ["D1_full", "P0_D1_D5_pilot", "D2_D3_full_multiseed", "D3_full_imagewise_noise_v1"]:
         source = ROOT / "outputs" / run / "summary.json"
         if not source.exists():
             continue
@@ -152,6 +152,7 @@ docs/
 **/per_image/
 **/subset.json
 **/ensemble_metrics.json
+**/image_records/
 *.pth
 *.pt
 *.ckpt
@@ -178,6 +179,31 @@ docs/
 - Do not change repository visibility or rewrite published history without user instruction.
 - Record failures explicitly; never silently change masks or omit failed images.
 """)
+    imagewise_section = ""
+    imagewise_path = ROOT / "outputs/D3_full_imagewise_noise_v1/summary.json"
+    if imagewise_path.exists():
+        imagewise = json.loads(imagewise_path.read_text(encoding="utf-8"))
+        if imagewise.get("status") == "completed":
+            lines = ["## Image-specific noise follow-up", "",
+                     "Same fixed checkpoint and full 1,998-image set, one Euler step, eight inference replicates. "
+                     "A versioned SHA256 of the base seed and dataset-relative RGB key derives a different initial field for each image. "
+                     "The fields are paired across guidance modes; the historical shared-field results above are retained.", "",
+                     "| Inference | MAE mean ± dataset-replicate SD, degrees | Mean within-image MAE SD, degrees | Mean pixel angular dispersion, degrees |",
+                     "|---|---:|---:|---:|"]
+            for mode in ["no_cfg", "geom_cfg"]:
+                score = imagewise["multiseed"]["groups"][mode + "_k1"]["protocols"]["float"]
+                sensitivity = imagewise["multiseed"]["noise_sensitivity"][mode]
+                angle = sensitivity["mean_pixel_angular_dispersion_deg"]
+                angle_text = "undefined (see JSON counts)" if angle is None else f"{angle:.4f}"
+                lines.append(f"| {mode} | {score['mean_mae_deg']:.4f} ± {score['std_seed_ddof1_deg']:.4f} | "
+                             f"{sensitivity['mean_image_mae_sd_ddof1_deg']:.4f} | {angle_text} |")
+            lines.extend(["", "The dataset-replicate SD measures Monte Carlo variation of the dataset mean. "
+                          "Within-image MAE SD and pixel directional dispersion measure noise sensitivity; they are distinct statistics. "
+                          "Displayed SDs use ddof=1. None is training-seed SD or a generalization confidence interval. "
+                          "Pixel dispersion is the mean angle to the directional sample mean within each evaluation mask, then macro-averaged over images.", "",
+                          "[Aggregate results](results/D3_full_imagewise_noise_v1/multiseed_summary.json) include the shared-field reference "
+                          "and the mean directional variance 1-R. Sample keys, seed mappings and per-image records are not exported.", ""])
+            imagewise_section = "\n".join(lines)
     text_file("README.md", """# FNFlow
 
 Pixel-space conditional Flow Matching for face normals, with isolated research code for general object and indoor-scene normal estimation.
@@ -224,6 +250,8 @@ The follow-up uses the fixed p05_best checkpoint, all 1,998 historical images an
 
 All 40 configurations completed. Per-seed aggregate scores and paired step differences are in the linked JSON. No sample identifiers or per-image results are added by this follow-up release.
 
+__IMAGEWISE_NOISE_RESULTS__
+
 ## Setup
 
 Tested on Linux, Python 3.10.19, PyTorch 2.1.2 + CUDA 12.1, torchvision 0.16.2 and RTX 4090 (24 GB). Observed versions are in [tested_environment.json](reproducibility/tested_environment.json).
@@ -249,6 +277,7 @@ python scripts/preflight.py
 python scripts/run_diagnostics.py
 python scripts/run_diagnostics.py --stage d1 --subjects 0 --run-id D1_full
 python scripts/run_multiseed_diagnostics.py
+python scripts/run_imagewise_noise.py
 python scripts/verify_best.py
 python scripts/plot_diagnostics.py
 python scripts/summarize_diagnostics.py
@@ -266,7 +295,7 @@ baseline/ preserves the historical face pipeline and checkpoint-zoo configuratio
 The source and output protocols are covered by the included tests. Full-set and pilot measurements are distinct and should not be pooled.
 
 No dataset, pretrained-weight license or new software-license grant is implied by repository visibility. See [NOTICE.md](NOTICE.md).
-""")
+""".replace("__IMAGEWISE_NOISE_RESULTS__", imagewise_section))
     text_file("NOTICE.md", """# Attribution and usage
 
 This is the user's FNFlow research snapshot. Historical model comments cite ADM and Rectified Flow. Research documents link to primary papers; original attributions are retained.
@@ -305,7 +334,7 @@ Use the top-level experiment scripts for new runs.
     }
     violations = []
     for name, record in files.items():
-        if name.startswith("docs/") or "/per_image/" in name or name.endswith(("/subset.json", "/ensemble_metrics.json")):
+        if name.startswith("docs/") or "/per_image/" in name or "/image_records/" in name or name.endswith(("/subset.json", "/ensemble_metrics.json")):
             violations.append({"file": name, "rule": "private_research_or_sample_records"})
         if name.lower().endswith((".pth", ".pt", ".npy", ".npz", ".dat", ".pem", ".key")):
             violations.append({"file": name, "rule": "excluded_binary"})
@@ -315,7 +344,7 @@ Use the top-level experiment scripts for new runs.
             def inspect(value):
                 if isinstance(value, dict):
                     for key, child in value.items():
-                        if key in {"subject", "subject_id", "rgb_path", "normal_path", "pairs", "per_image", "filename", "sample_id"}:
+                        if key in {"subject", "subject_id", "rgb_path", "normal_path", "pairs", "per_image", "filename", "sample_id", "image_key", "derived_seeds", "input_sha256"}:
                             violations.append({"file": name, "rule": "sample_identifier_key"})
                         inspect(child)
                 elif isinstance(value, list):

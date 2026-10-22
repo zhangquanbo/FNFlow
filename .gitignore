@@ -20,6 +20,7 @@ docs/
 **/per_image/
 **/subset.json
 **/ensemble_metrics.json
+**/image_records/
 *.pth
 *.pt
 *.ckpt
