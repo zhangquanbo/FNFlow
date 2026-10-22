@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 sys.dont_write_bytecode=True
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
-import json,os,time,subprocess
+import json,os,time,subprocess,shutil
 from src.research_io import ROOT,write_json,now,sha256
 
 
@@ -13,20 +13,35 @@ def main():
     def status(state,**detail):
         write_json(output/'status.json',{'status':state,'updated_at':now(),
             'training_allowed':False,'model_scoring_allowed':False,**detail})
+    repair_round=0
+    def network_failure(text):
+        return any(word in text for word in ['TimeoutError','URLError','IncompleteRangeError','HTTP Error 429','HTTP Error 502','HTTP Error 503','HTTP Error 504'])
     try:
         while True:
             source=json.loads((intake/'status.json').read_text()) if (intake/'status.json').exists() else {}
             if source.get('status')=='completed':break
             if source.get('status') in {'failed','completed_with_download_failures'}:
-                raise RuntimeError('GSO intake incomplete; preserve failure details and repair before rendering')
-            if source.get('failed',0):
-                raise RuntimeError('GSO source download failure; no silent partial render')
+                failures=json.loads((intake/'failures_private.json').read_text()) if (intake/'failures_private.json').exists() else []
+                retryable=network_failure(source.get('error','')) if source['status']=='failed' else bool(failures) and all(network_failure(r['error']) for r in failures)
+                if not retryable or repair_round>=2:
+                    raise RuntimeError('GSO intake incomplete after bounded network repairs; preserve failures, do not render partial data')
+                # A terminal intake status is written only after all its download futures finish.
+                repair_round+=1;history=intake/'network_repair_history'/str(time.time_ns());history.mkdir(parents=True)
+                for name in ['status.json','summary.json','failures_private.json','manifest_private.json']:
+                    if (intake/name).exists():shutil.copy2(intake/name,history/name)
+                child=subprocess.Popen([sys.executable,'-u',str(ROOT/'scripts/prepare_gso_holdout.py')],cwd=ROOT,
+                    stdin=subprocess.DEVNULL,env=dict(os.environ,PYTHONDONTWRITEBYTECODE='1'))
+                write_json(ROOT/'publish/gso_intake_job.json',{'pid':child.pid,'log':str(ROOT/'publish/gso_pipeline_job.log'),'network_repair_round':repair_round})
+                write_json(intake/'status.json',{'status':'repairing','updated_at':now(),'network_repair_round':repair_round})
+                status('repairing_transient_sources',network_repair_round=repair_round)
+                time.sleep(1);continue
             job=ROOT/'publish/gso_intake_job.json'
             if job.exists():
                 pid=json.loads(job.read_text())['pid'];cmdline=Path(f'/proc/{pid}/cmdline')
                 if not cmdline.exists() or b'prepare_gso_holdout.py' not in cmdline.read_bytes():
                     raise RuntimeError('GSO source worker exited before complete intake')
-            status('waiting_for_sources',completed=source.get('completed',0),target=source.get('target',200))
+            status('waiting_for_sources',completed=source.get('completed',0),target=source.get('target',200),
+                pending_failed_downloads=source.get('failed',0),network_repair_round=repair_round)
             time.sleep(20)
         summary=json.loads((intake/'summary.json').read_text())
         manifest=intake/'manifest_private.json'

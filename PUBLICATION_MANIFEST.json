@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-10-22T15:14:12+08:00",
+  "created_at": "2026-10-22T15:21:03+08:00",
   "scan_passed": true,
   "scope": "current code-and-aggregate export; unchanged legacy files are not re-exported",
   "files": [
@@ -1092,7 +1092,7 @@
       "path": "reproducibility/protected_reference_check.json",
       "category": "release_metadata",
       "bytes": 1760,
-      "exported_sha256": "5246fd07d1c135a84fd69c20d4fe2f1d91f25ef4f37ef3c0a8af33fd1ec7512b"
+      "exported_sha256": "e9a5c1f12c1351cc1c00958673ce6ee9d117d6bc2643b8150d362efde1b8d6cd"
     },
     {
       "path": "reproducibility/tested_environment.json",
@@ -1374,9 +1374,9 @@
     {
       "path": "results/protocol_tests.txt",
       "category": "test_result",
-      "bytes": 99,
-      "exported_sha256": "c0dc6fece6de9a6e1313a752f3cfc0230fc07accd00d833302c127a2a1cda935",
-      "source_sha256": "c0dc6fece6de9a6e1313a752f3cfc0230fc07accd00d833302c127a2a1cda935"
+      "bytes": 179,
+      "exported_sha256": "183247fd6e6c4f99bf471f8272960b11d6447025b4d5ebfee6b3f8ed98a6da2b",
+      "source_sha256": "183247fd6e6c4f99bf471f8272960b11d6447025b4d5ebfee6b3f8ed98a6da2b"
     },
     {
       "path": "scripts/__init__.py",
@@ -1563,9 +1563,9 @@
     {
       "path": "scripts/prepare_gso_holdout.py",
       "category": "research_code",
-      "bytes": 11743,
-      "exported_sha256": "7907802a206cb39428abf5bf86da1ea535e83adc091d3b825719c3dc8e748857",
-      "source_sha256": "7907802a206cb39428abf5bf86da1ea535e83adc091d3b825719c3dc8e748857"
+      "bytes": 11903,
+      "exported_sha256": "03a5a466d1569654516e03fb5bf4a4559e5d29df189525dc500b1d37335bf086",
+      "source_sha256": "03a5a466d1569654516e03fb5bf4a4559e5d29df189525dc500b1d37335bf086"
     },
     {
       "path": "scripts/prepare_hypersim_pilot.py",
@@ -1647,9 +1647,9 @@
     {
       "path": "scripts/run_gso_pipeline.py",
       "category": "research_code",
-      "bytes": 3139,
-      "exported_sha256": "331c427b51e0ededf018b9dbdd1afcf4874efd72293c803282c5384a835b559b",
-      "source_sha256": "331c427b51e0ededf018b9dbdd1afcf4874efd72293c803282c5384a835b559b"
+      "bytes": 4752,
+      "exported_sha256": "68eea214c4ea672dd712ed47639e9079eb6208cff5af999db77583e9bbe46e90",
+      "source_sha256": "68eea214c4ea672dd712ed47639e9079eb6208cff5af999db77583e9bbe46e90"
     },
     {
       "path": "scripts/run_imagewise_noise.py",
@@ -1972,6 +1972,13 @@
       "bytes": 547,
       "exported_sha256": "0321f78588ff24b78356f29139c6cc5396e3c22e637bf323734c7f96addbe7ad",
       "source_sha256": "0321f78588ff24b78356f29139c6cc5396e3c22e637bf323734c7f96addbe7ad"
+    },
+    {
+      "path": "tests/test_gso_network_retry.py",
+      "category": "research_code",
+      "bytes": 1122,
+      "exported_sha256": "15e32db1588a447fad180ac3499f6e428ec48a796639a44a50ae2040835e79bb",
+      "source_sha256": "15e32db1588a447fad180ac3499f6e428ec48a796639a44a50ae2040835e79bb"
     },
     {
       "path": "tests/test_http_range.py",

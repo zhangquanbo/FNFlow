@@ -15,7 +15,13 @@ OUT=ROOT/'outputs/P1_gso_intake_v1';RAW=ROOT/'data/gso_raw_v1'
 
 
 def fetch_json(url):
-    with urllib.request.urlopen(url,timeout=40) as r:return json.load(r)
+    error=None
+    for attempt in range(4):
+        try:
+            with urllib.request.urlopen(url,timeout=40) as r:return json.load(r)
+        except OSError as e:
+            error=e;time.sleep(min(8,2**attempt))
+    raise error
 
 
 def normalize_name(name):return re.sub('[^a-z0-9]','',name.lower())
