@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "registered_at": "2026-10-22T05:53:30.781199+00:00",
+  "revision": "review2_wsd",
+  "supersedes_rule_sha256": "0c863951b022c3f19a84d009c22d9c001a1df539a0b9597e95694485d44e340e",
+  "supersedes_receipt_sha256": "cd803baadc24811bd805262742b76e5a99e8b0dc4ba1e31d6d1aa7f14c38f2b9",
+  "rule_sha256": "93b6c18030a340f0b3eb63a59075e2ae361ca7d96dd72e19ac08f7705c96f1cb",
+  "config_sha256": "4b71f5c053eb79ea7e8a396a6a10b95d8e498a27f0a7bd66910b4d85c8ab6de2",
+  "existing_parameterization_curve_files": [],
+  "previous_rules_and_receipts_preserved": true,
+  "formal_grid_locked": true,
+  "reason": "Remove cosine-tail learning-rate decay from convergence trigger; compare independent linear-cooled forks at explicit total budgets"
+}

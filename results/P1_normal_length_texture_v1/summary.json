@@ -1,0 +1,177 @@
+{
+  "status": "completed",
+  "created_at": "2026-10-22T13:51:37+08:00",
+  "assets": 64,
+  "views": 192,
+  "groups": {
+    "present": {
+      "assets": 24,
+      "counts": {
+        "0.01": {
+          "foreground_pixels": 1114018,
+          "unit_rejected_foreground_pixels": 256675,
+          "nonfinite_foreground_pixels": 0,
+          "zero_foreground_pixels": 75757,
+          "retained_foreground_pixels": 857343,
+          "strict_gt_before_valid_intersection": {
+            "unit_rejected_in_band": 52692,
+            "foreground_band_pixels": 322638,
+            "retained_foreground_band_pixels": 269946,
+            "unit_rejected_outside_band": 203983,
+            "fraction_unit_rejected_in_band": 0.20528684133632025,
+            "fraction_band_foreground_retained": 0.8366838376136723
+          },
+          "relaxed_direction_plus_silhouette": {
+            "unit_rejected_in_band": 117290,
+            "foreground_band_pixels": 472432,
+            "retained_foreground_band_pixels": 355142,
+            "unit_rejected_outside_band": 139385,
+            "fraction_unit_rejected_in_band": 0.4569591896367001,
+            "fraction_band_foreground_retained": 0.7517314661157585
+          }
+        },
+        "0.5": {
+          "foreground_pixels": 1059348,
+          "unit_rejected_foreground_pixels": 202005,
+          "nonfinite_foreground_pixels": 0,
+          "zero_foreground_pixels": 43166,
+          "retained_foreground_pixels": 857343,
+          "strict_gt_before_valid_intersection": {
+            "unit_rejected_in_band": 43212,
+            "foreground_band_pixels": 313158,
+            "retained_foreground_band_pixels": 269946,
+            "unit_rejected_outside_band": 158793,
+            "fraction_unit_rejected_in_band": 0.21391549714115987,
+            "fraction_band_foreground_retained": 0.8620121472228076
+          },
+          "relaxed_direction_plus_silhouette": {
+            "unit_rejected_in_band": 98291,
+            "foreground_band_pixels": 457624,
+            "retained_foreground_band_pixels": 359333,
+            "unit_rejected_outside_band": 103714,
+            "fraction_unit_rejected_in_band": 0.48657706492413555,
+            "fraction_band_foreground_retained": 0.7852144992395503
+          }
+        },
+        "0.99": {
+          "foreground_pixels": 990986,
+          "unit_rejected_foreground_pixels": 137782,
+          "nonfinite_foreground_pixels": 0,
+          "zero_foreground_pixels": 0,
+          "retained_foreground_pixels": 853204,
+          "strict_gt_before_valid_intersection": {
+            "unit_rejected_in_band": 34757,
+            "foreground_band_pixels": 302659,
+            "retained_foreground_band_pixels": 267902,
+            "unit_rejected_outside_band": 103025,
+            "fraction_unit_rejected_in_band": 0.2522608178136476,
+            "fraction_band_foreground_retained": 0.8851611880036608
+          },
+          "relaxed_direction_plus_silhouette": {
+            "unit_rejected_in_band": 72787,
+            "foreground_band_pixels": 432806,
+            "retained_foreground_band_pixels": 360019,
+            "unit_rejected_outside_band": 64995,
+            "fraction_unit_rejected_in_band": 0.5282765528153169,
+            "fraction_band_foreground_retained": 0.8318253443806232
+          }
+        }
+      }
+    },
+    "not_declared_in_gltf": {
+      "assets": 40,
+      "counts": {
+        "0.01": {
+          "foreground_pixels": 1605794,
+          "unit_rejected_foreground_pixels": 196745,
+          "nonfinite_foreground_pixels": 0,
+          "zero_foreground_pixels": 4066,
+          "retained_foreground_pixels": 1409049,
+          "strict_gt_before_valid_intersection": {
+            "unit_rejected_in_band": 79163,
+            "foreground_band_pixels": 393758,
+            "retained_foreground_band_pixels": 314595,
+            "unit_rejected_outside_band": 117582,
+            "fraction_unit_rejected_in_band": 0.40236346539937484,
+            "fraction_band_foreground_retained": 0.7989551958309419
+          },
+          "relaxed_direction_plus_silhouette": {
+            "unit_rejected_in_band": 192206,
+            "foreground_band_pixels": 707603,
+            "retained_foreground_band_pixels": 515397,
+            "unit_rejected_outside_band": 4539,
+            "fraction_unit_rejected_in_band": 0.9769295280693283,
+            "fraction_band_foreground_retained": 0.7283702867285752
+          }
+        },
+        "0.5": {
+          "foreground_pixels": 1562014,
+          "unit_rejected_foreground_pixels": 152965,
+          "nonfinite_foreground_pixels": 0,
+          "zero_foreground_pixels": 1901,
+          "retained_foreground_pixels": 1409049,
+          "strict_gt_before_valid_intersection": {
+            "unit_rejected_in_band": 66770,
+            "foreground_band_pixels": 381365,
+            "retained_foreground_band_pixels": 314595,
+            "unit_rejected_outside_band": 86195,
+            "fraction_unit_rejected_in_band": 0.4365050828620926,
+            "fraction_band_foreground_retained": 0.8249183852739501
+          },
+          "relaxed_direction_plus_silhouette": {
+            "unit_rejected_in_band": 149288,
+            "foreground_band_pixels": 677642,
+            "retained_foreground_band_pixels": 528354,
+            "unit_rejected_outside_band": 3677,
+            "fraction_unit_rejected_in_band": 0.9759618213316772,
+            "fraction_band_foreground_retained": 0.7796948831388846
+          }
+        },
+        "0.99": {
+          "foreground_pixels": 1492008,
+          "unit_rejected_foreground_pixels": 109876,
+          "nonfinite_foreground_pixels": 0,
+          "zero_foreground_pixels": 0,
+          "retained_foreground_pixels": 1382132,
+          "strict_gt_before_valid_intersection": {
+            "unit_rejected_in_band": 54557,
+            "foreground_band_pixels": 363117,
+            "retained_foreground_band_pixels": 308560,
+            "unit_rejected_outside_band": 55319,
+            "fraction_unit_rejected_in_band": 0.4965324547671921,
+            "fraction_band_foreground_retained": 0.849753660665846
+          },
+          "relaxed_direction_plus_silhouette": {
+            "unit_rejected_in_band": 106869,
+            "foreground_band_pixels": 635835,
+            "retained_foreground_band_pixels": 528966,
+            "unit_rejected_outside_band": 3007,
+            "fraction_unit_rejected_in_band": 0.9726327860497288,
+            "fraction_band_foreground_retained": 0.8319233763476374
+          }
+        }
+      }
+    }
+  },
+  "classification_failures": 0,
+  "q_calibrated": false,
+  "scope": "64-asset pilot; pixel-pooled descriptive association only, no causal normal-map attribution; absent normalTexture does not exclude other shading effects",
+  "outside_band": "unit_rejected_outside_band under relaxed_direction_plus_silhouette; report alpha thresholds separately",
+  "training_mask_changed": false,
+  "asset_level_alpha_gt_099": {
+    "present": {
+      "assets": 24,
+      "nonempty_foreground_assets": 24,
+      "outside_per_foreground_median": 9.235264357031366e-05,
+      "outside_per_foreground_q75": 0.0044331117907561255,
+      "largest_asset_share_of_group_outside_pixels": 0.418616816678206
+    },
+    "not_declared_in_gltf": {
+      "assets": 40,
+      "nonempty_foreground_assets": 40,
+      "outside_per_foreground_median": 7.608926753133477e-05,
+      "outside_per_foreground_q75": 0.0007319442346178805,
+      "largest_asset_share_of_group_outside_pixels": 0.47156634519454604
+    }
+  }
+}

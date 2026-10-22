@@ -27,6 +27,14 @@ def test_patch_center_registration_matches_actual_strided_convolution_anchors():
         torch.testing.assert_close(result[0,1],centers[:,None].expand(-1,size))
 
 
+def test_explicit_patch14_padding_preserves_original_pixel_coordinates():
+    coords=torch.tensor([6.5,20.5,34.5])
+    y,x=torch.meshgrid(coords,coords,indexing='ij');feature=torch.stack([x,y])[None]
+    result=patch_map_at_unet_level(feature,(32,32),1,(16,16),(42,42))
+    expected=(torch.arange(16)*2).float().clamp(6.5,34.5)
+    torch.testing.assert_close(result[0,0],expected[None].expand(16,-1))
+
+
 def test_features_see_exact_augmented_rgb_and_encoder_stays_frozen_in_eval():
     torch.manual_seed(9);encoder=MockPatchEncoder();wrapped=FrozenPatchEncoder(encoder)
     wrapped.train();assert not encoder.training and not encoder.dropout.training

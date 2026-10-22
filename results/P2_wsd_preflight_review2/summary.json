@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "created_at": "2026-10-22T14:35:41+08:00",
+  "methods": [
+    "R",
+    "V",
+    "Xv",
+    "Xn"
+  ],
+  "updates_per_method": 3,
+  "trainer_sha256": "343d5869fbc02dff7ea3e73f78b966672e834f514925f5a0d532edba6662060c",
+  "formal_grid_locked": true,
+  "scope": "current-code numerical preflight only, not method rankings or convergence evidence"
+}

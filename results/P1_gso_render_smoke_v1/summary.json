@@ -1,0 +1,23 @@
+{
+  "status": "completed",
+  "created_at": "2026-10-22T14:22:12+08:00",
+  "assets": 2,
+  "images": 8,
+  "assets_by_split": {
+    "val": 1,
+    "test": 1
+  },
+  "asset_overlap": 0,
+  "product_family_overlap": 0,
+  "normal_source": "independent BVH face geometry at exact pixel centers; fixed GL->CV basis and orientation inversion",
+  "camera": "controlled 256 square; FOV .691111; K/poses saved per view; object normalized to unit maximum extent",
+  "depth": "camera-z in normalized scene units, source scale retained; not an unqualified metric-depth claim",
+  "mask": "ray hits, no alpha or near-unit filtering",
+  "training_allowed": false,
+  "model_test_scores_computed": false,
+  "max_normal_unit_error": 5.960464477539063e-08,
+  "render_device": "GPU",
+  "max_ray_reprojection_error_pixels": 4.3962930874386075e-05,
+  "cross_source_near_duplicate_exhaustive_check": false,
+  "scope": "rendering readiness; cross-source duplicate limitations remain those of the intake report"
+}

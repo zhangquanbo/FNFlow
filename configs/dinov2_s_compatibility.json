@@ -1,0 +1,15 @@
+{
+  "architecture": "dinov2_vits14",
+  "source_commit": "e1277af2ba9496fbadf7aec6eba56e8d882d1e35",
+  "source_directory": "runtime/dinov2/dinov2-e1277af2ba9496fbadf7aec6eba56e8d882d1e35",
+  "weights": "runtime/dinov2/weights.pth",
+  "weights_url": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vits14/dinov2_vits14_pretrain.pth",
+  "weights_sha256": "b938bf1bc15cd2ec0feacfe3a1bb553fe8ea9ca46a7e1d8d00217f29aef60cd9",
+  "source_archive_sha256": "209c4f04fb0d63a869f7ea5c18d61dc7d8196c88cb1cb4a53bf3b0607146685c",
+  "patch_size": 14,
+  "feature_dim": 384,
+  "input_size": 256,
+  "padding": "explicit right/bottom replicate to 266x266; retain original 256 pixel coordinates when sampling the 19x19 patch grid",
+  "license_reference": "https://github.com/facebookresearch/dinov2/tree/e1277af2ba9496fbadf7aec6eba56e8d882d1e35#license",
+  "scope": "real pretrained forward compatibility only; no optimization, no benchmark scoring, not enabled in parameterization comparisons"
+}

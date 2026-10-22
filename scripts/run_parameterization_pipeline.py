@@ -1,5 +1,5 @@
-"""Compatibility entry point: v2 diagnostics replace the old automatic formal grid."""
-from run_convergence_pipeline import main
+"""Compatibility entry point: preregistered review2 WSD diagnostics, formal grid locked."""
+from run_wsd_pipeline import main
 
 if __name__ == '__main__':
     main()
