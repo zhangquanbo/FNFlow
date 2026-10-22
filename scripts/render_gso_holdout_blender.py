@@ -11,7 +11,8 @@ from mathutils import Matrix,Vector
 from mathutils.bvhtree import BVHTree
 from PIL import Image
 from src.research_io import write_json,sha256,now
-from src.mesh_normal_gt import geometry_vertex_normals,interpolated_geometry_normals,gt_angular_gap
+from src.mesh_normal_gt import geometry_vertex_normals,crease_corner_normals,interpolated_geometry_normals,gt_angular_gap
+from src.gso_boundary_protocol import gt_boundary_report,aggregate_boundary_reports
 
 
 def camera_pose(azimuth,elevation=30.,radius=3.):
@@ -21,7 +22,7 @@ def camera_pose(azimuth,elevation=30.,radius=3.):
     return pose
 
 
-def render_asset(asset,target,device):
+def render_asset(asset,target,device,protocol):
     folder=target/asset['split']/asset['name'];folder.mkdir(parents=True,exist_ok=True)
     receipt=folder/'receipt_private.json'
     if receipt.exists():
@@ -51,6 +52,7 @@ def render_asset(asset,target,device):
     vertices=np.array([tuple(v.co) for v in obj.data.vertices],np.float64)
     triangles=np.array([tuple(t.vertices) for t in obj.data.loop_triangles],np.int64)
     vertex_normals=geometry_vertex_normals(vertices,triangles)
+    corner_normals=crease_corner_normals(vertices,triangles,protocol['crease_threshold_degrees'])
     tree=BVHTree.FromPolygons(vertices.tolist(),triangles.tolist(),all_triangles=True)
     scene=bpy.context.scene;scene.render.engine='CYCLES';scene.cycles.samples=32;scene.cycles.use_denoising=False
     scene.render.resolution_x=scene.render.resolution_y=256;scene.render.resolution_percentage=100
@@ -102,10 +104,19 @@ def render_asset(asset,target,device):
         smooth=interpolated_geometry_normals(vertices,triangles,vertex_normals,face_ids[valid],hit_points[valid])
         smooth=smooth@normal_rotation.T;smooth/=np.linalg.norm(smooth,axis=-1,keepdims=True)
         normal_smooth[valid]=smooth.astype(np.float32);normal=normal_smooth
+        diagnostic=np.zeros_like(normal)
+        crease=interpolated_geometry_normals(vertices,triangles,corner_normals,face_ids[valid],hit_points[valid])
+        crease=crease@normal_rotation.T;crease/=np.linalg.norm(crease,axis=-1,keepdims=True)
+        diagnostic[valid]=crease.astype(np.float32)
+        boundary_report,bands,pair_maps=gt_boundary_report(normal_face,normal_smooth,diagnostic,valid,
+            protocol['boundary_angle_degrees'],protocol['boundary_dilation_radius_pixels'])
         gap=gt_angular_gap(normal_face,normal_smooth,valid)
         gap_map=np.zeros((256,256),np.float32);gap_map[valid]=gap.astype(np.float32)
         error=float(np.abs(np.linalg.norm(normal[valid],axis=-1)-1).max())
         np.savez_compressed(path,rgb=rgb,normal=normal,normal_smooth=normal_smooth,normal_face=normal_face,
+                            normal_crease45_diagnostic=diagnostic,boundary_primary_angular=bands['primary_angular'],
+                            boundary_crease45_angular_plus_silhouette=bands['crease45_angular_plus_silhouette'],
+                            gt_gap_face_crease45_deg=pair_maps['face_vs_crease45'],gt_gap_smooth_crease45_deg=pair_maps['smooth_vs_crease45'],
                             gt_definition_gap_deg=gap_map,valid=valid,depth=depth,K=k.astype(np.float32),K_valid=np.array(True),
                             projection_3x3=k.astype(np.float32),projection_valid=np.array(True),camera_to_world=pose.astype(np.float32))
         records.append({'scene':asset['name'],'family':asset['family'],'split':asset['split'],'path':str(path),
@@ -113,6 +124,7 @@ def render_asset(asset,target,device):
             'npz_sha256':sha256(path),'valid_pixels':int(valid.sum()),'max_unit_error':error,'scale_from_source':scale,
             'gt_gap_mean_deg':float(gap.mean()),'gt_gap_median_deg':float(np.median(gap)),
             'gt_gap_p90_deg':float(np.quantile(gap,.9)),'gt_gap_sum_deg':float(gap.sum()),
+            'boundary_gt_report':boundary_report,'crease45_max_unit_error':float(np.abs(np.linalg.norm(diagnostic[valid],axis=-1)-1).max()),
             'positive_ray_dot_fraction':float(((normal*cv).sum(-1)[valid]>0).mean()),'render_device':device,
             'ray_hit_reprojection_max_error_pixels':projection_error})
     write_json(receipt,{'records':records,'mesh_sha256':asset['mesh_sha256'],'renderer_sha256':sha256(__file__),
@@ -128,13 +140,17 @@ def main():
     registration=ROOT/'provenance/data_quality_review3_preregistration.json'
     rule=ROOT/'configs/precurve_data_quality_review3.json'
     if json.loads(registration.read_text())['rule_sha256']!=sha256(rule):raise RuntimeError('GSO dual-GT registration changed')
-    generation=hashlib.sha256((sha256(__file__)+sha256(ROOT/'src/mesh_normal_gt.py')).encode()).hexdigest()[:16]
+    protocol_path=ROOT/'configs/gso_boundary_material_review4.json';protocol=json.loads(protocol_path.read_text())
+    prereg=json.loads((ROOT/'provenance/boundary_material_review4_preregistration.json').read_text())
+    if prereg['rule_sha256']!=sha256(protocol_path):raise RuntimeError('Boundary/material diagnostic registration changed')
+    generation=hashlib.sha256((sha256(__file__)+sha256(ROOT/'src/mesh_normal_gt.py')+
+        sha256(ROOT/'src/gso_boundary_protocol.py')+sha256(protocol_path)).encode()).hexdigest()[:16]
     target=ROOT/('data/gso_holdout_smoke_dual_v2' if args.limit else 'data/gso_holdout_dual_v2')/generation;target.mkdir(parents=True,exist_ok=True)
     out=ROOT/('outputs/P1_gso_render_smoke_dual_v2' if args.limit else 'outputs/P1_gso_render_dual_v2')
     records=[]
     try:
         for i,asset in enumerate(assets):
-            records.extend(render_asset(asset,target,args.device))
+            records.extend(render_asset(asset,target,args.device,protocol))
             write_json(out/'status.json',{'status':'rendering','completed_assets':i+1,'target_assets':len(assets),'updated_at':now()})
         groups={s:{r['scene'] for r in records if r['split']==s} for s in ['val','test']}
         assert not groups['val']&groups['test']
@@ -147,6 +163,11 @@ def main():
             'main_gt_registered_before_model_scores':True,'rule_sha256':sha256(rule),'renderer_sha256':sha256(__file__),
             'gt_code_sha256':sha256(ROOT/'src/mesh_normal_gt.py'),'cache_generation':generation,
             'normal_fields':['normal (main alias)','normal_smooth','normal_face'],'same_mask_for_both_gt':True,
+            'diagnostic_normal_field':'normal_crease45_diagnostic; boundary sensitivity only, main GT unchanged',
+            'diagnostic_rule_sha256':sha256(protocol_path),'boundary_code_sha256':sha256(ROOT/'src/gso_boundary_protocol.py'),
+            'boundary_gt_disagreement':aggregate_boundary_reports(records),
+            'boundary_definitions':protocol['common_region_definitions'],
+            'crease45_max_unit_error':max(r['crease45_max_unit_error'] for r in records),
             'gt_gap_image_macro_mean_deg':float(np.mean([r['gt_gap_mean_deg'] for r in records])),
             'gt_gap_asset_macro_mean_deg':float(np.mean([np.mean([r['gt_gap_mean_deg'] for r in records if r['scene']==a['name']]) for a in assets])),
             'gt_gap_pixel_pooled_mean_deg':sum(r['gt_gap_sum_deg'] for r in records)/sum(r['valid_pixels'] for r in records),

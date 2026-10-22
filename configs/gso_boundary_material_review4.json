@@ -1,0 +1,22 @@
+{
+  "version": "prescore_boundary_material_review4",
+  "primary_gt_unchanged": "area-weighted shared-vertex smooth geometry normals",
+  "secondary_gt_unchanged": "face geometry at identical ray hits",
+  "diagnostic_gt": "area-weighted face-corner geometry normals; edge-connected smoothing fans split at dihedral >45 degrees; never smooth across boundary/nonmanifold edges; no material/custom normals",
+  "crease_threshold_degrees": 45.0,
+  "boundary_angle_degrees": 20.0,
+  "boundary_dilation_radius_pixels": 2,
+  "common_region_definitions": [
+    "primary smooth GT adjacent-valid angular jumps >20 degrees, radius-2 dilation, intersect identical ray-hit mask; matches existing angular metric without silhouette",
+    "diagnostic crease45 GT angular jumps >20 degrees plus silhouette, radius-2 dilation, intersect identical ray-hit mask"
+  ],
+  "comparisons": ["face_vs_smooth", "face_vs_crease45", "smooth_vs_crease45"],
+  "region_reporting": "inside/outside each fixed common band; count, coverage, angle sum and mean; image/asset/pixel aggregates; empty regions null with explicit counts",
+  "diagnostic_scoring_scope": "crease45 is a boundary sensitivity definition, not a replacement main GT or an extra global model ranking",
+  "arb_material_flag": "any declared glTF material alphaMode=BLEND OR KHR_materials_transmission.transmissionFactor>0; material declarations need not equal actual rendered visibility",
+  "arb_audit_scope": "all 2000 assets in the existing fixed plan, not only downloaded assets; classification failures remain unknown, never count as clean",
+  "arb_validation_sensitivity": "same all-asset predictions/noise/masks; additionally aggregate only metadata-unflagged validation assets; report asset and image denominators and boundary metrics; fixed partition independent of model scores",
+  "training_cache_masks_split_and_wsd_rules_changed": false,
+  "formal_quality_rule": "propose a separate asset-level rule after the complete metadata audit; do not silently apply to frozen convergence runs or auto-unlock the formal grid",
+  "formal_grid_locked": true
+}

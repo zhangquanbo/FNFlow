@@ -14,6 +14,7 @@ from src.noise_protocol import image_noise_seed,mae_seed_statistics
 from src.parameterization import parameterization_loss,one_step_endpoint
 from src.research_io import ROOT,output_path,write_json,sha256,now
 from src.training_diagnostics import TimeLossBins,learning_rate_factor,resume_segment_action
+from src.material_protocol import validation_material_sensitivity
 
 
 def require_formal_budget(cfg,phase):
@@ -51,7 +52,7 @@ def boundary_mask(gt,mask):
 
 
 @torch.no_grad()
-def evaluate(model,mode,domains,seeds,limit,device):
+def evaluate(model,mode,domains,seeds,limit,device,material_audit=None):
     model.eval();result={};private={}
     for name,all_records in domains.items():
         records=sorted(all_records,key=lambda r:hashlib.sha256((name+'/'+Path(r['path']).name).encode()).digest())
@@ -99,6 +100,8 @@ def evaluate(model,mode,domains,seeds,limit,device):
             boundary_mae_deg=float(np.mean(available)) if available else None,
             boundary_definition='GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask',
             boundary_images=len(available))
+        if name=='arb' and material_audit is not None and all(r.get('split')=='val' for r in records):
+            stats['without_blend_or_transmission_sensitivity']=validation_material_sensitivity(records,errors,boundary_errors,dispersion,material_audit)
         if name=='arb' and all(r.get('split')=='val' and Path(r['path']).is_relative_to(ROOT/'data/arb_mixed_formal_v1') for r in records):
             audit=ROOT/'outputs/P1_arb_boundary_audit_formal_v1/summary.json'
             if audit.exists():

@@ -1,0 +1,11 @@
+{
+  "status": "proposal_only_not_runnable",
+  "formal_budget_approved": false,
+  "formal_steps": null,
+  "training_asset_rule_proposal": "exclude assets with any declared alphaMode=BLEND OR positive KHR_materials_transmission.transmissionFactor",
+  "requires": ["complete 2000-asset metadata census and explicit unknown/failure counts", "record exact before/after train and validation asset/image counts", "separate derived manifests and signatures", "same filtering and update budget for all compared methods", "separate formal configuration after WSD/clipping review"],
+  "current_convergence_training_changed": false,
+  "current_validation_primary_metric_changed": false,
+  "mixed_domain_sampling": "retain equal source-domain sampling; do not silently replace excluded assets or change exposure",
+  "automatically_approve_or_launch_formal_grid": false
+}

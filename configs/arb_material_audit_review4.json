@@ -1,0 +1,9 @@
+{
+  "source_dataset": "allenai/objaverse",
+  "source_revision": "556637099bf4fa79ea7b239d0d9c328b8a2e9ac8",
+  "workers": 4,
+  "maximum_json_bytes_per_asset": 8388608,
+  "selection": "existing fixed_formal_partition, all 2000 assets; no new asset selection",
+  "flag": "any declared material alphaMode=BLEND or KHR_materials_transmission.transmissionFactor>0",
+  "training_filter_enabled": false
+}

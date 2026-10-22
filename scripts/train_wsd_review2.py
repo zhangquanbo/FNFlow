@@ -13,6 +13,7 @@ from src.parameterization import parameterization_loss
 from src.training_diagnostics import TimeLossBins,resume_segment_action
 from src.wsd_protocol import wsd_factor
 from src.quality_gate import require_precurve_quality_review
+from src.material_protocol import load_material_audit
 from src.research_io import ROOT,write_json,sha256,now
 
 
@@ -29,6 +30,7 @@ def main():
     if cfg['ray_condition'] or cfg['dino_condition'] or cfg['cfg'] or cfg['formal_budget_approved']:raise RuntimeError('WSD diagnostics input/gate changed')
     root=ROOT/cfg['output_root'];phase=args.phase;fork=args.fork_step if phase=='cooldown' else None
     quality_hash=require_precurve_quality_review(ROOT) if phase!='smoke' else None
+    material_audit,material_hash=load_material_audit(ROOT) if phase!='smoke' else (None,None)
     if fork is not None and fork not in [*rule['initial_fork_steps'],50000]:raise RuntimeError('Unregistered cooldown fork')
     if phase=='cooldown' and fork is None:raise RuntimeError('Missing fork checkpoint')
     end=fork+rule['cooldown_updates'] if fork else args.stable_limit if phase=='stable' else cfg['clip_diagnostic_steps'] if phase=='clip_diagnostic' else 3
@@ -50,6 +52,7 @@ def main():
         'manifests_sha256':[sha256(x) for x in manifests],'method':args.method,'phase':phase,
         'training_seed':1247,'condition_dropout':0,'fork_step':fork,
         'data_quality_approval_sha256':quality_hash,
+        'validation_material_sidecar_sha256':material_hash,'material_protocol_sha256':sha256(ROOT/'src/material_protocol.py'),
         'initial_stable_limit':rule['initial_stable_endpoint'],'maximum_stable_limit':rule['extended_stable_endpoint'],
         'cooldown_updates':rule['cooldown_updates']}
     if probes:signature['training_probe_sha256']=sha256(root/'training_probe_private.json')
@@ -78,7 +81,8 @@ def main():
         if source==parent:
             if state['step']!=fork:raise RuntimeError('Parent step mismatch')
             shared=['config_sha256','rule_sha256','code_sha256','shared_evaluator_sha256','schedule_sha256',
-                    'target_sha256','model_sha256','diagnostics_sha256','manifests_sha256','training_probe_sha256','data_quality_approval_sha256','method']
+                    'target_sha256','model_sha256','diagnostics_sha256','manifests_sha256','training_probe_sha256','data_quality_approval_sha256',
+                    'validation_material_sidecar_sha256','material_protocol_sha256','method']
             if any(state['signature'].get(k)!=signature.get(k) for k in shared):
                 raise RuntimeError('Parent code/data/probe/config signature mismatch')
         model.load_state_dict(state['model']);optimizer.load_state_dict(state['optimizer'])
@@ -136,15 +140,15 @@ def main():
                 if step%10==0 or step==end or step==1:
                     write_json(out/'progress.json',{'status':'running','update':step,'end_update':end,'updated_at':now()})
                 if phase=='stable' and step%rule['stable_evaluation_interval']==0:
-                    scores,_=evaluate(model,args.method,domains,cfg['curve_inference_seeds'],0,'cuda')
-                    probe,_=evaluate(model,args.method,probes,cfg['curve_inference_seeds'],0,'cuda')
+                    scores,_=evaluate(model,args.method,domains,cfg['curve_inference_seeds'],0,'cuda',material_audit)
+                    probe,_=evaluate(model,args.method,probes,cfg['curve_inference_seeds'],0,'cuda',material_audit)
                     curve.append({'update':step,'validation':scores,'training_probe':probe})
                     write_json(out/'learning_curve.json',{'status':'running','points':curve})
                 if step%250==0 or step==end:save(resume)
                 if phase=='stable' and step in [*rule['initial_fork_steps'],50000]:save(out/f'fork_{step:06d}_local.pth')
         limit=cfg['pilot_validation_images_per_domain'] if phase=='smoke' else 0
-        scores,details=evaluate(model,args.method,domains,cfg['curve_inference_seeds'],limit,'cuda')
-        probescores,_=evaluate(model,args.method,probes,cfg['curve_inference_seeds'],0,'cuda') if probes else ({},{})
+        scores,details=evaluate(model,args.method,domains,cfg['curve_inference_seeds'],limit,'cuda',material_audit)
+        probescores,_=evaluate(model,args.method,probes,cfg['curve_inference_seeds'],0,'cuda',material_audit) if probes else ({},{})
         write_json(out/'per_image_private.json',details)
         result={'status':'completed','created_at':now(),'phase':phase,'method':args.method,'last_update':completed,
             'stable_fork_step':fork,'branch_optimizer_updates':completed-fork if fork else None,

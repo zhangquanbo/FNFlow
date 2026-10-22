@@ -30,11 +30,14 @@ def main():
     try:
         for method in cfg['methods']:train('smoke',method)
         ready=ROOT/'outputs/P1_arb_acquisition_v1/formal_ready.json'
-        while not ready.exists():
+        material_ready=ROOT/'outputs/P1_arb_materials_review4/validation_ready.json'
+        while not ready.exists() or not material_ready.exists():
+            if not material_ready.exists():call('prepare_arb_validation_material_sidecar.py')
             state=json.loads((ROOT/'outputs/P1_arb_acquisition_v1/status.json').read_text())
             if state.get('status')=='failed':raise RuntimeError('Object acquisition failed; preserve error record')
-            status('waiting_for_data',phase='wsd_convergence');time.sleep(20)
+            status('waiting_for_data',phase='wsd_convergence',arb_ready=ready.exists(),validation_material_ready=material_ready.exists());time.sleep(20)
         status('preparing_data',phase='arb_full')
+        call('summarize_validation_materials_review4.py')
         call('prepare_arb_training.py','--phase','formal');call('audit_arb_boundary_mask.py','--phase','formal')
         call('prepare_training_probe.py','--config',CONFIG)
         train('clip_diagnostic','Xv')

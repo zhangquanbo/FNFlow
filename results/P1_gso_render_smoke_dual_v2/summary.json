@@ -1,6 +1,6 @@
 {
   "status": "completed",
-  "created_at": "2026-10-22T15:07:50+08:00",
+  "created_at": "2026-10-22T15:46:19+08:00",
   "assets": 2,
   "images": 8,
   "assets_by_split": {
@@ -12,15 +12,161 @@
   "normal_source": "main: barycentric area-weighted vertex geometry, no materials; secondary: ray-hit face normal at identical pixel centers",
   "main_gt_registered_before_model_scores": true,
   "rule_sha256": "f7930ad9709a5b6cda51609e1caa95b38131b4df5bf78047c4b32cc8b4ca05a9",
-  "renderer_sha256": "f7f29ced1fda3e6fd2a99c420ed121a6e0ac65cb252def95599524f428e26c71",
-  "gt_code_sha256": "7ce84f8c4ccb40da7334c34785f1f2fef276e82fa132f2ed7348d3262d65a5e6",
-  "cache_generation": "98f24a77f765cb36",
+  "renderer_sha256": "617a7fbeecc695639e8bfefe5439567bad495a680a3138d274ab16891f4a0a16",
+  "gt_code_sha256": "918991e5465b67737538e855a7e4cf666354720e785a2a13e6ba8ff2fd2b7478",
+  "cache_generation": "aeab29a0e53e3179",
   "normal_fields": [
     "normal (main alias)",
     "normal_smooth",
     "normal_face"
   ],
   "same_mask_for_both_gt": true,
+  "diagnostic_normal_field": "normal_crease45_diagnostic; boundary sensitivity only, main GT unchanged",
+  "diagnostic_rule_sha256": "f781e5904a8504fbbce3e0a53c29fc51614f02e9a6a17e5828b262f8ac94e953",
+  "boundary_code_sha256": "6c14f33d86a827ff88246b20a99a4c837e39438f3a103121aa66dd7e04103943",
+  "boundary_gt_disagreement": {
+    "primary_angular": {
+      "inside_pixels": 20430,
+      "outside_pixels": 40919,
+      "valid_pixels": 61349,
+      "comparisons": {
+        "face_vs_smooth": {
+          "inside": {
+            "pixels": 20430,
+            "images_with_region": 8,
+            "images_without_region": 0,
+            "assets_with_region": 2,
+            "pixel_pooled_mean_deg": 6.812053204267785,
+            "image_macro_mean_deg": 6.795090470321961,
+            "asset_macro_mean_deg": 6.795090470321961
+          },
+          "outside": {
+            "pixels": 40919,
+            "images_with_region": 8,
+            "images_without_region": 0,
+            "assets_with_region": 2,
+            "pixel_pooled_mean_deg": 2.482451745209118,
+            "image_macro_mean_deg": 2.422721385568353,
+            "asset_macro_mean_deg": 2.422721385568353
+          }
+        },
+        "face_vs_crease45": {
+          "inside": {
+            "pixels": 20430,
+            "images_with_region": 8,
+            "images_without_region": 0,
+            "assets_with_region": 2,
+            "pixel_pooled_mean_deg": 6.192681518840438,
+            "image_macro_mean_deg": 6.086918778107375,
+            "asset_macro_mean_deg": 6.086918778107375
+          },
+          "outside": {
+            "pixels": 40919,
+            "images_with_region": 8,
+            "images_without_region": 0,
+            "assets_with_region": 2,
+            "pixel_pooled_mean_deg": 2.4683169757347847,
+            "image_macro_mean_deg": 2.406100907658646,
+            "asset_macro_mean_deg": 2.4061009076586464
+          }
+        },
+        "smooth_vs_crease45": {
+          "inside": {
+            "pixels": 20430,
+            "images_with_region": 8,
+            "images_without_region": 0,
+            "assets_with_region": 2,
+            "pixel_pooled_mean_deg": 1.031471182596736,
+            "image_macro_mean_deg": 1.158664799204463,
+            "asset_macro_mean_deg": 1.158664799204463
+          },
+          "outside": {
+            "pixels": 40919,
+            "images_with_region": 8,
+            "images_without_region": 0,
+            "assets_with_region": 2,
+            "pixel_pooled_mean_deg": 0.02607488480305178,
+            "image_macro_mean_deg": 0.026688555269690165,
+            "asset_macro_mean_deg": 0.026688555269690162
+          }
+        }
+      },
+      "inside_fraction": 0.3330127630442224
+    },
+    "crease45_angular_plus_silhouette": {
+      "inside_pixels": 23609,
+      "outside_pixels": 37740,
+      "valid_pixels": 61349,
+      "comparisons": {
+        "face_vs_smooth": {
+          "inside": {
+            "pixels": 23609,
+            "images_with_region": 8,
+            "images_without_region": 0,
+            "assets_with_region": 2,
+            "pixel_pooled_mean_deg": 6.373357645845503,
+            "image_macro_mean_deg": 6.321535181549052,
+            "asset_macro_mean_deg": 6.321535181549052
+          },
+          "outside": {
+            "pixels": 37740,
+            "images_with_region": 8,
+            "images_without_region": 0,
+            "assets_with_region": 2,
+            "pixel_pooled_mean_deg": 2.392185725083102,
+            "image_macro_mean_deg": 2.3692866439760296,
+            "asset_macro_mean_deg": 2.36928664397603
+          }
+        },
+        "face_vs_crease45": {
+          "inside": {
+            "pixels": 23609,
+            "images_with_region": 8,
+            "images_without_region": 0,
+            "assets_with_region": 2,
+            "pixel_pooled_mean_deg": 5.822016011817218,
+            "image_macro_mean_deg": 5.710704696599045,
+            "asset_macro_mean_deg": 5.710704696599045
+          },
+          "outside": {
+            "pixels": 37740,
+            "images_with_region": 8,
+            "images_without_region": 0,
+            "assets_with_region": 2,
+            "pixel_pooled_mean_deg": 2.386475085771307,
+            "image_macro_mean_deg": 2.3649641614381327,
+            "asset_macro_mean_deg": 2.3649641614381327
+          }
+        },
+        "smooth_vs_crease45": {
+          "inside": {
+            "pixels": 23609,
+            "images_with_region": 8,
+            "images_without_region": 0,
+            "assets_with_region": 2,
+            "pixel_pooled_mean_deg": 0.9204735788587572,
+            "image_macro_mean_deg": 1.006101431827577,
+            "asset_macro_mean_deg": 1.006101431827577
+          },
+          "outside": {
+            "pixels": 37740,
+            "images_with_region": 8,
+            "images_without_region": 0,
+            "assets_with_region": 2,
+            "pixel_pooled_mean_deg": 0.010822833821700907,
+            "image_macro_mean_deg": 0.00844846918095667,
+            "asset_macro_mean_deg": 0.00844846918095667
+          }
+        }
+      },
+      "inside_fraction": 0.3848310485908491
+    }
+  },
+  "boundary_definitions": [
+    "primary smooth GT adjacent-valid angular jumps >20 degrees, radius-2 dilation, intersect identical ray-hit mask; matches existing angular metric without silhouette",
+    "diagnostic crease45 GT angular jumps >20 degrees plus silhouette, radius-2 dilation, intersect identical ray-hit mask"
+  ],
+  "crease45_max_unit_error": 5.960464477539063e-08,
   "gt_gap_image_macro_mean_deg": 4.048039378746147,
   "gt_gap_asset_macro_mean_deg": 4.048039378746147,
   "gt_gap_pixel_pooled_mean_deg": 3.9242642896411803,

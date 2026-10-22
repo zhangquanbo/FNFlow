@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "created_at": "2026-10-22T15:49:15+08:00",
+  "scope": "all 200 planned validation assets only; not the 2000-asset population",
+  "classified_assets": 200,
+  "flagged_assets": 30,
+  "flagged_fraction": 0.15,
+  "blend_assets": 30,
+  "positive_transmission_assets": 4,
+  "referenced_material_flagged_assets": 30,
+  "unknown_assets": 0,
+  "material_sidecar_sha256": "b1541a150da34725d98d7e8b54b59322d2ac90528a2ddb400d80f32b4c0161e4",
+  "models_used": false,
+  "training_data_changed": false,
+  "flag": "any declared alphaMode=BLEND OR positive KHR_materials_transmission factor"
+}

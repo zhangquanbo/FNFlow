@@ -1,0 +1,11 @@
+{
+  "status": "completed",
+  "registered_at": "2026-10-22T07:35:32.215374+00:00",
+  "rule_sha256": "f781e5904a8504fbbce3e0a53c29fc51614f02e9a6a17e5828b262f8ac94e953",
+  "prior_primary_gt_rule_sha256": "f7930ad9709a5b6cda51609e1caa95b38131b4df5bf78047c4b32cc8b4ca05a9",
+  "wsd_rule_sha256": "93b6c18030a340f0b3eb63a59075e2ae361ca7d96dd72e19ac08f7705c96f1cb",
+  "existing_parameterization_curve_files": [],
+  "gso_model_scores_computed": false,
+  "main_gt_and_frozen_training_unchanged": true,
+  "formal_grid_locked": true
+}
