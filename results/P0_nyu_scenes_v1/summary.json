@@ -1,0 +1,17 @@
+{
+  "started_at": "2026-10-22T10:35:36+08:00",
+  "status": "completed",
+  "source_url": "https://horatio.cs.nyu.edu/mit/silberman/nyu_depth_v2/nyu_depth_v2_labeled.mat",
+  "source_bytes": 2972037809,
+  "whole_source_hash_verified": false,
+  "scope": "scene metadata only; no benchmark predictions or metrics",
+  "completed_at": "2026-10-22T10:35:55+08:00",
+  "official_num_images": 1449,
+  "extracted_images": 1449,
+  "scenes": 464,
+  "rooms": 464,
+  "extracted_mapping_sha256": "5f075d48cc61435f94a5aaf5993a9d4da60692f175db4e60c5373b3dde748b4b",
+  "dsine_correspondence_verified": false,
+  "network_bytes": 786432,
+  "range_requests": 12
+}

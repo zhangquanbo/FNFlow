@@ -131,9 +131,18 @@ def render():
             lines.append(f"- 同一 raw 预测改用浮点单位方向后，MAE 变化为 {delta:+.4f}°；不涉及重训。")
         lines.extend(["- 仅解释已完成的表格行；未完成项不当作结果。",
                       "- 旧 checkpoint 之间的差距仍包含训练变异，不能仅靠此表推出 dropout 的独立因果收益。", ""])
-    lines.extend(["## 下一步", "",
-                  "先完成已启动的历史诊断并核对兼容误差；再做数据坐标与来源清点、通用训练/验证划分，"
-                  "随后运行 R/V/Xv/Xn 参数化对照。当前 masked 损失是基础组件，尚未用于新训练。", "",
+    lines.extend(["## 通用数据与收尾诊断入口", "",
+                  "- [人脸收尾诊断]($FNFLOW_ROOT/docs/人脸收尾诊断结果.md)：方向平均、匹配 CFG 和身份重采样。",
+                  "- [通用数据准备]($FNFLOW_ROOT/docs/通用数据核查与准备.md)：Hypersim 转换和逐样本验收。",
+                  "- [数据补充核查]($FNFLOW_ROOT/docs/数据补充核查_2026-10-22.md)：NYUv2 映射、RGB 差异、Arb 小样本和使用门槛。",
+                  "- `src/cluster_bootstrap.py`、`scripts/run_face_supplements.py`：人脸配对补测。",
+                  "- `src/data_contract.py`、`src/general_dataset.py`、`scripts/check_prepared_data.py`：数据契约与验收。",
+                  "- `scripts/prepare_hypersim_pilot.py`、`scripts/audit_general_data.py`、`scripts/index_object_benchmark.py`：来源转换和核查。",
+                  "- `src/http_range.py`、`scripts/sample_arb_objaverse.py`、`scripts/audit_arb_protocol.py`：限量下载和物体样本核查。",
+                  "- `scripts/fetch_nyu_scene_metadata.py`、`scripts/lock_nyu_validation.py`、`scripts/check_nyu_rgb_correspondence.py`：真实验证身份及对应检查。", "",
+                  "## 下一步", "",
+                  "先闭合通用数据的坐标、标签语义、内参与验证身份协议，按 configs/general_data_protocol.json 的就绪门槛"
+                  "决定何时进入 R/V/Xv/Xn 对照。人脸诊断在收尾文档中汇总；当前没有新训练。", "",
                   "脚本由固定配置启动；每完成一个配方写入 JSON/逐图 CSV 并刷新此文档。"
                   "进程失败会记录错误，重新运行可跳过已经验证签名一致的结果。", ""])
     target = output_path(ROOT / "docs/代码与实验记录.md")

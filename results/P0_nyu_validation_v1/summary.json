@@ -1,0 +1,38 @@
+{
+  "status": "completed",
+  "created_at": "2026-10-22T10:37:42+08:00",
+  "official_split_url": "https://horatio.cs.nyu.edu/mit/silberman/indoor_seg_sup/splits.mat",
+  "official_split_sha256": "6e081404491a8bfba2f066beaa9713ef6046f9007aa5f799f2a350506a580cee",
+  "source_scene_mapping_sha256": "b8e387017052fa8ea894c76354976911b4838310e3c91cabc9a7645436c04936",
+  "partitions": {
+    "validation": {
+      "images": 795,
+      "scenes": 249,
+      "rooms": 249,
+      "official_indices_match": true,
+      "dsine_split_list_matches": true
+    },
+    "reserved_test": {
+      "images": 654,
+      "scenes": 215,
+      "rooms": 215,
+      "official_indices_match": true,
+      "dsine_split_list_matches": true
+    }
+  },
+  "room_overlap_count": 0,
+  "training_images": 0,
+  "normal_source": "GeoNet depth-derived packaged labels, not direct geometry",
+  "scope": "metadata and pair existence checked; label coordinate/decode protocol still requires the preparation step",
+  "pixel_correspondence_check": {
+    "num_images": 3,
+    "all_exact_match": false,
+    "scope": "three preselected training-partition RGB arrays; test image pixels were not requested",
+    "interpretation": "full official split index equality holds; packaged RGB preprocessing differs and has not been identified; not claimed byte-identical"
+  },
+  "preparation_ready": false,
+  "remaining_gates": [
+    "identify packaged RGB preprocessing and its relation to normal/K before preparing the evaluation cache"
+  ],
+  "metadata_mapping_verified": true
+}

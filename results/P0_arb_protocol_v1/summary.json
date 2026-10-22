@@ -1,0 +1,37 @@
+{
+  "status": "completed",
+  "created_at": "2026-10-22T10:43:13+08:00",
+  "revision": "329f4fc199498264390df36104a3326e8a30c325",
+  "purpose": "protocol audit only; no model training or metric evaluation",
+  "curated_archive_count": 160,
+  "curated_archive_bytes": 1603421896923,
+  "archive_members": 66052,
+  "assets_in_inspected_archive": 537,
+  "sampled_assets": 3,
+  "sampled_geometry_views": 6,
+  "sampled_rgb_images": 12,
+  "downloaded_sample_bytes": 6974235,
+  "range_network_bytes": 15660535,
+  "rgb_mode_counts": {
+    "RGBA": 12
+  },
+  "explicit_depth_files_in_sample": 0,
+  "explicit_mask_files_in_sample": 0,
+  "alpha_masks_available": true,
+  "minimum_two_light_opaque_mask_iou": 0.9593527899591713,
+  "explicit_intrinsics_assets": 0,
+  "upstream_license_counts": {
+    "by": 3
+  },
+  "all_sample_licenses_found": true,
+  "data_card_license_tag": "mit; retain separate per-asset upstream metadata and attribution",
+  "normal_decode": "OpenCV native channels * 2 - 1, then (-x,+y,+z), equivalent to IDArb loader; no GT-selected transform",
+  "normal_semantics": "Cycles normal pass; material Normal links are retained in the rendering script. Do not call these verified pure geometry normals.",
+  "training_ready": false,
+  "remaining_gates": [
+    "verify or recover exact intrinsics",
+    "decide shading-normal versus geometry-normal supervision and verify with a controlled render",
+    "scale acquisition across multiple archives and split/deduplicate by asset before choosing views"
+  ],
+  "render_script_sha256": "7f0d1c499f2bbd418ce27cf416e8bfbcbe9120d458194b588daa46f561f878bd"
+}

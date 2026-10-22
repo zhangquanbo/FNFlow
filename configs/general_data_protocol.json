@@ -8,11 +8,11 @@
   "sources": {
     "hypersim_protocol": {"prepared_root": "data/hypersim_protocol_v1", "role": "loader and geometry protocol checks", "train_images": 120, "validation_images": 20},
     "hypersim_trainval": {"prepared_root": "data/hypersim_trainval_v1", "role": "synthetic indoor training/validation", "status": "prepared and all samples checked", "train_images": 5736, "validation_images": 700, "train_scenes": 30, "validation_scenes": 5},
-    "nyuv2_train": {"role": "real indoor training and scene holdout", "status": "blocked pending authoritative scene mapping", "available_images": 795},
+    "nyuv2_train": {"role": "real indoor validation only", "status": "official scene mapping and split indices verified; RGB preprocessing correspondence still under investigation", "available_images": 795, "rooms": 249, "training_allowed": false},
     "nyuv2_test": {"role": "reserved benchmark test", "available_images": 654, "training_allowed": false},
     "scannet_dsine": {"role": "reserved benchmark test", "available_images": 300, "training_allowed": false},
     "olatverse_val": {"role": "reserved object evaluation", "assets": 42, "geometry_views": 210, "appearance_images": 840, "training_allowed": false, "metric_protocol_ready": false},
-    "object_training": {"role": "independent rendered training assets", "status": "not acquired or identified"}
+    "object_training": {"role": "independent rendered training assets", "candidate": "Arb-Objaverse curated data", "revision": "329f4fc199498264390df36104a3326e8a30c325", "status": "3-asset protocol sample acquired; not training ready", "target_assets": 2000, "target_rgb_images": 6000, "explicit_intrinsics_in_sample": false, "normal_semantics": "Cycles shading normal pass; pure geometry equivalence unverified"}
   },
-  "remaining_gates": ["authoritative real-indoor scene split", "training object assets and render protocol", "cross-source orientation and preprocessing checks"]
+  "remaining_gates": ["NYUv2 packaged RGB/normal/K preprocessing correspondence", "Arb exact intrinsics and shading/geometry normal contract", "multi-archive asset selection and deduplication", "cross-source orientation and preprocessing checks"]
 }

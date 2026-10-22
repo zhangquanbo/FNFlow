@@ -100,7 +100,8 @@ def main():
     text_file("reproducibility/baseline_training_header.txt", scrub("\n".join(header)) + "\n")
     for run in ["D1_full", "P0_D1_D5_pilot", "D2_D3_full_multiseed", "D3_full_imagewise_noise_v1",
                 "D4_D6_face_supplements_v1", "P0_general_data_v1", "P0_prepared_hypersim_v1",
-                "P0_prepared_hypersim_full_v1", "P0_object_benchmark_v1"]:
+                "P0_prepared_hypersim_full_v1", "P0_object_benchmark_v1", "P0_arb_protocol_v1",
+                "P0_nyu_scenes_v1", "P0_nyu_validation_v1"]:
         source = ROOT / "outputs" / run / "summary.json"
         if not source.exists():
             continue
@@ -131,7 +132,7 @@ def main():
     for key in ["python", "project_root", "read_only_reference"]:
         env.pop(key, None)
     env["gpu"] = "NVIDIA GeForce RTX 4090, 24 GB"
-    for package in ["matplotlib", "tqdm", "h5py"]:
+    for package in ["matplotlib", "tqdm", "h5py", "scipy"]:
         env["packages"][package] = importlib.metadata.version(package)
     text_file("reproducibility/tested_environment.json",
               json.dumps(env, ensure_ascii=False, indent=2) + "\n")
@@ -242,12 +243,18 @@ docs/
             "A new native-geometry FP32 cache contains 5,736 train and 700 validation images from 30/5 disjoint scenes. "
             "All prepared samples pass the included loader checks. Exact camera projection matrices are retained; an ordinary K has a separate validity flag. "
             "RGB comes from lossy final-preview images, not the original HDR color.\n\n"
-            "Mixed-domain training is not ready: the local NYUv2 training package needs authoritative scene mapping, "
-            "and object training assets have not been identified. The 300 DSINE ScanNet benchmark frames and 42 OLATverse validation objects remain reserved. "
+            "Mixed-domain training is not ready. Official NYUv2 scene metadata and train/test indices are now checked: "
+            "795 images from 249 rooms are reserved for real-indoor validation, with no room overlap with the 654-image test partition. "
+            "Three non-test RGB arrays are not byte-identical to the packaged images; preprocessing correspondence remains under investigation. "
+            "A pinned Arb-Objaverse sample contains 3 assets, 6 geometry views and 12 RGBA inputs. "
+            "It has alpha masks but no explicit depth or intrinsics; the Cycles normal-pass semantics require a separate contract from pure geometry normals. "
+            "The 300 DSINE ScanNet benchmark frames and 42 OLATverse validation objects remain reserved. "
             "Data, sample manifests and prepared caches are not distributed. "
             "[Inventory](results/P0_general_data_v1/summary.json), "
             "[prepared-cache checks](results/P0_prepared_hypersim_full_v1/summary.json), "
-            "[object evaluation inventory](results/P0_object_benchmark_v1/summary.json).\n")
+            "[object evaluation inventory](results/P0_object_benchmark_v1/summary.json), "
+            "[Arb sample checks](results/P0_arb_protocol_v1/summary.json), "
+            "[NYUv2 mapping checks](results/P0_nyu_validation_v1/summary.json).\n")
     text_file("README.md", """# FNFlow
 
 Pixel-space conditional Flow Matching for face normals, with isolated research code for general object and indoor-scene normal estimation.

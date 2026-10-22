@@ -13,7 +13,8 @@
     "pytest": "9.1.1",
     "matplotlib": "3.10.7",
     "tqdm": "4.67.1",
-    "h5py": "3.16.0"
+    "h5py": "3.16.0",
+    "scipy": "1.15.3"
   },
   "cuda_available": true,
   "torch_cuda": "12.1",
