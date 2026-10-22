@@ -1,0 +1,26 @@
+{
+  "created_at": "2026-10-22T08:50:33+08:00",
+  "status": "completed",
+  "images_by_split": {
+    "train": 5736,
+    "val": 700
+  },
+  "scenes_by_split": {
+    "train": 30,
+    "val": 5
+  },
+  "scene_overlap": 0,
+  "exclusions": 0,
+  "normal_dtype": "float32",
+  "normal_source": "native geometry normal_cam, no bump maps",
+  "canonical_basis": "x-right/y-down/z-forward",
+  "orientation": "fixed inversion after GL-to-CV basis change; ray-positive DSINE label convention",
+  "resize": "nearest pixel center for normals/mask; bilinear RGB; half-pixel affine for K",
+  "pinhole_K_images": 2363,
+  "general_central_projection_images": 4073,
+  "camera_protocol": "exact projection_3x3 for all; K_valid false for tilt-shift/non-pinhole matrices, never substitute an approximate K",
+  "rgb_source": "lossy official final_preview; protocol pilot, not claimed full-HDR training data",
+  "depth_available": false,
+  "purpose": "coordinate/mask/K and loader validation; not full mixed-domain training readiness",
+  "code_sha256": "ea139aa4d4147e3be08848e5af5ae11384413e0088ef6b1044c710dbccc3c319"
+}

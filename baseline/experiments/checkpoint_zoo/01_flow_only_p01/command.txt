@@ -1,2 +1,2 @@
-cd ${FACEFLUX_BEST_ROOT}
+cd $FACEFLUX_BEST_ROOT
 bash experiments/checkpoint_zoo/01_flow_only_p01/train.sh

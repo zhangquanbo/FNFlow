@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-10-22T08:20:14+08:00",
+  "created_at": "2026-10-22T08:59:11+08:00",
   "scan_passed": true,
   "scope": "current code-and-aggregate export; unchanged legacy files are not re-exported",
   "files": [
@@ -30,8 +30,8 @@
     {
       "path": "README.md",
       "category": "release_metadata",
-      "bytes": 5784,
-      "exported_sha256": "896fe8426f3e40fd7023596c941dff3174122c78275b6c3e1d1968fab70c94bc"
+      "bytes": 7817,
+      "exported_sha256": "8f0df13f4a28eb201cf8ab9fe25cc8c52acd1c1c70fdbfbba26b6e155fea84ac"
     },
     {
       "path": "baseline/README.md",
@@ -84,15 +84,15 @@
     {
       "path": "baseline/commands/process.txt",
       "category": "historical_baseline",
-      "bytes": 4523,
-      "exported_sha256": "6b3106d1a4b5a4d6be93e61a8317d5484a99743c2d031eb57dcc1a6f914787c0",
+      "bytes": 4519,
+      "exported_sha256": "1968aa7111a064d86d81a49fa89f7d0219ad853a25d0fb7524ce7f12e9308d04",
       "source_sha256": "eb8c2fc3d701fa555320fda23e62e5e673e41212b3cd4963955a741df4e1a7f9"
     },
     {
       "path": "baseline/configs/best_reproduction.yaml",
       "category": "historical_baseline",
-      "bytes": 1137,
-      "exported_sha256": "3968afee8aea4aeaa8c2bdc5dc34ba98cf14c29dcd2dd25bb4ff66ceb4d26d73",
+      "bytes": 1135,
+      "exported_sha256": "ff15e0926f3be3f5f83c89a6071b67d00b42870701bebfb222240d0d5c077618",
       "source_sha256": "b8c88997c82b7802de25f272a5c1216714ddb2c94188eeb1ede5a91d67218687"
     },
     {
@@ -105,29 +105,29 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/01_flow_only_p01/command.txt",
       "category": "historical_baseline",
-      "bytes": 83,
-      "exported_sha256": "4938250b0304527ee4b14ff9cbab0893842cf1ee9d9c27768cf1571bffec0676",
+      "bytes": 81,
+      "exported_sha256": "b9f79417300992ea58528ad4b1810c34baf37ad45192105dba3b36a65269c90f",
       "source_sha256": "d0e807e95efd58fa712f8f726dce22a1266fe0a003669fd0ec4c995fd61dc7f8"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/01_flow_only_p01/config.yaml",
       "category": "historical_baseline",
-      "bytes": 1832,
-      "exported_sha256": "e6a6c4c044fec731cd85b8769a00f433f0802df0d4569ce04f8fe24c13cafbdf",
+      "bytes": 1824,
+      "exported_sha256": "5f41bf776a297bae3007d9f11b9880d8ea85763357d06e4598350180b1392ed0",
       "source_sha256": "2322a582594796b648e9f1aecea39672b70e28298146c98515b49c9905e92da2"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/01_flow_only_p01/original_launcher.sh",
       "category": "historical_baseline",
-      "bytes": 1362,
-      "exported_sha256": "857ab9f994c95dc8646ffe9d18cc8c5fb2270cadba3564bfa70d4c8ae74ac77d",
+      "bytes": 1360,
+      "exported_sha256": "3b71ff11ee8a277041abf6addbc995a70b7d48a1f9a7c7cffa62e8b4d4b9cc78",
       "source_sha256": "d86b54a6a21611635b4e40182ed9f2640bd08daa161e58863c2a9e089c6d0cfe"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/01_flow_only_p01/train.sh",
       "category": "historical_baseline",
-      "bytes": 1540,
-      "exported_sha256": "0d0adfa4e2d1c2c3bd65bd085f85287b442f3e449fd9152ea82e57faaf08d6d6",
+      "bytes": 1538,
+      "exported_sha256": "cda0db5d6df81b56c86aacce4673d685d646d7483eb31b7a479d84aa93b5c6d4",
       "source_sha256": "67df82d03399c74221b6c21b0c0d35061ac1681974f79b27a5f80f8885ff57ce"
     },
     {
@@ -154,8 +154,8 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/01_flow_only_p01/training_code/train_unet.py",
       "category": "historical_baseline",
-      "bytes": 14567,
-      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "bytes": 14561,
+      "exported_sha256": "4db5377ad7dba1fb458673291aac93a98f6cb3709ebf8e0d483034a6ab5fb75d",
       "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
     },
     {
@@ -168,29 +168,29 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/02_no_angular_p01/command.txt",
       "category": "historical_baseline",
-      "bytes": 84,
-      "exported_sha256": "3d4af7c53b3c6f7815e5b505a0c73b295843d79c44d8f2a819a94c45ea6c22e5",
+      "bytes": 82,
+      "exported_sha256": "dfa00ef83c197b9e79c3e1da91be0040ca4a1fc3ea33ba1dd6b494074fecb4af",
       "source_sha256": "cf74a8c92e4a99b1cc9652f14399903ea0f570a184f5fc8c59439bc98633625b"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/02_no_angular_p01/config.yaml",
       "category": "historical_baseline",
-      "bytes": 1810,
-      "exported_sha256": "f9e728b8d681c28e2c59f9aa7aa0a77ea14d4cdebf0667d5092a4b32dd7e828c",
+      "bytes": 1802,
+      "exported_sha256": "1ad0a7303d470fc6ff212650fb1ae08eb162893d3392be6f1b7d02bcf423bd4e",
       "source_sha256": "9aa3f8b0c44aa6ce55416a51f8198bb63196db9c6652bb640912f04dc8d068b1"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/02_no_angular_p01/original_launcher.sh",
       "category": "historical_baseline",
-      "bytes": 1362,
-      "exported_sha256": "857ab9f994c95dc8646ffe9d18cc8c5fb2270cadba3564bfa70d4c8ae74ac77d",
+      "bytes": 1360,
+      "exported_sha256": "3b71ff11ee8a277041abf6addbc995a70b7d48a1f9a7c7cffa62e8b4d4b9cc78",
       "source_sha256": "d86b54a6a21611635b4e40182ed9f2640bd08daa161e58863c2a9e089c6d0cfe"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/02_no_angular_p01/train.sh",
       "category": "historical_baseline",
-      "bytes": 1540,
-      "exported_sha256": "0f5d3add33a752557847bcd66bf29d797f06567ef4c0278b05ba9f53af5f78d1",
+      "bytes": 1538,
+      "exported_sha256": "613203ee870c9c6955b85c6d8537423f23d995c1419882e4b9303efef8d432e0",
       "source_sha256": "cf3a933f5da14fad713de2bc8bfcfba173d8e6be1f01f01302cccfc517889451"
     },
     {
@@ -217,8 +217,8 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/02_no_angular_p01/training_code/train_unet.py",
       "category": "historical_baseline",
-      "bytes": 14567,
-      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "bytes": 14561,
+      "exported_sha256": "4db5377ad7dba1fb458673291aac93a98f6cb3709ebf8e0d483034a6ab5fb75d",
       "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
     },
     {
@@ -231,29 +231,29 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/03_flow_angular_w01_p01/command.txt",
       "category": "historical_baseline",
-      "bytes": 90,
-      "exported_sha256": "ed5268e605afa01cda5a34a5886d4d8373e96c6c0ebddefe57830b035ddc3350",
+      "bytes": 88,
+      "exported_sha256": "73fcb6d7de9934c986c3356d24babe7eca0c5288c6d0f1aa1b82e82fb67f1f88",
       "source_sha256": "10b044311fc29055f264c37c6dcf1ee1424777d79f1d046fd8446cfbabb53719"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/03_flow_angular_w01_p01/config.yaml",
       "category": "historical_baseline",
-      "bytes": 1819,
-      "exported_sha256": "42d1ced2fd6d908dbf032b0ba4929b7426e16ec602f642eb2a6cee763821d069",
+      "bytes": 1811,
+      "exported_sha256": "b83cd79d7c53c9b1032e40a8ee36f6374748d4df97e8075c58f5e8bf7c3a5c89",
       "source_sha256": "27a33bf380c89d9cdee747833f468e0ae0d30c503c58c6dd618800cf2245e933"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/03_flow_angular_w01_p01/original_launcher.sh",
       "category": "historical_baseline",
-      "bytes": 1362,
-      "exported_sha256": "857ab9f994c95dc8646ffe9d18cc8c5fb2270cadba3564bfa70d4c8ae74ac77d",
+      "bytes": 1360,
+      "exported_sha256": "3b71ff11ee8a277041abf6addbc995a70b7d48a1f9a7c7cffa62e8b4d4b9cc78",
       "source_sha256": "d86b54a6a21611635b4e40182ed9f2640bd08daa161e58863c2a9e089c6d0cfe"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/03_flow_angular_w01_p01/train.sh",
       "category": "historical_baseline",
-      "bytes": 1538,
-      "exported_sha256": "9f89be1927df19da6a3eef4876e7d62ee472b250223eda5c7b098c00c9dbe0e8",
+      "bytes": 1536,
+      "exported_sha256": "4e6968390b79f760564be8a5dd3c8b930abbd1bb9a25a00d0257ce844f44a149",
       "source_sha256": "d66bd0792e345b3888bc64dcf8fba9038ee3c6c2075cf0849f086a98676b3c33"
     },
     {
@@ -280,8 +280,8 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/03_flow_angular_w01_p01/training_code/train_unet.py",
       "category": "historical_baseline",
-      "bytes": 14567,
-      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "bytes": 14561,
+      "exported_sha256": "4db5377ad7dba1fb458673291aac93a98f6cb3709ebf8e0d483034a6ab5fb75d",
       "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
     },
     {
@@ -294,29 +294,29 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/04_flow_angular_w05_p01/command.txt",
       "category": "historical_baseline",
-      "bytes": 90,
-      "exported_sha256": "bb3d734b02b48def16b6cb433853ff078cfd1b86791d59e8b793b7999645d000",
+      "bytes": 88,
+      "exported_sha256": "2fb71d48141f40c27302e5bd45a6029e9a1931d4615193eea4a29109b18eedab",
       "source_sha256": "eaac174fce47f2004da0ba6bbf46b6f57395f0cd6d07e82a4707b452c27dbfe8"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/04_flow_angular_w05_p01/config.yaml",
       "category": "historical_baseline",
-      "bytes": 1822,
-      "exported_sha256": "d4f739f55d9031ea64ad516f6c9a8c07a8e53ca74c3493e2c6b8648c6532c9e3",
+      "bytes": 1814,
+      "exported_sha256": "ec726680e17360be53176bfd02b48f86cd2c84a723f133718320b0c6b15bf51e",
       "source_sha256": "2c31154441c3b4383a425a9afd4f090628d0566da42a3775c6c2e764b54a5800"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/04_flow_angular_w05_p01/original_launcher.sh",
       "category": "historical_baseline",
-      "bytes": 1362,
-      "exported_sha256": "857ab9f994c95dc8646ffe9d18cc8c5fb2270cadba3564bfa70d4c8ae74ac77d",
+      "bytes": 1360,
+      "exported_sha256": "3b71ff11ee8a277041abf6addbc995a70b7d48a1f9a7c7cffa62e8b4d4b9cc78",
       "source_sha256": "d86b54a6a21611635b4e40182ed9f2640bd08daa161e58863c2a9e089c6d0cfe"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/04_flow_angular_w05_p01/train.sh",
       "category": "historical_baseline",
-      "bytes": 1538,
-      "exported_sha256": "47bbed827c07763ea48faf689619755e3bd6328cfef20c6049da67b1192c3c65",
+      "bytes": 1536,
+      "exported_sha256": "a9cdfaeab229bb5ebfac8fbfb9e1adcfce09dfe95619a8497e39cee47c5141f2",
       "source_sha256": "45ef97593d736e456373e1b019a35f25704d0808ea54ece7a9c83696c7646e30"
     },
     {
@@ -343,8 +343,8 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/04_flow_angular_w05_p01/training_code/train_unet.py",
       "category": "historical_baseline",
-      "bytes": 14567,
-      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "bytes": 14561,
+      "exported_sha256": "4db5377ad7dba1fb458673291aac93a98f6cb3709ebf8e0d483034a6ab5fb75d",
       "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
     },
     {
@@ -357,29 +357,29 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/05_full_wunit_wang_01_p01/command.txt",
       "category": "historical_baseline",
-      "bytes": 92,
-      "exported_sha256": "25f31fb621efb072bff7cd9731ca179239337d584c06094f265387691137c494",
+      "bytes": 90,
+      "exported_sha256": "eeabd49065fdf470ae9900afefbe352f0cb515fe308f772b013c383d76715eec",
       "source_sha256": "ae8da23a9eaa868888f6719963deaf5fc9e2b30b1011ae955c67fe323a9e18ea"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/05_full_wunit_wang_01_p01/config.yaml",
       "category": "historical_baseline",
-      "bytes": 1835,
-      "exported_sha256": "8a85690697369c91a436c3af62af3db6487d2adc596909373692ca7d3d9295b1",
+      "bytes": 1827,
+      "exported_sha256": "fae400d6798d908c9743d1be64c1181b966fee6634a5fa95938cc67fdda6f8af",
       "source_sha256": "1607e59e1f4654865740889df1f76f6767dcabd215eb70f4369f73503c4e9234"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/05_full_wunit_wang_01_p01/original_launcher.sh",
       "category": "historical_baseline",
-      "bytes": 1957,
-      "exported_sha256": "0e8d28ad32a39bd00e9a39cb7dda46527d2572367979c690b76d6a601de9cfee",
+      "bytes": 1955,
+      "exported_sha256": "e3f56bbeb7c491b31b7f26bda262ef7a5f72a86f2382d3267612e5dea787474b",
       "source_sha256": "fad1902fd82d03bb5f3e8c83fa3cd5ad30e849c6b29cf2daf595f05d2573ebe9"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/05_full_wunit_wang_01_p01/train.sh",
       "category": "historical_baseline",
-      "bytes": 1536,
-      "exported_sha256": "89e9f82115732e84f7c09236c3fca0af22c71e7b7142e4999c056b9534b0049c",
+      "bytes": 1534,
+      "exported_sha256": "583165c9fea85a50dd55e171087c89d0a01586621d0c4380a8049354a5c95ac8",
       "source_sha256": "7f039b608239114101af2c09e707ee57449ef04f79eaee4f9a9daec5aeab7f05"
     },
     {
@@ -406,8 +406,8 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/05_full_wunit_wang_01_p01/training_code/train_unet.py",
       "category": "historical_baseline",
-      "bytes": 14567,
-      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "bytes": 14561,
+      "exported_sha256": "4db5377ad7dba1fb458673291aac93a98f6cb3709ebf8e0d483034a6ab5fb75d",
       "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
     },
     {
@@ -420,29 +420,29 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/06_full_wunit_wang_05_p01/command.txt",
       "category": "historical_baseline",
-      "bytes": 92,
-      "exported_sha256": "164bd96bf434172695690d205736f16bb79bb9b69a8250d4916d532df6900f48",
+      "bytes": 90,
+      "exported_sha256": "d89d9bffbf3494b6b8a696fc0f7f07b685215e86e3612eee671491fe60a5881b",
       "source_sha256": "7b6d726850743f3c5dc5375c0340ac4b34f0c4ae6ba8ff7d7939c1e5af51ed4b"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/06_full_wunit_wang_05_p01/config.yaml",
       "category": "historical_baseline",
-      "bytes": 1835,
-      "exported_sha256": "1a6fcbb4c4919e84ab49d7912a0fa29906880b1c88fc42194eb4b7c31f5ff4fa",
+      "bytes": 1827,
+      "exported_sha256": "b7ea05e3b1e62d8739823b2bd77c797807c639a94664218d03129c9d09b1e32c",
       "source_sha256": "43936d381133b53a4d2fc6c1c98d54b9be6b6c9bb0255b93be49ea04f0d0cbac"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/06_full_wunit_wang_05_p01/original_launcher.sh",
       "category": "historical_baseline",
-      "bytes": 1957,
-      "exported_sha256": "0e8d28ad32a39bd00e9a39cb7dda46527d2572367979c690b76d6a601de9cfee",
+      "bytes": 1955,
+      "exported_sha256": "e3f56bbeb7c491b31b7f26bda262ef7a5f72a86f2382d3267612e5dea787474b",
       "source_sha256": "fad1902fd82d03bb5f3e8c83fa3cd5ad30e849c6b29cf2daf595f05d2573ebe9"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/06_full_wunit_wang_05_p01/train.sh",
       "category": "historical_baseline",
-      "bytes": 1536,
-      "exported_sha256": "5f5ff74497c572832eec89003c60e8d4a03544998bd1d73455c33aa5b936f1e2",
+      "bytes": 1534,
+      "exported_sha256": "be9195c1d739bcffc41a9d0acf8094742c05f0298d5bfa8aa99ceac51de625bd",
       "source_sha256": "cea309320325dfd9b97be7943197fc7dc90ff8185c97247e7000b3a880a9207f"
     },
     {
@@ -469,8 +469,8 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/06_full_wunit_wang_05_p01/training_code/train_unet.py",
       "category": "historical_baseline",
-      "bytes": 14567,
-      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "bytes": 14561,
+      "exported_sha256": "4db5377ad7dba1fb458673291aac93a98f6cb3709ebf8e0d483034a6ab5fb75d",
       "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
     },
     {
@@ -483,22 +483,22 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/07_no_flow_p01/command.txt",
       "category": "historical_baseline",
-      "bytes": 81,
-      "exported_sha256": "f519d75d0e9e5363959f600b7d356bf291fafe894e250edd2f04c34a865c8352",
+      "bytes": 79,
+      "exported_sha256": "eb8f00227d9f1cee296e4a793ab02697b05e205b58637a2b345ea87f76198fca",
       "source_sha256": "43d6f1616b4b6a02465f40dd96a37845523ec3b13580f47b17fd00368aea4d75"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/07_no_flow_p01/config.yaml",
       "category": "historical_baseline",
-      "bytes": 1839,
-      "exported_sha256": "849b5fa25cd010f9714c103fb482d7bd8e64ca3997fde6b6ff3dcff20a6961cb",
+      "bytes": 1831,
+      "exported_sha256": "b83541f793cd9a45fab512904fdbfba8ba00d50df2930fff3bd237dcb4165591",
       "source_sha256": "592b57de6ab82a5cbbf6cf16fe49589692027ae14a4478535c6bdf5af6fac6e1"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/07_no_flow_p01/train.sh",
       "category": "historical_baseline",
-      "bytes": 1539,
-      "exported_sha256": "e60a062f522112bd575dd2bb4c8b6b66316ae01dc09b6d9a7652aa79d92f6795",
+      "bytes": 1537,
+      "exported_sha256": "0348f0e2022fb4ecb1324178ce1471712428fa9325dd5aabf1873a952dd120e9",
       "source_sha256": "bd7a094531aaf920682236fc8572a818198b2eb8de5abc6148d054d934efc5dc"
     },
     {
@@ -525,8 +525,8 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/07_no_flow_p01/training_code/train_unet.py",
       "category": "historical_baseline",
-      "bytes": 14567,
-      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "bytes": 14561,
+      "exported_sha256": "4db5377ad7dba1fb458673291aac93a98f6cb3709ebf8e0d483034a6ab5fb75d",
       "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
     },
     {
@@ -539,29 +539,29 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/08_full_p00/command.txt",
       "category": "historical_baseline",
-      "bytes": 78,
-      "exported_sha256": "a4102444110455bfe70ad80dbfb40e6377a34f4f5e858cb2a0fd62c2d3abbd1c",
+      "bytes": 76,
+      "exported_sha256": "4c81b7630e47c6d4ef3aa100b12b2363eacc1780951a38eae8ab87e0084ab24a",
       "source_sha256": "319208ad11e68c2425e75fde8b23fb07b6e061b97045e74d3e0404bc45dbcccc"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/08_full_p00/config.yaml",
       "category": "historical_baseline",
-      "bytes": 1836,
-      "exported_sha256": "19ff00223acf39970aba56f6e9097cbc86eb3148a2abe03d17c59334149cf2a9",
+      "bytes": 1828,
+      "exported_sha256": "0a219c4de1a9866c223cc502f85432da03fd4679029861094be5e52cff816e97",
       "source_sha256": "7600df146d45f7bb653906a6c1f625361381191563c080141b1fd7f1e31848c5"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/08_full_p00/original_launcher.sh",
       "category": "historical_baseline",
-      "bytes": 1957,
-      "exported_sha256": "0e8d28ad32a39bd00e9a39cb7dda46527d2572367979c690b76d6a601de9cfee",
+      "bytes": 1955,
+      "exported_sha256": "e3f56bbeb7c491b31b7f26bda262ef7a5f72a86f2382d3267612e5dea787474b",
       "source_sha256": "fad1902fd82d03bb5f3e8c83fa3cd5ad30e849c6b29cf2daf595f05d2573ebe9"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/08_full_p00/train.sh",
       "category": "historical_baseline",
-      "bytes": 1537,
-      "exported_sha256": "0ca062fa68c57b2438f667c109643b18eb7c48a099321019475bb9f91c67c3e6",
+      "bytes": 1535,
+      "exported_sha256": "3101b9163ee421d429f582f6083d8a2ae52ceca8c0edad7c132f9458a4e1b5e9",
       "source_sha256": "44feb4eb05e0b12c571540d5189e1ab362bb2399c629800c89314248abf3225b"
     },
     {
@@ -588,8 +588,8 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/08_full_p00/training_code/train_unet.py",
       "category": "historical_baseline",
-      "bytes": 14567,
-      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "bytes": 14561,
+      "exported_sha256": "4db5377ad7dba1fb458673291aac93a98f6cb3709ebf8e0d483034a6ab5fb75d",
       "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
     },
     {
@@ -602,29 +602,29 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/09_full_p03/command.txt",
       "category": "historical_baseline",
-      "bytes": 78,
-      "exported_sha256": "69716ed190b7891fd935100769fa8e00451bb340709e000c0fc9f123a22be6f9",
+      "bytes": 76,
+      "exported_sha256": "15a5c5344722bcce57e19db938cd9679098926c8a7b8ebe30a472b660e1275d7",
       "source_sha256": "805b05af01d2c3d1e981737a62ee20935f444a47c4c1fcef34f408f255361f55"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/09_full_p03/config.yaml",
       "category": "historical_baseline",
-      "bytes": 1837,
-      "exported_sha256": "d556355d3278becbe3635503c39ebe7f293b3742a4d7764a01545574689c9313",
+      "bytes": 1829,
+      "exported_sha256": "3d4a755f598430787d8171b8e1c33f91c92c59731dc571927691f9d0d6677a63",
       "source_sha256": "ed94622a85cafa9abcb331a4f992f48acc41fc334c41d65409d3c86d95717f61"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/09_full_p03/original_launcher.sh",
       "category": "historical_baseline",
-      "bytes": 1957,
-      "exported_sha256": "0e8d28ad32a39bd00e9a39cb7dda46527d2572367979c690b76d6a601de9cfee",
+      "bytes": 1955,
+      "exported_sha256": "e3f56bbeb7c491b31b7f26bda262ef7a5f72a86f2382d3267612e5dea787474b",
       "source_sha256": "fad1902fd82d03bb5f3e8c83fa3cd5ad30e849c6b29cf2daf595f05d2573ebe9"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/09_full_p03/train.sh",
       "category": "historical_baseline",
-      "bytes": 1537,
-      "exported_sha256": "36ec82516d48f01b96b5de3439d47c0e2de0a7f94bc694a9ee1330f40aa7c368",
+      "bytes": 1535,
+      "exported_sha256": "5f3514fe204e351e4fc581afb5e94256a16c7762d0c7f99419d7d323c6cfa72c",
       "source_sha256": "65849bdc246100a261090b71967e356d5a0ba670b7e1d6f0f9e19e2d61b2100f"
     },
     {
@@ -651,8 +651,8 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/09_full_p03/training_code/train_unet.py",
       "category": "historical_baseline",
-      "bytes": 14567,
-      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "bytes": 14561,
+      "exported_sha256": "4db5377ad7dba1fb458673291aac93a98f6cb3709ebf8e0d483034a6ab5fb75d",
       "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
     },
     {
@@ -665,29 +665,29 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/10_full_p05_original/command.txt",
       "category": "historical_baseline",
-      "bytes": 87,
-      "exported_sha256": "d1570aa4bffc0cdc7e9dbda9e0bf2124f3c7cf2f66aa745030deda5911194a0f",
+      "bytes": 85,
+      "exported_sha256": "2a94a0237dbd8a387ebebeda89642c87017d0ea4680e03e88a157d44f95a745a",
       "source_sha256": "09cb5712bdfaa33fd1061208b7f9b6b13395c1bad016bb4cea22b360ed19f3f7"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/10_full_p05_original/config.yaml",
       "category": "historical_baseline",
-      "bytes": 1818,
-      "exported_sha256": "4500cc409e0f30df9888a5366c1939928142de50fbf57c178411215fb93d6f6e",
+      "bytes": 1810,
+      "exported_sha256": "f90c656e873f4e9e690ea00ad146f07692a844f7a1ae000620d5146df43bea28",
       "source_sha256": "106cc39bb03ee70931a302110519abd6f71997f2e9479c0791c8b787902b0797"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/10_full_p05_original/original_launcher.sh",
       "category": "historical_baseline",
-      "bytes": 1957,
-      "exported_sha256": "0e8d28ad32a39bd00e9a39cb7dda46527d2572367979c690b76d6a601de9cfee",
+      "bytes": 1955,
+      "exported_sha256": "e3f56bbeb7c491b31b7f26bda262ef7a5f72a86f2382d3267612e5dea787474b",
       "source_sha256": "fad1902fd82d03bb5f3e8c83fa3cd5ad30e849c6b29cf2daf595f05d2573ebe9"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/10_full_p05_original/train.sh",
       "category": "historical_baseline",
-      "bytes": 1537,
-      "exported_sha256": "907f77afd3d151295d780d2ebd165a864fe3769e2fd0cf22a014eb103e0115ba",
+      "bytes": 1535,
+      "exported_sha256": "5f036199e4df3c9285f19bbf0900540564ca52ae91a6e1fec681c0104a0d75d6",
       "source_sha256": "979c5a684c573bb75190b32066c052da69c1f91cf089b0351961e18ee4e6bfef"
     },
     {
@@ -714,8 +714,8 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/10_full_p05_original/training_code/train_unet.py",
       "category": "historical_baseline",
-      "bytes": 14567,
-      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "bytes": 14561,
+      "exported_sha256": "4db5377ad7dba1fb458673291aac93a98f6cb3709ebf8e0d483034a6ab5fb75d",
       "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
     },
     {
@@ -728,29 +728,29 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/11_full_p07/command.txt",
       "category": "historical_baseline",
-      "bytes": 78,
-      "exported_sha256": "256b61c2e1529e6c944ff17c6449b6555a661f6e019a2c50733a73ee403280d9",
+      "bytes": 76,
+      "exported_sha256": "25c8c0241bb99eaa62ee039afe20d1a880aae087f028a0d75f2108d0a5997dfe",
       "source_sha256": "c30ab98ea8523e20c44f1ce8645c1dd6a7d3434c33b22d168552881ea3b3f9c6"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/11_full_p07/config.yaml",
       "category": "historical_baseline",
-      "bytes": 1812,
-      "exported_sha256": "28922eb51c2b4ab4f37692d2e18ab48902372250c249b745f2da987b551bb71b",
+      "bytes": 1804,
+      "exported_sha256": "76e32dc578f1581b97e24db7ea691a4d15e61ce2b4227579d0362e437fe2912d",
       "source_sha256": "c7ff208728a9153e1b5d8c81ac67495b130dcf194377f5b3ff6db8c23682d0dd"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/11_full_p07/original_launcher.sh",
       "category": "historical_baseline",
-      "bytes": 1957,
-      "exported_sha256": "efeae99c60d832f811ad57a2c5014820903d36ca906cf38d2007303c49848d22",
+      "bytes": 1955,
+      "exported_sha256": "eb3e493f6afc3a3562efe43cb852eff47772da2cb9cfa7e2603d6f95785d613a",
       "source_sha256": "d90ead95b817a11553f86298f5eecfe1b0ecee888ecdaf810a6367cf071812ca"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/11_full_p07/train.sh",
       "category": "historical_baseline",
-      "bytes": 1537,
-      "exported_sha256": "b890898207858c7f5f239a3af046bc9c401b60efd4aabf96fdee641a4dfb886b",
+      "bytes": 1535,
+      "exported_sha256": "63e875f06799a5c0b286e294faa13713bd5926e23341efed0cf4f5535d36a4e6",
       "source_sha256": "1e51c870a80f4607f3b1efbd685f446b6fbe65faf366ef32be60fa9cb0669b5c"
     },
     {
@@ -777,8 +777,8 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/11_full_p07/training_code/train_unet.py",
       "category": "historical_baseline",
-      "bytes": 14567,
-      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "bytes": 14561,
+      "exported_sha256": "4db5377ad7dba1fb458673291aac93a98f6cb3709ebf8e0d483034a6ab5fb75d",
       "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
     },
     {
@@ -791,22 +791,22 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/12_repro_l2cos_p05/command.txt",
       "category": "historical_baseline",
-      "bytes": 85,
-      "exported_sha256": "5bc6a140e7782355d84298cafe22bbac66cfbde8bee77a090dd227e58662fd73",
+      "bytes": 83,
+      "exported_sha256": "cb8d185d7e523b93d435f1a876de2d6af4576e9c4e38644c0532cf8e249b4c4a",
       "source_sha256": "61d69eafc36199140547cc376f061fadc0d147829ac0be9ac83d298bb423e20f"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/12_repro_l2cos_p05/config.yaml",
       "category": "historical_baseline",
-      "bytes": 1832,
-      "exported_sha256": "71ea92afebf1f12ea5a1e255edde13db58a73c4d75aa2857c0ef0b3bce9a03cc",
+      "bytes": 1824,
+      "exported_sha256": "8a28c56c0117ba7ab08d71c0211b33f80c2bb51a03c2a1c87fa835339076f00f",
       "source_sha256": "612d257bf1e6400f8b0f95ee7a7015f9ea197af5de972c15a9300c954880d0d7"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/12_repro_l2cos_p05/train.sh",
       "category": "historical_baseline",
-      "bytes": 1538,
-      "exported_sha256": "6ce2c0837feda06ed01828a3393277162cd49984f744830bbaac988bccb3fea7",
+      "bytes": 1536,
+      "exported_sha256": "e21d5335ea46ed7a6a6db3b551a952b81e5864d3a28434d56a0bf5d60ce2953b",
       "source_sha256": "e777514e6ced5dbdb292aa061c72dac9053b015e2e487de3a3cb888f0cb309c2"
     },
     {
@@ -833,8 +833,8 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/12_repro_l2cos_p05/training_code/train_unet.py",
       "category": "historical_baseline",
-      "bytes": 14567,
-      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "bytes": 14561,
+      "exported_sha256": "4db5377ad7dba1fb458673291aac93a98f6cb3709ebf8e0d483034a6ab5fb75d",
       "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
     },
     {
@@ -847,22 +847,22 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/13_repro_full_p05_best/command.txt",
       "category": "historical_baseline",
-      "bytes": 89,
-      "exported_sha256": "92d9cb77051a5ae3414708434f75e63041516e819c0bc82f0d615f49541564a1",
+      "bytes": 87,
+      "exported_sha256": "deb0944ae0bcbd2b34f84ce7a9ba6b66844b5c4ca51b1263cd01136a0e49f7fe",
       "source_sha256": "1ed5ab7bd23c10e9219b989d1f1b77db9eac5433fa3b5b21b34dc984b0a25b7a"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/13_repro_full_p05_best/config.yaml",
       "category": "historical_baseline",
-      "bytes": 1855,
-      "exported_sha256": "875391619abdc4fa53926ddc80b90cccf0522a4d5718e35812b676e969dfcad3",
+      "bytes": 1847,
+      "exported_sha256": "f914b495ad79fbbb72158011ee8a1222949000ca89ecbdef8494c5fb4da7b11b",
       "source_sha256": "f5487c9e7d93ae8406c93bd15cffe82f9ee59d016864c9e6805c3724276b0fdf"
     },
     {
       "path": "baseline/experiments/checkpoint_zoo/13_repro_full_p05_best/train.sh",
       "category": "historical_baseline",
-      "bytes": 1536,
-      "exported_sha256": "c8253f42e895e802d8628be51f30038f9e3cd8d808c2b57ef6b84ed36e2f02be",
+      "bytes": 1534,
+      "exported_sha256": "cb5678c4d1c95317a4c185e1c0c495679efc1cd913b84e2c22a47ed2029e738e",
       "source_sha256": "493fd59a33f406975013d191153549a8e2288ef5032f2c1b106276fec52734fb"
     },
     {
@@ -889,8 +889,8 @@
     {
       "path": "baseline/experiments/checkpoint_zoo/13_repro_full_p05_best/training_code/train_unet.py",
       "category": "historical_baseline",
-      "bytes": 14567,
-      "exported_sha256": "9b2d941e72986e986da87bf8275210f6cdecd4c1e90ff825627e57632bc1d4d0",
+      "bytes": 14561,
+      "exported_sha256": "4db5377ad7dba1fb458673291aac93a98f6cb3709ebf8e0d483034a6ab5fb75d",
       "source_sha256": "8e0ec4545dc353850281f558322b2ea3e05aa7649660355b50d22d3c481ccca0"
     },
     {
@@ -917,15 +917,15 @@
     {
       "path": "baseline/scripts/eval/eval_facescape_modes.py",
       "category": "historical_baseline",
-      "bytes": 24117,
-      "exported_sha256": "7b528d8f49a363c0fbe3e41e55511c2c8f3019e971f7544eeee59d8cf5966714",
+      "bytes": 24115,
+      "exported_sha256": "7cbe79b1747a733a7f6e83db5feebeb73732a9b8a56252caac4fb8affc4d6064",
       "source_sha256": "c955a2d964482033209f31ea96708115dec2a8b53231097a335247a3ee20013e"
     },
     {
       "path": "baseline/scripts/inference/inference_unet.py",
       "category": "historical_baseline",
-      "bytes": 3991,
-      "exported_sha256": "f203bc76253a855d2737217e86094d6d4d5d5e7105aef18afdb422bbf6f622bb",
+      "bytes": 3989,
+      "exported_sha256": "4a9cae26a460fab05c898d39868157c235e76e0b9d7863f14100f4290a0788b0",
       "source_sha256": "f8dd81f79ac1ba2f245b95fb7df9a80546bc1bf82a35ab0bdfedb8f2bc9e0239"
     },
     {
@@ -978,6 +978,20 @@
       "source_sha256": "22e3ce836d275d6d8e0cb769da2bd56b0405f468360af741689f96c663a8fcfc"
     },
     {
+      "path": "configs/face_supplements.json",
+      "category": "research_code",
+      "bytes": 675,
+      "exported_sha256": "fda5a26cec1320f1db48390f105170732e3307bc57a72851bd1368c6ed79b90d",
+      "source_sha256": "fda5a26cec1320f1db48390f105170732e3307bc57a72851bd1368c6ed79b90d"
+    },
+    {
+      "path": "configs/general_data_protocol.json",
+      "category": "research_code",
+      "bytes": 1626,
+      "exported_sha256": "9d98ff4516fb597f0a17203216fe627f7b77d2ed240eecf1717929696f9e3ba1",
+      "source_sha256": "9d98ff4516fb597f0a17203216fe627f7b77d2ed240eecf1717929696f9e3ba1"
+    },
+    {
       "path": "figures/D1_full.png",
       "category": "aggregate_plot",
       "bytes": 76303,
@@ -1000,21 +1014,21 @@
     {
       "path": "reproducibility/historical_reproduction.json",
       "category": "reproducibility",
-      "bytes": 1311,
-      "exported_sha256": "9605cc4d66c6da99bec5ecfbb27396e1a3bc78e3ad73ce06b4c80f60425c025a",
+      "bytes": 1309,
+      "exported_sha256": "3da3c35d3d25b70398d686e6be895a663f5fe696087e2aa2d625803db2faa59f",
       "source_sha256": "79fd607a218e295bd819ca9f6a47ac4a6bb1350c08275df7d3a5ac859adde275"
     },
     {
       "path": "reproducibility/protected_reference_check.json",
       "category": "release_metadata",
-      "bytes": 1770,
-      "exported_sha256": "6453e7574d3dcf1a10c77f672b9b85b684cb29c067a18076c0f75677432ad610"
+      "bytes": 1760,
+      "exported_sha256": "c55c276848f2afb237f4265b634797548a9fa8736cacf50668d681e45fb6fb73"
     },
     {
       "path": "reproducibility/tested_environment.json",
       "category": "release_metadata",
-      "bytes": 554,
-      "exported_sha256": "08ca89ee00a96b6e0a43f5a5a6a37b4cf767170417c7249619c6a7b940e744f5"
+      "bytes": 576,
+      "exported_sha256": "713034e98bb1ff8f896d79bc4e4b97804243e9a26e69413c9fcbd4e3dbb186c1"
     },
     {
       "path": "requirements-torch.txt",
@@ -1025,14 +1039,14 @@
     {
       "path": "requirements.txt",
       "category": "release_metadata",
-      "bytes": 132,
-      "exported_sha256": "b8b6217b44ad1590c02c761049b54723666479cebd40a547027464adbbe86796"
+      "bytes": 145,
+      "exported_sha256": "fc0c88b34686ff408a6aaa72107462720a8b503356e1e6e1d7898f355ba4dec2"
     },
     {
       "path": "results/D1_full/summary.json",
       "category": "diagnostic_summary",
-      "bytes": 16979,
-      "exported_sha256": "76b247e8e26e6924e97b8fb2b02abb29ac71ce98e4142996297405fe33e2eaa5",
+      "bytes": 16969,
+      "exported_sha256": "811fd49bc64edc0b33bf2eda46b13db459581ae95ff8a96e88e9e8a9595551f2",
       "source_sha256": "064df9cfe3e75b7bf29531a73fffc119e33def5addabe027249df7383487a2b5"
     },
     {
@@ -1045,8 +1059,8 @@
     {
       "path": "results/D2_D3_full_multiseed/summary.json",
       "category": "diagnostic_summary",
-      "bytes": 59259,
-      "exported_sha256": "cd6d5aa313c7d49fcea1a6b40548294ec4977346869a65486d50c5bc642c2001",
+      "bytes": 59257,
+      "exported_sha256": "816fbbb506e2898edc7451909a74d339b4c408e8de465e4cbee39315758fed94",
       "source_sha256": "ac03b6ff18b714cbf7cbd371f89e790e9fec1c9ae56cb4c27f9f27e0f5c6b44f"
     },
     {
@@ -1059,23 +1073,72 @@
     {
       "path": "results/D3_full_imagewise_noise_v1/summary.json",
       "category": "diagnostic_summary",
-      "bytes": 29345,
-      "exported_sha256": "44869275e12c0bac45faa33d549378ebd19f516f8c61c237e300843a3b31eb2f",
+      "bytes": 29343,
+      "exported_sha256": "8c4fd3afc1c0c31229fec8bfb2194bbe17603ef0fc92902127dbcf6e106a21e4",
       "source_sha256": "63e239f896ebb14bac0ec66dbc6915f142c36c83f184ae7965bc215169a0cb57"
+    },
+    {
+      "path": "results/D4_D6_face_supplements_v1/aggregate_summary.json",
+      "category": "diagnostic_summary",
+      "bytes": 20110,
+      "exported_sha256": "c27ec79a6c86f4d24b9e12c7d9da27eba411f7c2720a9958b575dd37b6d8b196",
+      "source_sha256": "0f263708e0199de71efd09d197c4e757da901caf2ced97c912e6987c35284c9e"
+    },
+    {
+      "path": "results/D4_D6_face_supplements_v1/summary.json",
+      "category": "diagnostic_summary",
+      "bytes": 61830,
+      "exported_sha256": "62650a8c63ec4aba400349e7b8275ab6441414cb426b9c8e28353cdaf97f7efb",
+      "source_sha256": "97e3f0fdd2942fdd55306155b0af8aa6dc8368bc5533db459eb03cf268141fa2"
     },
     {
       "path": "results/P0_D1_D5_pilot/summary.json",
       "category": "diagnostic_summary",
-      "bytes": 30559,
-      "exported_sha256": "187ccc2678d8af866194b820c4ddc2242a24228c2fba0b7f8e803c92a857cdf4",
+      "bytes": 30549,
+      "exported_sha256": "2c81409fcd848a7d6aac5a4a75f016325092b6484742f5b24f41e476b3f1087e",
       "source_sha256": "2ae56fc266df3355007a06ca12300196b5739982f68c68cad514f11361254f86"
+    },
+    {
+      "path": "results/P0_general_data_v1/summary.json",
+      "category": "diagnostic_summary",
+      "bytes": 2791,
+      "exported_sha256": "5fde7ce114963c6fd4a3140f4ff0560336832ca0d33368c1ac9c2921ef338175",
+      "source_sha256": "5fde7ce114963c6fd4a3140f4ff0560336832ca0d33368c1ac9c2921ef338175"
+    },
+    {
+      "path": "results/P0_object_benchmark_v1/summary.json",
+      "category": "diagnostic_summary",
+      "bytes": 549,
+      "exported_sha256": "f4da01aea3ed0da762a024fa83e6e1b3b1bf729f9c7e912386ba96b3faf3bba5",
+      "source_sha256": "f4da01aea3ed0da762a024fa83e6e1b3b1bf729f9c7e912386ba96b3faf3bba5"
+    },
+    {
+      "path": "results/P0_prepared_hypersim_full_v1/preparation_summary.json",
+      "category": "diagnostic_summary",
+      "bytes": 1090,
+      "exported_sha256": "c4b110ab35cf0f968f9cb85ce738eaaefa35c36641f2c6c9c3744b89a48e239d",
+      "source_sha256": "c4b110ab35cf0f968f9cb85ce738eaaefa35c36641f2c6c9c3744b89a48e239d"
+    },
+    {
+      "path": "results/P0_prepared_hypersim_full_v1/summary.json",
+      "category": "diagnostic_summary",
+      "bytes": 454,
+      "exported_sha256": "4204304df59728a6314e7038affda9fe399d598c46e3d5baf45339ebfd98f2a1",
+      "source_sha256": "4204304df59728a6314e7038affda9fe399d598c46e3d5baf45339ebfd98f2a1"
+    },
+    {
+      "path": "results/P0_prepared_hypersim_v1/summary.json",
+      "category": "diagnostic_summary",
+      "bytes": 445,
+      "exported_sha256": "3c4d6c867ae6a67fedf9b453f0a28f9b851ff717d140130d747990c13d80ee8c",
+      "source_sha256": "3c4d6c867ae6a67fedf9b453f0a28f9b851ff717d140130d747990c13d80ee8c"
     },
     {
       "path": "results/protocol_tests.txt",
       "category": "test_result",
       "bytes": 99,
-      "exported_sha256": "c09a087f4a05a30b71b3db60f19d5b0521c06280ee7f2b29b569fdd620478700",
-      "source_sha256": "b77d2c6739314db3e99fd3ea7d70adb589ae778de911b65e20f13b69dd4be2fe"
+      "exported_sha256": "bf48980610a85178b9939bd2618a652b052101950d7b0efac57baa7055612788",
+      "source_sha256": "bf48980610a85178b9939bd2618a652b052101950d7b0efac57baa7055612788"
     },
     {
       "path": "scripts/__init__.py",
@@ -1085,11 +1148,32 @@
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
+      "path": "scripts/audit_general_data.py",
+      "category": "research_code",
+      "bytes": 10197,
+      "exported_sha256": "a4e6d4d3911f13db1d73a92f5e3bf79c6d1ecace372d9937374181a2e83de85a",
+      "source_sha256": "a4e6d4d3911f13db1d73a92f5e3bf79c6d1ecace372d9937374181a2e83de85a"
+    },
+    {
+      "path": "scripts/check_prepared_data.py",
+      "category": "research_code",
+      "bytes": 1419,
+      "exported_sha256": "f6e5706e95c9b41601348ecd2f2da8123f5600df641c0d9b8862dc7f77595f40",
+      "source_sha256": "f6e5706e95c9b41601348ecd2f2da8123f5600df641c0d9b8862dc7f77595f40"
+    },
+    {
       "path": "scripts/export_github.py",
       "category": "research_code",
-      "bytes": 21766,
-      "exported_sha256": "d12ebef1d768b7cfc8d19b1b5705946bc6eba12ac1e6ae3df4066b2f84ed7822",
-      "source_sha256": "c5cd9e52f640f7f89e9aacbb642f076e414ee500df2ebaeb3cfc9ef84600ff5e"
+      "bytes": 25836,
+      "exported_sha256": "5d46726ff27554ad297ec4f53537661aa4d8b606c85b978dd6995150c76b17bb",
+      "source_sha256": "2f08f67db63c86d06d89b1f13f419f2351bca0e0a4a0ccd7d0968792a12bf48a"
+    },
+    {
+      "path": "scripts/index_object_benchmark.py",
+      "category": "research_code",
+      "bytes": 2562,
+      "exported_sha256": "1901cefcfd8cf717aa5a6f966ba61af9d56263a9cefb9b9067790c18f3950a99",
+      "source_sha256": "1901cefcfd8cf717aa5a6f966ba61af9d56263a9cefb9b9067790c18f3950a99"
     },
     {
       "path": "scripts/legacy/__init__.py",
@@ -1101,8 +1185,8 @@
     {
       "path": "scripts/legacy/eval_facescape_modes.py",
       "category": "research_code",
-      "bytes": 24117,
-      "exported_sha256": "7b528d8f49a363c0fbe3e41e55511c2c8f3019e971f7544eeee59d8cf5966714",
+      "bytes": 24115,
+      "exported_sha256": "7cbe79b1747a733a7f6e83db5feebeb73732a9b8a56252caac4fb8affc4d6064",
       "source_sha256": "c955a2d964482033209f31ea96708115dec2a8b53231097a335247a3ee20013e"
     },
     {
@@ -1120,11 +1204,18 @@
       "source_sha256": "5cd0d5bd346fcaddd75199d23507cb2e0dbdc25772ac73b6ac3f1088c06f193f"
     },
     {
+      "path": "scripts/prepare_hypersim_pilot.py",
+      "category": "research_code",
+      "bytes": 5863,
+      "exported_sha256": "ea139aa4d4147e3be08848e5af5ae11384413e0088ef6b1044c710dbccc3c319",
+      "source_sha256": "ea139aa4d4147e3be08848e5af5ae11384413e0088ef6b1044c710dbccc3c319"
+    },
+    {
       "path": "scripts/render_record.py",
       "category": "research_code",
-      "bytes": 11538,
-      "exported_sha256": "419cc5995628c99357ba4c1bb9f80e42c566b3ac3a8a4bfe57e48aa2f8141499",
-      "source_sha256": "4d5ff6a3705acc6e38b6b9c970b821149796e0db5fbf892730bcd6b4fbce8c9c"
+      "bytes": 11669,
+      "exported_sha256": "9bdc248e01ae8498270116dea0e5e985b442f9d46c0fc975016d1943014b9dfe",
+      "source_sha256": "2026de79efc3f23e49856138bf7f35c259ef55e3d2149293dc52d50b51f9cd1b"
     },
     {
       "path": "scripts/run_diagnostics.py",
@@ -1132,6 +1223,13 @@
       "bytes": 18731,
       "exported_sha256": "71de4eb54dda4cf32bfd2aa362dd99ff7071659f4ecca845995f0d1395f8c716",
       "source_sha256": "71de4eb54dda4cf32bfd2aa362dd99ff7071659f4ecca845995f0d1395f8c716"
+    },
+    {
+      "path": "scripts/run_face_supplements.py",
+      "category": "research_code",
+      "bytes": 9726,
+      "exported_sha256": "61a60bff27c7a6e6dcf05562b079e6912526b75132bab81067b80c65f89dd201",
+      "source_sha256": "61a60bff27c7a6e6dcf05562b079e6912526b75132bab81067b80c65f89dd201"
     },
     {
       "path": "scripts/run_imagewise_noise.py",
@@ -1150,8 +1248,8 @@
     {
       "path": "scripts/summarize_diagnostics.py",
       "category": "research_code",
-      "bytes": 8757,
-      "exported_sha256": "c969b3e692ebbc6d3741529fca721f056835486f77906e96c237f0dcfc2cf6a3",
+      "bytes": 8741,
+      "exported_sha256": "3abedbdb84b201abddbd6f9ecb7bc0bcc5cbc6d83516d13dce797c333ce9510b",
       "source_sha256": "19e8b382bd94a45f4629f2b9ae2e1f0c6cc08f0991d0b0601878400a93245623"
     },
     {
@@ -1169,6 +1267,20 @@
       "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
+      "path": "src/cluster_bootstrap.py",
+      "category": "research_code",
+      "bytes": 1819,
+      "exported_sha256": "2702814ea9f19741f05b33a8523715e637d63ec58e914e3ab8bef9ebf82273e1",
+      "source_sha256": "2702814ea9f19741f05b33a8523715e637d63ec58e914e3ab8bef9ebf82273e1"
+    },
+    {
+      "path": "src/data_contract.py",
+      "category": "research_code",
+      "bytes": 2615,
+      "exported_sha256": "ff720fb282bd404916636ac00f1e91fd0e50ee6d57ed13224aa227fd5d233710",
+      "source_sha256": "ff720fb282bd404916636ac00f1e91fd0e50ee6d57ed13224aa227fd5d233710"
+    },
+    {
       "path": "src/diagnostic_data.py",
       "category": "research_code",
       "bytes": 3824,
@@ -1181,6 +1293,13 @@
       "bytes": 2996,
       "exported_sha256": "2e24c2b404823c52052cd7e618655c0ce297fe7fec79144032f59e17b0b01f99",
       "source_sha256": "2e24c2b404823c52052cd7e618655c0ce297fe7fec79144032f59e17b0b01f99"
+    },
+    {
+      "path": "src/general_dataset.py",
+      "category": "research_code",
+      "bytes": 2409,
+      "exported_sha256": "962702323e069657f16528983354ee3aa15c2c6648d8720b8d9ebecc970261d6",
+      "source_sha256": "962702323e069657f16528983354ee3aa15c2c6648d8720b8d9ebecc970261d6"
     },
     {
       "path": "src/losses.py",
@@ -1230,6 +1349,34 @@
       "bytes": 128,
       "exported_sha256": "0baac0f85c6cd20c6d0c359ebad0e374af296683066878a154308a64bed993c5",
       "source_sha256": "0baac0f85c6cd20c6d0c359ebad0e374af296683066878a154308a64bed993c5"
+    },
+    {
+      "path": "tests/test_cluster_bootstrap.py",
+      "category": "research_code",
+      "bytes": 989,
+      "exported_sha256": "a52114ca9d5aad59fed07688bcbb75da93fe97d2b55d71acd52e7b69a108fc5d",
+      "source_sha256": "a52114ca9d5aad59fed07688bcbb75da93fe97d2b55d71acd52e7b69a108fc5d"
+    },
+    {
+      "path": "tests/test_data_contract.py",
+      "category": "research_code",
+      "bytes": 1939,
+      "exported_sha256": "f557c0b829c9ccaf37d6a6556815a285c060d56ecffa005e4fddd7ce0c690748",
+      "source_sha256": "f557c0b829c9ccaf37d6a6556815a285c060d56ecffa005e4fddd7ce0c690748"
+    },
+    {
+      "path": "tests/test_export.py",
+      "category": "research_code",
+      "bytes": 394,
+      "exported_sha256": "0500657553829a96dafae2f87d99e74baf17e8d310eaf859994707cbdb553938",
+      "source_sha256": "0500657553829a96dafae2f87d99e74baf17e8d310eaf859994707cbdb553938"
+    },
+    {
+      "path": "tests/test_general_dataset.py",
+      "category": "research_code",
+      "bytes": 2318,
+      "exported_sha256": "8c0a4dfa6fe8f8cf3df68fb096beb812c871ab9e2a060df54ebae08656fe189c",
+      "source_sha256": "8c0a4dfa6fe8f8cf3df68fb096beb812c871ab9e2a060df54ebae08656fe189c"
     },
     {
       "path": "tests/test_noise_protocol.py",

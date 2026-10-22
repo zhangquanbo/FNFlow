@@ -6,3 +6,4 @@ accelerate==1.11.0
 pytest==9.1.1
 matplotlib==3.10.7
 tqdm==4.67.1
+h5py==3.16.0

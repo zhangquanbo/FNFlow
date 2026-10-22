@@ -4,7 +4,7 @@ FaceFlux-Best 完整操作流程
 0. 进入项目
 -----------
 
-cd ${FACEFLUX_BEST_ROOT}
+cd $FACEFLUX_BEST_ROOT
 
 
 1. 从头训练最终最优配置
@@ -190,7 +190,7 @@ grep -R -n \
   --include='*.py' \
   --include='*.sh' \
   --exclude='original_launcher.sh' \
-  '${WORKSPACE_ROOT}/FaceFlux-Clean' \
+  '$WORKSPACE_ROOT/FaceFlux-Clean' \
   commands scripts train_unet.py experiments/checkpoint_zoo || true
 
 # 数据目录不应依赖FaceFlux-Clean：

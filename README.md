@@ -57,6 +57,25 @@ The dataset-replicate SD measures Monte Carlo variation of the dataset mean. Wit
 
 [Aggregate results](results/D3_full_imagewise_noise_v1/multiseed_summary.json) include the shared-field reference and the mean directional variance 1-R. Sample keys, seed mappings and per-image records are not exported.
 
+## Directional averaging and identity resampling
+
+Same full historical set and image-specific noise. Existing checkpoints are kept separate; neither was retrained.
+
+| Checkpoint | Conditional MAE° | Geom-CFG MAE° | Geom-CFG ensemble of 8 MAE° | Single-sample Geom-CFG identity interval° |
+|---|---:|---:|---:|---|
+| p05_best | 19.8371 | 19.4122 | 18.9568 | [19.1502, 19.6764] |
+| p05_original | 19.1481 | 19.2544 | 18.7597 | [18.9852, 19.5327] |
+
+Intervals are 95% percentile cluster-bootstrap intervals: 100 identities resampled 10,000 times, conditional on the fixed weights, inference draws and development-domain identity population. Whole clusters are sampled and the macro-image ratio is recomputed. They do not include training-seed variation or establish generalization to new domains. Eight-sample directional averaging costs eight samples and changes the estimator; its gain is not an isolated irreducible noise cost.
+
+[Aggregate results and paired intervals](results/D4_D6_face_supplements_v1/aggregate_summary.json).
+
+## Data preparation status
+
+The existing Hypersim conversion contains 7,325 samples; 3,146 images have at least one zero normal inside the old valid mask. A new native-geometry FP32 cache contains 5,736 train and 700 validation images from 30/5 disjoint scenes. All prepared samples pass the included loader checks. Exact camera projection matrices are retained; an ordinary K has a separate validity flag. RGB comes from lossy final-preview images, not the original HDR color.
+
+Mixed-domain training is not ready: the local NYUv2 training package needs authoritative scene mapping, and object training assets have not been identified. The 300 DSINE ScanNet benchmark frames and 42 OLATverse validation objects remain reserved. Data, sample manifests and prepared caches are not distributed. [Inventory](results/P0_general_data_v1/summary.json), [prepared-cache checks](results/P0_prepared_hypersim_full_v1/summary.json), [object evaluation inventory](results/P0_object_benchmark_v1/summary.json).
+
 
 ## Setup
 

@@ -1,0 +1,14 @@
+{
+  "run_id": "D4_D6_face_supplements_v1",
+  "subset_subjects": 0, "selection_seed": 20261021,
+  "image_size": 256, "precision": "fp16", "reference": "p05_best",
+  "inference_seeds": [42,43,44,45,46,47,48,49], "steps": [1],
+  "modes": ["no_cfg","geom_cfg"], "cfg_scale": 1.5,
+  "noise_protocol": "sha256_image_noise_v1", "dataset_namespace": "FaceScapeRender1",
+  "shared_reference_run": "D2_D3_full_multiseed",
+  "bootstrap_resamples": 10000, "bootstrap_seed": 20261022,
+  "models": {
+    "p05_best": {"checkpoint": "checkpoints/repro_p05_full_exact/epoch_500.pth"},
+    "p05_original": {"checkpoint": "experiments/checkpoint_zoo/10_full_p05_original/checkpoint.pth"}
+  }
+}

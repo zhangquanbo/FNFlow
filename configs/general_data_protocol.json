@@ -1,0 +1,18 @@
+{
+  "version": "general_data_protocol_v1",
+  "main_training_ready": false,
+  "normal_basis": "camera x-right, y-down, z-forward",
+  "normal_orientation": "ray-positive, compatible with DSINE-packaged GeoNet/FrameNet labels",
+  "main_input": "RGB only",
+  "camera_metadata": "exact central projection retained; ordinary K has a separate validity flag",
+  "sources": {
+    "hypersim_protocol": {"prepared_root": "data/hypersim_protocol_v1", "role": "loader and geometry protocol checks", "train_images": 120, "validation_images": 20},
+    "hypersim_trainval": {"prepared_root": "data/hypersim_trainval_v1", "role": "synthetic indoor training/validation", "status": "prepared and all samples checked", "train_images": 5736, "validation_images": 700, "train_scenes": 30, "validation_scenes": 5},
+    "nyuv2_train": {"role": "real indoor training and scene holdout", "status": "blocked pending authoritative scene mapping", "available_images": 795},
+    "nyuv2_test": {"role": "reserved benchmark test", "available_images": 654, "training_allowed": false},
+    "scannet_dsine": {"role": "reserved benchmark test", "available_images": 300, "training_allowed": false},
+    "olatverse_val": {"role": "reserved object evaluation", "assets": 42, "geometry_views": 210, "appearance_images": 840, "training_allowed": false, "metric_protocol_ready": false},
+    "object_training": {"role": "independent rendered training assets", "status": "not acquired or identified"}
+  },
+  "remaining_gates": ["authoritative real-indoor scene split", "training object assets and render protocol", "cross-source orientation and preprocessing checks"]
+}

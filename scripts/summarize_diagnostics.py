@@ -51,7 +51,7 @@ def main():
         f"浮点单位法线协议：{baseline['float']['mean']:.9f}°。",
         "p0、p0.3、原 p0.5、p0.7 和最佳复现这五个历史参考，"
         "均与已有结果的 MAE 在 1e-6° 内一致，图片数量与 fallback 数量一致。",
-        "[复现核对明细](${FNFLOW_ROOT}/provenance/historical_reproduction.json)", "",
+        "[复现核对明细]($FNFLOW_ROOT/provenance/historical_reproduction.json)", "",
         "## D1：训练权重与推理引导分开看", "",
         "| checkpoint | 纯条件 MAE° | fixed-CFG 1.5 MAE° | Geom-CFG MAE° | Geom 相对纯条件变化° |",
         "|---|---:|---:|---:|---:|"]
@@ -65,7 +65,7 @@ def main():
         "- p0 仅评纯条件：26.4529°。它没有受过零条件训练，不加入正常 CFG 优劣排名。",
         "- 约 8.5° 的旧配置差距不能归因于推理 CFG。更大差距已经存在于不同训练权重的纯条件输出中。",
         "- 这不是对 dropout 的多次独立训练因果实验，也不是通用域结论；后续新域仍保留必要 CFG 候选。", "",
-        "![D1 全量结果](${FNFLOW_ROOT}/figures/D1_full.png)", "",
+        "![D1 全量结果]($FNFLOW_ROOT/figures/D1_full.png)", "",
         "## D2–D4：实际模型并没有消除噪声依赖", "",
         "| Euler 步数 | MAE°：浮点协议、seed 42、32 身份 |", "|---:|---:|"])
     for steps in [1, 2, 4, 8]:
@@ -86,7 +86,7 @@ def main():
         "该相关按像素汇总且仅来自 32 张，不能当作独立样本显著性或校准证据。",
         "- 本组中增加步数未改善 MAE；结论限于当前权重、引导和子集，不推广为“所有 FM 多步无效”。",
         "- 当前证据不足以优先启动歧义/校准不确定性路线，先保留为备选。", "",
-        "![D2–D4 小样本结果](${FNFLOW_ROOT}/figures/D2_D4_pilot.png)", "",
+        "![D2–D4 小样本结果]($FNFLOW_ROOT/figures/D2_D4_pilot.png)", "",
         "## D5：未观察到普遍的零引导权重", "",
         f"33 张图的整图平均 s={pilot['ood']['mean_guidance']:.4f}，"
         f"s=0 的平均像素比例为 {pilot['ood']['mean_zero_fraction']*100:.5f}%。",
@@ -99,11 +99,11 @@ def main():
         "4. 先核查现有 Hypersim 与真实室内标签的转换/划分，再补物体训练数据；完成通用训练入口后运行 R/V/Xv/Xn。",
         "5. 浮点输出修正影响很小，但作为协议保留；不能把这项修正包装为精度贡献。", "",
         "## 证据位置", "",
-        "- [代码与全部结果记录](${FNFLOW_ROOT}/docs/代码与实验记录.md)",
-        "- [D1 全量机器可读结果](${FNFLOW_ROOT}/outputs/D1_full/summary.json)",
-        "- [D2–D5 固定小样本结果](${FNFLOW_ROOT}/outputs/P0_D1_D5_pilot/summary.json)",
-        "- [数据来源初查](${FNFLOW_ROOT}/docs/数据来源初查.md)",
-        "- [Best 最终完整性核对](${FNFLOW_ROOT}/provenance/best_after.json)", "",
+        "- [代码与全部结果记录]($FNFLOW_ROOT/docs/代码与实验记录.md)",
+        "- [D1 全量机器可读结果]($FNFLOW_ROOT/outputs/D1_full/summary.json)",
+        "- [D2–D5 固定小样本结果]($FNFLOW_ROOT/outputs/P0_D1_D5_pilot/summary.json)",
+        "- [数据来源初查]($FNFLOW_ROOT/docs/数据来源初查.md)",
+        "- [Best 最终完整性核对]($FNFLOW_ROOT/provenance/best_after.json)", "",
         "本轮未使用 FaceScape 选择新的通用训练超参；它只用于历史诊断。"
         "“最佳复现”指原有固定权重，不是从本轮测试重新选出的训练模型。", ""])
     output_path(ROOT / "docs/首轮诊断结论.md").write_text("\n".join(rows), encoding="utf-8")

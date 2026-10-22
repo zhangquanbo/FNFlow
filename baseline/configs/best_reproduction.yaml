@@ -1,6 +1,6 @@
 project:
   name: FaceFlux-Best
-  source: ${WORKSPACE_ROOT}/FaceFlux-Clean
+  source: $WORKSPACE_ROOT/FaceFlux-Clean
   environment: faceflux
 
 training:

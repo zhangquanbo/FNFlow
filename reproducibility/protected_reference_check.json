@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-22T08:18:32+08:00",
+  "checked_at": "2026-10-22T08:59:09+08:00",
   "entry_count": 540,
   "added": [],
   "removed": [],
@@ -7,27 +7,27 @@
   "verified_unchanged": true,
   "scope": "all non-followed entries: size/mtime/type; code/config/document content hashes",
   "checkpoint_contents": {
-    "${FACEFLUX_BEST_ROOT}/checkpoints/repro_p05_full_exact/epoch_500.pth": {
+    "$FACEFLUX_BEST_ROOT/checkpoints/repro_p05_full_exact/epoch_500.pth": {
       "expected_sha256": "8b6656b0241497f1aae20dac28bd7ed2434108659f2a4b229a0185ee6381e61f",
       "current_sha256": "8b6656b0241497f1aae20dac28bd7ed2434108659f2a4b229a0185ee6381e61f",
       "matches": true
     },
-    "${FACEFLUX_BEST_ROOT}/experiments/checkpoint_zoo/08_full_p00/checkpoint.pth": {
+    "$FACEFLUX_BEST_ROOT/experiments/checkpoint_zoo/08_full_p00/checkpoint.pth": {
       "expected_sha256": "651ab15d5575162ee211ae1e2beca600a455d04cc9236f2648ea1f758ddcc23a",
       "current_sha256": "651ab15d5575162ee211ae1e2beca600a455d04cc9236f2648ea1f758ddcc23a",
       "matches": true
     },
-    "${FACEFLUX_BEST_ROOT}/experiments/checkpoint_zoo/09_full_p03/checkpoint.pth": {
+    "$FACEFLUX_BEST_ROOT/experiments/checkpoint_zoo/09_full_p03/checkpoint.pth": {
       "expected_sha256": "aa6201561ca146bb75ae84e1cea7021ad59f83fe44cc95ad86522c0458c4f24e",
       "current_sha256": "aa6201561ca146bb75ae84e1cea7021ad59f83fe44cc95ad86522c0458c4f24e",
       "matches": true
     },
-    "${FACEFLUX_BEST_ROOT}/experiments/checkpoint_zoo/10_full_p05_original/checkpoint.pth": {
+    "$FACEFLUX_BEST_ROOT/experiments/checkpoint_zoo/10_full_p05_original/checkpoint.pth": {
       "expected_sha256": "307590081e065a9247bb154abdbfe894a11f137764ebdbb45f05d63be1dc38a5",
       "current_sha256": "307590081e065a9247bb154abdbfe894a11f137764ebdbb45f05d63be1dc38a5",
       "matches": true
     },
-    "${FACEFLUX_BEST_ROOT}/experiments/checkpoint_zoo/11_full_p07/checkpoint.pth": {
+    "$FACEFLUX_BEST_ROOT/experiments/checkpoint_zoo/11_full_p07/checkpoint.pth": {
       "expected_sha256": "188a5f2346f6000179e9331c421359441956c087b6fc3554bb01b6ad053518e9",
       "current_sha256": "188a5f2346f6000179e9331c421359441956c087b6fc3554bb01b6ad053518e9",
       "matches": true

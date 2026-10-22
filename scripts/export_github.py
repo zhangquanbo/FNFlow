@@ -17,14 +17,15 @@ files = {}
 
 def scrub(text):
     replacements = {
-        str(ROOT): "$" + "{FNFLOW_ROOT}",
-        str(BEST): "$" + "{FACEFLUX_BEST_ROOT}",
-        str(ROOT.parent) + "/": "$" + "{WORKSPACE_ROOT}/",
-        str(Path.home()) + "/": "$" + "{HOME}/",
-        "${FNFLOW_ROOT}": "$" + "{FNFLOW_ROOT}",
-        "X:\\FaceFlux-Research": "$" + "{FNFLOW_ROOT}",
-        "${FACEFLUX_BEST_ROOT}": "$" + "{FACEFLUX_BEST_ROOT}",
-        "X:\\FaceFlux-Best": "$" + "{FACEFLUX_BEST_ROOT}",
+        # Braceless placeholders also remain literal inside exported f-strings.
+        str(ROOT): "$FNFLOW_ROOT",
+        str(BEST): "$FACEFLUX_BEST_ROOT",
+        str(ROOT.parent) + "/": "$WORKSPACE_ROOT/",
+        str(Path.home()) + "/": "$HOME/",
+        "$FNFLOW_ROOT": "$FNFLOW_ROOT",
+        "X:\\FaceFlux-Research": "$FNFLOW_ROOT",
+        "$FACEFLUX_BEST_ROOT": "$FACEFLUX_BEST_ROOT",
+        "X:\\FaceFlux-Best": "$FACEFLUX_BEST_ROOT",
     }
     for source, target in replacements.items():
         text = text.replace(source, target)
@@ -39,8 +40,8 @@ def markdown(text, destination):
         if line:
             anchor = "#L" + line.group(1)
             target = target[:line.start()]
-        for prefix, replacement in [("${FNFLOW_ROOT}/", ""),
-                                     ("${FACEFLUX_BEST_ROOT}/", "baseline/")]:
+        for prefix, replacement in [("$FNFLOW_ROOT/", ""),
+                                     ("$FACEFLUX_BEST_ROOT/", "baseline/")]:
             if target.startswith(prefix):
                 relative = replacement + target[len(prefix):]
                 if relative.startswith("outputs/"):
@@ -97,7 +98,9 @@ def main():
         "baseline/results/historical_summary.md", "historical_metrics")
     header = (BEST / "logs/repro_p05_full_exact.log").read_text(encoding="utf-8").splitlines()[:8]
     text_file("reproducibility/baseline_training_header.txt", scrub("\n".join(header)) + "\n")
-    for run in ["D1_full", "P0_D1_D5_pilot", "D2_D3_full_multiseed", "D3_full_imagewise_noise_v1"]:
+    for run in ["D1_full", "P0_D1_D5_pilot", "D2_D3_full_multiseed", "D3_full_imagewise_noise_v1",
+                "D4_D6_face_supplements_v1", "P0_general_data_v1", "P0_prepared_hypersim_v1",
+                "P0_prepared_hypersim_full_v1", "P0_object_benchmark_v1"]:
         source = ROOT / "outputs" / run / "summary.json"
         if not source.exists():
             continue
@@ -108,6 +111,12 @@ def main():
         aggregate_file = source.with_name("multiseed_summary.json")
         if aggregate_file.exists():
             add(aggregate_file, f"results/{run}/multiseed_summary.json", "diagnostic_summary")
+        extra = source.with_name("aggregate_summary.json")
+        if extra.exists():
+            add(extra, f"results/{run}/aggregate_summary.json", "diagnostic_summary")
+    prepared = ROOT / "data/hypersim_trainval_v1/summary.json"
+    if prepared.exists() and json.loads(prepared.read_text()).get("status") == "completed":
+        add(prepared, "results/P0_prepared_hypersim_full_v1/preparation_summary.json", "diagnostic_summary")
     add(ROOT / "outputs/protocol_tests.txt", "results/protocol_tests.txt", "test_result")
     for filename in ["D1_full.png", "D2_D4_pilot.png", "D2_D3_full_multiseed.png"]:
         path = ROOT / "figures" / filename
@@ -122,7 +131,7 @@ def main():
     for key in ["python", "project_root", "read_only_reference"]:
         env.pop(key, None)
     env["gpu"] = "NVIDIA GeForce RTX 4090, 24 GB"
-    for package in ["matplotlib", "tqdm"]:
+    for package in ["matplotlib", "tqdm", "h5py"]:
         env["packages"][package] = importlib.metadata.version(package)
     text_file("reproducibility/tested_environment.json",
               json.dumps(env, ensure_ascii=False, indent=2) + "\n")
@@ -204,6 +213,41 @@ docs/
                           "[Aggregate results](results/D3_full_imagewise_noise_v1/multiseed_summary.json) include the shared-field reference "
                           "and the mean directional variance 1-R. Sample keys, seed mappings and per-image records are not exported.", ""])
             imagewise_section = "\n".join(lines)
+    supplement_path = ROOT / "outputs/D4_D6_face_supplements_v1/aggregate_summary.json"
+    if supplement_path.exists():
+        supplement = json.loads(supplement_path.read_text())
+        if supplement.get("status") == "completed":
+            lines = ["## Directional averaging and identity resampling", "",
+                     "Same full historical set and image-specific noise. Existing checkpoints are kept separate; neither was retrained.", "",
+                     "| Checkpoint | Conditional MAE° | Geom-CFG MAE° | Geom-CFG ensemble of 8 MAE° | Single-sample Geom-CFG identity interval° |",
+                     "|---|---:|---:|---:|---|"]
+            for name, result in supplement["supplements"].items():
+                groups = result["single_sample"]["groups"]
+                conditional = groups["no_cfg_k1"]["protocols"]["float"]["mean_mae_deg"]
+                geom = groups["geom_cfg_k1"]["protocols"]["float"]["mean_mae_deg"]
+                ensemble = result["ensemble8"]["geom_cfg"]["float"]["mean"]
+                ci = supplement["identity_bootstrap"]["metrics"][name + "/geom_cfg/single"]
+                lines.append(f"| {name} | {conditional:.4f} | {geom:.4f} | {ensemble:.4f} | [{ci['lower_95']:.4f}, {ci['upper_95']:.4f}] |")
+            lines.extend(["", "Intervals are 95% percentile cluster-bootstrap intervals: 100 identities resampled 10,000 times, "
+                          "conditional on the fixed weights, inference draws and development-domain identity population. "
+                          "Whole clusters are sampled and the macro-image ratio is recomputed. They do not include training-seed variation or establish generalization to new domains. "
+                          "Eight-sample directional averaging costs eight samples and changes the estimator; its gain is not an isolated irreducible noise cost.", "",
+                          "[Aggregate results and paired intervals](results/D4_D6_face_supplements_v1/aggregate_summary.json).", ""])
+            imagewise_section += "\n" + "\n".join(lines)
+    data_audit = ROOT / "outputs/P0_general_data_v1/summary.json"
+    full_check = ROOT / "outputs/P0_prepared_hypersim_full_v1/summary.json"
+    if data_audit.exists() and full_check.exists():
+        imagewise_section += "\n## Data preparation status\n\n" + (
+            "The existing Hypersim conversion contains 7,325 samples; 3,146 images have at least one zero normal inside the old valid mask. "
+            "A new native-geometry FP32 cache contains 5,736 train and 700 validation images from 30/5 disjoint scenes. "
+            "All prepared samples pass the included loader checks. Exact camera projection matrices are retained; an ordinary K has a separate validity flag. "
+            "RGB comes from lossy final-preview images, not the original HDR color.\n\n"
+            "Mixed-domain training is not ready: the local NYUv2 training package needs authoritative scene mapping, "
+            "and object training assets have not been identified. The 300 DSINE ScanNet benchmark frames and 42 OLATverse validation objects remain reserved. "
+            "Data, sample manifests and prepared caches are not distributed. "
+            "[Inventory](results/P0_general_data_v1/summary.json), "
+            "[prepared-cache checks](results/P0_prepared_hypersim_full_v1/summary.json), "
+            "[object evaluation inventory](results/P0_object_benchmark_v1/summary.json).\n")
     text_file("README.md", """# FNFlow
 
 Pixel-space conditional Flow Matching for face normals, with isolated research code for general object and indoor-scene normal estimation.

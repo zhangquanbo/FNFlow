@@ -8,7 +8,7 @@
 # ==============================================================
 
 set -e
-cd ${WORKSPACE_ROOT}/FaceFlux-Clean
+cd $WORKSPACE_ROOT/FaceFlux-Clean
 
 BASE="--model_size B --drop_prob 0.1 --epochs 500 --start_save_epoch 200 --save_interval 10 --image_size 256 --batch_size 8 --grad_accum_steps 2"
 

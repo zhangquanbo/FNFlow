@@ -602,7 +602,7 @@
   "scope": "full historical FaceScape set",
   "checkpoints": {
     "p05_best": {
-      "path": "${FACEFLUX_BEST_ROOT}/checkpoints/repro_p05_full_exact/epoch_500.pth",
+      "path": "$FACEFLUX_BEST_ROOT/checkpoints/repro_p05_full_exact/epoch_500.pth",
       "sha256": "8b6656b0241497f1aae20dac28bd7ed2434108659f2a4b229a0185ee6381e61f"
     }
   },

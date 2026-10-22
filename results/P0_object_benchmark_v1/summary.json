@@ -1,0 +1,14 @@
+{
+  "created_at": "2026-10-22T08:45:37+08:00",
+  "status": "completed",
+  "objects": 42,
+  "geometry_views": 210,
+  "appearance_images": 840,
+  "appearance_variants_per_view": 4,
+  "issues": {},
+  "training_images": 0,
+  "input_protocol": "single RGB; extra illumination not an inference input",
+  "label_source": "photometric/reconstruction-derived benchmark normals; coordinate and crop calibration still require verification",
+  "metric_protocol_ready": false,
+  "code_sha256": "1901cefcfd8cf717aa5a6f966ba61af9d56263a9cefb9b9067790c18f3950a99"
+}

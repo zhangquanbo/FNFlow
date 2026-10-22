@@ -14,11 +14,11 @@ def render():
     env = json.loads(env_file.read_text()) if env_file.exists() else {}
     lines = [
         "# FaceFlux-Research：代码与实验记录", "",
-        f"更新：{now()}。此文档由运行状态自动整理，方案保存在 [研究方案](${FNFLOW_ROOT}/docs/研究方案.md)。", "",
-        "阅读入口：[首轮诊断结论](${FNFLOW_ROOT}/docs/首轮诊断结论.md) · "
-        "[数据来源初查](${FNFLOW_ROOT}/docs/数据来源初查.md)", "",
+        f"更新：{now()}。此文档由运行状态自动整理，方案保存在 [研究方案]($FNFLOW_ROOT/docs/研究方案.md)。", "",
+        "阅读入口：[首轮诊断结论]($FNFLOW_ROOT/docs/首轮诊断结论.md) · "
+        "[数据来源初查]($FNFLOW_ROOT/docs/数据来源初查.md)", "",
         "## 工作边界", "",
-        "- 新工作目录：${FNFLOW_ROOT}；服务器对应 ${FNFLOW_ROOT}。",
+        "- 新工作目录：$FNFLOW_ROOT；服务器对应 $FNFLOW_ROOT。",
         "- FaceFlux-Best 仅作为只读源码、权重与数据参考；所有新输出和缓存写入新目录。",
         "- 本轮先做 P0 协议检查及 D1–D5 无需重训诊断。FaceScape 是历史开发域。",
         "- 小样本、全量、历史 clamp 协议与浮点单位法线协议分列；推理 seed 变异不是训练 seed 变异。",
@@ -27,29 +27,29 @@ def render():
         f"- Python：{env.get('python', '待检查')}",
         f"- PyTorch：{env.get('packages', {}).get('torch', '待检查')}；CUDA：{env.get('torch_cuda', '待检查')}",
         f"- GPU：{env.get('gpu', '待检查')}",
-        "- [环境原始记录](${FNFLOW_ROOT}/provenance/environment.json)",
-        "- [数据来源清单](${FNFLOW_ROOT}/provenance/data_inventory.json)", "",
-        "- [Best 最终核对（含使用权重内容哈希）](${FNFLOW_ROOT}/provenance/best_after.json)",
-        "- [历史结果复现核对](${FNFLOW_ROOT}/provenance/historical_reproduction.json)", "",
+        "- [环境原始记录]($FNFLOW_ROOT/provenance/environment.json)",
+        "- [数据来源清单]($FNFLOW_ROOT/provenance/data_inventory.json)", "",
+        "- [Best 最终核对（含使用权重内容哈希）]($FNFLOW_ROOT/provenance/best_after.json)",
+        "- [历史结果复现核对]($FNFLOW_ROOT/provenance/historical_reproduction.json)", "",
         "## 代码索引", "",
         "| 文件 | 职责 |", "|---|---|",
-        "| [model_unet.py](${FNFLOW_ROOT}/src/models/model_unet.py) | 从 Best 原样复制的 UNet；结构与参数未改 |",
-        "| [历史评测快照](${FNFLOW_ROOT}/scripts/legacy/eval_facescape_modes.py) | 原推理、mask 和指标的兼容对照，不直接导入 Best |",
-        "| [flow_inference.py](${FNFLOW_ROOT}/src/flow_inference.py) | 正确 Euler、局部 RNG、no/fixed/Geom-CFG、FP32 单位法线和引导统计 |",
-        "| [normal_geometry.py](${FNFLOW_ROOT}/src/normal_geometry.py) | 有效区域法线插值、镜像及连续坐标 K 变换 |",
-        "| [losses.py](${FNFLOW_ROOT}/src/losses.py) | masked 速度与法线损失、raw endpoint unit 项、无效批次跳过 |",
-        "| [run_diagnostics.py](${FNFLOW_ROOT}/scripts/run_diagnostics.py) | D0 历史兼容、D1–D5、逐图结果、失败与 Best 审计 |",
-        "| [run_multiseed_diagnostics.py](${FNFLOW_ROOT}/scripts/run_multiseed_diagnostics.py) | 全量 8 seed 的单步 CFG 及 no-CFG 步数配对补做 |",
-        "| [run_imagewise_noise.py](${FNFLOW_ROOT}/scripts/run_imagewise_noise.py) | 逐图独立噪声、配对引导及逐图/像素敏感度 |",
-        "| [noise_protocol.py](${FNFLOW_ROOT}/src/noise_protocol.py) | 稳定图片 seed 与分层噪声统计 |",
-        "| [补做配置](${FNFLOW_ROOT}/configs/diagnostics_full_multiseed.json) | 固定参考权重、8 seed、4 步数与无筛选协议 |",
-        "| [反馈核对与补实验](${FNFLOW_ROOT}/docs/反馈核对与补实验.md) | 修正解释边界、训练重复设计与发布范围记录 |",
-        "| [test_protocol.py](${FNFLOW_ROOT}/tests/test_protocol.py) | 有明确几何/数值期望的协议测试 |",
-        "| [pilot 配置](${FNFLOW_ROOT}/configs/diagnostics_pilot.json) | 固定 checkpoint、子集选择、seed 与步数 |",
-        "| [preflight.py](${FNFLOW_ROOT}/scripts/preflight.py) | 环境、来源哈希和 Best 改动前清单 |",
-        "| [summarize_diagnostics.py](${FNFLOW_ROOT}/scripts/summarize_diagnostics.py) | 由完成结果生成首轮结论并核对历史参考 |",
-        "| [plot_diagnostics.py](${FNFLOW_ROOT}/scripts/plot_diagnostics.py) | 全量 CFG 与小样本步数/seed 图表 |",
-        "| [verify_best.py](${FNFLOW_ROOT}/scripts/verify_best.py) | 最终检查 Best 条目与使用过的 checkpoint 内容 |", "",
+        "| [model_unet.py]($FNFLOW_ROOT/src/models/model_unet.py) | 从 Best 原样复制的 UNet；结构与参数未改 |",
+        "| [历史评测快照]($FNFLOW_ROOT/scripts/legacy/eval_facescape_modes.py) | 原推理、mask 和指标的兼容对照，不直接导入 Best |",
+        "| [flow_inference.py]($FNFLOW_ROOT/src/flow_inference.py) | 正确 Euler、局部 RNG、no/fixed/Geom-CFG、FP32 单位法线和引导统计 |",
+        "| [normal_geometry.py]($FNFLOW_ROOT/src/normal_geometry.py) | 有效区域法线插值、镜像及连续坐标 K 变换 |",
+        "| [losses.py]($FNFLOW_ROOT/src/losses.py) | masked 速度与法线损失、raw endpoint unit 项、无效批次跳过 |",
+        "| [run_diagnostics.py]($FNFLOW_ROOT/scripts/run_diagnostics.py) | D0 历史兼容、D1–D5、逐图结果、失败与 Best 审计 |",
+        "| [run_multiseed_diagnostics.py]($FNFLOW_ROOT/scripts/run_multiseed_diagnostics.py) | 全量 8 seed 的单步 CFG 及 no-CFG 步数配对补做 |",
+        "| [run_imagewise_noise.py]($FNFLOW_ROOT/scripts/run_imagewise_noise.py) | 逐图独立噪声、配对引导及逐图/像素敏感度 |",
+        "| [noise_protocol.py]($FNFLOW_ROOT/src/noise_protocol.py) | 稳定图片 seed 与分层噪声统计 |",
+        "| [补做配置]($FNFLOW_ROOT/configs/diagnostics_full_multiseed.json) | 固定参考权重、8 seed、4 步数与无筛选协议 |",
+        "| [反馈核对与补实验]($FNFLOW_ROOT/docs/反馈核对与补实验.md) | 修正解释边界、训练重复设计与发布范围记录 |",
+        "| [test_protocol.py]($FNFLOW_ROOT/tests/test_protocol.py) | 有明确几何/数值期望的协议测试 |",
+        "| [pilot 配置]($FNFLOW_ROOT/configs/diagnostics_pilot.json) | 固定 checkpoint、子集选择、seed 与步数 |",
+        "| [preflight.py]($FNFLOW_ROOT/scripts/preflight.py) | 环境、来源哈希和 Best 改动前清单 |",
+        "| [summarize_diagnostics.py]($FNFLOW_ROOT/scripts/summarize_diagnostics.py) | 由完成结果生成首轮结论并核对历史参考 |",
+        "| [plot_diagnostics.py]($FNFLOW_ROOT/scripts/plot_diagnostics.py) | 全量 CFG 与小样本步数/seed 图表 |",
+        "| [verify_best.py]($FNFLOW_ROOT/scripts/verify_best.py) | 最终检查 Best 条目与使用过的 checkpoint 内容 |", "",
         "## 基础检查", "",
     ]
     test_file = ROOT / "outputs/protocol_tests.txt"
@@ -61,13 +61,15 @@ def render():
         lines.extend(["协议测试：待运行。", ""])
     for file in files:
         run = json.loads(file.read_text())
+        if 'stage' not in run or 'rows' not in run:
+            continue  # Data audits have a different schema and separate reports.
         lines.extend([f"## {run['run_id']}", "",
                       f"- 状态：{run['status']}；阶段：{run['stage']}；记录时间：{run.get('updated_at', '')}",
                       f"- 数据：{run.get('num_images', 0)} 张 / {run.get('num_subjects', 0)} 个身份；{run.get('scope', '')}",
                       f"- 当前任务：{run.get('current_task', '—')}",
                       "- GT mask 沿用人脸历史策略；浮点指标使用相同 mask，只隔离输出方向处理差异。",
-                      f"- [完整结果](${FNFLOW_ROOT}/outputs/{run['run_id']}/summary.json) · "
-                      f"[样本清单](${FNFLOW_ROOT}/outputs/{run['run_id']}/subset.json)", ""])
+                      f"- [完整结果]($FNFLOW_ROOT/outputs/{run['run_id']}/summary.json) · "
+                      f"[样本清单]($FNFLOW_ROOT/outputs/{run['run_id']}/subset.json)", ""])
         if run.get("error"):
             lines.extend([f"运行错误：{run['error']}", ""])
         parity = run.get("parity", {})
@@ -135,6 +137,7 @@ def render():
                   "脚本由固定配置启动；每完成一个配方写入 JSON/逐图 CSV 并刷新此文档。"
                   "进程失败会记录错误，重新运行可跳过已经验证签名一致的结果。", ""])
     target = output_path(ROOT / "docs/代码与实验记录.md")
+    target.parent.mkdir(parents=True, exist_ok=True)
     temporary = target.with_suffix(".md.tmp")
     temporary.write_text("\n".join(lines), encoding="utf-8")
     os.replace(temporary, target)

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-BEST="${FACEFLUX_BEST_ROOT}"
+BEST="$FACEFLUX_BEST_ROOT"
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TRAIN_CODE="$DIR/training_code/train_unet.py"
 OUTPUT_DIR="$DIR/retrained"

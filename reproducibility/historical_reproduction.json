@@ -1,6 +1,6 @@
 {
   "created_at": "2026-10-21T23:15:05+08:00",
-  "source": "${FACEFLUX_BEST_ROOT}/outputs/clean_experiment_finals_20260801_212431/eval_results.json",
+  "source": "$FACEFLUX_BEST_ROOT/outputs/clean_experiment_finals_20260801_212431/eval_results.json",
   "source_sha256": "8a050937ab05dc2f9d60084b4c51076a91584e0620c781b08b214fc6abab34d1",
   "checks": [
     {

@@ -85,7 +85,7 @@ def _get_dlib():
             os.path.join(PROJECT_ROOT, "data/shape_predictor_68_face_landmarks.dat"),
             os.path.join(PROJECT_ROOT, "assets/shape_predictor_68_face_landmarks.dat"),
             os.path.expanduser("~/shape_predictor_68_face_landmarks.dat"),
-            "${HOME}/shape_predictor_68_face_landmarks.dat",
+            "$HOME/shape_predictor_68_face_landmarks.dat",
         ]
         for p in candidates:
             if os.path.exists(p):

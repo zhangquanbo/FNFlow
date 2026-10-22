@@ -1,0 +1,85 @@
+{
+  "created_at": "2026-10-22T08:37:32+08:00",
+  "run_id": "P0_general_data_v1",
+  "status": "completed",
+  "code_sha256": "a4e6d4d3911f13db1d73a92f5e3bf79c6d1ecace372d9937374181a2e83de85a",
+  "hypersim": {
+    "num_rows": 7325,
+    "num_unique_keys": 7325,
+    "images_by_split": {
+      "train": 5736,
+      "test": 889,
+      "val": 700
+    },
+    "scenes_by_split": {
+      "train": 30,
+      "test": 5,
+      "val": 5
+    },
+    "scene_overlap_counts": {
+      "train__val": 0,
+      "train__test": 0,
+      "val__test": 0
+    },
+    "issues": {
+      "zero_valid_normal": 3146,
+      "nonunit_valid_normal": 3152
+    },
+    "normal_dtype_counts": {
+      "float16": 7325
+    },
+    "valid_fraction_min_median": [
+      0.5693206787109375,
+      1.0
+    ],
+    "native_fields_present_counts": {
+      "normal_cam": 7325,
+      "normal_bump_cam": 7325,
+      "depth_meters": 0,
+      "position": 395
+    },
+    "scenes_with_local_camera_poses": 4,
+    "projection_metadata_available": true,
+    "native_comparison_scenes": 40,
+    "native_gl_linear_mse_median": 8.619093438966274e-09,
+    "label_semantics": "normal_cam geometry, OpenGL camera basis, ignored bump mapping; comparison is provenance diagnosis, not prediction evaluation",
+    "official_metadata_sha256": "47b7cce12f4659ffa31cf05e8fbf2aee3d69e1929d07b5ea25506603b69d5ce6",
+    "conversion_manifest_sha256": "8be1581f61c488c8672c84e4e51c4762ca53dab70c136ae50b5d17935b55525d",
+    "readiness": "requires explicit canonical coordinate conversion and edge-safe resizing; source RGB/depth provenance remains declared"
+  },
+  "real_indoor": {
+    "nyuv2_train": {
+      "images": 795,
+      "missing_normal_or_K": 0,
+      "group_mapping_available_in_package": false,
+      "use": "train scenes must be mapped before holdout"
+    },
+    "nyuv2_test": {
+      "images": 654,
+      "missing_normal_or_K": 0,
+      "group_mapping_available_in_package": false,
+      "use": "reserved benchmark test"
+    },
+    "scannet": {
+      "images": 300,
+      "scans": 260,
+      "base_scenes": 232,
+      "scan_official_overlap_counts": {
+        "train": 193,
+        "val": 45
+      },
+      "images_in_dsine_benchmark_test": 300,
+      "train_candidate_images_excluding_reserved_benchmark": 0,
+      "label_source": "FrameNet depth-derived normals; DSINE benchmark split preserved"
+    }
+  },
+  "objects": {
+    "olatverse_validation_objects": 42,
+    "objects_with_benchmark_normals": 42,
+    "objects_with_reconstructed_meshes": 42,
+    "training_archives_present": 0,
+    "readiness": "held-out object evaluation candidate only; no training use of curated validation objects",
+    "normal_source": "photometric pseudo-GT and reconstructed meshes, not automatically direct-render geometric normals"
+  },
+  "main_training_ready": false
+}

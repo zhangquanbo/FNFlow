@@ -1,0 +1,506 @@
+{
+  "num_images": 1998,
+  "num_subjects": 100,
+  "checkpoints": {
+    "p05_best": {
+      "path": "$FACEFLUX_BEST_ROOT/checkpoints/repro_p05_full_exact/epoch_500.pth",
+      "sha256": "8b6656b0241497f1aae20dac28bd7ed2434108659f2a4b229a0185ee6381e61f"
+    },
+    "p05_original": {
+      "path": "$FACEFLUX_BEST_ROOT/experiments/checkpoint_zoo/10_full_p05_original/checkpoint.pth",
+      "sha256": "307590081e065a9247bb154abdbfe894a11f137764ebdbb45f05d63be1dc38a5"
+    }
+  },
+  "supplements": {
+    "p05_best": {
+      "single_sample": {
+        "groups": {
+          "no_cfg_k1": {
+            "num_seeds": 8,
+            "protocols": {
+              "legacy": {
+                "mean_mae_deg": 19.837134579857022,
+                "std_seed_ddof1_deg": 0.019850528018211393,
+                "std_seed_ddof0_deg": 0.018568468697675936,
+                "seed_maes_deg": {
+                  "42": 19.846206903212277,
+                  "43": 19.800881908043895,
+                  "44": 19.83279794851091,
+                  "45": 19.82288887730567,
+                  "46": 19.82952878370301,
+                  "47": 19.864293220970346,
+                  "48": 19.85097327322229,
+                  "49": 19.849505723887773
+                }
+              },
+              "float": {
+                "mean_mae_deg": 19.837141077436936,
+                "std_seed_ddof1_deg": 0.019850482618064623,
+                "std_seed_ddof0_deg": 0.018568426229727306,
+                "seed_maes_deg": {
+                  "42": 19.846213302897766,
+                  "43": 19.80088876263727,
+                  "44": 19.832804466792425,
+                  "45": 19.82289523800993,
+                  "46": 19.829534898617705,
+                  "47": 19.864299654715772,
+                  "48": 19.850980268070252,
+                  "49": 19.849512027754372
+                }
+              }
+            },
+            "mean_ms_per_image": 6.531150223772593
+          },
+          "geom_cfg_k1": {
+            "num_seeds": 8,
+            "protocols": {
+              "legacy": {
+                "mean_mae_deg": 19.409867999989245,
+                "std_seed_ddof1_deg": 0.020225543195916722,
+                "std_seed_ddof0_deg": 0.018919263275129307,
+                "seed_maes_deg": {
+                  "42": 19.419391446850796,
+                  "43": 19.37427308412332,
+                  "44": 19.417213417994358,
+                  "45": 19.38726967605504,
+                  "46": 19.405625583430652,
+                  "47": 19.42558446081798,
+                  "48": 19.435532074424366,
+                  "49": 19.414054256217426
+                }
+              },
+              "float": {
+                "mean_mae_deg": 19.412241710076074,
+                "std_seed_ddof1_deg": 0.020219632642114276,
+                "std_seed_ddof0_deg": 0.018913734458305596,
+                "seed_maes_deg": {
+                  "42": 19.421812283850695,
+                  "43": 19.37667723470037,
+                  "44": 19.419590894636862,
+                  "45": 19.389625407667577,
+                  "46": 19.40797589641209,
+                  "47": 19.42790618199242,
+                  "48": 19.43790709337085,
+                  "49": 19.416438687977752
+                }
+              }
+            },
+            "mean_ms_per_image": 12.425895494355768
+          }
+        },
+        "noise_sensitivity": {
+          "no_cfg": {
+            "num_images": 1998,
+            "num_inference_replicates": 8,
+            "mean_mae_deg": 19.837141077436936,
+            "dataset_mae_sd_ddof1_deg": 0.019850482618064623,
+            "mean_image_mae_sd_ddof1_deg": 1.35001575073448,
+            "median_image_mae_sd_ddof1_deg": 1.2660319328834189,
+            "p95_image_mae_sd_ddof1_deg": 2.410120678128477,
+            "dataset_maes_deg": [
+              19.846213302897766,
+              19.80088876263727,
+              19.832804466792425,
+              19.82289523800993,
+              19.829534898617705,
+              19.864299654715772,
+              19.850980268070252,
+              19.849512027754372
+            ],
+            "mean_pixel_directional_variance_1_minus_R": 0.002443160170302221,
+            "mean_pixel_angular_dispersion_deg": 3.317535634082257,
+            "undefined_mean_direction_pixels": 0,
+            "aggregation": "macro mean over images; pixel direction statistics use each image's historical mask"
+          },
+          "geom_cfg": {
+            "num_images": 1998,
+            "num_inference_replicates": 8,
+            "mean_mae_deg": 19.412241710076074,
+            "dataset_mae_sd_ddof1_deg": 0.020219632642114276,
+            "mean_image_mae_sd_ddof1_deg": 1.3227552330447467,
+            "median_image_mae_sd_ddof1_deg": 1.2081540070885692,
+            "p95_image_mae_sd_ddof1_deg": 2.3545813544909455,
+            "dataset_maes_deg": [
+              19.421812283850695,
+              19.37667723470037,
+              19.419590894636862,
+              19.389625407667577,
+              19.40797589641209,
+              19.42790618199242,
+              19.43790709337085,
+              19.416438687977752
+            ],
+            "mean_pixel_directional_variance_1_minus_R": 0.003731504644076328,
+            "mean_pixel_angular_dispersion_deg": 4.087333115302596,
+            "undefined_mean_direction_pixels": 0,
+            "aggregation": "macro mean over images; pixel direction statistics use each image's historical mask"
+          }
+        },
+        "shared_noise_reference": {
+          "run_id": "D2_D3_full_multiseed",
+          "statistics": {
+            "no_cfg": {
+              "num_images": 1998,
+              "num_inference_replicates": 8,
+              "mean_mae_deg": 19.56881517451661,
+              "dataset_mae_sd_ddof1_deg": 1.1632978606812434,
+              "mean_image_mae_sd_ddof1_deg": 1.2581611935558215,
+              "median_image_mae_sd_ddof1_deg": 1.1973418405635217,
+              "p95_image_mae_sd_ddof1_deg": 1.8965225810237287,
+              "dataset_maes_deg": [
+                18.29348014200387,
+                19.787166302851745,
+                19.186666703323297,
+                20.445056992808105,
+                19.62941786358026,
+                18.406636584260212,
+                18.961381168981344,
+                21.840715638324063
+              ]
+            },
+            "geom_cfg": {
+              "num_images": 1998,
+              "num_inference_replicates": 8,
+              "mean_mae_deg": 19.263159636272466,
+              "dataset_mae_sd_ddof1_deg": 1.038213843189081,
+              "mean_image_mae_sd_ddof1_deg": 1.200257401598535,
+              "median_image_mae_sd_ddof1_deg": 1.1350309449527858,
+              "p95_image_mae_sd_ddof1_deg": 1.8959516381787203,
+              "dataset_maes_deg": [
+                17.90190015603803,
+                19.293837744284584,
+                18.677700866581887,
+                20.331778925516158,
+                19.141879251745493,
+                18.86475605568588,
+                18.70200001460461,
+                21.19142407572309
+              ]
+            }
+          }
+        },
+        "paired_cfg_delta_mae_deg": {
+          "mean_geom_minus_no_cfg": -0.42489936736085987,
+          "std_replicate_ddof1": 0.00892259643180239,
+          "replicates_geom_better": 8
+        },
+        "seed_policy": "SHA256([protocol, base_seed, namespace/dataset-relative RGB path]) first 63 bits; modes paired",
+        "std_definition": "dataset MAE SD is Monte Carlo variation across imagewise-noise replicates; image MAE SD and pixel dispersion measure within-image sensitivity; not training SD or generalization CI",
+        "scope": "fixed checkpoint, historical development set, one-step only",
+        "matrix_completed": true
+      },
+      "ensemble8": {
+        "no_cfg": {
+          "float": {
+            "mean": 19.577563494427366,
+            "median": 18.74877923249778,
+            "rmse": 21.932904010446048,
+            "lt_11_25": 17.856920804758698,
+            "lt_20": 55.94167906669413,
+            "lt_22_5": 66.88748266388784,
+            "lt_25": 76.44164861937278,
+            "lt_30": 89.34372726412832,
+            "std_image_mean": 1.9757987813371964,
+            "num_images": 1998,
+            "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+          },
+          "mean_single_minus_ensemble_deg": 0.259577583009568,
+          "nfe": 8,
+          "interpretation": "finite eight-direction averaging gain; not an isolated irreducible noise cost or guaranteed x-pred target"
+        },
+        "geom_cfg": {
+          "float": {
+            "mean": 18.95684692655092,
+            "median": 18.019941659449007,
+            "rmse": 21.85649801997386,
+            "lt_11_25": 24.794770608088808,
+            "lt_20": 58.470272535100904,
+            "lt_22_5": 67.49848363919352,
+            "lt_25": 75.44543992764781,
+            "lt_30": 87.33836713336981,
+            "std_image_mean": 2.2337095159958826,
+            "num_images": 1998,
+            "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+          },
+          "mean_single_minus_ensemble_deg": 0.45539478352515783,
+          "nfe": 16,
+          "interpretation": "finite eight-direction averaging gain; not an isolated irreducible noise cost or guaranteed x-pred target"
+        }
+      }
+    },
+    "p05_original": {
+      "single_sample": {
+        "groups": {
+          "no_cfg_k1": {
+            "num_seeds": 8,
+            "protocols": {
+              "legacy": {
+                "mean_mae_deg": 19.148042446156538,
+                "std_seed_ddof1_deg": 0.024682009393361893,
+                "std_seed_ddof0_deg": 0.02308790569177408,
+                "seed_maes_deg": {
+                  "42": 19.151895401748956,
+                  "43": 19.128403334179264,
+                  "44": 19.14118795786813,
+                  "45": 19.12966444879348,
+                  "46": 19.11958871115064,
+                  "47": 19.189345126147305,
+                  "48": 19.14529215279333,
+                  "49": 19.178962436571208
+                }
+              },
+              "float": {
+                "mean_mae_deg": 19.14805382850283,
+                "std_seed_ddof1_deg": 0.024682125185219707,
+                "std_seed_ddof0_deg": 0.023088014005139115,
+                "seed_maes_deg": {
+                  "42": 19.151907300800616,
+                  "43": 19.12841483911611,
+                  "44": 19.141199408935833,
+                  "45": 19.129676025810078,
+                  "46": 19.119598665489242,
+                  "47": 19.189355924674995,
+                  "48": 19.145304317545975,
+                  "49": 19.17897414564981
+                }
+              }
+            },
+            "mean_ms_per_image": 6.562794663640833
+          },
+          "geom_cfg_k1": {
+            "num_seeds": 8,
+            "protocols": {
+              "legacy": {
+                "mean_mae_deg": 19.25266361964654,
+                "std_seed_ddof1_deg": 0.023880145084063914,
+                "std_seed_ddof0_deg": 0.022337830312755293,
+                "seed_maes_deg": {
+                  "42": 19.25351845174809,
+                  "43": 19.2254514181886,
+                  "44": 19.239173508335842,
+                  "45": 19.234176020164103,
+                  "46": 19.23762660566928,
+                  "47": 19.294386017838168,
+                  "48": 19.257106501744,
+                  "49": 19.27987043348424
+                }
+              },
+              "float": {
+                "mean_mae_deg": 19.25441102580399,
+                "std_seed_ddof1_deg": 0.02387408465816834,
+                "std_seed_ddof0_deg": 0.022332161303425496,
+                "seed_maes_deg": {
+                  "42": 19.25526021045144,
+                  "43": 19.227239765649625,
+                  "44": 19.240928318488173,
+                  "45": 19.235928755635292,
+                  "46": 19.239336110440068,
+                  "47": 19.296124389826332,
+                  "48": 19.25884778349506,
+                  "49": 19.281622872445926
+                }
+              }
+            },
+            "mean_ms_per_image": 12.491258408140588
+          }
+        },
+        "noise_sensitivity": {
+          "no_cfg": {
+            "num_images": 1998,
+            "num_inference_replicates": 8,
+            "mean_mae_deg": 19.14805382850283,
+            "dataset_mae_sd_ddof1_deg": 0.024682125185219707,
+            "mean_image_mae_sd_ddof1_deg": 1.0638231713093007,
+            "median_image_mae_sd_ddof1_deg": 1.021756794392402,
+            "p95_image_mae_sd_ddof1_deg": 1.7339123322680976,
+            "dataset_maes_deg": [
+              19.151907300800616,
+              19.12841483911611,
+              19.141199408935833,
+              19.129676025810078,
+              19.119598665489242,
+              19.189355924674995,
+              19.145304317545975,
+              19.17897414564981
+            ],
+            "mean_pixel_directional_variance_1_minus_R": 0.002470772787850629,
+            "mean_pixel_angular_dispersion_deg": 3.3104938254797096,
+            "undefined_mean_direction_pixels": 0,
+            "aggregation": "macro mean over images; pixel direction statistics use each image's historical mask"
+          },
+          "geom_cfg": {
+            "num_images": 1998,
+            "num_inference_replicates": 8,
+            "mean_mae_deg": 19.25441102580399,
+            "dataset_mae_sd_ddof1_deg": 0.02387408465816834,
+            "mean_image_mae_sd_ddof1_deg": 1.055070161257166,
+            "median_image_mae_sd_ddof1_deg": 0.9978646521711196,
+            "p95_image_mae_sd_ddof1_deg": 1.7759950497606967,
+            "dataset_maes_deg": [
+              19.25526021045144,
+              19.227239765649625,
+              19.240928318488173,
+              19.235928755635292,
+              19.239336110440068,
+              19.296124389826332,
+              19.25884778349506,
+              19.281622872445926
+            ],
+            "mean_pixel_directional_variance_1_minus_R": 0.003872434995841861,
+            "mean_pixel_angular_dispersion_deg": 4.1086964328382685,
+            "undefined_mean_direction_pixels": 0,
+            "aggregation": "macro mean over images; pixel direction statistics use each image's historical mask"
+          }
+        },
+        "shared_noise_reference": {
+          "run_id": "D2_D3_full_multiseed",
+          "statistics": {
+            "no_cfg": {
+              "available": false,
+              "reason": "not all paired historical CSVs available"
+            },
+            "geom_cfg": {
+              "available": false,
+              "reason": "not all paired historical CSVs available"
+            }
+          }
+        },
+        "paired_cfg_delta_mae_deg": {
+          "mean_geom_minus_no_cfg": 0.10635719730115678,
+          "std_replicate_ddof1": 0.00711438520700643,
+          "replicates_geom_better": 0
+        },
+        "seed_policy": "SHA256([protocol, base_seed, namespace/dataset-relative RGB path]) first 63 bits; modes paired",
+        "std_definition": "dataset MAE SD is Monte Carlo variation across imagewise-noise replicates; image MAE SD and pixel dispersion measure within-image sensitivity; not training SD or generalization CI",
+        "scope": "fixed checkpoint, historical development set, one-step only",
+        "matrix_completed": true
+      },
+      "ensemble8": {
+        "no_cfg": {
+          "float": {
+            "mean": 18.85882348991231,
+            "median": 17.432204470081842,
+            "rmse": 21.619514195692673,
+            "lt_11_25": 22.550350287459406,
+            "lt_20": 60.855148834115475,
+            "lt_22_5": 70.43426612170707,
+            "lt_25": 78.34717133371146,
+            "lt_30": 88.86322744080589,
+            "std_image_mean": 2.466490439476989,
+            "num_images": 1998,
+            "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+          },
+          "mean_single_minus_ensemble_deg": 0.2892303385905187,
+          "nfe": 8,
+          "interpretation": "finite eight-direction averaging gain; not an isolated irreducible noise cost or guaranteed x-pred target"
+        },
+        "geom_cfg": {
+          "float": {
+            "mean": 18.759687899427558,
+            "median": 17.08840618949995,
+            "rmse": 22.139229424014022,
+            "lt_11_25": 27.88802739563892,
+            "lt_20": 60.953041185625025,
+            "lt_22_5": 69.05214781338181,
+            "lt_25": 75.94849723547543,
+            "lt_30": 86.12714769267868,
+            "std_image_mean": 2.5730357129112895,
+            "num_images": 1998,
+            "aggregation": "macro mean over per-image metrics; std is across image MAEs"
+          },
+          "mean_single_minus_ensemble_deg": 0.4947231263764312,
+          "nfe": 16,
+          "interpretation": "finite eight-direction averaging gain; not an isolated irreducible noise cost or guaranteed x-pred target"
+        }
+      }
+    }
+  },
+  "identity_bootstrap": {
+    "num_images": 1998,
+    "num_clusters": 100,
+    "resamples": 10000,
+    "seed": 20261022,
+    "interval": "95% percentile identity-cluster bootstrap",
+    "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+    "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+    "metrics": {
+      "p05_best/no_cfg/single": {
+        "estimate": 19.837141077436936,
+        "lower_95": 19.592729405967013,
+        "upper_95": 20.084943786165958
+      },
+      "p05_best/no_cfg/ensemble8": {
+        "estimate": 19.577563494427366,
+        "lower_95": 19.32410861929832,
+        "upper_95": 19.83499813554514
+      },
+      "p05_best/no_cfg/averaging_gain": {
+        "estimate": 0.259577583009568,
+        "lower_95": 0.24230807571947488,
+        "upper_95": 0.27820996966468636
+      },
+      "p05_best/geom_cfg/single": {
+        "estimate": 19.412241710076074,
+        "lower_95": 19.150232231359542,
+        "upper_95": 19.676439298874783
+      },
+      "p05_best/geom_cfg/ensemble8": {
+        "estimate": 18.95684692655092,
+        "lower_95": 18.67646448910194,
+        "upper_95": 19.239610823832873
+      },
+      "p05_best/geom_cfg/averaging_gain": {
+        "estimate": 0.45539478352515783,
+        "lower_95": 0.4274392237506878,
+        "upper_95": 0.4861008311252444
+      },
+      "p05_best/geom_minus_conditional": {
+        "estimate": -0.424899367360859,
+        "lower_95": -0.49046552416308603,
+        "upper_95": -0.3596869054093809
+      },
+      "p05_original/no_cfg/single": {
+        "estimate": 19.148053828502835,
+        "lower_95": 18.8770772164338,
+        "upper_95": 19.424083074742484
+      },
+      "p05_original/no_cfg/ensemble8": {
+        "estimate": 18.85882348991231,
+        "lower_95": 18.577762932298942,
+        "upper_95": 19.144053185660542
+      },
+      "p05_original/no_cfg/averaging_gain": {
+        "estimate": 0.2892303385905187,
+        "lower_95": 0.2753358737885448,
+        "upper_95": 0.303524480196784
+      },
+      "p05_original/geom_cfg/single": {
+        "estimate": 19.25441102580399,
+        "lower_95": 18.985217293878538,
+        "upper_95": 19.532722498803786
+      },
+      "p05_original/geom_cfg/ensemble8": {
+        "estimate": 18.759687899427558,
+        "lower_95": 18.475910415349468,
+        "upper_95": 19.051072175955586
+      },
+      "p05_original/geom_cfg/averaging_gain": {
+        "estimate": 0.4947231263764312,
+        "lower_95": 0.4730539483644753,
+        "upper_95": 0.5167680777627657
+      },
+      "p05_original/geom_minus_conditional": {
+        "estimate": 0.10635719730115765,
+        "lower_95": 0.054166813934084145,
+        "upper_95": 0.1586743949122472
+      },
+      "original_minus_best_cfg_delta": {
+        "estimate": 0.5312565646620167,
+        "lower_95": 0.4780813533643658,
+        "upper_95": 0.5847409545310831
+      }
+    }
+  },
+  "status": "completed",
+  "noise_protocol": "sha256_image_noise_v1"
+}

@@ -322,10 +322,10 @@ def main():
     p.add_argument("--drop_prob", type=float, default=0.1,
                    help="CFG dropout 概率")
     # 路径
-    p.add_argument("--rgb_dir", default="${WORKSPACE_ROOT}/FaceFlux-Project/dataset/ffhq_rgb_crop256")
-    p.add_argument("--normal_dir", default="${WORKSPACE_ROOT}/FaceFlux-Project/dataset/ffhq_rgb_crop256N")
+    p.add_argument("--rgb_dir", default="$WORKSPACE_ROOT/FaceFlux-Project/dataset/ffhq_rgb_crop256")
+    p.add_argument("--normal_dir", default="$WORKSPACE_ROOT/FaceFlux-Project/dataset/ffhq_rgb_crop256N")
     p.add_argument("--output_dir", required=True, help="输出目录")
-    p.add_argument("--eval_img_dir", default="${WORKSPACE_ROOT}/FaceFlux/testImgs/imgs")
+    p.add_argument("--eval_img_dir", default="$WORKSPACE_ROOT/FaceFlux/testImgs/imgs")
     p.add_argument("--checkpoint", default=None, help="预训练 checkpoint 路径")
     # 训练超参
     p.add_argument("--batch_size", type=int, default=8)

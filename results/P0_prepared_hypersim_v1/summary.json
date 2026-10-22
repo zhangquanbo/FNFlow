@@ -1,0 +1,20 @@
+{
+  "created_at": "2026-10-22T08:43:50+08:00",
+  "status": "completed",
+  "partitions": {
+    "train": {
+      "images": 120,
+      "scenes": 30,
+      "valid_pixels": 7775494,
+      "max_unit_length_error": 1.7881393432617188e-07,
+      "pinhole_K_images": 36
+    },
+    "val": {
+      "images": 20,
+      "scenes": 5,
+      "valid_pixels": 1306302,
+      "max_unit_length_error": 1.1920928955078125e-07,
+      "pinhole_K_images": 8
+    }
+  }
+}

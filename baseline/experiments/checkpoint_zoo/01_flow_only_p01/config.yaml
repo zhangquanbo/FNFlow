@@ -4,7 +4,7 @@ experiment:
 
 checkpoint:
   local_path: "checkpoint.pth"
-  source_project: "${WORKSPACE_ROOT}/FaceFlux-Clean"
+  source_project: "$WORKSPACE_ROOT/FaceFlux-Clean"
   source_path: "experiments/fig2/output/wof_flow/latest.pth"
   sha256: "5a55ee515cbfc7e615001c133e1f0b60ef285a144280085400e65bb050350c96"
   epoch: 500
@@ -24,9 +24,9 @@ model:
   model_code_sha256: "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3"
 
 dataset:
-  rgb_dir: "${FACEFLUX_BEST_ROOT}/datasets/ffhq_rgb_crop256"
-  normal_dir: "${FACEFLUX_BEST_ROOT}/datasets/ffhq_rgb_crop256N"
-  training_eval_images: "${FACEFLUX_BEST_ROOT}/data/test_images_1/imgs"
+  rgb_dir: "$FACEFLUX_BEST_ROOT/datasets/ffhq_rgb_crop256"
+  normal_dir: "$FACEFLUX_BEST_ROOT/datasets/ffhq_rgb_crop256N"
+  training_eval_images: "$FACEFLUX_BEST_ROOT/data/test_images_1/imgs"
 
 training:
   method: "flow_matching"

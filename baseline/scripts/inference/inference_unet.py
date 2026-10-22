@@ -9,7 +9,7 @@
 - seed=42
 
 
-cd ${FACEFLUX_BEST_ROOT}
+cd $FACEFLUX_BEST_ROOT
 
 CUDA_VISIBLE_DEVICES=0 python \
   scripts/inference/inference_unet.py \
