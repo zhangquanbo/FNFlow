@@ -6,6 +6,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import os,json,time,subprocess
 from src.research_io import ROOT,write_json,sha256,now
 from scripts.summarize_wsd_review2 import summarize
+from src.quality_gate import require_precurve_quality_review
 
 CONFIG='configs/parameterization_first_round_v2_review2.json'
 
@@ -17,6 +18,7 @@ def call(script,*args):
 
 def main():
     cfg=json.loads((ROOT/CONFIG).read_text());root=ROOT/cfg['output_root']
+    require_precurve_quality_review(ROOT)
     rule=json.loads((ROOT/cfg['decision_rule']).read_text());receipt=json.loads((ROOT/'provenance/budget_preregistration_review2.json').read_text())
     if receipt['rule_sha256']!=sha256(ROOT/cfg['decision_rule']) or receipt['config_sha256']!=sha256(ROOT/CONFIG):
         raise RuntimeError('Review2 registration changed')

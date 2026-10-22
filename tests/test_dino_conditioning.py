@@ -3,7 +3,7 @@ import pytest
 import torch
 from torch import nn
 from torch.nn import functional as F
-from src.dino_conditioning import FrozenPatchEncoder,DINOConditionedUNet,patch_map_at_unet_level,apply_rgb_view
+from src.dino_conditioning import FrozenPatchEncoder,DINOConditionedUNet,patch_map_at_unet_level,apply_rgb_view,symmetric_patch_padding
 from src.models.model_unet import FaceNormalUNet
 
 
@@ -29,10 +29,17 @@ def test_patch_center_registration_matches_actual_strided_convolution_anchors():
 
 def test_explicit_patch14_padding_preserves_original_pixel_coordinates():
     coords=torch.tensor([6.5,20.5,34.5])
-    y,x=torch.meshgrid(coords,coords,indexing='ij');feature=torch.stack([x,y])[None]
-    result=patch_map_at_unet_level(feature,(32,32),1,(16,16),(42,42))
-    expected=(torch.arange(16)*2).float().clamp(6.5,34.5)
+    y,x=torch.meshgrid(coords-5,coords-5,indexing='ij');feature=torch.stack([x,y])[None]
+    result=patch_map_at_unet_level(feature,(32,32),1,(16,16),(42,42),(5,5))
+    expected=(torch.arange(16)*2).float().clamp(1.5,29.5)
     torch.testing.assert_close(result[0,0],expected[None].expand(16,-1))
+    torch.testing.assert_close(result[0,1],expected[:,None].expand(-1,16))
+
+
+def test_patch14_symmetric_padding_commutes_with_horizontal_flip_of_256_input():
+    rgb=torch.randn(1,3,256,256);padding=symmetric_patch_padding((256,256),14)
+    assert padding==(5,5,5,5)
+    torch.testing.assert_close(F.pad(rgb.flip(-1),padding,mode='replicate'),F.pad(rgb,padding,mode='replicate').flip(-1))
 
 
 def test_features_see_exact_augmented_rgb_and_encoder_stays_frozen_in_eval():

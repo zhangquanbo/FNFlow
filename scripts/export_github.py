@@ -108,7 +108,9 @@ def main():
                 "P2_budget_preregistration_v2", "P2_budget_preregistration_review2", "P2_wsd_preflight_review2",
                 "P1_normal_length_texture_v1", "P1_hypersim_raw_length_v1",
                 "P1_dinov2_real_forward_v1", "P1_gso_render_smoke_v1",
-                "P1_gso_intake_v1", "P1_gso_render_v1"]:
+                "P1_gso_intake_v1", "P1_gso_render_v1", "P1_gso_render_smoke_dual_v2", "P1_gso_render_dual_v2",
+                "P1_hypersim_direction_review3", "P1_dinov2_symmetric_forward_v2",
+                "P1_arb_outlier_visual_review3", "P2_data_quality_review3"]:
         source = ROOT / "outputs" / run / "summary.json"
         if not source.exists():
             continue
@@ -116,6 +118,12 @@ def main():
         if state.get("status") != "completed":
             continue
         add(source, f"results/{run}/summary.json", "diagnostic_summary")
+        if run == 'P1_hypersim_direction_review3':
+            # Even anonymous candidate rows are per-frame records: export aggregates only.
+            public=dict(state);rows=public.pop('frame_metrics')
+            public['mean_candidate_median_deg']=sum(r['median_deg'] for r in rows)/len(rows)
+            public['maximum_candidate_p90_deg']=max(r['p90_deg'] for r in rows)
+            files[f'results/{run}/summary.json']['data']=(scrub(json.dumps(public,ensure_ascii=False,indent=2))+'\n').encode('utf-8')
         aggregate_file = source.with_name("multiseed_summary.json")
         if aggregate_file.exists():
             add(aggregate_file, f"results/{run}/multiseed_summary.json", "diagnostic_summary")
@@ -356,6 +364,8 @@ Report scripts regenerate workspace-oriented documents. This publication export 
 The v1 no-ray pilot is preserved as numerical preflight evidence. The current entry point scripts/run_parameterization_pipeline.py forwards to scripts/run_wsd_pipeline.py with configs/parameterization_first_round_v2_review2.json. Review1's cosine rule and receipt remain preserved; review2 was registered before any long-run curve existed. After 100 warmup updates, WSD holds the base learning rate, with independent 2,500-update linear cooldown branches at stable steps 10k/20k/30k. Total cooled budgets are 12.5k/22.5k/32.5k. The fixed rule in configs/convergence_decision_review2.json extends all trunks to 50k if any method/domain improves by >0.3 degrees between stable 27.5k and 30k OR between cooled 20k and 30k forks. The separate branches restore model, optimizer and all random states without changing the stable trunk. Budget selection requires all nine cells within 0.3 degrees of the final cooled endpoint and unchanged per-domain pairwise ranks at the next actual cooled fork. Missing successors or continued improvement at the 50k cap remain inconclusive. Every curve point also evaluates a fixed 64-image-per-source training probe. Every update records clipping and image-weighted time-bin losses. The queue waits for the complete 2,000-object acquisition; the formal 24-run grid remains locked. Acquisition completion cannot launch formal training. scripts/summarize_wsd_review2.py writes the local cooled comparison and budget decision. Data, weights and sample manifests are not distributed.
 
 Arb boundary MAE is accompanied by foreground exclusion/coverage counts, with relaxed candidate edges separate from trusted labels. Raw normal-length and normalTexture audits are aggregate diagnostics; no reliability weighting is enabled in the frozen comparison. Camera checks use Blender 3.3 and pinned BlenderProc 2.5 defaults; no inferred K is inserted into frozen no-ray manifests. Real DINOv2-S/14 weights have passed forward-only compatibility with a pinned Apache-2.0 source revision and explicit patch-14 padding/registration. Source and weight hashes are in configs/dinov2_s_compatibility.json; frozen eval mode and zero optimizer updates are recorded. This is not DINO training or an accuracy result. GSO source intake and controlled rendering use scripts/run_gso_pipeline.py; source/count duplicate screens are declared and do not guarantee absence of cross-source re-meshed near duplicates. Only complete aggregate snapshots are exported. The two-asset rendering preflight is distinct from the full candidate holdout and does not include model test scores.
+
+Precurve data checks are bound by configs/precurve_data_quality_review3.json and a local hashed completion receipt required by the WSD runner. The two flagged Hypersim training frames were retained after model-free comparison with official same-frame distance maps; the validation set was unaffected. No training masks or splits changed. The newest DINO acceptance uses symmetric replicate padding (5 pixels on each side for 256->266), with the left/top offset included in feature registration. Older right/bottom-padding results remain historical snapshots. GSO dual-GT caches store material-free area-weighted vertex normals interpolated barycentrically as the main label, and face normals as a secondary label at identical ray hits and masks. Per-pixel GT angular gaps and image/asset/pixel aggregate gaps are recorded. Future scores must report both MAEs plus this gap; the gap is neither a proven model-error floor nor a quantity to subtract from MAE. Renderer and GT-code hashes separate cache generations. The complete GSO acquisition/rendering may still be pending; a two-asset preflight does not establish complete holdout readiness.
 
 ## Scope
 

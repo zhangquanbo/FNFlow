@@ -142,7 +142,8 @@ def render():
             f"状态：{queue.get('status')}；阶段：{queue.get('phase','见原始状态')}；更新时间：{queue.get('updated_at','未记录')}。",'',
             '[首轮执行记录]($FNFLOW_ROOT/docs/首轮无ray训练执行记录.md) · '
             '[当前 review2 配置]($FNFLOW_ROOT/configs/parameterization_first_round_v2_review2.json) · '
-            '[WSD 修订与辅助检查]($FNFLOW_ROOT/docs/review2_WSD与可靠性诊断.md)','',
+            '[WSD 修订与辅助检查]($FNFLOW_ROOT/docs/review2_WSD与可靠性诊断.md) · '
+            '[曲线前数据质量与双 GT]($FNFLOW_ROOT/docs/review3_数据质量与双GT处理.md)','',
             '| 阶段 | 已完成运行数 |','|---|---:|'])
         counts={}
         for path in active_root.glob('*/summary.json'):

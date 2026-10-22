@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "created_at": "2026-10-22T14:53:13+08:00",
+  "rule_sha256": "f7930ad9709a5b6cda51609e1caa95b38131b4df5bf78047c4b32cc8b4ca05a9",
+  "candidates": 2,
+  "split_counts": {
+    "train": 2,
+    "val": 0
+  },
+  "retained": 2,
+  "excluded": 0,
+  "models_used": false,
+  "raw_sources_changed": false,
+  "mean_candidate_median_deg": 6.613468055416587,
+  "maximum_candidate_p90_deg": 14.005046987047983
+}

@@ -37,9 +37,11 @@ def main():
         'weights_sha256':cfg['weights_sha256'],'source_archive_sha256':cfg['source_archive_sha256'],
         'license_file_sha256':sha256(repo/'LICENSE'),'license':'Apache-2.0 at pinned upstream source/README',
         'torch':torch.__version__,'encoder_frozen':True,'encoder_eval_after_parent_train':True,
-        'padding':cfg['padding'],'views':tests,'optimizer_updates':0,'benchmark_metrics_computed':False,
+        'padding':cfg['padding'],'conditioning_code_sha256':sha256(ROOT/'src/dino_conditioning.py'),
+        'compatibility_config_sha256':sha256(ROOT/'configs/dinov2_s_compatibility.json'),
+        'views':tests,'optimizer_updates':0,'benchmark_metrics_computed':False,
         'source_parameters':sum(p.numel() for p in encoder.parameters()),'peak_cuda_bytes':torch.cuda.max_memory_allocated()}
-    write_json(ROOT/'outputs/P1_dinov2_real_forward_v1/summary.json',result)
+    write_json(ROOT/'outputs/P1_dinov2_symmetric_forward_v2/summary.json',result)
     print(json.dumps(result),flush=True)
 
 

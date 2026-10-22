@@ -33,7 +33,12 @@ def apply_rgb_view(rgb, crop_xywh=None, horizontal_flip=False, output_hw=None):
     return rgb.flip(-1) if horizontal_flip else rgb
 
 
-def patch_map_at_unet_level(feature, input_hw, level, target_hw,encoded_hw=None):
+def symmetric_patch_padding(input_hw,patch_size):
+    h,w=input_hw;dy,dx=(-h)%patch_size,(-w)%patch_size
+    return (dx//2,dx-dx//2,dy//2,dy-dy//2)
+
+
+def patch_map_at_unet_level(feature, input_hw, level, target_hw,encoded_hw=None,padding_left_top=(0,0)):
     """Sample patch-center features at the true convolution feature centers."""
     height,width=input_hw;out_h,out_w=target_hw;stride=2**level
     if out_h!=(height+stride-1)//stride or out_w!=(width+stride-1)//stride:
@@ -41,7 +46,8 @@ def patch_map_at_unet_level(feature, input_hw, level, target_hw,encoded_hw=None)
     ys=torch.arange(out_h,device=feature.device,dtype=torch.float32)*stride
     xs=torch.arange(out_w,device=feature.device,dtype=torch.float32)*stride
     encoded_h,encoded_w=encoded_hw or input_hw
-    y,x=torch.meshgrid(2*(ys+.5)/encoded_h-1,2*(xs+.5)/encoded_w-1,indexing='ij')
+    left,top=padding_left_top
+    y,x=torch.meshgrid(2*(ys+top+.5)/encoded_h-1,2*(xs+left+.5)/encoded_w-1,indexing='ij')
     grid=torch.stack([x,y],-1)[None].expand(feature.shape[0],-1,-1,-1)
     # Border extension is explicit outside the first/last patch center.
     return F.grid_sample(feature.float(),grid,mode='bilinear',padding_mode='border',align_corners=False)
@@ -62,7 +68,7 @@ class FrozenPatchEncoder(nn.Module):
         h,w=rgb.shape[-2:];p=self.patch_size
         if h%p or w%p:
             if not self.pad_to_patch:raise ValueError('RGB shape must be a multiple of patch size; no implicit crop/resize')
-            rgb=F.pad(rgb,(0,(-w)%p,0,(-h)%p),mode='replicate')
+            rgb=F.pad(rgb,symmetric_patch_padding((h,w),p),mode='replicate')
             h,w=rgb.shape[-2:]
         self.encoder.eval()
         x=((rgb.float()+1)/2-self.mean)/self.std
@@ -89,10 +95,11 @@ class DINOConditionedUNet(nn.Module):
         feature=self.features(rgb);u=self.unet;embedding=u.time_embed(t)
         p=self.features.patch_size
         encoded_hw=tuple(((n+p-1)//p)*p for n in rgb.shape[-2:]) if self.features.pad_to_patch else rgb.shape[-2:]
+        left,_,top,_=symmetric_patch_padding(rgb.shape[-2:],p) if self.features.pad_to_patch else (0,0,0,0)
         x=u.input_conv(torch.cat([z_t,rgb],1));skips=[]
         for level,blocks in enumerate(u.encoder_blocks):
             for block in blocks:x=block(x,embedding)
-            registered=patch_map_at_unet_level(feature,rgb.shape[-2:],level,x.shape[-2:],encoded_hw)
+            registered=patch_map_at_unet_level(feature,rgb.shape[-2:],level,x.shape[-2:],encoded_hw,(left,top))
             x=x+self.adapters[level](registered.to(x.dtype))*keep
             skips.append(x)
             if level<u.num_levels-1:x=u.downsamples[level](x)

@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "created_at": "2026-10-22T15:06:44+08:00",
+  "visually_reviewed_assets": 5,
+  "source_blend_or_transmission_assets": 4,
+  "double_sided_declarations": 5,
+  "zero_scale_normal_texture_slots": 1,
+  "dominant_three_present_assets_excluded_from_this_q_sensitivity_summary": 3,
+  "remaining_outside_pixel_counts": {
+    "present": 1859,
+    "not_declared_in_gltf": 3007
+  },
+  "remaining_present_share": 0.3820386354295109,
+  "training_mask_or_asset_split_changed": false,
+  "quality_exclusion": "existing finite and abs(norm(raw)-1)<=.05 pixel mask; material-confounded rejected pixels must not be restored as length-q labels without resolving label semantics",
+  "q_claim_supported": false,
+  "boundary_position_only_control_required_for_later_q_tests": true,
+  "limitations": "visual/source-material audit does not prove exact rendering cause, flipped topology, or an unnormalized normal map; doubleSided is a material declaration, not proof of duplicate opposing faces"
+}

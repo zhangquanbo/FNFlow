@@ -33,6 +33,7 @@ def test_cooldown_restores_optimizer_rng_and_never_changes_parent(tmp_path,monke
     sample=root/'sample.npz';np.savez(sample,rgb=np.zeros((4,4,3),np.uint8),normal=normal,valid=np.ones((4,4),bool))
     records=[{'path':str(sample),'split':'train','scene':'fixture'}]
     monkeypatch.setattr(runner,'ROOT',root);monkeypatch.setattr(runner,'FaceNormalUNet_B',Tiny)
+    monkeypatch.setattr(runner,'require_precurve_quality_review',lambda root:'fixture-approved')
     monkeypatch.setattr('src.research_io.ROOT',root)  # Keep the production output guard active inside this fixture.
     monkeypatch.setattr(runner,'load_records',lambda *a:records)
     monkeypatch.setattr(runner,'prepare_probe',lambda cfg:{'hypersim':records,'arb':records})
@@ -51,7 +52,7 @@ def test_cooldown_restores_optimizer_rng_and_never_changes_parent(tmp_path,monke
         target_sha256=digest(root/'src/parameterization.py'),
         model_sha256=digest(root/'src/models/model_unet.py'),diagnostics_sha256=digest(root/'src/training_diagnostics.py'),
         manifests_sha256=[digest(root/p/'private_manifest.json') for p in ['data/hyp','data/arb_mixed_formal_v1','data/nyu']],
-        training_probe_sha256=digest(out/'training_probe_private.json'))
+        training_probe_sha256=digest(out/'training_probe_private.json'),data_quality_approval_sha256='fixture-approved')
     torch.save(state,parent);before=parent.read_bytes()
     monkeypatch.setattr('sys.argv',['fixture','--method','Xn','--phase','cooldown','--fork-step','10000','--config','configs/test.json'])
     runner.main();folder=out/'cooldown_Xn_k10000_s1247';first=torch.load(folder/'last_local.pth',map_location='cpu')

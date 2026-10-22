@@ -1,0 +1,21 @@
+{
+  "version": "precurve_data_quality_review3",
+  "hypersim_candidates": "two raw normal_cam frames flagged by entire-frame length >2; identities kept in private audit",
+  "depth_source": "official versioned Hypersim ZIP member depth_meters; Euclidean distance, not camera-z",
+  "depth_comparison": {
+    "max_neighbor_relative_depth_jump": 0.02,
+    "minimum_stable_pixels": 1000,
+    "retain_if_median_angle_at_most_deg": 10.0,
+    "retain_if_p90_angle_at_most_deg": 30.0,
+    "orientation": "fixed camera-facing native GL depth normal, compare signed angle to unit raw normal_cam; no per-frame sign selection",
+    "failure_action": "exclude direction-inconsistent candidate from derived train/val record lists; unresolved/missing source keeps long training held"
+  },
+  "gso_main_gt": "barycentrically interpolated area-weighted vertex geometry normals, unit-normalized at hit; no material, bump, normalTexture or custom split normals",
+  "gso_secondary_gt": "ray-hit face geometry normal at identical pixels",
+  "gso_disagreement": "signed angular difference of the two GTs on their identical ray-hit mask, report per-image, per-asset macro and pixel-pooled; a GT-definition gap, not an irreducible model-error lower bound",
+  "gso_scores": "main MAE against smooth geometry plus secondary face MAE and GT-definition angular gap; no model scoring during preparation",
+  "boundary_only_control_required": true,
+  "dino_padding": "symmetric replicate, 5 pixels on each side for 256->266, pixel centers shifted by left/top offset in feature registration",
+  "prior_wsd_rule_changed": false,
+  "formal_grid_locked": true
+}

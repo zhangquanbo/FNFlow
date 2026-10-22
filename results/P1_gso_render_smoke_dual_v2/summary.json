@@ -1,0 +1,38 @@
+{
+  "status": "completed",
+  "created_at": "2026-10-22T15:07:50+08:00",
+  "assets": 2,
+  "images": 8,
+  "assets_by_split": {
+    "val": 1,
+    "test": 1
+  },
+  "asset_overlap": 0,
+  "product_family_overlap": 0,
+  "normal_source": "main: barycentric area-weighted vertex geometry, no materials; secondary: ray-hit face normal at identical pixel centers",
+  "main_gt_registered_before_model_scores": true,
+  "rule_sha256": "f7930ad9709a5b6cda51609e1caa95b38131b4df5bf78047c4b32cc8b4ca05a9",
+  "renderer_sha256": "f7f29ced1fda3e6fd2a99c420ed121a6e0ac65cb252def95599524f428e26c71",
+  "gt_code_sha256": "7ce84f8c4ccb40da7334c34785f1f2fef276e82fa132f2ed7348d3262d65a5e6",
+  "cache_generation": "98f24a77f765cb36",
+  "normal_fields": [
+    "normal (main alias)",
+    "normal_smooth",
+    "normal_face"
+  ],
+  "same_mask_for_both_gt": true,
+  "gt_gap_image_macro_mean_deg": 4.048039378746147,
+  "gt_gap_asset_macro_mean_deg": 4.048039378746147,
+  "gt_gap_pixel_pooled_mean_deg": 3.9242642896411803,
+  "gap_interpretation": "GT-definition discrepancy; neither a proven irreducible noise floor nor an additive correction to model MAE",
+  "camera": "controlled 256 square; FOV .691111; K/poses saved per view; object normalized to unit maximum extent",
+  "depth": "camera-z in normalized scene units, source scale retained; not an unqualified metric-depth claim",
+  "mask": "ray hits, no alpha or near-unit filtering",
+  "training_allowed": false,
+  "model_test_scores_computed": false,
+  "max_normal_unit_error": 5.960464477539063e-08,
+  "render_device": "GPU",
+  "max_ray_reprojection_error_pixels": 4.3962930874386075e-05,
+  "cross_source_near_duplicate_exhaustive_check": false,
+  "scope": "rendering readiness; cross-source duplicate limitations remain those of the intake report"
+}

@@ -1,0 +1,15 @@
+{
+  "status": "completed",
+  "approved_at": "2026-10-22T07:02:50.638731+00:00",
+  "rule_sha256": "f7930ad9709a5b6cda51609e1caa95b38131b4df5bf78047c4b32cc8b4ca05a9",
+  "wsd_rule_sha256": "93b6c18030a340f0b3eb63a59075e2ae361ca7d96dd72e19ac08f7705c96f1cb",
+  "direction_summary_sha256": "f7f06301f0bf23d73e26a589d1ba09573485d067f05ebc0e63669a1ff7839ef8",
+  "preregistration_sha256": "12494cd17ef081d82ca4e451714f03c85c47f73c1361c530b9d5910c0decbb73",
+  "direction_consistent_retained": 2,
+  "excluded": 0,
+  "validation_candidates": 0,
+  "source_data_and_masks_changed": false,
+  "gso_main_gt_registered_before_model_scores": true,
+  "formal_grid_locked": true,
+  "approval_sha256": "8721ba25ff1a3a35df18cc81231e61947e937504ddf116d419f47d25eea3d532"
+}

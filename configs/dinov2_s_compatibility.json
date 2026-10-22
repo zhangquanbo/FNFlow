@@ -9,7 +9,7 @@
   "patch_size": 14,
   "feature_dim": 384,
   "input_size": 256,
-  "padding": "explicit right/bottom replicate to 266x266; retain original 256 pixel coordinates when sampling the 19x19 patch grid",
+  "padding": "symmetric replicate 5 pixels on all four sides, 256->266; register original UNet pixel centers with +5 left/top offset in the 19x19 patch grid",
   "license_reference": "https://github.com/facebookresearch/dinov2/tree/e1277af2ba9496fbadf7aec6eba56e8d882d1e35#license",
   "scope": "real pretrained forward compatibility only; no optimization, no benchmark scoring, not enabled in parameterization comparisons"
 }

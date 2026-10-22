@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-10-22T14:36:22+08:00",
+  "created_at": "2026-10-22T15:14:12+08:00",
   "scan_passed": true,
   "scope": "current code-and-aggregate export; unchanged legacy files are not re-exported",
   "files": [
@@ -30,8 +30,8 @@
     {
       "path": "README.md",
       "category": "release_metadata",
-      "bytes": 11590,
-      "exported_sha256": "79190bcd33e8d924ff6d48b080518e57c12a60ef050160a9c115ef1cf3239352"
+      "bytes": 12734,
+      "exported_sha256": "18b8de00182559b653670264e8e2ef8743756f018c3ef082d58b7caba1b00937"
     },
     {
       "path": "baseline/README.md",
@@ -1008,9 +1008,9 @@
     {
       "path": "configs/dinov2_s_compatibility.json",
       "category": "research_code",
-      "bytes": 974,
-      "exported_sha256": "1f66565cb20a0f0b84a15b68a45881c345f5f0c408bb0ca5f28e15642dd1b3b1",
-      "source_sha256": "1f66565cb20a0f0b84a15b68a45881c345f5f0c408bb0ca5f28e15642dd1b3b1"
+      "bytes": 1000,
+      "exported_sha256": "332efd8c6249c2158655ff359b52496808a4ea4607b0c33e7a9c9f6ef3423ee9",
+      "source_sha256": "332efd8c6249c2158655ff359b52496808a4ea4607b0c33e7a9c9f6ef3423ee9"
     },
     {
       "path": "configs/face_supplements.json",
@@ -1055,6 +1055,13 @@
       "source_sha256": "4b71f5c053eb79ea7e8a396a6a10b95d8e498a27f0a7bd66910b4d85c8ab6de2"
     },
     {
+      "path": "configs/precurve_data_quality_review3.json",
+      "category": "research_code",
+      "bytes": 1624,
+      "exported_sha256": "f7930ad9709a5b6cda51609e1caa95b38131b4df5bf78047c4b32cc8b4ca05a9",
+      "source_sha256": "f7930ad9709a5b6cda51609e1caa95b38131b4df5bf78047c4b32cc8b4ca05a9"
+    },
+    {
       "path": "figures/D1_full.png",
       "category": "aggregate_plot",
       "bytes": 76303,
@@ -1085,7 +1092,7 @@
       "path": "reproducibility/protected_reference_check.json",
       "category": "release_metadata",
       "bytes": 1760,
-      "exported_sha256": "d283ae06017fb0d9610a68f6da6095523f056e3ad9f8e2764afdadaea23b31d3"
+      "exported_sha256": "5246fd07d1c135a84fd69c20d4fe2f1d91f25ef4f37ef3c0a8af33fd1ec7512b"
     },
     {
       "path": "reproducibility/tested_environment.json",
@@ -1239,6 +1246,13 @@
       "source_sha256": "49e9a92cbdf53721d96c2087833fc2f49eff86a5730c57db4ef71fdc4e8d6024"
     },
     {
+      "path": "results/P1_arb_outlier_visual_review3/summary.json",
+      "category": "diagnostic_summary",
+      "bytes": 999,
+      "exported_sha256": "b64d0c83adbc4aa141fddde12274986f7321101464541e0693730f2dec97aae4",
+      "source_sha256": "b64d0c83adbc4aa141fddde12274986f7321101464541e0693730f2dec97aae4"
+    },
+    {
       "path": "results/P1_arb_prepared_pilot_v1/summary.json",
       "category": "diagnostic_summary",
       "bytes": 914,
@@ -1253,6 +1267,13 @@
       "source_sha256": "670b9ebd14e7d2df6d4d3e179017d41d0292d6348d778ade29d6b5b9cba405e5"
     },
     {
+      "path": "results/P1_dinov2_symmetric_forward_v2/summary.json",
+      "category": "diagnostic_summary",
+      "bytes": 1767,
+      "exported_sha256": "6f8578894c20bbf0cf5ae560a310dd99140407014008178ba6099f053eeb76c1",
+      "source_sha256": "6f8578894c20bbf0cf5ae560a310dd99140407014008178ba6099f053eeb76c1"
+    },
+    {
       "path": "results/P1_gltf_normal_textures_v1/summary.json",
       "category": "diagnostic_summary",
       "bytes": 462,
@@ -1260,11 +1281,25 @@
       "source_sha256": "bfbed54df65910ac4a68b1e447295211a58c90ba73d82e4478c0238f8a115f9a"
     },
     {
+      "path": "results/P1_gso_render_smoke_dual_v2/summary.json",
+      "category": "diagnostic_summary",
+      "bytes": 1776,
+      "exported_sha256": "7d2d81a959ef6abe079a868a56d6a25d544770d765453fec777804092e1211ea",
+      "source_sha256": "7d2d81a959ef6abe079a868a56d6a25d544770d765453fec777804092e1211ea"
+    },
+    {
       "path": "results/P1_gso_render_smoke_v1/summary.json",
       "category": "diagnostic_summary",
       "bytes": 982,
       "exported_sha256": "00440e832bde16f043698c64310818677763bbfbeef3ce635a71845d98896659",
       "source_sha256": "00440e832bde16f043698c64310818677763bbfbeef3ce635a71845d98896659"
+    },
+    {
+      "path": "results/P1_hypersim_direction_review3/summary.json",
+      "category": "diagnostic_summary",
+      "bytes": 422,
+      "exported_sha256": "f7a7e7ddc584c9ef51daf7d3f9494cdc6c89d10caff39e2e6daf3446002110a9",
+      "source_sha256": "f7f06301f0bf23d73e26a589d1ba09573485d067f05ebc0e63669a1ff7839ef8"
     },
     {
       "path": "results/P1_hypersim_raw_length_v1/summary.json",
@@ -1316,6 +1351,13 @@
       "source_sha256": "e095fe3eb4a6399b2f5351e1039fbd9fad0a3b0ca655979bbbf976ffe5666dd3"
     },
     {
+      "path": "results/P2_data_quality_review3/summary.json",
+      "category": "diagnostic_summary",
+      "bytes": 749,
+      "exported_sha256": "31b3f9536021e0ec54f6222cc46985e8f2d296dcca905272dc168781a9fd773f",
+      "source_sha256": "31b3f9536021e0ec54f6222cc46985e8f2d296dcca905272dc168781a9fd773f"
+    },
+    {
       "path": "results/P2_parameterization_pilot_v1/summary.json",
       "category": "diagnostic_summary",
       "bytes": 2476,
@@ -1326,15 +1368,15 @@
       "path": "results/P2_wsd_preflight_review2/summary.json",
       "category": "diagnostic_summary",
       "bytes": 371,
-      "exported_sha256": "e436f1956ae4f7af66adec7f25057ea0c18ef051cb564b09fbfdafb6a78a0306",
-      "source_sha256": "e436f1956ae4f7af66adec7f25057ea0c18ef051cb564b09fbfdafb6a78a0306"
+      "exported_sha256": "bc17b057d01b7dfaef49b33fcb420ef3559b785c0661472d7e086c5de17ee73c",
+      "source_sha256": "bc17b057d01b7dfaef49b33fcb420ef3559b785c0661472d7e086c5de17ee73c"
     },
     {
       "path": "results/protocol_tests.txt",
       "category": "test_result",
       "bytes": 99,
-      "exported_sha256": "fecce4b37454b978ebb2b25e9dd664549729ac117c0bb8686db8d1353d2b4d4b",
-      "source_sha256": "fecce4b37454b978ebb2b25e9dd664549729ac117c0bb8686db8d1353d2b4d4b"
+      "exported_sha256": "c0dc6fece6de9a6e1313a752f3cfc0230fc07accd00d833302c127a2a1cda935",
+      "source_sha256": "c0dc6fece6de9a6e1313a752f3cfc0230fc07accd00d833302c127a2a1cda935"
     },
     {
       "path": "scripts/__init__.py",
@@ -1388,9 +1430,16 @@
     {
       "path": "scripts/check_dinov2_forward.py",
       "category": "research_code",
-      "bytes": 3055,
-      "exported_sha256": "57d9a9621a00694af32ca91ed6c33d37e9edee0cb02cbfcd027928f8c871416f",
-      "source_sha256": "57d9a9621a00694af32ca91ed6c33d37e9edee0cb02cbfcd027928f8c871416f"
+      "bytes": 3226,
+      "exported_sha256": "374140aa4702f150d2e2d4f0b26b2970646973367663e946864e645d4600f4c2",
+      "source_sha256": "374140aa4702f150d2e2d4f0b26b2970646973367663e946864e645d4600f4c2"
+    },
+    {
+      "path": "scripts/check_hypersim_anomalous_directions.py",
+      "category": "research_code",
+      "bytes": 6710,
+      "exported_sha256": "fa5d24367e7c958505b85f4c751d85885c228c69b8a20366cb5d97c094ed1d10",
+      "source_sha256": "fa5d24367e7c958505b85f4c751d85885c228c69b8a20366cb5d97c094ed1d10"
     },
     {
       "path": "scripts/check_nyu_rgb_correspondence.py",
@@ -1423,9 +1472,9 @@
     {
       "path": "scripts/export_github.py",
       "category": "research_code",
-      "bytes": 30623,
-      "exported_sha256": "473fc28eb786db5d4fe5589dc76454110037f743423031c3a1ce016316710a5d",
-      "source_sha256": "372f89ea1b199151d2655289d78aec4689ceaa5090b8cc571c3111dfcdfa776a"
+      "bytes": 32495,
+      "exported_sha256": "5fec09becdf2b02a0791dbdf08fa0fd8384f0845ae813022ccc016bb6e2e7beb",
+      "source_sha256": "550228a9d9e9afaa833164d80cde6835723a0888be5e22fb5f14bd9663c27cea"
     },
     {
       "path": "scripts/fetch_nyu_scene_metadata.py",
@@ -1435,11 +1484,32 @@
       "source_sha256": "1583bb26c6de6e3ec17d788a5f8f26b3d8fb06ae249ee5e3fa4e32caa9ae970f"
     },
     {
+      "path": "scripts/finalize_arb_outlier_review3.py",
+      "category": "research_code",
+      "bytes": 3114,
+      "exported_sha256": "bea5cf930af91e48fad3206e36c4a9cd5dfe31b9d50361d76b379f0f038d9c50",
+      "source_sha256": "bea5cf930af91e48fad3206e36c4a9cd5dfe31b9d50361d76b379f0f038d9c50"
+    },
+    {
       "path": "scripts/index_object_benchmark.py",
       "category": "research_code",
       "bytes": 2562,
       "exported_sha256": "1901cefcfd8cf717aa5a6f966ba61af9d56263a9cefb9b9067790c18f3950a99",
       "source_sha256": "1901cefcfd8cf717aa5a6f966ba61af9d56263a9cefb9b9067790c18f3950a99"
+    },
+    {
+      "path": "scripts/inspect_arb_length_outliers.py",
+      "category": "research_code",
+      "bytes": 3733,
+      "exported_sha256": "739bbea2b728ad9339c3656bf91fc0f1624e331f185fb2de7655130d78a7b3bf",
+      "source_sha256": "739bbea2b728ad9339c3656bf91fc0f1624e331f185fb2de7655130d78a7b3bf"
+    },
+    {
+      "path": "scripts/inspect_arb_outlier_materials.py",
+      "category": "research_code",
+      "bytes": 2529,
+      "exported_sha256": "926924b540859e292a693201df0ff58ab9ae4b850a64bb5954f63554dfa9738a",
+      "source_sha256": "926924b540859e292a693201df0ff58ab9ae4b850a64bb5954f63554dfa9738a"
     },
     {
       "path": "scripts/inspect_gltf_normal_textures.py",
@@ -1528,9 +1598,9 @@
     {
       "path": "scripts/render_gso_holdout_blender.py",
       "category": "research_code",
-      "bytes": 10000,
-      "exported_sha256": "70e52d0fe434310dd43e1285d463dd10722879e98a1f6e57fd2ce1e7c1c44d3f",
-      "source_sha256": "70e52d0fe434310dd43e1285d463dd10722879e98a1f6e57fd2ce1e7c1c44d3f"
+      "bytes": 12964,
+      "exported_sha256": "f7f29ced1fda3e6fd2a99c420ed121a6e0ac65cb252def95599524f428e26c71",
+      "source_sha256": "f7f29ced1fda3e6fd2a99c420ed121a6e0ac65cb252def95599524f428e26c71"
     },
     {
       "path": "scripts/render_parameterization_examples.py",
@@ -1542,9 +1612,9 @@
     {
       "path": "scripts/render_record.py",
       "category": "research_code",
-      "bytes": 14900,
-      "exported_sha256": "5671be91d9a4688b5fd91d17d9dceb12b023a18e67f9ac969150478f6b2a8d69",
-      "source_sha256": "aed40fb1f606b3679095bf788180488250de3506ef0cd24785c3bc0c855af779"
+      "bytes": 15008,
+      "exported_sha256": "c00b5c82f29bb806dedf6865a376765b90d396c6a731f039aae553fe2259a77c",
+      "source_sha256": "b4d95e1ad9d8513bb607d0c4e81ec746b0c4502a5741e8f6fe3f695dfceed8f0"
     },
     {
       "path": "scripts/report_parameterization_pilot.py",
@@ -1577,9 +1647,9 @@
     {
       "path": "scripts/run_gso_pipeline.py",
       "category": "research_code",
-      "bytes": 3134,
-      "exported_sha256": "b728d1bbbe0cbd7608926a894af35040143e84542c8720f9d49a5e0ea512424f",
-      "source_sha256": "b728d1bbbe0cbd7608926a894af35040143e84542c8720f9d49a5e0ea512424f"
+      "bytes": 3139,
+      "exported_sha256": "331c427b51e0ededf018b9dbdd1afcf4874efd72293c803282c5384a835b559b",
+      "source_sha256": "331c427b51e0ededf018b9dbdd1afcf4874efd72293c803282c5384a835b559b"
     },
     {
       "path": "scripts/run_imagewise_noise.py",
@@ -1605,9 +1675,9 @@
     {
       "path": "scripts/run_wsd_pipeline.py",
       "category": "research_code",
-      "bytes": 2746,
-      "exported_sha256": "90cef6af52757b1f4fe9708809147e2d4e16910d6ccc01b300d8f01ff9ed9924",
-      "source_sha256": "90cef6af52757b1f4fe9708809147e2d4e16910d6ccc01b300d8f01ff9ed9924"
+      "bytes": 2849,
+      "exported_sha256": "688f6037cf7572c492015646abf5fd70526ef99d26137ca7b0bd3f1b3b4e8d6a",
+      "source_sha256": "688f6037cf7572c492015646abf5fd70526ef99d26137ca7b0bd3f1b3b4e8d6a"
     },
     {
       "path": "scripts/sample_arb_objaverse.py",
@@ -1654,9 +1724,9 @@
     {
       "path": "scripts/train_wsd_review2.py",
       "category": "research_code",
-      "bytes": 12809,
-      "exported_sha256": "343d5869fbc02dff7ea3e73f78b966672e834f514925f5a0d532edba6662060c",
-      "source_sha256": "343d5869fbc02dff7ea3e73f78b966672e834f514925f5a0d532edba6662060c"
+      "bytes": 13037,
+      "exported_sha256": "2935638a95884b3a4fcf0de8a27769c7a6b74d00b4e618d6b09a66a23a07efa2",
+      "source_sha256": "2935638a95884b3a4fcf0de8a27769c7a6b74d00b4e618d6b09a66a23a07efa2"
     },
     {
       "path": "scripts/verify_best.py",
@@ -1710,9 +1780,9 @@
     {
       "path": "src/dino_conditioning.py",
       "category": "research_code",
-      "bytes": 5801,
-      "exported_sha256": "66b4ea1a0924e22c355696ac25966156315234269416ea5935aafd6c5a412ce9",
-      "source_sha256": "66b4ea1a0924e22c355696ac25966156315234269416ea5935aafd6c5a412ce9"
+      "bytes": 6145,
+      "exported_sha256": "02d873839bd89a3dc5bbc05795527c012afa3bcfc75cfd70b07a620db111daf3",
+      "source_sha256": "02d873839bd89a3dc5bbc05795527c012afa3bcfc75cfd70b07a620db111daf3"
     },
     {
       "path": "src/flow_inference.py",
@@ -1748,6 +1818,13 @@
       "bytes": 2202,
       "exported_sha256": "85a2d802b5cb0cf44a1adfe7be2a4a4f796a075df772e64d875beef568acf135",
       "source_sha256": "85a2d802b5cb0cf44a1adfe7be2a4a4f796a075df772e64d875beef568acf135"
+    },
+    {
+      "path": "src/mesh_normal_gt.py",
+      "category": "research_code",
+      "bytes": 2761,
+      "exported_sha256": "7ce84f8c4ccb40da7334c34785f1f2fef276e82fa132f2ed7348d3262d65a5e6",
+      "source_sha256": "7ce84f8c4ccb40da7334c34785f1f2fef276e82fa132f2ed7348d3262d65a5e6"
     },
     {
       "path": "src/models/__init__.py",
@@ -1797,6 +1874,13 @@
       "bytes": 741,
       "exported_sha256": "83c8578589b5db49f2da19f09c31afecd48244c0b7be2ff7f7baddab9157e2fe",
       "source_sha256": "83c8578589b5db49f2da19f09c31afecd48244c0b7be2ff7f7baddab9157e2fe"
+    },
+    {
+      "path": "src/quality_gate.py",
+      "category": "research_code",
+      "bytes": 1034,
+      "exported_sha256": "ef91e026edde10e27ecd3f1fbc84d9ed21d538150909535c67bcb9502b8fea25",
+      "source_sha256": "ef91e026edde10e27ecd3f1fbc84d9ed21d538150909535c67bcb9502b8fea25"
     },
     {
       "path": "src/research_io.py",
@@ -1864,9 +1948,9 @@
     {
       "path": "tests/test_dino_conditioning.py",
       "category": "research_code",
-      "bytes": 3349,
-      "exported_sha256": "a6cb8c802c66ab4cce0e432cf2a3ce0cf0bc0e24b86c8a3386eacca809096e71",
-      "source_sha256": "a6cb8c802c66ab4cce0e432cf2a3ce0cf0bc0e24b86c8a3386eacca809096e71"
+      "bytes": 3772,
+      "exported_sha256": "548bcae0aaf9682dd498d961028303e7674b2485554f52a6949939f70f187faa",
+      "source_sha256": "548bcae0aaf9682dd498d961028303e7674b2485554f52a6949939f70f187faa"
     },
     {
       "path": "tests/test_export.py",
@@ -1895,6 +1979,20 @@
       "bytes": 1902,
       "exported_sha256": "17f3704e892cf4647f0f4a012851cfd72e9d775b242c9f6058354a4ca12fd3fc",
       "source_sha256": "17f3704e892cf4647f0f4a012851cfd72e9d775b242c9f6058354a4ca12fd3fc"
+    },
+    {
+      "path": "tests/test_hypersim_direction_check.py",
+      "category": "research_code",
+      "bytes": 974,
+      "exported_sha256": "55b10dcb4a5c2995f95118efc4b84ae882e00dfd868cb3410f86934571bd1439",
+      "source_sha256": "55b10dcb4a5c2995f95118efc4b84ae882e00dfd868cb3410f86934571bd1439"
+    },
+    {
+      "path": "tests/test_mesh_normal_gt.py",
+      "category": "research_code",
+      "bytes": 1574,
+      "exported_sha256": "4dcde8bd037a3ca8c115017669f7bf74d3916184cf7f8bf6d702d74b7b4531e6",
+      "source_sha256": "4dcde8bd037a3ca8c115017669f7bf74d3916184cf7f8bf6d702d74b7b4531e6"
     },
     {
       "path": "tests/test_noise_protocol.py",
@@ -1932,6 +2030,13 @@
       "source_sha256": "f1bc25fd0fd8063ebebc95e8c3c73f1cf5f26ea7fb1fd3c2d440fc4f97901ec4"
     },
     {
+      "path": "tests/test_quality_gate.py",
+      "category": "research_code",
+      "bytes": 1331,
+      "exported_sha256": "f615b3cc663143ad08d3be4f9ce77f8435c759acb046c1d3aaea5ba6017a32ce",
+      "source_sha256": "f615b3cc663143ad08d3be4f9ce77f8435c759acb046c1d3aaea5ba6017a32ce"
+    },
+    {
       "path": "tests/test_spatial_protocol.py",
       "category": "research_code",
       "bytes": 1048,
@@ -1955,9 +2060,9 @@
     {
       "path": "tests/test_wsd_fork_restore.py",
       "category": "research_code",
-      "bytes": 5162,
-      "exported_sha256": "530bf35b114e9e4d1b9f48982321375a1ab900b653349738efba5789527e91b1",
-      "source_sha256": "530bf35b114e9e4d1b9f48982321375a1ab900b653349738efba5789527e91b1"
+      "bytes": 5307,
+      "exported_sha256": "b832908a1d6122bb3857d39cdda398fad18e8551207eb9fc2f2c6a30a32c0e11",
+      "source_sha256": "b832908a1d6122bb3857d39cdda398fad18e8551207eb9fc2f2c6a30a32c0e11"
     },
     {
       "path": "tests/test_wsd_protocol.py",

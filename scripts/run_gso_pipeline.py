@@ -40,7 +40,7 @@ def main():
         subprocess.run([str(blender),'-b','--python-exit-code','1','--python',
             str(ROOT/'scripts/render_gso_holdout_blender.py'),'--','--device','GPU'],
             cwd=ROOT,check=True,env=dict(os.environ,PYTHONDONTWRITEBYTECODE='1'))
-        result=json.loads((ROOT/'outputs/P1_gso_render_v1/summary.json').read_text())
+        result=json.loads((ROOT/'outputs/P1_gso_render_dual_v2/summary.json').read_text())
         if result['status']!='completed' or result['assets']!=summary['accepted_assets']:
             raise RuntimeError('GSO render completion mismatch')
         status('completed',assets=result['assets'],images=result['images'],
