@@ -1,6 +1,8 @@
 {
   "version": "general_data_protocol_v1",
   "main_training_ready": false,
+  "first_round_no_ray_enabled": true,
+  "formal_no_ray_training_gate": "2000 stratified licensed assets prepared and checked; 64-asset pilot has finite losses and gradients",
   "normal_basis": "camera x-right, y-down, z-forward",
   "normal_orientation": "ray-positive, compatible with DSINE-packaged GeoNet/FrameNet labels",
   "main_input": "RGB only",
@@ -8,11 +10,13 @@
   "sources": {
     "hypersim_protocol": {"prepared_root": "data/hypersim_protocol_v1", "role": "loader and geometry protocol checks", "train_images": 120, "validation_images": 20},
     "hypersim_trainval": {"prepared_root": "data/hypersim_trainval_v1", "role": "synthetic indoor training/validation", "status": "prepared and all samples checked", "train_images": 5736, "validation_images": 700, "train_scenes": 30, "validation_scenes": 5},
-    "nyuv2_train": {"role": "real indoor validation only", "status": "official scene mapping and split indices verified; RGB preprocessing correspondence still under investigation", "available_images": 795, "rooms": 249, "training_allowed": false},
+    "nyuv2_train": {"role": "real indoor validation only", "status": "DSINE packaged RGB/normal/K paired cache prepared; official MAT supplies scene IDs only", "available_images": 795, "rooms": 249, "training_allowed": false, "prepared_root": "data/nyu_validation_packaged_v1", "official_RGB_identity_required": false},
     "nyuv2_test": {"role": "reserved benchmark test", "available_images": 654, "training_allowed": false},
     "scannet_dsine": {"role": "reserved benchmark test", "available_images": 300, "training_allowed": false},
     "olatverse_val": {"role": "reserved object evaluation", "assets": 42, "geometry_views": 210, "appearance_images": 840, "training_allowed": false, "metric_protocol_ready": false},
-    "object_training": {"role": "independent rendered training assets", "candidate": "Arb-Objaverse curated data", "revision": "329f4fc199498264390df36104a3326e8a30c325", "status": "3-asset protocol sample acquired; not training ready", "target_assets": 2000, "target_rgb_images": 6000, "explicit_intrinsics_in_sample": false, "normal_semantics": "Cycles shading normal pass; pure geometry equivalence unverified"}
+    "object_training": {"role": "independent rendered training assets", "candidate": "Arb-Objaverse curated data", "revision": "329f4fc199498264390df36104a3326e8a30c325", "status": "stratified 16-archive acquisition in progress; 3-asset smoke runs completed", "target_assets": 2000, "target_rgb_images": 6000, "explicit_intrinsics_in_sample": false, "missing_K_blocks_first_round": false, "normal_semantics": "Cycles shading normal pass; pure geometry equivalence unverified", "mask_source": "EXR finite decoded normals, absolute unit-length error <=0.05; alpha auxiliary", "q_weighting": false}
   },
-  "remaining_gates": ["NYUv2 packaged RGB/normal/K preprocessing correspondence", "Arb exact intrinsics and shading/geometry normal contract", "multi-archive asset selection and deduplication", "cross-source orientation and preprocessing checks"]
+  "remaining_gates": ["complete multi-archive 2000-asset acquisition", "prepare and check frozen train/validation identities and masks", "finite-gradient balanced 64-asset pilot"],
+  "nonblocking_followups": ["Arb exact K and controlled cube closure for later ray experiments", "glTF material normalTexture label groups (not calibrated q)", "NYUv2 RGB difference diagnosis without altering packaged RGB/normal/K"],
+  "label_contract": {"Hypersim": "normal_cam geometry, normal_bump_cam not used in first round", "Arb": "BSDF shading normal, texture presence may be unknown; domain and label semantics explicitly separate"}
 }

@@ -101,7 +101,9 @@ def main():
     for run in ["D1_full", "P0_D1_D5_pilot", "D2_D3_full_multiseed", "D3_full_imagewise_noise_v1",
                 "D4_D6_face_supplements_v1", "P0_general_data_v1", "P0_prepared_hypersim_v1",
                 "P0_prepared_hypersim_full_v1", "P0_object_benchmark_v1", "P0_arb_protocol_v1",
-                "P0_nyu_scenes_v1", "P0_nyu_validation_v1"]:
+                "P0_nyu_scenes_v1", "P0_nyu_validation_v1", "P1_nyu_validation_v1", "P1_nyu_checked_v1",
+                "P1_gltf_normal_textures_v1", "P1_nyu_rgb_diagnostic_v1", "P1_arb_prepared_pilot_v1",
+                "P2_parameterization_pilot_v1", "P2_parameterization_v1"]:
         source = ROOT / "outputs" / run / "summary.json"
         if not source.exists():
             continue
@@ -243,23 +245,28 @@ docs/
             "A new native-geometry FP32 cache contains 5,736 train and 700 validation images from 30/5 disjoint scenes. "
             "All prepared samples pass the included loader checks. Exact camera projection matrices are retained; an ordinary K has a separate validity flag. "
             "RGB comes from lossy final-preview images, not the original HDR color.\n\n"
-            "Mixed-domain training is not ready. Official NYUv2 scene metadata and train/test indices are now checked: "
+            "The first comparison does not use ray inputs, DINO or CFG. Official NYUv2 scene metadata and train/test indices are checked: "
             "795 images from 249 rooms are reserved for real-indoor validation, with no room overlap with the 654-image test partition. "
-            "Three non-test RGB arrays are not byte-identical to the packaged images; preprocessing correspondence remains under investigation. "
-            "A pinned Arb-Objaverse sample contains 3 assets, 6 geometry views and 12 RGBA inputs. "
-            "It has alpha masks but no explicit depth or intrinsics; the Cycles normal-pass semantics require a separate contract from pure geometry normals. "
+            "All 795 packaged RGB/normal/K validation pairs have been prepared and checked; non-identical official MAT RGB does not block these pairs. "
+            "Arb retains its BSDF normal-pass label tag and missing calibration; Hypersim retains normal_cam geometry labels. "
+            "The 16-archive pilot acquired 64 objects, of which 62 and 184 views have valid labels; eight empty-label views are explicitly excluded. "
+            "Masks use finite near-unit EXR normals, with alpha only auxiliary. The pilot inherits the complete formal asset split. "
+            "All eight 100-update pilot recipes completed with finite gradients, shared configuration and matching data signatures. "
+            "These are numerical preflight results, not method rankings or convergence evidence. The 2,000-asset formal acquisition is separate. "
             "The 300 DSINE ScanNet benchmark frames and 42 OLATverse validation objects remain reserved. "
             "Data, sample manifests and prepared caches are not distributed. "
             "[Inventory](results/P0_general_data_v1/summary.json), "
             "[prepared-cache checks](results/P0_prepared_hypersim_full_v1/summary.json), "
             "[object evaluation inventory](results/P0_object_benchmark_v1/summary.json), "
             "[Arb sample checks](results/P0_arb_protocol_v1/summary.json), "
-            "[NYUv2 mapping checks](results/P0_nyu_validation_v1/summary.json).\n")
+            "[NYUv2 mapping checks](results/P0_nyu_validation_v1/summary.json), "
+            "[packaged validation checks](results/P1_nyu_checked_v1/summary.json), "
+            "[eight-recipe preflight](results/P2_parameterization_pilot_v1/summary.json).\n")
     text_file("README.md", """# FNFlow
 
 Pixel-space conditional Flow Matching for face normals, with isolated research code for general object and indoor-scene normal estimation.
 
-This repository contains the historical UNet baseline, experiment code and aggregate numerical results. **No new general-domain model has been trained yet.** Future public updates are limited to code/configuration, operational instructions and aggregate results.
+This repository contains the historical UNet baseline, experiment code and aggregate numerical results. **Controlled no-ray R/V/Xv/Xn preflight is complete; no completed multi-seed formal generalization result is claimed.** Future public updates are limited to code/configuration, operational instructions and aggregate results.
 
 ## Contents
 
@@ -338,6 +345,8 @@ python scripts/render_record.py
 Published snapshots are in results/; new runs write outputs/. The original preflight audit is intentionally not overwritten. Reusing a run ID requires identical code/configuration/sample selection.
 
 Report scripts regenerate workspace-oriented documents. This publication export normalizes machine paths and document links.
+
+The no-ray comparison uses configs/parameterization_first_round.json. scripts/run_parameterization_pipeline.py expects separately acquired raw data and locally prepared manifests; it performs smoke checks, a balanced pilot and then the fixed formal grid. scripts/summarize_parameterization.py keeps training-seed and inference-seed variation separate. Data/weights/manifests are not distributed. The optional cube camera check requires Blender 3.3; it has not been run in the recorded training environment.
 
 ## Scope
 

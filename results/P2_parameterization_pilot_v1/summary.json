@@ -1,0 +1,83 @@
+{
+  "status": "completed",
+  "created_at": "2026-10-22T11:50:52+08:00",
+  "completed_pilot_runs": 8,
+  "training_seed": 1247,
+  "shared_config_data_and_code_verified": true,
+  "rows": [
+    {
+      "method": "R",
+      "condition_dropout": 0.0,
+      "optimizer_updates": 100,
+      "max_gradient_norm_before_clip": 21601.708984375,
+      "peak_cuda_bytes": 4953756672,
+      "all_losses_and_gradients_finite": true
+    },
+    {
+      "method": "R",
+      "condition_dropout": 0.5,
+      "optimizer_updates": 100,
+      "max_gradient_norm_before_clip": 17350.828125,
+      "peak_cuda_bytes": 4955198464,
+      "all_losses_and_gradients_finite": true
+    },
+    {
+      "method": "V",
+      "condition_dropout": 0.0,
+      "optimizer_updates": 100,
+      "max_gradient_norm_before_clip": 17.5888671875,
+      "peak_cuda_bytes": 4952183808,
+      "all_losses_and_gradients_finite": true
+    },
+    {
+      "method": "V",
+      "condition_dropout": 0.5,
+      "optimizer_updates": 100,
+      "max_gradient_norm_before_clip": 15.71534252166748,
+      "peak_cuda_bytes": 4956902400,
+      "all_losses_and_gradients_finite": true
+    },
+    {
+      "method": "Xv",
+      "condition_dropout": 0.0,
+      "optimizer_updates": 100,
+      "max_gradient_norm_before_clip": 17515.578125,
+      "peak_cuda_bytes": 4952183808,
+      "all_losses_and_gradients_finite": true
+    },
+    {
+      "method": "Xv",
+      "condition_dropout": 0.5,
+      "optimizer_updates": 100,
+      "max_gradient_norm_before_clip": 15706.125,
+      "peak_cuda_bytes": 4956902400,
+      "all_losses_and_gradients_finite": true
+    },
+    {
+      "method": "Xn",
+      "condition_dropout": 0.0,
+      "optimizer_updates": 100,
+      "max_gradient_norm_before_clip": 17300.708984375,
+      "peak_cuda_bytes": 4952183808,
+      "all_losses_and_gradients_finite": true
+    },
+    {
+      "method": "Xn",
+      "condition_dropout": 0.5,
+      "optimizer_updates": 100,
+      "max_gradient_norm_before_clip": 15423.9892578125,
+      "peak_cuda_bytes": 4956902400,
+      "all_losses_and_gradients_finite": true
+    }
+  ],
+  "object_source_assets": 64,
+  "usable_object_assets": 62,
+  "object_images": 184,
+  "excluded_empty_label_views": 8,
+  "ray_condition_used": false,
+  "cfg_used": false,
+  "independent_training_seed_variance_estimated": false,
+  "method_ranking_established": false,
+  "convergence_established": false,
+  "scope": "100-update single-seed numerical preflight only; formal 24-run grid is separate"
+}

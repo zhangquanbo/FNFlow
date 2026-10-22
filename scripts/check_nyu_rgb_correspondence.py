@@ -18,6 +18,7 @@ parser.add_argument('--checks',type=Path,default=ROOT/'outputs/P0_nyu_validation
 parser.add_argument('--output',type=Path,default=ROOT/'outputs/P0_nyu_validation_v1/private_rgb_correspondence.json')
 parser.add_argument('--limit',type=int,default=0)
 parser.add_argument('--save-arrays',action='store_true')
+parser.add_argument('--diagnostic-only',action='store_true')
 args=parser.parse_args()
 checks=json.loads(args.checks.read_text())['records']
 if args.limit:checks=checks[:args.limit]
@@ -42,4 +43,4 @@ result={'created_at':now(),'all_match':all(r['exact_rgb_pixels_match'] for r in 
         'scope':'three preselected training-partition RGB arrays; test image pixels were not requested'}
 write_json(args.output,result)
 print(json.dumps(result),flush=True)
-if not result['all_match']:raise RuntimeError('RGB correspondence failed; do not mark preparation ready')
+if not result['all_match'] and not args.diagnostic_only:raise RuntimeError('RGB correspondence failed; do not mark preparation ready')

@@ -28,11 +28,12 @@ class PreparedNormalDataset(Dataset):
             valid=handle['valid'].astype(bool)
             k=handle['K'].astype(np.float32);k_valid=bool(handle['K_valid'])
             projection=handle['projection_3x3'].astype(np.float32)
+            projection_valid=bool(handle['projection_valid']) if 'projection_valid' in handle else True
         if rgb.shape!=normal.shape or valid.shape!=normal.shape[:2] or not valid.any():
             raise ValueError('Unaligned or empty sample')
         if not np.isfinite(normal[valid]).all() or not np.allclose(np.linalg.norm(normal[valid],axis=-1),1,atol=2e-4):
             raise ValueError('Invalid valid-pixel normals')
-        if not np.isfinite(projection).all() or abs(np.linalg.det(projection))<1e-8:
+        if projection_valid and (not np.isfinite(projection).all() or abs(np.linalg.det(projection))<1e-8):
             raise ValueError('Invalid exact camera projection')
         if k_valid and (not np.isfinite(k).all() or not np.allclose(k[2],[0,0,1])):
             raise ValueError('Invalid pinhole intrinsics')
@@ -40,6 +41,6 @@ class PreparedNormalDataset(Dataset):
         return {'condition':torch.from_numpy(np.ascontiguousarray(rgb.transpose(2,0,1))).float()/127.5-1,
                 'normal':torch.from_numpy(np.ascontiguousarray(normal.transpose(2,0,1))),
                 'valid':torch.from_numpy(valid),'K':torch.from_numpy(k),'K_valid':k_valid,
-                'projection_3x3':torch.from_numpy(projection),'has_depth':False,
-                'scene':record['scene'],'label_source':'rendered_geometry',
+                'projection_3x3':torch.from_numpy(projection),'projection_valid':projection_valid,'has_depth':False,
+                'scene':record['scene'],'label_source':record.get('label_source','rendered_geometry'),
                 'input_protocol':'RGB only; camera metadata is not appended to condition'}

@@ -11,9 +11,10 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--prepared-root',default='data/hypersim_protocol_v1')
     parser.add_argument('--run-id',default='P0_prepared_hypersim_v1')
+    parser.add_argument('--splits',nargs='+',default=['train','val'])
     args=parser.parse_args()
     summary={'created_at':now(),'status':'completed','partitions':{}}
-    for split in ['train','val']:
+    for split in args.splits:
         data=PreparedNormalDataset(ROOT/args.prepared_root,split)
         counts=0;norm_error=0.;pinhole=0
         for sample in data:

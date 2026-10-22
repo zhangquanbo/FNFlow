@@ -12,6 +12,8 @@ def render():
     files = sorted((ROOT / "outputs").glob("*/summary.json"))
     env_file = ROOT / "provenance/environment.json"
     env = json.loads(env_file.read_text()) if env_file.exists() else {}
+    queue_file=ROOT/'outputs/P2_parameterization_v1/queue_status.json'
+    queue=json.loads(queue_file.read_text()) if queue_file.exists() else None
     lines = [
         "# FaceFlux-Research：代码与实验记录", "",
         f"更新：{now()}。此文档由运行状态自动整理，方案保存在 [研究方案]($FNFLOW_ROOT/docs/研究方案.md)。", "",
@@ -22,7 +24,8 @@ def render():
         "- FaceFlux-Best 仅作为只读源码、权重与数据参考；所有新输出和缓存写入新目录。",
         "- 本轮先做 P0 协议检查及 D1–D5 无需重训诊断。FaceScape 是历史开发域。",
         "- 小样本、全量、历史 clamp 协议与浮点单位法线协议分列；推理 seed 变异不是训练 seed 变异。",
-        "- 本轮没有进行新训练，尚不能支持通用域优越性或论文创新结论。", "",
+        ("- 已启动无 ray 参数化预检/训练队列；尚不能支持通用域优越性或论文创新结论。" if queue
+         else "- 本轮没有进行新训练，尚不能支持通用域优越性或论文创新结论。"), "",
         "## 运行环境", "",
         f"- Python：{env.get('python', '待检查')}",
         f"- PyTorch：{env.get('packages', {}).get('torch', '待检查')}；CUDA：{env.get('torch_cuda', '待检查')}",
@@ -131,6 +134,18 @@ def render():
             lines.append(f"- 同一 raw 预测改用浮点单位方向后，MAE 变化为 {delta:+.4f}°；不涉及重训。")
         lines.extend(["- 仅解释已完成的表格行；未完成项不当作结果。",
                       "- 旧 checkpoint 之间的差距仍包含训练变异，不能仅靠此表推出 dropout 的独立因果收益。", ""])
+    if queue:
+        lines.extend(['## 无 ray 参数化队列','',
+            f"状态：{queue.get('status')}；阶段：{queue.get('phase','见原始状态')}；更新时间：{queue.get('updated_at','未记录')}。",'',
+            '[首轮执行记录]($FNFLOW_ROOT/docs/首轮无ray训练执行记录.md) · '
+            '[固定配置]($FNFLOW_ROOT/configs/parameterization_first_round.json)','',
+            '| 阶段 | 已完成运行数 |','|---|---:|'])
+        counts={}
+        for path in (ROOT/'outputs/P2_parameterization_v1').glob('*/summary.json'):
+            value=json.loads(path.read_text())
+            if value.get('status')=='completed':counts[value.get('phase','unknown')]=counts.get(value.get('phase','unknown'),0)+1
+        for phase,count in sorted(counts.items()):lines.append(f'| {phase} | {count} |')
+        lines.extend(['','smoke 仅检查真实数据数值路径；pilot 单 seed 结果不作为方法排名。正式 24 组的进度与训练/推理方差分别报告。',''])
     lines.extend(["## 通用数据与收尾诊断入口", "",
                   "- [人脸收尾诊断]($FNFLOW_ROOT/docs/人脸收尾诊断结果.md)：方向平均、匹配 CFG 和身份重采样。",
                   "- [通用数据准备]($FNFLOW_ROOT/docs/通用数据核查与准备.md)：Hypersim 转换和逐样本验收。",
@@ -141,8 +156,9 @@ def render():
                   "- `src/http_range.py`、`scripts/sample_arb_objaverse.py`、`scripts/audit_arb_protocol.py`：限量下载和物体样本核查。",
                   "- `scripts/fetch_nyu_scene_metadata.py`、`scripts/lock_nyu_validation.py`、`scripts/check_nyu_rgb_correspondence.py`：真实验证身份及对应检查。", "",
                   "## 下一步", "",
-                  "先闭合通用数据的坐标、标签语义、内参与验证身份协议，按 configs/general_data_protocol.json 的就绪门槛"
-                  "决定何时进入 R/V/Xv/Xn 对照。人脸诊断在收尾文档中汇总；当前没有新训练。", "",
+                  "首轮 R/V/Xv/Xn 不使用 ray；缺 K、shading-normal 标记及 NYUv2 官方 RGB 差异不阻塞包内配对验证。"
+                  "按固定数据清单完成数值 pilot 后执行首预算；K 渲染闭合与材料统计另行推进。"
+                  "训练完成状态以队列及各配方 summary 为准，不把队列启动当作完成。", "",
                   "脚本由固定配置启动；每完成一个配方写入 JSON/逐图 CSV 并刷新此文档。"
                   "进程失败会记录错误，重新运行可跳过已经验证签名一致的结果。", ""])
     target = output_path(ROOT / "docs/代码与实验记录.md")

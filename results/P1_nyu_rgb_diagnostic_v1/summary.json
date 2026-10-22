@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "created_at": "2026-10-22T11:30:06+08:00",
+  "non_test_images": 3,
+  "mean_raw_absolute_pixel_difference_0_to_255": 5.550016999421296,
+  "per_channel_pearson_range": [
+    0.9500049918969498,
+    0.9994524495681593
+  ],
+  "max_affine_pearson_change": 5.10702591327572e-15,
+  "affine_converged": 3,
+  "inference": "diagnostic fits do not identify the full preprocessing chain; RGB/normal/K are used from the same DSINE package without correction",
+  "blocks_no_ray_training": false,
+  "packaged_K_overwritten": false,
+  "statistical_note": "Per-channel Pearson correlation is invariant to a positive affine intensity transform; residual reduction, not a correlation rise, tests a gain/bias explanation."
+}

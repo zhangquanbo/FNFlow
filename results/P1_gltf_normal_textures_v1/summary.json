@@ -1,0 +1,15 @@
+{
+  "status": "completed",
+  "created_at": "2026-10-22T11:28:48+08:00",
+  "requested_assets": 16,
+  "successful_assets": 16,
+  "failed_assets": 0,
+  "normal_texture_groups": {
+    "present": 8,
+    "not_declared_in_gltf": 8
+  },
+  "scope": "bounded convenience sample of already acquired training assets; not a population estimate",
+  "reliability_q_calibrated": false,
+  "blocks_first_round": false,
+  "blender_procedural_bump_or_displacement_verified": false
+}

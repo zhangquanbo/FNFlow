@@ -1,0 +1,13 @@
+{
+  "created_at": "2026-10-22T11:28:55+08:00",
+  "status": "completed",
+  "partitions": {
+    "val": {
+      "images": 795,
+      "scenes": 249,
+      "valid_pixels": 34909359,
+      "max_unit_length_error": 1.7881393432617188e-07,
+      "pinhole_K_images": 795
+    }
+  }
+}
