@@ -13,6 +13,12 @@ from src.general_dataset import PreparedNormalDataset
 from src.noise_protocol import image_noise_seed,mae_seed_statistics
 from src.parameterization import parameterization_loss,one_step_endpoint
 from src.research_io import ROOT,output_path,write_json,sha256,now
+from src.training_diagnostics import TimeLossBins
+
+
+def require_formal_budget(cfg,phase):
+    if phase=='formal' and (not cfg.get('formal_budget_approved') or not isinstance(cfg.get('formal_steps'),int) or cfg['formal_steps']<=0):
+        raise RuntimeError('Formal grid locked pending convergence and clipping review')
 
 
 class ImageCache:
@@ -101,19 +107,30 @@ def evaluate(model,mode,domains,seeds,limit,device):
 def main():
     p=argparse.ArgumentParser();p.add_argument('--method',choices=['R','V','Xv','Xn'],required=True)
     p.add_argument('--dropout',type=float,required=True);p.add_argument('--seed',type=int,required=True)
-    p.add_argument('--phase',choices=['smoke','pilot','formal'],required=True)
-    p.add_argument('--steps',type=int);p.add_argument('--run-id');args=p.parse_args()
-    config_path=ROOT/'configs/parameterization_first_round.json';cfg=json.loads(config_path.read_text())
+    p.add_argument('--phase',choices=['smoke','pilot','formal','convergence','clip_diagnostic'],required=True)
+    p.add_argument('--steps',type=int);p.add_argument('--run-id')
+    p.add_argument('--config',default='configs/parameterization_first_round_v2.json')
+    args=p.parse_args()
+    config_path=ROOT/args.config;cfg=json.loads(config_path.read_text())
+    require_formal_budget(cfg,args.phase)
     if cfg['ray_condition'] or cfg['dino_condition'] or cfg['cfg']:raise RuntimeError('First-round input protocol changed')
-    object_root=ROOT/f'data/arb_mixed_{args.phase}_v1'
+    data_phase='formal' if args.phase in {'convergence','clip_diagnostic'} else args.phase
+    object_root=ROOT/f'data/arb_mixed_{data_phase}_v1'
     if not (object_root/'summary.json').exists():raise RuntimeError('Prepared object partition missing')
     prepared=json.loads((object_root/'summary.json').read_text())
-    expected=cfg['formal_assets'] if args.phase=='formal' else cfg['pilot_min_assets'] if args.phase=='pilot' else 3
+    expected=cfg['formal_assets'] if data_phase=='formal' else cfg['pilot_min_assets'] if data_phase=='pilot' else 3
     if prepared['assets']!=expected:raise RuntimeError('Asset budget mismatch')
     run_id=args.run_id or f'{args.phase}_{args.method}_p{args.dropout:g}_s{args.seed}'
-    out=output_path(ROOT/'outputs/P2_parameterization_v1'/run_id);out.mkdir(parents=True,exist_ok=True)
-    steps=args.steps or (cfg['formal_steps'] if args.phase=='formal' else cfg['pilot_steps'] if args.phase=='pilot' else 3)
+    out=output_path(ROOT/cfg.get('output_root','outputs/P2_parameterization_v1')/run_id);out.mkdir(parents=True,exist_ok=True)
+    steps=args.steps or (cfg['convergence_steps'] if args.phase=='convergence' else cfg['clip_diagnostic_steps'] if args.phase=='clip_diagnostic'
+                        else cfg['formal_steps'] if args.phase=='formal' else cfg['pilot_steps'] if args.phase=='pilot' else 3)
+    schedule_steps=cfg['convergence_steps'] if args.phase in {'convergence','clip_diagnostic'} else steps
+    evaluation_every=cfg.get('evaluation_every',2500) if args.phase=='convergence' else 0
     hyp=load_records(ROOT/cfg['hypersim_root'],'train');obj=load_records(object_root,'train')
+    if cfg.get('spatial_protocol')=='center_square_v2':
+        for key in ['hypersim_root','nyu_validation_root']:
+            summary=json.loads((ROOT/cfg[key]/'summary.json').read_text())
+            if summary.get('spatial_protocol')!='center_square_v2':raise RuntimeError('Wrong spatial cache protocol')
     domains={'hypersim':load_records(ROOT/cfg['hypersim_root'],'val'),
              'arb':load_records(object_root,'val'),
              'nyuv2':load_records(ROOT/cfg['nyu_validation_root'],'val')}
@@ -121,7 +138,9 @@ def main():
                ROOT/cfg['nyu_validation_root']/'private_manifest.json']
     signature={'config_sha256':sha256(config_path),'data_manifests_sha256':[sha256(x) for x in manifests],
         'method':args.method,'condition_dropout':args.dropout,'training_seed':args.seed,'phase':args.phase,'steps':steps,
-        'train_code_sha256':sha256(__file__),'target_code_sha256':sha256(ROOT/'src/parameterization.py')}
+        'train_code_sha256':sha256(__file__),'target_code_sha256':sha256(ROOT/'src/parameterization.py'),
+        'diagnostics_code_sha256':sha256(ROOT/'src/training_diagnostics.py'),
+        'schedule_steps':schedule_steps,'evaluation_every':evaluation_every}
     if (out/'signature_private.json').exists():
         if json.loads((out/'signature_private.json').read_text())!=signature:raise RuntimeError('Existing run signature differs')
         if (out/'summary.json').exists() and json.loads((out/'summary.json').read_text()).get('status')=='completed':
@@ -135,7 +154,8 @@ def main():
     generator=torch.Generator(device=device).manual_seed(args.seed+7000)
     rng=np.random.default_rng(args.seed+9000)
     caches=[ImageCache(hyp),ImageCache(obj)]
-    completed=0;resume=out/'last_local.pth'
+    completed=0;resume=out/'last_local.pth';grad_norms=[];curve=[]
+    time_bins=TimeLossBins(cfg.get('time_bin_edges',[0,.2,.4,.6,.8,.95]))
     if resume.exists():
         state=torch.load(resume,map_location='cpu');model.load_state_dict(state['model']);optimizer.load_state_dict(state['optimizer'])
         for values in optimizer.state.values():
@@ -143,15 +163,22 @@ def main():
                 if torch.is_tensor(value):values[key]=value.to(device)
         generator.set_state(state['generator']);rng.bit_generator.state=state['numpy_rng'];completed=state['step']
         torch.set_rng_state(state['torch_rng']);torch.cuda.set_rng_state_all(state['cuda_rng'])
+        grad_norms=state['grad_norms'];time_bins.rows=state['time_bin_rows'];curve=state['curve']
+        # Discard updates after the durable checkpoint; their exact replay is logged once.
+        old_log=out/'training_log.jsonl'
+        if old_log.exists():
+            kept=[line for line in old_log.read_text().splitlines() if json.loads(line)['update']<=completed]
+            old_log.write_text('\n'.join(kept)+'\n',encoding='utf-8')
     model.train();started=time.perf_counter();last_loss=None;max_grad=0.;torch.cuda.reset_peak_memory_stats()
     try:
         with (out/'training_log.jsonl').open('a',encoding='utf-8') as log:
             for step in range(completed+1,steps+1):
                 optimizer.zero_grad(set_to_none=True)
-                warmup=min(100,steps//10)
-                schedule=min(1.,step/max(1,warmup))*(.1+.9*.5*(1+math.cos(math.pi*step/steps)))
+                warmup=min(100,schedule_steps//10)
+                schedule=min(1.,step/max(1,warmup))*(.1+.9*.5*(1+math.cos(math.pi*step/schedule_steps)))
                 for group in optimizer.param_groups:group['lr']=cfg['learning_rate']*schedule
                 drop=bool(rng.random()<args.dropout);components=[]
+                update_bins=TimeLossBins(time_bins.edges)
                 for micro in range(cfg['gradient_accumulation']):
                     batch=[]
                     for source in range(2):
@@ -168,37 +195,61 @@ def main():
                     state=(1-times[:,None,None,None])*noise+times[:,None,None,None]*target
                     if args.method=='R':state=torch.zeros_like(state);times=torch.zeros_like(times)
                     with torch.autocast('cuda',dtype=torch.bfloat16):raw=model(state,times,torch.zeros_like(rgb) if drop else rgb)
-                    loss,info=parameterization_loss(args.method,raw,state,target,noise,times,valid,cfg['unit_weight'],cfg['cosine_weight'])
+                    loss,info=parameterization_loss(args.method,raw,state,target,noise,times,valid,cfg['unit_weight'],cfg['cosine_weight'],return_per_image=True)
                     if not torch.isfinite(loss):raise RuntimeError('Nonfinite training objective')
+                    ts=times.detach().cpu().tolist()
+                    time_bins.add(ts,info['per_image']);update_bins.add(ts,info['per_image'])
                     (loss/cfg['gradient_accumulation']).backward();components.append({'loss':float(loss.detach()),**info})
                 grad=torch.nn.utils.clip_grad_norm_(model.parameters(),cfg['gradient_clip_norm'])
                 if not torch.isfinite(grad):raise RuntimeError('Nonfinite gradient norm')
-                max_grad=max(max_grad,float(grad));optimizer.step();completed=step
+                max_grad=max(max_grad,float(grad));grad_norms.append(float(grad));optimizer.step();completed=step
                 last_loss=float(np.mean([r['loss'] for r in components]))
-                if step==1 or step%10==0 or step==steps:
+                if True:  # Every optimizer update: sparse logging would bias clipping fractions.
                     row={'update':step,'loss':last_loss,'gradient_norm_before_clip':float(grad),'condition_dropped':drop,
+                         'gradient_clip_threshold':cfg['gradient_clip_norm'],'gradient_clipped':float(grad)>cfg['gradient_clip_norm'],
+                         'gradient_clip_scale':min(1.,cfg['gradient_clip_norm']/(float(grad)+1e-6)),
+                         'time_loss_bins':update_bins.summary(),
                          'lr':optimizer.param_groups[0]['lr'],'elapsed_seconds':time.perf_counter()-started,
                          **{key:float(np.mean([r[key] for r in components])) for key in ['mse','unit','cosine']}}
-                    log.write(json.dumps(row)+'\n');log.flush();print(run_id,json.dumps(row),flush=True)
-                    write_json(out/'progress.json',{'status':'running','update':step,'planned_updates':steps,'updated_at':now(),'last_loss':last_loss})
+                    log.write(json.dumps(row)+'\n');log.flush()
+                    if step==1 or step%10==0 or step==steps:
+                        print(run_id,json.dumps({k:v for k,v in row.items() if k!='time_loss_bins'}),flush=True)
+                        write_json(out/'progress.json',{'status':'running','update':step,'planned_updates':steps,'updated_at':now(),'last_loss':last_loss})
+                if evaluation_every and step%evaluation_every==0:
+                    torch.save({'model':model.state_dict(),'step':step,'signature':signature},out/f'checkpoint_{step:06d}_local.pth')
+                    scores,_=evaluate(model,args.method,domains,cfg['curve_inference_seeds'],0,device)
+                    curve.append({'update':step,'validation':scores,'inference_seeds':cfg['curve_inference_seeds']})
+                    write_json(out/'learning_curve.json',{'status':'running','method':args.method,'points':curve,
+                        'selection':'validation curve only; no benchmark test frames','updated_at':now()})
+                if cfg.get('spatial_protocol')=='center_square_v2' and (step%2500==0 or step==steps or (step<=2500 and step%250==0)):
+                    from scripts.summarize_convergence import summarize
+                    summarize()
                 if step%250==0 and step<steps:
                     temporary=out/'last_local.tmp'
                     torch.save({'model':model.state_dict(),'optimizer':optimizer.state_dict(),'step':step,
                         'generator':generator.get_state(),'numpy_rng':rng.bit_generator.state,'torch_rng':torch.get_rng_state(),
-                        'cuda_rng':torch.cuda.get_rng_state_all()},temporary);temporary.replace(resume)
+                        'cuda_rng':torch.cuda.get_rng_state_all(),'grad_norms':grad_norms,
+                        'time_bin_rows':time_bins.rows,'curve':curve},temporary);temporary.replace(resume)
         torch.save({'model':model.state_dict(),'step':steps,'signature':signature},out/'final_local.pth')
-        seeds=cfg['inference_seeds'] if args.phase=='formal' else cfg['pilot_inference_seeds']
-        scores,detail=evaluate(model,args.method,domains,seeds,0 if args.phase=='formal' else cfg['pilot_validation_images_per_domain'],device)
+        full_eval=args.phase in {'formal','convergence','clip_diagnostic'}
+        seeds=cfg['inference_seeds'] if full_eval else cfg['pilot_inference_seeds']
+        scores,detail=evaluate(model,args.method,domains,seeds,0 if full_eval else cfg['pilot_validation_images_per_domain'],device)
         write_json(out/'per_image_private.json',detail)
         result={'status':'completed','created_at':now(),'phase':args.phase,'method':args.method,'condition_dropout':args.dropout,
             'training_seed':args.seed,'optimizer_updates':completed,'trainable_parameters':sum(x.numel() for x in model.parameters()),
             'ray_condition_used':False,'dino_condition_used':False,'cfg_used':False,'precision':'bfloat16',
-            'last_loss':last_loss,'max_gradient_norm_before_clip':max_grad,'peak_cuda_bytes':torch.cuda.max_memory_allocated(),
+            'last_loss':last_loss,'max_gradient_norm_before_clip':max(grad_norms),'peak_cuda_bytes':torch.cuda.max_memory_allocated(),
+            'gradient_updates_recorded':len(grad_norms),'gradient_clip_fraction':float(np.mean(np.array(grad_norms)>cfg['gradient_clip_norm'])),
+            'gradient_norm_quantiles':{str(q):float(np.quantile(grad_norms,q)) for q in [.5,.9,.99,1.]},
+            'gradient_clip_threshold':cfg['gradient_clip_norm'],'time_loss_bins':time_bins.summary(),
+            'r_time_bins_note':'R has fixed t=0; not a comparison of time dependence' if args.method=='R' else None,
             'elapsed_seconds':time.perf_counter()-started,'validation':scores,
             'mean_domain_mae_deg':float(np.mean([x['mean_mae_deg'] for x in scores.values()])),
             'training_seed_variance_estimated':False,'convergence_established':False,
-            'scope':'fixed-budget formal run' if args.phase=='formal' else 'numerical preflight only; not a method ranking'}
+            'scope':'convergence/clipping diagnostic, one training seed' if args.phase in {'convergence','clip_diagnostic'}
+                    else 'fixed-budget formal run' if args.phase=='formal' else 'numerical preflight only; not a method ranking'}
         write_json(out/'summary.json',result);print(json.dumps(result),flush=True)
+        if curve:write_json(out/'learning_curve.json',{'status':'completed','method':args.method,'points':curve,'updated_at':now()})
         if resume.exists():resume.unlink()  # Own obsolete resume only; final weights remain.
     except Exception as error:
         write_json(out/'summary.json',{'status':'failed','method':args.method,'phase':args.phase,'seed':args.seed,

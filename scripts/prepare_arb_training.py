@@ -72,6 +72,7 @@ def main():
             rgb_path=candidates[0]
             native=cv2.imread(str(normal_path),cv2.IMREAD_UNCHANGED)
             if native is None:raise RuntimeError('EXR decoding failed')
+            if native.shape[0]!=native.shape[1]:raise RuntimeError('Arb spatial protocol requires native square renders')
             normal,valid=decode_arb_normal(native)
             if not valid.any():
                 exclusions.append({'asset':asset['asset'],'view':view,'split':split,

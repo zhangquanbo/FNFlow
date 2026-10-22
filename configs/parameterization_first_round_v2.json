@@ -1,0 +1,99 @@
+{
+  "version": "mixed_parameterization_center_square_v2",
+  "model": "FaceNormalUNet_B",
+  "image_size": 256,
+  "methods": [
+    "R",
+    "V",
+    "Xv",
+    "Xn"
+  ],
+  "condition_dropout": [
+    0.0,
+    0.5
+  ],
+  "training_seeds": [
+    1247,
+    2026,
+    3407
+  ],
+  "inference_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49
+  ],
+  "ray_condition": false,
+  "dino_condition": false,
+  "cfg": false,
+  "microbatch": 4,
+  "gradient_accumulation": 4,
+  "optimizer": "AdamW",
+  "learning_rate": 0.0002,
+  "weight_decay": 0.01,
+  "gradient_clip_norm": 1.0,
+  "precision": "bfloat16",
+  "time_distribution": "uniform [0, 0.95)",
+  "time_delta": 0.05,
+  "unit_weight": 0.25,
+  "cosine_weight": 0.25,
+  "cosine_epsilon": 0.0001,
+  "augmentation": "paired horizontal flip at p=0.5, canonical normal x sign inverted",
+  "domain_sampling": "equal images from Hypersim and Arb in every microbatch",
+  "mask_reduction": "mean over valid pixels within image, then mean over images",
+  "pilot_steps": 100,
+  "formal_steps": null,
+  "pilot_min_assets": 64,
+  "formal_assets": 2000,
+  "formal_object_validation_assets": 200,
+  "pilot_validation_images_per_domain": 16,
+  "pilot_inference_seeds": [
+    42,
+    43
+  ],
+  "hypersim_root": "data/hypersim_trainval_center_v2",
+  "nyu_validation_root": "data/nyu_validation_center_v2",
+  "object_pilot_root": "data/arb_mixed_pilot_v1",
+  "object_formal_root": "data/arb_mixed_formal_v1",
+  "selection": "validation learning curves determine a shared formal budget; benchmark tests remain unused; formal runs restart from shared initialization",
+  "label_sources": {
+    "Hypersim": "normal_cam geometry (not normal_bump_cam)",
+    "Arb": "Cycles BSDF normal pass; normalTexture classification may be unknown"
+  },
+  "reliability_weighting": false,
+  "missing_calibration_blocks_first_round": false,
+  "note": "Old stretched-cache pilot is historical numerical preflight only. Convergence runs use one training seed and do not establish method ranking.",
+  "spatial_protocol": "center_square_v2",
+  "output_root": "outputs/P2_parameterization_center_v2",
+  "formal_budget_approved": false,
+  "convergence_steps": 30000,
+  "convergence_methods": [
+    "R",
+    "V",
+    "Xn"
+  ],
+  "convergence_seed": 1247,
+  "convergence_dropout": 0.0,
+  "evaluation_every": 2500,
+  "curve_inference_seeds": [
+    42,
+    43
+  ],
+  "clip_diagnostic_steps": 2500,
+  "clip_diagnostic_method": "Xv",
+  "time_bin_edges": [
+    0,
+    0.2,
+    0.4,
+    0.6,
+    0.8,
+    0.95
+  ],
+  "gradient_diagnostics": "every optimizer update; preclip L2 norm, threshold, clipped flag and scale; image-weighted time-bin losses",
+  "clip_review": "compare all four methods at matched first 2500 updates and identical 30000-update LR schedule; no method-specific threshold change; rerun all affected runs if common threshold changes",
+  "formal_gate": "locked until convergence curves and clipping diagnostics reviewed; data acquisition alone never launches formal grid"
+}

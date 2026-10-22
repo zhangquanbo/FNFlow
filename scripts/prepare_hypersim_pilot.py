@@ -12,6 +12,7 @@ import h5py
 from PIL import Image
 from src.data_contract import opengl_projection_to_intrinsics,opengl_projection_to_pixel_matrix,resize_intrinsics_pixel_centers,hypersim_normals_for_training
 from src.research_io import ROOT,output_path,write_json,sha256,now
+from src.spatial_protocol import center_square, crop_camera
 
 
 def main():
@@ -19,6 +20,7 @@ def main():
     parser.add_argument('--dataset-root',type=Path,default=ROOT.parent/'Dataset')
     parser.add_argument('--per-scene',type=int,default=4)
     parser.add_argument('--output',default='data/hypersim_protocol_v1')
+    parser.add_argument('--center-crop',action='store_true')
     args=parser.parse_args()
     target=output_path(ROOT/args.output)
     if (target/'summary.json').exists(): raise RuntimeError('Existing prepared data; choose another output')
@@ -43,16 +45,23 @@ def main():
         if len(candidates)!=1 or not geometry.exists():
             exclusions.append({'key':list(key),'reason':'native_rgb_or_normal_missing_or_ambiguous'});continue
         with h5py.File(geometry,'r') as handle: native=handle['dataset'][:]
-        normal,valid=hypersim_normals_for_training(native,(256,256))
-        if not valid.any(): raise RuntimeError('No valid native label pixels')
         rgb=np.asarray(Image.open(candidates[0]).convert('RGB'))
         if rgb.shape[:2]!=native.shape[:2]: raise RuntimeError('Native RGB and normals not aligned')
+        source_wh=(native.shape[1],native.shape[0])
+        left=top=0
+        if args.center_crop:
+            native,(left,top,side)=center_square(native)
+            rgb,_=center_square(rgb)
+        normal,valid=hypersim_normals_for_training(native,(256,256))
+        if not valid.any(): raise RuntimeError('No valid native label pixels')
         camera=cameras[r['scene']]
         p=np.array([[float(camera[f'M_proj_{i}{j}']) for j in range(4)] for i in range(4)])
-        projection=opengl_projection_to_pixel_matrix(p,native.shape[1],native.shape[0])
+        projection=opengl_projection_to_pixel_matrix(p,*source_wh)
+        projection=crop_camera(projection,left,top)
         projection=resize_intrinsics_pixel_centers(projection,(native.shape[1],native.shape[0]),(256,256))
         try:
-            k=opengl_projection_to_intrinsics(p,native.shape[1],native.shape[0])
+            k=opengl_projection_to_intrinsics(p,*source_wh)
+            k=crop_camera(k,left,top)
             k=resize_intrinsics_pixel_centers(k,(native.shape[1],native.shape[0]),(256,256))
             k_valid=True; pinhole+=1
         except ValueError:
@@ -64,6 +73,8 @@ def main():
         records.append({'scene':r['scene'],'camera':r['camera'],'frame_id':r['frame_id'],'split':r['split'],
                         'path':str(folder/(stem+'.npz')),'source_normal_sha256':sha256(geometry),
                         'source_rgb_sha256':sha256(candidates[0]),'valid_pixels':int(valid.sum())})
+        records[-1].update(label_source='normal_cam geometry',source_wh=list(source_wh),
+                           crop_xywh=[left,top,native.shape[1],native.shape[0]])
         counts[r['scene']]=counts.get(r['scene'],0)+1
     scene_sets={split:{r['scene'] for r in records if r['split']==split} for split in ['train','val']}
     assert not scene_sets['train']&scene_sets['val']
@@ -72,7 +83,8 @@ def main():
              'scenes_by_split':{s:len(v) for s,v in scene_sets.items()},'scene_overlap':0,'exclusions':len(exclusions),
              'normal_dtype':'float32','normal_source':'native geometry normal_cam, no bump maps',
              'canonical_basis':'x-right/y-down/z-forward','orientation':'fixed inversion after GL-to-CV basis change; ray-positive DSINE label convention',
-             'resize':'nearest pixel center for normals/mask; bilinear RGB; half-pixel affine for K',
+             'resize':('native center-square crop, then ' if args.center_crop else '')+'nearest pixel center for normals/mask; bilinear RGB; crop and half-pixel affine for K/projection',
+             'spatial_protocol':'center_square_v2' if args.center_crop else 'stretch_square_v1',
              'pinhole_K_images':pinhole,'general_central_projection_images':len(records)-pinhole,
              'camera_protocol':'exact projection_3x3 for all; K_valid false for tilt-shift/non-pinhole matrices, never substitute an approximate K',
              'rgb_source':'lossy official final_preview; protocol pilot, not claimed full-HDR training data',

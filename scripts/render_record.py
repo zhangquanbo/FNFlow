@@ -12,7 +12,9 @@ def render():
     files = sorted((ROOT / "outputs").glob("*/summary.json"))
     env_file = ROOT / "provenance/environment.json"
     env = json.loads(env_file.read_text()) if env_file.exists() else {}
-    queue_file=ROOT/'outputs/P2_parameterization_v1/queue_status.json'
+    active_root=ROOT/'outputs/P2_parameterization_center_v2'
+    if not (active_root/'queue_status.json').exists():active_root=ROOT/'outputs/P2_parameterization_v1'
+    queue_file=active_root/'queue_status.json'
     queue=json.loads(queue_file.read_text()) if queue_file.exists() else None
     lines = [
         "# FaceFlux-Research：代码与实验记录", "",
@@ -138,14 +140,15 @@ def render():
         lines.extend(['## 无 ray 参数化队列','',
             f"状态：{queue.get('status')}；阶段：{queue.get('phase','见原始状态')}；更新时间：{queue.get('updated_at','未记录')}。",'',
             '[首轮执行记录]($FNFLOW_ROOT/docs/首轮无ray训练执行记录.md) · '
-            '[固定配置]($FNFLOW_ROOT/configs/parameterization_first_round.json)','',
+            '[当前 v2 配置]($FNFLOW_ROOT/configs/parameterization_first_round_v2.json)','',
             '| 阶段 | 已完成运行数 |','|---|---:|'])
         counts={}
-        for path in (ROOT/'outputs/P2_parameterization_v1').glob('*/summary.json'):
+        for path in active_root.glob('*/summary.json'):
             value=json.loads(path.read_text())
             if value.get('status')=='completed':counts[value.get('phase','unknown')]=counts.get(value.get('phase','unknown'),0)+1
         for phase,count in sorted(counts.items()):lines.append(f'| {phase} | {count} |')
-        lines.extend(['','smoke 仅检查真实数据数值路径；pilot 单 seed 结果不作为方法排名。正式 24 组的进度与训练/推理方差分别报告。',''])
+        lines.extend(['','v1 数值 pilot 共 8 组已完成；不作为方法排名。v2 改用中心裁剪缓存；正式 24 组已锁定，先完成 30k 收敛检查和统一裁剪阈值复核。',
+                      f"正式队列锁定：{queue.get('formal_grid_locked','见执行记录')}。",''])
     lines.extend(["## 通用数据与收尾诊断入口", "",
                   "- [人脸收尾诊断]($FNFLOW_ROOT/docs/人脸收尾诊断结果.md)：方向平均、匹配 CFG 和身份重采样。",
                   "- [通用数据准备]($FNFLOW_ROOT/docs/通用数据核查与准备.md)：Hypersim 转换和逐样本验收。",
@@ -157,7 +160,7 @@ def render():
                   "- `scripts/fetch_nyu_scene_metadata.py`、`scripts/lock_nyu_validation.py`、`scripts/check_nyu_rgb_correspondence.py`：真实验证身份及对应检查。", "",
                   "## 下一步", "",
                   "首轮 R/V/Xv/Xn 不使用 ray；缺 K、shading-normal 标记及 NYUv2 官方 RGB 差异不阻塞包内配对验证。"
-                  "按固定数据清单完成数值 pilot 后执行首预算；K 渲染闭合与材料统计另行推进。"
+                  "先按 v2 配置完成中心裁剪、全量验收、匹配裁剪诊断和 R/V/Xn 收敛曲线，再确定正式共同预算；K 渲染闭合与材料统计另行推进。"
                   "训练完成状态以队列及各配方 summary 为准，不把队列启动当作完成。", "",
                   "脚本由固定配置启动；每完成一个配方写入 JSON/逐图 CSV 并刷新此文档。"
                   "进程失败会记录错误，重新运行可跳过已经验证签名一致的结果。", ""])
