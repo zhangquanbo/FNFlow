@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-10-22T16:00:44+08:00",
+  "created_at": "2026-10-22T16:17:32+08:00",
   "scan_passed": true,
   "scope": "current code-and-aggregate export; unchanged legacy files are not re-exported",
   "files": [
@@ -1113,7 +1113,7 @@
       "path": "reproducibility/protected_reference_check.json",
       "category": "release_metadata",
       "bytes": 1760,
-      "exported_sha256": "954e5f031708b92e355d5480ba7ace8dd0718416ec638e9b0974e60be4766690"
+      "exported_sha256": "b635f772b95299685d40b07d44d31be2195139af61219e33f52d7739f1aab7cb"
     },
     {
       "path": "reproducibility/tested_environment.json",
@@ -1417,8 +1417,8 @@
       "path": "results/protocol_tests.txt",
       "category": "test_result",
       "bytes": 179,
-      "exported_sha256": "f513aa72fe1b53ef3dbb48d663218cadc636adac258ccbf0b225767586c30a98",
-      "source_sha256": "f513aa72fe1b53ef3dbb48d663218cadc636adac258ccbf0b225767586c30a98"
+      "exported_sha256": "ef45d6a173c4302f038b8baefacbc87181ce7b58a85f410d20cd83b1b608f6e3",
+      "source_sha256": "ef45d6a173c4302f038b8baefacbc87181ce7b58a85f410d20cd83b1b608f6e3"
     },
     {
       "path": "scripts/__init__.py",
@@ -1678,6 +1678,13 @@
       "bytes": 2233,
       "exported_sha256": "1d9e0f1dea3fb5d057e9a7ba33da119f77206b5cb50a2c52ec48237b5b4bc312",
       "source_sha256": "1d9e0f1dea3fb5d057e9a7ba33da119f77206b5cb50a2c52ec48237b5b4bc312"
+    },
+    {
+      "path": "scripts/run_arb_acquisition_recovery.py",
+      "category": "research_code",
+      "bytes": 2391,
+      "exported_sha256": "402dea74a7566bfe1a3c09f2221f505fe5d2544f7f194f5158c8a30eba59869a",
+      "source_sha256": "402dea74a7566bfe1a3c09f2221f505fe5d2544f7f194f5158c8a30eba59869a"
     },
     {
       "path": "scripts/run_arb_material_audit_pipeline.py",
