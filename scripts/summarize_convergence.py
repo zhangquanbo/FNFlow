@@ -8,8 +8,8 @@ import numpy as np
 from src.research_io import ROOT,write_json,now
 
 
-def summarize():
-    cfg=json.loads((ROOT/'configs/parameterization_first_round_v2.json').read_text())
+def summarize(config='configs/parameterization_first_round_v2_review1.json'):
+    cfg=json.loads((ROOT/config).read_text())
     root=ROOT/cfg['output_root'];runs={};window=cfg['clip_diagnostic_steps']
     for method in cfg['methods']:
         phase='clip_diagnostic' if method=='Xv' else 'convergence'
@@ -54,11 +54,34 @@ def summarize():
         fig,axes=plt.subplots(1,3,figsize=(15,4),layout='constrained')
         for ax,domain in zip(axes,['hypersim','arb','nyuv2']):
             for method,points in curves.items():
-                ax.plot([p['update'] for p in points],[p['validation'][domain]['mean_mae_deg'] for p in points],marker='o',label=method)
+                line=ax.plot([p['update'] for p in points],[p['validation'][domain]['mean_mae_deg'] for p in points],marker='o',label=method+' val')[0]
+                training=[p for p in points if domain in p.get('training_probe',{})]
+                if training:ax.plot([p['update'] for p in training],[p['training_probe'][domain]['mean_mae_deg'] for p in training],
+                                    linestyle='--',color=line.get_color(),label=method+' train probe')
             ax.set(title=domain,xlabel='Optimizer updates',ylabel='Mean angular error (degrees)');ax.grid(alpha=.2);ax.legend()
         fig.suptitle('Center-square v2 | seed 1247 | p=0 | paired inference draws 42,43')
         target=ROOT/'figures/P2_convergence_center_v2.png';target.parent.mkdir(exist_ok=True)
         fig.savefig(target,dpi=160);plt.close(fig)
+    if cfg.get('decision_rule'):
+        from src.budget_decision import decide_budget
+        rule=json.loads((ROOT/cfg['decision_rule']).read_text())
+        values={m:{p['update']:{d:s['mean_mae_deg'] for d,s in p['validation'].items()} for p in r.get('learning_curve',[])} for m,r in runs.items()}
+        decision=decide_budget(values,rule)
+        warnings=[]
+        for m,r in runs.items():
+            pts=r.get('learning_curve',[])
+            if not pts:continue
+            last=pts[-1]
+            for d in ['hypersim','arb']:
+                if d not in last.get('training_probe',{}):continue
+                earlier=min(pts,key=lambda p:p['validation'][d]['mean_mae_deg'])
+                rise=last['validation'][d]['mean_mae_deg']-earlier['validation'][d]['mean_mae_deg']
+                train_drop=earlier['training_probe'][d]['mean_mae_deg']-last['training_probe'][d]['mean_mae_deg']
+                if rise>rule['endpoint_tolerance_deg'] and train_drop>0:
+                    warnings.append({'method':m,'domain':d,'validation_rise_deg':rise,'training_probe_drop_deg':train_drop,
+                                     'note':'consistent with overfitting; diagnostic flag, not a causal attribution'})
+        decision.update(updated_at=now(),overfit_warnings=warnings)
+        write_json(root/'budget_decision.json',decision)
     return value
 
 

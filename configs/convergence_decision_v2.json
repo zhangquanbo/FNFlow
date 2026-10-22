@@ -1,0 +1,21 @@
+{
+  "version": "precurve_budget_rule_v2_1",
+  "methods": ["R", "V", "Xn"],
+  "domains": ["hypersim", "arb", "nyuv2"],
+  "evaluation_interval": 2500,
+  "initial_endpoint": 30000,
+  "extended_endpoint": 50000,
+  "extension_threshold_deg": 0.3,
+  "endpoint_tolerance_deg": 0.3,
+  "ranking_tie_tolerance_deg": 0.01,
+  "numerical_epsilon_deg": 1e-9,
+  "extension_rule": "If any method/domain improves strictly more than 0.3 deg from 27500 to 30000, all three extend to 50000. No further automatic extension.",
+  "budget_rule": "Smallest evaluated B < T: absolute MAE difference to that method/domain at T <=0.3 for all nine cells, and all per-domain pairwise rank signatures agree between B and B+2500. T=30000, or 50000 when extension triggered.",
+  "no_qualifying_B": "inconclusive; formal grid stays locked; never invent a final-point successor",
+  "missing_nonfinite_points": "inconclusive; formal grid stays locked",
+  "still_improving_at_50000": "inconclusive if any 47500-to-50000 improvement >0.3; formal grid stays locked",
+  "overfit_warning": "Report validation rise >0.3 above its earlier minimum plus falling fixed-training-probe MAE for the same source domain; NYUv2 has no training probe. Warning is separate from the budget rule and cannot silently change it.",
+  "train_probe": {"images_per_source_domain": 64, "selection": "SHA256 rank of source domain and stable image key with fixed prefix train-probe-v1, training split only, no loss-based selection", "inference_seeds": [42,43], "augmentation": "none; deterministic center-square cache"},
+  "extension_schedule": "Keep the original 30000-step cosine schedule. For updates 30001..50000 hold LR at the 30000-step floor (0.1 * base LR). Restore optimizer and all RNG states from final resume checkpoint. Do not replay the cosine or restart training.",
+  "formal_training": "Separate reviewed configuration and fresh shared initialization; no automatic 24-run launch. Budget selection from continuation curves does not make them identical to a fresh B-step cosine run."
+}

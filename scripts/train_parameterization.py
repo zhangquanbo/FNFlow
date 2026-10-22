@@ -13,7 +13,7 @@ from src.general_dataset import PreparedNormalDataset
 from src.noise_protocol import image_noise_seed,mae_seed_statistics
 from src.parameterization import parameterization_loss,one_step_endpoint
 from src.research_io import ROOT,output_path,write_json,sha256,now
-from src.training_diagnostics import TimeLossBins
+from src.training_diagnostics import TimeLossBins,learning_rate_factor,resume_segment_action
 
 
 def require_formal_budget(cfg,phase):
@@ -99,6 +99,12 @@ def evaluate(model,mode,domains,seeds,limit,device):
             boundary_mae_deg=float(np.mean(available)) if available else None,
             boundary_definition='GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask',
             boundary_images=len(available))
+        if name=='arb' and all(r.get('split')=='val' and Path(r['path']).is_relative_to(ROOT/'data/arb_mixed_formal_v1') for r in records):
+            audit=ROOT/'outputs/P1_arb_boundary_audit_formal_v1/summary.json'
+            if audit.exists():
+                a=json.loads(audit.read_text())
+                stats['boundary_mask_coverage_audit']={'phase':a['phase'],'validation_counts_and_fractions':a['by_split']['val'],
+                    'includes_empty_views':True,'note':'Error MAE is conditional on retained labels; coverage audit also includes rejected/empty views. Raw excluded normals are not restored as GT.'}
         result[name]=stats;private[name]=detail
     model.train()
     return result,private
@@ -109,7 +115,8 @@ def main():
     p.add_argument('--dropout',type=float,required=True);p.add_argument('--seed',type=int,required=True)
     p.add_argument('--phase',choices=['smoke','pilot','formal','convergence','clip_diagnostic'],required=True)
     p.add_argument('--steps',type=int);p.add_argument('--run-id')
-    p.add_argument('--config',default='configs/parameterization_first_round_v2.json')
+    p.add_argument('--config',default='configs/parameterization_first_round_v2_review1.json')
+    p.add_argument('--extend-to',type=int,choices=[50000])
     args=p.parse_args()
     config_path=ROOT/args.config;cfg=json.loads(config_path.read_text())
     require_formal_budget(cfg,args.phase)
@@ -126,6 +133,10 @@ def main():
                         else cfg['formal_steps'] if args.phase=='formal' else cfg['pilot_steps'] if args.phase=='pilot' else 3)
     schedule_steps=cfg['convergence_steps'] if args.phase in {'convergence','clip_diagnostic'} else steps
     evaluation_every=cfg.get('evaluation_every',2500) if args.phase=='convergence' else 0
+    base_steps=steps
+    if args.extend_to:
+        if args.phase!='convergence' or not cfg.get('decision_rule'):raise RuntimeError('Only preregistered convergence continuation is allowed')
+        steps=args.extend_to
     hyp=load_records(ROOT/cfg['hypersim_root'],'train');obj=load_records(object_root,'train')
     if cfg.get('spatial_protocol')=='center_square_v2':
         for key in ['hypersim_root','nyu_validation_root']:
@@ -136,17 +147,32 @@ def main():
              'nyuv2':load_records(ROOT/cfg['nyu_validation_root'],'val')}
     manifests=[ROOT/cfg['hypersim_root']/'private_manifest.json',object_root/'private_manifest.json',
                ROOT/cfg['nyu_validation_root']/'private_manifest.json']
+    probes={}
+    if cfg.get('curve_training_probe') and args.phase in {'convergence','clip_diagnostic','formal'}:
+        from scripts.prepare_training_probe import prepare
+        probes=prepare(cfg)
     signature={'config_sha256':sha256(config_path),'data_manifests_sha256':[sha256(x) for x in manifests],
-        'method':args.method,'condition_dropout':args.dropout,'training_seed':args.seed,'phase':args.phase,'steps':steps,
+        'method':args.method,'condition_dropout':args.dropout,'training_seed':args.seed,'phase':args.phase,'steps':base_steps,
         'train_code_sha256':sha256(__file__),'target_code_sha256':sha256(ROOT/'src/parameterization.py'),
         'diagnostics_code_sha256':sha256(ROOT/'src/training_diagnostics.py'),
         'schedule_steps':schedule_steps,'evaluation_every':evaluation_every}
+    if cfg.get('decision_rule'):
+        signature['decision_rule_sha256']=sha256(ROOT/cfg['decision_rule'])
+    if probes:signature['training_probe_sha256']=sha256(ROOT/cfg['output_root']/'training_probe_private.json')
     if (out/'signature_private.json').exists():
         if json.loads((out/'signature_private.json').read_text())!=signature:raise RuntimeError('Existing run signature differs')
-        if (out/'summary.json').exists() and json.loads((out/'summary.json').read_text()).get('status')=='completed':
+        existing=json.loads((out/'summary.json').read_text()) if (out/'summary.json').exists() else {}
+        if existing.get('status')=='completed' and existing.get('optimizer_updates',0)>=steps:
             print('already completed',run_id,flush=True);return
     else:write_json(out/'signature_private.json',signature)
-    write_json(out/'summary.json',{'status':'running','phase':args.phase,'method':args.method,'seed':args.seed,'started_at':now(),'planned_updates':steps})
+    if args.extend_to:
+        rule=json.loads((ROOT/cfg['decision_rule']).read_text());triggered=False
+        for method in rule['methods']:
+            curve_file=ROOT/cfg['output_root']/f'convergence_{method}_p0_s{cfg["convergence_seed"]}'/'learning_curve.json'
+            points={r['update']:r['validation'] for r in json.loads(curve_file.read_text())['points']}
+            for domain in rule['domains']:
+                triggered|=points[27500][domain]['mean_mae_deg']-points[30000][domain]['mean_mae_deg']>rule['extension_threshold_deg']+1e-9
+        if not triggered or not (out/'last_local.pth').exists():raise RuntimeError('Continuation requires trigger plus optimizer/RNG resume')
     torch.set_num_threads(4);torch.manual_seed(args.seed);torch.cuda.manual_seed_all(args.seed)
     np.random.seed(args.seed);random.seed(args.seed);torch.backends.cudnn.benchmark=False
     device=torch.device('cuda');model=FaceNormalUNet_B().to(device)
@@ -164,18 +190,21 @@ def main():
         generator.set_state(state['generator']);rng.bit_generator.state=state['numpy_rng'];completed=state['step']
         torch.set_rng_state(state['torch_rng']);torch.cuda.set_rng_state_all(state['cuda_rng'])
         grad_norms=state['grad_norms'];time_bins.rows=state['time_bin_rows'];curve=state['curve']
+        if resume_segment_action(completed,steps,args.phase,args.extend_to,curve)=='skip_initial':
+            print('initial segment already complete; continuation checkpoint preserved',run_id,completed,flush=True)
+            return
         # Discard updates after the durable checkpoint; their exact replay is logged once.
         old_log=out/'training_log.jsonl'
         if old_log.exists():
             kept=[line for line in old_log.read_text().splitlines() if json.loads(line)['update']<=completed]
             old_log.write_text('\n'.join(kept)+'\n',encoding='utf-8')
+    write_json(out/'summary.json',{'status':'running','phase':args.phase,'method':args.method,'seed':args.seed,'started_at':now(),'planned_updates':steps})
     model.train();started=time.perf_counter();last_loss=None;max_grad=0.;torch.cuda.reset_peak_memory_stats()
     try:
         with (out/'training_log.jsonl').open('a',encoding='utf-8') as log:
             for step in range(completed+1,steps+1):
                 optimizer.zero_grad(set_to_none=True)
-                warmup=min(100,schedule_steps//10)
-                schedule=min(1.,step/max(1,warmup))*(.1+.9*.5*(1+math.cos(math.pi*step/schedule_steps)))
+                schedule=learning_rate_factor(step,schedule_steps)
                 for group in optimizer.param_groups:group['lr']=cfg['learning_rate']*schedule
                 drop=bool(rng.random()<args.dropout);components=[]
                 update_bins=TimeLossBins(time_bins.edges)
@@ -218,19 +247,23 @@ def main():
                 if evaluation_every and step%evaluation_every==0:
                     torch.save({'model':model.state_dict(),'step':step,'signature':signature},out/f'checkpoint_{step:06d}_local.pth')
                     scores,_=evaluate(model,args.method,domains,cfg['curve_inference_seeds'],0,device)
-                    curve.append({'update':step,'validation':scores,'inference_seeds':cfg['curve_inference_seeds']})
+                    train_scores,_=evaluate(model,args.method,probes,cfg['curve_inference_seeds'],0,device) if probes else ({},{})
+                    curve.append({'update':step,'validation':scores,'training_probe':train_scores,
+                        'validation_minus_training_mae_deg':{d:scores[d]['mean_mae_deg']-train_scores[d]['mean_mae_deg'] for d in train_scores},
+                        'inference_seeds':cfg['curve_inference_seeds']})
                     write_json(out/'learning_curve.json',{'status':'running','method':args.method,'points':curve,
                         'selection':'validation curve only; no benchmark test frames','updated_at':now()})
                 if cfg.get('spatial_protocol')=='center_square_v2' and (step%2500==0 or step==steps or (step<=2500 and step%250==0)):
                     from scripts.summarize_convergence import summarize
-                    summarize()
-                if step%250==0 and step<steps:
+                    summarize(args.config)
+                if step%250==0:
                     temporary=out/'last_local.tmp'
                     torch.save({'model':model.state_dict(),'optimizer':optimizer.state_dict(),'step':step,
                         'generator':generator.get_state(),'numpy_rng':rng.bit_generator.state,'torch_rng':torch.get_rng_state(),
                         'cuda_rng':torch.cuda.get_rng_state_all(),'grad_norms':grad_norms,
                         'time_bin_rows':time_bins.rows,'curve':curve},temporary);temporary.replace(resume)
         torch.save({'model':model.state_dict(),'step':steps,'signature':signature},out/'final_local.pth')
+        if args.phase=='convergence':torch.save({'model':model.state_dict(),'step':steps,'signature':signature},out/f'endpoint_{steps:06d}_local.pth')
         full_eval=args.phase in {'formal','convergence','clip_diagnostic'}
         seeds=cfg['inference_seeds'] if full_eval else cfg['pilot_inference_seeds']
         scores,detail=evaluate(model,args.method,domains,seeds,0 if full_eval else cfg['pilot_validation_images_per_domain'],device)
@@ -250,7 +283,7 @@ def main():
                     else 'fixed-budget formal run' if args.phase=='formal' else 'numerical preflight only; not a method ranking'}
         write_json(out/'summary.json',result);print(json.dumps(result),flush=True)
         if curve:write_json(out/'learning_curve.json',{'status':'completed','method':args.method,'points':curve,'updated_at':now()})
-        if resume.exists():resume.unlink()  # Own obsolete resume only; final weights remain.
+        if resume.exists() and args.phase!='convergence':resume.unlink()
     except Exception as error:
         write_json(out/'summary.json',{'status':'failed','method':args.method,'phase':args.phase,'seed':args.seed,
             'completed_updates':completed,'error':type(error).__name__+': '+str(error),'failed_at':now()})

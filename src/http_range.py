@@ -4,6 +4,10 @@ import re
 import urllib.request
 
 
+class IncompleteRangeError(OSError):
+    """Retryable short body after an otherwise correct 206 Content-Range."""
+
+
 class HTTPRangeReader(io.RawIOBase):
     def __init__(self, url, size, *, budget=128*1024*1024,
                  max_request=16*1024*1024, timeout=25, opener=None):
@@ -46,7 +50,7 @@ class HTTPRangeReader(io.RawIOBase):
             raw = response.read(count+1)
             self.downloaded += len(raw)
             self.requests += 1
-            if len(raw) != count: raise RuntimeError('Truncated or oversized HTTP range')
+            if len(raw) != count: raise IncompleteRangeError('Truncated or oversized HTTP range')
         self.position += count
         return raw
 

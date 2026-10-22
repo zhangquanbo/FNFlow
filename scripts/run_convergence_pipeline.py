@@ -6,7 +6,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 import json,os,subprocess,time
 from src.research_io import ROOT,write_json,now
 
-CONFIG='configs/parameterization_first_round_v2.json'
+CONFIG='configs/parameterization_first_round_v2_review1.json'
 
 
 def call(script,*args):
@@ -38,11 +38,17 @@ def main():
             call('prepare_nyu_validation.py','--center-crop','--output',cfg['nyu_validation_root'])
         call('check_prepared_data.py','--prepared-root',cfg['nyu_validation_root'],
              '--run-id','P1_nyu_center_checked_v2','--splits','val')
-        call('prepare_arb_training.py','--phase','smoke')
+        # Preserve the completed v2 numerical checks; no long training started there.
+        from src.research_io import sha256
+        expected_smoke_manifests=[sha256(ROOT/cfg['hypersim_root']/'private_manifest.json'),
+            sha256(ROOT/'data/arb_mixed_smoke_v1/private_manifest.json'),sha256(ROOT/cfg['nyu_validation_root']/'private_manifest.json')]
         for method in cfg['methods']:
-            status('running',phase='smoke',method=method)
-            call('train_parameterization.py','--method',method,'--dropout',0,'--seed',1247,
-                 '--phase','smoke','--config',CONFIG,'--run-id',f'smoke_center_{method}_s1247')
+            previous=ROOT/cfg['validated_smoke_reference_root']/f'smoke_center_{method}_s1247'
+            summary=json.loads((previous/'summary.json').read_text())
+            sig=json.loads((previous/'signature_private.json').read_text())
+            if (summary['status']!='completed' or sig['config_sha256']!=sha256(ROOT/'configs/parameterization_first_round_v2.json')
+                or sig['data_manifests_sha256']!=expected_smoke_manifests):
+                raise RuntimeError('Original center-square numerical smoke reference failed')
         ready=ROOT/'outputs/P1_arb_acquisition_v1/formal_ready.json'
         while not ready.exists():
             acquisition=ROOT/'outputs/P1_arb_acquisition_v1/status.json'
@@ -52,6 +58,8 @@ def main():
             time.sleep(20)
         status('preparing_data',dataset='arb')
         call('prepare_arb_training.py','--phase','formal')
+        call('audit_arb_boundary_mask.py','--phase','formal')
+        call('prepare_training_probe.py','--config',CONFIG)
         # Xv and the first 2500 updates of the three curves share the same 30k LR schedule.
         method=cfg['clip_diagnostic_method']
         status('running',phase='clip_diagnostic',method=method)
@@ -61,6 +69,15 @@ def main():
             status('running',phase='convergence',method=method)
             call('train_parameterization.py','--method',method,'--dropout',cfg['convergence_dropout'],
                  '--seed',cfg['convergence_seed'],'--phase','convergence','--config',CONFIG)
+        call('summarize_convergence.py')
+        decision=json.loads((out/'budget_decision.json').read_text())
+        if (decision.get('extend_to')==50000 or decision.get('extension_triggered')
+            or decision.get('reference_endpoint')==50000):
+            for method in cfg['convergence_methods']:
+                status('running',phase='convergence_continuation',method=method)
+                call('train_parameterization.py','--method',method,'--dropout',0,'--seed',cfg['convergence_seed'],
+                     '--phase','convergence','--config',CONFIG,'--extend-to',50000)
+            call('summarize_convergence.py')
         status('awaiting_convergence_review',phase='formal_budget',
                next_action='Review per-domain curves and common-window clipping; set one shared budget/threshold before any formal run')
     except Exception as error:

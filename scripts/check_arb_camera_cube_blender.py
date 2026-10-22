@@ -29,7 +29,7 @@ forward=position/np.linalg.norm(position);right=np.cross([0,0,1.],forward);right
 up=np.cross(forward,right);up/=np.linalg.norm(up)
 pose=np.eye(4);pose[:3,:3]=np.stack([right,up,forward],axis=1);pose[:3,3]=position
 obj.matrix_world=Matrix(pose.tolist())
-bpy.ops.mesh.primitive_cube_add(size=1)
+bpy.ops.mesh.primitive_cube_add(size=.5)  # Entire projected cube stays inside the image.
 cube=bpy.context.object;bpy.context.view_layer.update()
 focal=512/(2*math.tan(.691111/2));k=np.array([[focal,0,255.5],[0,focal,255.5],[0,0,1]])
 corners=np.array([list(cube.matrix_world@Vector(v)) for v in cube.bound_box])
@@ -48,7 +48,8 @@ scene.render.filepath=str(out/'cube_private.png')
 scene.world=bpy.data.worlds.new('World');scene.world.use_nodes=True
 scene.world.node_tree.nodes['Background'].inputs[0].default_value=(.8,.8,.8,1)
 bpy.ops.render.render(write_still=True)
-image=bpy.data.images['Render Result'];rgba=np.array(image.pixels[:]).reshape(512,512,4)[::-1]
+image=bpy.data.images.load(scene.render.filepath,check_existing=False)
+rgba=np.array(image.pixels[:]).reshape(512,512,4)[::-1]
 ys,xs=np.where(rgba[...,3]>.99)
 if not len(xs):raise RuntimeError('Empty cube render')
 observed=np.array([[xs.min(),ys.min()],[xs.max(),ys.max()]])
@@ -58,6 +59,8 @@ passed=projection_error<1e-3 and bbox_error<=2
 summary={'status':'completed' if passed else 'failed','created_at':now(),'blender_version':bpy.app.version_string,
     'default_FOV_radians':.691111,'candidate_K_512':k.tolist(),'projection_max_error_pixels':projection_error,
     'rendered_cube_bbox_max_error_pixels':bbox_error,'camera_closure_passed':passed,
+    'observed_bbox_pixels':observed.tolist(),'expected_bbox_pixels':expected.tolist(),
+    'cube_side_length':.5,
     'scope':'controlled default camera closure; downloaded asset K remains missing until source version/default equivalence is accepted',
     'sources':['https://github.com/DLR-RM/BlenderProc/blob/v2.5.0/blenderproc/python/utility/DefaultConfig.py',
                'https://huggingface.co/datasets/lizb6626/Arb-Objaverse/blob/329f4fc199498264390df36104a3326e8a30c325/rendering/render_normal_orm.py']}

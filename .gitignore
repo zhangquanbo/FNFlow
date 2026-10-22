@@ -12,6 +12,7 @@ credentials*
 data/
 datasets/
 checkpoints/
+runtime/
 logs/
 outputs/
 provenance/
@@ -30,6 +31,7 @@ docs/
 *.dat
 *.tar
 *.tar.gz
+*.tar.xz
 *.zip
 *.png
 !figures/*.png

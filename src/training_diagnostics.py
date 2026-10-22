@@ -2,6 +2,19 @@
 import math
 
 
+def learning_rate_factor(step,schedule_steps):
+    """Original warmup/cosine, then its floor for a preregistered continuation."""
+    warmup=min(100,schedule_steps//10)
+    return min(1.,step/max(1,warmup))*(.1+.9*.5*(1+math.cos(math.pi*min(step,schedule_steps)/schedule_steps)))
+
+
+def resume_segment_action(completed,steps,phase,extend_to,curve):
+    if completed<=steps:return 'run'
+    if phase=='convergence' and not extend_to and any(p['update']==steps for p in curve):
+        return 'skip_initial'  # Preserve a partially completed continuation; never relabel its weights as 30k.
+    raise RuntimeError('Resume checkpoint exceeds requested segment; explicit continuation required')
+
+
 class TimeLossBins:
     def __init__(self, edges):
         self.edges=list(edges)

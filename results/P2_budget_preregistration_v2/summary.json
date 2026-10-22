@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "registered_at": "2026-10-22T04:59:05.908810+00:00",
+  "rule_sha256": "0c863951b022c3f19a84d009c22d9c001a1df539a0b9597e95694485d44e340e",
+  "convergence_curve_files_existing_at_registration": [],
+  "threshold_deg": 0.3,
+  "training_probe_images_per_source_domain": 64,
+  "original_v2_config_preserved": true,
+  "center_square_geometry_unchanged": true
+}

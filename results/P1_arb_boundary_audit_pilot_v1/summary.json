@@ -1,0 +1,237 @@
+{
+  "status": "completed",
+  "created_at": "2026-10-22T12:56:19+08:00",
+  "phase": "pilot",
+  "acquired_assets": 64,
+  "views": 192,
+  "resolution": [
+    256,
+    256
+  ],
+  "unit_tolerance": 0.05,
+  "angle_threshold_deg": 20,
+  "band_dilation_radius": 2,
+  "includes_empty_label_views_and_assets": true,
+  "foreground": "selected RGB alpha thresholds 0.01 / 0.5 / 0.99, auxiliary coverage proxy only; never changes training or error masks",
+  "band_definitions": {
+    "strict_gt_before_valid_intersection": "same valid-neighbor angular edges as MAE, dilate first; do not intersect final mask for exclusion audit",
+    "relaxed_direction_plus_silhouette": "finite nonzero raw decoded directions, including nonunit normals, plus alpha silhouette; candidate band, not trusted GT on excluded pixels"
+  },
+  "denominator": "finite foreground pixels failing abs(norm-1)<=0.05; nonfinite and zero counts also reported; fractions pooled by pixels",
+  "all": {
+    "0.01": {
+      "foreground_pixels": 2719812,
+      "unit_rejected_foreground_pixels": 453420,
+      "nonfinite_foreground_pixels": 0,
+      "zero_foreground_pixels": 79823,
+      "retained_foreground_pixels": 2266392,
+      "strict_gt_before_valid_intersection": {
+        "unit_rejected_in_band": 131855,
+        "foreground_band_pixels": 716396,
+        "retained_foreground_band_pixels": 584541,
+        "unit_rejected_outside_band": 321565,
+        "fraction_unit_rejected_in_band": 0.29080102333377444,
+        "fraction_band_foreground_retained": 0.8159467668719536
+      },
+      "relaxed_direction_plus_silhouette": {
+        "unit_rejected_in_band": 309496,
+        "foreground_band_pixels": 1180035,
+        "retained_foreground_band_pixels": 870539,
+        "unit_rejected_outside_band": 143924,
+        "fraction_unit_rejected_in_band": 0.6825812712275594,
+        "fraction_band_foreground_retained": 0.7377230336388327
+      }
+    },
+    "0.5": {
+      "foreground_pixels": 2621362,
+      "unit_rejected_foreground_pixels": 354970,
+      "nonfinite_foreground_pixels": 0,
+      "zero_foreground_pixels": 45067,
+      "retained_foreground_pixels": 2266392,
+      "strict_gt_before_valid_intersection": {
+        "unit_rejected_in_band": 109982,
+        "foreground_band_pixels": 694523,
+        "retained_foreground_band_pixels": 584541,
+        "unit_rejected_outside_band": 244988,
+        "fraction_unit_rejected_in_band": 0.30983463391272503,
+        "fraction_band_foreground_retained": 0.8416438332495828
+      },
+      "relaxed_direction_plus_silhouette": {
+        "unit_rejected_in_band": 247579,
+        "foreground_band_pixels": 1135266,
+        "retained_foreground_band_pixels": 887687,
+        "unit_rejected_outside_band": 107391,
+        "fraction_unit_rejected_in_band": 0.697464574471082,
+        "fraction_band_foreground_retained": 0.7819198320041294
+      }
+    },
+    "0.99": {
+      "foreground_pixels": 2482994,
+      "unit_rejected_foreground_pixels": 247658,
+      "nonfinite_foreground_pixels": 0,
+      "zero_foreground_pixels": 0,
+      "retained_foreground_pixels": 2235336,
+      "strict_gt_before_valid_intersection": {
+        "unit_rejected_in_band": 89314,
+        "foreground_band_pixels": 665776,
+        "retained_foreground_band_pixels": 576462,
+        "unit_rejected_outside_band": 158344,
+        "fraction_unit_rejected_in_band": 0.36063442327726136,
+        "fraction_band_foreground_retained": 0.8658497752998006
+      },
+      "relaxed_direction_plus_silhouette": {
+        "unit_rejected_in_band": 179656,
+        "foreground_band_pixels": 1068641,
+        "retained_foreground_band_pixels": 888985,
+        "unit_rejected_outside_band": 68002,
+        "fraction_unit_rejected_in_band": 0.7254197320498429,
+        "fraction_band_foreground_retained": 0.8318836728143502
+      }
+    }
+  },
+  "by_split": {
+    "train": {
+      "0.01": {
+        "foreground_pixels": 2257885,
+        "unit_rejected_foreground_pixels": 396802,
+        "nonfinite_foreground_pixels": 0,
+        "zero_foreground_pixels": 78272,
+        "retained_foreground_pixels": 1861083,
+        "strict_gt_before_valid_intersection": {
+          "unit_rejected_in_band": 106734,
+          "foreground_band_pixels": 584455,
+          "retained_foreground_band_pixels": 477721,
+          "unit_rejected_outside_band": 290068,
+          "fraction_unit_rejected_in_band": 0.2689855393874023,
+          "fraction_band_foreground_retained": 0.8173785834666484
+        },
+        "relaxed_direction_plus_silhouette": {
+          "unit_rejected_in_band": 255151,
+          "foreground_band_pixels": 966907,
+          "retained_foreground_band_pixels": 711756,
+          "unit_rejected_outside_band": 141651,
+          "fraction_unit_rejected_in_band": 0.6430184323667724,
+          "fraction_band_foreground_retained": 0.7361162966034996
+        }
+      },
+      "0.5": {
+        "foreground_pixels": 2171016,
+        "unit_rejected_foreground_pixels": 309933,
+        "nonfinite_foreground_pixels": 0,
+        "zero_foreground_pixels": 44806,
+        "retained_foreground_pixels": 1861083,
+        "strict_gt_before_valid_intersection": {
+          "unit_rejected_in_band": 88393,
+          "foreground_band_pixels": 566114,
+          "retained_foreground_band_pixels": 477721,
+          "unit_rejected_outside_band": 221540,
+          "fraction_unit_rejected_in_band": 0.2852003497530111,
+          "fraction_band_foreground_retained": 0.8438600705864896
+        },
+        "relaxed_direction_plus_silhouette": {
+          "unit_rejected_in_band": 204172,
+          "foreground_band_pixels": 929985,
+          "retained_foreground_band_pixels": 725813,
+          "unit_rejected_outside_band": 105761,
+          "fraction_unit_rejected_in_band": 0.6587617323744164,
+          "fraction_band_foreground_retained": 0.7804566740323768
+        }
+      },
+      "0.99": {
+        "foreground_pixels": 2043778,
+        "unit_rejected_foreground_pixels": 211100,
+        "nonfinite_foreground_pixels": 0,
+        "zero_foreground_pixels": 0,
+        "retained_foreground_pixels": 1832678,
+        "strict_gt_before_valid_intersection": {
+          "unit_rejected_in_band": 70815,
+          "foreground_band_pixels": 541406,
+          "retained_foreground_band_pixels": 470591,
+          "unit_rejected_outside_band": 140285,
+          "fraction_unit_rejected_in_band": 0.3354571293225959,
+          "fraction_band_foreground_retained": 0.8692016712042349
+        },
+        "relaxed_direction_plus_silhouette": {
+          "unit_rejected_in_band": 144665,
+          "foreground_band_pixels": 871144,
+          "retained_foreground_band_pixels": 726479,
+          "unit_rejected_outside_band": 66435,
+          "fraction_unit_rejected_in_band": 0.6852913311226907,
+          "fraction_band_foreground_retained": 0.8339367544286593
+        }
+      }
+    },
+    "val": {
+      "0.01": {
+        "foreground_pixels": 461927,
+        "unit_rejected_foreground_pixels": 56618,
+        "nonfinite_foreground_pixels": 0,
+        "zero_foreground_pixels": 1551,
+        "retained_foreground_pixels": 405309,
+        "strict_gt_before_valid_intersection": {
+          "unit_rejected_in_band": 25121,
+          "foreground_band_pixels": 131941,
+          "retained_foreground_band_pixels": 106820,
+          "unit_rejected_outside_band": 31497,
+          "fraction_unit_rejected_in_band": 0.443692818538274,
+          "fraction_band_foreground_retained": 0.8096042928278548
+        },
+        "relaxed_direction_plus_silhouette": {
+          "unit_rejected_in_band": 54345,
+          "foreground_band_pixels": 213128,
+          "retained_foreground_band_pixels": 158783,
+          "unit_rejected_outside_band": 2273,
+          "fraction_unit_rejected_in_band": 0.9598537567558021,
+          "fraction_band_foreground_retained": 0.7450123869224128
+        }
+      },
+      "0.5": {
+        "foreground_pixels": 450346,
+        "unit_rejected_foreground_pixels": 45037,
+        "nonfinite_foreground_pixels": 0,
+        "zero_foreground_pixels": 261,
+        "retained_foreground_pixels": 405309,
+        "strict_gt_before_valid_intersection": {
+          "unit_rejected_in_band": 21589,
+          "foreground_band_pixels": 128409,
+          "retained_foreground_band_pixels": 106820,
+          "unit_rejected_outside_band": 23448,
+          "fraction_unit_rejected_in_band": 0.4793614139485312,
+          "fraction_band_foreground_retained": 0.8318731553084285
+        },
+        "relaxed_direction_plus_silhouette": {
+          "unit_rejected_in_band": 43407,
+          "foreground_band_pixels": 205281,
+          "retained_foreground_band_pixels": 161874,
+          "unit_rejected_outside_band": 1630,
+          "fraction_unit_rejected_in_band": 0.9638075360259343,
+          "fraction_band_foreground_retained": 0.7885483800254286
+        }
+      },
+      "0.99": {
+        "foreground_pixels": 439216,
+        "unit_rejected_foreground_pixels": 36558,
+        "nonfinite_foreground_pixels": 0,
+        "zero_foreground_pixels": 0,
+        "retained_foreground_pixels": 402658,
+        "strict_gt_before_valid_intersection": {
+          "unit_rejected_in_band": 18499,
+          "foreground_band_pixels": 124370,
+          "retained_foreground_band_pixels": 105871,
+          "unit_rejected_outside_band": 18059,
+          "fraction_unit_rejected_in_band": 0.5060178346736692,
+          "fraction_band_foreground_retained": 0.8512583420439013
+        },
+        "relaxed_direction_plus_silhouette": {
+          "unit_rejected_in_band": 34991,
+          "foreground_band_pixels": 197497,
+          "retained_foreground_band_pixels": 162506,
+          "unit_rejected_outside_band": 1567,
+          "fraction_unit_rejected_in_band": 0.9571366048470923,
+          "fraction_band_foreground_retained": 0.822827688521851
+        }
+      }
+    }
+  },
+  "caution": "No direction GT is restored for rejected pixels. Candidate boundaries cannot establish true geometric errors there."
+}

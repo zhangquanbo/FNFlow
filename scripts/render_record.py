@@ -12,7 +12,8 @@ def render():
     files = sorted((ROOT / "outputs").glob("*/summary.json"))
     env_file = ROOT / "provenance/environment.json"
     env = json.loads(env_file.read_text()) if env_file.exists() else {}
-    active_root=ROOT/'outputs/P2_parameterization_center_v2'
+    active_root=ROOT/'outputs/P2_parameterization_center_v2_review1'
+    if not (active_root/'queue_status.json').exists():active_root=ROOT/'outputs/P2_parameterization_center_v2'
     if not (active_root/'queue_status.json').exists():active_root=ROOT/'outputs/P2_parameterization_v1'
     queue_file=active_root/'queue_status.json'
     queue=json.loads(queue_file.read_text()) if queue_file.exists() else None
@@ -140,7 +141,8 @@ def render():
         lines.extend(['## 无 ray 参数化队列','',
             f"状态：{queue.get('status')}；阶段：{queue.get('phase','见原始状态')}；更新时间：{queue.get('updated_at','未记录')}。",'',
             '[首轮执行记录]($FNFLOW_ROOT/docs/首轮无ray训练执行记录.md) · '
-            '[当前 v2 配置]($FNFLOW_ROOT/configs/parameterization_first_round_v2.json)','',
+            '[当前 v2 评估补充配置]($FNFLOW_ROOT/configs/parameterization_first_round_v2_review1.json) · '
+            '[开曲线前的预算规则与边界覆盖]($FNFLOW_ROOT/docs/v2预算规则与边界覆盖检查.md)','',
             '| 阶段 | 已完成运行数 |','|---|---:|'])
         counts={}
         for path in active_root.glob('*/summary.json'):

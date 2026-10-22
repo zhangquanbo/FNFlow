@@ -2,6 +2,16 @@ import io
 import pytest
 from src.http_range import HTTPRangeReader,CachedRangeReader
 
+
+def test_short_transfer_is_retryable_without_advancing_or_weakening_range_checks():
+    from src.http_range import IncompleteRangeError
+    bodies=iter([b'a',b'abc'])
+    reader=HTTPRangeReader('https://example.test/data',10,
+        opener=lambda req,timeout:Response(next(bodies),206,'bytes 0-2/10'))
+    with pytest.raises(IncompleteRangeError):reader.read(3)
+    assert reader.tell()==0 and reader.downloaded==1
+    assert reader.read(3)==b'abc' and reader.tell()==3
+
 class Response(io.BytesIO):
     def __init__(self,raw,status,content_range):
         super().__init__(raw); self.status=status;self.headers={'Content-Range':content_range}

@@ -1,0 +1,18 @@
+{
+  "status": "code_only_not_enabled_for_current_training",
+  "encoder_family": "DINOv3 ViT",
+  "reference_architecture": "dinov3_vits16",
+  "patch_size": 16,
+  "weights": "authorized local weights required; no automatic download",
+  "source": "https://github.com/facebookresearch/dinov3",
+  "features": "forward_features()['x_norm_patchtokens']; exclude CLS/register tokens",
+  "input": "same augmented RGB view as UNet; [-1,1] -> [0,1] -> ImageNet mean/std; no additional hidden resize/crop",
+  "feature_grid": "patch centers at patch_size*(index+0.5)-0.5 pixels",
+  "unet_grid": "stride-2 3x3 padding-1 convolutions place level-l centers at 2^l*index",
+  "registration": "explicit grid_sample at UNet centers, align_corners=false, border extension",
+  "augmentation": "recompute after exact paired RGB crop/flip; do not assume a pretrained ViT is flip/crop equivariant",
+  "injection": "zero-initialized trainable 1x1 residual per encoder level",
+  "freeze": "requires_grad=false, no_grad forward, force eval even when parent train() is called",
+  "dropout": "same explicit condition_keep gates RGB and all semantic residuals",
+  "test_scope": "coordinate ramps and mock token-contract encoder; real pretrained feature/weight/runtime compatibility remains to be checked before training"
+}
