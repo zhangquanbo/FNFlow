@@ -1,0 +1,4576 @@
+{
+  "status": "completed",
+  "created_at": "2026-10-23T09:18:17+08:00",
+  "scope": "single-training-seed convergence and clipping diagnosis",
+  "formal_grid_completed": false,
+  "formal_grid_locked": true,
+  "training_seeds": [
+    1247
+  ],
+  "condition_dropout": 0,
+  "cfg": false,
+  "dino": false,
+  "ray": false,
+  "spatial_protocol": "center_square_v2",
+  "curve_inference_seeds": [
+    42,
+    43
+  ],
+  "noise_protocol": "sha256_image_noise_v1; independent field per image and inference replicate",
+  "metric": "macro-image masked mean angular error, degrees; lower is better",
+  "uncertainty_scope": "Two inference replicates only; dataset and within-image SDs are not training-seed variance or confidence intervals",
+  "completed_run_count": 16,
+  "stable_curve_points_each": 20,
+  "config_sha256": "4b71f5c053eb79ea7e8a396a6a10b95d8e498a27f0a7bd66910b4d85c8ab6de2",
+  "rule_sha256": "93b6c18030a340f0b3eb63a59075e2ae361ca7d96dd72e19ac08f7705c96f1cb",
+  "shared_signature": {
+    "config_sha256": "4b71f5c053eb79ea7e8a396a6a10b95d8e498a27f0a7bd66910b4d85c8ab6de2",
+    "rule_sha256": "93b6c18030a340f0b3eb63a59075e2ae361ca7d96dd72e19ac08f7705c96f1cb",
+    "code_sha256": "b329988e56ecc146fa1c6fbdc9f2073684bf5d034df91fb9c157dc12d9ddfb52",
+    "shared_evaluator_sha256": "d8fadf1eedcabd5286faf3fdceeb305e52152a65846727d4c1213c6c66703cc5",
+    "schedule_sha256": "4cf00ff756f2c3797a8279ac3f4f3df5dd294a45f471ee023fbd62a45023867c",
+    "target_sha256": "3acdcbc77e4afea8f199dff0ca9f45ead18cf7f5f0d1478d965f7a049cf4ec30",
+    "model_sha256": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+    "diagnostics_sha256": "074342ebcbb5b201b382c43185e1b5feea059e2e041b13a54a261d3062a2a6b8",
+    "manifests_sha256": [
+      "decaf7c6ea1d099c31239f09b7ac61b1248bd4b26e112a9c11fa119b39e0668c",
+      "b48dd1bf742ad5c6be57e3ae282cd4ea3b023d7e97611e5fef4d3c709586bcb0",
+      "21af22ee13eb29a7d6b7f33c21ac6697d03b5f8e5983d9e24ad3479d61a004b8"
+    ],
+    "training_probe_sha256": "b67dc048bc1d27474233a1b1e843c545bcc2e2eed0135afeb1c0929ebb7e77e2",
+    "data_quality_approval_sha256": "8721ba25ff1a3a35df18cc81231e61947e937504ddf116d419f47d25eea3d532",
+    "validation_material_sidecar_sha256": "b1541a150da34725d98d7e8b54b59322d2ac90528a2ddb400d80f32b4c0161e4",
+    "material_protocol_sha256": "cea022cfc2f2b21b9a7a757cf4c44d46c03ce17fe169527b61dfc3c3c84bd30e",
+    "training_seed": 1247,
+    "condition_dropout": 0
+  },
+  "budget_decision": {
+    "status": "inconclusive_still_improving",
+    "extension_required": true,
+    "formal_grid_locked": true,
+    "updated_at": "2026-10-23T09:11:29+08:00"
+  },
+  "budget_evidence": [
+    {
+      "method": "R",
+      "domain": "hypersim",
+      "stable_27500_to_30000_gain_deg": -0.04362537315913784,
+      "cooled_22500_to_32500_gain_deg": 0.262143483843122,
+      "stable_47500_to_50000_gain_deg": -1.7162321444920146,
+      "cooled_32500_to_52500_gain_deg": 1.556815834045409
+    },
+    {
+      "method": "R",
+      "domain": "arb",
+      "stable_27500_to_30000_gain_deg": 0.3449773531570166,
+      "cooled_22500_to_32500_gain_deg": 0.8316405076370508,
+      "stable_47500_to_50000_gain_deg": -0.868785644621159,
+      "cooled_32500_to_52500_gain_deg": 0.6347037726379803
+    },
+    {
+      "method": "R",
+      "domain": "nyuv2",
+      "stable_27500_to_30000_gain_deg": -2.7780563294512675,
+      "cooled_22500_to_32500_gain_deg": 0.34896012552129463,
+      "stable_47500_to_50000_gain_deg": 0.17110868729885453,
+      "cooled_32500_to_52500_gain_deg": 1.2595314841600285
+    },
+    {
+      "method": "V",
+      "domain": "hypersim",
+      "stable_27500_to_30000_gain_deg": -5.734315726416455,
+      "cooled_22500_to_32500_gain_deg": 1.9718645916666304,
+      "stable_47500_to_50000_gain_deg": 1.9547661910738299,
+      "cooled_32500_to_52500_gain_deg": 1.9703041972432835
+    },
+    {
+      "method": "V",
+      "domain": "arb",
+      "stable_27500_to_30000_gain_deg": -0.727320329107414,
+      "cooled_22500_to_32500_gain_deg": 1.4476182240026958,
+      "stable_47500_to_50000_gain_deg": 1.1384947906038185,
+      "cooled_32500_to_52500_gain_deg": 2.5222586176612154
+    },
+    {
+      "method": "V",
+      "domain": "nyuv2",
+      "stable_27500_to_30000_gain_deg": -6.791628964742024,
+      "cooled_22500_to_32500_gain_deg": 1.1177504179612683,
+      "stable_47500_to_50000_gain_deg": 1.7075154838322106,
+      "cooled_32500_to_52500_gain_deg": 2.1084752370726356
+    },
+    {
+      "method": "Xn",
+      "domain": "hypersim",
+      "stable_27500_to_30000_gain_deg": -1.3402751874923666,
+      "cooled_22500_to_32500_gain_deg": 1.5121075773239099,
+      "stable_47500_to_50000_gain_deg": 1.2588315878595608,
+      "cooled_32500_to_52500_gain_deg": 2.4902187412125727
+    },
+    {
+      "method": "Xn",
+      "domain": "arb",
+      "stable_27500_to_30000_gain_deg": -0.42509686706041805,
+      "cooled_22500_to_32500_gain_deg": 1.7211779642988176,
+      "stable_47500_to_50000_gain_deg": 1.2609398356993182,
+      "cooled_32500_to_52500_gain_deg": 2.6451819904324125
+    },
+    {
+      "method": "Xn",
+      "domain": "nyuv2",
+      "stable_27500_to_30000_gain_deg": -2.3114859071167757,
+      "cooled_22500_to_32500_gain_deg": 1.1988167462858854,
+      "stable_47500_to_50000_gain_deg": 2.188194223319954,
+      "cooled_32500_to_52500_gain_deg": 1.1472188049892154
+    }
+  ],
+  "matched_first_2500_clipping": {
+    "R": {
+      "updates": 2500,
+      "clip_threshold": 1.0,
+      "clipped_fraction": 0.3896,
+      "gradient_norm_mean": 10.37114259057045,
+      "gradient_norm_median": 0.9040860831737518,
+      "gradient_norm_p95": 1.8434495627880092,
+      "gradient_norm_maximum": 19478.103515625
+    },
+    "V": {
+      "updates": 2500,
+      "clip_threshold": 1.0,
+      "clipped_fraction": 0.33,
+      "gradient_norm_mean": 1.1877316540539264,
+      "gradient_norm_median": 0.7894686460494995,
+      "gradient_norm_p95": 3.543477845191955,
+      "gradient_norm_maximum": 15.38963508605957
+    },
+    "Xn": {
+      "updates": 2500,
+      "clip_threshold": 1.0,
+      "clipped_fraction": 0.1332,
+      "gradient_norm_mean": 9.411933986407519,
+      "gradient_norm_median": 0.5660702586174011,
+      "gradient_norm_p95": 1.432349669933319,
+      "gradient_norm_maximum": 17597.66796875
+    },
+    "Xv": {
+      "updates": 2500,
+      "clip_threshold": 1.0,
+      "clipped_fraction": 0.9784,
+      "gradient_norm_mean": 16.580487114953996,
+      "gradient_norm_median": 4.123870372772217,
+      "gradient_norm_p95": 21.06293506622314,
+      "gradient_norm_maximum": 17834.73046875
+    }
+  },
+  "rows": [
+    {
+      "run": "stable_R_s1247",
+      "phase": "stable",
+      "method": "R",
+      "stable_fork_step": null,
+      "total_updates": 50000,
+      "summary_sha256": "8c47080c7cba86f8adac410ef11eee6e990a45a55dbba116bdc4e50f0983ca71",
+      "validation": {
+        "hypersim": {
+          "num_images": 700,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 26.913068456649782,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            26.913068456649782,
+            26.913068456649782
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 33.52083132539477,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 700
+        },
+        "arb": {
+          "num_images": 594,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 26.40059126346601,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            26.40059126346601,
+            26.40059126346601
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 31.00501140967446,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 583,
+          "without_blend_or_transmission_sensitivity": {
+            "status": "completed",
+            "full_usable_assets": 198,
+            "excluded_flagged_assets": 28,
+            "remaining_assets": 170,
+            "full_images": 594,
+            "remaining_images": 510,
+            "flag_definition": "any declared alphaMode=BLEND or positive KHR_materials_transmission factor",
+            "same_predictions_noise_and_masks": true,
+            "unknown_assets": 0,
+            "metrics": {
+              "num_images": 510,
+              "num_inference_replicates": 2,
+              "mean_mae_deg": 26.543483950110044,
+              "dataset_mae_sd_ddof1_deg": 0.0,
+              "mean_image_mae_sd_ddof1_deg": 0.0,
+              "median_image_mae_sd_ddof1_deg": 0.0,
+              "p95_image_mae_sd_ddof1_deg": 0.0,
+              "dataset_maes_deg": [
+                26.543483950110044,
+                26.543483950110044
+              ],
+              "asset_macro_mean_mae_deg": 26.543483950110044,
+              "boundary_mae_deg": 31.081857518824883,
+              "boundary_images": 499,
+              "mean_pixel_angular_dispersion_deg": 0.0
+            }
+          },
+          "boundary_mask_coverage_audit": {
+            "phase": "formal",
+            "validation_counts_and_fractions": {
+              "0.01": {
+                "foreground_pixels": 8328230,
+                "unit_rejected_foreground_pixels": 952701,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 57802,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 426631,
+                  "foreground_band_pixels": 2601111,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 526070,
+                  "fraction_unit_rejected_in_band": 0.44781206275631075,
+                  "fraction_band_foreground_retained": 0.8359812403238462
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 838337,
+                  "foreground_band_pixels": 3958902,
+                  "retained_foreground_band_pixels": 3120565,
+                  "unit_rejected_outside_band": 114364,
+                  "fraction_unit_rejected_in_band": 0.8799581400670304,
+                  "fraction_band_foreground_retained": 0.7882400221071398
+                }
+              },
+              "0.5": {
+                "foreground_pixels": 8070217,
+                "unit_rejected_foreground_pixels": 694688,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 9549,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 354200,
+                  "foreground_band_pixels": 2528680,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 340488,
+                  "fraction_unit_rejected_in_band": 0.5098691786816528,
+                  "fraction_band_foreground_retained": 0.8599269183922046
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 625961,
+                  "foreground_band_pixels": 3803089,
+                  "retained_foreground_band_pixels": 3177128,
+                  "unit_rejected_outside_band": 68727,
+                  "fraction_unit_rejected_in_band": 0.9010678174950482,
+                  "fraction_band_foreground_retained": 0.8354072176591186
+                }
+              },
+              "0.99": {
+                "foreground_pixels": 7781178,
+                "unit_rejected_foreground_pixels": 509124,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 150,
+                "retained_foreground_pixels": 7272054,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 288318,
+                  "foreground_band_pixels": 2439582,
+                  "retained_foreground_band_pixels": 2151264,
+                  "unit_rejected_outside_band": 220806,
+                  "fraction_unit_rejected_in_band": 0.5663021189336979,
+                  "fraction_band_foreground_retained": 0.8818166390799735
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 448122,
+                  "foreground_band_pixels": 3632876,
+                  "retained_foreground_band_pixels": 3184754,
+                  "unit_rejected_outside_band": 61002,
+                  "fraction_unit_rejected_in_band": 0.880182430999128,
+                  "fraction_band_foreground_retained": 0.876648143234176
+                }
+              }
+            },
+            "includes_empty_views": true,
+            "note": "Error MAE is conditional on retained labels; coverage audit also includes rejected/empty views. Raw excluded normals are not restored as GT."
+          }
+        },
+        "nyuv2": {
+          "num_images": 795,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 35.93504234889768,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            35.93504234889768,
+            35.93504234889768
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 43.18864634052013,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 795
+        }
+      },
+      "training_probe": {
+        "hypersim": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 11.50170710682869,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            11.50170710682869,
+            11.50170710682869
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 18.090406224131584,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 64
+        },
+        "arb": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 14.434655725955963,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            14.434655725955963,
+            14.434655725955963
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 19.471835840316047,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 63
+        }
+      },
+      "clip_fraction": 0.04318,
+      "gradient_updates_recorded": 50000,
+      "time_loss_bins": [
+        {
+          "t_min": 0,
+          "t_max": 0.2,
+          "samples": 800000,
+          "mse": 0.06482757338552367,
+          "unit": 0.009499739591888805,
+          "cosine": 0.1061934815139717,
+          "loss": 0.09375087865523332
+        },
+        {
+          "t_min": 0.2,
+          "t_max": 0.4,
+          "samples": 0,
+          "mse": null,
+          "unit": null,
+          "cosine": null,
+          "loss": null
+        },
+        {
+          "t_min": 0.4,
+          "t_max": 0.6,
+          "samples": 0,
+          "mse": null,
+          "unit": null,
+          "cosine": null,
+          "loss": null
+        },
+        {
+          "t_min": 0.6,
+          "t_max": 0.8,
+          "samples": 0,
+          "mse": null,
+          "unit": null,
+          "cosine": null,
+          "loss": null
+        },
+        {
+          "t_min": 0.8,
+          "t_max": 0.95,
+          "samples": 0,
+          "mse": null,
+          "unit": null,
+          "cosine": null,
+          "loss": null
+        }
+      ],
+      "peak_cuda_bytes": 4948639744
+    },
+    {
+      "run": "stable_V_s1247",
+      "phase": "stable",
+      "method": "V",
+      "stable_fork_step": null,
+      "total_updates": 50000,
+      "summary_sha256": "d680791bc75aaaae0ba35c180274616dd6d7bfb5180a779f8d322bd984728e4c",
+      "validation": {
+        "hypersim": {
+          "num_images": 700,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 27.040611013684952,
+          "dataset_mae_sd_ddof1_deg": 0.0020484293198560492,
+          "mean_image_mae_sd_ddof1_deg": 1.228755134569031,
+          "median_image_mae_sd_ddof1_deg": 0.91200789990711,
+          "p95_image_mae_sd_ddof1_deg": 3.446882427079793,
+          "dataset_maes_deg": [
+            27.042059471947805,
+            27.039162555422102
+          ],
+          "mean_pixel_angular_dispersion_deg": 4.8593740166936605,
+          "boundary_mae_deg": 32.92947872774941,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 700
+        },
+        "arb": {
+          "num_images": 594,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 30.192570745744288,
+          "dataset_mae_sd_ddof1_deg": 0.047259623953598874,
+          "mean_image_mae_sd_ddof1_deg": 1.53887607058606,
+          "median_image_mae_sd_ddof1_deg": 0.9843130101636712,
+          "p95_image_mae_sd_ddof1_deg": 4.994380643704082,
+          "dataset_maes_deg": [
+            30.225988346318204,
+            30.15915314517037
+          ],
+          "mean_pixel_angular_dispersion_deg": 4.392526593071844,
+          "boundary_mae_deg": 33.43021462343978,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 583,
+          "without_blend_or_transmission_sensitivity": {
+            "status": "completed",
+            "full_usable_assets": 198,
+            "excluded_flagged_assets": 28,
+            "remaining_assets": 170,
+            "full_images": 594,
+            "remaining_images": 510,
+            "flag_definition": "any declared alphaMode=BLEND or positive KHR_materials_transmission factor",
+            "same_predictions_noise_and_masks": true,
+            "unknown_assets": 0,
+            "metrics": {
+              "num_images": 510,
+              "num_inference_replicates": 2,
+              "mean_mae_deg": 30.078238170287186,
+              "dataset_mae_sd_ddof1_deg": 0.05713379844117311,
+              "mean_image_mae_sd_ddof1_deg": 1.566337559079235,
+              "median_image_mae_sd_ddof1_deg": 0.9941220990987027,
+              "p95_image_mae_sd_ddof1_deg": 5.047173179234204,
+              "dataset_maes_deg": [
+                30.118637866599887,
+                30.03783847397449
+              ],
+              "asset_macro_mean_mae_deg": 30.07823817028719,
+              "boundary_mae_deg": 33.39059767598857,
+              "boundary_images": 499,
+              "mean_pixel_angular_dispersion_deg": 4.388076454517888
+            }
+          },
+          "boundary_mask_coverage_audit": {
+            "phase": "formal",
+            "validation_counts_and_fractions": {
+              "0.01": {
+                "foreground_pixels": 8328230,
+                "unit_rejected_foreground_pixels": 952701,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 57802,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 426631,
+                  "foreground_band_pixels": 2601111,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 526070,
+                  "fraction_unit_rejected_in_band": 0.44781206275631075,
+                  "fraction_band_foreground_retained": 0.8359812403238462
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 838337,
+                  "foreground_band_pixels": 3958902,
+                  "retained_foreground_band_pixels": 3120565,
+                  "unit_rejected_outside_band": 114364,
+                  "fraction_unit_rejected_in_band": 0.8799581400670304,
+                  "fraction_band_foreground_retained": 0.7882400221071398
+                }
+              },
+              "0.5": {
+                "foreground_pixels": 8070217,
+                "unit_rejected_foreground_pixels": 694688,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 9549,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 354200,
+                  "foreground_band_pixels": 2528680,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 340488,
+                  "fraction_unit_rejected_in_band": 0.5098691786816528,
+                  "fraction_band_foreground_retained": 0.8599269183922046
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 625961,
+                  "foreground_band_pixels": 3803089,
+                  "retained_foreground_band_pixels": 3177128,
+                  "unit_rejected_outside_band": 68727,
+                  "fraction_unit_rejected_in_band": 0.9010678174950482,
+                  "fraction_band_foreground_retained": 0.8354072176591186
+                }
+              },
+              "0.99": {
+                "foreground_pixels": 7781178,
+                "unit_rejected_foreground_pixels": 509124,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 150,
+                "retained_foreground_pixels": 7272054,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 288318,
+                  "foreground_band_pixels": 2439582,
+                  "retained_foreground_band_pixels": 2151264,
+                  "unit_rejected_outside_band": 220806,
+                  "fraction_unit_rejected_in_band": 0.5663021189336979,
+                  "fraction_band_foreground_retained": 0.8818166390799735
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 448122,
+                  "foreground_band_pixels": 3632876,
+                  "retained_foreground_band_pixels": 3184754,
+                  "unit_rejected_outside_band": 61002,
+                  "fraction_unit_rejected_in_band": 0.880182430999128,
+                  "fraction_band_foreground_retained": 0.876648143234176
+                }
+              }
+            },
+            "includes_empty_views": true,
+            "note": "Error MAE is conditional on retained labels; coverage audit also includes rejected/empty views. Raw excluded normals are not restored as GT."
+          }
+        },
+        "nyuv2": {
+          "num_images": 795,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 34.57623142986178,
+          "dataset_mae_sd_ddof1_deg": 0.0030572346314970502,
+          "mean_image_mae_sd_ddof1_deg": 1.539412476804879,
+          "median_image_mae_sd_ddof1_deg": 1.1441662284966378,
+          "p95_image_mae_sd_ddof1_deg": 4.203955140112979,
+          "dataset_maes_deg": [
+            34.57406963852217,
+            34.57839322120139
+          ],
+          "mean_pixel_angular_dispersion_deg": 6.191100582986508,
+          "boundary_mae_deg": 41.09970923009909,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 795
+        }
+      },
+      "training_probe": {
+        "hypersim": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 27.153092488646507,
+          "dataset_mae_sd_ddof1_deg": 0.08762407777084615,
+          "mean_image_mae_sd_ddof1_deg": 1.0089930245398924,
+          "median_image_mae_sd_ddof1_deg": 0.7526874177393211,
+          "p95_image_mae_sd_ddof1_deg": 2.8977661758269058,
+          "dataset_maes_deg": [
+            27.21505206823349,
+            27.091132909059525
+          ],
+          "mean_pixel_angular_dispersion_deg": 4.977216865867376,
+          "boundary_mae_deg": 32.342349618673325,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 64
+        },
+        "arb": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 28.503388106822968,
+          "dataset_mae_sd_ddof1_deg": 0.4676897853692159,
+          "mean_image_mae_sd_ddof1_deg": 1.4253072556406021,
+          "median_image_mae_sd_ddof1_deg": 0.8882627026308603,
+          "p95_image_mae_sd_ddof1_deg": 4.649564733134334,
+          "dataset_maes_deg": [
+            28.83409472554922,
+            28.172681488096714
+          ],
+          "mean_pixel_angular_dispersion_deg": 4.18720555305481,
+          "boundary_mae_deg": 32.39366231645857,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 63
+        }
+      },
+      "clip_fraction": 0.03326,
+      "gradient_updates_recorded": 50000,
+      "time_loss_bins": [
+        {
+          "t_min": 0,
+          "t_max": 0.2,
+          "samples": 168263,
+          "mse": 0.08963317155623708,
+          "unit": 0.012437973867200393,
+          "cosine": 0.12163044480454589,
+          "loss": 0.12315027622196698
+        },
+        {
+          "t_min": 0.2,
+          "t_max": 0.4,
+          "samples": 168576,
+          "mse": 0.06219962966532763,
+          "unit": 0.006043364906932734,
+          "cosine": 0.04872981885678138,
+          "loss": 0.07589292561758365
+        },
+        {
+          "t_min": 0.4,
+          "t_max": 0.6,
+          "samples": 168694,
+          "mse": 0.06714989677816927,
+          "unit": 0.0038864099437499904,
+          "cosine": 0.026342957110558785,
+          "loss": 0.07470723853531173
+        },
+        {
+          "t_min": 0.6,
+          "t_max": 0.8,
+          "samples": 168181,
+          "mse": 0.08159256124225177,
+          "unit": 0.0018946496637098089,
+          "cosine": 0.01112731888773283,
+          "loss": 0.0848480533731173
+        },
+        {
+          "t_min": 0.8,
+          "t_max": 0.95,
+          "samples": 126286,
+          "mse": 0.12431409217242732,
+          "unit": 0.0005806948477268225,
+          "cosine": 0.002617225850626839,
+          "loss": 0.12511357236316983
+        }
+      ],
+      "peak_cuda_bytes": 4949032960
+    },
+    {
+      "run": "stable_Xn_s1247",
+      "phase": "stable",
+      "method": "Xn",
+      "stable_fork_step": null,
+      "total_updates": 50000,
+      "summary_sha256": "31711e8f27dc822a1deec44ec7f4acacaab7d51cfef2386bcf01a1f2f22d4cb1",
+      "validation": {
+        "hypersim": {
+          "num_images": 700,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 26.75288603612355,
+          "dataset_mae_sd_ddof1_deg": 0.0023634522060466275,
+          "mean_image_mae_sd_ddof1_deg": 0.9161366865908646,
+          "median_image_mae_sd_ddof1_deg": 0.6929049791123167,
+          "p95_image_mae_sd_ddof1_deg": 2.5537232721763337,
+          "dataset_maes_deg": [
+            26.754557249205455,
+            26.751214823041643
+          ],
+          "mean_pixel_angular_dispersion_deg": 3.39708939909935,
+          "boundary_mae_deg": 33.22941872528621,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 700
+        },
+        "arb": {
+          "num_images": 594,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 30.473189668221906,
+          "dataset_mae_sd_ddof1_deg": 0.07610691549748712,
+          "mean_image_mae_sd_ddof1_deg": 1.146574811619428,
+          "median_image_mae_sd_ddof1_deg": 0.7472103504816334,
+          "p95_image_mae_sd_ddof1_deg": 3.851556775473777,
+          "dataset_maes_deg": [
+            30.527005384265372,
+            30.419373952178443
+          ],
+          "mean_pixel_angular_dispersion_deg": 3.1361655625028644,
+          "boundary_mae_deg": 33.82244453217521,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 583,
+          "without_blend_or_transmission_sensitivity": {
+            "status": "completed",
+            "full_usable_assets": 198,
+            "excluded_flagged_assets": 28,
+            "remaining_assets": 170,
+            "full_images": 594,
+            "remaining_images": 510,
+            "flag_definition": "any declared alphaMode=BLEND or positive KHR_materials_transmission factor",
+            "same_predictions_noise_and_masks": true,
+            "unknown_assets": 0,
+            "metrics": {
+              "num_images": 510,
+              "num_inference_replicates": 2,
+              "mean_mae_deg": 30.263640076038882,
+              "dataset_mae_sd_ddof1_deg": 0.09637570302050837,
+              "mean_image_mae_sd_ddof1_deg": 1.1249465508973446,
+              "median_image_mae_sd_ddof1_deg": 0.7512948858645212,
+              "p95_image_mae_sd_ddof1_deg": 3.768572125849254,
+              "dataset_maes_deg": [
+                30.331787989186306,
+                30.195492162891462
+              ],
+              "asset_macro_mean_mae_deg": 30.263640076038882,
+              "boundary_mae_deg": 33.77305876420352,
+              "boundary_images": 499,
+              "mean_pixel_angular_dispersion_deg": 3.1087964957835625
+            }
+          },
+          "boundary_mask_coverage_audit": {
+            "phase": "formal",
+            "validation_counts_and_fractions": {
+              "0.01": {
+                "foreground_pixels": 8328230,
+                "unit_rejected_foreground_pixels": 952701,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 57802,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 426631,
+                  "foreground_band_pixels": 2601111,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 526070,
+                  "fraction_unit_rejected_in_band": 0.44781206275631075,
+                  "fraction_band_foreground_retained": 0.8359812403238462
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 838337,
+                  "foreground_band_pixels": 3958902,
+                  "retained_foreground_band_pixels": 3120565,
+                  "unit_rejected_outside_band": 114364,
+                  "fraction_unit_rejected_in_band": 0.8799581400670304,
+                  "fraction_band_foreground_retained": 0.7882400221071398
+                }
+              },
+              "0.5": {
+                "foreground_pixels": 8070217,
+                "unit_rejected_foreground_pixels": 694688,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 9549,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 354200,
+                  "foreground_band_pixels": 2528680,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 340488,
+                  "fraction_unit_rejected_in_band": 0.5098691786816528,
+                  "fraction_band_foreground_retained": 0.8599269183922046
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 625961,
+                  "foreground_band_pixels": 3803089,
+                  "retained_foreground_band_pixels": 3177128,
+                  "unit_rejected_outside_band": 68727,
+                  "fraction_unit_rejected_in_band": 0.9010678174950482,
+                  "fraction_band_foreground_retained": 0.8354072176591186
+                }
+              },
+              "0.99": {
+                "foreground_pixels": 7781178,
+                "unit_rejected_foreground_pixels": 509124,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 150,
+                "retained_foreground_pixels": 7272054,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 288318,
+                  "foreground_band_pixels": 2439582,
+                  "retained_foreground_band_pixels": 2151264,
+                  "unit_rejected_outside_band": 220806,
+                  "fraction_unit_rejected_in_band": 0.5663021189336979,
+                  "fraction_band_foreground_retained": 0.8818166390799735
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 448122,
+                  "foreground_band_pixels": 3632876,
+                  "retained_foreground_band_pixels": 3184754,
+                  "unit_rejected_outside_band": 61002,
+                  "fraction_unit_rejected_in_band": 0.880182430999128,
+                  "fraction_band_foreground_retained": 0.876648143234176
+                }
+              }
+            },
+            "includes_empty_views": true,
+            "note": "Error MAE is conditional on retained labels; coverage audit also includes rejected/empty views. Raw excluded normals are not restored as GT."
+          }
+        },
+        "nyuv2": {
+          "num_images": 795,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 33.38583374503274,
+          "dataset_mae_sd_ddof1_deg": 0.0027098300875784205,
+          "mean_image_mae_sd_ddof1_deg": 1.0383312545105527,
+          "median_image_mae_sd_ddof1_deg": 0.7496366602567086,
+          "p95_image_mae_sd_ddof1_deg": 3.0971494965753794,
+          "dataset_maes_deg": [
+            33.38391760580195,
+            33.38774988426353
+          ],
+          "mean_pixel_angular_dispersion_deg": 3.7713543151159707,
+          "boundary_mae_deg": 40.10809002522402,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 795
+        }
+      },
+      "training_probe": {
+        "hypersim": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 27.001771822571754,
+          "dataset_mae_sd_ddof1_deg": 0.10957249167480357,
+          "mean_image_mae_sd_ddof1_deg": 0.6544234312821725,
+          "median_image_mae_sd_ddof1_deg": 0.5048679945927212,
+          "p95_image_mae_sd_ddof1_deg": 1.412952663535564,
+          "dataset_maes_deg": [
+            27.079251274466515,
+            26.924292370676994
+          ],
+          "mean_pixel_angular_dispersion_deg": 3.2057051192969084,
+          "boundary_mae_deg": 32.531426444649696,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 64
+        },
+        "arb": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 28.984570432454348,
+          "dataset_mae_sd_ddof1_deg": 0.2860314155387365,
+          "mean_image_mae_sd_ddof1_deg": 0.9997840909225881,
+          "median_image_mae_sd_ddof1_deg": 0.6046885906059227,
+          "p95_image_mae_sd_ddof1_deg": 2.985320353049497,
+          "dataset_maes_deg": [
+            29.186825186014175,
+            28.78231567889452
+          ],
+          "mean_pixel_angular_dispersion_deg": 3.036417366936803,
+          "boundary_mae_deg": 32.93778114470224,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 63
+        }
+      },
+      "clip_fraction": 0.00842,
+      "gradient_updates_recorded": 50000,
+      "time_loss_bins": [
+        {
+          "t_min": 0,
+          "t_max": 0.2,
+          "samples": 168263,
+          "mse": 0.07431501786125334,
+          "unit": 0.010323685120441127,
+          "cosine": 0.12195223010384948,
+          "loss": 0.10738399667632545
+        },
+        {
+          "t_min": 0.2,
+          "t_max": 0.4,
+          "samples": 168576,
+          "mse": 0.03164799215154045,
+          "unit": 0.004115438662304125,
+          "cosine": 0.050304712337301126,
+          "loss": 0.045253029904603434
+        },
+        {
+          "t_min": 0.4,
+          "t_max": 0.6,
+          "samples": 168694,
+          "mse": 0.018507616560876322,
+          "unit": 0.002876537161972351,
+          "cosine": 0.02881640242029156,
+          "loss": 0.02643085146236122
+        },
+        {
+          "t_min": 0.6,
+          "t_max": 0.8,
+          "samples": 168181,
+          "mse": 0.00960462963540196,
+          "unit": 0.002070427722132304,
+          "cosine": 0.014347977600748914,
+          "loss": 0.013709230968780668
+        },
+        {
+          "t_min": 0.8,
+          "t_max": 0.95,
+          "samples": 126286,
+          "mse": 0.0043847649722100705,
+          "unit": 0.0017266822782195448,
+          "cosine": 0.006058604850604642,
+          "loss": 0.006331086758385007
+        }
+      ],
+      "peak_cuda_bytes": 4949032960
+    },
+    {
+      "run": "cooldown_R_k10000_s1247",
+      "phase": "cooldown",
+      "method": "R",
+      "stable_fork_step": 10000,
+      "total_updates": 12500,
+      "summary_sha256": "e0a178ad0a02a5535f9295b758909f3fe153dd83221583560972a95e00a15a76",
+      "validation": {
+        "hypersim": {
+          "num_images": 700,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 28.71673824105944,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            28.71673824105944,
+            28.71673824105944
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 35.914601048060824,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 700
+        },
+        "arb": {
+          "num_images": 594,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 28.690500414331353,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            28.690500414331353,
+            28.690500414331353
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 33.360088971630375,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 583,
+          "without_blend_or_transmission_sensitivity": {
+            "status": "completed",
+            "full_usable_assets": 198,
+            "excluded_flagged_assets": 28,
+            "remaining_assets": 170,
+            "full_images": 594,
+            "remaining_images": 510,
+            "flag_definition": "any declared alphaMode=BLEND or positive KHR_materials_transmission factor",
+            "same_predictions_noise_and_masks": true,
+            "unknown_assets": 0,
+            "metrics": {
+              "num_images": 510,
+              "num_inference_replicates": 2,
+              "mean_mae_deg": 28.832029777414657,
+              "dataset_mae_sd_ddof1_deg": 0.0,
+              "mean_image_mae_sd_ddof1_deg": 0.0,
+              "median_image_mae_sd_ddof1_deg": 0.0,
+              "p95_image_mae_sd_ddof1_deg": 0.0,
+              "dataset_maes_deg": [
+                28.832029777414657,
+                28.832029777414657
+              ],
+              "asset_macro_mean_mae_deg": 28.832029777414657,
+              "boundary_mae_deg": 33.51761235980567,
+              "boundary_images": 499,
+              "mean_pixel_angular_dispersion_deg": 0.0
+            }
+          },
+          "boundary_mask_coverage_audit": {
+            "phase": "formal",
+            "validation_counts_and_fractions": {
+              "0.01": {
+                "foreground_pixels": 8328230,
+                "unit_rejected_foreground_pixels": 952701,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 57802,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 426631,
+                  "foreground_band_pixels": 2601111,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 526070,
+                  "fraction_unit_rejected_in_band": 0.44781206275631075,
+                  "fraction_band_foreground_retained": 0.8359812403238462
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 838337,
+                  "foreground_band_pixels": 3958902,
+                  "retained_foreground_band_pixels": 3120565,
+                  "unit_rejected_outside_band": 114364,
+                  "fraction_unit_rejected_in_band": 0.8799581400670304,
+                  "fraction_band_foreground_retained": 0.7882400221071398
+                }
+              },
+              "0.5": {
+                "foreground_pixels": 8070217,
+                "unit_rejected_foreground_pixels": 694688,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 9549,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 354200,
+                  "foreground_band_pixels": 2528680,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 340488,
+                  "fraction_unit_rejected_in_band": 0.5098691786816528,
+                  "fraction_band_foreground_retained": 0.8599269183922046
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 625961,
+                  "foreground_band_pixels": 3803089,
+                  "retained_foreground_band_pixels": 3177128,
+                  "unit_rejected_outside_band": 68727,
+                  "fraction_unit_rejected_in_band": 0.9010678174950482,
+                  "fraction_band_foreground_retained": 0.8354072176591186
+                }
+              },
+              "0.99": {
+                "foreground_pixels": 7781178,
+                "unit_rejected_foreground_pixels": 509124,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 150,
+                "retained_foreground_pixels": 7272054,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 288318,
+                  "foreground_band_pixels": 2439582,
+                  "retained_foreground_band_pixels": 2151264,
+                  "unit_rejected_outside_band": 220806,
+                  "fraction_unit_rejected_in_band": 0.5663021189336979,
+                  "fraction_band_foreground_retained": 0.8818166390799735
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 448122,
+                  "foreground_band_pixels": 3632876,
+                  "retained_foreground_band_pixels": 3184754,
+                  "unit_rejected_outside_band": 61002,
+                  "fraction_unit_rejected_in_band": 0.880182430999128,
+                  "fraction_band_foreground_retained": 0.876648143234176
+                }
+              }
+            },
+            "includes_empty_views": true,
+            "note": "Error MAE is conditional on retained labels; coverage audit also includes rejected/empty views. Raw excluded normals are not restored as GT."
+          }
+        },
+        "nyuv2": {
+          "num_images": 795,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 37.63007448064456,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            37.63007448064456,
+            37.63007448064456
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 42.81431890283741,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 795
+        }
+      },
+      "training_probe": {
+        "hypersim": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 16.544353380799294,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            16.544353380799294,
+            16.544353380799294
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 25.416452288627625,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 64
+        },
+        "arb": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 23.587798111140728,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            23.587798111140728,
+            23.587798111140728
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 29.837449043516127,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 63
+        }
+      },
+      "clip_fraction": 0.0328,
+      "gradient_updates_recorded": 2500,
+      "time_loss_bins": [
+        {
+          "t_min": 0,
+          "t_max": 0.2,
+          "samples": 40000,
+          "mse": 0.07665352914023679,
+          "unit": 0.010347580308499164,
+          "cosine": 0.1255041043194011,
+          "loss": 0.11061645032506494
+        },
+        {
+          "t_min": 0.2,
+          "t_max": 0.4,
+          "samples": 0,
+          "mse": null,
+          "unit": null,
+          "cosine": null,
+          "loss": null
+        },
+        {
+          "t_min": 0.4,
+          "t_max": 0.6,
+          "samples": 0,
+          "mse": null,
+          "unit": null,
+          "cosine": null,
+          "loss": null
+        },
+        {
+          "t_min": 0.6,
+          "t_max": 0.8,
+          "samples": 0,
+          "mse": null,
+          "unit": null,
+          "cosine": null,
+          "loss": null
+        },
+        {
+          "t_min": 0.8,
+          "t_max": 0.95,
+          "samples": 0,
+          "mse": null,
+          "unit": null,
+          "cosine": null,
+          "loss": null
+        }
+      ],
+      "peak_cuda_bytes": 4948639744
+    },
+    {
+      "run": "cooldown_V_k10000_s1247",
+      "phase": "cooldown",
+      "method": "V",
+      "stable_fork_step": 10000,
+      "total_updates": 12500,
+      "summary_sha256": "ee1d85ca0dc7ef8bc576c26aa0a93586b3e544038ec30d1fcf5e2b66b41c9232",
+      "validation": {
+        "hypersim": {
+          "num_images": 700,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 30.90139487675258,
+          "dataset_mae_sd_ddof1_deg": 0.0056658851390165065,
+          "mean_image_mae_sd_ddof1_deg": 1.4539105875025493,
+          "median_image_mae_sd_ddof1_deg": 1.153730528535518,
+          "p95_image_mae_sd_ddof1_deg": 3.7680401989035706,
+          "dataset_maes_deg": [
+            30.905401262555802,
+            30.897388490949357
+          ],
+          "mean_pixel_angular_dispersion_deg": 6.164739249774388,
+          "boundary_mae_deg": 37.03324669701713,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 700
+        },
+        "arb": {
+          "num_images": 594,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 32.95618779691381,
+          "dataset_mae_sd_ddof1_deg": 0.13718412688084977,
+          "mean_image_mae_sd_ddof1_deg": 1.6116380044315621,
+          "median_image_mae_sd_ddof1_deg": 1.1138002670815088,
+          "p95_image_mae_sd_ddof1_deg": 4.819566912588731,
+          "dataset_maes_deg": [
+            33.05319162330242,
+            32.85918397052521
+          ],
+          "mean_pixel_angular_dispersion_deg": 5.10614662338989,
+          "boundary_mae_deg": 36.573325639728004,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 583,
+          "without_blend_or_transmission_sensitivity": {
+            "status": "completed",
+            "full_usable_assets": 198,
+            "excluded_flagged_assets": 28,
+            "remaining_assets": 170,
+            "full_images": 594,
+            "remaining_images": 510,
+            "flag_definition": "any declared alphaMode=BLEND or positive KHR_materials_transmission factor",
+            "same_predictions_noise_and_masks": true,
+            "unknown_assets": 0,
+            "metrics": {
+              "num_images": 510,
+              "num_inference_replicates": 2,
+              "mean_mae_deg": 32.89504242738088,
+              "dataset_mae_sd_ddof1_deg": 0.17086835834554084,
+              "mean_image_mae_sd_ddof1_deg": 1.628996570032199,
+              "median_image_mae_sd_ddof1_deg": 1.1152110063948655,
+              "p95_image_mae_sd_ddof1_deg": 4.885227656471246,
+              "dataset_maes_deg": [
+                33.015864602257224,
+                32.774220252504534
+              ],
+              "asset_macro_mean_mae_deg": 32.89504242738088,
+              "boundary_mae_deg": 36.63252602884908,
+              "boundary_images": 499,
+              "mean_pixel_angular_dispersion_deg": 5.075940051265792
+            }
+          },
+          "boundary_mask_coverage_audit": {
+            "phase": "formal",
+            "validation_counts_and_fractions": {
+              "0.01": {
+                "foreground_pixels": 8328230,
+                "unit_rejected_foreground_pixels": 952701,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 57802,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 426631,
+                  "foreground_band_pixels": 2601111,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 526070,
+                  "fraction_unit_rejected_in_band": 0.44781206275631075,
+                  "fraction_band_foreground_retained": 0.8359812403238462
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 838337,
+                  "foreground_band_pixels": 3958902,
+                  "retained_foreground_band_pixels": 3120565,
+                  "unit_rejected_outside_band": 114364,
+                  "fraction_unit_rejected_in_band": 0.8799581400670304,
+                  "fraction_band_foreground_retained": 0.7882400221071398
+                }
+              },
+              "0.5": {
+                "foreground_pixels": 8070217,
+                "unit_rejected_foreground_pixels": 694688,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 9549,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 354200,
+                  "foreground_band_pixels": 2528680,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 340488,
+                  "fraction_unit_rejected_in_band": 0.5098691786816528,
+                  "fraction_band_foreground_retained": 0.8599269183922046
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 625961,
+                  "foreground_band_pixels": 3803089,
+                  "retained_foreground_band_pixels": 3177128,
+                  "unit_rejected_outside_band": 68727,
+                  "fraction_unit_rejected_in_band": 0.9010678174950482,
+                  "fraction_band_foreground_retained": 0.8354072176591186
+                }
+              },
+              "0.99": {
+                "foreground_pixels": 7781178,
+                "unit_rejected_foreground_pixels": 509124,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 150,
+                "retained_foreground_pixels": 7272054,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 288318,
+                  "foreground_band_pixels": 2439582,
+                  "retained_foreground_band_pixels": 2151264,
+                  "unit_rejected_outside_band": 220806,
+                  "fraction_unit_rejected_in_band": 0.5663021189336979,
+                  "fraction_band_foreground_retained": 0.8818166390799735
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 448122,
+                  "foreground_band_pixels": 3632876,
+                  "retained_foreground_band_pixels": 3184754,
+                  "unit_rejected_outside_band": 61002,
+                  "fraction_unit_rejected_in_band": 0.880182430999128,
+                  "fraction_band_foreground_retained": 0.876648143234176
+                }
+              }
+            },
+            "includes_empty_views": true,
+            "note": "Error MAE is conditional on retained labels; coverage audit also includes rejected/empty views. Raw excluded normals are not restored as GT."
+          }
+        },
+        "nyuv2": {
+          "num_images": 795,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 35.76861100586706,
+          "dataset_mae_sd_ddof1_deg": 0.09889231183379307,
+          "mean_image_mae_sd_ddof1_deg": 1.6486712533696852,
+          "median_image_mae_sd_ddof1_deg": 1.3334291805457181,
+          "p95_image_mae_sd_ddof1_deg": 4.266061387379478,
+          "dataset_maes_deg": [
+            35.698683581562165,
+            35.838538430171944
+          ],
+          "mean_pixel_angular_dispersion_deg": 6.976569379650572,
+          "boundary_mae_deg": 42.0313818625684,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 795
+        }
+      },
+      "training_probe": {
+        "hypersim": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 33.72748789191246,
+          "dataset_mae_sd_ddof1_deg": 0.17165572676201774,
+          "mean_image_mae_sd_ddof1_deg": 1.4900482183113526,
+          "median_image_mae_sd_ddof1_deg": 1.2869172672282478,
+          "p95_image_mae_sd_ddof1_deg": 3.200353709021994,
+          "dataset_maes_deg": [
+            33.84886682033539,
+            33.60610896348953
+          ],
+          "mean_pixel_angular_dispersion_deg": 6.4655900821089745,
+          "boundary_mae_deg": 38.74270282685757,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 64
+        },
+        "arb": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 32.06318175047636,
+          "dataset_mae_sd_ddof1_deg": 0.41144898856943035,
+          "mean_image_mae_sd_ddof1_deg": 1.4627374503346418,
+          "median_image_mae_sd_ddof1_deg": 1.0324298754724364,
+          "p95_image_mae_sd_ddof1_deg": 4.285680576773906,
+          "dataset_maes_deg": [
+            32.35412012040615,
+            31.77224338054657
+          ],
+          "mean_pixel_angular_dispersion_deg": 4.984103914350271,
+          "boundary_mae_deg": 35.762491264040506,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 63
+        }
+      },
+      "clip_fraction": 0.0068,
+      "gradient_updates_recorded": 2500,
+      "time_loss_bins": [
+        {
+          "t_min": 0,
+          "t_max": 0.2,
+          "samples": 8336,
+          "mse": 0.08814729992004486,
+          "unit": 0.011161030864179735,
+          "cosine": 0.12115105951567214,
+          "loss": 0.12122532251715412
+        },
+        {
+          "t_min": 0.2,
+          "t_max": 0.4,
+          "samples": 8469,
+          "mse": 0.06193712596999124,
+          "unit": 0.005474819743832242,
+          "cosine": 0.04911618445783447,
+          "loss": 0.07558487703474591
+        },
+        {
+          "t_min": 0.4,
+          "t_max": 0.6,
+          "samples": 8487,
+          "mse": 0.06720433810276333,
+          "unit": 0.0036143592264563404,
+          "cosine": 0.02648674608944768,
+          "loss": 0.0747296144514578
+        },
+        {
+          "t_min": 0.6,
+          "t_max": 0.8,
+          "samples": 8458,
+          "mse": 0.07888406460855789,
+          "unit": 0.0016487732307849947,
+          "cosine": 0.010896418093175896,
+          "loss": 0.08202036243777407
+        },
+        {
+          "t_min": 0.8,
+          "t_max": 0.95,
+          "samples": 6250,
+          "mse": 0.12097698721177876,
+          "unit": 0.00045826851978548805,
+          "cosine": 0.0025282108072907433,
+          "loss": 0.1217236069149524
+        }
+      ],
+      "peak_cuda_bytes": 4949032960
+    },
+    {
+      "run": "cooldown_Xn_k10000_s1247",
+      "phase": "cooldown",
+      "method": "Xn",
+      "stable_fork_step": 10000,
+      "total_updates": 12500,
+      "summary_sha256": "ee90e0866c54259ca3ed25f28a406f066388c5afaaa3e48e5d418df04d1acc33",
+      "validation": {
+        "hypersim": {
+          "num_images": 700,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 30.63052911077227,
+          "dataset_mae_sd_ddof1_deg": 0.009957540250730847,
+          "mean_image_mae_sd_ddof1_deg": 1.5970545812924746,
+          "median_image_mae_sd_ddof1_deg": 1.2677360678835456,
+          "p95_image_mae_sd_ddof1_deg": 4.2005378736357155,
+          "dataset_maes_deg": [
+            30.6375701550075,
+            30.62348806653704
+          ],
+          "mean_pixel_angular_dispersion_deg": 5.823057879379817,
+          "boundary_mae_deg": 36.82146165915898,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 700
+        },
+        "arb": {
+          "num_images": 594,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 33.1788695115433,
+          "dataset_mae_sd_ddof1_deg": 0.09333330200331398,
+          "mean_image_mae_sd_ddof1_deg": 1.4069338008959515,
+          "median_image_mae_sd_ddof1_deg": 1.0031732191101141,
+          "p95_image_mae_sd_ddof1_deg": 4.356523393692013,
+          "dataset_maes_deg": [
+            33.24486612230037,
+            33.11287290078622
+          ],
+          "mean_pixel_angular_dispersion_deg": 4.1260870440239055,
+          "boundary_mae_deg": 36.83864327851127,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 583,
+          "without_blend_or_transmission_sensitivity": {
+            "status": "completed",
+            "full_usable_assets": 198,
+            "excluded_flagged_assets": 28,
+            "remaining_assets": 170,
+            "full_images": 594,
+            "remaining_images": 510,
+            "flag_definition": "any declared alphaMode=BLEND or positive KHR_materials_transmission factor",
+            "same_predictions_noise_and_masks": true,
+            "unknown_assets": 0,
+            "metrics": {
+              "num_images": 510,
+              "num_inference_replicates": 2,
+              "mean_mae_deg": 33.11460716771144,
+              "dataset_mae_sd_ddof1_deg": 0.12680124850970678,
+              "mean_image_mae_sd_ddof1_deg": 1.4266839018310327,
+              "median_image_mae_sd_ddof1_deg": 1.0054714024657163,
+              "p95_image_mae_sd_ddof1_deg": 4.401578745642422,
+              "dataset_maes_deg": [
+                33.20426919039558,
+                33.02494514502731
+              ],
+              "asset_macro_mean_mae_deg": 33.11460716771144,
+              "boundary_mae_deg": 36.89232544144074,
+              "boundary_images": 499,
+              "mean_pixel_angular_dispersion_deg": 4.1212622850548986
+            }
+          },
+          "boundary_mask_coverage_audit": {
+            "phase": "formal",
+            "validation_counts_and_fractions": {
+              "0.01": {
+                "foreground_pixels": 8328230,
+                "unit_rejected_foreground_pixels": 952701,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 57802,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 426631,
+                  "foreground_band_pixels": 2601111,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 526070,
+                  "fraction_unit_rejected_in_band": 0.44781206275631075,
+                  "fraction_band_foreground_retained": 0.8359812403238462
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 838337,
+                  "foreground_band_pixels": 3958902,
+                  "retained_foreground_band_pixels": 3120565,
+                  "unit_rejected_outside_band": 114364,
+                  "fraction_unit_rejected_in_band": 0.8799581400670304,
+                  "fraction_band_foreground_retained": 0.7882400221071398
+                }
+              },
+              "0.5": {
+                "foreground_pixels": 8070217,
+                "unit_rejected_foreground_pixels": 694688,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 9549,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 354200,
+                  "foreground_band_pixels": 2528680,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 340488,
+                  "fraction_unit_rejected_in_band": 0.5098691786816528,
+                  "fraction_band_foreground_retained": 0.8599269183922046
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 625961,
+                  "foreground_band_pixels": 3803089,
+                  "retained_foreground_band_pixels": 3177128,
+                  "unit_rejected_outside_band": 68727,
+                  "fraction_unit_rejected_in_band": 0.9010678174950482,
+                  "fraction_band_foreground_retained": 0.8354072176591186
+                }
+              },
+              "0.99": {
+                "foreground_pixels": 7781178,
+                "unit_rejected_foreground_pixels": 509124,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 150,
+                "retained_foreground_pixels": 7272054,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 288318,
+                  "foreground_band_pixels": 2439582,
+                  "retained_foreground_band_pixels": 2151264,
+                  "unit_rejected_outside_band": 220806,
+                  "fraction_unit_rejected_in_band": 0.5663021189336979,
+                  "fraction_band_foreground_retained": 0.8818166390799735
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 448122,
+                  "foreground_band_pixels": 3632876,
+                  "retained_foreground_band_pixels": 3184754,
+                  "unit_rejected_outside_band": 61002,
+                  "fraction_unit_rejected_in_band": 0.880182430999128,
+                  "fraction_band_foreground_retained": 0.876648143234176
+                }
+              }
+            },
+            "includes_empty_views": true,
+            "note": "Error MAE is conditional on retained labels; coverage audit also includes rejected/empty views. Raw excluded normals are not restored as GT."
+          }
+        },
+        "nyuv2": {
+          "num_images": 795,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 35.12449205626481,
+          "dataset_mae_sd_ddof1_deg": 0.002249000793182062,
+          "mean_image_mae_sd_ddof1_deg": 1.6678429507471517,
+          "median_image_mae_sd_ddof1_deg": 1.3224426772506863,
+          "p95_image_mae_sd_ddof1_deg": 4.396374587658216,
+          "dataset_maes_deg": [
+            35.122901772553064,
+            35.12608233997657
+          ],
+          "mean_pixel_angular_dispersion_deg": 6.380316450310953,
+          "boundary_mae_deg": 41.92223170058532,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 795
+        }
+      },
+      "training_probe": {
+        "hypersim": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 34.327795416116714,
+          "dataset_mae_sd_ddof1_deg": 0.2429506613534699,
+          "mean_image_mae_sd_ddof1_deg": 1.7634730741869276,
+          "median_image_mae_sd_ddof1_deg": 1.6717287837259291,
+          "p95_image_mae_sd_ddof1_deg": 4.269424705890645,
+          "dataset_maes_deg": [
+            34.49958747625351,
+            34.15600335597992
+          ],
+          "mean_pixel_angular_dispersion_deg": 5.8902752958238125,
+          "boundary_mae_deg": 39.29417376220226,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 64
+        },
+        "arb": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 32.327987872064114,
+          "dataset_mae_sd_ddof1_deg": 0.3890380551499144,
+          "mean_image_mae_sd_ddof1_deg": 1.452820823715635,
+          "median_image_mae_sd_ddof1_deg": 0.8049144437148686,
+          "p95_image_mae_sd_ddof1_deg": 4.957720573084771,
+          "dataset_maes_deg": [
+            32.603079319000244,
+            32.05289642512798
+          ],
+          "mean_pixel_angular_dispersion_deg": 4.1225161999464035,
+          "boundary_mae_deg": 35.72610703725663,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 63
+        }
+      },
+      "clip_fraction": 0.0008,
+      "gradient_updates_recorded": 2500,
+      "time_loss_bins": [
+        {
+          "t_min": 0,
+          "t_max": 0.2,
+          "samples": 8336,
+          "mse": 0.07467156029963702,
+          "unit": 0.009646265088673795,
+          "cosine": 0.12262982942290526,
+          "loss": 0.10774058389347331
+        },
+        {
+          "t_min": 0.2,
+          "t_max": 0.4,
+          "samples": 8469,
+          "mse": 0.03232358656047533,
+          "unit": 0.0034917115977977694,
+          "cosine": 0.05162306450291726,
+          "loss": 0.04610228056972456
+        },
+        {
+          "t_min": 0.4,
+          "t_max": 0.6,
+          "samples": 8487,
+          "mse": 0.018534082166829554,
+          "unit": 0.002144007067924075,
+          "cosine": 0.029179746790795543,
+          "loss": 0.026365020640298775
+        },
+        {
+          "t_min": 0.6,
+          "t_max": 0.8,
+          "samples": 8458,
+          "mse": 0.008869739658228555,
+          "unit": 0.0012533216783151308,
+          "cosine": 0.013504074067742015,
+          "loss": 0.012559088599170095
+        },
+        {
+          "t_min": 0.8,
+          "t_max": 0.95,
+          "samples": 6250,
+          "mse": 0.0034323476677713917,
+          "unit": 0.0008087501592937042,
+          "cosine": 0.00487249362799339,
+          "loss": 0.004852658613824752
+        }
+      ],
+      "peak_cuda_bytes": 4949032960
+    },
+    {
+      "run": "cooldown_R_k20000_s1247",
+      "phase": "cooldown",
+      "method": "R",
+      "stable_fork_step": 20000,
+      "total_updates": 22500,
+      "summary_sha256": "29d0b4abec193c11f14eb8a6d5ed3e289b015eeec1a09c1b8a9ebbb9ca381a3b",
+      "validation": {
+        "hypersim": {
+          "num_images": 700,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 26.164447333472115,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            26.164447333472115,
+            26.164447333472115
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 33.72265685898917,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 700
+        },
+        "arb": {
+          "num_images": 594,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 26.437670593711264,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            26.437670593711264,
+            26.437670593711264
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 31.324774305366528,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 583,
+          "without_blend_or_transmission_sensitivity": {
+            "status": "completed",
+            "full_usable_assets": 198,
+            "excluded_flagged_assets": 28,
+            "remaining_assets": 170,
+            "full_images": 594,
+            "remaining_images": 510,
+            "flag_definition": "any declared alphaMode=BLEND or positive KHR_materials_transmission factor",
+            "same_predictions_noise_and_masks": true,
+            "unknown_assets": 0,
+            "metrics": {
+              "num_images": 510,
+              "num_inference_replicates": 2,
+              "mean_mae_deg": 26.55757849076215,
+              "dataset_mae_sd_ddof1_deg": 0.0,
+              "mean_image_mae_sd_ddof1_deg": 0.0,
+              "median_image_mae_sd_ddof1_deg": 0.0,
+              "p95_image_mae_sd_ddof1_deg": 0.0,
+              "dataset_maes_deg": [
+                26.55757849076215,
+                26.55757849076215
+              ],
+              "asset_macro_mean_mae_deg": 26.55757849076215,
+              "boundary_mae_deg": 31.370561011090786,
+              "boundary_images": 499,
+              "mean_pixel_angular_dispersion_deg": 0.0
+            }
+          },
+          "boundary_mask_coverage_audit": {
+            "phase": "formal",
+            "validation_counts_and_fractions": {
+              "0.01": {
+                "foreground_pixels": 8328230,
+                "unit_rejected_foreground_pixels": 952701,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 57802,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 426631,
+                  "foreground_band_pixels": 2601111,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 526070,
+                  "fraction_unit_rejected_in_band": 0.44781206275631075,
+                  "fraction_band_foreground_retained": 0.8359812403238462
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 838337,
+                  "foreground_band_pixels": 3958902,
+                  "retained_foreground_band_pixels": 3120565,
+                  "unit_rejected_outside_band": 114364,
+                  "fraction_unit_rejected_in_band": 0.8799581400670304,
+                  "fraction_band_foreground_retained": 0.7882400221071398
+                }
+              },
+              "0.5": {
+                "foreground_pixels": 8070217,
+                "unit_rejected_foreground_pixels": 694688,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 9549,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 354200,
+                  "foreground_band_pixels": 2528680,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 340488,
+                  "fraction_unit_rejected_in_band": 0.5098691786816528,
+                  "fraction_band_foreground_retained": 0.8599269183922046
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 625961,
+                  "foreground_band_pixels": 3803089,
+                  "retained_foreground_band_pixels": 3177128,
+                  "unit_rejected_outside_band": 68727,
+                  "fraction_unit_rejected_in_band": 0.9010678174950482,
+                  "fraction_band_foreground_retained": 0.8354072176591186
+                }
+              },
+              "0.99": {
+                "foreground_pixels": 7781178,
+                "unit_rejected_foreground_pixels": 509124,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 150,
+                "retained_foreground_pixels": 7272054,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 288318,
+                  "foreground_band_pixels": 2439582,
+                  "retained_foreground_band_pixels": 2151264,
+                  "unit_rejected_outside_band": 220806,
+                  "fraction_unit_rejected_in_band": 0.5663021189336979,
+                  "fraction_band_foreground_retained": 0.8818166390799735
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 448122,
+                  "foreground_band_pixels": 3632876,
+                  "retained_foreground_band_pixels": 3184754,
+                  "unit_rejected_outside_band": 61002,
+                  "fraction_unit_rejected_in_band": 0.880182430999128,
+                  "fraction_band_foreground_retained": 0.876648143234176
+                }
+              }
+            },
+            "includes_empty_views": true,
+            "note": "Error MAE is conditional on retained labels; coverage audit also includes rejected/empty views. Raw excluded normals are not restored as GT."
+          }
+        },
+        "nyuv2": {
+          "num_images": 795,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 36.71325445115191,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            36.71325445115191,
+            36.71325445115191
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 42.33141076189917,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 795
+        }
+      },
+      "training_probe": {
+        "hypersim": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 13.135208912193775,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            13.135208912193775,
+            13.135208912193775
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 21.259040609002113,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 64
+        },
+        "arb": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 18.50985299795866,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            18.50985299795866,
+            18.50985299795866
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 24.867528589944992,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 63
+        }
+      },
+      "clip_fraction": 0.0036,
+      "gradient_updates_recorded": 2500,
+      "time_loss_bins": [
+        {
+          "t_min": 0,
+          "t_max": 0.2,
+          "samples": 40000,
+          "mse": 0.053409871002851286,
+          "unit": 0.006847429232970899,
+          "cosine": 0.08669688512563735,
+          "loss": 0.07679594960149407
+        },
+        {
+          "t_min": 0.2,
+          "t_max": 0.4,
+          "samples": 0,
+          "mse": null,
+          "unit": null,
+          "cosine": null,
+          "loss": null
+        },
+        {
+          "t_min": 0.4,
+          "t_max": 0.6,
+          "samples": 0,
+          "mse": null,
+          "unit": null,
+          "cosine": null,
+          "loss": null
+        },
+        {
+          "t_min": 0.6,
+          "t_max": 0.8,
+          "samples": 0,
+          "mse": null,
+          "unit": null,
+          "cosine": null,
+          "loss": null
+        },
+        {
+          "t_min": 0.8,
+          "t_max": 0.95,
+          "samples": 0,
+          "mse": null,
+          "unit": null,
+          "cosine": null,
+          "loss": null
+        }
+      ],
+      "peak_cuda_bytes": 4948639744
+    },
+    {
+      "run": "cooldown_V_k20000_s1247",
+      "phase": "cooldown",
+      "method": "V",
+      "stable_fork_step": 20000,
+      "total_updates": 22500,
+      "summary_sha256": "20e3f342fc415e370ef6983b68e4fdc785ce8aa41e2ff024956d839a55ad8163",
+      "validation": {
+        "hypersim": {
+          "num_images": 700,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 27.380001066752843,
+          "dataset_mae_sd_ddof1_deg": 0.05957429966696076,
+          "mean_image_mae_sd_ddof1_deg": 1.3905353723241602,
+          "median_image_mae_sd_ddof1_deg": 1.0188923077307372,
+          "p95_image_mae_sd_ddof1_deg": 3.726526227469916,
+          "dataset_maes_deg": [
+            27.337875675473896,
+            27.42212645803179
+          ],
+          "mean_pixel_angular_dispersion_deg": 5.505189251559122,
+          "boundary_mae_deg": 33.60088983331408,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 700
+        },
+        "arb": {
+          "num_images": 594,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 31.28648620021062,
+          "dataset_mae_sd_ddof1_deg": 0.18228281407899508,
+          "mean_image_mae_sd_ddof1_deg": 1.840745758884364,
+          "median_image_mae_sd_ddof1_deg": 1.2494423125810892,
+          "p95_image_mae_sd_ddof1_deg": 5.711664573824338,
+          "dataset_maes_deg": [
+            31.415379614139646,
+            31.157592786281597
+          ],
+          "mean_pixel_angular_dispersion_deg": 5.347849706608037,
+          "boundary_mae_deg": 34.717258666841694,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 583,
+          "without_blend_or_transmission_sensitivity": {
+            "status": "completed",
+            "full_usable_assets": 198,
+            "excluded_flagged_assets": 28,
+            "remaining_assets": 170,
+            "full_images": 594,
+            "remaining_images": 510,
+            "flag_definition": "any declared alphaMode=BLEND or positive KHR_materials_transmission factor",
+            "same_predictions_noise_and_masks": true,
+            "unknown_assets": 0,
+            "metrics": {
+              "num_images": 510,
+              "num_inference_replicates": 2,
+              "mean_mae_deg": 31.191255365633495,
+              "dataset_mae_sd_ddof1_deg": 0.21315931734424381,
+              "mean_image_mae_sd_ddof1_deg": 1.8625534579917093,
+              "median_image_mae_sd_ddof1_deg": 1.247274278693689,
+              "p95_image_mae_sd_ddof1_deg": 5.8674566567047055,
+              "dataset_maes_deg": [
+                31.341981764400707,
+                31.040528966866287
+              ],
+              "asset_macro_mean_mae_deg": 31.191255365633495,
+              "boundary_mae_deg": 34.728721086391225,
+              "boundary_images": 499,
+              "mean_pixel_angular_dispersion_deg": 5.338327712171218
+            }
+          },
+          "boundary_mask_coverage_audit": {
+            "phase": "formal",
+            "validation_counts_and_fractions": {
+              "0.01": {
+                "foreground_pixels": 8328230,
+                "unit_rejected_foreground_pixels": 952701,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 57802,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 426631,
+                  "foreground_band_pixels": 2601111,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 526070,
+                  "fraction_unit_rejected_in_band": 0.44781206275631075,
+                  "fraction_band_foreground_retained": 0.8359812403238462
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 838337,
+                  "foreground_band_pixels": 3958902,
+                  "retained_foreground_band_pixels": 3120565,
+                  "unit_rejected_outside_band": 114364,
+                  "fraction_unit_rejected_in_band": 0.8799581400670304,
+                  "fraction_band_foreground_retained": 0.7882400221071398
+                }
+              },
+              "0.5": {
+                "foreground_pixels": 8070217,
+                "unit_rejected_foreground_pixels": 694688,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 9549,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 354200,
+                  "foreground_band_pixels": 2528680,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 340488,
+                  "fraction_unit_rejected_in_band": 0.5098691786816528,
+                  "fraction_band_foreground_retained": 0.8599269183922046
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 625961,
+                  "foreground_band_pixels": 3803089,
+                  "retained_foreground_band_pixels": 3177128,
+                  "unit_rejected_outside_band": 68727,
+                  "fraction_unit_rejected_in_band": 0.9010678174950482,
+                  "fraction_band_foreground_retained": 0.8354072176591186
+                }
+              },
+              "0.99": {
+                "foreground_pixels": 7781178,
+                "unit_rejected_foreground_pixels": 509124,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 150,
+                "retained_foreground_pixels": 7272054,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 288318,
+                  "foreground_band_pixels": 2439582,
+                  "retained_foreground_band_pixels": 2151264,
+                  "unit_rejected_outside_band": 220806,
+                  "fraction_unit_rejected_in_band": 0.5663021189336979,
+                  "fraction_band_foreground_retained": 0.8818166390799735
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 448122,
+                  "foreground_band_pixels": 3632876,
+                  "retained_foreground_band_pixels": 3184754,
+                  "unit_rejected_outside_band": 61002,
+                  "fraction_unit_rejected_in_band": 0.880182430999128,
+                  "fraction_band_foreground_retained": 0.876648143234176
+                }
+              }
+            },
+            "includes_empty_views": true,
+            "note": "Error MAE is conditional on retained labels; coverage audit also includes rejected/empty views. Raw excluded normals are not restored as GT."
+          }
+        },
+        "nyuv2": {
+          "num_images": 795,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 33.79972896575928,
+          "dataset_mae_sd_ddof1_deg": 0.004057574123417888,
+          "mean_image_mae_sd_ddof1_deg": 1.530792268717358,
+          "median_image_mae_sd_ddof1_deg": 1.16231971908725,
+          "p95_image_mae_sd_ddof1_deg": 4.060983993679704,
+          "dataset_maes_deg": [
+            33.802598103937115,
+            33.79685982758144
+          ],
+          "mean_pixel_angular_dispersion_deg": 6.281268425407649,
+          "boundary_mae_deg": 40.76792308759389,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 795
+        }
+      },
+      "training_probe": {
+        "hypersim": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 28.814046621322632,
+          "dataset_mae_sd_ddof1_deg": 0.0023108063367310427,
+          "mean_image_mae_sd_ddof1_deg": 1.0905216354182747,
+          "median_image_mae_sd_ddof1_deg": 0.7920593177442579,
+          "p95_image_mae_sd_ddof1_deg": 2.5385494626230036,
+          "dataset_maes_deg": [
+            28.81241263449192,
+            28.815680608153343
+          ],
+          "mean_pixel_angular_dispersion_deg": 5.500378400087357,
+          "boundary_mae_deg": 34.307504653930664,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 64
+        },
+        "arb": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 30.33538157120347,
+          "dataset_mae_sd_ddof1_deg": 0.3627387219754122,
+          "mean_image_mae_sd_ddof1_deg": 1.6489689534260838,
+          "median_image_mae_sd_ddof1_deg": 1.0502461912749614,
+          "p95_image_mae_sd_ddof1_deg": 5.691627759737384,
+          "dataset_maes_deg": [
+            30.591876581311226,
+            30.078886561095715
+          ],
+          "mean_pixel_angular_dispersion_deg": 5.166744381189346,
+          "boundary_mae_deg": 34.21125550497146,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 63
+        }
+      },
+      "clip_fraction": 0.0136,
+      "gradient_updates_recorded": 2500,
+      "time_loss_bins": [
+        {
+          "t_min": 0,
+          "t_max": 0.2,
+          "samples": 8454,
+          "mse": 0.07744455960723697,
+          "unit": 0.009470995925100695,
+          "cosine": 0.10582653293202955,
+          "loss": 0.10626894182173383
+        },
+        {
+          "t_min": 0.2,
+          "t_max": 0.4,
+          "samples": 8470,
+          "mse": 0.055163571922688,
+          "unit": 0.004670389849642279,
+          "cosine": 0.04373235959444775,
+          "loss": 0.06726425923192665
+        },
+        {
+          "t_min": 0.4,
+          "t_max": 0.6,
+          "samples": 8424,
+          "mse": 0.05944628624011367,
+          "unit": 0.002948153891096893,
+          "cosine": 0.023524506952118607,
+          "loss": 0.06606445143957866
+        },
+        {
+          "t_min": 0.6,
+          "t_max": 0.8,
+          "samples": 8348,
+          "mse": 0.07132032151089611,
+          "unit": 0.001262139328771092,
+          "cosine": 0.009886771516272512,
+          "loss": 0.07410754930797744
+        },
+        {
+          "t_min": 0.8,
+          "t_max": 0.95,
+          "samples": 6304,
+          "mse": 0.10819923825960738,
+          "unit": 0.00032652855864988376,
+          "cosine": 0.0023393905834437566,
+          "loss": 0.10886571796923855
+        }
+      ],
+      "peak_cuda_bytes": 4949032960
+    },
+    {
+      "run": "cooldown_Xn_k20000_s1247",
+      "phase": "cooldown",
+      "method": "Xn",
+      "stable_fork_step": 20000,
+      "total_updates": 22500,
+      "summary_sha256": "06d5d1c3fbeac9db8b4d1ce5a733695b6daa2c309d88f395ec5953d050a24601",
+      "validation": {
+        "hypersim": {
+          "num_images": 700,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 27.204057289191653,
+          "dataset_mae_sd_ddof1_deg": 0.01016865453743827,
+          "mean_image_mae_sd_ddof1_deg": 1.4843311110235646,
+          "median_image_mae_sd_ddof1_deg": 1.1403008567260067,
+          "p95_image_mae_sd_ddof1_deg": 4.080488408776268,
+          "dataset_maes_deg": [
+            27.19686696461269,
+            27.21124761377062
+          ],
+          "mean_pixel_angular_dispersion_deg": 5.083814861774445,
+          "boundary_mae_deg": 33.66846520832607,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 700
+        },
+        "arb": {
+          "num_images": 594,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 31.497437177282393,
+          "dataset_mae_sd_ddof1_deg": 0.113915977436851,
+          "mean_image_mae_sd_ddof1_deg": 1.6518478723358498,
+          "median_image_mae_sd_ddof1_deg": 1.1076131097201096,
+          "p95_image_mae_sd_ddof1_deg": 5.2950895064149055,
+          "dataset_maes_deg": [
+            31.577987937413482,
+            31.4168864171513
+          ],
+          "mean_pixel_angular_dispersion_deg": 4.388362889940089,
+          "boundary_mae_deg": 35.10596941429387,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 583,
+          "without_blend_or_transmission_sensitivity": {
+            "status": "completed",
+            "full_usable_assets": 198,
+            "excluded_flagged_assets": 28,
+            "remaining_assets": 170,
+            "full_images": 594,
+            "remaining_images": 510,
+            "flag_definition": "any declared alphaMode=BLEND or positive KHR_materials_transmission factor",
+            "same_predictions_noise_and_masks": true,
+            "unknown_assets": 0,
+            "metrics": {
+              "num_images": 510,
+              "num_inference_replicates": 2,
+              "mean_mae_deg": 31.414740439489776,
+              "dataset_mae_sd_ddof1_deg": 0.12892205082056812,
+              "mean_image_mae_sd_ddof1_deg": 1.6677507367357707,
+              "median_image_mae_sd_ddof1_deg": 1.1076131097201096,
+              "p95_image_mae_sd_ddof1_deg": 5.413244723314873,
+              "dataset_maes_deg": [
+                31.505902095869477,
+                31.323578783110076
+              ],
+              "asset_macro_mean_mae_deg": 31.41474043948978,
+              "boundary_mae_deg": 35.13139116596841,
+              "boundary_images": 499,
+              "mean_pixel_angular_dispersion_deg": 4.374346395099864
+            }
+          },
+          "boundary_mask_coverage_audit": {
+            "phase": "formal",
+            "validation_counts_and_fractions": {
+              "0.01": {
+                "foreground_pixels": 8328230,
+                "unit_rejected_foreground_pixels": 952701,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 57802,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 426631,
+                  "foreground_band_pixels": 2601111,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 526070,
+                  "fraction_unit_rejected_in_band": 0.44781206275631075,
+                  "fraction_band_foreground_retained": 0.8359812403238462
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 838337,
+                  "foreground_band_pixels": 3958902,
+                  "retained_foreground_band_pixels": 3120565,
+                  "unit_rejected_outside_band": 114364,
+                  "fraction_unit_rejected_in_band": 0.8799581400670304,
+                  "fraction_band_foreground_retained": 0.7882400221071398
+                }
+              },
+              "0.5": {
+                "foreground_pixels": 8070217,
+                "unit_rejected_foreground_pixels": 694688,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 9549,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 354200,
+                  "foreground_band_pixels": 2528680,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 340488,
+                  "fraction_unit_rejected_in_band": 0.5098691786816528,
+                  "fraction_band_foreground_retained": 0.8599269183922046
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 625961,
+                  "foreground_band_pixels": 3803089,
+                  "retained_foreground_band_pixels": 3177128,
+                  "unit_rejected_outside_band": 68727,
+                  "fraction_unit_rejected_in_band": 0.9010678174950482,
+                  "fraction_band_foreground_retained": 0.8354072176591186
+                }
+              },
+              "0.99": {
+                "foreground_pixels": 7781178,
+                "unit_rejected_foreground_pixels": 509124,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 150,
+                "retained_foreground_pixels": 7272054,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 288318,
+                  "foreground_band_pixels": 2439582,
+                  "retained_foreground_band_pixels": 2151264,
+                  "unit_rejected_outside_band": 220806,
+                  "fraction_unit_rejected_in_band": 0.5663021189336979,
+                  "fraction_band_foreground_retained": 0.8818166390799735
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 448122,
+                  "foreground_band_pixels": 3632876,
+                  "retained_foreground_band_pixels": 3184754,
+                  "unit_rejected_outside_band": 61002,
+                  "fraction_unit_rejected_in_band": 0.880182430999128,
+                  "fraction_band_foreground_retained": 0.876648143234176
+                }
+              }
+            },
+            "includes_empty_views": true,
+            "note": "Error MAE is conditional on retained labels; coverage audit also includes rejected/empty views. Raw excluded normals are not restored as GT."
+          }
+        },
+        "nyuv2": {
+          "num_images": 795,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 33.226181328971435,
+          "dataset_mae_sd_ddof1_deg": 0.008481795928476886,
+          "mean_image_mae_sd_ddof1_deg": 1.5830524947462534,
+          "median_image_mae_sd_ddof1_deg": 1.2416326701394147,
+          "p95_image_mae_sd_ddof1_deg": 4.157491914834907,
+          "dataset_maes_deg": [
+            33.2321788643891,
+            33.220183793553765
+          ],
+          "mean_pixel_angular_dispersion_deg": 5.672471642044355,
+          "boundary_mae_deg": 40.445505437311134,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 795
+        }
+      },
+      "training_probe": {
+        "hypersim": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 29.309268303215504,
+          "dataset_mae_sd_ddof1_deg": 0.2286245998331168,
+          "mean_image_mae_sd_ddof1_deg": 1.1105815017240197,
+          "median_image_mae_sd_ddof1_deg": 0.9426510189980465,
+          "p95_image_mae_sd_ddof1_deg": 2.5981075451460165,
+          "dataset_maes_deg": [
+            29.47093030810356,
+            29.147606298327446
+          ],
+          "mean_pixel_angular_dispersion_deg": 4.91426632925868,
+          "boundary_mae_deg": 35.032544672489166,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 64
+        },
+        "arb": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 30.385063279420137,
+          "dataset_mae_sd_ddof1_deg": 0.42982388182362646,
+          "mean_image_mae_sd_ddof1_deg": 1.6534733241037007,
+          "median_image_mae_sd_ddof1_deg": 0.8695427583962616,
+          "p95_image_mae_sd_ddof1_deg": 5.292109488202832,
+          "dataset_maes_deg": [
+            30.68899466097355,
+            30.081131897866726
+          ],
+          "mean_pixel_angular_dispersion_deg": 4.331139260903001,
+          "boundary_mae_deg": 34.400574873364164,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 63
+        }
+      },
+      "clip_fraction": 0.0016,
+      "gradient_updates_recorded": 2500,
+      "time_loss_bins": [
+        {
+          "t_min": 0,
+          "t_max": 0.2,
+          "samples": 8454,
+          "mse": 0.0660441743987279,
+          "unit": 0.008308940011360528,
+          "cosine": 0.10812476081979094,
+          "loss": 0.0951525996565186
+        },
+        {
+          "t_min": 0.2,
+          "t_max": 0.4,
+          "samples": 8470,
+          "mse": 0.028708454596953946,
+          "unit": 0.0030745472042734623,
+          "cosine": 0.045844862028932225,
+          "loss": 0.040938306915479075
+        },
+        {
+          "t_min": 0.4,
+          "t_max": 0.6,
+          "samples": 8424,
+          "mse": 0.016421298843826218,
+          "unit": 0.001828491619267596,
+          "cosine": 0.02584986983917803,
+          "loss": 0.023340889196884644
+        },
+        {
+          "t_min": 0.6,
+          "t_max": 0.8,
+          "samples": 8348,
+          "mse": 0.007975940768419731,
+          "unit": 0.0010015216805175896,
+          "cosine": 0.012162526816779855,
+          "loss": 0.011266952888441316
+        },
+        {
+          "t_min": 0.8,
+          "t_max": 0.95,
+          "samples": 6304,
+          "mse": 0.0029575418182614,
+          "unit": 0.0005797580527583418,
+          "cosine": 0.004232333016983054,
+          "loss": 0.00416056458315957
+        }
+      ],
+      "peak_cuda_bytes": 4949032960
+    },
+    {
+      "run": "cooldown_R_k30000_s1247",
+      "phase": "cooldown",
+      "method": "R",
+      "stable_fork_step": 30000,
+      "total_updates": 32500,
+      "summary_sha256": "e88a6996ee723074bb62c79f6adfe8e31a164e686e6e22082e9358fe9061aecd",
+      "validation": {
+        "hypersim": {
+          "num_images": 700,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 25.902303849628993,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            25.902303849628993,
+            25.902303849628993
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 33.43390586716788,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 700
+        },
+        "arb": {
+          "num_images": 594,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 25.606030086074213,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            25.606030086074213,
+            25.606030086074213
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 30.319289599233795,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 583,
+          "without_blend_or_transmission_sensitivity": {
+            "status": "completed",
+            "full_usable_assets": 198,
+            "excluded_flagged_assets": 28,
+            "remaining_assets": 170,
+            "full_images": 594,
+            "remaining_images": 510,
+            "flag_definition": "any declared alphaMode=BLEND or positive KHR_materials_transmission factor",
+            "same_predictions_noise_and_masks": true,
+            "unknown_assets": 0,
+            "metrics": {
+              "num_images": 510,
+              "num_inference_replicates": 2,
+              "mean_mae_deg": 25.802326278125538,
+              "dataset_mae_sd_ddof1_deg": 0.0,
+              "mean_image_mae_sd_ddof1_deg": 0.0,
+              "median_image_mae_sd_ddof1_deg": 0.0,
+              "p95_image_mae_sd_ddof1_deg": 0.0,
+              "dataset_maes_deg": [
+                25.802326278125538,
+                25.802326278125538
+              ],
+              "asset_macro_mean_mae_deg": 25.802326278125538,
+              "boundary_mae_deg": 30.440769548167687,
+              "boundary_images": 499,
+              "mean_pixel_angular_dispersion_deg": 0.0
+            }
+          },
+          "boundary_mask_coverage_audit": {
+            "phase": "formal",
+            "validation_counts_and_fractions": {
+              "0.01": {
+                "foreground_pixels": 8328230,
+                "unit_rejected_foreground_pixels": 952701,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 57802,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 426631,
+                  "foreground_band_pixels": 2601111,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 526070,
+                  "fraction_unit_rejected_in_band": 0.44781206275631075,
+                  "fraction_band_foreground_retained": 0.8359812403238462
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 838337,
+                  "foreground_band_pixels": 3958902,
+                  "retained_foreground_band_pixels": 3120565,
+                  "unit_rejected_outside_band": 114364,
+                  "fraction_unit_rejected_in_band": 0.8799581400670304,
+                  "fraction_band_foreground_retained": 0.7882400221071398
+                }
+              },
+              "0.5": {
+                "foreground_pixels": 8070217,
+                "unit_rejected_foreground_pixels": 694688,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 9549,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 354200,
+                  "foreground_band_pixels": 2528680,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 340488,
+                  "fraction_unit_rejected_in_band": 0.5098691786816528,
+                  "fraction_band_foreground_retained": 0.8599269183922046
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 625961,
+                  "foreground_band_pixels": 3803089,
+                  "retained_foreground_band_pixels": 3177128,
+                  "unit_rejected_outside_band": 68727,
+                  "fraction_unit_rejected_in_band": 0.9010678174950482,
+                  "fraction_band_foreground_retained": 0.8354072176591186
+                }
+              },
+              "0.99": {
+                "foreground_pixels": 7781178,
+                "unit_rejected_foreground_pixels": 509124,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 150,
+                "retained_foreground_pixels": 7272054,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 288318,
+                  "foreground_band_pixels": 2439582,
+                  "retained_foreground_band_pixels": 2151264,
+                  "unit_rejected_outside_band": 220806,
+                  "fraction_unit_rejected_in_band": 0.5663021189336979,
+                  "fraction_band_foreground_retained": 0.8818166390799735
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 448122,
+                  "foreground_band_pixels": 3632876,
+                  "retained_foreground_band_pixels": 3184754,
+                  "unit_rejected_outside_band": 61002,
+                  "fraction_unit_rejected_in_band": 0.880182430999128,
+                  "fraction_band_foreground_retained": 0.876648143234176
+                }
+              }
+            },
+            "includes_empty_views": true,
+            "note": "Error MAE is conditional on retained labels; coverage audit also includes rejected/empty views. Raw excluded normals are not restored as GT."
+          }
+        },
+        "nyuv2": {
+          "num_images": 795,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 36.36429432563062,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            36.36429432563062,
+            36.36429432563062
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 42.159297552048784,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 795
+        }
+      },
+      "training_probe": {
+        "hypersim": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 11.225519679486752,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            11.225519679486752,
+            11.225519679486752
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 18.646798372268677,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 64
+        },
+        "arb": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 14.931700140237808,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            14.931700140237808,
+            14.931700140237808
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 20.972469450935485,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 63
+        }
+      },
+      "clip_fraction": 0.0012,
+      "gradient_updates_recorded": 2500,
+      "time_loss_bins": [
+        {
+          "t_min": 0,
+          "t_max": 0.2,
+          "samples": 40000,
+          "mse": 0.04129556014530172,
+          "unit": 0.005182019912811302,
+          "cosine": 0.06679280519938184,
+          "loss": 0.0592892664083658
+        },
+        {
+          "t_min": 0.2,
+          "t_max": 0.4,
+          "samples": 0,
+          "mse": null,
+          "unit": null,
+          "cosine": null,
+          "loss": null
+        },
+        {
+          "t_min": 0.4,
+          "t_max": 0.6,
+          "samples": 0,
+          "mse": null,
+          "unit": null,
+          "cosine": null,
+          "loss": null
+        },
+        {
+          "t_min": 0.6,
+          "t_max": 0.8,
+          "samples": 0,
+          "mse": null,
+          "unit": null,
+          "cosine": null,
+          "loss": null
+        },
+        {
+          "t_min": 0.8,
+          "t_max": 0.95,
+          "samples": 0,
+          "mse": null,
+          "unit": null,
+          "cosine": null,
+          "loss": null
+        }
+      ],
+      "peak_cuda_bytes": 4948639744
+    },
+    {
+      "run": "cooldown_V_k30000_s1247",
+      "phase": "cooldown",
+      "method": "V",
+      "stable_fork_step": 30000,
+      "total_updates": 32500,
+      "summary_sha256": "8b121eb5ddce5fe1219554c75bf7ccf71b6e725f8ccf961c33c369ee4abc2ac7",
+      "validation": {
+        "hypersim": {
+          "num_images": 700,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 25.408136475086213,
+          "dataset_mae_sd_ddof1_deg": 0.020493111282634494,
+          "mean_image_mae_sd_ddof1_deg": 1.1621548064167184,
+          "median_image_mae_sd_ddof1_deg": 0.840071658868716,
+          "p95_image_mae_sd_ddof1_deg": 3.220749479388343,
+          "dataset_maes_deg": [
+            25.422627293041774,
+            25.39364565713065
+          ],
+          "mean_pixel_angular_dispersion_deg": 4.760245614051819,
+          "boundary_mae_deg": 31.950153587886266,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 700
+        },
+        "arb": {
+          "num_images": 594,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 29.838867976207926,
+          "dataset_mae_sd_ddof1_deg": 0.07333260387724042,
+          "mean_image_mae_sd_ddof1_deg": 1.7999851727271678,
+          "median_image_mae_sd_ddof1_deg": 1.1408612412238075,
+          "p95_image_mae_sd_ddof1_deg": 5.445308494657943,
+          "dataset_maes_deg": [
+            29.89072195769159,
+            29.787013994724262
+          ],
+          "mean_pixel_angular_dispersion_deg": 4.8868560582299025,
+          "boundary_mae_deg": 33.230360486699624,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 583,
+          "without_blend_or_transmission_sensitivity": {
+            "status": "completed",
+            "full_usable_assets": 198,
+            "excluded_flagged_assets": 28,
+            "remaining_assets": 170,
+            "full_images": 594,
+            "remaining_images": 510,
+            "flag_definition": "any declared alphaMode=BLEND or positive KHR_materials_transmission factor",
+            "same_predictions_noise_and_masks": true,
+            "unknown_assets": 0,
+            "metrics": {
+              "num_images": 510,
+              "num_inference_replicates": 2,
+              "mean_mae_deg": 29.805525071480695,
+              "dataset_mae_sd_ddof1_deg": 0.04845483939943827,
+              "mean_image_mae_sd_ddof1_deg": 1.7797442337981622,
+              "median_image_mae_sd_ddof1_deg": 1.0938138943428548,
+              "p95_image_mae_sd_ddof1_deg": 5.399648048832827,
+              "dataset_maes_deg": [
+                29.839787817001344,
+                29.77126232596005
+              ],
+              "asset_macro_mean_mae_deg": 29.805525071480695,
+              "boundary_mae_deg": 33.256613682649416,
+              "boundary_images": 499,
+              "mean_pixel_angular_dispersion_deg": 4.877220987806133
+            }
+          },
+          "boundary_mask_coverage_audit": {
+            "phase": "formal",
+            "validation_counts_and_fractions": {
+              "0.01": {
+                "foreground_pixels": 8328230,
+                "unit_rejected_foreground_pixels": 952701,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 57802,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 426631,
+                  "foreground_band_pixels": 2601111,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 526070,
+                  "fraction_unit_rejected_in_band": 0.44781206275631075,
+                  "fraction_band_foreground_retained": 0.8359812403238462
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 838337,
+                  "foreground_band_pixels": 3958902,
+                  "retained_foreground_band_pixels": 3120565,
+                  "unit_rejected_outside_band": 114364,
+                  "fraction_unit_rejected_in_band": 0.8799581400670304,
+                  "fraction_band_foreground_retained": 0.7882400221071398
+                }
+              },
+              "0.5": {
+                "foreground_pixels": 8070217,
+                "unit_rejected_foreground_pixels": 694688,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 9549,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 354200,
+                  "foreground_band_pixels": 2528680,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 340488,
+                  "fraction_unit_rejected_in_band": 0.5098691786816528,
+                  "fraction_band_foreground_retained": 0.8599269183922046
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 625961,
+                  "foreground_band_pixels": 3803089,
+                  "retained_foreground_band_pixels": 3177128,
+                  "unit_rejected_outside_band": 68727,
+                  "fraction_unit_rejected_in_band": 0.9010678174950482,
+                  "fraction_band_foreground_retained": 0.8354072176591186
+                }
+              },
+              "0.99": {
+                "foreground_pixels": 7781178,
+                "unit_rejected_foreground_pixels": 509124,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 150,
+                "retained_foreground_pixels": 7272054,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 288318,
+                  "foreground_band_pixels": 2439582,
+                  "retained_foreground_band_pixels": 2151264,
+                  "unit_rejected_outside_band": 220806,
+                  "fraction_unit_rejected_in_band": 0.5663021189336979,
+                  "fraction_band_foreground_retained": 0.8818166390799735
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 448122,
+                  "foreground_band_pixels": 3632876,
+                  "retained_foreground_band_pixels": 3184754,
+                  "unit_rejected_outside_band": 61002,
+                  "fraction_unit_rejected_in_band": 0.880182430999128,
+                  "fraction_band_foreground_retained": 0.876648143234176
+                }
+              }
+            },
+            "includes_empty_views": true,
+            "note": "Error MAE is conditional on retained labels; coverage audit also includes rejected/empty views. Raw excluded normals are not restored as GT."
+          }
+        },
+        "nyuv2": {
+          "num_images": 795,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 32.68197854779801,
+          "dataset_mae_sd_ddof1_deg": 0.023060924158325967,
+          "mean_image_mae_sd_ddof1_deg": 1.297226945787277,
+          "median_image_mae_sd_ddof1_deg": 0.9874864992691476,
+          "p95_image_mae_sd_ddof1_deg": 3.5372344806939333,
+          "dataset_maes_deg": [
+            32.698285083650795,
+            32.66567201194523
+          ],
+          "mean_pixel_angular_dispersion_deg": 5.34661307814736,
+          "boundary_mae_deg": 40.1341673005302,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 795
+        }
+      },
+      "training_probe": {
+        "hypersim": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 25.33896031230688,
+          "dataset_mae_sd_ddof1_deg": 0.16784140536164543,
+          "mean_image_mae_sd_ddof1_deg": 0.677301088365386,
+          "median_image_mae_sd_ddof1_deg": 0.48294556422087076,
+          "p95_image_mae_sd_ddof1_deg": 1.5360500873268834,
+          "dataset_maes_deg": [
+            25.45764210820198,
+            25.22027851641178
+          ],
+          "mean_pixel_angular_dispersion_deg": 4.610654983669519,
+          "boundary_mae_deg": 31.479833096265793,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 64
+        },
+        "arb": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 28.65809414535761,
+          "dataset_mae_sd_ddof1_deg": 0.31468332257684406,
+          "mean_image_mae_sd_ddof1_deg": 1.3066139541403743,
+          "median_image_mae_sd_ddof1_deg": 0.9440819887986884,
+          "p95_image_mae_sd_ddof1_deg": 4.387284894851043,
+          "dataset_maes_deg": [
+            28.88060885667801,
+            28.43557943403721
+          ],
+          "mean_pixel_angular_dispersion_deg": 4.647514723241329,
+          "boundary_mae_deg": 32.20030985938178,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 63
+        }
+      },
+      "clip_fraction": 0.0152,
+      "gradient_updates_recorded": 2500,
+      "time_loss_bins": [
+        {
+          "t_min": 0,
+          "t_max": 0.2,
+          "samples": 8386,
+          "mse": 0.07128296433440312,
+          "unit": 0.008443446778740406,
+          "cosine": 0.09716352707857678,
+          "loss": 0.09768470780650597
+        },
+        {
+          "t_min": 0.2,
+          "t_max": 0.4,
+          "samples": 8497,
+          "mse": 0.05108098123593935,
+          "unit": 0.004232705102562318,
+          "cosine": 0.04042559502511183,
+          "loss": 0.06224555623512314
+        },
+        {
+          "t_min": 0.4,
+          "t_max": 0.6,
+          "samples": 8388,
+          "mse": 0.056208290815281,
+          "unit": 0.0026838743443907817,
+          "cosine": 0.022352482083209054,
+          "loss": 0.062467379899180116
+        },
+        {
+          "t_min": 0.6,
+          "t_max": 0.8,
+          "samples": 8460,
+          "mse": 0.0666704248726543,
+          "unit": 0.0010742766761437069,
+          "cosine": 0.00921521193699921,
+          "loss": 0.06924279702858434
+        },
+        {
+          "t_min": 0.8,
+          "t_max": 0.95,
+          "samples": 6269,
+          "mse": 0.10356096498670274,
+          "unit": 0.00027336301624798174,
+          "cosine": 0.00222668884645272,
+          "loss": 0.10418597784944854
+        }
+      ],
+      "peak_cuda_bytes": 4949032960
+    },
+    {
+      "run": "cooldown_Xn_k30000_s1247",
+      "phase": "cooldown",
+      "method": "Xn",
+      "stable_fork_step": 30000,
+      "total_updates": 32500,
+      "summary_sha256": "195abef2e8eb8325dff9f8726d19392889421d3fef5d68ce25a6c00da61d81c6",
+      "validation": {
+        "hypersim": {
+          "num_images": 700,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 25.691949711867743,
+          "dataset_mae_sd_ddof1_deg": 0.039670707673887785,
+          "mean_image_mae_sd_ddof1_deg": 1.2150281752671852,
+          "median_image_mae_sd_ddof1_deg": 0.896675887943211,
+          "p95_image_mae_sd_ddof1_deg": 3.2778845227317217,
+          "dataset_maes_deg": [
+            25.720001138278416,
+            25.663898285457066
+          ],
+          "mean_pixel_angular_dispersion_deg": 4.109747926337378,
+          "boundary_mae_deg": 32.226150251797264,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 700
+        },
+        "arb": {
+          "num_images": 594,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 29.776259212983575,
+          "dataset_mae_sd_ddof1_deg": 0.0839765509269832,
+          "mean_image_mae_sd_ddof1_deg": 1.4370689108242882,
+          "median_image_mae_sd_ddof1_deg": 0.825234619493729,
+          "p95_image_mae_sd_ddof1_deg": 4.699986053249769,
+          "dataset_maes_deg": [
+            29.835639601604704,
+            29.71687882436245
+          ],
+          "mean_pixel_angular_dispersion_deg": 3.7420388221339342,
+          "boundary_mae_deg": 33.458866510751115,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 583,
+          "without_blend_or_transmission_sensitivity": {
+            "status": "completed",
+            "full_usable_assets": 198,
+            "excluded_flagged_assets": 28,
+            "remaining_assets": 170,
+            "full_images": 594,
+            "remaining_images": 510,
+            "flag_definition": "any declared alphaMode=BLEND or positive KHR_materials_transmission factor",
+            "same_predictions_noise_and_masks": true,
+            "unknown_assets": 0,
+            "metrics": {
+              "num_images": 510,
+              "num_inference_replicates": 2,
+              "mean_mae_deg": 29.779183202865077,
+              "dataset_mae_sd_ddof1_deg": 0.05404518515507131,
+              "mean_image_mae_sd_ddof1_deg": 1.438238174082288,
+              "median_image_mae_sd_ddof1_deg": 0.8214164521934301,
+              "p95_image_mae_sd_ddof1_deg": 4.729168126548957,
+              "dataset_maes_deg": [
+                29.81739891977871,
+                29.740967485951444
+              ],
+              "asset_macro_mean_mae_deg": 29.779183202865077,
+              "boundary_mae_deg": 33.51795144023781,
+              "boundary_images": 499,
+              "mean_pixel_angular_dispersion_deg": 3.742236815480625
+            }
+          },
+          "boundary_mask_coverage_audit": {
+            "phase": "formal",
+            "validation_counts_and_fractions": {
+              "0.01": {
+                "foreground_pixels": 8328230,
+                "unit_rejected_foreground_pixels": 952701,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 57802,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 426631,
+                  "foreground_band_pixels": 2601111,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 526070,
+                  "fraction_unit_rejected_in_band": 0.44781206275631075,
+                  "fraction_band_foreground_retained": 0.8359812403238462
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 838337,
+                  "foreground_band_pixels": 3958902,
+                  "retained_foreground_band_pixels": 3120565,
+                  "unit_rejected_outside_band": 114364,
+                  "fraction_unit_rejected_in_band": 0.8799581400670304,
+                  "fraction_band_foreground_retained": 0.7882400221071398
+                }
+              },
+              "0.5": {
+                "foreground_pixels": 8070217,
+                "unit_rejected_foreground_pixels": 694688,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 9549,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 354200,
+                  "foreground_band_pixels": 2528680,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 340488,
+                  "fraction_unit_rejected_in_band": 0.5098691786816528,
+                  "fraction_band_foreground_retained": 0.8599269183922046
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 625961,
+                  "foreground_band_pixels": 3803089,
+                  "retained_foreground_band_pixels": 3177128,
+                  "unit_rejected_outside_band": 68727,
+                  "fraction_unit_rejected_in_band": 0.9010678174950482,
+                  "fraction_band_foreground_retained": 0.8354072176591186
+                }
+              },
+              "0.99": {
+                "foreground_pixels": 7781178,
+                "unit_rejected_foreground_pixels": 509124,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 150,
+                "retained_foreground_pixels": 7272054,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 288318,
+                  "foreground_band_pixels": 2439582,
+                  "retained_foreground_band_pixels": 2151264,
+                  "unit_rejected_outside_band": 220806,
+                  "fraction_unit_rejected_in_band": 0.5663021189336979,
+                  "fraction_band_foreground_retained": 0.8818166390799735
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 448122,
+                  "foreground_band_pixels": 3632876,
+                  "retained_foreground_band_pixels": 3184754,
+                  "unit_rejected_outside_band": 61002,
+                  "fraction_unit_rejected_in_band": 0.880182430999128,
+                  "fraction_band_foreground_retained": 0.876648143234176
+                }
+              }
+            },
+            "includes_empty_views": true,
+            "note": "Error MAE is conditional on retained labels; coverage audit also includes rejected/empty views. Raw excluded normals are not restored as GT."
+          }
+        },
+        "nyuv2": {
+          "num_images": 795,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 32.02736458268555,
+          "dataset_mae_sd_ddof1_deg": 0.01516399713081982,
+          "mean_image_mae_sd_ddof1_deg": 1.2856222140691012,
+          "median_image_mae_sd_ddof1_deg": 0.9902068254594346,
+          "p95_image_mae_sd_ddof1_deg": 3.594278385692094,
+          "dataset_maes_deg": [
+            32.01664201748446,
+            32.03808714788665
+          ],
+          "mean_pixel_angular_dispersion_deg": 4.612740045523494,
+          "boundary_mae_deg": 39.75557603296244,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 795
+        }
+      },
+      "training_probe": {
+        "hypersim": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 25.99046954512596,
+          "dataset_mae_sd_ddof1_deg": 0.04953443241158056,
+          "mean_image_mae_sd_ddof1_deg": 0.9052943284078097,
+          "median_image_mae_sd_ddof1_deg": 0.670645373952379,
+          "p95_image_mae_sd_ddof1_deg": 2.3817686483940443,
+          "dataset_maes_deg": [
+            26.025495678186417,
+            25.955443412065506
+          ],
+          "mean_pixel_angular_dispersion_deg": 3.943064332008362,
+          "boundary_mae_deg": 32.25476588308811,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 64
+        },
+        "arb": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 28.633725561201572,
+          "dataset_mae_sd_ddof1_deg": 0.27337587070089303,
+          "mean_image_mae_sd_ddof1_deg": 1.2344058870025094,
+          "median_image_mae_sd_ddof1_deg": 0.8234017373456872,
+          "p95_image_mae_sd_ddof1_deg": 4.380346984106484,
+          "dataset_maes_deg": [
+            28.82703149318695,
+            28.440419629216194
+          ],
+          "mean_pixel_angular_dispersion_deg": 3.722133094444871,
+          "boundary_mae_deg": 32.648446052793474,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 63
+        }
+      },
+      "clip_fraction": 0.0008,
+      "gradient_updates_recorded": 2500,
+      "time_loss_bins": [
+        {
+          "t_min": 0,
+          "t_max": 0.2,
+          "samples": 8386,
+          "mse": 0.06090648701420394,
+          "unit": 0.007406057472103143,
+          "cosine": 0.09943872635401896,
+          "loss": 0.08761768297066375
+        },
+        {
+          "t_min": 0.2,
+          "t_max": 0.4,
+          "samples": 8497,
+          "mse": 0.02662598166308052,
+          "unit": 0.002828295593441783,
+          "cosine": 0.04247915776176091,
+          "loss": 0.037952845025722756
+        },
+        {
+          "t_min": 0.4,
+          "t_max": 0.6,
+          "samples": 8388,
+          "mse": 0.015619614889757428,
+          "unit": 0.0016817557018479164,
+          "cosine": 0.024595071542363834,
+          "loss": 0.02218882171749105
+        },
+        {
+          "t_min": 0.6,
+          "t_max": 0.8,
+          "samples": 8460,
+          "mse": 0.0074159328968530225,
+          "unit": 0.0008618771569857299,
+          "cosine": 0.011308718280859243,
+          "loss": 0.010458581752488368
+        },
+        {
+          "t_min": 0.8,
+          "t_max": 0.95,
+          "samples": 6269,
+          "mse": 0.0027077611645764917,
+          "unit": 0.0004902603704150137,
+          "cosine": 0.0038889316833386417,
+          "loss": 0.0038025591786548453
+        }
+      ],
+      "peak_cuda_bytes": 4949032960
+    },
+    {
+      "run": "cooldown_R_k50000_s1247",
+      "phase": "cooldown",
+      "method": "R",
+      "stable_fork_step": 50000,
+      "total_updates": 52500,
+      "summary_sha256": "c6a5e18151c0d06c3940690e2e2422b3958a0c9bfa5889b43e749ed8ceb6cc78",
+      "validation": {
+        "hypersim": {
+          "num_images": 700,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 24.345488015583584,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            24.345488015583584,
+            24.345488015583584
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 31.850021989686148,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 700
+        },
+        "arb": {
+          "num_images": 594,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 24.971326313436233,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            24.971326313436233,
+            24.971326313436233
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 29.46378126438854,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 583,
+          "without_blend_or_transmission_sensitivity": {
+            "status": "completed",
+            "full_usable_assets": 198,
+            "excluded_flagged_assets": 28,
+            "remaining_assets": 170,
+            "full_images": 594,
+            "remaining_images": 510,
+            "flag_definition": "any declared alphaMode=BLEND or positive KHR_materials_transmission factor",
+            "same_predictions_noise_and_masks": true,
+            "unknown_assets": 0,
+            "metrics": {
+              "num_images": 510,
+              "num_inference_replicates": 2,
+              "mean_mae_deg": 25.038009861403822,
+              "dataset_mae_sd_ddof1_deg": 0.0,
+              "mean_image_mae_sd_ddof1_deg": 0.0,
+              "median_image_mae_sd_ddof1_deg": 0.0,
+              "p95_image_mae_sd_ddof1_deg": 0.0,
+              "dataset_maes_deg": [
+                25.038009861403822,
+                25.038009861403822
+              ],
+              "asset_macro_mean_mae_deg": 25.03800986140382,
+              "boundary_mae_deg": 29.447760512212476,
+              "boundary_images": 499,
+              "mean_pixel_angular_dispersion_deg": 0.0
+            }
+          },
+          "boundary_mask_coverage_audit": {
+            "phase": "formal",
+            "validation_counts_and_fractions": {
+              "0.01": {
+                "foreground_pixels": 8328230,
+                "unit_rejected_foreground_pixels": 952701,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 57802,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 426631,
+                  "foreground_band_pixels": 2601111,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 526070,
+                  "fraction_unit_rejected_in_band": 0.44781206275631075,
+                  "fraction_band_foreground_retained": 0.8359812403238462
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 838337,
+                  "foreground_band_pixels": 3958902,
+                  "retained_foreground_band_pixels": 3120565,
+                  "unit_rejected_outside_band": 114364,
+                  "fraction_unit_rejected_in_band": 0.8799581400670304,
+                  "fraction_band_foreground_retained": 0.7882400221071398
+                }
+              },
+              "0.5": {
+                "foreground_pixels": 8070217,
+                "unit_rejected_foreground_pixels": 694688,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 9549,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 354200,
+                  "foreground_band_pixels": 2528680,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 340488,
+                  "fraction_unit_rejected_in_band": 0.5098691786816528,
+                  "fraction_band_foreground_retained": 0.8599269183922046
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 625961,
+                  "foreground_band_pixels": 3803089,
+                  "retained_foreground_band_pixels": 3177128,
+                  "unit_rejected_outside_band": 68727,
+                  "fraction_unit_rejected_in_band": 0.9010678174950482,
+                  "fraction_band_foreground_retained": 0.8354072176591186
+                }
+              },
+              "0.99": {
+                "foreground_pixels": 7781178,
+                "unit_rejected_foreground_pixels": 509124,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 150,
+                "retained_foreground_pixels": 7272054,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 288318,
+                  "foreground_band_pixels": 2439582,
+                  "retained_foreground_band_pixels": 2151264,
+                  "unit_rejected_outside_band": 220806,
+                  "fraction_unit_rejected_in_band": 0.5663021189336979,
+                  "fraction_band_foreground_retained": 0.8818166390799735
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 448122,
+                  "foreground_band_pixels": 3632876,
+                  "retained_foreground_band_pixels": 3184754,
+                  "unit_rejected_outside_band": 61002,
+                  "fraction_unit_rejected_in_band": 0.880182430999128,
+                  "fraction_band_foreground_retained": 0.876648143234176
+                }
+              }
+            },
+            "includes_empty_views": true,
+            "note": "Error MAE is conditional on retained labels; coverage audit also includes rejected/empty views. Raw excluded normals are not restored as GT."
+          }
+        },
+        "nyuv2": {
+          "num_images": 795,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 35.10476284147059,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            35.10476284147059,
+            35.10476284147059
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 41.86626623861445,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 795
+        }
+      },
+      "training_probe": {
+        "hypersim": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 9.09591343253851,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            9.09591343253851,
+            9.09591343253851
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 15.630035758018494,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 64
+        },
+        "arb": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 11.044715750962496,
+          "dataset_mae_sd_ddof1_deg": 0.0,
+          "mean_image_mae_sd_ddof1_deg": 0.0,
+          "median_image_mae_sd_ddof1_deg": 0.0,
+          "p95_image_mae_sd_ddof1_deg": 0.0,
+          "dataset_maes_deg": [
+            11.044715750962496,
+            11.044715750962496
+          ],
+          "mean_pixel_angular_dispersion_deg": 0.0,
+          "boundary_mae_deg": 15.996544603317503,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 63
+        }
+      },
+      "clip_fraction": 0.0012,
+      "gradient_updates_recorded": 2500,
+      "time_loss_bins": [
+        {
+          "t_min": 0,
+          "t_max": 0.2,
+          "samples": 40000,
+          "mse": 0.02940278734351159,
+          "unit": 0.0037362734170168096,
+          "cosine": 0.0475026465426843,
+          "loss": 0.04221251731377524
+        },
+        {
+          "t_min": 0.2,
+          "t_max": 0.4,
+          "samples": 0,
+          "mse": null,
+          "unit": null,
+          "cosine": null,
+          "loss": null
+        },
+        {
+          "t_min": 0.4,
+          "t_max": 0.6,
+          "samples": 0,
+          "mse": null,
+          "unit": null,
+          "cosine": null,
+          "loss": null
+        },
+        {
+          "t_min": 0.6,
+          "t_max": 0.8,
+          "samples": 0,
+          "mse": null,
+          "unit": null,
+          "cosine": null,
+          "loss": null
+        },
+        {
+          "t_min": 0.8,
+          "t_max": 0.95,
+          "samples": 0,
+          "mse": null,
+          "unit": null,
+          "cosine": null,
+          "loss": null
+        }
+      ],
+      "peak_cuda_bytes": 4948639744
+    },
+    {
+      "run": "cooldown_V_k50000_s1247",
+      "phase": "cooldown",
+      "method": "V",
+      "stable_fork_step": 50000,
+      "total_updates": 52500,
+      "summary_sha256": "4c0a27671de46bee379e0bf6016ec5637908058b3d9ada56e4e1eed8e21a4fa6",
+      "validation": {
+        "hypersim": {
+          "num_images": 700,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 23.43783227784293,
+          "dataset_mae_sd_ddof1_deg": 0.01737709169307421,
+          "mean_image_mae_sd_ddof1_deg": 1.2142386848359836,
+          "median_image_mae_sd_ddof1_deg": 0.8594376299972897,
+          "p95_image_mae_sd_ddof1_deg": 3.4330334447038164,
+          "dataset_maes_deg": [
+            23.425544818469458,
+            23.450119737216404
+          ],
+          "mean_pixel_angular_dispersion_deg": 4.465493453911373,
+          "boundary_mae_deg": 29.900251319749014,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 700
+        },
+        "arb": {
+          "num_images": 594,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 27.31660935854671,
+          "dataset_mae_sd_ddof1_deg": 0.12286549033674235,
+          "mean_image_mae_sd_ddof1_deg": 1.6811617377234538,
+          "median_image_mae_sd_ddof1_deg": 1.0928677818874823,
+          "p95_image_mae_sd_ddof1_deg": 5.631785978347679,
+          "dataset_maes_deg": [
+            27.40348837993763,
+            27.22973033715579
+          ],
+          "mean_pixel_angular_dispersion_deg": 4.4916842102201695,
+          "boundary_mae_deg": 31.04583854413564,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 583,
+          "without_blend_or_transmission_sensitivity": {
+            "status": "completed",
+            "full_usable_assets": 198,
+            "excluded_flagged_assets": 28,
+            "remaining_assets": 170,
+            "full_images": 594,
+            "remaining_images": 510,
+            "flag_definition": "any declared alphaMode=BLEND or positive KHR_materials_transmission factor",
+            "same_predictions_noise_and_masks": true,
+            "unknown_assets": 0,
+            "metrics": {
+              "num_images": 510,
+              "num_inference_replicates": 2,
+              "mean_mae_deg": 27.238935898332038,
+              "dataset_mae_sd_ddof1_deg": 0.10212482008652568,
+              "mean_image_mae_sd_ddof1_deg": 1.7321591116417672,
+              "median_image_mae_sd_ddof1_deg": 1.1352823471801177,
+              "p95_image_mae_sd_ddof1_deg": 5.868084678464998,
+              "dataset_maes_deg": [
+                27.311149051142674,
+                27.166722745521398
+              ],
+              "asset_macro_mean_mae_deg": 27.238935898332034,
+              "boundary_mae_deg": 31.0301181682365,
+              "boundary_images": 499,
+              "mean_pixel_angular_dispersion_deg": 4.5117556501837335
+            }
+          },
+          "boundary_mask_coverage_audit": {
+            "phase": "formal",
+            "validation_counts_and_fractions": {
+              "0.01": {
+                "foreground_pixels": 8328230,
+                "unit_rejected_foreground_pixels": 952701,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 57802,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 426631,
+                  "foreground_band_pixels": 2601111,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 526070,
+                  "fraction_unit_rejected_in_band": 0.44781206275631075,
+                  "fraction_band_foreground_retained": 0.8359812403238462
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 838337,
+                  "foreground_band_pixels": 3958902,
+                  "retained_foreground_band_pixels": 3120565,
+                  "unit_rejected_outside_band": 114364,
+                  "fraction_unit_rejected_in_band": 0.8799581400670304,
+                  "fraction_band_foreground_retained": 0.7882400221071398
+                }
+              },
+              "0.5": {
+                "foreground_pixels": 8070217,
+                "unit_rejected_foreground_pixels": 694688,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 9549,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 354200,
+                  "foreground_band_pixels": 2528680,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 340488,
+                  "fraction_unit_rejected_in_band": 0.5098691786816528,
+                  "fraction_band_foreground_retained": 0.8599269183922046
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 625961,
+                  "foreground_band_pixels": 3803089,
+                  "retained_foreground_band_pixels": 3177128,
+                  "unit_rejected_outside_band": 68727,
+                  "fraction_unit_rejected_in_band": 0.9010678174950482,
+                  "fraction_band_foreground_retained": 0.8354072176591186
+                }
+              },
+              "0.99": {
+                "foreground_pixels": 7781178,
+                "unit_rejected_foreground_pixels": 509124,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 150,
+                "retained_foreground_pixels": 7272054,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 288318,
+                  "foreground_band_pixels": 2439582,
+                  "retained_foreground_band_pixels": 2151264,
+                  "unit_rejected_outside_band": 220806,
+                  "fraction_unit_rejected_in_band": 0.5663021189336979,
+                  "fraction_band_foreground_retained": 0.8818166390799735
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 448122,
+                  "foreground_band_pixels": 3632876,
+                  "retained_foreground_band_pixels": 3184754,
+                  "unit_rejected_outside_band": 61002,
+                  "fraction_unit_rejected_in_band": 0.880182430999128,
+                  "fraction_band_foreground_retained": 0.876648143234176
+                }
+              }
+            },
+            "includes_empty_views": true,
+            "note": "Error MAE is conditional on retained labels; coverage audit also includes rejected/empty views. Raw excluded normals are not restored as GT."
+          }
+        },
+        "nyuv2": {
+          "num_images": 795,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 30.573503310725375,
+          "dataset_mae_sd_ddof1_deg": 0.009843171156376942,
+          "mean_image_mae_sd_ddof1_deg": 1.3937491512781566,
+          "median_image_mae_sd_ddof1_deg": 1.0453052319303324,
+          "p95_image_mae_sd_ddof1_deg": 3.693070463731712,
+          "dataset_maes_deg": [
+            30.56654313765232,
+            30.58046348379843
+          ],
+          "mean_pixel_angular_dispersion_deg": 5.372558755394798,
+          "boundary_mae_deg": 39.24405601069612,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 795
+        }
+      },
+      "training_probe": {
+        "hypersim": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 21.30657470226288,
+          "dataset_mae_sd_ddof1_deg": 0.10930751443821558,
+          "mean_image_mae_sd_ddof1_deg": 0.8067866277991468,
+          "median_image_mae_sd_ddof1_deg": 0.7424163993446102,
+          "p95_image_mae_sd_ddof1_deg": 2.160891109254593,
+          "dataset_maes_deg": [
+            21.383866786956787,
+            21.22928261756897
+          ],
+          "mean_pixel_angular_dispersion_deg": 4.228624600917101,
+          "boundary_mae_deg": 27.85500541329384,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 64
+        },
+        "arb": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 25.011733304709196,
+          "dataset_mae_sd_ddof1_deg": 0.7107997460049887,
+          "mean_image_mae_sd_ddof1_deg": 1.420494480667363,
+          "median_image_mae_sd_ddof1_deg": 0.8199403009711845,
+          "p95_image_mae_sd_ddof1_deg": 6.623790147732488,
+          "dataset_maes_deg": [
+            25.514344625175,
+            24.509121984243393
+          ],
+          "mean_pixel_angular_dispersion_deg": 4.221218541264534,
+          "boundary_mae_deg": 29.53131444113595,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 63
+        }
+      },
+      "clip_fraction": 0.0164,
+      "gradient_updates_recorded": 2500,
+      "time_loss_bins": [
+        {
+          "t_min": 0,
+          "t_max": 0.2,
+          "samples": 8374,
+          "mse": 0.06268517208157842,
+          "unit": 0.0070693407336810945,
+          "cosine": 0.0848126416187675,
+          "loss": 0.08565566766561859
+        },
+        {
+          "t_min": 0.2,
+          "t_max": 0.4,
+          "samples": 8460,
+          "mse": 0.04799236878724499,
+          "unit": 0.0038632700216447843,
+          "cosine": 0.037924485172782324,
+          "loss": 0.05843930756278285
+        },
+        {
+          "t_min": 0.4,
+          "t_max": 0.6,
+          "samples": 8491,
+          "mse": 0.05205925614572787,
+          "unit": 0.0023670251366228454,
+          "cosine": 0.020638445589571626,
+          "loss": 0.05781062381126142
+        },
+        {
+          "t_min": 0.6,
+          "t_max": 0.8,
+          "samples": 8349,
+          "mse": 0.06395188885620072,
+          "unit": 0.0009392831143610732,
+          "cosine": 0.008974697912445626,
+          "loss": 0.06643038409505968
+        },
+        {
+          "t_min": 0.8,
+          "t_max": 0.95,
+          "samples": 6326,
+          "mse": 0.09436905996432973,
+          "unit": 0.00020713627978030048,
+          "cosine": 0.002087659894425028,
+          "loss": 0.09494275898229725
+        }
+      ],
+      "peak_cuda_bytes": 4949032960
+    },
+    {
+      "run": "cooldown_Xn_k50000_s1247",
+      "phase": "cooldown",
+      "method": "Xn",
+      "stable_fork_step": 50000,
+      "total_updates": 52500,
+      "summary_sha256": "492a2bef4e80183ce531dcb22112274f928e427971c9a40d42897a2fc204a670",
+      "validation": {
+        "hypersim": {
+          "num_images": 700,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 23.20173097065517,
+          "dataset_mae_sd_ddof1_deg": 0.023983215702656695,
+          "mean_image_mae_sd_ddof1_deg": 1.1695743920582204,
+          "median_image_mae_sd_ddof1_deg": 0.842926854974238,
+          "p95_image_mae_sd_ddof1_deg": 3.5772484289303446,
+          "dataset_maes_deg": [
+            23.218689665113178,
+            23.18477227619716
+          ],
+          "mean_pixel_angular_dispersion_deg": 3.8566316664218903,
+          "boundary_mae_deg": 29.738111040251596,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 700
+        },
+        "arb": {
+          "num_images": 594,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 27.131077222551163,
+          "dataset_mae_sd_ddof1_deg": 0.07548595079416018,
+          "mean_image_mae_sd_ddof1_deg": 1.5751225152695993,
+          "median_image_mae_sd_ddof1_deg": 0.8919426282680435,
+          "p95_image_mae_sd_ddof1_deg": 5.32787752920278,
+          "dataset_maes_deg": [
+            27.184453850242026,
+            27.077700594860296
+          ],
+          "mean_pixel_angular_dispersion_deg": 3.766667354789246,
+          "boundary_mae_deg": 31.15263594730436,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 583,
+          "without_blend_or_transmission_sensitivity": {
+            "status": "completed",
+            "full_usable_assets": 198,
+            "excluded_flagged_assets": 28,
+            "remaining_assets": 170,
+            "full_images": 594,
+            "remaining_images": 510,
+            "flag_definition": "any declared alphaMode=BLEND or positive KHR_materials_transmission factor",
+            "same_predictions_noise_and_masks": true,
+            "unknown_assets": 0,
+            "metrics": {
+              "num_images": 510,
+              "num_inference_replicates": 2,
+              "mean_mae_deg": 27.102019286155702,
+              "dataset_mae_sd_ddof1_deg": 0.02908232972448419,
+              "mean_image_mae_sd_ddof1_deg": 1.5656792689398793,
+              "median_image_mae_sd_ddof1_deg": 0.8837219697596906,
+              "p95_image_mae_sd_ddof1_deg": 5.256208263161589,
+              "dataset_maes_deg": [
+                27.122583598716588,
+                27.081454973594816
+              ],
+              "asset_macro_mean_mae_deg": 27.102019286155702,
+              "boundary_mae_deg": 31.191214581529696,
+              "boundary_images": 499,
+              "mean_pixel_angular_dispersion_deg": 3.7609816385250467
+            }
+          },
+          "boundary_mask_coverage_audit": {
+            "phase": "formal",
+            "validation_counts_and_fractions": {
+              "0.01": {
+                "foreground_pixels": 8328230,
+                "unit_rejected_foreground_pixels": 952701,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 57802,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 426631,
+                  "foreground_band_pixels": 2601111,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 526070,
+                  "fraction_unit_rejected_in_band": 0.44781206275631075,
+                  "fraction_band_foreground_retained": 0.8359812403238462
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 838337,
+                  "foreground_band_pixels": 3958902,
+                  "retained_foreground_band_pixels": 3120565,
+                  "unit_rejected_outside_band": 114364,
+                  "fraction_unit_rejected_in_band": 0.8799581400670304,
+                  "fraction_band_foreground_retained": 0.7882400221071398
+                }
+              },
+              "0.5": {
+                "foreground_pixels": 8070217,
+                "unit_rejected_foreground_pixels": 694688,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 9549,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 354200,
+                  "foreground_band_pixels": 2528680,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 340488,
+                  "fraction_unit_rejected_in_band": 0.5098691786816528,
+                  "fraction_band_foreground_retained": 0.8599269183922046
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 625961,
+                  "foreground_band_pixels": 3803089,
+                  "retained_foreground_band_pixels": 3177128,
+                  "unit_rejected_outside_band": 68727,
+                  "fraction_unit_rejected_in_band": 0.9010678174950482,
+                  "fraction_band_foreground_retained": 0.8354072176591186
+                }
+              },
+              "0.99": {
+                "foreground_pixels": 7781178,
+                "unit_rejected_foreground_pixels": 509124,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 150,
+                "retained_foreground_pixels": 7272054,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 288318,
+                  "foreground_band_pixels": 2439582,
+                  "retained_foreground_band_pixels": 2151264,
+                  "unit_rejected_outside_band": 220806,
+                  "fraction_unit_rejected_in_band": 0.5663021189336979,
+                  "fraction_band_foreground_retained": 0.8818166390799735
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 448122,
+                  "foreground_band_pixels": 3632876,
+                  "retained_foreground_band_pixels": 3184754,
+                  "unit_rejected_outside_band": 61002,
+                  "fraction_unit_rejected_in_band": 0.880182430999128,
+                  "fraction_band_foreground_retained": 0.876648143234176
+                }
+              }
+            },
+            "includes_empty_views": true,
+            "note": "Error MAE is conditional on retained labels; coverage audit also includes rejected/empty views. Raw excluded normals are not restored as GT."
+          }
+        },
+        "nyuv2": {
+          "num_images": 795,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 30.880145777696335,
+          "dataset_mae_sd_ddof1_deg": 0.021111339666398648,
+          "mean_image_mae_sd_ddof1_deg": 1.3922088647459052,
+          "median_image_mae_sd_ddof1_deg": 0.950510563308358,
+          "p95_image_mae_sd_ddof1_deg": 3.8853686632231548,
+          "dataset_maes_deg": [
+            30.86521780625829,
+            30.895073749134376
+          ],
+          "mean_pixel_angular_dispersion_deg": 4.812905050673574,
+          "boundary_mae_deg": 39.27783761294383,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 795
+        }
+      },
+      "training_probe": {
+        "hypersim": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 21.32223604619503,
+          "dataset_mae_sd_ddof1_deg": 0.2257890125488645,
+          "mean_image_mae_sd_ddof1_deg": 0.9586470124133861,
+          "median_image_mae_sd_ddof1_deg": 0.63893273643363,
+          "p95_image_mae_sd_ddof1_deg": 3.1024204488851055,
+          "dataset_maes_deg": [
+            21.481892988085747,
+            21.162579104304314
+          ],
+          "mean_pixel_angular_dispersion_deg": 3.6716103740036488,
+          "boundary_mae_deg": 28.104571670293808,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 64
+        },
+        "arb": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 24.982926592230797,
+          "dataset_mae_sd_ddof1_deg": 0.6122797753950532,
+          "mean_image_mae_sd_ddof1_deg": 1.442336763538414,
+          "median_image_mae_sd_ddof1_deg": 0.8376965996614301,
+          "p95_image_mae_sd_ddof1_deg": 4.865865259395424,
+          "dataset_maes_deg": [
+            25.415873773396015,
+            24.54997941106558
+          ],
+          "mean_pixel_angular_dispersion_deg": 3.6357894595712423,
+          "boundary_mae_deg": 29.593622813149103,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 63
+        }
+      },
+      "clip_fraction": 0.004,
+      "gradient_updates_recorded": 2500,
+      "time_loss_bins": [
+        {
+          "t_min": 0,
+          "t_max": 0.2,
+          "samples": 8374,
+          "mse": 0.05341374520744302,
+          "unit": 0.006251826216793405,
+          "cosine": 0.08686295714782047,
+          "loss": 0.07669244098865292
+        },
+        {
+          "t_min": 0.2,
+          "t_max": 0.4,
+          "samples": 8460,
+          "mse": 0.02507341893319951,
+          "unit": 0.002620423139420214,
+          "cosine": 0.040016399050839015,
+          "loss": 0.035732624481010236
+        },
+        {
+          "t_min": 0.4,
+          "t_max": 0.6,
+          "samples": 8491,
+          "mse": 0.014491667384953772,
+          "unit": 0.0015139255895229929,
+          "cosine": 0.022811063429820422,
+          "loss": 0.020572914640383567
+        },
+        {
+          "t_min": 0.6,
+          "t_max": 0.8,
+          "samples": 8349,
+          "mse": 0.007185655893874062,
+          "unit": 0.0007700142896273264,
+          "cosine": 0.010974094689147658,
+          "loss": 0.010121683144369554
+        },
+        {
+          "t_min": 0.8,
+          "t_max": 0.95,
+          "samples": 6326,
+          "mse": 0.002477697861024682,
+          "unit": 0.0004024177418484303,
+          "cosine": 0.0035733191572525974,
+          "loss": 0.0034716320832073183
+        }
+      ],
+      "peak_cuda_bytes": 4949032960
+    },
+    {
+      "run": "clip_diagnostic_Xv_s1247",
+      "phase": "clip_diagnostic",
+      "method": "Xv",
+      "stable_fork_step": null,
+      "total_updates": 2500,
+      "summary_sha256": "868fdb75fa371e964e076674c566441f1140cdeda8de19051780e02b854f0d50",
+      "validation": {
+        "hypersim": {
+          "num_images": 700,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 46.19967526980808,
+          "dataset_mae_sd_ddof1_deg": 0.038293682467592675,
+          "mean_image_mae_sd_ddof1_deg": 1.1597477247564514,
+          "median_image_mae_sd_ddof1_deg": 0.9696809730598412,
+          "p95_image_mae_sd_ddof1_deg": 2.9102454193437537,
+          "dataset_maes_deg": [
+            46.226752992357525,
+            46.17259754725865
+          ],
+          "mean_pixel_angular_dispersion_deg": 9.439579194613865,
+          "boundary_mae_deg": 49.305009036745346,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 700
+        },
+        "arb": {
+          "num_images": 594,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 37.646125488409695,
+          "dataset_mae_sd_ddof1_deg": 0.043570722882493786,
+          "mean_image_mae_sd_ddof1_deg": 1.5667602144008994,
+          "median_image_mae_sd_ddof1_deg": 1.2456963006854411,
+          "p95_image_mae_sd_ddof1_deg": 4.241770101816446,
+          "dataset_maes_deg": [
+            37.6769346420211,
+            37.61531633479828
+          ],
+          "mean_pixel_angular_dispersion_deg": 7.315396091753385,
+          "boundary_mae_deg": 40.94118683783922,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 583,
+          "without_blend_or_transmission_sensitivity": {
+            "status": "completed",
+            "full_usable_assets": 198,
+            "excluded_flagged_assets": 28,
+            "remaining_assets": 170,
+            "full_images": 594,
+            "remaining_images": 510,
+            "flag_definition": "any declared alphaMode=BLEND or positive KHR_materials_transmission factor",
+            "same_predictions_noise_and_masks": true,
+            "unknown_assets": 0,
+            "metrics": {
+              "num_images": 510,
+              "num_inference_replicates": 2,
+              "mean_mae_deg": 37.71504230312273,
+              "dataset_mae_sd_ddof1_deg": 0.0855977039865352,
+              "mean_image_mae_sd_ddof1_deg": 1.569560366939303,
+              "median_image_mae_sd_ddof1_deg": 1.274124181418645,
+              "p95_image_mae_sd_ddof1_deg": 4.4687857731031055,
+              "dataset_maes_deg": [
+                37.7755690200656,
+                37.65451558617985
+              ],
+              "asset_macro_mean_mae_deg": 37.71504230312273,
+              "boundary_mae_deg": 41.03774783797637,
+              "boundary_images": 499,
+              "mean_pixel_angular_dispersion_deg": 7.3246115034701775
+            }
+          },
+          "boundary_mask_coverage_audit": {
+            "phase": "formal",
+            "validation_counts_and_fractions": {
+              "0.01": {
+                "foreground_pixels": 8328230,
+                "unit_rejected_foreground_pixels": 952701,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 57802,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 426631,
+                  "foreground_band_pixels": 2601111,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 526070,
+                  "fraction_unit_rejected_in_band": 0.44781206275631075,
+                  "fraction_band_foreground_retained": 0.8359812403238462
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 838337,
+                  "foreground_band_pixels": 3958902,
+                  "retained_foreground_band_pixels": 3120565,
+                  "unit_rejected_outside_band": 114364,
+                  "fraction_unit_rejected_in_band": 0.8799581400670304,
+                  "fraction_band_foreground_retained": 0.7882400221071398
+                }
+              },
+              "0.5": {
+                "foreground_pixels": 8070217,
+                "unit_rejected_foreground_pixels": 694688,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 9549,
+                "retained_foreground_pixels": 7375529,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 354200,
+                  "foreground_band_pixels": 2528680,
+                  "retained_foreground_band_pixels": 2174480,
+                  "unit_rejected_outside_band": 340488,
+                  "fraction_unit_rejected_in_band": 0.5098691786816528,
+                  "fraction_band_foreground_retained": 0.8599269183922046
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 625961,
+                  "foreground_band_pixels": 3803089,
+                  "retained_foreground_band_pixels": 3177128,
+                  "unit_rejected_outside_band": 68727,
+                  "fraction_unit_rejected_in_band": 0.9010678174950482,
+                  "fraction_band_foreground_retained": 0.8354072176591186
+                }
+              },
+              "0.99": {
+                "foreground_pixels": 7781178,
+                "unit_rejected_foreground_pixels": 509124,
+                "nonfinite_foreground_pixels": 0,
+                "zero_foreground_pixels": 150,
+                "retained_foreground_pixels": 7272054,
+                "strict_gt_before_valid_intersection": {
+                  "unit_rejected_in_band": 288318,
+                  "foreground_band_pixels": 2439582,
+                  "retained_foreground_band_pixels": 2151264,
+                  "unit_rejected_outside_band": 220806,
+                  "fraction_unit_rejected_in_band": 0.5663021189336979,
+                  "fraction_band_foreground_retained": 0.8818166390799735
+                },
+                "relaxed_direction_plus_silhouette": {
+                  "unit_rejected_in_band": 448122,
+                  "foreground_band_pixels": 3632876,
+                  "retained_foreground_band_pixels": 3184754,
+                  "unit_rejected_outside_band": 61002,
+                  "fraction_unit_rejected_in_band": 0.880182430999128,
+                  "fraction_band_foreground_retained": 0.876648143234176
+                }
+              }
+            },
+            "includes_empty_views": true,
+            "note": "Error MAE is conditional on retained labels; coverage audit also includes rejected/empty views. Raw excluded normals are not restored as GT."
+          }
+        },
+        "nyuv2": {
+          "num_images": 795,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 44.032786061029014,
+          "dataset_mae_sd_ddof1_deg": 0.045160110460591665,
+          "mean_image_mae_sd_ddof1_deg": 1.3691320700459826,
+          "median_image_mae_sd_ddof1_deg": 1.083593452166357,
+          "p95_image_mae_sd_ddof1_deg": 3.474152719330539,
+          "dataset_maes_deg": [
+            44.0008530406832,
+            44.06471908137483
+          ],
+          "mean_pixel_angular_dispersion_deg": 10.004036094257666,
+          "boundary_mae_deg": 47.94572729434607,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 795
+        }
+      },
+      "training_probe": {
+        "hypersim": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 49.60915753245354,
+          "dataset_mae_sd_ddof1_deg": 0.11625782478560158,
+          "mean_image_mae_sd_ddof1_deg": 1.0272120534799392,
+          "median_image_mae_sd_ddof1_deg": 0.8987488385403708,
+          "p95_image_mae_sd_ddof1_deg": 2.9431747183678403,
+          "dataset_maes_deg": [
+            49.69136422872543,
+            49.52695083618164
+          ],
+          "mean_pixel_angular_dispersion_deg": 9.51009526848793,
+          "boundary_mae_deg": 51.65199649333954,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 64
+        },
+        "arb": {
+          "num_images": 64,
+          "num_inference_replicates": 2,
+          "mean_mae_deg": 37.86901447176933,
+          "dataset_mae_sd_ddof1_deg": 0.09330094216389974,
+          "mean_image_mae_sd_ddof1_deg": 1.446442456639254,
+          "median_image_mae_sd_ddof1_deg": 1.1923633414049677,
+          "p95_image_mae_sd_ddof1_deg": 3.2997381357293256,
+          "dataset_maes_deg": [
+            37.803040742874146,
+            37.93498820066452
+          ],
+          "mean_pixel_angular_dispersion_deg": 7.348209612071514,
+          "boundary_mae_deg": 41.09470337156265,
+          "boundary_definition": "GT adjacent normal angle >20deg, dilated by radius 2 pixels, intersect valid mask",
+          "boundary_images": 63
+        }
+      },
+      "clip_fraction": 0.9784,
+      "gradient_updates_recorded": 2500,
+      "time_loss_bins": [
+        {
+          "t_min": 0,
+          "t_max": 0.2,
+          "samples": 8593,
+          "mse": 0.17808525773179512,
+          "unit": 0.040543095951971524,
+          "cosine": 0.24931038544037165,
+          "loss": 0.25054862805557976
+        },
+        {
+          "t_min": 0.2,
+          "t_max": 0.4,
+          "samples": 8287,
+          "mse": 0.13474273186332555,
+          "unit": 0.025576687395166733,
+          "cosine": 0.10443281058607082,
+          "loss": 0.16724510634542986
+        },
+        {
+          "t_min": 0.4,
+          "t_max": 0.6,
+          "samples": 8473,
+          "mse": 0.15537073844238092,
+          "unit": 0.02155583133279472,
+          "cosine": 0.056800807350969484,
+          "loss": 0.174959897950369
+        },
+        {
+          "t_min": 0.6,
+          "t_max": 0.8,
+          "samples": 8378,
+          "mse": 0.26160224660805065,
+          "unit": 0.018491984042575075,
+          "cosine": 0.02966300676618813,
+          "loss": 0.27364099449067897
+        },
+        {
+          "t_min": 0.8,
+          "t_max": 0.95,
+          "samples": 6269,
+          "mse": 1.2539453521022663,
+          "unit": 0.017575509785994356,
+          "cosine": 0.01620230176206411,
+          "loss": 1.2623898051539488
+        }
+      ],
+      "peak_cuda_bytes": 4952708096
+    }
+  ],
+  "validation_reconciliation": {
+    "all_planned_results_checked": true,
+    "checked_run_count": 16,
+    "checked_domain_count": 48,
+    "checks": [
+      {
+        "run": "stable_R_s1247",
+        "domains": {
+          "hypersim": {
+            "images": 700,
+            "inference_replicates": 2,
+            "boundary_images": 700,
+            "reconciled": true
+          },
+          "arb": {
+            "images": 594,
+            "inference_replicates": 2,
+            "boundary_images": 583,
+            "reconciled": true
+          },
+          "nyuv2": {
+            "images": 795,
+            "inference_replicates": 2,
+            "boundary_images": 795,
+            "reconciled": true
+          }
+        },
+        "material_subset_reconciled": true
+      },
+      {
+        "run": "stable_V_s1247",
+        "domains": {
+          "hypersim": {
+            "images": 700,
+            "inference_replicates": 2,
+            "boundary_images": 700,
+            "reconciled": true
+          },
+          "arb": {
+            "images": 594,
+            "inference_replicates": 2,
+            "boundary_images": 583,
+            "reconciled": true
+          },
+          "nyuv2": {
+            "images": 795,
+            "inference_replicates": 2,
+            "boundary_images": 795,
+            "reconciled": true
+          }
+        },
+        "material_subset_reconciled": true
+      },
+      {
+        "run": "stable_Xn_s1247",
+        "domains": {
+          "hypersim": {
+            "images": 700,
+            "inference_replicates": 2,
+            "boundary_images": 700,
+            "reconciled": true
+          },
+          "arb": {
+            "images": 594,
+            "inference_replicates": 2,
+            "boundary_images": 583,
+            "reconciled": true
+          },
+          "nyuv2": {
+            "images": 795,
+            "inference_replicates": 2,
+            "boundary_images": 795,
+            "reconciled": true
+          }
+        },
+        "material_subset_reconciled": true
+      },
+      {
+        "run": "cooldown_R_k10000_s1247",
+        "domains": {
+          "hypersim": {
+            "images": 700,
+            "inference_replicates": 2,
+            "boundary_images": 700,
+            "reconciled": true
+          },
+          "arb": {
+            "images": 594,
+            "inference_replicates": 2,
+            "boundary_images": 583,
+            "reconciled": true
+          },
+          "nyuv2": {
+            "images": 795,
+            "inference_replicates": 2,
+            "boundary_images": 795,
+            "reconciled": true
+          }
+        },
+        "material_subset_reconciled": true
+      },
+      {
+        "run": "cooldown_V_k10000_s1247",
+        "domains": {
+          "hypersim": {
+            "images": 700,
+            "inference_replicates": 2,
+            "boundary_images": 700,
+            "reconciled": true
+          },
+          "arb": {
+            "images": 594,
+            "inference_replicates": 2,
+            "boundary_images": 583,
+            "reconciled": true
+          },
+          "nyuv2": {
+            "images": 795,
+            "inference_replicates": 2,
+            "boundary_images": 795,
+            "reconciled": true
+          }
+        },
+        "material_subset_reconciled": true
+      },
+      {
+        "run": "cooldown_Xn_k10000_s1247",
+        "domains": {
+          "hypersim": {
+            "images": 700,
+            "inference_replicates": 2,
+            "boundary_images": 700,
+            "reconciled": true
+          },
+          "arb": {
+            "images": 594,
+            "inference_replicates": 2,
+            "boundary_images": 583,
+            "reconciled": true
+          },
+          "nyuv2": {
+            "images": 795,
+            "inference_replicates": 2,
+            "boundary_images": 795,
+            "reconciled": true
+          }
+        },
+        "material_subset_reconciled": true
+      },
+      {
+        "run": "cooldown_R_k20000_s1247",
+        "domains": {
+          "hypersim": {
+            "images": 700,
+            "inference_replicates": 2,
+            "boundary_images": 700,
+            "reconciled": true
+          },
+          "arb": {
+            "images": 594,
+            "inference_replicates": 2,
+            "boundary_images": 583,
+            "reconciled": true
+          },
+          "nyuv2": {
+            "images": 795,
+            "inference_replicates": 2,
+            "boundary_images": 795,
+            "reconciled": true
+          }
+        },
+        "material_subset_reconciled": true
+      },
+      {
+        "run": "cooldown_V_k20000_s1247",
+        "domains": {
+          "hypersim": {
+            "images": 700,
+            "inference_replicates": 2,
+            "boundary_images": 700,
+            "reconciled": true
+          },
+          "arb": {
+            "images": 594,
+            "inference_replicates": 2,
+            "boundary_images": 583,
+            "reconciled": true
+          },
+          "nyuv2": {
+            "images": 795,
+            "inference_replicates": 2,
+            "boundary_images": 795,
+            "reconciled": true
+          }
+        },
+        "material_subset_reconciled": true
+      },
+      {
+        "run": "cooldown_Xn_k20000_s1247",
+        "domains": {
+          "hypersim": {
+            "images": 700,
+            "inference_replicates": 2,
+            "boundary_images": 700,
+            "reconciled": true
+          },
+          "arb": {
+            "images": 594,
+            "inference_replicates": 2,
+            "boundary_images": 583,
+            "reconciled": true
+          },
+          "nyuv2": {
+            "images": 795,
+            "inference_replicates": 2,
+            "boundary_images": 795,
+            "reconciled": true
+          }
+        },
+        "material_subset_reconciled": true
+      },
+      {
+        "run": "cooldown_R_k30000_s1247",
+        "domains": {
+          "hypersim": {
+            "images": 700,
+            "inference_replicates": 2,
+            "boundary_images": 700,
+            "reconciled": true
+          },
+          "arb": {
+            "images": 594,
+            "inference_replicates": 2,
+            "boundary_images": 583,
+            "reconciled": true
+          },
+          "nyuv2": {
+            "images": 795,
+            "inference_replicates": 2,
+            "boundary_images": 795,
+            "reconciled": true
+          }
+        },
+        "material_subset_reconciled": true
+      },
+      {
+        "run": "cooldown_V_k30000_s1247",
+        "domains": {
+          "hypersim": {
+            "images": 700,
+            "inference_replicates": 2,
+            "boundary_images": 700,
+            "reconciled": true
+          },
+          "arb": {
+            "images": 594,
+            "inference_replicates": 2,
+            "boundary_images": 583,
+            "reconciled": true
+          },
+          "nyuv2": {
+            "images": 795,
+            "inference_replicates": 2,
+            "boundary_images": 795,
+            "reconciled": true
+          }
+        },
+        "material_subset_reconciled": true
+      },
+      {
+        "run": "cooldown_Xn_k30000_s1247",
+        "domains": {
+          "hypersim": {
+            "images": 700,
+            "inference_replicates": 2,
+            "boundary_images": 700,
+            "reconciled": true
+          },
+          "arb": {
+            "images": 594,
+            "inference_replicates": 2,
+            "boundary_images": 583,
+            "reconciled": true
+          },
+          "nyuv2": {
+            "images": 795,
+            "inference_replicates": 2,
+            "boundary_images": 795,
+            "reconciled": true
+          }
+        },
+        "material_subset_reconciled": true
+      },
+      {
+        "run": "cooldown_R_k50000_s1247",
+        "domains": {
+          "hypersim": {
+            "images": 700,
+            "inference_replicates": 2,
+            "boundary_images": 700,
+            "reconciled": true
+          },
+          "arb": {
+            "images": 594,
+            "inference_replicates": 2,
+            "boundary_images": 583,
+            "reconciled": true
+          },
+          "nyuv2": {
+            "images": 795,
+            "inference_replicates": 2,
+            "boundary_images": 795,
+            "reconciled": true
+          }
+        },
+        "material_subset_reconciled": true
+      },
+      {
+        "run": "cooldown_V_k50000_s1247",
+        "domains": {
+          "hypersim": {
+            "images": 700,
+            "inference_replicates": 2,
+            "boundary_images": 700,
+            "reconciled": true
+          },
+          "arb": {
+            "images": 594,
+            "inference_replicates": 2,
+            "boundary_images": 583,
+            "reconciled": true
+          },
+          "nyuv2": {
+            "images": 795,
+            "inference_replicates": 2,
+            "boundary_images": 795,
+            "reconciled": true
+          }
+        },
+        "material_subset_reconciled": true
+      },
+      {
+        "run": "cooldown_Xn_k50000_s1247",
+        "domains": {
+          "hypersim": {
+            "images": 700,
+            "inference_replicates": 2,
+            "boundary_images": 700,
+            "reconciled": true
+          },
+          "arb": {
+            "images": 594,
+            "inference_replicates": 2,
+            "boundary_images": 583,
+            "reconciled": true
+          },
+          "nyuv2": {
+            "images": 795,
+            "inference_replicates": 2,
+            "boundary_images": 795,
+            "reconciled": true
+          }
+        },
+        "material_subset_reconciled": true
+      },
+      {
+        "run": "clip_diagnostic_Xv_s1247",
+        "domains": {
+          "hypersim": {
+            "images": 700,
+            "inference_replicates": 2,
+            "boundary_images": 700,
+            "reconciled": true
+          },
+          "arb": {
+            "images": 594,
+            "inference_replicates": 2,
+            "boundary_images": 583,
+            "reconciled": true
+          },
+          "nyuv2": {
+            "images": 795,
+            "inference_replicates": 2,
+            "boundary_images": 795,
+            "reconciled": true
+          }
+        },
+        "material_subset_reconciled": true
+      }
+    ]
+  },
+  "training_seed_variance_estimated": false,
+  "gso_model_scores_computed": false
+}

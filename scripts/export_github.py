@@ -111,7 +111,8 @@ def main():
                 "P1_gso_intake_v1", "P1_gso_render_v1", "P1_gso_render_smoke_dual_v2", "P1_gso_render_dual_v2",
                 "P1_hypersim_direction_review3", "P1_dinov2_symmetric_forward_v2",
                 "P1_arb_outlier_visual_review3", "P2_data_quality_review3", "P1_gso_boundary_review4_preflight",
-                "P2_boundary_material_review4_registration", "P1_arb_validation_materials_review4", "P1_arb_materials_review4"]:
+                "P2_boundary_material_review4_registration", "P1_arb_validation_materials_review4", "P1_arb_materials_review4",
+                "P1_arb_prepared_formal_v1", "P2_wsd_convergence_review2"]:
         source = ROOT / "outputs" / run / "summary.json"
         if not source.exists():
             continue
@@ -119,6 +120,11 @@ def main():
         if state.get("status") != "completed":
             continue
         add(source, f"results/{run}/summary.json", "diagnostic_summary")
+        if run == 'P2_wsd_convergence_review2':
+            add(source.with_name('stable_learning_curves.json'),
+                f'results/{run}/stable_learning_curves.json', 'diagnostic_summary')
+            add(source.with_name('cooled_results.md'),
+                f'results/{run}/cooled_results.md', 'aggregate_tables')
         if run == 'P1_hypersim_direction_review3':
             # Even anonymous candidate rows are per-frame records: export aggregates only.
             public=dict(state);rows=public.pop('frame_metrics')
@@ -282,7 +288,7 @@ docs/
 
 Pixel-space conditional Flow Matching for face normals, with isolated research code for general object and indoor-scene normal estimation.
 
-This repository contains the historical UNet baseline, experiment code and aggregate numerical results. **Controlled no-ray R/V/Xv/Xn preflight is complete; no completed multi-seed formal generalization result is claimed.** Future public updates are limited to code/configuration, operational instructions and aggregate results.
+This repository contains the historical UNet baseline, experiment code and aggregate numerical results. **Single-seed R/V/Xn WSD convergence diagnostics are complete through 50k stable updates plus 2.5k cooldown. The formal 24-run comparison remains locked; no multi-training-seed generalization result is claimed.** Future public updates are limited to code/configuration, operational instructions and aggregate results.
 
 ## Contents
 
@@ -291,6 +297,22 @@ This repository contains the historical UNet baseline, experiment code and aggre
 - [Pilot results](results/P0_D1_D5_pilot/summary.json)
 - [Full eight-seed results](results/D2_D3_full_multiseed/multiseed_summary.json)
 - [Publication scope](PUBLICATION.md)
+- [Completed WSD convergence tables](results/P2_wsd_convergence_review2/cooled_results.md)
+- [Completed WSD aggregates](results/P2_wsd_convergence_review2/summary.json)
+
+## Completed WSD diagnostic snapshot
+
+Training seed 1247, condition dropout p=0, the same 256px center-square data and UNet; no DINO, ray inputs or CFG. Each final model has 50,000 stable updates plus an independent 2,500-update linear cooldown. MAE in degrees is macro-averaged over valid images and two paired image-specific inference replicates (42, 43), not over training seeds.
+
+| Method | Hypersim, 700 images | Arb, 594 views / 198 assets | NYUv2 validation, 795 images |
+|---|---:|---:|---:|
+| R | 24.3455 | 24.9713 | 35.1048 |
+| V | 23.4378 | 27.3166 | 30.5735 |
+| Xn | 23.2017 | 27.1311 | 30.8801 |
+
+The registered budget status is `inconclusive_still_improving`; some registered cells continue to improve by more than 0.3 degrees at the cap. No common formal budget is approved. Xv has a matched 2,500-update clipping diagnostic only, not a completed long run. [Complete tables](results/P2_wsd_convergence_review2/cooled_results.md) include all four cooled budgets, boundary errors, noise sensitivity, material-subset counts and clipping. [JSON](results/P2_wsd_convergence_review2/summary.json) also includes training-probe metrics, source hashes and independent aggregate reconciliation. These results have one training seed, no confidence intervals and no GSO model scores.
+
+![WSD cooled curves and fixed training probes](figures/P2_wsd_review2_cooled.png)
 
 ## First diagnostic results
 
@@ -374,10 +396,22 @@ The prescore diagnostic in configs/gso_boundary_material_review4.json adds creas
 
 baseline/ preserves the historical face pipeline and checkpoint-zoo configurations. Its command snapshots require local path adaptation; they are not the new general training entry point.
 
+The 2,000-asset Arb acquisition and full metadata census have completed with zero unresolved download/classification failures. The prepared cache contains 5,335 train and 594 validation views from 1,780/198 usable assets; 71 source views have zero valid EXR-normal pixels and 22 planned assets have no usable views, all explicitly recorded locally. Full metadata flags cover 291/2,000 assets (14.55%); this does not change frozen training. GSO source downloads completed for 200 assets, the declared screening retained 198, and all 792 controlled views rendered; no GSO model scores were computed. Preparation completeness does not establish exhaustive cross-source near-duplicate removal.
+
+To regenerate the completed diagnostic snapshot from local results, run `python scripts/summarize_wsd_results.py`. Its public aggregates independently reconcile all 16 completed source summaries and 48 domain scores against private per-image records without exporting those records. `scripts/render_wsd_examples.py` and `scripts/render_wsd_latest_examples.py` make private fixed-example CPU previews, distinct from official CUDA evaluation; the preview images are not published.
+
 The source and output protocols are covered by the included tests. Full-set and pilot measurements are distinct and should not be pooled.
 
 No dataset, pretrained-weight license or new software-license grant is implied by repository visibility. See [NOTICE.md](NOTICE.md).
 """.replace("__IMAGEWISE_NOISE_RESULTS__", imagewise_section))
+    readme = files['README.md']['data'].decode('utf-8')
+    readme = readme.replace(
+        'The complete GSO acquisition/rendering may still be pending; a two-asset preflight does not establish complete holdout readiness.',
+        'The complete GSO candidate holdout has now rendered 198 assets / 792 views; the earlier two-asset preflight is a separate historical snapshot, and neither contains model scores.')
+    readme = readme.replace(
+        'The full census may still be running; its completed summaries are separate from the 200-asset validation census.',
+        'The full 2,000-asset census is complete with no unknowns; its aggregate summary is separate from the earlier 200-asset validation census.')
+    files['README.md']['data'] = readme.encode('utf-8')
     text_file("NOTICE.md", """# Attribution and usage
 
 This is the user's FNFlow research snapshot. Historical model comments cite ADM and Rectified Flow. Research documents link to primary papers; original attributions are retained.

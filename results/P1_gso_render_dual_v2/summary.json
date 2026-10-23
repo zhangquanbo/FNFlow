@@ -1,0 +1,184 @@
+{
+  "status": "completed",
+  "created_at": "2026-10-22T17:14:19+08:00",
+  "assets": 198,
+  "images": 792,
+  "assets_by_split": {
+    "val": 93,
+    "test": 105
+  },
+  "asset_overlap": 0,
+  "product_family_overlap": 0,
+  "normal_source": "main: barycentric area-weighted vertex geometry, no materials; secondary: ray-hit face normal at identical pixel centers",
+  "main_gt_registered_before_model_scores": true,
+  "rule_sha256": "f7930ad9709a5b6cda51609e1caa95b38131b4df5bf78047c4b32cc8b4ca05a9",
+  "renderer_sha256": "617a7fbeecc695639e8bfefe5439567bad495a680a3138d274ab16891f4a0a16",
+  "gt_code_sha256": "918991e5465b67737538e855a7e4cf666354720e785a2a13e6ba8ff2fd2b7478",
+  "cache_generation": "aeab29a0e53e3179",
+  "normal_fields": [
+    "normal (main alias)",
+    "normal_smooth",
+    "normal_face"
+  ],
+  "same_mask_for_both_gt": true,
+  "diagnostic_normal_field": "normal_crease45_diagnostic; boundary sensitivity only, main GT unchanged",
+  "diagnostic_rule_sha256": "f781e5904a8504fbbce3e0a53c29fc51614f02e9a6a17e5828b262f8ac94e953",
+  "boundary_code_sha256": "6c14f33d86a827ff88246b20a99a4c837e39438f3a103121aa66dd7e04103943",
+  "boundary_gt_disagreement": {
+    "primary_angular": {
+      "inside_pixels": 2018294,
+      "outside_pixels": 3072080,
+      "valid_pixels": 5090374,
+      "comparisons": {
+        "face_vs_smooth": {
+          "inside": {
+            "pixels": 2018294,
+            "images_with_region": 792,
+            "images_without_region": 0,
+            "assets_with_region": 198,
+            "pixel_pooled_mean_deg": 6.718245694649777,
+            "image_macro_mean_deg": 6.006232135677615,
+            "asset_macro_mean_deg": 6.006232135677614
+          },
+          "outside": {
+            "pixels": 3072080,
+            "images_with_region": 788,
+            "images_without_region": 4,
+            "assets_with_region": 197,
+            "pixel_pooled_mean_deg": 1.76490366799668,
+            "image_macro_mean_deg": 2.671810982535122,
+            "asset_macro_mean_deg": 2.671810982535122
+          }
+        },
+        "face_vs_crease45": {
+          "inside": {
+            "pixels": 2018294,
+            "images_with_region": 792,
+            "images_without_region": 0,
+            "assets_with_region": 198,
+            "pixel_pooled_mean_deg": 6.0406452866893785,
+            "image_macro_mean_deg": 5.49320896222182,
+            "asset_macro_mean_deg": 5.49320896222182
+          },
+          "outside": {
+            "pixels": 3072080,
+            "images_with_region": 788,
+            "images_without_region": 4,
+            "assets_with_region": 197,
+            "pixel_pooled_mean_deg": 1.7488584287084472,
+            "image_macro_mean_deg": 2.6278933301511485,
+            "asset_macro_mean_deg": 2.6278933301511485
+          }
+        },
+        "smooth_vs_crease45": {
+          "inside": {
+            "pixels": 2018294,
+            "images_with_region": 792,
+            "images_without_region": 0,
+            "assets_with_region": 198,
+            "pixel_pooled_mean_deg": 1.0311839662737876,
+            "image_macro_mean_deg": 0.8002248420220773,
+            "asset_macro_mean_deg": 0.8002248420220773
+          },
+          "outside": {
+            "pixels": 3072080,
+            "images_with_region": 788,
+            "images_without_region": 4,
+            "assets_with_region": 197,
+            "pixel_pooled_mean_deg": 0.021659328911865127,
+            "image_macro_mean_deg": 0.06560186899881917,
+            "asset_macro_mean_deg": 0.06560186899881916
+          }
+        }
+      },
+      "inside_fraction": 0.39649228131371095
+    },
+    "crease45_angular_plus_silhouette": {
+      "inside_pixels": 2274605,
+      "outside_pixels": 2815769,
+      "valid_pixels": 5090374,
+      "comparisons": {
+        "face_vs_smooth": {
+          "inside": {
+            "pixels": 2274605,
+            "images_with_region": 792,
+            "images_without_region": 0,
+            "assets_with_region": 198,
+            "pixel_pooled_mean_deg": 6.308431773944399,
+            "image_macro_mean_deg": 5.718729869693002,
+            "asset_macro_mean_deg": 5.718729869693002
+          },
+          "outside": {
+            "pixels": 2815769,
+            "images_with_region": 785,
+            "images_without_region": 7,
+            "assets_with_region": 197,
+            "pixel_pooled_mean_deg": 1.6450673976607872,
+            "image_macro_mean_deg": 2.5086089544431163,
+            "asset_macro_mean_deg": 2.5278320433338006
+          }
+        },
+        "face_vs_crease45": {
+          "inside": {
+            "pixels": 2274605,
+            "images_with_region": 792,
+            "images_without_region": 0,
+            "assets_with_region": 198,
+            "pixel_pooled_mean_deg": 5.6888598790196205,
+            "image_macro_mean_deg": 5.236435232922081,
+            "asset_macro_mean_deg": 5.236435232922081
+          },
+          "outside": {
+            "pixels": 2815769,
+            "images_with_region": 785,
+            "images_without_region": 7,
+            "assets_with_region": 197,
+            "pixel_pooled_mean_deg": 1.6423655544196554,
+            "image_macro_mean_deg": 2.5003900518077877,
+            "asset_macro_mean_deg": 2.5196546883214306
+          }
+        },
+        "smooth_vs_crease45": {
+          "inside": {
+            "pixels": 2274605,
+            "images_with_region": 792,
+            "images_without_region": 0,
+            "assets_with_region": 198,
+            "pixel_pooled_mean_deg": 0.9377186454454985,
+            "image_macro_mean_deg": 0.746248942870381,
+            "asset_macro_mean_deg": 0.7462489428703813
+          },
+          "outside": {
+            "pixels": 2815769,
+            "images_with_region": 785,
+            "images_without_region": 7,
+            "assets_with_region": 197,
+            "pixel_pooled_mean_deg": 0.005267507265899384,
+            "image_macro_mean_deg": 0.014114173770640412,
+            "asset_macro_mean_deg": 0.014665679105307718
+          }
+        }
+      },
+      "inside_fraction": 0.44684437725008025
+    }
+  },
+  "boundary_definitions": [
+    "primary smooth GT adjacent-valid angular jumps >20 degrees, radius-2 dilation, intersect identical ray-hit mask; matches existing angular metric without silhouette",
+    "diagnostic crease45 GT angular jumps >20 degrees plus silhouette, radius-2 dilation, intersect identical ray-hit mask"
+  ],
+  "crease45_max_unit_error": 5.960464477539063e-08,
+  "gt_gap_image_macro_mean_deg": 4.352297553790539,
+  "gt_gap_asset_macro_mean_deg": 4.352297553790539,
+  "gt_gap_pixel_pooled_mean_deg": 3.7288655482584314,
+  "gap_interpretation": "GT-definition discrepancy; neither a proven irreducible noise floor nor an additive correction to model MAE",
+  "camera": "controlled 256 square; FOV .691111; K/poses saved per view; object normalized to unit maximum extent",
+  "depth": "camera-z in normalized scene units, source scale retained; not an unqualified metric-depth claim",
+  "mask": "ray hits, no alpha or near-unit filtering",
+  "training_allowed": false,
+  "model_test_scores_computed": false,
+  "max_normal_unit_error": 5.960464477539063e-08,
+  "render_device": "GPU",
+  "max_ray_reprojection_error_pixels": 4.7852309023710404e-05,
+  "cross_source_near_duplicate_exhaustive_check": false,
+  "scope": "rendering readiness; cross-source duplicate limitations remain those of the intake report"
+}

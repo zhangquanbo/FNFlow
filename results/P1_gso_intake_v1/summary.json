@@ -1,0 +1,26 @@
+{
+  "status": "completed",
+  "created_at": "2026-10-22T17:05:08+08:00",
+  "official_collection_assets": 1030,
+  "selected_assets": 200,
+  "downloaded_assets": 200,
+  "accepted_assets": 198,
+  "excluded_assets": 2,
+  "failed_assets": 0,
+  "assets_by_split": {
+    "val": 93,
+    "test": 105
+  },
+  "training_allowed": false,
+  "planned_objaverse_assets_screened": 2000,
+  "group_split": "product-name first-two-token family; all views stay with asset",
+  "duplicate_checks": [
+    "normalized source names against planned 2000",
+    "conservative exact vertex/triangle count matches against planned 2000",
+    "exact centered rounded vertex-set hashes within GSO"
+  ],
+  "near_duplicate_geometry_across_sources_exhaustively_verified": false,
+  "scope": "candidate object holdouts under declared source/count checks; cannot guarantee absence of re-meshed/re-exported cross-source duplicates",
+  "upstream_archive_checksum_published": false,
+  "integrity": "versioned official HTTPS ZIP; ZIP CRC and computed SHA256 retained, not an upstream published checksum claim"
+}

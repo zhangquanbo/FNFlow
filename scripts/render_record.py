@@ -144,7 +144,8 @@ def render():
             '[当前 review2 配置]($FNFLOW_ROOT/configs/parameterization_first_round_v2_review2.json) · '
             '[WSD 修订与辅助检查]($FNFLOW_ROOT/docs/review2_WSD与可靠性诊断.md) · '
             '[曲线前数据质量与双 GT]($FNFLOW_ROOT/docs/review3_数据质量与双GT处理.md) · '
-            '[边界定义与材质敏感性]($FNFLOW_ROOT/docs/review4_边界定义与材质敏感性.md)','',
+            '[边界定义与材质敏感性]($FNFLOW_ROOT/docs/review4_边界定义与材质敏感性.md) · '
+            '[完成结果与发布汇总]($FNFLOW_ROOT/docs/WSD收敛检查结果汇总_2026-10-23.md)','',
             '| 阶段 | 已完成运行数 |','|---|---:|'])
         counts={}
         for path in active_root.glob('*/summary.json'):
