@@ -4,6 +4,7 @@ from pathlib import Path, PurePosixPath
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import base64
+import ast
 import hashlib
 import importlib.metadata
 import json
@@ -13,6 +14,13 @@ from src.research_io import ROOT, BEST, output_path, now, sha256, write_json
 
 EXPORT = output_path(ROOT / "publish/FNFlow")
 files = {}
+LOCAL_ONLY_SCRIPTS = {
+    # Private interpretation/report templates and machine-specific intake probes.
+    'build_object_comparison_report.py', 'finalize_object_comparison.py',
+    'audit_lightrig_intake.py', 'probe_lightrig_access.py',
+    'download_lightrig_base_models.py', 'download_lightrig_from_mirror.py',
+    'download_lightrig_pinned.py',
+}
 
 
 def scrub(text):
@@ -68,8 +76,29 @@ def add(source, destination, category):
     else:
         text = source.read_text(encoding="utf-8-sig")
         text = markdown(text, destination) if source.suffix.lower() == ".md" else scrub(text)
+        if source.suffix.lower() == '.py':
+            text = portable_python(text)
         data = text.encode("utf-8")
     files[destination] = {"data": data, "category": category, "source_sha256": sha256(source)}
+
+
+def portable_python(text):
+    """Resolve actual project Path calls without rewriting quoted code examples."""
+    raw=text.encode('utf-8');lines=raw.splitlines(keepends=True);edits=[]
+    for node in ast.walk(ast.parse(text)):
+        if not (isinstance(node,ast.Call) and isinstance(node.func,ast.Name) and node.func.id=='Path' and len(node.args)==1 and not node.keywords):continue
+        arg=node.args[0]
+        if not (isinstance(arg,ast.Constant) and isinstance(arg.value,str)):continue
+        value=arg.value
+        if value!='$FNFLOW_ROOT' and not value.startswith('$FNFLOW_ROOT/'):continue
+        suffix=value[len('$FNFLOW_ROOT'):].lstrip('/')
+        replacement='Path(__file__).resolve().parents[1]'
+        if suffix:replacement='('+replacement+' / '+repr(suffix)+')'
+        start=sum(map(len,lines[:node.lineno-1]))+node.col_offset
+        end=sum(map(len,lines[:node.end_lineno-1]))+node.end_col_offset
+        edits.append((start,end,replacement.encode('utf-8')))
+    for start,end,replacement in sorted(edits,reverse=True):raw=raw[:start]+replacement+raw[end:]
+    return raw.decode('utf-8')
 
 
 def text_file(destination, text, category="release_metadata"):
@@ -82,6 +111,8 @@ def main():
     for directory in ["src", "scripts", "tests", "configs"]:
         for path in sorted((ROOT / directory).rglob("*")):
             if path.is_file() and path.suffix in {".py", ".json", ".yaml", ".yml"}:
+                if directory == 'scripts' and path.name in LOCAL_ONLY_SCRIPTS:
+                    continue
                 add(path, path.relative_to(ROOT).as_posix(), "research_code")
     # User policy: future public updates contain code and aggregate results only.
     # Existing published documents are neither re-exported nor rewritten here.
@@ -145,6 +176,13 @@ def main():
         path = ROOT / "figures" / filename
         if path.exists():
             add(path, path.relative_to(ROOT).as_posix(), "aggregate_plot")
+    object_snapshot = None
+    if (ROOT / 'outputs/object_comparison_report_20261024/delivery_receipt.json').exists():
+        from src.public_object_comparison import build_snapshot, protocol_config, results_markdown
+        object_snapshot = build_snapshot(ROOT)
+        text_file('results/object_comparison_20261024/summary.json', json.dumps(object_snapshot, ensure_ascii=False, indent=2) + '\n', 'aggregate_results')
+        text_file('results/object_comparison_20261024/README.md', results_markdown(object_snapshot), 'aggregate_tables')
+        text_file('configs/object_comparison_release_20261024.json', json.dumps(protocol_config(ROOT), ensure_ascii=False, indent=2) + '\n', 'operational_protocol')
     add(ROOT / "provenance/historical_reproduction.json",
         "reproducibility/historical_reproduction.json", "reproducibility")
     audit = json.loads((ROOT / "provenance/best_after.json").read_text())
@@ -411,6 +449,15 @@ No dataset, pretrained-weight license or new software-license grant is implied b
     readme = readme.replace(
         'The full census may still be running; its completed summaries are separate from the 200-asset validation census.',
         'The full 2,000-asset census is complete with no unknowns; its aggregate summary is separate from the earlier 200-asset validation census.')
+    if object_snapshot is not None:
+        latest = files['results/object_comparison_20261024/README.md']['data'].decode('utf-8')
+        latest = latest.split('## Measurement conditions')[0].replace('# Completed object normal comparison', '## Latest completed object comparison (2026-10-24)')
+        latest = latest.replace('(summary.json)', '(results/object_comparison_20261024/summary.json)').replace('(../../configs/', '(configs/')
+        latest += '\n[Full measurement conditions and aggregate tables](results/object_comparison_20261024/README.md). The old24-run/review2 budget rules below are archived diagnostics, permanently retired for this object scope; they are not unlocked by this release. No new training was performed.\n\n'
+        readme = readme.replace('## Contents', latest + '## Contents', 1)
+        readme = readme.replace('The formal 24-run comparison remains locked;', 'The former24-run/review2 rules are archived historical diagnostics;')
+        readme = readme.replace('and neither contains model scores.', 'and neither historical preparation snapshot contains model scores; completed model scores are in the latest object comparison above.')
+        readme = readme.replace('all 792 controlled views rendered; no GSO model scores were computed.', 'all792 controlled views rendered. That preparation snapshot preceded model scoring; the latest object comparison above now reports the completed scores.')
     files['README.md']['data'] = readme.encode('utf-8')
     text_file("NOTICE.md", """# Attribution and usage
 
@@ -445,6 +492,7 @@ Use the top-level experiment scripts for new runs.
     patterns = {
         "private_key": r"-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----",
         "github_token": r"\b(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,})\b",
+        "huggingface_token": r"\bhf_[A-Za-z0-9]{20,}\b",
         "aws_key": r"\bAKIA[0-9A-Z]{16}\b",
         "url_password": r"https?://[^/\s:@]+:[^/\s@]+@",
     }
