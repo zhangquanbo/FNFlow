@@ -1,0 +1,51 @@
+{
+  "version": "D3_native512_fixed10k_finetune",
+  "created_at": "2026-10-30 conditional exact recipe frozen before fitting",
+  "groups": {
+    "D3": {
+      "method": "Xn",
+      "encoder": "B_518"
+    }
+  },
+  "training_manifest": "outputs/D_ladder_20261030/D3_native_subset_from_D2_private.json",
+  "training_manifest_sha256": "87312ee2ca763bcbb5d9535e7fe970bbfce9ea4b545836486a542725c4f96015",
+  "training_assets": 1038,
+  "validation_assets": 198,
+  "validation_images": 594,
+  "output_root": "outputs/D3_train_20261030",
+  "total_updates": 10000,
+  "warmup_updates": 100,
+  "stable_end": 7500,
+  "cooldown_updates": 2500,
+  "seed": 1247,
+  "microbatch": 1,
+  "gradient_accumulation": 16,
+  "effective_batch": 16,
+  "learning_rate": 2e-05,
+  "weight_decay": 0.01,
+  "image_size": 512,
+  "views": [
+    0,
+    4,
+    8
+  ],
+  "pitch_quota": false,
+  "hypersim": false,
+  "historical_manifest_available": false,
+  "exact_historical_reproduction_claimed": false,
+  "validation": "Same fixed594Arb-val256 diagnostic curve; GSO/real candidate inference512 against nativeGT. Primary selection only fixedfinalGSO-val fiveangleMAE.",
+  "C_training_started": false,
+  "validation_manifest": "data/arb_mixed_formal_v1/private_manifest.json",
+  "validation_manifest_sha256": "40b15201792cc18dd85453ee4abf598419b2fc51136502f01c168270ee65dbd2",
+  "parent_AB_config_sha256": "53e4bf30d372af0952962f6e637875550185feceeb18ff84aedd7194128c2f29",
+  "initialization": "Warmstart last retained model only; freshAdamW and seed1247; fixed10k, no intermediatecheckpoint selection",
+  "stage": "D3",
+  "prior_type": "B_518",
+  "cache_mode": "native_multilight_512",
+  "training_views": 3111,
+  "registration_path": "provenance/D3_fit_registration_20261030.json",
+  "evaluation_registration_path": "provenance/D3_evaluation_registration_20261030.json",
+  "training_RGB_images": 3111,
+  "warmstart_checkpoint": "outputs/D2_train_20261030/D2_Xn_s1247/last_local.pth",
+  "warmstart_checkpoint_sha256": "f1cbe7e14db11c4856677731c6294d3a55b4068dcbd2f59fecae68e9fa05d170"
+}

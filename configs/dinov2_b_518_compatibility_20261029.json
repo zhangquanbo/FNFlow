@@ -1,0 +1,150 @@
+{
+  "status": "passed",
+  "updated_at": "2026-10-30T00:04:59+08:00",
+  "architecture": "dinov2_vitb14",
+  "official_weights_URL": "https://dl.fbaipublicfiles.com/dinov2/dinov2_vitb14/dinov2_vitb14_pretrain.pth",
+  "weights_sha256": "0b8b82f85de91b424aded121c7e1dcc2b7bc6d0adeea651bf73a13307fad8c73",
+  "source_archive_sha256": "209c4f04fb0d63a869f7ea5c18d61dc7d8196c88cb1cb4a53bf3b0607146685c",
+  "source_directory": "runtime/dinov2/dinov2-e1277af2ba9496fbadf7aec6eba56e8d882d1e35",
+  "encoder_features_shape": [
+    1,
+    768,
+    37,
+    37
+  ],
+  "canonical_input": [
+    518,
+    518
+  ],
+  "coordinate_checks": [
+    {
+      "input_side": 256,
+      "UNet_level": 0,
+      "grid": [
+        256,
+        256
+      ],
+      "max_coordinate_error_pixels": 3.0517578125e-05
+    },
+    {
+      "input_side": 256,
+      "UNet_level": 1,
+      "grid": [
+        128,
+        128
+      ],
+      "max_coordinate_error_pixels": 3.0517578125e-05
+    },
+    {
+      "input_side": 256,
+      "UNet_level": 2,
+      "grid": [
+        64,
+        64
+      ],
+      "max_coordinate_error_pixels": 3.0517578125e-05
+    },
+    {
+      "input_side": 256,
+      "UNet_level": 3,
+      "grid": [
+        32,
+        32
+      ],
+      "max_coordinate_error_pixels": 3.0517578125e-05
+    },
+    {
+      "input_side": 256,
+      "UNet_level": 4,
+      "grid": [
+        16,
+        16
+      ],
+      "max_coordinate_error_pixels": 1.52587890625e-05
+    },
+    {
+      "input_side": 512,
+      "UNet_level": 0,
+      "grid": [
+        512,
+        512
+      ],
+      "max_coordinate_error_pixels": 6.103515625e-05
+    },
+    {
+      "input_side": 512,
+      "UNet_level": 1,
+      "grid": [
+        256,
+        256
+      ],
+      "max_coordinate_error_pixels": 6.103515625e-05
+    },
+    {
+      "input_side": 512,
+      "UNet_level": 2,
+      "grid": [
+        128,
+        128
+      ],
+      "max_coordinate_error_pixels": 6.103515625e-05
+    },
+    {
+      "input_side": 512,
+      "UNet_level": 3,
+      "grid": [
+        64,
+        64
+      ],
+      "max_coordinate_error_pixels": 6.103515625e-05
+    },
+    {
+      "input_side": 512,
+      "UNet_level": 4,
+      "grid": [
+        32,
+        32
+      ],
+      "max_coordinate_error_pixels": 3.0517578125e-05
+    }
+  ],
+  "UNet_initial_matches_C": true,
+  "benchmarks": [
+    {
+      "name": "C_DINO_S_native_padded266",
+      "GPU": "Tesla V100-SXM2-32GB",
+      "dtype": "float32",
+      "microbatch": 4,
+      "gradient_accumulation": 4,
+      "effective_batch": 16,
+      "warmup_updates": 2,
+      "timed_updates": 3,
+      "median_seconds_per_update": 0.74758056900464,
+      "seconds_by_update": [
+        0.7497348279575817,
+        0.7472063960158266,
+        0.74758056900464
+      ],
+      "peak_cuda_allocated_bytes": 6166979072
+    },
+    {
+      "name": "D2_DINO_B_canonical518",
+      "GPU": "Tesla V100-SXM2-32GB",
+      "dtype": "float32",
+      "microbatch": 4,
+      "gradient_accumulation": 4,
+      "effective_batch": 16,
+      "warmup_updates": 2,
+      "timed_updates": 3,
+      "median_seconds_per_update": 1.2253892620210536,
+      "seconds_by_update": [
+        1.2213670970522799,
+        1.2253892620210536,
+        1.226416732009966
+      ],
+      "peak_cuda_allocated_bytes": 6962098176
+    }
+  ],
+  "scope": "Idle physical V100,FP32 synthetic training benchmark; not3090BF16 production throughput. NLR and C TTA remain running on3090.",
+  "test_images_opened": 0
+}

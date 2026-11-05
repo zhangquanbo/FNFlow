@@ -4,6 +4,12 @@ Pixel-space conditional Flow Matching for face normals, with isolated research c
 
 This repository contains the historical UNet baseline, experiment code and aggregate numerical results. **Single-seed R/V/Xn WSD convergence diagnostics are complete through 50k stable updates plus 2.5k cooldown. The former24-run/review2 rules are archived historical diagnostics; no multi-training-seed generalization result is claimed.** Future public updates are limited to code/configuration, operational instructions and aggregate results.
 
+## Latest completed object recipe ladder (2026-11-05)
+
+A/B/C and D1-D3 training and fixed-final validation are complete. **The registered retention rule selects D2** with GSO five-angle MAE **18.6650 degrees**, compared with C **22.1420**, D1 **21.7151**, and D3 **19.0845**. The fresh-run Neural LightRig GSO value is **20.5024**. These are single-training-seed validation results. Formal training replicates and held-out test scoring have not run.
+
+[Complete aggregate tables and measurement conditions](results/object_recipe_ladder_20261105/README.md) cover the GSO angle and lighting panels, single-light real controls, separate five-inference-seed Neural LightRig reruns, C inference ablations, actual training budgets, and retention decisions. [Full aggregate JSON](results/object_recipe_ladder_20261105/summary.json) and [independent reconciliation](results/object_recipe_ladder_20261105/validation.json) are included. The 2026-10-24 comparison below is retained as a separate historical snapshot.
+
 ## Latest completed object comparison (2026-10-24)
 
 Completed inference-only evaluation of Neural LightRig and existing52,500-update R/V/Xn checkpoints. No new training. MAE degrees, lower is better; object macro.

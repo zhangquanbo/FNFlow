@@ -1,0 +1,49 @@
+{
+  "version": "D2_retained_data_frozenB518",
+  "created_at": "2026-10-30 conditional exact recipe frozen before fitting",
+  "groups": {
+    "D2": {
+      "method": "Xn",
+      "encoder": "frozenDINOv2-B canonical518"
+    }
+  },
+  "training_manifest": "data/arb_scale_c_prepared_fresh_20261026/private_manifest.json",
+  "training_manifest_sha256": "45927fce65c38753936247ba1ae5dfb32e5337cb22ec4087375ca01135d7d4e6",
+  "training_assets": 10000,
+  "training_images": 29976,
+  "validation_assets": 198,
+  "validation_images": 594,
+  "output_root": "outputs/D2_train_20261030",
+  "total_updates": 50000,
+  "warmup_updates": 100,
+  "stable_end": 47500,
+  "cooldown_updates": 2500,
+  "seed": 1247,
+  "microbatch": 4,
+  "gradient_accumulation": 4,
+  "effective_batch": 16,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.01,
+  "image_size": 256,
+  "views": [
+    0,
+    4,
+    8
+  ],
+  "pitch_quota": false,
+  "hypersim": false,
+  "historical_manifest_available": false,
+  "exact_historical_reproduction_claimed": false,
+  "validation": "Same198 Arb-val assets/594 views as A/B, curve only, fixed50k final checkpoint; no GSO-test.",
+  "C_training_started": false,
+  "validation_manifest": "data/arb_mixed_formal_v1/private_manifest.json",
+  "validation_manifest_sha256": "40b15201792cc18dd85453ee4abf598419b2fc51136502f01c168270ee65dbd2",
+  "parent_AB_config_sha256": "53e4bf30d372af0952962f6e637875550185feceeb18ff84aedd7194128c2f29",
+  "initialization": "Fresh seed1247, same initialUNet as C; frozenB518 changes only named prior relative to retained recipe",
+  "stage": "D2",
+  "prior_type": "B_518",
+  "cache_mode": "single_C_256",
+  "training_views": 29976,
+  "registration_path": "provenance/D2_fit_registration_20261030.json",
+  "evaluation_registration_path": "provenance/D2_evaluation_registration_20261030.json"
+}

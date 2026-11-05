@@ -1,0 +1,43 @@
+{
+  "version": "fresh_object_dino_AB_20261026",
+  "created_at": "2026-10-26T13:25:35+08:00",
+  "groups": {
+    "A": {
+      "method": "Xn",
+      "encoder": "frozen DINOv2-S"
+    },
+    "B": {
+      "method": "R",
+      "encoder": "frozen DINOv2-S"
+    }
+  },
+  "training_manifest": "data/arb_mixed_formal_v1/private_manifest.json",
+  "training_manifest_sha256": "40b15201792cc18dd85453ee4abf598419b2fc51136502f01c168270ee65dbd2",
+  "training_assets": 1780,
+  "training_images": 5335,
+  "validation_assets": 198,
+  "validation_images": 594,
+  "output_root": "outputs/P3_object_dino_retrain_20261026",
+  "total_updates": 50000,
+  "warmup_updates": 100,
+  "stable_end": 47500,
+  "cooldown_updates": 2500,
+  "seed": 1247,
+  "microbatch": 4,
+  "gradient_accumulation": 4,
+  "effective_batch": 16,
+  "learning_rate": 0.0002,
+  "weight_decay": 0.01,
+  "image_size": 256,
+  "views": [
+    0,
+    4,
+    8
+  ],
+  "pitch_quota": false,
+  "hypersim": false,
+  "historical_manifest_available": false,
+  "exact_historical_reproduction_claimed": false,
+  "validation": "Arb-val diagnostic only. Missing historical GSO monitoring is omitted; fixed 50k final checkpoint, no selection by this curve.",
+  "C_training_started": false
+}

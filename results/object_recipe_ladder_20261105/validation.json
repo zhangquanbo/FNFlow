@@ -1,0 +1,493 @@
+{
+  "status": "passed",
+  "models": {
+    "A": {
+      "primary": {
+        "images": 1860,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 14880,
+        "equal_pitch_object_macro_mae_deg": 24.05201259819906
+      },
+      "original": {
+        "images": 372,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 2976,
+        "equal_pitch_object_macro_mae_deg": 23.334241361161
+      },
+      "arb_style": {
+        "images": 372,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 2976,
+        "equal_pitch_object_macro_mae_deg": 23.980822196611125
+      },
+      "diligent": {
+        "images": 10,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 80,
+        "equal_pitch_object_macro_mae_deg": 22.4962558500812
+      },
+      "luces": {
+        "images": 14,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 112,
+        "equal_pitch_object_macro_mae_deg": 21.221045574072527
+      }
+    },
+    "B": {
+      "primary": {
+        "images": 1860,
+        "inference_seeds": [
+          42
+        ],
+        "private_metric_rows_checked": 1860,
+        "equal_pitch_object_macro_mae_deg": 24.321954126389883
+      },
+      "original": {
+        "images": 372,
+        "inference_seeds": [
+          42
+        ],
+        "private_metric_rows_checked": 372,
+        "equal_pitch_object_macro_mae_deg": 23.984338835920582
+      },
+      "arb_style": {
+        "images": 372,
+        "inference_seeds": [
+          42
+        ],
+        "private_metric_rows_checked": 372,
+        "equal_pitch_object_macro_mae_deg": 24.299896680957122
+      },
+      "diligent": {
+        "images": 10,
+        "inference_seeds": [
+          42
+        ],
+        "private_metric_rows_checked": 10,
+        "equal_pitch_object_macro_mae_deg": 24.42261368978863
+      },
+      "luces": {
+        "images": 14,
+        "inference_seeds": [
+          42
+        ],
+        "private_metric_rows_checked": 14,
+        "equal_pitch_object_macro_mae_deg": 20.9166827661925
+      }
+    },
+    "NeuralLightRig": {
+      "primary": {
+        "images": 1860,
+        "inference_seeds": [
+          511
+        ],
+        "private_metric_rows_checked": 1860,
+        "equal_pitch_object_macro_mae_deg": 20.502370865486135
+      },
+      "original": {
+        "images": 372,
+        "inference_seeds": [
+          511
+        ],
+        "private_metric_rows_checked": 372,
+        "equal_pitch_object_macro_mae_deg": 20.465333769336567
+      },
+      "arb_style": {
+        "images": 372,
+        "inference_seeds": [
+          511
+        ],
+        "private_metric_rows_checked": 372,
+        "equal_pitch_object_macro_mae_deg": 23.779410071057136
+      },
+      "diligent": {
+        "images": 10,
+        "inference_seeds": [
+          511
+        ],
+        "private_metric_rows_checked": 10,
+        "equal_pitch_object_macro_mae_deg": 23.219817328690247
+      },
+      "luces": {
+        "images": 14,
+        "inference_seeds": [
+          511
+        ],
+        "private_metric_rows_checked": 14,
+        "equal_pitch_object_macro_mae_deg": 25.192647493248213
+      }
+    },
+    "C": {
+      "primary": {
+        "images": 1860,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 14880,
+        "equal_pitch_object_macro_mae_deg": 22.1419897329096
+      },
+      "original": {
+        "images": 372,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 2976,
+        "equal_pitch_object_macro_mae_deg": 21.538632783340496
+      },
+      "arb_style": {
+        "images": 372,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 2976,
+        "equal_pitch_object_macro_mae_deg": 22.245309925697967
+      },
+      "diligent": {
+        "images": 10,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 80,
+        "equal_pitch_object_macro_mae_deg": 22.452394575484846
+      },
+      "luces": {
+        "images": 14,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 112,
+        "equal_pitch_object_macro_mae_deg": 20.56569066142178
+      }
+    },
+    "D1": {
+      "primary": {
+        "images": 1860,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 14880,
+        "equal_pitch_object_macro_mae_deg": 21.715062879655267
+      },
+      "original": {
+        "images": 372,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 2976,
+        "equal_pitch_object_macro_mae_deg": 21.08513693308998
+      },
+      "arb_style": {
+        "images": 372,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 2976,
+        "equal_pitch_object_macro_mae_deg": 22.166159276877885
+      },
+      "diligent": {
+        "images": 10,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 80,
+        "equal_pitch_object_macro_mae_deg": 22.864397190463976
+      },
+      "luces": {
+        "images": 14,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 112,
+        "equal_pitch_object_macro_mae_deg": 20.69456344239877
+      }
+    },
+    "D2": {
+      "primary": {
+        "images": 1860,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 14880,
+        "equal_pitch_object_macro_mae_deg": 18.6649671589252
+      },
+      "original": {
+        "images": 372,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 2976,
+        "equal_pitch_object_macro_mae_deg": 18.186473074875618
+      },
+      "arb_style": {
+        "images": 372,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 2976,
+        "equal_pitch_object_macro_mae_deg": 18.991659723047935
+      },
+      "diligent": {
+        "images": 10,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 80,
+        "equal_pitch_object_macro_mae_deg": 18.23093542775544
+      },
+      "luces": {
+        "images": 14,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 112,
+        "equal_pitch_object_macro_mae_deg": 17.702615027801638
+      }
+    },
+    "D3": {
+      "primary": {
+        "images": 1860,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 14880,
+        "equal_pitch_object_macro_mae_deg": 19.084537487780675
+      },
+      "original": {
+        "images": 372,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 2976,
+        "equal_pitch_object_macro_mae_deg": 18.534161072347324
+      },
+      "arb_style": {
+        "images": 372,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 2976,
+        "equal_pitch_object_macro_mae_deg": 19.357083019296002
+      },
+      "diligent": {
+        "images": 10,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 80,
+        "equal_pitch_object_macro_mae_deg": 18.724188875448323
+      },
+      "luces": {
+        "images": 14,
+        "inference_seeds": [
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "private_metric_rows_checked": 112,
+        "equal_pitch_object_macro_mae_deg": 18.78919956535164
+      }
+    }
+  },
+  "private_rows_checked": 110376,
+  "max_absolute_error_deg": 1.4210854715202004e-14,
+  "completed_at": "2026-11-05T23:30:27+0800",
+  "elapsed_seconds": 58.43,
+  "all_retention_decisions_recomputed": true,
+  "final_retained_recipe": "D2",
+  "test_images_scored": 0,
+  "code_tests": {
+    "source": {
+      "passed": 89,
+      "log_sha256": "66bcf2e7bb70518bc2d521c847577854fead289cb01ed1a2922897e6f7c71c40"
+    },
+    "exported_snapshot": {
+      "passed": 89,
+      "log_sha256": "9e2088fbc949015c193b69c167d72cad60ef0e07f2da1dfb0c507caf17d0941b"
+    },
+    "pytest_version": "9.1.1",
+    "scope": "Existing repository tests executed in an isolated publication test environment with the training runtime packages."
+  }
+}

@@ -1,0 +1,167 @@
+"""D1 multilight data recipe, fixed WSD100k, resumable full RNG state."""
+import sys
+from pathlib import Path
+sys.dont_write_bytecode=True
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+import argparse,collections,hashlib,json,random,time,os
+import numpy as np
+import torch
+from src.research_io import write_json,sha256,now
+from src.dino_conditioning import load_local_dino,DINOConditionedUNet
+from src.models.model_unet import FaceNormalUNet_B
+from src.parameterization import parameterization_loss
+from src.gpu_job_lock import gpu_job_lock
+from scripts.train_parameterization import ImageCache,evaluate
+from src.d1_multilight_cache import D1ImageCache
+from src.d3_native_cache import D3NativeCache
+from src.dino_canonical_518 import CanonicalDINOConditionedUNet
+
+CONFIG=Path(os.environ['FACEFLUX_STAGE_CONFIG'])
+def read(p):return json.loads(Path(p).read_text())
+def state_hash(state):
+    h=hashlib.sha256()
+    for k,v in sorted(state.items()):h.update(k.encode());h.update(v.detach().cpu().contiguous().numpy().tobytes())
+    return h.hexdigest()
+def factor(step):
+    cfg=read(CONFIG);stable=cfg['stable_end'];total=cfg['total_updates']
+    if step<=stable:return min(1.,step/cfg['warmup_updates'])
+    if step>total:raise ValueError('Outside fixed budget')
+    return max(0.,1-(step-stable)/(total-stable))
+
+def make_model():
+    stage=read(CONFIG);is_b=stage['prior_type']=='B_518'
+    cfg=read(ROOT/('configs/dinov2_b_518_compatibility_20261029.json' if is_b else 'configs/dinov2_s_compatibility.json'))
+    weights=ROOT/'runtime/dinov2/dinov2_vitb14_pretrain.pth' if is_b else ROOT/cfg['weights']
+    assert sha256(weights)==cfg['weights_sha256']
+    assert sha256(ROOT/'runtime/dinov2/source.zip')==cfg['source_archive_sha256']
+    backbone=FaceNormalUNet_B()
+    encoder=load_local_dino(ROOT/cfg['source_directory'],weights,cfg['architecture'])
+    return (CanonicalDINOConditionedUNet(backbone,encoder,768) if is_b else DINOConditionedUNet(backbone,encoder,384,14,pad_to_patch=True)).cuda()
+
+def main():
+    p=argparse.ArgumentParser();p.add_argument('--group',choices=['D2','D3'],required=True)
+    p.add_argument('--smoke',action='store_true');p.add_argument('--resume-smoke',action='store_true');p.add_argument('--smoke-reference',action='store_true');a=p.parse_args()
+    cfg=read(CONFIG);method=cfg['groups'][a.group]['method'];reg=read(ROOT/cfg['registration_path'])
+    assert sha256(CONFIG)==reg['config_sha256']
+    assert sha256(__file__)==reg['trainer_sha256']
+    assert sha256(ROOT/'src/d1_multilight_cache.py')==reg['sampler_sha256']
+    assert sha256(ROOT/'src/d3_native_cache.py')==reg['native_cache_sha256']
+    assert sha256(ROOT/'src/dino_canonical_518.py')==reg['canonical_prior_sha256']
+    manifest=ROOT/cfg['training_manifest'];assert sha256(manifest)==cfg['training_manifest_sha256']
+    rows=read(manifest)['records'];records=[r for r in rows if r['split']=='train']
+    validation_manifest=ROOT/cfg['validation_manifest'];assert sha256(validation_manifest)==cfg['validation_manifest_sha256']
+    validation=[r for r in read(validation_manifest)['records'] if r['split']=='val'];val={r['scene'] for r in validation}
+    assert len(records)==cfg.get('training_views',cfg.get('training_images')) and len({r['scene'] for r in records})==cfg['training_assets']
+    assert not val&{r['scene'] for r in records}
+    for r in records:assert '/test/' not in r.get('normal_path',r.get('path','')) and '/val/' not in r.get('normal_path',r.get('path',''))
+    # Same heldout Arb validation as A/B, loaded separately above.
+    assert validation and all('/val/' in r['path'] for r in validation)
+    base=ROOT/cfg['output_root']
+    if a.smoke:base=base/'smoke_generations'/sha256(__file__)[:12]
+    job=base/(('reference_' if a.smoke_reference else '')+a.group+'_'+method+'_s1247')
+    job.mkdir(parents=True,exist_ok=True)
+    signature={'config_sha256':sha256(CONFIG),'trainer_sha256':sha256(__file__),
+      'data_manifest_sha256':sha256(manifest),'group':a.group,'method':method,'smoke':a.smoke,
+      'model_code_sha256':sha256(ROOT/'src/models/model_unet.py'),'dino_code_sha256':sha256(ROOT/'src/dino_conditioning.py'),
+      'native_cache_sha256':sha256(ROOT/'src/d3_native_cache.py'),'canonical_prior_sha256':sha256(ROOT/'src/dino_canonical_518.py'),'sampler_sha256':sha256(ROOT/'src/d1_multilight_cache.py'),'target_code_sha256':sha256(ROOT/'src/parameterization.py'),'seed':1247,'torch':torch.__version__}
+    sp=job/'signature_private.json'
+    if sp.exists():assert read(sp)==signature,'Run signature changed'
+    else:write_json(sp,signature)
+    torch.set_num_threads(4);torch.manual_seed(1247);torch.cuda.manual_seed_all(1247)
+    random.seed(1247);np.random.seed(1247);torch.backends.cudnn.benchmark=False
+    if cfg.get('acceptance_dtype')=='float32':
+        torch.backends.cudnn.deterministic=True;torch.use_deterministic_algorithms(True)
+    model=make_model();initial=state_hash(model.unet.state_dict());frozen=state_hash(model.features.encoder.state_dict())
+    if cfg.get('warmstart_checkpoint'):
+        parent=Path(cfg['warmstart_checkpoint']);assert sha256(parent)==cfg['warmstart_checkpoint_sha256']
+        warm=torch.load(parent,map_location='cpu',weights_only=False);current=model.state_dict();assert set(warm['trainable_model'])=={k for k in current if not k.startswith('features.')}
+        current.update(warm['trainable_model']);model.load_state_dict(current,strict=True);del warm,current
+    parameters=[p for p in model.parameters() if p.requires_grad]
+    optimizer=torch.optim.AdamW(parameters,lr=cfg['learning_rate'],weight_decay=cfg['weight_decay'])
+    generator=torch.Generator(device='cuda').manual_seed(8247);rng=np.random.default_rng(10247)
+    cache=ImageCache(records,capacity=128) if cfg['cache_mode']=='single_C_256' else D1ImageCache(records,capacity=128,rng=rng) if cfg['cache_mode']=='multilight_256' else D3NativeCache(records,capacity=64,rng=rng);step=0;curve=[];started=time.perf_counter();end=3 if a.smoke else cfg['total_updates']
+    if a.smoke_reference:
+        assert a.smoke
+        end=4
+    last=job/'last_local.pth'
+    if last.exists():
+        ck=torch.load(last,map_location='cpu',weights_only=False);assert ck['signature']==signature
+        current=model.state_dict();current.update(ck['trainable_model']);model.load_state_dict(current,strict=True)
+        optimizer.load_state_dict(ck['optimizer'])
+        for values in optimizer.state.values():
+            for key,value in values.items():
+                if torch.is_tensor(value) and key!='step':values[key]=value.cuda()
+        step=ck['step'];curve=ck['curve'];rng.bit_generator.state=ck['numpy_rng'];generator.set_state(ck['generator'])
+        torch.set_rng_state(ck['torch_rng']);torch.cuda.set_rng_state_all(ck['cuda_rng']);random.setstate(ck['python_rng'])
+        if a.resume_smoke:end=4
+        if step>=end:
+            print('already complete',a.group,step,flush=True);return
+        log=job/'training_log.jsonl'
+        if log.exists():log.write_text(''.join(x+'\n' for x in log.read_text().splitlines() if json.loads(x)['update']<=step))
+    write_json(job/'initialization.json',{'unet_initial_sha256':initial,'frozen_encoder_state_sha256':frozen,
+       'trainable_parameters':sum(p.numel() for p in parameters),'frozen_parameters':sum(p.numel() for p in model.parameters() if not p.requires_grad),
+       'signature':signature})
+    def save():
+        # Frozen encoder bytes are already pinned by SHA; do not duplicate them in every checkpoint.
+        trainable={k:v for k,v in model.state_dict().items() if not k.startswith('features.')}
+        tmp=last.with_suffix('.tmp')
+        torch.save({'trainable_model':trainable,'optimizer':optimizer.state_dict(),'step':step,'curve':curve,
+           'numpy_rng':rng.bit_generator.state,'generator':generator.get_state(),'torch_rng':torch.get_rng_state(),
+           'cuda_rng':torch.cuda.get_rng_state_all(),'python_rng':random.getstate(),'signature':signature},tmp)
+        tmp.replace(last)
+    model.train();torch.cuda.reset_peak_memory_stats()
+    write_json(job/'summary.json',{'status':'running','started_at':now(),'group':a.group,'method':method,'target_updates':end,'smoke':a.smoke})
+    try:
+        with (job/'training_log.jsonl').open('a') as log:
+            while step<end:
+                nextstep=step+1;optimizer.zero_grad(set_to_none=True)
+                for pg in optimizer.param_groups:pg['lr']=cfg['learning_rate']*factor(nextstep)
+                infos=[]
+                for micro in range(cfg['gradient_accumulation']):
+                    batch=[]
+                    rng.random() # retain fixed dropout draw without applying dropout
+                    for _ in range(cfg['microbatch']):
+                        rgb,normal,mask=cache.get(int(rng.integers(len(records))))
+                        if rng.random()<.5:
+                            rgb=rgb[:,:,::-1].copy();normal=normal[:,:,::-1].copy();normal[0]*=-1;mask=mask[:,::-1].copy()
+                        batch.append((rgb,normal,mask))
+                    rgb=torch.from_numpy(np.stack([x[0] for x in batch])).cuda()
+                    normal=torch.from_numpy(np.stack([x[1] for x in batch])).cuda();mask=torch.from_numpy(np.stack([x[2] for x in batch])).cuda()
+                    noise=torch.randn(normal.shape,device='cuda',generator=generator)
+                    t=torch.rand(len(batch),device='cuda',generator=generator)*.95
+                    z=(1-t[:,None,None,None])*noise+t[:,None,None,None]*normal
+                    if method=='R':z=torch.zeros_like(z);t=torch.zeros_like(t)
+                    with torch.autocast('cuda',dtype=torch.bfloat16,enabled=cfg.get('acceptance_dtype')!='float32'):pred=model(z,t,rgb)
+                    loss,info=parameterization_loss(method,pred,z,normal,noise,t,mask,.25,.25)
+                    assert torch.isfinite(loss),'Nonfinite loss'
+                    (loss/cfg['gradient_accumulation']).backward();infos.append(info)
+                norm=torch.nn.utils.clip_grad_norm_(parameters,1.)
+                assert torch.isfinite(norm),'Nonfinite gradient'
+                assert not model.features.encoder.training
+                assert all(p.grad is None and not p.requires_grad for p in model.features.encoder.parameters())
+                optimizer.step();step=nextstep
+                row={'update':step,'lr':optimizer.param_groups[0]['lr'],'gradient_norm_before_clip':float(norm),
+                   'gradient_clipped':bool(norm>1),**{k:float(np.mean([i[k] for i in infos])) for k in ['mse','unit','cosine']}}
+                log.write(json.dumps(row)+'\n');log.flush()
+                if step%10==0 or step==1 or step==end:
+                    elapsed=time.perf_counter()-started
+                    progress={'status':'training','group':a.group,'method':method,'update':step,'end_update':end,'elapsed_seconds':elapsed,
+                       'peak_cuda_bytes':torch.cuda.max_memory_allocated(),'updated_at':now()}
+                    write_json(job/'progress.json',progress);print(json.dumps(progress),flush=True)
+                if not a.smoke and step%2500==0:
+                    score,_=evaluate(model,method,{'arb_validation_retrain':validation},[42,43],0,'cuda')
+                    curve.append({'update':step,'arb_validation_curve_only_2_seeds':score})
+                    write_json(job/'learning_curve.json',{'points':curve,'selection':'diagnostic only; fixed final checkpoint remains primary; GSO must be rebuilt separately; Arb curve is not GSO and does not select checkpoints'})
+                if step%250==0 or step==end:save()
+        assert state_hash(model.features.encoder.state_dict())==frozen
+        result={'status':'completed','group':a.group,'method':method,'last_update':step,'smoke':a.smoke,
+          'elapsed_seconds':time.perf_counter()-started,'encoder_frozen_unchanged':True,
+          'unet_initial_sha256':initial,'final_checkpoint_sha256':sha256(last),'peak_cuda_bytes':torch.cuda.max_memory_allocated(),
+          'final_evaluation_status':'fresh D1multilight-assets100k run; fixed final checkpoint; compare later on frozen same GSO-val inputs'}
+        write_json(job/'summary.json',result);write_json(job/'progress.json',result);print(json.dumps(result),flush=True)
+    except Exception as e:
+        write_json(job/'failure.json',{'error':repr(e),'last_completed_update':step,'updated_at':now()});raise
+
+if __name__=='__main__':
+    with gpu_job_lock():main()
+

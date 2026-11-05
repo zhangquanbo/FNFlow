@@ -1,0 +1,124 @@
+{
+  "registered_at": "2026-10-27T10:33:41+08:00",
+  "public_registration_commit": "89f23e903748ce48997b5746b2d366533b8b99ef",
+  "main_panel": {
+    "objects": 93,
+    "split": "val",
+    "bins": [
+      0,
+      15,
+      30,
+      45,
+      60
+    ],
+    "images": 1860,
+    "aggregation": "seed average within image; four views within object; objects within angle; five angle bins equal"
+  },
+  "lighting_panel": {
+    "objects": 93,
+    "images_each": 372,
+    "elevation": 30,
+    "samples": 256,
+    "denoiser": "OpenImageDenoise",
+    "device": "CPU",
+    "styles": [
+      "original",
+      "arb_style"
+    ],
+    "all_non_RGB_fields": "require bitwise equal to fresh primary30",
+    "source_receipt_sha256": "2a4e403fee2784eaefa4a3b2a173eeefdca2f659b52f9eb6bcc2b28919a0ba07",
+    "light_choice": "SHA256(asset-name + decimal-view) first8hex modulo7, historical rule"
+  },
+  "real_controls": {
+    "diligent": 10,
+    "luces": 14,
+    "selection": "all objects, lowest numeric input light, frozen prepared inputs"
+  },
+  "ours": {
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49
+    ],
+    "noise": "sha256_image_noise_v1(base_seed,canonical_relative_image_key)",
+    "R": "zero input, single seed42 label",
+    "input": 256,
+    "precision": "bf16 autocast, FP32 output; bilinear vector resize then normalize at native GT"
+  },
+  "NLR": {
+    "input": 512,
+    "steps": 75,
+    "CFG": 2.0,
+    "CFG_rescale": 0.7,
+    "seed": 511,
+    "coordinate_matrix": [
+      [
+        -1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "RNG": "Seed once before official model initialization; sorted primary30 image-key baseline, then diligent/luces. Save per-image pre/post RNG; replay corresponding fresh primary30 pre-state for other angles and both lights. Record exact GPU/software.",
+    "variability": {
+      "seeds": [
+        511,
+        512,
+        513
+      ],
+      "images": 40,
+      "selection": "first ceil(10%) by SHA256 image-key ID among 372 primary30 plus24 real controls",
+      "RNG": "reset seed after model load per variability pass, sequential fixed subset; separate from default511 pass"
+    }
+  },
+  "mask": "identical frozen valid GT across all models; invalid/zero/nonfinite output is a failure, never removed",
+  "diagnostics": [
+    "face and crease45 GT sensitivity",
+    "boundary and outside boundary",
+    "camera-up GT dominant positiveY: MAE and signed/absolute predictedZ-GTZ",
+    "paired foreground luminance P90-P10 and normalized contrast"
+  ],
+  "recovery_differences": [
+    "Old server checkpoints and per-image RNG snapshots unavailable. This is a fresh A/B50k comparison, not recovery of old R/V/Xn52.5k scores.",
+    "Primary30 is newly rendered with the frozen renderer, not exact historical RGB or prediction reuse.",
+    "Old RNG snapshots cannot be reconstructed from seed alone; fresh same-seed states will be saved.",
+    "Historical R/V/Xn results, if cited, remain clearly separated published references."
+  ],
+  "configuration_notes": {
+    "D1_validation_description": "The original D1 config inherited a fixed50k textual description from C. The executed total_updates field and verified fixed-final checkpoint are100000. The original source config and its hash are preserved."
+  },
+  "D_stage_overrides": {
+    "retention": "Previous retained recipe MAE minus candidate MAE >= 0.5 degrees, using unrounded values.",
+    "checkpoint_selection": "Fixed final update, with no intermediate selection on GSO validation.",
+    "D3_input_size": 512,
+    "D3_native_subset_assets": 1038,
+    "training_seeds": [
+      1247
+    ],
+    "ours_inference_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49
+    ],
+    "TTA_used_in_stage_retention": false
+  }
+}
