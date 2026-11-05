@@ -30,6 +30,19 @@ Our Xn scores average errors over image-specific inference seeds 42-49. This is 
 | D3 | 18.0386 | 18.0872 | 18.9174 | 20.0268 | 20.3527 |
 | NeuralLightRig | 18.5732 | 20.8252 | 20.6658 | 20.6177 | 21.8299 |
 
+## Boundary metric supplement, 2026-11-06
+
+Recovered from the same frozen per-image inference records; no inference was rerun. These are equal-angle object-macro angular errors in degrees. Region definitions and empty-region handling follow the frozen evaluator. Real-data records do not contain these region labels; their values remain null and coverage explicitly records missing labels, separately from empty regions.
+
+| Model | Primary angular boundary | Outside primary boundary | Crease45 plus silhouette boundary | Outside crease45 boundary |
+|---|---:|---:|---:|---:|
+| C | 26.2650 | 18.3436 | 25.1384 | 18.5739 |
+| D1 | 25.7063 | 17.9363 | 24.6209 | 18.1503 |
+| D2 | 22.2648 | 14.8781 | 21.2174 | 15.0188 |
+| D3 | 22.7582 | 15.1100 | 21.6743 | 15.1458 |
+
+The supplement checks 84,096 inference records across all five panels. The original aggregate MAEs and all previously published summary values are preserved. Per-angle values and region coverage are added to [summary.json](summary.json); [boundary_metrics.json](boundary_metrics.json) contains the complete supplement, and [boundary_validation.json](boundary_validation.json) records export checks.
+
 ## Actual training budgets
 
 | Model | Training assets | Prepared views | UNet side | Updates | Objective |

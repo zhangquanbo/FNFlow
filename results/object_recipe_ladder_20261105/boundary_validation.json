@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "base_commit": "7b0f10a40eebbdf0a0de555aab0ca563ff835ab4",
+  "private_inference_records_checked": 84096,
+  "original_summary_leaves_preserved": 1091,
+  "added_pitch_fields": 252,
+  "real_missing_region_labels_distinguished_from_empty": true,
+  "original_aggregate_MAEs_preserved": true,
+  "inference_rerun": false,
+  "test_images_scored": 0,
+  "supplement_sha256": "85554ef90dec3d673ff4574f310e3d142345e71abc4061bc0716b34f6e294006",
+  "aggregation_code_sha256": "8aee7e7dd9e18a42003320c967e2956171728481c7715b1aec1f1af2671d081f"
+}

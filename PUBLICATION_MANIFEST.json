@@ -1,248 +1,38 @@
 {
-  "created_at": "2026-11-05T23:39:53+0800",
+  "created_at": "2026-11-06T00:21:43.590017+08:00",
   "scan_passed": true,
-  "base_commit": "89f23e903748ce48997b5746b2d366533b8b99ef",
-  "scope": "Current explicit code/configuration and completed aggregate export. Unchanged published files are retained through the base tree.",
+  "base_commit": "7b0f10a40eebbdf0a0de555aab0ca563ff835ab4",
+  "scope": "Additive completed C/D1/D2/D3 region-metric supplement and aggregation source; unchanged published files retained through base tree.",
   "files": [
     {
-      "path": "README.md",
-      "category": "release_index",
-      "bytes": 19312,
-      "exported_sha256": "6601d2cdb72cd1db15168036242333c156bc40720fc75d23f5d4cb936f7150c8"
-    },
-    {
-      "path": "configs/D2_actual_20261030.json",
-      "category": "configuration",
-      "bytes": 1816,
-      "exported_sha256": "f59d8bea2cd5aa36a5b6d16db25d59bcf3158309c2af9d61b68a17d316ff6a50",
-      "source_sha256": "f59d8bea2cd5aa36a5b6d16db25d59bcf3158309c2af9d61b68a17d316ff6a50"
-    },
-    {
-      "path": "configs/D3_actual_20261030.json",
-      "category": "configuration",
-      "bytes": 2048,
-      "exported_sha256": "b3425ae4bbcb50b62b4104d726376fa9755df01c3ddb0c67c5fb0e8871c5c1a3",
-      "source_sha256": "f8de7989ed9be0babe68e3f47c1a8dd3db1705c5ccd844db71dde9570ff68f10"
-    },
-    {
-      "path": "configs/dinov2_b_518_compatibility_20261029.json",
-      "category": "configuration",
-      "bytes": 3436,
-      "exported_sha256": "f6ad17e5cdc579f5ba372dbdbfb6fd33b0b4ef82cf4cca1731413ced0d28edd1",
-      "source_sha256": "22c87a9ce7351179fdc2fcc6e66f1783c3ec4050ca267286c22467f41b82ae97"
-    },
-    {
-      "path": "configs/object_dino_C_20261029.json",
-      "category": "configuration",
-      "bytes": 1496,
-      "exported_sha256": "73b8e6111dea832f25a53241499a139e015808f8498a7abce17e8438507fdcab",
-      "source_sha256": "866d81ad25856605e7a0e9aecc16986165d4aac8b8132642234be3d76caf0755"
-    },
-    {
-      "path": "configs/object_dino_D1_20261030.json",
-      "category": "configuration",
-      "bytes": 1616,
-      "exported_sha256": "f8288c21e02dde86ac164ea08d8a6f2b7ed7549af82b268abaf7e0e7ea4a00e0",
-      "source_sha256": "f8288c21e02dde86ac164ea08d8a6f2b7ed7549af82b268abaf7e0e7ea4a00e0"
-    },
-    {
-      "path": "configs/object_dino_retrain_20261026.json",
-      "category": "configuration",
-      "bytes": 1218,
-      "exported_sha256": "6c8444ed23b554f7b3fa0bebfa3dc44f29a1085d7cec8cad5999f779f47a82a2",
-      "source_sha256": "53e4bf30d372af0952962f6e637875550185feceeb18ff84aedd7194128c2f29"
-    },
-    {
       "path": "results/object_recipe_ladder_20261105/README.md",
-      "category": "aggregate_tables_and_execution",
-      "bytes": 7566,
-      "exported_sha256": "e8c01c8867fc146bcf64ca72477f900f18ed2b3a41f2fe6c34607c1ef84b6fc0"
+      "category": "completed_aggregate_supplement",
+      "bytes": 8730,
+      "exported_sha256": "0c4686c2db0c2d019952a2bbef6136904837fad3c4efc4364f554fa80281ec51"
     },
     {
-      "path": "results/object_recipe_ladder_20261105/protocol.json",
-      "category": "measurement_protocol",
-      "bytes": 3880,
-      "exported_sha256": "029be258c322907347081b1b48fee7b7a1146d7af5e830eb063674e285039b90"
+      "path": "results/object_recipe_ladder_20261105/boundary_metrics.json",
+      "category": "completed_aggregate_supplement",
+      "bytes": 55279,
+      "exported_sha256": "85554ef90dec3d673ff4574f310e3d142345e71abc4061bc0716b34f6e294006"
+    },
+    {
+      "path": "results/object_recipe_ladder_20261105/boundary_validation.json",
+      "category": "completed_aggregate_supplement",
+      "bytes": 557,
+      "exported_sha256": "59185e91bc5e7a6191b09a56ecccfb38e2a335e373afb3b016414adc4f01b589"
     },
     {
       "path": "results/object_recipe_ladder_20261105/summary.json",
-      "category": "aggregate_results",
-      "bytes": 64267,
-      "exported_sha256": "abec5e254bfc110395efa761f036e0d7330ed46d00930bc4fbacf29c4c1b3995"
+      "category": "completed_aggregate_supplement",
+      "bytes": 114072,
+      "exported_sha256": "0cdffa93d471ae8abacda9daca1660f97fd37dfbdf18d77f74a46166e4af3354"
     },
     {
-      "path": "results/object_recipe_ladder_20261105/validation.json",
-      "category": "aggregate_reconciliation",
-      "bytes": 10741,
-      "exported_sha256": "3894349fe16f7c34f4d18622e9ffdcb9ee611da93b8d098074c7db9ce68e7996"
-    },
-    {
-      "path": "scripts/acquire_arb_full_retrain.py",
-      "category": "training_evaluation_code",
-      "bytes": 10184,
-      "exported_sha256": "130c1c997f531e9efaefb0069a63bf8176874752deea89c8340656913f86310d",
-      "source_sha256": "130c1c997f531e9efaefb0069a63bf8176874752deea89c8340656913f86310d"
-    },
-    {
-      "path": "scripts/audit_c_data.py",
-      "category": "training_evaluation_code",
-      "bytes": 4095,
-      "exported_sha256": "f4f5ba0df5404d583678bbd97645d1ad0dd312f1b148b53b78f6153f2395ffe8",
-      "source_sha256": "f4f5ba0df5404d583678bbd97645d1ad0dd312f1b148b53b78f6153f2395ffe8"
-    },
-    {
-      "path": "scripts/benchmark_fresh_models.py",
-      "category": "training_evaluation_code",
-      "bytes": 4940,
-      "exported_sha256": "7d3b918bd2d5a0189d90927d680e60425880b46592872c8fe7d4241abdd187c7",
-      "source_sha256": "7d3b918bd2d5a0189d90927d680e60425880b46592872c8fe7d4241abdd187c7"
-    },
-    {
-      "path": "scripts/evaluate_C_20261029.py",
-      "category": "training_evaluation_code",
-      "bytes": 7393,
-      "exported_sha256": "31ab630ddc10a38ada986e78e848a4079ddb01a580c9fa0cd06e16259a605ceb",
-      "source_sha256": "31ab630ddc10a38ada986e78e848a4079ddb01a580c9fa0cd06e16259a605ceb"
-    },
-    {
-      "path": "scripts/evaluate_C_TTA_20261029.py",
-      "category": "training_evaluation_code",
-      "bytes": 6429,
-      "exported_sha256": "981a880af0268f23427d275a4890ccd8d8cefdb42495458b24300e3b2f351e1c",
-      "source_sha256": "981a880af0268f23427d275a4890ccd8d8cefdb42495458b24300e3b2f351e1c"
-    },
-    {
-      "path": "scripts/evaluate_D1_20261030.py",
-      "category": "training_evaluation_code",
-      "bytes": 6191,
-      "exported_sha256": "6c7d0f9978a1c3bf5ced34d3d359bc6a905209f5ed0c408ef6cf00906f7cab78",
-      "source_sha256": "6c7d0f9978a1c3bf5ced34d3d359bc6a905209f5ed0c408ef6cf00906f7cab78"
-    },
-    {
-      "path": "scripts/evaluate_D_stage_20261030.py",
-      "category": "training_evaluation_code",
-      "bytes": 6383,
-      "exported_sha256": "88347bf70402678cf292018ffab29647d736d6975c4f98a9bf8642a3372c6a65",
-      "source_sha256": "88347bf70402678cf292018ffab29647d736d6975c4f98a9bf8642a3372c6a65"
-    },
-    {
-      "path": "scripts/evaluate_NLR_real5_20261030.py",
-      "category": "training_evaluation_code",
-      "bytes": 4922,
-      "exported_sha256": "9b59bd0350d16531231b1b1413593d587ea8c9848af5ada62b40c6cb738a27fb",
-      "source_sha256": "9b59bd0350d16531231b1b1413593d587ea8c9848af5ada62b40c6cb738a27fb"
-    },
-    {
-      "path": "scripts/evaluate_fresh_ab.py",
-      "category": "training_evaluation_code",
-      "bytes": 12522,
-      "exported_sha256": "16a68542cb3c641b38bb6504985f50cd7785d751b8d75bc9e99656efd43ba545",
-      "source_sha256": "16a68542cb3c641b38bb6504985f50cd7785d751b8d75bc9e99656efd43ba545"
-    },
-    {
-      "path": "scripts/evaluate_fresh_nlr.py",
-      "category": "training_evaluation_code",
-      "bytes": 6867,
-      "exported_sha256": "96cadd860dfb700796cb3506912b86445f4f1247fe046dbd3a01a37c58fdcac8",
-      "source_sha256": "96cadd860dfb700796cb3506912b86445f4f1247fe046dbd3a01a37c58fdcac8"
-    },
-    {
-      "path": "scripts/fresh_audit_luces_full_bundle.py",
-      "category": "training_evaluation_code",
-      "bytes": 3696,
-      "exported_sha256": "f1cd26f50c448f4292e1ec861d13e4c5d5259aee79dbcbaef3c366366403e661",
-      "source_sha256": "b32837c2355c98a1b1a0607e5da0c9fdabecd9b8ad704aa21ad619d58cafd706"
-    },
-    {
-      "path": "scripts/fresh_eval_lighting_core.py",
-      "category": "training_evaluation_code",
-      "bytes": 15240,
-      "exported_sha256": "1ffa33852f0bd6834adcc584b4b94eefdeed757404991e6a30aecbe0822861aa",
-      "source_sha256": "1ffa33852f0bd6834adcc584b4b94eefdeed757404991e6a30aecbe0822861aa"
-    },
-    {
-      "path": "scripts/fresh_eval_lighting_protocol.py",
-      "category": "training_evaluation_code",
-      "bytes": 1725,
-      "exported_sha256": "42d785c96849566174aa06d0ac0d655a58ed7529f9fb562406fcd8fa2eedc38f",
-      "source_sha256": "42d785c96849566174aa06d0ac0d655a58ed7529f9fb562406fcd8fa2eedc38f"
-    },
-    {
-      "path": "scripts/fresh_eval_lighting_worker.py",
-      "category": "training_evaluation_code",
-      "bytes": 3632,
-      "exported_sha256": "9c8b15718d7fa8334651a376b303dbaeb41b17b80d65ef466cd017349585cf93",
-      "source_sha256": "9c8b15718d7fa8334651a376b303dbaeb41b17b80d65ef466cd017349585cf93"
-    },
-    {
-      "path": "scripts/fresh_intake_diligent_full_bundle.py",
-      "category": "training_evaluation_code",
-      "bytes": 3027,
-      "exported_sha256": "b07a1aed61aec69da697f4f4fe65485bed2627a8fca77178c017009f20026b3e",
-      "source_sha256": "b07a1aed61aec69da697f4f4fe65485bed2627a8fca77178c017009f20026b3e"
-    },
-    {
-      "path": "scripts/full_gso_worker.py",
-      "category": "training_evaluation_code",
-      "bytes": 3715,
-      "exported_sha256": "83b0efa8e175d5a106b72da88167a2e3e67eb955ab90e6876b3814a8526a5484",
-      "source_sha256": "83b0efa8e175d5a106b72da88167a2e3e67eb955ab90e6876b3814a8526a5484"
-    },
-    {
-      "path": "scripts/replay_real_legacy_rng_20261029.py",
-      "category": "training_evaluation_code",
-      "bytes": 5640,
-      "exported_sha256": "eec743cb112a3659a922cf8d7d04c87253243c9e60df23bf4c02b11094f2427b",
-      "source_sha256": "eec743cb112a3659a922cf8d7d04c87253243c9e60df23bf4c02b11094f2427b"
-    },
-    {
-      "path": "scripts/train_D_stage_20261030.py",
-      "category": "training_evaluation_code",
-      "bytes": 12479,
-      "exported_sha256": "211f144bba6ab880fd6b4c9fb2148b2c5f4649c928075146c28c7b3fbd756588",
-      "source_sha256": "211f144bba6ab880fd6b4c9fb2148b2c5f4649c928075146c28c7b3fbd756588"
-    },
-    {
-      "path": "scripts/train_object_dino_C_20261029.py",
-      "category": "training_evaluation_code",
-      "bytes": 10702,
-      "exported_sha256": "c5c6d1443ca8a30d51b3749fc3c87d985abe3c7c593ac94c0e8bf2cca954547a",
-      "source_sha256": "c5c6d1443ca8a30d51b3749fc3c87d985abe3c7c593ac94c0e8bf2cca954547a"
-    },
-    {
-      "path": "scripts/train_object_dino_D1_20261030.py",
-      "category": "training_evaluation_code",
-      "bytes": 10870,
-      "exported_sha256": "0f350be4b57281c0879e94d82795783df393146b5edfbb4442e9dfe1c0b615a7",
-      "source_sha256": "0f350be4b57281c0879e94d82795783df393146b5edfbb4442e9dfe1c0b615a7"
-    },
-    {
-      "path": "scripts/train_object_dino_retrain.py",
-      "category": "training_evaluation_code",
-      "bytes": 10330,
-      "exported_sha256": "8346a8c6ea793f48e5ff069039287c5e1b779cc371900bcd2df43419eae267e3",
-      "source_sha256": "8346a8c6ea793f48e5ff069039287c5e1b779cc371900bcd2df43419eae267e3"
-    },
-    {
-      "path": "src/d1_multilight_cache.py",
-      "category": "training_evaluation_code",
-      "bytes": 1095,
-      "exported_sha256": "30c8fd123ebb961543d2f508759bfb96eed6195a5cfd1c0c21beaf08c6da1c48",
-      "source_sha256": "30c8fd123ebb961543d2f508759bfb96eed6195a5cfd1c0c21beaf08c6da1c48"
-    },
-    {
-      "path": "src/d3_native_cache.py",
-      "category": "training_evaluation_code",
-      "bytes": 1233,
-      "exported_sha256": "eff87b58b391a0df5def790c103dab5d2cfdf2b9a94ce2a28cf0d7f61693f854",
-      "source_sha256": "eff87b58b391a0df5def790c103dab5d2cfdf2b9a94ce2a28cf0d7f61693f854"
-    },
-    {
-      "path": "src/dino_canonical_518.py",
-      "category": "training_evaluation_code",
-      "bytes": 867,
-      "exported_sha256": "0d6a9309e923a52083e7cac5b0cf1763b217ccba2c899989e1be5a53b1664e49",
-      "source_sha256": "0d6a9309e923a52083e7cac5b0cf1763b217ccba2c899989e1be5a53b1664e49"
+      "path": "scripts/aggregate_recipe_boundaries_20261106.py",
+      "category": "aggregation_source",
+      "bytes": 5631,
+      "exported_sha256": "8aee7e7dd9e18a42003320c967e2956171728481c7715b1aec1f1af2671d081f"
     }
   ]
 }

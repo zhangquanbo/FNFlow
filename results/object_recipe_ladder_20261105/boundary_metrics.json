@@ -1,0 +1,1155 @@
+{
+  "status": "completed",
+  "models": {
+    "C": {
+      "panels": {
+        "primary": {
+          "by_pitch": {
+            "0": {
+              "mean_deg": 20.385762864148504,
+              "normal_face_mae_deg": 21.210976088605882,
+              "normal_crease45_diagnostic_mae_deg": 20.504730814440215,
+              "boundary_primary_angular_mae_deg": 23.928167685328717,
+              "boundary_primary_angular_outside_mae_deg": 16.717990790171406,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 23.00326161163706,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 16.621770202347108,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 726963
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 822521
+                }
+              }
+            },
+            "15": {
+              "mean_deg": 21.453028848063894,
+              "normal_face_mae_deg": 22.23333466091023,
+              "normal_crease45_diagnostic_mae_deg": 21.562819329806747,
+              "boundary_primary_angular_mae_deg": 26.18465123879508,
+              "boundary_primary_angular_outside_mae_deg": 17.758039026725942,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 25.01543131951264,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 18.38510217614889,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 889267
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 998561
+                }
+              }
+            },
+            "30": {
+              "mean_deg": 22.05345980143883,
+              "normal_face_mae_deg": 22.794261999779465,
+              "normal_crease45_diagnostic_mae_deg": 22.1531664516849,
+              "boundary_primary_angular_mae_deg": 25.98271959964541,
+              "boundary_primary_angular_outside_mae_deg": 18.440489481461363,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 24.84883232367686,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 18.64182328900043,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1005754
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1122703
+                }
+              }
+            },
+            "45": {
+              "mean_deg": 23.155612632592288,
+              "normal_face_mae_deg": 23.80889120574869,
+              "normal_crease45_diagnostic_mae_deg": 23.24468542385251,
+              "boundary_primary_angular_mae_deg": 27.015272331682787,
+              "boundary_primary_angular_outside_mae_deg": 19.350775807195074,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 25.804572142005245,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 19.592338182560027,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1076606
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1191348
+                }
+              }
+            },
+            "60": {
+              "mean_deg": 23.662084518304475,
+              "normal_face_mae_deg": 24.228239259651815,
+              "normal_crease45_diagnostic_mae_deg": 23.736334520772147,
+              "boundary_primary_angular_mae_deg": 28.214187275472618,
+              "boundary_primary_angular_outside_mae_deg": 19.45060138818912,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 27.019669120817305,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 19.628581257261864,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1098202
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1203493
+                }
+              }
+            }
+          },
+          "equal_pitch_object_macro": {
+            "mean_deg": 22.1419897329096,
+            "normal_face_mae_deg": 22.855140642939215,
+            "normal_crease45_diagnostic_mae_deg": 22.240347308111303,
+            "boundary_primary_angular_mae_deg": 26.264999626184924,
+            "boundary_primary_angular_outside_mae_deg": 18.34357929874858,
+            "boundary_crease45_angular_plus_silhouette_mae_deg": 25.138353303529822,
+            "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 18.573923021463663
+          }
+        },
+        "original": {
+          "by_pitch": {
+            "30": {
+              "mean_deg": 21.538632783340496,
+              "normal_face_mae_deg": 22.31132550272171,
+              "normal_crease45_diagnostic_mae_deg": 21.643468018941345,
+              "boundary_primary_angular_mae_deg": 25.526845911006944,
+              "boundary_primary_angular_outside_mae_deg": 17.785739074298355,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 24.45305736964249,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 18.004215333183463,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1005754
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1122703
+                }
+              }
+            }
+          },
+          "equal_pitch_object_macro": {
+            "mean_deg": 21.538632783340496,
+            "normal_face_mae_deg": 22.31132550272171,
+            "normal_crease45_diagnostic_mae_deg": 21.643468018941345,
+            "boundary_primary_angular_mae_deg": 25.526845911006944,
+            "boundary_primary_angular_outside_mae_deg": 17.785739074298355,
+            "boundary_crease45_angular_plus_silhouette_mae_deg": 24.45305736964249,
+            "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 18.004215333183463
+          }
+        },
+        "arb_style": {
+          "by_pitch": {
+            "30": {
+              "mean_deg": 22.245309925697967,
+              "normal_face_mae_deg": 22.990027103631594,
+              "normal_crease45_diagnostic_mae_deg": 22.345925305914633,
+              "boundary_primary_angular_mae_deg": 26.189979798666183,
+              "boundary_primary_angular_outside_mae_deg": 18.540359325544326,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 25.127792579011373,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 18.85982837018204,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1005754
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1122703
+                }
+              }
+            }
+          },
+          "equal_pitch_object_macro": {
+            "mean_deg": 22.245309925697967,
+            "normal_face_mae_deg": 22.990027103631594,
+            "normal_crease45_diagnostic_mae_deg": 22.345925305914633,
+            "boundary_primary_angular_mae_deg": 26.189979798666183,
+            "boundary_primary_angular_outside_mae_deg": 18.540359325544326,
+            "boundary_crease45_angular_plus_silhouette_mae_deg": 25.127792579011373,
+            "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 18.85982837018204
+          }
+        },
+        "diligent": {
+          "by_pitch": {
+            "None": {
+              "mean_deg": 22.452394575484846,
+              "normal_face_mae_deg": null,
+              "normal_crease45_diagnostic_mae_deg": null,
+              "boundary_primary_angular_mae_deg": null,
+              "boundary_primary_angular_outside_mae_deg": null,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": null,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": null,
+              "images": 10,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 0,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 10,
+                  "GT_pixels_sum_over_images_once": null
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 0,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 10,
+                  "GT_pixels_sum_over_images_once": null
+                }
+              }
+            }
+          },
+          "equal_pitch_object_macro": {
+            "mean_deg": 22.452394575484846,
+            "normal_face_mae_deg": null,
+            "normal_crease45_diagnostic_mae_deg": null,
+            "boundary_primary_angular_mae_deg": null,
+            "boundary_primary_angular_outside_mae_deg": null,
+            "boundary_crease45_angular_plus_silhouette_mae_deg": null,
+            "boundary_crease45_angular_plus_silhouette_outside_mae_deg": null
+          }
+        },
+        "luces": {
+          "by_pitch": {
+            "None": {
+              "mean_deg": 20.56569066142178,
+              "normal_face_mae_deg": null,
+              "normal_crease45_diagnostic_mae_deg": null,
+              "boundary_primary_angular_mae_deg": null,
+              "boundary_primary_angular_outside_mae_deg": null,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": null,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": null,
+              "images": 14,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 0,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 14,
+                  "GT_pixels_sum_over_images_once": null
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 0,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 14,
+                  "GT_pixels_sum_over_images_once": null
+                }
+              }
+            }
+          },
+          "equal_pitch_object_macro": {
+            "mean_deg": 20.56569066142178,
+            "normal_face_mae_deg": null,
+            "normal_crease45_diagnostic_mae_deg": null,
+            "boundary_primary_angular_mae_deg": null,
+            "boundary_primary_angular_outside_mae_deg": null,
+            "boundary_crease45_angular_plus_silhouette_mae_deg": null,
+            "boundary_crease45_angular_plus_silhouette_outside_mae_deg": null
+          }
+        }
+      },
+      "source_summary_sha256": "5569501c87c6b01e838ee3b3f64226875eb5144a2fc73212af6a58a6cf282cca"
+    },
+    "D1": {
+      "panels": {
+        "primary": {
+          "by_pitch": {
+            "0": {
+              "mean_deg": 19.521339436651115,
+              "normal_face_mae_deg": 20.364543454301096,
+              "normal_crease45_diagnostic_mae_deg": 19.64322625994781,
+              "boundary_primary_angular_mae_deg": 23.058799197257773,
+              "boundary_primary_angular_outside_mae_deg": 16.16394079883753,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 22.104556606807265,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 16.102534528135337,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 726963
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 822521
+                }
+              }
+            },
+            "15": {
+              "mean_deg": 20.824631579055918,
+              "normal_face_mae_deg": 21.604336588718603,
+              "normal_crease45_diagnostic_mae_deg": 20.931350132362322,
+              "boundary_primary_angular_mae_deg": 25.39363722403227,
+              "boundary_primary_angular_outside_mae_deg": 17.104040843548198,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 24.245607974370927,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 17.68008275393788,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 889267
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 998561
+                }
+              }
+            },
+            "30": {
+              "mean_deg": 21.921321437515207,
+              "normal_face_mae_deg": 22.637805549770807,
+              "normal_crease45_diagnostic_mae_deg": 22.01689299327586,
+              "boundary_primary_angular_mae_deg": 25.599170524012738,
+              "boundary_primary_angular_outside_mae_deg": 18.315333732970036,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 24.542010450239886,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 18.55325600631758,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1005754
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1122703
+                }
+              }
+            },
+            "45": {
+              "mean_deg": 23.02437225953154,
+              "normal_face_mae_deg": 23.667810969311493,
+              "normal_crease45_diagnostic_mae_deg": 23.110698314618276,
+              "boundary_primary_angular_mae_deg": 26.73563785906703,
+              "boundary_primary_angular_outside_mae_deg": 19.059540309512755,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 25.603729358292046,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 19.24080324452192,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1076606
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1191348
+                }
+              }
+            },
+            "60": {
+              "mean_deg": 23.28364968552256,
+              "normal_face_mae_deg": 23.844951711438924,
+              "normal_crease45_diagnostic_mae_deg": 23.35393100370926,
+              "boundary_primary_angular_mae_deg": 27.744107382082387,
+              "boundary_primary_angular_outside_mae_deg": 19.03862032138245,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 26.60861407627612,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 19.175017709669085,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1098202
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1203493
+                }
+              }
+            }
+          },
+          "equal_pitch_object_macro": {
+            "mean_deg": 21.715062879655267,
+            "normal_face_mae_deg": 22.423889654708184,
+            "normal_crease45_diagnostic_mae_deg": 21.811219740782708,
+            "boundary_primary_angular_mae_deg": 25.706270437290435,
+            "boundary_primary_angular_outside_mae_deg": 17.936295201250196,
+            "boundary_crease45_angular_plus_silhouette_mae_deg": 24.62090369319725,
+            "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 18.150338848516363
+          }
+        },
+        "original": {
+          "by_pitch": {
+            "30": {
+              "mean_deg": 21.08513693308998,
+              "normal_face_mae_deg": 21.852004124745925,
+              "normal_crease45_diagnostic_mae_deg": 21.186434974247643,
+              "boundary_primary_angular_mae_deg": 24.79895759246488,
+              "boundary_primary_angular_outside_mae_deg": 17.2935283361324,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 23.79346481420305,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 17.570912249743657,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1005754
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1122703
+                }
+              }
+            }
+          },
+          "equal_pitch_object_macro": {
+            "mean_deg": 21.08513693308998,
+            "normal_face_mae_deg": 21.852004124745925,
+            "normal_crease45_diagnostic_mae_deg": 21.186434974247643,
+            "boundary_primary_angular_mae_deg": 24.79895759246488,
+            "boundary_primary_angular_outside_mae_deg": 17.2935283361324,
+            "boundary_crease45_angular_plus_silhouette_mae_deg": 23.79346481420305,
+            "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 17.570912249743657
+          }
+        },
+        "arb_style": {
+          "by_pitch": {
+            "30": {
+              "mean_deg": 22.166159276877885,
+              "normal_face_mae_deg": 22.874274928997448,
+              "normal_crease45_diagnostic_mae_deg": 22.26227594539576,
+              "boundary_primary_angular_mae_deg": 25.830337285036588,
+              "boundary_primary_angular_outside_mae_deg": 18.579092857582072,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 24.847633691933193,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 18.86751751617222,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1005754
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1122703
+                }
+              }
+            }
+          },
+          "equal_pitch_object_macro": {
+            "mean_deg": 22.166159276877885,
+            "normal_face_mae_deg": 22.874274928997448,
+            "normal_crease45_diagnostic_mae_deg": 22.26227594539576,
+            "boundary_primary_angular_mae_deg": 25.830337285036588,
+            "boundary_primary_angular_outside_mae_deg": 18.579092857582072,
+            "boundary_crease45_angular_plus_silhouette_mae_deg": 24.847633691933193,
+            "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 18.86751751617222
+          }
+        },
+        "diligent": {
+          "by_pitch": {
+            "None": {
+              "mean_deg": 22.864397190463976,
+              "normal_face_mae_deg": null,
+              "normal_crease45_diagnostic_mae_deg": null,
+              "boundary_primary_angular_mae_deg": null,
+              "boundary_primary_angular_outside_mae_deg": null,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": null,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": null,
+              "images": 10,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 0,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 10,
+                  "GT_pixels_sum_over_images_once": null
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 0,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 10,
+                  "GT_pixels_sum_over_images_once": null
+                }
+              }
+            }
+          },
+          "equal_pitch_object_macro": {
+            "mean_deg": 22.864397190463976,
+            "normal_face_mae_deg": null,
+            "normal_crease45_diagnostic_mae_deg": null,
+            "boundary_primary_angular_mae_deg": null,
+            "boundary_primary_angular_outside_mae_deg": null,
+            "boundary_crease45_angular_plus_silhouette_mae_deg": null,
+            "boundary_crease45_angular_plus_silhouette_outside_mae_deg": null
+          }
+        },
+        "luces": {
+          "by_pitch": {
+            "None": {
+              "mean_deg": 20.69456344239877,
+              "normal_face_mae_deg": null,
+              "normal_crease45_diagnostic_mae_deg": null,
+              "boundary_primary_angular_mae_deg": null,
+              "boundary_primary_angular_outside_mae_deg": null,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": null,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": null,
+              "images": 14,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 0,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 14,
+                  "GT_pixels_sum_over_images_once": null
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 0,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 14,
+                  "GT_pixels_sum_over_images_once": null
+                }
+              }
+            }
+          },
+          "equal_pitch_object_macro": {
+            "mean_deg": 20.69456344239877,
+            "normal_face_mae_deg": null,
+            "normal_crease45_diagnostic_mae_deg": null,
+            "boundary_primary_angular_mae_deg": null,
+            "boundary_primary_angular_outside_mae_deg": null,
+            "boundary_crease45_angular_plus_silhouette_mae_deg": null,
+            "boundary_crease45_angular_plus_silhouette_outside_mae_deg": null
+          }
+        }
+      },
+      "source_summary_sha256": "ba1f3094734b0b385806fc1da6cfce25443fdc45f8d240dc2cbc788810605d14"
+    },
+    "D2": {
+      "panels": {
+        "primary": {
+          "by_pitch": {
+            "0": {
+              "mean_deg": 17.939029941586526,
+              "normal_face_mae_deg": 18.878705389905335,
+              "normal_crease45_diagnostic_mae_deg": 18.06394632001592,
+              "boundary_primary_angular_mae_deg": 21.526166249699802,
+              "boundary_primary_angular_outside_mae_deg": 14.685614031285915,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 20.60645017580289,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 14.174611829592523,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 726963
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 822521
+                }
+              }
+            },
+            "15": {
+              "mean_deg": 17.898241817775965,
+              "normal_face_mae_deg": 18.786015467968156,
+              "normal_crease45_diagnostic_mae_deg": 18.00668175135651,
+              "boundary_primary_angular_mae_deg": 21.805834310672918,
+              "boundary_primary_angular_outside_mae_deg": 13.900330108777425,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 20.66312612117163,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 14.208560399329354,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 889267
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 998561
+                }
+              }
+            },
+            "30": {
+              "mean_deg": 18.558094563384905,
+              "normal_face_mae_deg": 19.41083420888452,
+              "normal_crease45_diagnostic_mae_deg": 18.659026729186106,
+              "boundary_primary_angular_mae_deg": 21.9423673058975,
+              "boundary_primary_angular_outside_mae_deg": 14.78729166528425,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 20.824011125094643,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 15.246804158443068,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1005754
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1122703
+                }
+              }
+            },
+            "45": {
+              "mean_deg": 19.339488202881828,
+              "normal_face_mae_deg": 20.112341066994315,
+              "normal_crease45_diagnostic_mae_deg": 19.42928910111281,
+              "boundary_primary_angular_mae_deg": 22.66401364738778,
+              "boundary_primary_angular_outside_mae_deg": 15.557465370609211,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 21.586705930343406,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 15.854721798276262,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1076606
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1191348
+                }
+              }
+            },
+            "60": {
+              "mean_deg": 19.589981268996784,
+              "normal_face_mae_deg": 20.320450817695452,
+              "normal_crease45_diagnostic_mae_deg": 19.671243993696446,
+              "boundary_primary_angular_mae_deg": 23.38544800842502,
+              "boundary_primary_angular_outside_mae_deg": 15.459711263150862,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 22.406553077883615,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 15.609387657294011,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1098202
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1203493
+                }
+              }
+            }
+          },
+          "equal_pitch_object_macro": {
+            "mean_deg": 18.6649671589252,
+            "normal_face_mae_deg": 19.501669390289557,
+            "normal_crease45_diagnostic_mae_deg": 18.76603757907356,
+            "boundary_primary_angular_mae_deg": 22.2647659044166,
+            "boundary_primary_angular_outside_mae_deg": 14.878082487821533,
+            "boundary_crease45_angular_plus_silhouette_mae_deg": 21.217369286059238,
+            "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 15.018817168587043
+          }
+        },
+        "original": {
+          "by_pitch": {
+            "30": {
+              "mean_deg": 18.186473074875618,
+              "normal_face_mae_deg": 19.071967584263973,
+              "normal_crease45_diagnostic_mae_deg": 18.289654833140627,
+              "boundary_primary_angular_mae_deg": 21.48319525562291,
+              "boundary_primary_angular_outside_mae_deg": 14.4125393685566,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 20.426368457637352,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 14.86738968789287,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1005754
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1122703
+                }
+              }
+            }
+          },
+          "equal_pitch_object_macro": {
+            "mean_deg": 18.186473074875618,
+            "normal_face_mae_deg": 19.071967584263973,
+            "normal_crease45_diagnostic_mae_deg": 18.289654833140627,
+            "boundary_primary_angular_mae_deg": 21.48319525562291,
+            "boundary_primary_angular_outside_mae_deg": 14.4125393685566,
+            "boundary_crease45_angular_plus_silhouette_mae_deg": 20.426368457637352,
+            "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 14.86738968789287
+          }
+        },
+        "arb_style": {
+          "by_pitch": {
+            "30": {
+              "mean_deg": 18.991659723047935,
+              "normal_face_mae_deg": 19.83718140630295,
+              "normal_crease45_diagnostic_mae_deg": 19.092288820953378,
+              "boundary_primary_angular_mae_deg": 22.43768568091422,
+              "boundary_primary_angular_outside_mae_deg": 15.138806183701009,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 21.368723786161663,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 15.619655586754027,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1005754
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1122703
+                }
+              }
+            }
+          },
+          "equal_pitch_object_macro": {
+            "mean_deg": 18.991659723047935,
+            "normal_face_mae_deg": 19.83718140630295,
+            "normal_crease45_diagnostic_mae_deg": 19.092288820953378,
+            "boundary_primary_angular_mae_deg": 22.43768568091422,
+            "boundary_primary_angular_outside_mae_deg": 15.138806183701009,
+            "boundary_crease45_angular_plus_silhouette_mae_deg": 21.368723786161663,
+            "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 15.619655586754027
+          }
+        },
+        "diligent": {
+          "by_pitch": {
+            "None": {
+              "mean_deg": 18.23093542775544,
+              "normal_face_mae_deg": null,
+              "normal_crease45_diagnostic_mae_deg": null,
+              "boundary_primary_angular_mae_deg": null,
+              "boundary_primary_angular_outside_mae_deg": null,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": null,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": null,
+              "images": 10,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 0,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 10,
+                  "GT_pixels_sum_over_images_once": null
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 0,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 10,
+                  "GT_pixels_sum_over_images_once": null
+                }
+              }
+            }
+          },
+          "equal_pitch_object_macro": {
+            "mean_deg": 18.23093542775544,
+            "normal_face_mae_deg": null,
+            "normal_crease45_diagnostic_mae_deg": null,
+            "boundary_primary_angular_mae_deg": null,
+            "boundary_primary_angular_outside_mae_deg": null,
+            "boundary_crease45_angular_plus_silhouette_mae_deg": null,
+            "boundary_crease45_angular_plus_silhouette_outside_mae_deg": null
+          }
+        },
+        "luces": {
+          "by_pitch": {
+            "None": {
+              "mean_deg": 17.702615027801638,
+              "normal_face_mae_deg": null,
+              "normal_crease45_diagnostic_mae_deg": null,
+              "boundary_primary_angular_mae_deg": null,
+              "boundary_primary_angular_outside_mae_deg": null,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": null,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": null,
+              "images": 14,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 0,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 14,
+                  "GT_pixels_sum_over_images_once": null
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 0,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 14,
+                  "GT_pixels_sum_over_images_once": null
+                }
+              }
+            }
+          },
+          "equal_pitch_object_macro": {
+            "mean_deg": 17.702615027801638,
+            "normal_face_mae_deg": null,
+            "normal_crease45_diagnostic_mae_deg": null,
+            "boundary_primary_angular_mae_deg": null,
+            "boundary_primary_angular_outside_mae_deg": null,
+            "boundary_crease45_angular_plus_silhouette_mae_deg": null,
+            "boundary_crease45_angular_plus_silhouette_outside_mae_deg": null
+          }
+        }
+      },
+      "source_summary_sha256": "d85eb71c3df5ada59178ee5d567fd67e258b0c2e032045d8e17521e8c9deefe7"
+    },
+    "D3": {
+      "panels": {
+        "primary": {
+          "by_pitch": {
+            "0": {
+              "mean_deg": 18.038553517947456,
+              "normal_face_mae_deg": 18.929926777403693,
+              "normal_crease45_diagnostic_mae_deg": 18.15804044219434,
+              "boundary_primary_angular_mae_deg": 21.691889147204066,
+              "boundary_primary_angular_outside_mae_deg": 14.563112873277982,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 20.739264129731566,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 14.013647631737953,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 726963
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 822521
+                }
+              }
+            },
+            "15": {
+              "mean_deg": 18.087214872434274,
+              "normal_face_mae_deg": 18.952282426923112,
+              "normal_crease45_diagnostic_mae_deg": 18.195187427287824,
+              "boundary_primary_angular_mae_deg": 22.118159174811534,
+              "boundary_primary_angular_outside_mae_deg": 13.957933522227624,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 20.974325265320093,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 14.143654752575138,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 889267
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 998561
+                }
+              }
+            },
+            "30": {
+              "mean_deg": 18.917437943705956,
+              "normal_face_mae_deg": 19.750970244441895,
+              "normal_crease45_diagnostic_mae_deg": 19.0181147688653,
+              "boundary_primary_angular_mae_deg": 22.386366535857505,
+              "boundary_primary_angular_outside_mae_deg": 14.885154636501364,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 21.233709955250504,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 15.129092024730795,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1005754
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1122703
+                }
+              }
+            },
+            "45": {
+              "mean_deg": 20.026797963242362,
+              "normal_face_mae_deg": 20.763792013507818,
+              "normal_crease45_diagnostic_mae_deg": 20.115427383178023,
+              "boundary_primary_angular_mae_deg": 23.3545423787339,
+              "boundary_primary_angular_outside_mae_deg": 16.087416667058648,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 22.223006139276272,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 16.31646905697842,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1076606
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1191348
+                }
+              }
+            },
+            "60": {
+              "mean_deg": 20.35268314157334,
+              "normal_face_mae_deg": 21.035092000687722,
+              "normal_crease45_diagnostic_mae_deg": 20.429990466125563,
+              "boundary_primary_angular_mae_deg": 24.23998024489672,
+              "boundary_primary_angular_outside_mae_deg": 16.056281410824223,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 23.201083162164544,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 16.126130069632065,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1098202
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1203493
+                }
+              }
+            }
+          },
+          "equal_pitch_object_macro": {
+            "mean_deg": 19.084537487780675,
+            "normal_face_mae_deg": 19.88641269259285,
+            "normal_crease45_diagnostic_mae_deg": 19.18335209753021,
+            "boundary_primary_angular_mae_deg": 22.758187496300746,
+            "boundary_primary_angular_outside_mae_deg": 15.109979821977968,
+            "boundary_crease45_angular_plus_silhouette_mae_deg": 21.674277730348592,
+            "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 15.145798707130874
+          }
+        },
+        "original": {
+          "by_pitch": {
+            "30": {
+              "mean_deg": 18.534161072347324,
+              "normal_face_mae_deg": 19.405880806408923,
+              "normal_crease45_diagnostic_mae_deg": 18.63789711929246,
+              "boundary_primary_angular_mae_deg": 21.94505113982258,
+              "boundary_primary_angular_outside_mae_deg": 14.478286049021186,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 20.840235677290444,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 14.743659864619529,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1005754
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1122703
+                }
+              }
+            }
+          },
+          "equal_pitch_object_macro": {
+            "mean_deg": 18.534161072347324,
+            "normal_face_mae_deg": 19.405880806408923,
+            "normal_crease45_diagnostic_mae_deg": 18.63789711929246,
+            "boundary_primary_angular_mae_deg": 21.94505113982258,
+            "boundary_primary_angular_outside_mae_deg": 14.478286049021186,
+            "boundary_crease45_angular_plus_silhouette_mae_deg": 20.840235677290444,
+            "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 14.743659864619529
+          }
+        },
+        "arb_style": {
+          "by_pitch": {
+            "30": {
+              "mean_deg": 19.357083019296002,
+              "normal_face_mae_deg": 20.18070987514909,
+              "normal_crease45_diagnostic_mae_deg": 19.459368434800513,
+              "boundary_primary_angular_mae_deg": 22.852772267718137,
+              "boundary_primary_angular_outside_mae_deg": 15.205286421034822,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": 21.796145704184102,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 15.494007207001077,
+              "images": 372,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1005754
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 372,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 0,
+                  "GT_pixels_sum_over_images_once": 1122703
+                }
+              }
+            }
+          },
+          "equal_pitch_object_macro": {
+            "mean_deg": 19.357083019296002,
+            "normal_face_mae_deg": 20.18070987514909,
+            "normal_crease45_diagnostic_mae_deg": 19.459368434800513,
+            "boundary_primary_angular_mae_deg": 22.852772267718137,
+            "boundary_primary_angular_outside_mae_deg": 15.205286421034822,
+            "boundary_crease45_angular_plus_silhouette_mae_deg": 21.796145704184102,
+            "boundary_crease45_angular_plus_silhouette_outside_mae_deg": 15.494007207001077
+          }
+        },
+        "diligent": {
+          "by_pitch": {
+            "None": {
+              "mean_deg": 18.724188875448323,
+              "normal_face_mae_deg": null,
+              "normal_crease45_diagnostic_mae_deg": null,
+              "boundary_primary_angular_mae_deg": null,
+              "boundary_primary_angular_outside_mae_deg": null,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": null,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": null,
+              "images": 10,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 0,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 10,
+                  "GT_pixels_sum_over_images_once": null
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 0,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 10,
+                  "GT_pixels_sum_over_images_once": null
+                }
+              }
+            }
+          },
+          "equal_pitch_object_macro": {
+            "mean_deg": 18.724188875448323,
+            "normal_face_mae_deg": null,
+            "normal_crease45_diagnostic_mae_deg": null,
+            "boundary_primary_angular_mae_deg": null,
+            "boundary_primary_angular_outside_mae_deg": null,
+            "boundary_crease45_angular_plus_silhouette_mae_deg": null,
+            "boundary_crease45_angular_plus_silhouette_outside_mae_deg": null
+          }
+        },
+        "luces": {
+          "by_pitch": {
+            "None": {
+              "mean_deg": 18.78919956535164,
+              "normal_face_mae_deg": null,
+              "normal_crease45_diagnostic_mae_deg": null,
+              "boundary_primary_angular_mae_deg": null,
+              "boundary_primary_angular_outside_mae_deg": null,
+              "boundary_crease45_angular_plus_silhouette_mae_deg": null,
+              "boundary_crease45_angular_plus_silhouette_outside_mae_deg": null,
+              "images": 14,
+              "coverage": {
+                "boundary_primary_angular": {
+                  "images_with_nonempty_GT_region": 0,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 14,
+                  "GT_pixels_sum_over_images_once": null
+                },
+                "boundary_crease45_angular_plus_silhouette": {
+                  "images_with_nonempty_GT_region": 0,
+                  "images_with_empty_GT_region": 0,
+                  "images_without_GT_region_label": 14,
+                  "GT_pixels_sum_over_images_once": null
+                }
+              }
+            }
+          },
+          "equal_pitch_object_macro": {
+            "mean_deg": 18.78919956535164,
+            "normal_face_mae_deg": null,
+            "normal_crease45_diagnostic_mae_deg": null,
+            "boundary_primary_angular_mae_deg": null,
+            "boundary_primary_angular_outside_mae_deg": null,
+            "boundary_crease45_angular_plus_silhouette_mae_deg": null,
+            "boundary_crease45_angular_plus_silhouette_outside_mae_deg": null
+          }
+        }
+      },
+      "source_summary_sha256": "af9747dabb2e8e1038747c5a32bc2765cc3abec79ce6da9d326e468897b6629a"
+    }
+  },
+  "private_rows_checked": 84096,
+  "method": "Average errors over eight inference seeds per image, views within object, objects within pitch, then pitches equally. Absent region labels and empty GT regions remain null and have separate coverage counts.",
+  "region_rule": "Frozen GT normal jump>20deg, radius2 dilation, valid-mask intersection. Separate crease45 angular-plus-silhouette region. No output-dependent masks.",
+  "inference_rerun": false,
+  "test_images_scored": 0,
+  "completed_at": "2026-11-06T00:19:49+0800"
+}
