@@ -1,5 +1,7 @@
 # FNFlow
 
+Latest completed real-domain subset: [2026-11-06 external comparisons](results/external_real_20261106/README.md). Six model scopes are complete; the full comparison is ongoing. The [recipe result page](results/object_recipe_ladder_20261105/README.md) includes the C-D3 boundary supplement.
+
 Pixel-space conditional Flow Matching for face normals, with isolated research code for general object and indoor-scene normal estimation.
 
 This repository contains the historical UNet baseline, experiment code and aggregate numerical results. **Single-seed R/V/Xn WSD convergence diagnostics are complete through 50k stable updates plus 2.5k cooldown. The former24-run/review2 rules are archived historical diagnostics; no multi-training-seed generalization result is claimed.** Future public updates are limited to code/configuration, operational instructions and aggregate results.

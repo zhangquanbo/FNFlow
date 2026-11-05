@@ -1,38 +1,56 @@
 {
-  "created_at": "2026-11-06T00:21:43.590017+08:00",
+  "created_at": "2026-11-06T00:52:52.369612+08:00",
   "scan_passed": true,
-  "base_commit": "7b0f10a40eebbdf0a0de555aab0ca563ff835ab4",
-  "scope": "Additive completed C/D1/D2/D3 region-metric supplement and aggregation source; unchanged published files retained through base tree.",
+  "base_commit": "6db59f86ef10f84a8d06c2f5da9a207927998580",
+  "scope": "Six completed real-domain model scopes, their measurement source and aggregate reconciliation; unchanged files retained through base tree. Full external comparison remains ongoing.",
   "files": [
     {
-      "path": "results/object_recipe_ladder_20261105/README.md",
-      "category": "completed_aggregate_supplement",
-      "bytes": 8730,
-      "exported_sha256": "0c4686c2db0c2d019952a2bbef6136904837fad3c4efc4364f554fa80281ec51"
+      "path": "README.md",
+      "category": "aggregate_snapshot_and_protocol",
+      "bytes": 19603,
+      "exported_sha256": "07f90c5a7ec617768f0badf95a8bbada598af3b6179711c9086289eb17c63fcc"
     },
     {
-      "path": "results/object_recipe_ladder_20261105/boundary_metrics.json",
-      "category": "completed_aggregate_supplement",
-      "bytes": 55279,
-      "exported_sha256": "85554ef90dec3d673ff4574f310e3d142345e71abc4061bc0716b34f6e294006"
+      "path": "results/external_real_20261106/README.md",
+      "category": "aggregate_snapshot_and_protocol",
+      "bytes": 2177,
+      "exported_sha256": "6ca5eb89d7890244835063a8180f2596a2116429fc1caead6b01358f31b00069"
     },
     {
-      "path": "results/object_recipe_ladder_20261105/boundary_validation.json",
-      "category": "completed_aggregate_supplement",
-      "bytes": 557,
-      "exported_sha256": "59185e91bc5e7a6191b09a56ecccfb38e2a335e373afb3b016414adc4f01b589"
+      "path": "results/external_real_20261106/protocol.json",
+      "category": "aggregate_snapshot_and_protocol",
+      "bytes": 6206,
+      "exported_sha256": "bafa6da94aabb5ea6aa2ed08a1a75accd8d99621a9f5cfc168ace8fc8db6f50b"
     },
     {
-      "path": "results/object_recipe_ladder_20261105/summary.json",
-      "category": "completed_aggregate_supplement",
-      "bytes": 114072,
-      "exported_sha256": "0cdffa93d471ae8abacda9daca1660f97fd37dfbdf18d77f74a46166e4af3354"
+      "path": "results/external_real_20261106/summary.json",
+      "category": "aggregate_snapshot_and_protocol",
+      "bytes": 3288,
+      "exported_sha256": "cd18c1b0f41762447f057d51b2a05401343e0cd29c80fc1f5ca3cc28905ea751"
     },
     {
-      "path": "scripts/aggregate_recipe_boundaries_20261106.py",
-      "category": "aggregation_source",
-      "bytes": 5631,
-      "exported_sha256": "8aee7e7dd9e18a42003320c967e2956171728481c7715b1aec1f1af2671d081f"
+      "path": "results/external_real_20261106/validation.json",
+      "category": "aggregate_snapshot_and_protocol",
+      "bytes": 467,
+      "exported_sha256": "37885640ca884aface182c76abb7bf9c0bc00b71e94e5a747801c4a0fce83855"
+    },
+    {
+      "path": "scripts/aggregate_completed_external_real_20261106.py",
+      "category": "completed_scope_source",
+      "bytes": 6766,
+      "exported_sha256": "e5237a1ac27add8b361a587395e0314cfd2ae75d9e5829dfe0a5d040beaec033"
+    },
+    {
+      "path": "scripts/evaluate_external_round_v1_20261106.py",
+      "category": "completed_scope_source",
+      "bytes": 9387,
+      "exported_sha256": "aae6b8d5b2588e39c3af0e08b4b9c99945a64836100caad824cdd94eb241da4a"
+    },
+    {
+      "path": "src/external_normal_adapter_20261106.py",
+      "category": "completed_scope_source",
+      "bytes": 6024,
+      "exported_sha256": "59baf0919aececac209a533e1b8bef11390499587ad5d7f42be7a7d960afc3b9"
     }
   ]
 }

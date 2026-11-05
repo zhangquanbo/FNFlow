@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "private_metric_rows_reconciled": 1584,
+  "model_scopes": 6,
+  "panels_per_model": 4,
+  "exact_manifest_ID_sets_verified": true,
+  "registration_and_image_key_binding_verified": true,
+  "all_MAE_values_finite": true,
+  "max_abs_summary_difference_deg": 7.105427357601002e-15,
+  "D2_single_light_control_reproduced": true,
+  "test_images_scored": 0,
+  "reconciler_sha256": "e5237a1ac27add8b361a587395e0314cfd2ae75d9e5829dfe0a5d040beaec033"
+}

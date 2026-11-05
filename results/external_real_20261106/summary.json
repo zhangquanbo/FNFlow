@@ -1,0 +1,108 @@
+{
+  "status": "completed_model_subset_snapshot",
+  "snapshot_date": "2026-11-06",
+  "rows": [
+    {
+      "model": "D2",
+      "MAE_deg": {
+        "single_diligent": 18.23093542775544,
+        "single_luces": 17.702615027801638,
+        "rose10_diligent": 18.06645783592873,
+        "rose10_luces": 17.094019794892414
+      },
+      "training_seed": 1247,
+      "inference_seeds": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "completed_images": 264,
+      "source_summary_sha256": "34b074adb2a19eefeb53ec10b8621e6395586b1cc320d93a6fba6aec72c5ca30"
+    },
+    {
+      "model": "DSINE",
+      "MAE_deg": {
+        "single_diligent": 26.248921140061253,
+        "single_luces": 25.447088990083753,
+        "rose10_diligent": 24.441629932178028,
+        "rose10_luces": 22.609366597834953
+      },
+      "training_seed": "official pretrained checkpoint",
+      "inference_seeds": [
+        42
+      ],
+      "completed_images": 264,
+      "source_summary_sha256": "c4c54251a5ff6a1e498f696860609a1ffc9d382d9f461568ac8664453aed7a96"
+    },
+    {
+      "model": "MoGe2",
+      "MAE_deg": {
+        "single_diligent": 13.606824537398404,
+        "single_luces": 13.394165917009607,
+        "rose10_diligent": 13.44247228616637,
+        "rose10_luces": 11.921594601618295
+      },
+      "training_seed": "official pretrained checkpoint",
+      "inference_seeds": [
+        42
+      ],
+      "completed_images": 264,
+      "source_summary_sha256": "caf5e0a25a6ecf49ed32d95bd67cf22b0d0f3804cca13fdd90fb1e5048841ea8"
+    },
+    {
+      "model": "Lotus-D",
+      "MAE_deg": {
+        "single_diligent": 24.867701672916688,
+        "single_luces": 25.25107380865367,
+        "rose10_diligent": 22.699227572037678,
+        "rose10_luces": 16.944659226526248
+      },
+      "training_seed": "official pretrained checkpoint",
+      "inference_seeds": [
+        42
+      ],
+      "completed_images": 264,
+      "source_summary_sha256": "dc4fec8d957e1c9828f6deb5902b2713f0bb2f21c82cab9d7a323a2b797174b7"
+    },
+    {
+      "model": "Lotus-G",
+      "MAE_deg": {
+        "single_diligent": 24.03282492251194,
+        "single_luces": 22.45721616790912,
+        "rose10_diligent": 22.09793298556846,
+        "rose10_luces": 16.258859347946878
+      },
+      "training_seed": "official pretrained checkpoint",
+      "inference_seeds": [
+        42
+      ],
+      "completed_images": 264,
+      "source_summary_sha256": "b60fdcb4a60e7faa903d65574f7df58e0b3355d3b5a1c78e8f7f424a6b4e1855"
+    },
+    {
+      "model": "NiRNE",
+      "MAE_deg": {
+        "single_diligent": 18.327145102963474,
+        "single_luces": 19.073249538316198,
+        "rose10_diligent": 17.989608422391505,
+        "rose10_luces": 18.384366989498613
+      },
+      "training_seed": "official pretrained checkpoint",
+      "inference_seeds": [
+        42
+      ],
+      "completed_images": 264,
+      "source_summary_sha256": "c3e4176cf957c2a2443a1f0fd5dbba9ca140cfc94a81908fe84ef6ca19e9e9bb"
+    }
+  ],
+  "completed_model_scopes": 6,
+  "complete_model_comparison": false,
+  "test_GSO_images_scored": 0,
+  "formal_multi_training_seed_comparison_completed": false,
+  "measurement_registration_sha256": "eb11720ee4b4492ccb42e7f733fa7af0284578906144da68d3c2f2630295111f"
+}
