@@ -1,6 +1,6 @@
 # Completed real-domain scopes, 2026-11-06
 
-This is a snapshot of six fully completed model scopes. The full external comparison is still running; it is not a final ranking. GSO validation results and the remaining models are outside this snapshot. Held-out GSO-test remains sealed.
+This is a snapshot of six fully completed real-domain model scopes. The full external comparison is still running; it is not a final ranking. The additional completed MoGe2 GSO-val scope is reported separately below; remaining external scopes continue to run. Held-out GSO-test remains sealed.
 
 MAE in degrees; lower is better. The single-light controls use the same frozen lowest-ID images as the prior recipe snapshot. The ten-light panels use light IDs21..30:100 images/10 DiLiGenT objects and140 images/14 LUCES objects. Every RGB image is processed independently. Light errors are averaged within object, then objects equally.
 
@@ -22,3 +22,17 @@ See [summary.json](summary.json), [protocol.json](protocol.json), and [validatio
 The prior [recipe result page](../object_recipe_ladder_20261105/README.md) now includes the C/D1/D2/D3 boundary supplement.
 
 The archived v1 inference source and adapter correspond to the listed completed models. Other model branches are outside the validated scope of this snapshot.
+
+## Additional completed GSO-val scope
+
+MoGe2 completed the same frozen93-object, four-view, five-angle GSO-val primary panel (1,860 images). Equal-angle object-macro MAE is **13.7935deg**, compared with the frozen D2 reference of18.6650deg. The input manifests and GT/masks are unchanged; model-specific inference settings follow the registered source. This is not held-out test scoring or a completed full comparison.
+
+| Angle | MoGe2 MAE |
+|---|---:|
+| 0deg | 13.9461 |
+| 15deg | 12.7280 |
+| 30deg | 13.0472 |
+| 45deg | 13.8326 |
+| 60deg | 15.4139 |
+
+[gso_moge2.json](gso_moge2.json) includes scope details, source bindings and reconciliation of all1,860 private metric rows. The real-domain validation file above covers its separate1,584 rows.

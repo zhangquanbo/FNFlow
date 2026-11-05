@@ -1,0 +1,45 @@
+{
+  "status": "completed_single_external_scope",
+  "model": "MoGe2",
+  "inference_seeds": [
+    42
+  ],
+  "panel": "GSO-val primary",
+  "objects": 93,
+  "images": 1860,
+  "views_per_object_per_angle": 4,
+  "by_pitch_MAE_deg": {
+    "0": 13.946060901148122,
+    "15": 12.727951426110304,
+    "30": 13.047156209608017,
+    "45": 13.832623321056046,
+    "60": 15.413902213216172
+  },
+  "equal_pitch_object_macro_MAE_deg": 13.793538814227734,
+  "D2_frozen_reference_MAE_deg": 18.6649671589252,
+  "D2_training_seed": 1247,
+  "D2_reference_inference_seeds": [
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49
+  ],
+  "D2_reference_source_summary_sha256": "d85eb71c3df5ada59178ee5d567fd67e258b0c2e032045d8e17521e8c9deefe7",
+  "measurement_registration_sha256": "eb11720ee4b4492ccb42e7f733fa7af0284578906144da68d3c2f2630295111f",
+  "source_commit": "925b8ed835a7a9cdb7578ba15c658a0afc969030",
+  "manifest_sha256": "e94db0b771b3c14f3f2d32480d41a271e5fbdd92edfe537896b46258f0c1bb16",
+  "test_images_scored": 0,
+  "full_external_comparison_completed": false,
+  "validation": {
+    "status": "passed",
+    "private_metric_rows_reconciled": 1860,
+    "exact_manifest_ID_set_verified": true,
+    "all_MAE_values_finite": true,
+    "max_abs_per_pitch_summary_difference_deg": 7.105427357601002e-15,
+    "reconciler_sha256": "634a7546cea7f61f726f9f3c644b33149b8b3a376645163ee8f9f7badbf88c2d"
+  }
+}
