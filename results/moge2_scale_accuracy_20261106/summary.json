@@ -1,0 +1,235 @@
+{
+  "status": "all three MoGe scales completed; D2 GSO current-backend control in progress",
+  "models": {
+    "D2": {
+      "panels": {
+        "gso_primary": {
+          "MAE_deg": 18.6649671589252,
+          "source_snapshot_commit": "387cb7407c764792f6509fcc678fee10a467fa88",
+          "source_path": "results/external_comparison_20261106/summary.json",
+          "source_cell": "models.D2.panels.gso_primary_reference",
+          "measurement_status": "previously published frozen reference; current-backend control still running"
+        },
+        "single_diligent": {
+          "MAE_deg": 18.21672253695005,
+          "by_pitch_MAE_deg": {
+            "None": 18.21672253695005
+          },
+          "images": 10,
+          "objects": 10,
+          "measurement_status": "completed common-backend rerun"
+        },
+        "single_luces": {
+          "MAE_deg": 17.66136306287309,
+          "by_pitch_MAE_deg": {
+            "None": 17.66136306287309
+          },
+          "images": 14,
+          "objects": 14,
+          "measurement_status": "completed common-backend rerun"
+        },
+        "rose10_diligent": {
+          "MAE_deg": 18.059938188163066,
+          "by_pitch_MAE_deg": {
+            "None": 18.059938188163066
+          },
+          "images": 100,
+          "objects": 10,
+          "measurement_status": "completed common-backend rerun"
+        },
+        "rose10_luces": {
+          "MAE_deg": 17.093554845085233,
+          "by_pitch_MAE_deg": {
+            "None": 17.093554845085233
+          },
+          "images": 140,
+          "objects": 14,
+          "measurement_status": "completed common-backend rerun"
+        }
+      },
+      "parameters_total": 130400259,
+      "end_to_end_median_ms": 83.54898900142871,
+      "inference_only_median_ms": 37.613430511555634,
+      "compute_precision": "bfloat16",
+      "measurement_registration_sha256": "c23f1b5f4763894893c006c20a249d7a8eaf7437f041d9bce7d7c2dad8d67daf"
+    },
+    "MoGe-S": {
+      "panels": {
+        "gso_primary": {
+          "MAE_deg": 19.45404668954792,
+          "by_pitch_MAE_deg": {
+            "60": 23.309372173923713,
+            "45": 20.793681771106577,
+            "0": 16.942949236759965,
+            "30": 18.73935927656978,
+            "15": 17.484870989379562
+          },
+          "images": 1860,
+          "objects": 93,
+          "measurement_status": "completed common-backend rerun"
+        },
+        "single_diligent": {
+          "MAE_deg": 19.066857911076266,
+          "by_pitch_MAE_deg": {
+            "None": 19.066857911076266
+          },
+          "images": 10,
+          "objects": 10,
+          "measurement_status": "completed common-backend rerun"
+        },
+        "single_luces": {
+          "MAE_deg": 17.74278147900421,
+          "by_pitch_MAE_deg": {
+            "None": 17.74278147900421
+          },
+          "images": 14,
+          "objects": 14,
+          "measurement_status": "completed common-backend rerun"
+        },
+        "rose10_diligent": {
+          "MAE_deg": 18.07062602654144,
+          "by_pitch_MAE_deg": {
+            "None": 18.07062602654144
+          },
+          "images": 100,
+          "objects": 10,
+          "measurement_status": "completed common-backend rerun"
+        },
+        "rose10_luces": {
+          "MAE_deg": 15.998741072899323,
+          "by_pitch_MAE_deg": {
+            "None": 15.998741072899323
+          },
+          "images": 140,
+          "objects": 14,
+          "measurement_status": "completed common-backend rerun"
+        }
+      },
+      "parameters_total": 35103656,
+      "end_to_end_median_ms": 84.4238915015012,
+      "inference_only_median_ms": 33.52280751278158,
+      "compute_precision": "float16",
+      "measurement_registration_sha256": "c23f1b5f4763894893c006c20a249d7a8eaf7437f041d9bce7d7c2dad8d67daf"
+    },
+    "MoGe-B": {
+      "panels": {
+        "gso_primary": {
+          "MAE_deg": 16.111551126170802,
+          "by_pitch_MAE_deg": {
+            "60": 18.9422848715657,
+            "45": 16.674063937656086,
+            "0": 15.279916755985004,
+            "30": 15.159287084484388,
+            "15": 14.502202981162833
+          },
+          "images": 1860,
+          "objects": 93,
+          "measurement_status": "completed common-backend rerun"
+        },
+        "single_diligent": {
+          "MAE_deg": 16.56033224646239,
+          "by_pitch_MAE_deg": {
+            "None": 16.56033224646239
+          },
+          "images": 10,
+          "objects": 10,
+          "measurement_status": "completed common-backend rerun"
+        },
+        "single_luces": {
+          "MAE_deg": 15.888499651535357,
+          "by_pitch_MAE_deg": {
+            "None": 15.888499651535357
+          },
+          "images": 14,
+          "objects": 14,
+          "measurement_status": "completed common-backend rerun"
+        },
+        "rose10_diligent": {
+          "MAE_deg": 15.583252048383091,
+          "by_pitch_MAE_deg": {
+            "None": 15.583252048383091
+          },
+          "images": 100,
+          "objects": 10,
+          "measurement_status": "completed common-backend rerun"
+        },
+        "rose10_luces": {
+          "MAE_deg": 14.375752704151505,
+          "by_pitch_MAE_deg": {
+            "None": 14.375752704151505
+          },
+          "images": 140,
+          "objects": 14,
+          "measurement_status": "completed common-backend rerun"
+        }
+      },
+      "parameters_total": 104743592,
+      "end_to_end_median_ms": 92.210951494053,
+      "inference_only_median_ms": 50.432479998562485,
+      "compute_precision": "float16",
+      "measurement_registration_sha256": "c23f1b5f4763894893c006c20a249d7a8eaf7437f041d9bce7d7c2dad8d67daf"
+    },
+    "MoGe-L": {
+      "panels": {
+        "gso_primary": {
+          "MAE_deg": 13.793366404934654,
+          "by_pitch_MAE_deg": {
+            "60": 15.413965846054252,
+            "45": 13.832382384493986,
+            "0": 13.94571460184073,
+            "30": 13.047156389784258,
+            "15": 12.727612802500042
+          },
+          "images": 1860,
+          "objects": 93,
+          "measurement_status": "completed common-backend rerun"
+        },
+        "single_diligent": {
+          "MAE_deg": 13.606071168266675,
+          "by_pitch_MAE_deg": {
+            "None": 13.606071168266675
+          },
+          "images": 10,
+          "objects": 10,
+          "measurement_status": "completed common-backend rerun"
+        },
+        "single_luces": {
+          "MAE_deg": 13.392409755650432,
+          "by_pitch_MAE_deg": {
+            "None": 13.392409755650432
+          },
+          "images": 14,
+          "objects": 14,
+          "measurement_status": "completed common-backend rerun"
+        },
+        "rose10_diligent": {
+          "MAE_deg": 13.442696636891574,
+          "by_pitch_MAE_deg": {
+            "None": 13.442696636891574
+          },
+          "images": 100,
+          "objects": 10,
+          "measurement_status": "completed common-backend rerun"
+        },
+        "rose10_luces": {
+          "MAE_deg": 11.921647704412774,
+          "by_pitch_MAE_deg": {
+            "None": 11.921647704412774
+          },
+          "images": 140,
+          "objects": 14,
+          "measurement_status": "completed common-backend rerun"
+        }
+      },
+      "parameters_total": 330901544,
+      "end_to_end_median_ms": 146.57823101151735,
+      "inference_only_median_ms": 100.01651151105762,
+      "compute_precision": "float16",
+      "measurement_registration_sha256": "c23f1b5f4763894893c006c20a249d7a8eaf7437f041d9bce7d7c2dad8d67daf"
+    }
+  },
+  "metric_rows_reconciled_in_this_snapshot": 6636,
+  "all_MoGe_results_current_backend": true,
+  "test_images_scored": 0,
+  "formal_three_training_seed_comparison": false
+}

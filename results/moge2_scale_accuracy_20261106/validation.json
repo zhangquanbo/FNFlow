@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "exact_metric_ID_sets_and_image_object_pitch_bindings": true,
+  "independent_macro_recalculation_tolerance": 1e-10,
+  "row_counts": {
+    "D2": {
+      "single_diligent": 10,
+      "single_luces": 14,
+      "rose10_diligent": 100,
+      "rose10_luces": 140
+    },
+    "MoGe-S": {
+      "gso_primary": 1860,
+      "single_diligent": 10,
+      "single_luces": 14,
+      "rose10_diligent": 100,
+      "rose10_luces": 140
+    },
+    "MoGe-B": {
+      "gso_primary": 1860,
+      "single_diligent": 10,
+      "single_luces": 14,
+      "rose10_diligent": 100,
+      "rose10_luces": 140
+    },
+    "MoGe-L": {
+      "gso_primary": 1860,
+      "single_diligent": 10,
+      "single_luces": 14,
+      "rose10_diligent": 100,
+      "rose10_luces": 140
+    }
+  },
+  "reconciled_rows": 6636,
+  "no_GSO_test_read": true,
+  "D2_GSO_is_explicit_frozen_reference": true,
+  "all_MoGe_full_scope_summaries_completed": true
+}

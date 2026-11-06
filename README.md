@@ -174,3 +174,5 @@ The source and output protocols are covered by the included tests. Full-set and 
 No dataset, pretrained-weight license or new software-license grant is implied by repository visibility. See [NOTICE.md](NOTICE.md).
 
 Completed MoGe-2 S/B/L checkpoint confirmation, RTX 3090 matched timing, normal-only equivalence and public training-data/license disclosure: [2026-11-06 results](results/moge2_scale_confirmation_20261106/README.md). Accuracy reruns are separate from this timing snapshot.
+
+Completed MoGe-2 S/B/L accuracy on all five panels and fresh D2 real controls: [scale accuracy results](results/moge2_scale_accuracy_20261106/README.md). D2 GSO is explicitly labeled as the previous frozen validation reference while its current-backend control finishes.

@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "exact_allowlist": [
+    "README.md",
+    "results/moge2_scale_accuracy_20261106/README.md",
+    "results/moge2_scale_accuracy_20261106/protocol.json",
+    "results/moge2_scale_accuracy_20261106/summary.json",
+    "results/moge2_scale_accuracy_20261106/validation.json"
+  ],
+  "no_sample_level_rows_identifiers_arrays_or_weights": true,
+  "no_research_plans": true,
+  "D2_GSO_reference_status_preserved": true,
+  "base_commit": "d8d9b64af9e13589624158d0b8519a284c0655b8"
+}

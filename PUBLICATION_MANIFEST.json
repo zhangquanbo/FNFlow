@@ -1,68 +1,44 @@
 {
-  "created_at": "2026-11-06T09:49:49.327172+08:00",
+  "created_at": "2026-11-06T09:59:33.227607+08:00",
   "scan_passed": true,
-  "base_commit": "387cb7407c764792f6509fcc678fee10a467fa88",
-  "scope": "Completed MoGe-2 S/B/L checkpoint confirmation, matched RTX3090 timing, normal-only inference source and data/license disclosure. Accuracy reruns and E research plans/results are not part of this snapshot. Existing published files retained through base tree.",
+  "base_commit": "d8d9b64af9e13589624158d0b8519a284c0655b8",
+  "scope": "Completed MoGe-2 three-scale accuracy and fresh D2 real controls, aggregate validation and protocol only. D2 GSO remains an explicit prior reference. Preserve unchanged published files.",
   "files": [
     {
       "path": "README.md",
       "category": "aggregate_results_protocol_and_validation",
-      "bytes": 20103,
-      "exported_sha256": "f6a753f7d27007147429e921974d1557055e2dc7623d788e03a84655e19f61f5"
+      "bytes": 20375,
+      "exported_sha256": "3330b087daa381133c0828491826d93a4251f6d6fd4dc6ca49e9d21a6524861c"
     },
     {
-      "path": "configs/moge2_normal_models_20261106.json",
-      "category": "completed_measurement_source",
-      "bytes": 1138,
-      "exported_sha256": "d87418cc4b489b411fa496ba6a22c8e03d918837b21d629faee4f1080e706933"
-    },
-    {
-      "path": "licenses/MoGe-MIT.txt",
-      "category": "completed_measurement_source",
-      "bytes": 12500,
-      "exported_sha256": "ad7d951c80c5fc2b2bce035f2041bc0a0dbf9028c8ecc4c9a8e1fba8130b6b59"
-    },
-    {
-      "path": "results/moge2_scale_confirmation_20261106/README.md",
+      "path": "results/moge2_scale_accuracy_20261106/README.md",
       "category": "aggregate_results_protocol_and_validation",
-      "bytes": 3578,
-      "exported_sha256": "4b34d8ba4b1f862057d016cad054ea1e2e3836d4cbb3c6701cd9fa3ec2b39d7f"
+      "bytes": 2174,
+      "exported_sha256": "deeb9aaa1a8b2724321d0d84d928c77aa1715494d9bb0415306aaaeb2b0cc131"
     },
     {
-      "path": "results/moge2_scale_confirmation_20261106/data_and_license.json",
+      "path": "results/moge2_scale_accuracy_20261106/export_validation.json",
       "category": "aggregate_results_protocol_and_validation",
-      "bytes": 2547,
-      "exported_sha256": "1a881ab2958e23b9fb45dbcd53909566bef4b742d5e32b3a62ecff44bebc1cbb"
+      "bytes": 499,
+      "exported_sha256": "b60621dfdde9b43e79b69c602bd623f937c0d56123261b1b43ed3eafc17e4e62"
     },
     {
-      "path": "results/moge2_scale_confirmation_20261106/efficiency.json",
+      "path": "results/moge2_scale_accuracy_20261106/protocol.json",
       "category": "aggregate_results_protocol_and_validation",
-      "bytes": 12871,
-      "exported_sha256": "d418969943b54b3f89debd1b891189c92a62b1ff16e9f37ac076bb1776239141"
+      "bytes": 3674,
+      "exported_sha256": "1875deb7ff0086e34a628aee1bae6b1a6aecabfb56c12a498bf3d6126bc5af91"
     },
     {
-      "path": "results/moge2_scale_confirmation_20261106/export_validation.json",
+      "path": "results/moge2_scale_accuracy_20261106/summary.json",
       "category": "aggregate_results_protocol_and_validation",
-      "bytes": 886,
-      "exported_sha256": "f3e1e6442b73930efb18bca9b57e3e28b1863bda55a2f41c15e283ddfd6032d7"
+      "bytes": 7739,
+      "exported_sha256": "948f8abb77469a10322b6b5afa57f320a5b500a4707648d5d2d96c0ac8cabe88"
     },
     {
-      "path": "results/moge2_scale_confirmation_20261106/protocol.json",
+      "path": "results/moge2_scale_accuracy_20261106/validation.json",
       "category": "aggregate_results_protocol_and_validation",
-      "bytes": 3905,
-      "exported_sha256": "98fc832cfb84271293f3b58d746e759eebdf8269ae496a26813cc461b5539c9a"
-    },
-    {
-      "path": "results/moge2_scale_confirmation_20261106/validation.json",
-      "category": "aggregate_results_protocol_and_validation",
-      "bytes": 570,
-      "exported_sha256": "0b9d3700ba61fba94d976e3a9b26b046b37c2c93cad86f105285cc12a78d8369"
-    },
-    {
-      "path": "src/moge_bridge_20261106.py",
-      "category": "completed_measurement_source",
-      "bytes": 4564,
-      "exported_sha256": "fc63b4f83f3f6ede57fe7d91924ea472fc9b2ab81f7b9e7b9024c6140b549dc9"
+      "bytes": 931,
+      "exported_sha256": "67767fe88d158f63f10df75d9d30c4ad90f4662c23b0b826f2400028a43af3ba"
     }
   ]
 }
