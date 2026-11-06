@@ -1,0 +1,138 @@
+{
+  "models": {
+    "D2": {
+      "matrix_to_common": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "inference_seeds": [
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "training_seed": 1247,
+      "checkpoint_sha256": "f1cbe7e14db11c4856677731c6294d3a55b4068dcbd2f59fecae68e9fa05d170"
+    },
+    "MoGe-S": {
+      "matrix_to_common": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "inference_seeds": [
+        42
+      ],
+      "size": "S",
+      "repository": "Ruicheng/moge-2-vits-normal",
+      "revision": "26b477f41595707c5db6770294c0d1721e8ed4ed",
+      "weights_sha256": "79a16621928c2bf0ed04659218c55c01075e950507f40bb3332fb4c873d3e1dc",
+      "parameters_total": 35103656,
+      "effective_num_tokens": 3600,
+      "compute_precision": "float16",
+      "mode": "verified_normal_head_only",
+      "sdpa": true
+    },
+    "MoGe-B": {
+      "matrix_to_common": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "inference_seeds": [
+        42
+      ],
+      "size": "B",
+      "repository": "Ruicheng/moge-2-vitb-normal",
+      "revision": "ca5f0e07ff01d3e5a364c1d954ed12ee1814b368",
+      "weights_sha256": "16b8110e86d5dc5a849db120ca96ef3a223fd30b0c9146d1d81db504073da5f6",
+      "parameters_total": 104743592,
+      "effective_num_tokens": 3600,
+      "compute_precision": "float16",
+      "mode": "verified_normal_head_only",
+      "sdpa": true
+    },
+    "MoGe-L": {
+      "matrix_to_common": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "inference_seeds": [
+        42
+      ],
+      "size": "L",
+      "repository": "Ruicheng/moge-2-vitl-normal",
+      "revision": "cb0e8bbd6b1e243589717c78e750b1ba4c093acf",
+      "weights_sha256": "280741fd09bc3f403ccff9967784c2a391b52d2c0742ae3efdb21d9f90cc1a01",
+      "parameters_total": 330901544,
+      "effective_num_tokens": 3600,
+      "compute_precision": "float16",
+      "mode": "verified_normal_head_only",
+      "sdpa": true
+    }
+  },
+  "worker_sha256": "4cc713b3351bfd659a16179c7d8f81db1c9e6be25c606569ecabbbde08093608",
+  "benchmark_sha256": "8a68d67e140619b9fdd971b12607862a40a466e9da1ad49f6c42abb08c67a97e",
+  "bridge_sha256": "e1116bbe1e409cf601c75eadfbfb88758132202175b2e0377a06cce4ba9258f5",
+  "source_commit": "925b8ed835a7a9cdb7578ba15c658a0afc969030",
+  "data_license_audit_sha256": "1a881ab2958e23b9fb45dbcd53909566bef4b742d5e32b3a62ecff44bebc1cbb",
+  "benchmark_scope": "All models on exclusive RTX3090, same fixed raw input and common256 normalPNG output,5warmups/30timed, synchronized each sample. E2E includes PNG read, configured preprocessing/transfer, model path, common-frame resize/normalization and PNG write. Model loading excluded. Primary pairs use D2 BF16 and MoGe FP16 normal-head-only path; official full-infer and FP32 timings are separate diagnostics, not mixed accuracy/latency pairs. Inference-only excludes fileIO and pre/postprocessing. All use same MoGe environment PyTorch backend. Source input/model-native resolutions and effective tokens recorded.",
+  "normal_only_acceptance": "Three independent official-repository images, max raw normal difference<=1e-5 relative to full official inference, checked before benchmark results accepted.",
+  "test_images_scored": 0,
+  "formal_training_seeds_launched": false,
+  "private_manifest_sha256_count": 5
+}

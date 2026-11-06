@@ -1,174 +1,68 @@
 {
-  "created_at": "2026-11-06T08:33:34.886828+08:00",
+  "created_at": "2026-11-06T09:49:49.327172+08:00",
   "scan_passed": true,
-  "base_commit": "6826c83c854ab16d03cdac6b4493093e224cfb04",
-  "scope": "All completed external measurement scopes, D2 inference variants, RTX3090 efficiency, aggregate validation and completed source; StableNormal is diagnostic only. Exclude sample-level and fixture-level records, images, weights, input identifiers and individual timing samples. Unchanged published files retained through base tree.",
+  "base_commit": "387cb7407c764792f6509fcc678fee10a467fa88",
+  "scope": "Completed MoGe-2 S/B/L checkpoint confirmation, matched RTX3090 timing, normal-only inference source and data/license disclosure. Accuracy reruns and E research plans/results are not part of this snapshot. Existing published files retained through base tree.",
   "files": [
     {
       "path": "README.md",
       "category": "aggregate_results_protocol_and_validation",
-      "bytes": 19829,
-      "exported_sha256": "12168c579db3265e68a7736793f9d7f0d1ce016f24341abc401d673cada1b6a9"
+      "bytes": 20103,
+      "exported_sha256": "f6a753f7d27007147429e921974d1557055e2dc7623d788e03a84655e19f61f5"
     },
     {
-      "path": "results/external_comparison_20261106/README.md",
+      "path": "configs/moge2_normal_models_20261106.json",
+      "category": "completed_measurement_source",
+      "bytes": 1138,
+      "exported_sha256": "d87418cc4b489b411fa496ba6a22c8e03d918837b21d629faee4f1080e706933"
+    },
+    {
+      "path": "licenses/MoGe-MIT.txt",
+      "category": "completed_measurement_source",
+      "bytes": 12500,
+      "exported_sha256": "ad7d951c80c5fc2b2bce035f2041bc0a0dbf9028c8ecc4c9a8e1fba8130b6b59"
+    },
+    {
+      "path": "results/moge2_scale_confirmation_20261106/README.md",
       "category": "aggregate_results_protocol_and_validation",
-      "bytes": 5629,
-      "exported_sha256": "771f933f97895903eb2279d62ff666991334489ed149d3573e5c8c2a7f9a8fad",
-      "source_sha256": "e5287195d6833febb7f272dff5083fa3286d4f51b16c7a77b6f2447defaff7dc"
+      "bytes": 3578,
+      "exported_sha256": "4b34d8ba4b1f862057d016cad054ea1e2e3836d4cbb3c6701cd9fa3ec2b39d7f"
     },
     {
-      "path": "results/external_comparison_20261106/efficiency.json",
+      "path": "results/moge2_scale_confirmation_20261106/data_and_license.json",
       "category": "aggregate_results_protocol_and_validation",
-      "bytes": 4259,
-      "exported_sha256": "998d3aaae0c2e0fe75d9d2782eb7c15582419b1845ab8d724925ae4a0b6a80f1",
-      "source_sha256": "bae67086d51171f5640ee34e67e158a7ddb56e24589dc505945c870ce4f8dcb2"
+      "bytes": 2547,
+      "exported_sha256": "1a881ab2958e23b9fb45dbcd53909566bef4b742d5e32b3a62ecff44bebc1cbb"
     },
     {
-      "path": "results/external_comparison_20261106/export_validation.json",
+      "path": "results/moge2_scale_confirmation_20261106/efficiency.json",
       "category": "aggregate_results_protocol_and_validation",
-      "bytes": 477,
-      "exported_sha256": "6a45ac8bb25b8117ab198b0daafe7ee63c6fe0ebabd4fba4db42984925a116c4"
+      "bytes": 12871,
+      "exported_sha256": "d418969943b54b3f89debd1b891189c92a62b1ff16e9f37ac076bb1776239141"
     },
     {
-      "path": "results/external_comparison_20261106/protocol.json",
+      "path": "results/moge2_scale_confirmation_20261106/export_validation.json",
       "category": "aggregate_results_protocol_and_validation",
-      "bytes": 22994,
-      "exported_sha256": "a28222ad6dbf6862e433eaf296ddd5482dcc2b7727ba9aa86f3b164aa7685866",
-      "source_sha256": "a28222ad6dbf6862e433eaf296ddd5482dcc2b7727ba9aa86f3b164aa7685866"
+      "bytes": 886,
+      "exported_sha256": "f3e1e6442b73930efb18bca9b57e3e28b1863bda55a2f41c15e283ddfd6032d7"
     },
     {
-      "path": "results/external_comparison_20261106/quality_review.json",
+      "path": "results/moge2_scale_confirmation_20261106/protocol.json",
       "category": "aggregate_results_protocol_and_validation",
-      "bytes": 1208,
-      "exported_sha256": "0857190f3b000a58ccf671486712e9c00f046747c1ffb6c53ff29c241d7acfa5",
-      "source_sha256": "3488c2f60aad7f3dc4bf0a2c731bbbb9cbb7187da92508d89fe7e79c346057cf"
+      "bytes": 3905,
+      "exported_sha256": "98fc832cfb84271293f3b58d746e759eebdf8269ae496a26813cc461b5539c9a"
     },
     {
-      "path": "results/external_comparison_20261106/summary.json",
+      "path": "results/moge2_scale_confirmation_20261106/validation.json",
       "category": "aggregate_results_protocol_and_validation",
-      "bytes": 17365,
-      "exported_sha256": "f1ff3d1aa6942a0bb1cc377082cf222e192b7a27c3c175303023418fe29a0138",
-      "source_sha256": "f1ff3d1aa6942a0bb1cc377082cf222e192b7a27c3c175303023418fe29a0138"
+      "bytes": 570,
+      "exported_sha256": "0b9d3700ba61fba94d976e3a9b26b046b37c2c93cad86f105285cc12a78d8369"
     },
     {
-      "path": "results/external_comparison_20261106/tta.json",
-      "category": "aggregate_results_protocol_and_validation",
-      "bytes": 3296,
-      "exported_sha256": "4330bdb1201d48ac58a7ce86553e00f14ae771d6d301c86d81334fd959077872",
-      "source_sha256": "4330bdb1201d48ac58a7ce86553e00f14ae771d6d301c86d81334fd959077872"
-    },
-    {
-      "path": "results/external_comparison_20261106/validation.json",
-      "category": "aggregate_results_protocol_and_validation",
-      "bytes": 772,
-      "exported_sha256": "456606f3ba85f72deb857fca44f9a8bb4fb20adec96d7cb01233407485b5102c",
-      "source_sha256": "456606f3ba85f72deb857fca44f9a8bb4fb20adec96d7cb01233407485b5102c"
-    },
-    {
-      "path": "scripts/audit_StableNormal_official_parity_20261106.py",
+      "path": "src/moge_bridge_20261106.py",
       "category": "completed_measurement_source",
-      "bytes": 3738,
-      "exported_sha256": "bd9f90e6e833f250970b8d773d47f699d99410e421711ff1cdbd5cd2ed37f60e",
-      "source_sha256": "bd9f90e6e833f250970b8d773d47f699d99410e421711ff1cdbd5cd2ed37f60e"
-    },
-    {
-      "path": "scripts/audit_StableNormal_shifted_spheres_20261106.py",
-      "category": "completed_measurement_source",
-      "bytes": 3035,
-      "exported_sha256": "c8efadbc7545bc19bc807450a40e59c82bc631a9262751d2d7bb8ca6faf6100c",
-      "source_sha256": "c8efadbc7545bc19bc807450a40e59c82bc631a9262751d2d7bb8ca6faf6100c"
-    },
-    {
-      "path": "scripts/benchmark_D2_3090_20261106.py",
-      "category": "completed_measurement_source",
-      "bytes": 5033,
-      "exported_sha256": "64e0574e88f7508ea0c55b6556f97937e05b35ac47c839a01358182483daff35",
-      "source_sha256": "64e0574e88f7508ea0c55b6556f97937e05b35ac47c839a01358182483daff35"
-    },
-    {
-      "path": "scripts/benchmark_D2_3090_v2_20261106.py",
-      "category": "completed_measurement_source",
-      "bytes": 5120,
-      "exported_sha256": "9725dead5517906dbd17f74cfba63ea84dc647ca6369f6c63de0bbeae27ed72d",
-      "source_sha256": "9725dead5517906dbd17f74cfba63ea84dc647ca6369f6c63de0bbeae27ed72d"
-    },
-    {
-      "path": "scripts/calibrate_external_coordinates_20261030.py",
-      "category": "completed_measurement_source",
-      "bytes": 3845,
-      "exported_sha256": "2547d4d01380de8e993e11e8ea2180da000f14939e30e613eb07ab77ef9dff94",
-      "source_sha256": "2547d4d01380de8e993e11e8ea2180da000f14939e30e613eb07ab77ef9dff94"
-    },
-    {
-      "path": "scripts/evaluate_D2_TTA_20261106.py",
-      "category": "completed_measurement_source",
-      "bytes": 6442,
-      "exported_sha256": "90463bb2c510bd802d934ddb8b50f84a2972fee8ccacfc10bc452c6612f56ff2",
-      "source_sha256": "90463bb2c510bd802d934ddb8b50f84a2972fee8ccacfc10bc452c6612f56ff2"
-    },
-    {
-      "path": "scripts/evaluate_external_round_20261106.py",
-      "category": "completed_measurement_source",
-      "bytes": 2439,
-      "exported_sha256": "bae4d351b1561110a4f4ed3540db737deb5ac16ad34efec5403fbac8320cf5c3",
-      "source_sha256": "bae4d351b1561110a4f4ed3540db737deb5ac16ad34efec5403fbac8320cf5c3"
-    },
-    {
-      "path": "scripts/evaluate_external_round_v2_20261106.py",
-      "category": "completed_measurement_source",
-      "bytes": 9396,
-      "exported_sha256": "21aa238e7aa6f8e8b666d8c4980c65667119dd255ce77fea94500da3a9022e4e",
-      "source_sha256": "21aa238e7aa6f8e8b666d8c4980c65667119dd255ce77fea94500da3a9022e4e"
-    },
-    {
-      "path": "scripts/evaluate_external_round_v3_20261106.py",
-      "category": "completed_measurement_source",
-      "bytes": 10820,
-      "exported_sha256": "ba23438c34c69606f311cf5f407719e00c4e992da75e284beeb6c8e8488d72f6",
-      "source_sha256": "ba23438c34c69606f311cf5f407719e00c4e992da75e284beeb6c8e8488d72f6"
-    },
-    {
-      "path": "scripts/ingest_verified_diligent_20261106.py",
-      "category": "completed_measurement_source",
-      "bytes": 2708,
-      "exported_sha256": "f944b5aae94c73f9b8d4f7d17b3b439562bbdf67ea446c3d8bad7326b8cdd77a",
-      "source_sha256": "f944b5aae94c73f9b8d4f7d17b3b439562bbdf67ea446c3d8bad7326b8cdd77a"
-    },
-    {
-      "path": "scripts/prepare_real_protocols_20261106.py",
-      "category": "completed_measurement_source",
-      "bytes": 6442,
-      "exported_sha256": "8c5c7219fd5ec11cb62064b39b6870ea18f4f6971af6607968b4cdd1f591388c",
-      "source_sha256": "8c5c7219fd5ec11cb62064b39b6870ea18f4f6971af6607968b4cdd1f591388c"
-    },
-    {
-      "path": "scripts/reconcile_external_comparison_complete_20261106.py",
-      "category": "completed_measurement_source",
-      "bytes": 17983,
-      "exported_sha256": "c361361d29f78c791c89d4b6089b4521ed03f993d97961afbacfa45a005a6cec",
-      "source_sha256": "c361361d29f78c791c89d4b6089b4521ed03f993d97961afbacfa45a005a6cec"
-    },
-    {
-      "path": "scripts/run_D2_followups_20261106.py",
-      "category": "completed_measurement_source",
-      "bytes": 1607,
-      "exported_sha256": "baa1b62c682610a3d9e348a7340ec37db672d3387b85f5724fd4d4d8f0d890ae",
-      "source_sha256": "baa1b62c682610a3d9e348a7340ec37db672d3387b85f5724fd4d4d8f0d890ae"
-    },
-    {
-      "path": "scripts/run_external_round_20261106.py",
-      "category": "completed_measurement_source",
-      "bytes": 2688,
-      "exported_sha256": "7a7271cdb4c3fb9261761b3237437cb1a7cf2ee81bef18cc37bd84983b58991c",
-      "source_sha256": "7a7271cdb4c3fb9261761b3237437cb1a7cf2ee81bef18cc37bd84983b58991c"
-    },
-    {
-      "path": "src/external_normal_adapter_v2_20261106.py",
-      "category": "completed_measurement_source",
-      "bytes": 6129,
-      "exported_sha256": "187768ba1470db6334084ad5f0372c9544118139d848b5c6df5550c5d20e5d61",
-      "source_sha256": "187768ba1470db6334084ad5f0372c9544118139d848b5c6df5550c5d20e5d61"
+      "bytes": 4564,
+      "exported_sha256": "fc63b4f83f3f6ede57fe7d91924ea472fc9b2ab81f7b9e7b9024c6140b549dc9"
     }
   ]
 }

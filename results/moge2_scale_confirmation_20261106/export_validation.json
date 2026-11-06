@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "exact_allowlist": [
+    "README.md",
+    "configs/moge2_normal_models_20261106.json",
+    "licenses/MoGe-MIT.txt",
+    "results/moge2_scale_confirmation_20261106/README.md",
+    "results/moge2_scale_confirmation_20261106/data_and_license.json",
+    "results/moge2_scale_confirmation_20261106/efficiency.json",
+    "results/moge2_scale_confirmation_20261106/protocol.json",
+    "results/moge2_scale_confirmation_20261106/validation.json",
+    "src/moge_bridge_20261106.py"
+  ],
+  "no_input_identifiers_or_sample_records": true,
+  "no_timing_sample_arrays": true,
+  "no_images_weights_or_credentials": true,
+  "no_research_plans": true,
+  "source_export_rewrite": "Inference helper uses public model registry filename instead of the private registration filename; inference computation unchanged.",
+  "base_commit": "387cb7407c764792f6509fcc678fee10a467fa88"
+}

@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "completed_timing_rows": 13,
+  "strict_checkpoint_variants": 3,
+  "normal_only_equivalence_cases": 9,
+  "all_equivalence_differences_exactly_zero": true,
+  "common_torch_environment": true,
+  "accuracy_results_in_this_snapshot": false,
+  "test_images_scored": 0,
+  "benchmark_worker_sha256": "8a68d67e140619b9fdd971b12607862a40a466e9da1ad49f6c42abb08c67a97e",
+  "bridge_sha256": "e1116bbe1e409cf601c75eadfbfb88758132202175b2e0377a06cce4ba9258f5",
+  "private_summary_sha256": "01548a629b15764317575cc896332ffe7bc875534accc85281c3e7cda845fe2c"
+}

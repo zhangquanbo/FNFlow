@@ -172,3 +172,5 @@ To regenerate the completed diagnostic snapshot from local results, run `python 
 The source and output protocols are covered by the included tests. Full-set and pilot measurements are distinct and should not be pooled.
 
 No dataset, pretrained-weight license or new software-license grant is implied by repository visibility. See [NOTICE.md](NOTICE.md).
+
+Completed MoGe-2 S/B/L checkpoint confirmation, RTX 3090 matched timing, normal-only equivalence and public training-data/license disclosure: [2026-11-06 results](results/moge2_scale_confirmation_20261106/README.md). Accuracy reruns are separate from this timing snapshot.
