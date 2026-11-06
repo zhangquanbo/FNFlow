@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "source_allowlist_count": 22,
+  "private_metric_rows_checked": 22932,
+  "per_image_and_control_records_exported": 0,
+  "image_or_weight_files_exported": 0,
+  "public_efficiency_input_identifiers_exported": 0,
+  "public_individual_timing_samples_exported": 0,
+  "all_included_Python_files_compile": true,
+  "measurement_source_bindings_verified": true,
+  "source_reconciler_sha256": "c361361d29f78c791c89d4b6089b4521ed03f993d97961afbacfa45a005a6cec"
+}

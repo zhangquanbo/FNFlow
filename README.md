@@ -1,6 +1,6 @@
 # FNFlow
 
-Latest completed real-domain subset: [2026-11-06 external comparisons](results/external_real_20261106/README.md). Six model scopes are complete; the full comparison is ongoing. The [recipe result page](results/object_recipe_ladder_20261105/README.md) includes the C-D3 boundary supplement.
+Latest completed measurements: [2026-11-06 external comparisons, D2 TTA and RTX3090 efficiency](results/external_comparison_20261106/README.md). All16 scheduled external scopes and the follow-up measurements have finished. StableNormal is retained separately as diagnostic because independent direction acceptance has not closed. The [earlier real-domain snapshot](results/external_real_20261106/README.md) and [recipe ladder with boundary metrics](results/object_recipe_ladder_20261105/README.md) remain available.
 
 Pixel-space conditional Flow Matching for face normals, with isolated research code for general object and indoor-scene normal estimation.
 

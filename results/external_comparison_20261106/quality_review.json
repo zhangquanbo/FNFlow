@@ -1,0 +1,23 @@
+{
+  "status": "review_complete_baseline_not_accepted_for_main_table",
+  "model": "StableNormal",
+  "adapter_official_RGB8_output_identical_controls": 4,
+  "adapter_official_max_abs_RGB8_difference": 0,
+  "independent_controls": 4,
+  "fixed_matrix_to_common": [
+    -1,
+    -1,
+    1
+  ],
+  "parity_source_summary_sha256": "fff16278991dd78258a8d25d707291cc7896c762bdcbe8f875d87d6dda45b714",
+  "shifted_sphere_source_summary_sha256": "ea46aad08843229be8ec45ba21d5db282a06bf212d53ff12a1d342ed64b90a45",
+  "root_cause": "Not established. Independent direction acceptance has not closed; no alternative coordinate axes were selected using benchmark GT.",
+  "disposition": "Keep all raw benchmark aggregates in summary.json, report separately as diagnostic, exclude from main performance table. Do not select alternate axes using benchmark GT.",
+  "benchmark_data_used_for_control_tests": false,
+  "benchmark_scores_changed": false,
+  "failed_direction_control_count": 2,
+  "passed_direction_control_count": 2,
+  "total_cardinal_direction_probes": 16,
+  "failed_cardinal_direction_probe_count": 3,
+  "publication_scope": "Aggregate control counts only; individual control records and image data remain private."
+}

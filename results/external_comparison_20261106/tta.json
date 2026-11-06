@@ -1,0 +1,128 @@
+{
+  "status": "completed",
+  "training_seed": 1247,
+  "panels": {
+    "primary": {
+      "single42": {
+        "MAE_deg": 18.656579203886363,
+        "by_pitch": {
+          "0": 17.89630274707924,
+          "15": 17.907105023408096,
+          "30": 18.579915328299748,
+          "45": 19.318838143321255,
+          "60": 19.580734777323475
+        },
+        "images": 1860
+      },
+      "flip_TTA42": {
+        "MAE_deg": 18.365226252583287,
+        "by_pitch": {
+          "0": 17.537061614253385,
+          "15": 17.621314886883805,
+          "30": 18.36844744370615,
+          "45": 19.04067864976773,
+          "60": 19.258628668305363
+        },
+        "images": 1860
+      },
+      "mean4": {
+        "MAE_deg": 18.553340644310808,
+        "by_pitch": {
+          "0": 17.816459016849432,
+          "15": 17.789073956228687,
+          "30": 18.457324642581497,
+          "45": 19.237236010952966,
+          "60": 19.466609594941456
+        },
+        "images": 1860
+      },
+      "flip_TTA_mean4": {
+        "MAE_deg": 18.291577117272475,
+        "by_pitch": {
+          "0": 17.492933086235393,
+          "15": 17.543024393359307,
+          "30": 18.280221476490468,
+          "45": 18.980240874086522,
+          "60": 19.161465756190697
+        },
+        "images": 1860
+      },
+      "D2_original8_error_mean_reference": {
+        "MAE_deg": 18.6649671589252,
+        "note": "Mean of8inference errors, not vector ensemble."
+      }
+    },
+    "diligent": {
+      "single42": {
+        "MAE_deg": 18.265469935423596,
+        "by_pitch": {
+          "None": 18.265469935423596
+        },
+        "images": 10
+      },
+      "flip_TTA42": {
+        "MAE_deg": 17.93484131967247,
+        "by_pitch": {
+          "None": 17.93484131967247
+        },
+        "images": 10
+      },
+      "mean4": {
+        "MAE_deg": 18.143271469885725,
+        "by_pitch": {
+          "None": 18.143271469885725
+        },
+        "images": 10
+      },
+      "flip_TTA_mean4": {
+        "MAE_deg": 17.8646026338742,
+        "by_pitch": {
+          "None": 17.8646026338742
+        },
+        "images": 10
+      },
+      "D2_original8_error_mean_reference": {
+        "MAE_deg": 18.230935427755444,
+        "note": "Mean of8inference errors, not vector ensemble."
+      }
+    },
+    "luces": {
+      "single42": {
+        "MAE_deg": 17.68022831312959,
+        "by_pitch": {
+          "None": 17.68022831312959
+        },
+        "images": 14
+      },
+      "flip_TTA42": {
+        "MAE_deg": 17.661353081077383,
+        "by_pitch": {
+          "None": 17.661353081077383
+        },
+        "images": 14
+      },
+      "mean4": {
+        "MAE_deg": 17.57976320519275,
+        "by_pitch": {
+          "None": 17.57976320519275
+        },
+        "images": 14
+      },
+      "flip_TTA_mean4": {
+        "MAE_deg": 17.545367737966085,
+        "by_pitch": {
+          "None": 17.545367737966085
+        },
+        "images": 14
+      },
+      "D2_original8_error_mean_reference": {
+        "MAE_deg": 17.702615027801635,
+        "note": "Mean of8inference errors, not vector ensemble."
+      }
+    }
+  },
+  "registration_sha256": "52aa0ca488a8e57eb666abe3fdfc645e93caedec55d43957ed01b89809a46701",
+  "private_metric_rows_reconciled": 7536,
+  "max_single42_control_drift_deg": 0.0,
+  "test_images_scored": 0
+}

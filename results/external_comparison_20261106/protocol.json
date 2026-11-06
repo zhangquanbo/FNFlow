@@ -1,0 +1,835 @@
+{
+  "source_versions": {
+    "v1": {
+      "registration_sha256": "eb11720ee4b4492ccb42e7f733fa7af0284578906144da68d3c2f2630295111f",
+      "worker": "scripts/evaluate_external_round_v1_20261106.py",
+      "worker_sha256": "aae6b8d5b2588e39c3af0e08b4b9c99945a64836100caad824cdd94eb241da4a",
+      "adapter": "src/external_normal_adapter_20261106.py",
+      "adapter_sha256": "59baf0919aececac209a533e1b8bef11390499587ad5d7f42be7a7d960afc3b9",
+      "model_specs": {
+        "DSINE": {
+          "matrix_to_common": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            42
+          ],
+          "source_commit": "ef0c2afa32b4dd19cb8ca4567c652802cd92591c",
+          "weights_manifest_sha256": "3db778f4b0286f0a3d5585dc7ddd146b6a8ce14397493bc79ade5a3090324793",
+          "independent_calibration_required": false
+        },
+        "MoGe2": {
+          "matrix_to_common": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "inference_seeds": [
+            42
+          ],
+          "source_commit": "925b8ed835a7a9cdb7578ba15c658a0afc969030",
+          "weights_manifest_sha256": "828709b886e1b0ae6a9016630eda6834a20b8a527f328f4ed834f56f4b9dd724",
+          "independent_calibration_required": false
+        },
+        "Lotus-D": {
+          "matrix_to_common": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            42
+          ],
+          "source_commit": "b737e12238d2a41fc582ee8c6c6b1104d318d799",
+          "weights_manifest_sha256": "3fddc4debf8bf7904ea33b618fa91f3cbc07ace89224f6d7be449e3062f2754d",
+          "independent_calibration_required": false
+        },
+        "Lotus-G": {
+          "matrix_to_common": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            42
+          ],
+          "source_commit": "b737e12238d2a41fc582ee8c6c6b1104d318d799",
+          "weights_manifest_sha256": "3fddc4debf8bf7904ea33b618fa91f3cbc07ace89224f6d7be449e3062f2754d",
+          "independent_calibration_required": false
+        },
+        "MarigoldNormal": {
+          "matrix_to_common": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            42
+          ],
+          "source_commit": "2bfbdeae5d10a50b71f1ba20c865d46e480f6010",
+          "weights_manifest_sha256": "e5aee3b7bd1099ea453c014eeda513fb852f96284f98f902b948329ea8f2a975",
+          "independent_calibration_required": false
+        },
+        "StableNormal": {
+          "matrix_to_common": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            42
+          ],
+          "source_commit": "594b934630ab3bc71f35c77d14ec7feb98480cd0",
+          "weights_manifest_sha256": "8339c2791e70602c4b3f445662a1599834060f5f60867664f01ae2ca77cbe413",
+          "independent_calibration_required": true
+        },
+        "NiRNE": {
+          "matrix_to_common": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            42
+          ],
+          "source_commit": "38bb09fbfc6808d1f422326a5356fb172b59c722",
+          "weights_manifest_sha256": "0208027f6ecf9b9e652f8655e5891cdafd31037c3fccdf0219cf5525e101b782",
+          "independent_calibration_required": true
+        },
+        "D2": {
+          "matrix_to_common": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49
+          ]
+        },
+        "NeuralLightRig": {
+          "matrix_to_common": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            511
+          ]
+        }
+      }
+    },
+    "v2": {
+      "registration_sha256": "756a9ab36703efadd79fb704cba1e8a63298f6d48cf2eb8c5be7a2ae2a81bac9",
+      "worker": "scripts/evaluate_external_round_v2_20261106.py",
+      "worker_sha256": "21aa238e7aa6f8e8b666d8c4980c65667119dd255ce77fea94500da3a9022e4e",
+      "adapter": "src/external_normal_adapter_v2_20261106.py",
+      "adapter_sha256": "187768ba1470db6334084ad5f0372c9544118139d848b5c6df5550c5d20e5d61",
+      "model_specs": {
+        "DSINE": {
+          "matrix_to_common": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            42
+          ],
+          "source_commit": "ef0c2afa32b4dd19cb8ca4567c652802cd92591c",
+          "weights_manifest_sha256": "3db778f4b0286f0a3d5585dc7ddd146b6a8ce14397493bc79ade5a3090324793",
+          "independent_calibration_required": false
+        },
+        "MoGe2": {
+          "matrix_to_common": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "inference_seeds": [
+            42
+          ],
+          "source_commit": "925b8ed835a7a9cdb7578ba15c658a0afc969030",
+          "weights_manifest_sha256": "828709b886e1b0ae6a9016630eda6834a20b8a527f328f4ed834f56f4b9dd724",
+          "independent_calibration_required": false
+        },
+        "Lotus-D": {
+          "matrix_to_common": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            42
+          ],
+          "source_commit": "b737e12238d2a41fc582ee8c6c6b1104d318d799",
+          "weights_manifest_sha256": "3fddc4debf8bf7904ea33b618fa91f3cbc07ace89224f6d7be449e3062f2754d",
+          "independent_calibration_required": false
+        },
+        "Lotus-G": {
+          "matrix_to_common": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            42
+          ],
+          "source_commit": "b737e12238d2a41fc582ee8c6c6b1104d318d799",
+          "weights_manifest_sha256": "3fddc4debf8bf7904ea33b618fa91f3cbc07ace89224f6d7be449e3062f2754d",
+          "independent_calibration_required": false
+        },
+        "MarigoldNormal": {
+          "matrix_to_common": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            42
+          ],
+          "source_commit": "2bfbdeae5d10a50b71f1ba20c865d46e480f6010",
+          "weights_manifest_sha256": "e5aee3b7bd1099ea453c014eeda513fb852f96284f98f902b948329ea8f2a975",
+          "independent_calibration_required": false
+        },
+        "StableNormal": {
+          "matrix_to_common": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            42
+          ],
+          "source_commit": "594b934630ab3bc71f35c77d14ec7feb98480cd0",
+          "weights_manifest_sha256": "8339c2791e70602c4b3f445662a1599834060f5f60867664f01ae2ca77cbe413",
+          "independent_calibration_required": true
+        },
+        "NiRNE": {
+          "matrix_to_common": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            42
+          ],
+          "source_commit": "38bb09fbfc6808d1f422326a5356fb172b59c722",
+          "weights_manifest_sha256": "0208027f6ecf9b9e652f8655e5891cdafd31037c3fccdf0219cf5525e101b782",
+          "independent_calibration_required": true
+        },
+        "D2": {
+          "matrix_to_common": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49
+          ]
+        },
+        "NeuralLightRig": {
+          "matrix_to_common": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            511
+          ]
+        }
+      }
+    },
+    "v3": {
+      "registration_sha256": "fdb2eef49ab388dd64e99a4c7b345955f41b6d191956cc2b7dabae9ca28f443d",
+      "worker": "scripts/evaluate_external_round_v3_20261106.py",
+      "worker_sha256": "ba23438c34c69606f311cf5f407719e00c4e992da75e284beeb6c8e8488d72f6",
+      "adapter": "src/external_normal_adapter_20261106.py",
+      "adapter_sha256": "59baf0919aececac209a533e1b8bef11390499587ad5d7f42be7a7d960afc3b9",
+      "model_specs": {
+        "DSINE": {
+          "matrix_to_common": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            42
+          ],
+          "source_commit": "ef0c2afa32b4dd19cb8ca4567c652802cd92591c",
+          "weights_manifest_sha256": "3db778f4b0286f0a3d5585dc7ddd146b6a8ce14397493bc79ade5a3090324793",
+          "independent_calibration_required": false
+        },
+        "MoGe2": {
+          "matrix_to_common": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              -1
+            ]
+          ],
+          "inference_seeds": [
+            42
+          ],
+          "source_commit": "925b8ed835a7a9cdb7578ba15c658a0afc969030",
+          "weights_manifest_sha256": "828709b886e1b0ae6a9016630eda6834a20b8a527f328f4ed834f56f4b9dd724",
+          "independent_calibration_required": false
+        },
+        "Lotus-D": {
+          "matrix_to_common": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            42
+          ],
+          "source_commit": "b737e12238d2a41fc582ee8c6c6b1104d318d799",
+          "weights_manifest_sha256": "3fddc4debf8bf7904ea33b618fa91f3cbc07ace89224f6d7be449e3062f2754d",
+          "independent_calibration_required": false
+        },
+        "Lotus-G": {
+          "matrix_to_common": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            42
+          ],
+          "source_commit": "b737e12238d2a41fc582ee8c6c6b1104d318d799",
+          "weights_manifest_sha256": "3fddc4debf8bf7904ea33b618fa91f3cbc07ace89224f6d7be449e3062f2754d",
+          "independent_calibration_required": false
+        },
+        "MarigoldNormal": {
+          "matrix_to_common": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            42
+          ],
+          "source_commit": "2bfbdeae5d10a50b71f1ba20c865d46e480f6010",
+          "weights_manifest_sha256": "e5aee3b7bd1099ea453c014eeda513fb852f96284f98f902b948329ea8f2a975",
+          "independent_calibration_required": false
+        },
+        "StableNormal": {
+          "matrix_to_common": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              -1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            42
+          ],
+          "source_commit": "594b934630ab3bc71f35c77d14ec7feb98480cd0",
+          "weights_manifest_sha256": "8339c2791e70602c4b3f445662a1599834060f5f60867664f01ae2ca77cbe413",
+          "independent_calibration_required": true
+        },
+        "NiRNE": {
+          "matrix_to_common": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            42
+          ],
+          "source_commit": "38bb09fbfc6808d1f422326a5356fb172b59c722",
+          "weights_manifest_sha256": "0208027f6ecf9b9e652f8655e5891cdafd31037c3fccdf0219cf5525e101b782",
+          "independent_calibration_required": true
+        },
+        "D2": {
+          "matrix_to_common": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49
+          ]
+        },
+        "NeuralLightRig": {
+          "matrix_to_common": [
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ],
+            [
+              0,
+              0,
+              1
+            ]
+          ],
+          "inference_seeds": [
+            511
+          ]
+        }
+      }
+    }
+  },
+  "common_frame": "x-left y-up z-toward-viewer",
+  "input_processing": "Original uint16 RGB/65535 rounded8bit. White official-mask background for RGB models; original mask alpha for NLR. No gamma/intensity/exposure adjustment. Source-native model inference sizes/defaults retained. DSINE60degFOV fallback; no model-predicted mask changes scoring support.",
+  "real_single_light": "Original24 images with immutable GT/masks/RGB; same native vector metric as previous round.",
+  "real_ten_light": "Official21..30, each RGB is an independent monocular input; views/light errors averaged per object then objects equal.",
+  "RNG": "Per-image SHA256-derived seed using existing image_noise_seed; D2 eight seeds42..49 error mean; NLR511 and other stochastic models42. This is a newly registered inference RNG protocol.",
+  "dataset_contracts": {
+    "single_diligent": {
+      "manifest_sha256": "676ae7a2ef9d349337f2133b886ef95b56f9392ba607f0632123a1e7fca46092",
+      "images": 10,
+      "objects": 10,
+      "lights": "unchanged control"
+    },
+    "single_luces": {
+      "manifest_sha256": "a7f3774cbe1d928dedea0de77ea6361c1b2ed546fdfe13fe16e90260c4c8c7dd",
+      "images": 14,
+      "objects": 14,
+      "lights": "unchanged control"
+    },
+    "rose10_diligent": {
+      "manifest_sha256": "d6a2cf4ee076973c336ef9f3d7bd77990b2398928174abcd70348b25f9714260",
+      "images": 100,
+      "objects": 10,
+      "lights": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    "rose10_luces": {
+      "manifest_sha256": "759af902ce2a296c4f39f2303cd2b97252060b78022632cee0b616deab6c78a1",
+      "images": 140,
+      "objects": 14,
+      "lights": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    "gso_primary": {
+      "manifest_sha256": "e94db0b771b3c14f3f2d32480d41a271e5fbdd92edfe537896b46258f0c1bb16",
+      "images": 1860,
+      "objects": 93,
+      "lights": "unchanged control"
+    }
+  },
+  "source_paper_light_selection_reference": "https://arxiv.org/html/2602.09929v5#A3",
+  "paper_reproduction_claimed": false,
+  "NLR_RNG_note": "New real panels use independent image-key-derived seed511. Do not merge these numbers with legacy-order seeds511..515 or treat them as an exact reproduction of paper results. NLR GSO in the table is the earlier frozen fresh-stream reference.",
+  "D2_seed_note": "One training seed1247. Baseline errors average inference seeds42..49 per image, not vector ensembling. TTA variants are separate and use original one-light real panels, not the ten-light panels.",
+  "TTA": {
+    "created_at": "2026-11-06T00:28:51+0800",
+    "status": "registered_before_run",
+    "evaluator_sha256": "90463bb2c510bd802d934ddb8b50f84a2972fee8ccacfc10bc452c6612f56ff2",
+    "checkpoint_sha256": "f1cbe7e14db11c4856677731c6294d3a55b4068dcbd2f59fecae68e9fa05d170",
+    "config_sha256": "f59d8bea2cd5aa36a5b6d16db25d59bcf3158309c2af9d61b68a17d316ff6a50",
+    "manifest_sha256": {
+      "primary": "e94db0b771b3c14f3f2d32480d41a271e5fbdd92edfe537896b46258f0c1bb16",
+      "diligent": "f371a558a43904ddb274b38231289c699cac4672ea03a3253017f798a3473858",
+      "luces": "055470b3dd3eb313d7ca8dd26777b894f2063feb1bee3ac9b55e5d872c4cc35f"
+    },
+    "training_seed": 1247,
+    "variants": [
+      "single42",
+      "flip_TTA42",
+      "mean4",
+      "flip_TTA_mean4"
+    ],
+    "inference_seeds": [
+      42,
+      43,
+      44,
+      45
+    ],
+    "ensembling": "Normalize each prediction, average vectors, normalize result. Flip RGB and spatially+X-reflect noise and predictions.",
+    "primary_control": "Single42 must reproduce frozen D2 per-image errors within1e-4deg.",
+    "test_images_scored": 0,
+    "recipe_selection_effect": "Optional inference variant only; no training-recipe selection."
+  },
+  "efficiency_registration_original": {
+    "status": "registered_before_run",
+    "created_at": "2026-11-06T00:29:53+0800",
+    "worker_sha256": "64e0574e88f7508ea0c55b6556f97937e05b35ac47c839a01358182483daff35",
+    "checkpoint_sha256": "f1cbe7e14db11c4856677731c6294d3a55b4068dcbd2f59fecae68e9fa05d170",
+    "manifest_sha256": "e94db0b771b3c14f3f2d32480d41a271e5fbdd92edfe537896b46258f0c1bb16",
+    "physical_GPU": 0,
+    "model_order": [
+      "D2",
+      "NeuralLightRig"
+    ],
+    "scope": "Sequential exclusive RTX3090 end-to-end batch1 inference: PNG read, configured preprocessing, model computation, common256 normalized normal conversion, output PNG writing. Official NLR additionally writes its five-column composite. Model loading excluded. D2 BF16 single seed42 one forward with frozenB518 prior; NLR official75 steps, CFG2/rescale0.7. Five warmups,30 timed, synchronize each iteration. Other GPU jobs may run; whole-system idle is not claimed.",
+    "test_images_scored": 0
+  },
+  "efficiency_registration_D2_repeat": {
+    "status": "registered_before_run",
+    "created_at": "2026-11-06T08:27:04+0800",
+    "worker_sha256": "9725dead5517906dbd17f74cfba63ea84dc647ca6369f6c63de0bbeae27ed72d",
+    "checkpoint_sha256": "f1cbe7e14db11c4856677731c6294d3a55b4068dcbd2f59fecae68e9fa05d170",
+    "manifest_sha256": "e94db0b771b3c14f3f2d32480d41a271e5fbdd92edfe537896b46258f0c1bb16",
+    "physical_GPU": 0,
+    "model_order": [
+      "D2",
+      "NeuralLightRig"
+    ],
+    "scope": "Sequential exclusive RTX3090 end-to-end batch1 inference: PNG read, configured preprocessing, model computation, common256 normalized normal conversion, output PNG writing. Official NLR additionally writes its five-column composite. Model loading excluded. D2 BF16 single seed42 one forward with frozenB518 prior; NLR official75 steps, CFG2/rescale0.7. Five warmups,30 timed, synchronize each iteration. Other GPU jobs may run; whole-system idle is not claimed.",
+    "test_images_scored": 0,
+    "amendment": {
+      "previous_registration_sha256": "acd59e9d1e68c9e664ff159cabcd0f9f17cf8251fcc6f945e37a600e360f9ee1",
+      "reason": "D2 conditioned wrapper executes UNet blocks directly, bypassing the inner UNet module-call hook. Count the enclosing conditioned model forward. No checkpoint/input/precision/timing-scope changes. Original timing records retained. Only D2 is repeated; NLR timings remain original."
+    }
+  },
+  "test_images_scored": 0,
+  "formal_multi_training_seed_comparison_completed": false
+}

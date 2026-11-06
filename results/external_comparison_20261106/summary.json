@@ -1,0 +1,524 @@
+{
+  "status": "completed_measurements_with_one_unverified_baseline",
+  "models": {
+    "D2": {
+      "quality_status": "registered_evaluation_completed",
+      "panels": {
+        "single_diligent": {
+          "by_pitch_MAE_deg": {
+            "None": 18.23093542775544
+          },
+          "equal_pitch_object_macro_MAE_deg": 18.23093542775544,
+          "images": 10,
+          "objects": 10
+        },
+        "single_luces": {
+          "by_pitch_MAE_deg": {
+            "None": 17.702615027801638
+          },
+          "equal_pitch_object_macro_MAE_deg": 17.702615027801638,
+          "images": 14,
+          "objects": 14
+        },
+        "rose10_diligent": {
+          "by_pitch_MAE_deg": {
+            "None": 18.06645783592873
+          },
+          "equal_pitch_object_macro_MAE_deg": 18.06645783592873,
+          "images": 100,
+          "objects": 10
+        },
+        "rose10_luces": {
+          "by_pitch_MAE_deg": {
+            "None": 17.094019794892414
+          },
+          "equal_pitch_object_macro_MAE_deg": 17.094019794892414,
+          "images": 140,
+          "objects": 14
+        },
+        "gso_primary_reference": {
+          "equal_pitch_object_macro_MAE_deg": 18.6649671589252,
+          "by_pitch_MAE_deg": {
+            "0": 17.939029941586526,
+            "15": 17.89824181777597,
+            "30": 18.558094563384905,
+            "45": 19.33948820288184,
+            "60": 19.589981268996787
+          },
+          "source": "Previously published frozen recipe-ladder GSO-val evaluation; no new GSO inference for this row.",
+          "reference_snapshot_commit": "7b0f10a40eebbdf0a0de555aab0ca563ff835ab4",
+          "source_export_summary_sha256": "abec5e254bfc110395efa761f036e0d7330ed46d00930bc4fbacf29c4c1b3995"
+        }
+      },
+      "source_scope_summary_sha256": {
+        "real": "34b074adb2a19eefeb53ec10b8621e6395586b1cc320d93a6fba6aec72c5ca30"
+      },
+      "measurement_registration_sha256": {
+        "real": "eb11720ee4b4492ccb42e7f733fa7af0284578906144da68d3c2f2630295111f"
+      }
+    },
+    "NeuralLightRig": {
+      "quality_status": "registered_evaluation_completed",
+      "panels": {
+        "single_diligent": {
+          "by_pitch_MAE_deg": {
+            "None": 23.162150521487675
+          },
+          "equal_pitch_object_macro_MAE_deg": 23.162150521487675,
+          "images": 10,
+          "objects": 10
+        },
+        "single_luces": {
+          "by_pitch_MAE_deg": {
+            "None": 25.041016177290395
+          },
+          "equal_pitch_object_macro_MAE_deg": 25.041016177290395,
+          "images": 14,
+          "objects": 14
+        },
+        "rose10_diligent": {
+          "by_pitch_MAE_deg": {
+            "None": 29.271875996916783
+          },
+          "equal_pitch_object_macro_MAE_deg": 29.271875996916783,
+          "images": 100,
+          "objects": 10
+        },
+        "rose10_luces": {
+          "by_pitch_MAE_deg": {
+            "None": 20.06518188567789
+          },
+          "equal_pitch_object_macro_MAE_deg": 20.06518188567789,
+          "images": 140,
+          "objects": 14
+        },
+        "gso_primary_reference": {
+          "equal_pitch_object_macro_MAE_deg": 20.502370865486142,
+          "by_pitch_MAE_deg": {
+            "0": 18.573200624723846,
+            "15": 20.825237116847013,
+            "30": 20.665830570080654,
+            "45": 20.61765408008885,
+            "60": 21.829931935690336
+          },
+          "source": "Previously published frozen recipe-ladder GSO-val evaluation; no new GSO inference for this row.",
+          "reference_snapshot_commit": "7b0f10a40eebbdf0a0de555aab0ca563ff835ab4",
+          "source_export_summary_sha256": "abec5e254bfc110395efa761f036e0d7330ed46d00930bc4fbacf29c4c1b3995"
+        }
+      },
+      "source_scope_summary_sha256": {
+        "real": "a9447d31c9bbf19ef413bc318503be7158c2fd627bed4f2757e0f53c7ec2f89f"
+      },
+      "measurement_registration_sha256": {
+        "real": "eb11720ee4b4492ccb42e7f733fa7af0284578906144da68d3c2f2630295111f"
+      }
+    },
+    "MoGe2": {
+      "quality_status": "registered_evaluation_completed",
+      "panels": {
+        "single_diligent": {
+          "by_pitch_MAE_deg": {
+            "None": 13.606824537398404
+          },
+          "equal_pitch_object_macro_MAE_deg": 13.606824537398404,
+          "images": 10,
+          "objects": 10
+        },
+        "single_luces": {
+          "by_pitch_MAE_deg": {
+            "None": 13.394165917009607
+          },
+          "equal_pitch_object_macro_MAE_deg": 13.394165917009607,
+          "images": 14,
+          "objects": 14
+        },
+        "rose10_diligent": {
+          "by_pitch_MAE_deg": {
+            "None": 13.44247228616637
+          },
+          "equal_pitch_object_macro_MAE_deg": 13.44247228616637,
+          "images": 100,
+          "objects": 10
+        },
+        "rose10_luces": {
+          "by_pitch_MAE_deg": {
+            "None": 11.921594601618295
+          },
+          "equal_pitch_object_macro_MAE_deg": 11.921594601618295,
+          "images": 140,
+          "objects": 14
+        },
+        "gso_primary": {
+          "by_pitch_MAE_deg": {
+            "0": 13.946060901148122,
+            "15": 12.727951426110304,
+            "30": 13.047156209608017,
+            "45": 13.832623321056046,
+            "60": 15.413902213216172
+          },
+          "equal_pitch_object_macro_MAE_deg": 13.793538814227734,
+          "images": 1860,
+          "objects": 93
+        }
+      },
+      "source_scope_summary_sha256": {
+        "real": "caf5e0a25a6ecf49ed32d95bd67cf22b0d0f3804cca13fdd90fb1e5048841ea8",
+        "gso": "4ae536df393a6f9c861dd6d0437b483c858a253a12db9d8a8166e411bba5cea4"
+      },
+      "measurement_registration_sha256": {
+        "real": "eb11720ee4b4492ccb42e7f733fa7af0284578906144da68d3c2f2630295111f",
+        "gso": "eb11720ee4b4492ccb42e7f733fa7af0284578906144da68d3c2f2630295111f"
+      }
+    },
+    "NiRNE": {
+      "quality_status": "registered_evaluation_completed",
+      "panels": {
+        "single_diligent": {
+          "by_pitch_MAE_deg": {
+            "None": 18.327145102963474
+          },
+          "equal_pitch_object_macro_MAE_deg": 18.327145102963474,
+          "images": 10,
+          "objects": 10
+        },
+        "single_luces": {
+          "by_pitch_MAE_deg": {
+            "None": 19.073249538316198
+          },
+          "equal_pitch_object_macro_MAE_deg": 19.073249538316198,
+          "images": 14,
+          "objects": 14
+        },
+        "rose10_diligent": {
+          "by_pitch_MAE_deg": {
+            "None": 17.989608422391505
+          },
+          "equal_pitch_object_macro_MAE_deg": 17.989608422391505,
+          "images": 100,
+          "objects": 10
+        },
+        "rose10_luces": {
+          "by_pitch_MAE_deg": {
+            "None": 18.384366989498613
+          },
+          "equal_pitch_object_macro_MAE_deg": 18.384366989498613,
+          "images": 140,
+          "objects": 14
+        },
+        "gso_primary": {
+          "by_pitch_MAE_deg": {
+            "0": 20.990034712475843,
+            "15": 21.830567898517785,
+            "30": 22.077725769101953,
+            "45": 21.881093481960328,
+            "60": 22.373836876066846
+          },
+          "equal_pitch_object_macro_MAE_deg": 21.830651747624554,
+          "images": 1860,
+          "objects": 93
+        }
+      },
+      "source_scope_summary_sha256": {
+        "real": "c3e4176cf957c2a2443a1f0fd5dbba9ca140cfc94a81908fe84ef6ca19e9e9bb",
+        "gso": "4026acb127d388981760e65747fc0899f08efa116c1c2fdd1727ed9eea3535d8"
+      },
+      "measurement_registration_sha256": {
+        "real": "eb11720ee4b4492ccb42e7f733fa7af0284578906144da68d3c2f2630295111f",
+        "gso": "fdb2eef49ab388dd64e99a4c7b345955f41b6d191956cc2b7dabae9ca28f443d"
+      }
+    },
+    "Lotus-D": {
+      "quality_status": "registered_evaluation_completed",
+      "panels": {
+        "single_diligent": {
+          "by_pitch_MAE_deg": {
+            "None": 24.867701672916688
+          },
+          "equal_pitch_object_macro_MAE_deg": 24.867701672916688,
+          "images": 10,
+          "objects": 10
+        },
+        "single_luces": {
+          "by_pitch_MAE_deg": {
+            "None": 25.25107380865367
+          },
+          "equal_pitch_object_macro_MAE_deg": 25.25107380865367,
+          "images": 14,
+          "objects": 14
+        },
+        "rose10_diligent": {
+          "by_pitch_MAE_deg": {
+            "None": 22.699227572037678
+          },
+          "equal_pitch_object_macro_MAE_deg": 22.699227572037678,
+          "images": 100,
+          "objects": 10
+        },
+        "rose10_luces": {
+          "by_pitch_MAE_deg": {
+            "None": 16.944659226526248
+          },
+          "equal_pitch_object_macro_MAE_deg": 16.944659226526248,
+          "images": 140,
+          "objects": 14
+        },
+        "gso_primary": {
+          "by_pitch_MAE_deg": {
+            "0": 23.086920422349536,
+            "15": 24.73913378830796,
+            "30": 27.85331778631375,
+            "45": 30.096354758659725,
+            "60": 30.198207423659692
+          },
+          "equal_pitch_object_macro_MAE_deg": 27.19478683585813,
+          "images": 1860,
+          "objects": 93
+        }
+      },
+      "source_scope_summary_sha256": {
+        "real": "dc4fec8d957e1c9828f6deb5902b2713f0bb2f21c82cab9d7a323a2b797174b7",
+        "gso": "989f5314c779421ad6d2b515f1f719bec3d64759290404428c69d9b99d8bb1f8"
+      },
+      "measurement_registration_sha256": {
+        "real": "eb11720ee4b4492ccb42e7f733fa7af0284578906144da68d3c2f2630295111f",
+        "gso": "eb11720ee4b4492ccb42e7f733fa7af0284578906144da68d3c2f2630295111f"
+      }
+    },
+    "Lotus-G": {
+      "quality_status": "registered_evaluation_completed",
+      "panels": {
+        "single_diligent": {
+          "by_pitch_MAE_deg": {
+            "None": 24.03282492251194
+          },
+          "equal_pitch_object_macro_MAE_deg": 24.03282492251194,
+          "images": 10,
+          "objects": 10
+        },
+        "single_luces": {
+          "by_pitch_MAE_deg": {
+            "None": 22.45721616790912
+          },
+          "equal_pitch_object_macro_MAE_deg": 22.45721616790912,
+          "images": 14,
+          "objects": 14
+        },
+        "rose10_diligent": {
+          "by_pitch_MAE_deg": {
+            "None": 22.09793298556846
+          },
+          "equal_pitch_object_macro_MAE_deg": 22.09793298556846,
+          "images": 100,
+          "objects": 10
+        },
+        "rose10_luces": {
+          "by_pitch_MAE_deg": {
+            "None": 16.258859347946878
+          },
+          "equal_pitch_object_macro_MAE_deg": 16.258859347946878,
+          "images": 140,
+          "objects": 14
+        },
+        "gso_primary": {
+          "by_pitch_MAE_deg": {
+            "0": 20.27698744337805,
+            "15": 22.220492318731143,
+            "30": 25.56772557234743,
+            "45": 28.253611718964958,
+            "60": 28.352000415347526
+          },
+          "equal_pitch_object_macro_MAE_deg": 24.93416349375382,
+          "images": 1860,
+          "objects": 93
+        }
+      },
+      "source_scope_summary_sha256": {
+        "real": "b60fdcb4a60e7faa903d65574f7df58e0b3355d3b5a1c78e8f7f424a6b4e1855",
+        "gso": "7d36f546acf5cf106d54ce8a55d45b8d8a7700fb38f01e9b4eedfca7976b05a9"
+      },
+      "measurement_registration_sha256": {
+        "real": "eb11720ee4b4492ccb42e7f733fa7af0284578906144da68d3c2f2630295111f",
+        "gso": "eb11720ee4b4492ccb42e7f733fa7af0284578906144da68d3c2f2630295111f"
+      }
+    },
+    "DSINE": {
+      "quality_status": "registered_evaluation_completed",
+      "panels": {
+        "single_diligent": {
+          "by_pitch_MAE_deg": {
+            "None": 26.248921140061253
+          },
+          "equal_pitch_object_macro_MAE_deg": 26.248921140061253,
+          "images": 10,
+          "objects": 10
+        },
+        "single_luces": {
+          "by_pitch_MAE_deg": {
+            "None": 25.447088990083753
+          },
+          "equal_pitch_object_macro_MAE_deg": 25.447088990083753,
+          "images": 14,
+          "objects": 14
+        },
+        "rose10_diligent": {
+          "by_pitch_MAE_deg": {
+            "None": 24.441629932178028
+          },
+          "equal_pitch_object_macro_MAE_deg": 24.441629932178028,
+          "images": 100,
+          "objects": 10
+        },
+        "rose10_luces": {
+          "by_pitch_MAE_deg": {
+            "None": 22.609366597834953
+          },
+          "equal_pitch_object_macro_MAE_deg": 22.609366597834953,
+          "images": 140,
+          "objects": 14
+        },
+        "gso_primary": {
+          "by_pitch_MAE_deg": {
+            "0": 23.01615463469426,
+            "15": 25.737204855368013,
+            "30": 28.716785919686316,
+            "45": 30.29140843411682,
+            "60": 30.591146243622568
+          },
+          "equal_pitch_object_macro_MAE_deg": 27.670540017497597,
+          "images": 1860,
+          "objects": 93
+        }
+      },
+      "source_scope_summary_sha256": {
+        "real": "c4c54251a5ff6a1e498f696860609a1ffc9d382d9f461568ac8664453aed7a96",
+        "gso": "dff49e339a00c1e27b45921dd578196681da6957a95465fc620a9ab42c4c7957"
+      },
+      "measurement_registration_sha256": {
+        "real": "eb11720ee4b4492ccb42e7f733fa7af0284578906144da68d3c2f2630295111f",
+        "gso": "eb11720ee4b4492ccb42e7f733fa7af0284578906144da68d3c2f2630295111f"
+      }
+    },
+    "MarigoldNormal": {
+      "quality_status": "registered_evaluation_completed",
+      "panels": {
+        "single_diligent": {
+          "by_pitch_MAE_deg": {
+            "None": 25.179576383419178
+          },
+          "equal_pitch_object_macro_MAE_deg": 25.179576383419178,
+          "images": 10,
+          "objects": 10
+        },
+        "single_luces": {
+          "by_pitch_MAE_deg": {
+            "None": 22.54937268304852
+          },
+          "equal_pitch_object_macro_MAE_deg": 22.54937268304852,
+          "images": 14,
+          "objects": 14
+        },
+        "rose10_diligent": {
+          "by_pitch_MAE_deg": {
+            "None": 24.804455917581205
+          },
+          "equal_pitch_object_macro_MAE_deg": 24.804455917581205,
+          "images": 100,
+          "objects": 10
+        },
+        "rose10_luces": {
+          "by_pitch_MAE_deg": {
+            "None": 17.506670434606246
+          },
+          "equal_pitch_object_macro_MAE_deg": 17.506670434606246,
+          "images": 140,
+          "objects": 14
+        },
+        "gso_primary": {
+          "by_pitch_MAE_deg": {
+            "0": 24.135781034466433,
+            "15": 25.02681371233942,
+            "30": 27.51447734780851,
+            "45": 30.23686014748491,
+            "60": 31.271121321678716
+          },
+          "equal_pitch_object_macro_MAE_deg": 27.637010712755597,
+          "images": 1860,
+          "objects": 93
+        }
+      },
+      "source_scope_summary_sha256": {
+        "real": "efbceca444d1d222acfe0100e0f2900842a855409a58a2843b9b8e5bab78ae64",
+        "gso": "a756f8f7ea1fe63101c5c1594992245e1f2e7ea0f616640c21750d70b381e7e2"
+      },
+      "measurement_registration_sha256": {
+        "real": "756a9ab36703efadd79fb704cba1e8a63298f6d48cf2eb8c5be7a2ae2a81bac9",
+        "gso": "756a9ab36703efadd79fb704cba1e8a63298f6d48cf2eb8c5be7a2ae2a81bac9"
+      }
+    },
+    "StableNormal": {
+      "quality_status": "independent_direction_checks_not_passed",
+      "panels": {
+        "single_diligent": {
+          "by_pitch_MAE_deg": {
+            "None": 73.01460490418222
+          },
+          "equal_pitch_object_macro_MAE_deg": 73.01460490418222,
+          "images": 10,
+          "objects": 10
+        },
+        "single_luces": {
+          "by_pitch_MAE_deg": {
+            "None": 59.250727531501376
+          },
+          "equal_pitch_object_macro_MAE_deg": 59.250727531501376,
+          "images": 14,
+          "objects": 14
+        },
+        "rose10_diligent": {
+          "by_pitch_MAE_deg": {
+            "None": 74.07370712458933
+          },
+          "equal_pitch_object_macro_MAE_deg": 74.07370712458933,
+          "images": 100,
+          "objects": 10
+        },
+        "rose10_luces": {
+          "by_pitch_MAE_deg": {
+            "None": 63.35252922768514
+          },
+          "equal_pitch_object_macro_MAE_deg": 63.35252922768514,
+          "images": 140,
+          "objects": 14
+        },
+        "gso_primary": {
+          "by_pitch_MAE_deg": {
+            "0": 55.2825821687425,
+            "15": 69.5111038331529,
+            "30": 80.81967341238543,
+            "45": 83.41394580777519,
+            "60": 77.79107124008092
+          },
+          "equal_pitch_object_macro_MAE_deg": 73.36367529242739,
+          "images": 1860,
+          "objects": 93
+        }
+      },
+      "source_scope_summary_sha256": {
+        "real": "5cc6c0a95910cd329a57a9ecd6ea31030e6f41ff95f0d49252888e5d9db9a31e",
+        "gso": "5e5d05ebeccc1ac70a952238114a2a253021c48e976d5e5112179ae80fe1aee1"
+      },
+      "measurement_registration_sha256": {
+        "real": "fdb2eef49ab388dd64e99a4c7b345955f41b6d191956cc2b7dabae9ca28f443d",
+        "gso": "fdb2eef49ab388dd64e99a4c7b345955f41b6d191956cc2b7dabae9ca28f443d"
+      }
+    }
+  },
+  "completed_new_scopes": 16,
+  "main_table_models": 8,
+  "diagnostic_only_models": [
+    "StableNormal"
+  ],
+  "private_metric_rows_reconciled": 15396,
+  "test_images_scored": 0,
+  "formal_multi_training_seed_comparison_completed": false
+}

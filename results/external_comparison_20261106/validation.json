@@ -1,0 +1,17 @@
+{
+  "status": "passed_for_aggregate_integrity",
+  "external_scope_metric_rows_checked": 15396,
+  "TTA_metric_rows_checked": 7536,
+  "total_private_metric_rows_checked": 22932,
+  "completed_new_scopes": 16,
+  "all_exact_manifest_ID_sets_verified": true,
+  "registration_and_image_key_binding_verified": true,
+  "all_primary_metric_values_finite": true,
+  "max_external_summary_abs_difference_deg": 2.842170943040401e-14,
+  "max_TTA_single42_control_drift_deg": 0.0,
+  "efficiency_all30_samples_and_medians_checked": true,
+  "D2_repeated_forward_hook_count": 1.0,
+  "StableNormal_direction_acceptance": "not_passed; diagnostic_only; raw scores retained",
+  "test_images_scored": 0,
+  "reconciler_sha256": "c361361d29f78c791c89d4b6089b4521ed03f993d97961afbacfa45a005a6cec"
+}
