@@ -1,44 +1,44 @@
 {
-  "created_at": "2026-11-06T09:59:33.227607+08:00",
+  "created_at": "2026-11-06T10:04:48.102199+08:00",
   "scan_passed": true,
-  "base_commit": "d8d9b64af9e13589624158d0b8519a284c0655b8",
-  "scope": "Completed MoGe-2 three-scale accuracy and fresh D2 real controls, aggregate validation and protocol only. D2 GSO remains an explicit prior reference. Preserve unchanged published files.",
+  "base_commit": "93affd7ea92ddd61230906cb1faad81416e42edf",
+  "scope": "Completed all-four-model accuracy in the same backend, full8496-row aggregate reconciliation and protocol. Replace explicit prior D2-GSO reference with completed fresh rerun. Preserve unchanged history/files.",
   "files": [
     {
       "path": "README.md",
       "category": "aggregate_results_protocol_and_validation",
-      "bytes": 20375,
-      "exported_sha256": "3330b087daa381133c0828491826d93a4251f6d6fd4dc6ca49e9d21a6524861c"
+      "bytes": 20316,
+      "exported_sha256": "9026bb50d231197eead91b23e5c0aafac1dc335552688381285b34ac183c27ad"
     },
     {
       "path": "results/moge2_scale_accuracy_20261106/README.md",
       "category": "aggregate_results_protocol_and_validation",
-      "bytes": 2174,
-      "exported_sha256": "deeb9aaa1a8b2724321d0d84d928c77aa1715494d9bb0415306aaaeb2b0cc131"
+      "bytes": 2410,
+      "exported_sha256": "2f876ad31a4824ab6fa851aba3369ebfc167ab34963ef1fab9853c89d0e61deb"
     },
     {
       "path": "results/moge2_scale_accuracy_20261106/export_validation.json",
       "category": "aggregate_results_protocol_and_validation",
-      "bytes": 499,
-      "exported_sha256": "b60621dfdde9b43e79b69c602bd623f937c0d56123261b1b43ed3eafc17e4e62"
+      "bytes": 512,
+      "exported_sha256": "44fb4a3fa91e317f1bffffd9f1302eadf8a042e5c679206547ab98377ccb6485"
     },
     {
       "path": "results/moge2_scale_accuracy_20261106/protocol.json",
       "category": "aggregate_results_protocol_and_validation",
-      "bytes": 3674,
-      "exported_sha256": "1875deb7ff0086e34a628aee1bae6b1a6aecabfb56c12a498bf3d6126bc5af91"
+      "bytes": 3830,
+      "exported_sha256": "d627cfc8c91fb41f3a3b04b12c638fd109a6eb0a5e2b0e8b74bcdabd449207a7"
     },
     {
       "path": "results/moge2_scale_accuracy_20261106/summary.json",
       "category": "aggregate_results_protocol_and_validation",
-      "bytes": 7739,
-      "exported_sha256": "948f8abb77469a10322b6b5afa57f320a5b500a4707648d5d2d96c0ac8cabe88"
+      "bytes": 14979,
+      "exported_sha256": "1d87748f271e66fa3b675d3e9189a0fc74704710191e363ae2e4f4e0319613ca"
     },
     {
       "path": "results/moge2_scale_accuracy_20261106/validation.json",
       "category": "aggregate_results_protocol_and_validation",
-      "bytes": 931,
-      "exported_sha256": "67767fe88d158f63f10df75d9d30c4ad90f4662c23b0b826f2400028a43af3ba"
+      "bytes": 496,
+      "exported_sha256": "29bfcb0b2757d1da5896833d8952defa78abae58d4500e5eb691139fd711e6c4"
     }
   ]
 }

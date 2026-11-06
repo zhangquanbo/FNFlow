@@ -140,5 +140,7 @@
   "aggregation": "GSO: object/4view mean per pitch, then equal5pitch mean. Real: equal light mean within object then equal object mean. Ten-light panels are10 independent monocular inputs per object, not joint multi-image inference.",
   "metrics": "Native float normals, frozen GT/masks. MoGe common matrix -I; D2 identity. No coordinate selection using benchmark GT.",
   "private_manifests_included": false,
-  "GSO_test_opened": false
+  "GSO_test_opened": false,
+  "all_four_models_current_backend": true,
+  "full_reconciliation_registration_sha256": "c23f1b5f4763894893c006c20a249d7a8eaf7437f041d9bce7d7c2dad8d67daf"
 }

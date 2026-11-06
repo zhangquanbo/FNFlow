@@ -1,38 +1,13 @@
 {
   "status": "passed",
-  "exact_metric_ID_sets_and_image_object_pitch_bindings": true,
-  "independent_macro_recalculation_tolerance": 1e-10,
-  "row_counts": {
-    "D2": {
-      "single_diligent": 10,
-      "single_luces": 14,
-      "rose10_diligent": 100,
-      "rose10_luces": 140
-    },
-    "MoGe-S": {
-      "gso_primary": 1860,
-      "single_diligent": 10,
-      "single_luces": 14,
-      "rose10_diligent": 100,
-      "rose10_luces": 140
-    },
-    "MoGe-B": {
-      "gso_primary": 1860,
-      "single_diligent": 10,
-      "single_luces": 14,
-      "rose10_diligent": 100,
-      "rose10_luces": 140
-    },
-    "MoGe-L": {
-      "gso_primary": 1860,
-      "single_diligent": 10,
-      "single_luces": 14,
-      "rose10_diligent": 100,
-      "rose10_luces": 140
-    }
-  },
-  "reconciled_rows": 6636,
+  "private_metric_rows_checked": 8496,
+  "max_summary_difference_deg": 3.552713678800501e-15,
+  "all_exact_manifest_ID_sets_verified": true,
+  "reconciled_rows": 8496,
+  "all_four_models_current_backend": true,
+  "D2_GSO_fresh_rerun_completed": true,
+  "normal_only_equivalence_cases": 9,
+  "all_raw_normal_equivalence_max_differences": 0,
   "no_GSO_test_read": true,
-  "D2_GSO_is_explicit_frozen_reference": true,
-  "all_MoGe_full_scope_summaries_completed": true
+  "private_source_summary_sha256": "f0180e8a317ddc9b8df97243784817eaaaaa5ec85c712eb40c10d24016b63541"
 }

@@ -7,8 +7,8 @@
     "results/moge2_scale_accuracy_20261106/summary.json",
     "results/moge2_scale_accuracy_20261106/validation.json"
   ],
-  "no_sample_level_rows_identifiers_arrays_or_weights": true,
-  "no_research_plans": true,
-  "D2_GSO_reference_status_preserved": true,
-  "base_commit": "d8d9b64af9e13589624158d0b8519a284c0655b8"
+  "all_four_models_current_backend": true,
+  "no_sample_identifiers_arrays_weights_or_research_plans": true,
+  "D2_GSO_fresh_rerun_completed": true,
+  "base_commit": "93affd7ea92ddd61230906cb1faad81416e42edf"
 }
