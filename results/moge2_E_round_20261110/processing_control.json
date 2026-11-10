@@ -1,0 +1,33 @@
+{
+  "status": "completed",
+  "definition": "MoGe-L normal -> common coordinates -> bilinear256 -> unit normalize -> FP16 roundtrip -> re-normalize; zero residual. This control is separate from native MoGe-L.",
+  "panels": {
+    "single_diligent": {
+      "native_MoGe_L_MAE_deg": 13.606071168266675,
+      "zero_residual_condition_MAE_deg": 13.78927517267058,
+      "processing_delta_MAE_deg": 0.18320400440390472
+    },
+    "single_luces": {
+      "native_MoGe_L_MAE_deg": 13.392409755650434,
+      "zero_residual_condition_MAE_deg": 13.47110516857924,
+      "processing_delta_MAE_deg": 0.07869541292880555
+    },
+    "rose10_luces": {
+      "native_MoGe_L_MAE_deg": 11.921647704412775,
+      "zero_residual_condition_MAE_deg": 12.022005352231997,
+      "processing_delta_MAE_deg": 0.10035764781922119
+    },
+    "rose10_diligent": {
+      "native_MoGe_L_MAE_deg": 13.442696636891574,
+      "zero_residual_condition_MAE_deg": 13.613638382434498,
+      "processing_delta_MAE_deg": 0.1709417455429243
+    },
+    "gso_primary": {
+      "native_MoGe_L_MAE_deg": 13.793366404934654,
+      "zero_residual_condition_MAE_deg": 13.79336925790204,
+      "processing_delta_MAE_deg": 2.8529673858912474e-06
+    }
+  },
+  "metric_rows_reconciled_previously": 2124,
+  "test_images_scored": 0
+}

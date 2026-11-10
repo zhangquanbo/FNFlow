@@ -1,0 +1,634 @@
+{
+  "status": "completed",
+  "GPU_class": "NVIDIA GeForce RTX 3090",
+  "framework": "PyTorch 2.4.1+cu121",
+  "batch_sizes": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "primary_throughput_batch": 4,
+  "models": {
+    "D2": {
+      "parameters_total_including_condition_model": 130400259,
+      "compute_precision": "bfloat16",
+      "condition_model_precision": null,
+      "torch": "2.4.1+cu121",
+      "preloaded_input_shapes": {
+        "MoGe": [
+          3,
+          512,
+          512
+        ],
+        "FM": [
+          3,
+          256,
+          256
+        ],
+        "FM_DINO_prior_side": 518,
+        "MoGe_encoder_max_tokens": 3600
+      },
+      "batches": [
+        {
+          "batch_size": 1,
+          "status": "completed",
+          "synchronized_wall_median_ms": 37.891473999479786,
+          "GPU_event_median_ms": 37.869056701660156,
+          "p90_wall_ms": 38.087960524717346,
+          "throughput_images_per_second": 26.39116124154286,
+          "per_image_median_ms": 37.891473999479786,
+          "peak_allocated_bytes": 885805056
+        },
+        {
+          "batch_size": 2,
+          "status": "completed",
+          "synchronized_wall_median_ms": 69.53869550488889,
+          "GPU_event_median_ms": 69.51065444946289,
+          "p90_wall_ms": 70.03406402072869,
+          "throughput_images_per_second": 28.760965178867796,
+          "per_image_median_ms": 34.769347752444446,
+          "peak_allocated_bytes": 1214024192
+        },
+        {
+          "batch_size": 4,
+          "status": "completed",
+          "synchronized_wall_median_ms": 130.3615009819623,
+          "GPU_event_median_ms": 130.30912017822266,
+          "p90_wall_ms": 130.56513014016673,
+          "throughput_images_per_second": 30.683905676672644,
+          "per_image_median_ms": 32.59037524549058,
+          "peak_allocated_bytes": 1864171008
+        },
+        {
+          "batch_size": 8,
+          "status": "completed",
+          "synchronized_wall_median_ms": 253.27030001790263,
+          "GPU_event_median_ms": 253.2111358642578,
+          "p90_wall_ms": 254.00747976382266,
+          "throughput_images_per_second": 31.58680666242553,
+          "per_image_median_ms": 31.65878750223783,
+          "peak_allocated_bytes": 3168658944
+        }
+      ]
+    },
+    "MoGe-S": {
+      "parameters_total_including_condition_model": 35103656,
+      "compute_precision": "float16",
+      "condition_model_precision": null,
+      "torch": "2.4.1+cu121",
+      "preloaded_input_shapes": {
+        "MoGe": [
+          3,
+          512,
+          512
+        ],
+        "FM": [
+          3,
+          256,
+          256
+        ],
+        "FM_DINO_prior_side": 518,
+        "MoGe_encoder_max_tokens": 3600
+      },
+      "batches": [
+        {
+          "batch_size": 1,
+          "status": "completed",
+          "synchronized_wall_median_ms": 33.914650994120166,
+          "GPU_event_median_ms": 33.88672065734863,
+          "p90_wall_ms": 34.101279301103204,
+          "throughput_images_per_second": 29.48578182843077,
+          "per_image_median_ms": 33.914650994120166,
+          "peak_allocated_bytes": 1284605952
+        },
+        {
+          "batch_size": 2,
+          "status": "completed",
+          "synchronized_wall_median_ms": 69.48965799529105,
+          "GPU_event_median_ms": 69.46201705932617,
+          "p90_wall_ms": 69.97364340350032,
+          "throughput_images_per_second": 28.781261236535794,
+          "per_image_median_ms": 34.74482899764553,
+          "peak_allocated_bytes": 2322097152
+        },
+        {
+          "batch_size": 4,
+          "status": "completed",
+          "synchronized_wall_median_ms": 121.62225949577987,
+          "GPU_event_median_ms": 121.5759391784668,
+          "p90_wall_ms": 122.0890283875633,
+          "throughput_images_per_second": 32.888716396021195,
+          "per_image_median_ms": 30.405564873944968,
+          "peak_allocated_bytes": 4397374976
+        },
+        {
+          "batch_size": 8,
+          "status": "completed",
+          "synchronized_wall_median_ms": 233.9490015001502,
+          "GPU_event_median_ms": 233.9036102294922,
+          "p90_wall_ms": 234.5826345961541,
+          "throughput_images_per_second": 34.19548683132492,
+          "per_image_median_ms": 29.243625187518774,
+          "peak_allocated_bytes": 8551480832
+        }
+      ]
+    },
+    "MoGe-B": {
+      "parameters_total_including_condition_model": 104743592,
+      "compute_precision": "float16",
+      "condition_model_precision": null,
+      "torch": "2.4.1+cu121",
+      "preloaded_input_shapes": {
+        "MoGe": [
+          3,
+          512,
+          512
+        ],
+        "FM": [
+          3,
+          256,
+          256
+        ],
+        "FM_DINO_prior_side": 518,
+        "MoGe_encoder_max_tokens": 3600
+      },
+      "batches": [
+        {
+          "batch_size": 1,
+          "status": "completed",
+          "synchronized_wall_median_ms": 50.92542801867239,
+          "GPU_event_median_ms": 50.88665580749512,
+          "p90_wall_ms": 51.12542131100781,
+          "throughput_images_per_second": 19.636555624693788,
+          "per_image_median_ms": 50.92542801867239,
+          "peak_allocated_bytes": 1729336320
+        },
+        {
+          "batch_size": 2,
+          "status": "completed",
+          "synchronized_wall_median_ms": 98.45780546311289,
+          "GPU_event_median_ms": 98.40896224975586,
+          "p90_wall_ms": 99.14482178282924,
+          "throughput_images_per_second": 20.3132701423992,
+          "per_image_median_ms": 49.228902731556445,
+          "peak_allocated_bytes": 2782406656
+        },
+        {
+          "batch_size": 4,
+          "status": "completed",
+          "synchronized_wall_median_ms": 175.30816196813248,
+          "GPU_event_median_ms": 175.27039337158203,
+          "p90_wall_ms": 176.077744102804,
+          "throughput_images_per_second": 22.816963882874546,
+          "per_image_median_ms": 43.82704049203312,
+          "peak_allocated_bytes": 4889775104
+        },
+        {
+          "batch_size": 8,
+          "status": "completed",
+          "synchronized_wall_median_ms": 338.9335045067128,
+          "GPU_event_median_ms": 338.8589782714844,
+          "p90_wall_ms": 339.80820269789547,
+          "throughput_images_per_second": 23.603449920488917,
+          "per_image_median_ms": 42.3666880633391,
+          "peak_allocated_bytes": 9106505216
+        }
+      ]
+    },
+    "MoGe-L": {
+      "parameters_total_including_condition_model": 330901544,
+      "compute_precision": "float16",
+      "condition_model_precision": null,
+      "torch": "2.4.1+cu121",
+      "preloaded_input_shapes": {
+        "MoGe": [
+          3,
+          512,
+          512
+        ],
+        "FM": [
+          3,
+          256,
+          256
+        ],
+        "FM_DINO_prior_side": 518,
+        "MoGe_encoder_max_tokens": 3600
+      },
+      "batches": [
+        {
+          "batch_size": 1,
+          "status": "completed",
+          "synchronized_wall_median_ms": 100.17240198794752,
+          "GPU_event_median_ms": 100.13337326049805,
+          "p90_wall_ms": 100.44421890052035,
+          "throughput_images_per_second": 9.9827894724968,
+          "per_image_median_ms": 100.17240198794752,
+          "peak_allocated_bytes": 3076954112
+        },
+        {
+          "batch_size": 2,
+          "status": "completed",
+          "synchronized_wall_median_ms": 194.32366799446754,
+          "GPU_event_median_ms": 194.27532958984375,
+          "p90_wall_ms": 195.35484423977323,
+          "throughput_images_per_second": 10.292107084232995,
+          "per_image_median_ms": 97.16183399723377,
+          "peak_allocated_bytes": 4143095296
+        },
+        {
+          "batch_size": 4,
+          "status": "completed",
+          "synchronized_wall_median_ms": 362.0883144903928,
+          "GPU_event_median_ms": 362.0377655029297,
+          "p90_wall_ms": 362.6652849954553,
+          "throughput_images_per_second": 11.047028694172706,
+          "per_image_median_ms": 90.5220786225982,
+          "peak_allocated_bytes": 6272971776
+        },
+        {
+          "batch_size": 8,
+          "status": "completed",
+          "synchronized_wall_median_ms": 710.3341179899871,
+          "GPU_event_median_ms": 710.23974609375,
+          "p90_wall_ms": 711.0595469246618,
+          "throughput_images_per_second": 11.262305719789131,
+          "per_image_median_ms": 88.79176474874839,
+          "peak_allocated_bytes": 10535891968
+        }
+      ]
+    },
+    "E1_B": {
+      "parameters_total_including_condition_model": 130400259,
+      "compute_precision": "bfloat16",
+      "condition_model_precision": null,
+      "torch": "2.4.1+cu121",
+      "preloaded_input_shapes": {
+        "MoGe": [
+          3,
+          512,
+          512
+        ],
+        "FM": [
+          3,
+          256,
+          256
+        ],
+        "FM_DINO_prior_side": 518,
+        "MoGe_encoder_max_tokens": 3600
+      },
+      "batches": [
+        {
+          "batch_size": 1,
+          "status": "completed",
+          "synchronized_wall_median_ms": 38.079676538472995,
+          "GPU_event_median_ms": 38.05696105957031,
+          "p90_wall_ms": 38.32970487419516,
+          "throughput_images_per_second": 26.26072726719911,
+          "per_image_median_ms": 38.079676538472995,
+          "peak_allocated_bytes": 885805056
+        },
+        {
+          "batch_size": 2,
+          "status": "completed",
+          "synchronized_wall_median_ms": 70.20452301367186,
+          "GPU_event_median_ms": 70.17728042602539,
+          "p90_wall_ms": 70.42171009234153,
+          "throughput_images_per_second": 28.48819298452485,
+          "per_image_median_ms": 35.10226150683593,
+          "peak_allocated_bytes": 1214024192
+        },
+        {
+          "batch_size": 4,
+          "status": "completed",
+          "synchronized_wall_median_ms": 130.94005701714195,
+          "GPU_event_median_ms": 130.90509033203125,
+          "p90_wall_ms": 131.21164111071266,
+          "throughput_images_per_second": 30.54832945029451,
+          "per_image_median_ms": 32.73501425428549,
+          "peak_allocated_bytes": 1864171008
+        },
+        {
+          "batch_size": 8,
+          "status": "completed",
+          "synchronized_wall_median_ms": 253.28525400254875,
+          "GPU_event_median_ms": 253.2474822998047,
+          "p90_wall_ms": 253.5348841745872,
+          "throughput_images_per_second": 31.584941774460734,
+          "per_image_median_ms": 31.660656750318594,
+          "peak_allocated_bytes": 3168658944
+        }
+      ]
+    },
+    "E2_L": {
+      "parameters_total_including_condition_model": 461303531,
+      "compute_precision": "bfloat16",
+      "condition_model_precision": "float16",
+      "torch": "2.4.1+cu121",
+      "preloaded_input_shapes": {
+        "MoGe": [
+          3,
+          512,
+          512
+        ],
+        "FM": [
+          3,
+          256,
+          256
+        ],
+        "FM_DINO_prior_side": 518,
+        "MoGe_encoder_max_tokens": 3600
+      },
+      "batches": [
+        {
+          "batch_size": 1,
+          "status": "completed",
+          "synchronized_wall_median_ms": 136.92032551625744,
+          "GPU_event_median_ms": 136.89087677001953,
+          "p90_wall_ms": 137.0991883915849,
+          "throughput_images_per_second": 7.303517547372932,
+          "per_image_median_ms": 136.92032551625744,
+          "peak_allocated_bytes": 3602404352
+        },
+        {
+          "batch_size": 2,
+          "status": "completed",
+          "synchronized_wall_median_ms": 263.37917550699785,
+          "GPU_event_median_ms": 263.32928466796875,
+          "p90_wall_ms": 264.4036413752474,
+          "throughput_images_per_second": 7.593614780477817,
+          "per_image_median_ms": 131.68958775349893,
+          "peak_allocated_bytes": 4668849152
+        },
+        {
+          "batch_size": 4,
+          "status": "completed",
+          "synchronized_wall_median_ms": 493.2332194875926,
+          "GPU_event_median_ms": 493.19219970703125,
+          "p90_wall_ms": 494.1856753954198,
+          "throughput_images_per_second": 8.10975384860634,
+          "per_image_median_ms": 123.30830487189814,
+          "peak_allocated_bytes": 6798070784
+        },
+        {
+          "batch_size": 8,
+          "status": "completed",
+          "synchronized_wall_median_ms": 963.6651095061097,
+          "GPU_event_median_ms": 963.6121520996094,
+          "p90_wall_ms": 964.0740615723189,
+          "throughput_images_per_second": 8.30163914941374,
+          "per_image_median_ms": 120.45813868826372,
+          "peak_allocated_bytes": 11062997504
+        }
+      ]
+    },
+    "E3_L": {
+      "parameters_total_including_condition_model": 330901544,
+      "compute_precision": "float16",
+      "condition_model_precision": null,
+      "torch": "2.4.1+cu121",
+      "preloaded_input_shapes": {
+        "MoGe": [
+          3,
+          512,
+          512
+        ],
+        "FM": [
+          3,
+          256,
+          256
+        ],
+        "FM_DINO_prior_side": 518,
+        "MoGe_encoder_max_tokens": 3600
+      },
+      "batches": [
+        {
+          "batch_size": 1,
+          "status": "completed",
+          "synchronized_wall_median_ms": 99.71057102666236,
+          "GPU_event_median_ms": 99.67616271972656,
+          "p90_wall_ms": 100.0464322976768,
+          "throughput_images_per_second": 10.029026909620269,
+          "per_image_median_ms": 99.71057102666236,
+          "peak_allocated_bytes": 3076954112
+        },
+        {
+          "batch_size": 2,
+          "status": "completed",
+          "synchronized_wall_median_ms": 194.13997649098746,
+          "GPU_event_median_ms": 194.09715270996094,
+          "p90_wall_ms": 194.87326237140223,
+          "throughput_images_per_second": 10.301845277563665,
+          "per_image_median_ms": 97.06998824549373,
+          "peak_allocated_bytes": 4143095296
+        },
+        {
+          "batch_size": 4,
+          "status": "completed",
+          "synchronized_wall_median_ms": 361.91138249705546,
+          "GPU_event_median_ms": 361.8222198486328,
+          "p90_wall_ms": 363.390049780719,
+          "throughput_images_per_second": 11.052429388657165,
+          "per_image_median_ms": 90.47784562426386,
+          "peak_allocated_bytes": 6273070592
+        },
+        {
+          "batch_size": 8,
+          "status": "completed",
+          "synchronized_wall_median_ms": 709.1627079935279,
+          "GPU_event_median_ms": 709.0769653320312,
+          "p90_wall_ms": 710.2000990067609,
+          "throughput_images_per_second": 11.280909035156162,
+          "per_image_median_ms": 88.64533849919098,
+          "peak_allocated_bytes": 10535891968
+        }
+      ]
+    },
+    "E2_L_direct": {
+      "parameters_total_including_condition_model": 461303531,
+      "compute_precision": "bfloat16",
+      "condition_model_precision": "float16",
+      "torch": "2.4.1+cu121",
+      "preloaded_input_shapes": {
+        "MoGe": [
+          3,
+          512,
+          512
+        ],
+        "FM": [
+          3,
+          256,
+          256
+        ],
+        "FM_DINO_prior_side": 518,
+        "MoGe_encoder_max_tokens": 3600
+      },
+      "batches": [
+        {
+          "batch_size": 1,
+          "status": "completed",
+          "synchronized_wall_median_ms": 136.96788999368437,
+          "GPU_event_median_ms": 136.93081665039062,
+          "p90_wall_ms": 137.46952518704347,
+          "throughput_images_per_second": 7.300981274122791,
+          "per_image_median_ms": 136.96788999368437,
+          "peak_allocated_bytes": 3602404352
+        },
+        {
+          "batch_size": 2,
+          "status": "completed",
+          "synchronized_wall_median_ms": 263.5221974924207,
+          "GPU_event_median_ms": 263.4879913330078,
+          "p90_wall_ms": 263.8340677774977,
+          "throughput_images_per_second": 7.589493481123249,
+          "per_image_median_ms": 131.76109874621034,
+          "peak_allocated_bytes": 4668849152
+        },
+        {
+          "batch_size": 4,
+          "status": "completed",
+          "synchronized_wall_median_ms": 492.3207345127594,
+          "GPU_event_median_ms": 492.27264404296875,
+          "p90_wall_ms": 493.0059699283447,
+          "throughput_images_per_second": 8.124784758372456,
+          "per_image_median_ms": 123.08018362818984,
+          "peak_allocated_bytes": 6798070784
+        },
+        {
+          "batch_size": 8,
+          "status": "completed",
+          "synchronized_wall_median_ms": 963.9769594941754,
+          "GPU_event_median_ms": 963.93115234375,
+          "p90_wall_ms": 965.6387021765113,
+          "throughput_images_per_second": 8.298953539509714,
+          "per_image_median_ms": 120.49711993677192,
+          "peak_allocated_bytes": 11062997504
+        }
+      ]
+    },
+    "E2_B": {
+      "parameters_total_including_condition_model": 235145579,
+      "compute_precision": "bfloat16",
+      "condition_model_precision": "float16",
+      "torch": "2.4.1+cu121",
+      "preloaded_input_shapes": {
+        "MoGe": [
+          3,
+          512,
+          512
+        ],
+        "FM": [
+          3,
+          256,
+          256
+        ],
+        "FM_DINO_prior_side": 518,
+        "MoGe_encoder_max_tokens": 3600
+      },
+      "batches": [
+        {
+          "batch_size": 1,
+          "status": "completed",
+          "synchronized_wall_median_ms": 95.42851749574766,
+          "GPU_event_median_ms": 95.37843322753906,
+          "p90_wall_ms": 105.28007970424369,
+          "throughput_images_per_second": 10.47904783855162,
+          "per_image_median_ms": 95.42851749574766,
+          "peak_allocated_bytes": 2254006784
+        },
+        {
+          "batch_size": 2,
+          "status": "completed",
+          "synchronized_wall_median_ms": 167.41819953313097,
+          "GPU_event_median_ms": 167.36051177978516,
+          "p90_wall_ms": 167.67695263260975,
+          "throughput_images_per_second": 11.94613253264746,
+          "per_image_median_ms": 83.70909976656549,
+          "peak_allocated_bytes": 3307892736
+        },
+        {
+          "batch_size": 4,
+          "status": "completed",
+          "synchronized_wall_median_ms": 304.72995748277754,
+          "GPU_event_median_ms": 304.66456604003906,
+          "p90_wall_ms": 305.86194848874584,
+          "throughput_images_per_second": 13.126375998743308,
+          "per_image_median_ms": 76.18248937069438,
+          "peak_allocated_bytes": 5414107648
+        },
+        {
+          "batch_size": 8,
+          "status": "completed",
+          "synchronized_wall_median_ms": 592.645529017318,
+          "GPU_event_median_ms": 592.5299377441406,
+          "p90_wall_ms": 594.4162057596259,
+          "throughput_images_per_second": 13.498794149793083,
+          "per_image_median_ms": 74.08069112716476,
+          "peak_allocated_bytes": 9632230400
+        }
+      ]
+    },
+    "E1_L": {
+      "parameters_total_including_condition_model": 348434179,
+      "compute_precision": "bfloat16",
+      "condition_model_precision": null,
+      "torch": "2.4.1+cu121",
+      "preloaded_input_shapes": {
+        "MoGe": [
+          3,
+          512,
+          512
+        ],
+        "FM": [
+          3,
+          256,
+          256
+        ],
+        "FM_DINO_prior_side": 518,
+        "MoGe_encoder_max_tokens": 3600
+      },
+      "batches": [
+        {
+          "batch_size": 1,
+          "status": "completed",
+          "synchronized_wall_median_ms": 97.61093597626314,
+          "GPU_event_median_ms": 97.54982376098633,
+          "p90_wall_ms": 104.94232415221633,
+          "throughput_images_per_second": 10.244753725578231,
+          "per_image_median_ms": 97.61093597626314,
+          "peak_allocated_bytes": 1859189760
+        },
+        {
+          "batch_size": 2,
+          "status": "completed",
+          "synchronized_wall_median_ms": 150.5241070408374,
+          "GPU_event_median_ms": 150.44454956054688,
+          "p90_wall_ms": 151.25751983141527,
+          "throughput_images_per_second": 13.286908252226981,
+          "per_image_median_ms": 75.2620535204187,
+          "peak_allocated_bytes": 2287902208
+        },
+        {
+          "batch_size": 4,
+          "status": "completed",
+          "synchronized_wall_median_ms": 283.746549510397,
+          "GPU_event_median_ms": 283.6428680419922,
+          "p90_wall_ms": 284.98893334763125,
+          "throughput_images_per_second": 14.0970877245978,
+          "per_image_median_ms": 70.93663737759925,
+          "peak_allocated_bytes": 3144376832
+        },
+        {
+          "batch_size": 8,
+          "status": "completed",
+          "synchronized_wall_median_ms": 549.296325945761,
+          "GPU_event_median_ms": 549.1840209960938,
+          "p90_wall_ms": 550.0531896599568,
+          "throughput_images_per_second": 14.564087946930744,
+          "per_image_median_ms": 68.66204074322013,
+          "peak_allocated_bytes": 4856506880
+        }
+      ]
+    }
+  }
+}

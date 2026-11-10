@@ -1,6 +1,8 @@
 # FNFlow
 
-Latest completed measurements: [2026-11-06 external comparisons, D2 TTA and RTX3090 efficiency](results/external_comparison_20261106/README.md). All16 scheduled external scopes and the follow-up measurements have finished. StableNormal is retained separately as diagnostic because independent direction acceptance has not closed. The [earlier real-domain snapshot](results/external_real_20261106/README.md) and [recipe ladder with boundary metrics](results/object_recipe_ladder_20261105/README.md) remain available.
+Latest completed training round: [2026-11-10 MoGe-2 priors and FM refinement](results/moge2_E_round_20261110/README.md). All six fixed50k, seed1247 fits have completed five-panel validation and RTX3090 forward/throughput measurements. The snapshot includes effective recipes, five-angle/boundary metrics and source/config/checkpoint hashes; 21,240 metric rows were independently reconciled. These are single-training-seed validation results; GSO-test was not evaluated.
+
+Earlier completed measurements: [2026-11-06 external comparisons, D2 TTA and RTX3090 efficiency](results/external_comparison_20261106/README.md). All16 scheduled external scopes and the follow-up measurements have finished. StableNormal is retained separately as diagnostic because independent direction acceptance has not closed. The [earlier real-domain snapshot](results/external_real_20261106/README.md) and [recipe ladder with boundary metrics](results/object_recipe_ladder_20261105/README.md) remain available.
 
 Pixel-space conditional Flow Matching for face normals, with isolated research code for general object and indoor-scene normal estimation.
 

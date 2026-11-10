@@ -1,0 +1,71 @@
+{
+  "training": {
+    "six_completed_fits": [
+      "E1_B",
+      "E2_L",
+      "E3_L",
+      "E2_L_direct",
+      "E2_B",
+      "E1_L"
+    ],
+    "single_training_seed": 1247,
+    "updates": 50000,
+    "fixed_final_checkpoint": true,
+    "no_GSO_checkpoint_selection": true,
+    "Arb_validation_curve_only": true,
+    "GSO_val_used_for_recipe_comparison": true,
+    "formal_three_training_seeds_completed": false,
+    "test_images_scored": 0
+  },
+  "evaluation": {
+    "GSO": "93 validation objects x4 views x5 pitch bins(0,15,30,45,60)=1860 images; independent monocular predictions",
+    "real_single": "DiLiGenT10 and LUCES14 objects, one frozen lighting image per object",
+    "real_10_lighting": "DiLiGenT100 and LUCES140 images,10 independent monocular lighting-image predictions per object, then object macro averaging; no joint10-input inference and no claim of equivalence to joint multi-light methods",
+    "normal_metric": "Bilinear resize raw prediction to native GT resolution if needed, normalize prediction and GT on valid pixels, angular MAE; average per-view errors within object, then objects, then equally weighted GSO pitch bins",
+    "FM_inference_seeds": [
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49
+    ],
+    "FM_reduction": "Mean of errors from8 independent inference draws, not averaged normal vectors or a vector ensemble; these are not8 training seeds",
+    "MoGe_and_E3": "deterministic normal-only inference,1 draw; verified exact raw-normal parity with full model on9 aspect/scale acceptance cases",
+    "orientation": "D2/E models identity; native MoGe/E3 use -I to registered common camera convention",
+    "primary_GT": "frozen original GT normal and mask; alternate face/crease45 normals remain diagnostics",
+    "boundary_primary": "GT adjacent normal angle >20 degrees, dilated radius2 pixels and intersected with valid mask; macro aggregation over images/objects with non-empty boundary bands, then equal pitch bins",
+    "up_region": "largest absolute GT normal component is positive y; Z signed error pooled by up-region pixels separately per pitch bin",
+    "coarse_condition": "E2 caches generated from RGB only at native512, transformed to common256,unit-normalized,FP16-stored and re-normalized; GT never used to generate conditions",
+    "residual_initialization": "Initial E2 equals the processed256 condition; it does not necessarily equal native-resolution MoGe-L output on real GT. See processing_control.json.",
+    "E2_changes_relative_D2": "Extra3 normal-input components AND coarse+zero-initialized-residual output parameterization. Gaussian start,linear path,Xn endpoint and single-step inference retained. Loss applied before final normalization."
+  },
+  "efficiency": {
+    "GPU": "RTX3090 exclusive model run",
+    "framework": "PyTorch2.4.1+cu121",
+    "compute_precision": "FM BF16; MoGe/E3 FP16; FP32 stored parameters; TF32 disabled",
+    "warmup": 5,
+    "timed_repeats": 30,
+    "statistic": "median synchronized wall-clock forward latency; separate CUDA-event median",
+    "batches": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "primary_throughput_batch": 4,
+    "excluded": [
+      "file input/output",
+      "host-to-device transfer",
+      "PNG processing",
+      "random noise/timestep generation"
+    ],
+    "included": "GPU-resident model-native computation; E2 includes online MoGe normal generation + FM, no cached-condition shortcut",
+    "input": "MoGe RGB512; FM RGB/noise256 and canonical DINO518; MoGe max3600 encoder tokens vs FM prior1369",
+    "OOM": "Every fixed batch reports explicit status; no adaptive substitution",
+    "end_to_end_note": "These are pure model-forward numbers, not the earlier read/write-inclusive end-to-end table; new E fits have no new read/write-inclusive E2E measurement in this export."
+  },
+  "scope": "Aggregate completed results, effective recipes and reproducibility hashes only. No raw data, sample records, predictions or weights."
+}

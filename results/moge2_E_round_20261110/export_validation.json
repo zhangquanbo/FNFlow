@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "scope": "completed aggregate metrics, effective recipes, benchmark protocol and reproducibility checks",
+  "explicit_result_files": [
+    "results/moge2_E_round_20261110/README.md",
+    "results/moge2_E_round_20261110/summary.json",
+    "results/moge2_E_round_20261110/efficiency.json",
+    "results/moge2_E_round_20261110/accuracy.csv",
+    "results/moge2_E_round_20261110/efficiency.csv",
+    "results/moge2_E_round_20261110/boundary_and_pitch.json",
+    "results/moge2_E_round_20261110/recipes.json",
+    "results/moge2_E_round_20261110/protocol.json",
+    "results/moge2_E_round_20261110/validation.json",
+    "results/moge2_E_round_20261110/provenance.json",
+    "results/moge2_E_round_20261110/processing_control.json"
+  ],
+  "new_fit_count": 6,
+  "training_seed": 1247,
+  "fixed_final_update": 50000,
+  "metric_rows_reconciled": 21240,
+  "privacy_scan_passed": true,
+  "no_raw_data_predictions_weights_or_sample_records": true,
+  "test_images_scored": 0,
+  "base_commit": "a64446090457c7ab27c364137e010dff5cc14cae"
+}

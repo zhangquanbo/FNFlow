@@ -1,0 +1,891 @@
+{
+  "aggregation": "GT adjacent normal angle >20 degrees, dilated radius2 pixels and intersected with valid mask; macro aggregation over images/objects with non-empty boundary bands, then equal pitch bins",
+  "models": {
+    "D2": {
+      "boundary_primary_angular_mae_deg": {
+        "equal_pitch_object_macro": 22.257776717894707,
+        "by_pitch": {
+          "0": 21.518660016593554,
+          "15": 21.793574331942633,
+          "30": 21.93237630370736,
+          "45": 22.668160321339695,
+          "60": 23.376112615890296
+        }
+      },
+      "boundary_primary_angular_outside_mae_deg": {
+        "equal_pitch_object_macro": 14.880286227195295,
+        "by_pitch": {
+          "0": 14.705217761441244,
+          "15": 13.906040772244912,
+          "30": 14.774578596686968,
+          "45": 15.555898144421567,
+          "60": 15.459695861181789
+        }
+      },
+      "boundary_crease45_angular_plus_silhouette_mae_deg": {
+        "equal_pitch_object_macro": 21.2108190134042,
+        "by_pitch": {
+          "0": 20.599247118981,
+          "15": 20.65186031732088,
+          "30": 20.815472176476288,
+          "45": 21.589066184349015,
+          "60": 22.398449269893824
+        }
+      },
+      "normal_face_mae_deg": {
+        "equal_pitch_object_macro": 19.495656447847836,
+        "by_pitch": {
+          "0": 18.875425937468087,
+          "15": 18.776715098961056,
+          "30": 19.400361611715326,
+          "45": 20.11302222120709,
+          "60": 20.312757369887628
+        }
+      },
+      "normal_crease45_diagnostic_mae_deg": {
+        "equal_pitch_object_macro": 18.75980290559331,
+        "by_pitch": {
+          "0": 18.06037883144713,
+          "15": 17.997437659926476,
+          "30": 18.64840627548827,
+          "45": 19.429159385937083,
+          "60": 19.66363237516759
+        }
+      },
+      "up_region_bias_by_pitch": {
+        "0": {
+          "up_pixels_per_draw": 91488.0,
+          "z_signed_error_pixel_pooled": 0.21001738287083113,
+          "z_absolute_error_pixel_pooled": 0.24188212443879065
+        },
+        "15": {
+          "up_pixels_per_draw": 267754.0,
+          "z_signed_error_pixel_pooled": 0.1704128146139374,
+          "z_absolute_error_pixel_pooled": 0.2031064631376462
+        },
+        "30": {
+          "up_pixels_per_draw": 507372.0,
+          "z_signed_error_pixel_pooled": 0.10642219904039593,
+          "z_absolute_error_pixel_pooled": 0.15019898320054922
+        },
+        "45": {
+          "up_pixels_per_draw": 384736.0,
+          "z_signed_error_pixel_pooled": 0.0891976158065723,
+          "z_absolute_error_pixel_pooled": 0.14481409957377428
+        },
+        "60": {
+          "up_pixels_per_draw": 97448.0,
+          "z_signed_error_pixel_pooled": 0.23354771678763817,
+          "z_absolute_error_pixel_pooled": 0.259686166175537
+        }
+      }
+    },
+    "MoGe-S": {
+      "boundary_primary_angular_mae_deg": {
+        "equal_pitch_object_macro": 22.979462748036696,
+        "by_pitch": {
+          "0": 20.92981501729033,
+          "15": 21.64111711398178,
+          "30": 22.095916364712753,
+          "45": 23.748755100315307,
+          "60": 26.48171014388331
+        }
+      },
+      "boundary_primary_angular_outside_mae_deg": {
+        "equal_pitch_object_macro": 15.802175087921983,
+        "by_pitch": {
+          "0": 12.759077710464252,
+          "15": 13.886366224150303,
+          "30": 15.246993235304874,
+          "45": 17.284163772860254,
+          "60": 19.83427449683023
+        }
+      },
+      "boundary_crease45_angular_plus_silhouette_mae_deg": {
+        "equal_pitch_object_macro": 22.18046256041487,
+        "by_pitch": {
+          "0": 20.045577018085616,
+          "15": 20.836886496468864,
+          "30": 21.306289482741192,
+          "45": 22.930653447678267,
+          "60": 25.782906357100412
+        }
+      },
+      "normal_face_mae_deg": {
+        "equal_pitch_object_macro": 20.19613925960173,
+        "by_pitch": {
+          "0": 17.795296070763957,
+          "15": 18.29489069167652,
+          "30": 19.536081345328057,
+          "45": 21.4863615275938,
+          "60": 23.868066662646306
+        }
+      },
+      "normal_crease45_diagnostic_mae_deg": {
+        "equal_pitch_object_macro": 19.558081942711905,
+        "by_pitch": {
+          "0": 17.06605292840977,
+          "15": 17.59671851662487,
+          "30": 18.84739195783432,
+          "45": 20.890738289697968,
+          "60": 23.389508020992597
+        }
+      },
+      "up_region_bias_by_pitch": {
+        "0": {
+          "up_pixels_per_draw": 91488.0,
+          "z_signed_error_pixel_pooled": 0.2876332443867908,
+          "z_absolute_error_pixel_pooled": 0.29498409160494177
+        },
+        "15": {
+          "up_pixels_per_draw": 267754.0,
+          "z_signed_error_pixel_pooled": 0.2597532617879969,
+          "z_absolute_error_pixel_pooled": 0.268418919326663
+        },
+        "30": {
+          "up_pixels_per_draw": 507372.0,
+          "z_signed_error_pixel_pooled": 0.14945515918338675,
+          "z_absolute_error_pixel_pooled": 0.1733905186903107
+        },
+        "45": {
+          "up_pixels_per_draw": 384736.0,
+          "z_signed_error_pixel_pooled": 0.1089458873350199,
+          "z_absolute_error_pixel_pooled": 0.146616774784599
+        },
+        "60": {
+          "up_pixels_per_draw": 97448.0,
+          "z_signed_error_pixel_pooled": 0.2963241986178794,
+          "z_absolute_error_pixel_pooled": 0.30658920113179644
+        }
+      }
+    },
+    "MoGe-B": {
+      "boundary_primary_angular_mae_deg": {
+        "equal_pitch_object_macro": 19.497457307192,
+        "by_pitch": {
+          "0": 19.092766459981682,
+          "15": 18.313859796823902,
+          "30": 18.537820434725205,
+          "45": 19.682393209077336,
+          "60": 21.860446635351877
+        }
+      },
+      "boundary_primary_angular_outside_mae_deg": {
+        "equal_pitch_object_macro": 12.565170342512104,
+        "by_pitch": {
+          "0": 11.421784551049722,
+          "15": 10.950900605254942,
+          "30": 11.491946963866555,
+          "45": 13.216823199624566,
+          "60": 15.744396392764733
+        }
+      },
+      "boundary_crease45_angular_plus_silhouette_mae_deg": {
+        "equal_pitch_object_macro": 18.702506187767973,
+        "by_pitch": {
+          "0": 18.17296760405228,
+          "15": 17.51515076215618,
+          "30": 17.729017354698854,
+          "45": 18.922740980381406,
+          "60": 21.172654237551143
+        }
+      },
+      "normal_face_mae_deg": {
+        "equal_pitch_object_macro": 17.018394765831946,
+        "by_pitch": {
+          "0": 16.257991397524084,
+          "15": 15.510960853678899,
+          "30": 16.130084694730517,
+          "45": 17.526761990011973,
+          "60": 19.66617489321425
+        }
+      },
+      "normal_crease45_diagnostic_mae_deg": {
+        "equal_pitch_object_macro": 16.22280359503622,
+        "by_pitch": {
+          "0": 15.416110906603457,
+          "15": 14.622859342319833,
+          "30": 15.27255623773976,
+          "45": 16.77465156702269,
+          "60": 19.02783992149535
+        }
+      },
+      "up_region_bias_by_pitch": {
+        "0": {
+          "up_pixels_per_draw": 91488.0,
+          "z_signed_error_pixel_pooled": 0.2409008560677413,
+          "z_absolute_error_pixel_pooled": 0.25266786266712193
+        },
+        "15": {
+          "up_pixels_per_draw": 267754.0,
+          "z_signed_error_pixel_pooled": 0.1769137534321688,
+          "z_absolute_error_pixel_pooled": 0.19105429789640946
+        },
+        "30": {
+          "up_pixels_per_draw": 507372.0,
+          "z_signed_error_pixel_pooled": 0.0884603057848883,
+          "z_absolute_error_pixel_pooled": 0.1228988554459237
+        },
+        "45": {
+          "up_pixels_per_draw": 384736.0,
+          "z_signed_error_pixel_pooled": 0.06142467684953629,
+          "z_absolute_error_pixel_pooled": 0.11320529068171438
+        },
+        "60": {
+          "up_pixels_per_draw": 97448.0,
+          "z_signed_error_pixel_pooled": 0.20843748656321642,
+          "z_absolute_error_pixel_pooled": 0.23010220118966598
+        }
+      }
+    },
+    "MoGe-L": {
+      "boundary_primary_angular_mae_deg": {
+        "equal_pitch_object_macro": 17.09622741969349,
+        "by_pitch": {
+          "0": 17.420970948802584,
+          "15": 16.18935215590119,
+          "30": 16.34811211169245,
+          "45": 16.994441974114007,
+          "60": 18.528259907957228
+        }
+      },
+      "boundary_primary_angular_outside_mae_deg": {
+        "equal_pitch_object_macro": 10.114018684045705,
+        "by_pitch": {
+          "0": 10.158972282595634,
+          "15": 8.951394761113006,
+          "30": 9.38434393054741,
+          "45": 10.171033120244136,
+          "60": 11.904349325728342
+        }
+      },
+      "boundary_crease45_angular_plus_silhouette_mae_deg": {
+        "equal_pitch_object_macro": 16.297555557902868,
+        "by_pitch": {
+          "0": 16.581833092227182,
+          "15": 15.378502152918502,
+          "30": 15.512562256916048,
+          "45": 16.19483235042252,
+          "60": 17.82004793703008
+        }
+      },
+      "normal_face_mae_deg": {
+        "equal_pitch_object_macro": 14.823077487847108,
+        "by_pitch": {
+          "0": 14.99626480013061,
+          "15": 13.831845516324297,
+          "30": 14.134872353297084,
+          "45": 14.842994171585726,
+          "60": 16.309410597897827
+        }
+      },
+      "normal_crease45_diagnostic_mae_deg": {
+        "equal_pitch_object_macro": 13.911251823012995,
+        "by_pitch": {
+          "0": 14.087584382642614,
+          "15": 12.85187699215553,
+          "30": 13.162589481718161,
+          "45": 13.940404907577781,
+          "60": 15.513803350970889
+        }
+      },
+      "up_region_bias_by_pitch": {
+        "0": {
+          "up_pixels_per_draw": 91488.0,
+          "z_signed_error_pixel_pooled": 0.21834671965249638,
+          "z_absolute_error_pixel_pooled": 0.22952245094740187
+        },
+        "15": {
+          "up_pixels_per_draw": 267754.0,
+          "z_signed_error_pixel_pooled": 0.1331638838736143,
+          "z_absolute_error_pixel_pooled": 0.14713645356795166
+        },
+        "30": {
+          "up_pixels_per_draw": 507372.0,
+          "z_signed_error_pixel_pooled": 0.07333849380934888,
+          "z_absolute_error_pixel_pooled": 0.10568714479844389
+        },
+        "45": {
+          "up_pixels_per_draw": 384736.0,
+          "z_signed_error_pixel_pooled": 0.06384940681792574,
+          "z_absolute_error_pixel_pooled": 0.10201861200788429
+        },
+        "60": {
+          "up_pixels_per_draw": 97448.0,
+          "z_signed_error_pixel_pooled": 0.1841389930467257,
+          "z_absolute_error_pixel_pooled": 0.20434478843567877
+        }
+      }
+    },
+    "E1_B": {
+      "boundary_primary_angular_mae_deg": {
+        "equal_pitch_object_macro": 21.48642896973127,
+        "by_pitch": {
+          "0": 20.912298808849027,
+          "15": 20.70276797642907,
+          "30": 20.971334446722494,
+          "45": 21.838800231743605,
+          "60": 23.00694338491216
+        }
+      },
+      "boundary_primary_angular_outside_mae_deg": {
+        "equal_pitch_object_macro": 13.402988988855622,
+        "by_pitch": {
+          "0": 13.198968819749792,
+          "15": 12.130209335268633,
+          "30": 12.785473283446722,
+          "45": 13.818619814615722,
+          "60": 15.08167369119724
+        }
+      },
+      "boundary_crease45_angular_plus_silhouette_mae_deg": {
+        "equal_pitch_object_macro": 20.383210023268397,
+        "by_pitch": {
+          "0": 19.863477325730212,
+          "15": 19.595768385694644,
+          "30": 19.841343380999117,
+          "45": 20.689862297923582,
+          "60": 21.925598725994433
+        }
+      },
+      "normal_face_mae_deg": {
+        "equal_pitch_object_macro": 18.424684613185317,
+        "by_pitch": {
+          "0": 18.012741004013538,
+          "15": 17.32355848196897,
+          "30": 17.97684583821272,
+          "45": 18.8723615940503,
+          "60": 19.937916147681058
+        }
+      },
+      "normal_crease45_diagnostic_mae_deg": {
+        "equal_pitch_object_macro": 17.619174671062474,
+        "by_pitch": {
+          "0": 17.127505307192198,
+          "15": 16.450858359946583,
+          "30": 17.152548238486887,
+          "45": 18.11940304001269,
+          "60": 19.245558409674018
+        }
+      },
+      "up_region_bias_by_pitch": {
+        "0": {
+          "up_pixels_per_draw": 91488.0,
+          "z_signed_error_pixel_pooled": 0.20249334104735628,
+          "z_absolute_error_pixel_pooled": 0.23853195597706767
+        },
+        "15": {
+          "up_pixels_per_draw": 267754.0,
+          "z_signed_error_pixel_pooled": 0.14342656169118917,
+          "z_absolute_error_pixel_pooled": 0.18899891365698218
+        },
+        "30": {
+          "up_pixels_per_draw": 507372.0,
+          "z_signed_error_pixel_pooled": 0.07835292907960208,
+          "z_absolute_error_pixel_pooled": 0.12717127102901393
+        },
+        "45": {
+          "up_pixels_per_draw": 384736.0,
+          "z_signed_error_pixel_pooled": 0.08020807494777557,
+          "z_absolute_error_pixel_pooled": 0.11764388452170674
+        },
+        "60": {
+          "up_pixels_per_draw": 97448.0,
+          "z_signed_error_pixel_pooled": 0.23993812647948723,
+          "z_absolute_error_pixel_pooled": 0.26552589864081777
+        }
+      }
+    },
+    "E2_L": {
+      "boundary_primary_angular_mae_deg": {
+        "equal_pitch_object_macro": 17.49591467681972,
+        "by_pitch": {
+          "0": 17.99759072109897,
+          "15": 16.734792730583564,
+          "30": 16.97445165655078,
+          "45": 17.31657753720268,
+          "60": 18.4561607386626
+        }
+      },
+      "boundary_primary_angular_outside_mae_deg": {
+        "equal_pitch_object_macro": 10.591538834902492,
+        "by_pitch": {
+          "0": 11.069805776310726,
+          "15": 9.699614438529014,
+          "30": 10.21524991741327,
+          "45": 10.47484028066726,
+          "60": 11.498183761592188
+        }
+      },
+      "boundary_crease45_angular_plus_silhouette_mae_deg": {
+        "equal_pitch_object_macro": 16.642167472341157,
+        "by_pitch": {
+          "0": 17.097313194982988,
+          "15": 15.886412993150014,
+          "30": 16.095727540866584,
+          "45": 16.46003438384225,
+          "60": 17.67134924886395
+        }
+      },
+      "normal_face_mae_deg": {
+        "equal_pitch_object_macro": 15.272075095731406,
+        "by_pitch": {
+          "0": 15.734623076502084,
+          "15": 14.547637612559345,
+          "30": 14.855293916532816,
+          "45": 15.131817147402847,
+          "60": 16.091003725659938
+        }
+      },
+      "normal_crease45_diagnostic_mae_deg": {
+        "equal_pitch_object_macro": 14.318456804372051,
+        "by_pitch": {
+          "0": 14.763945004618162,
+          "15": 13.553410028746143,
+          "30": 13.87317737478851,
+          "45": 14.182630150985313,
+          "60": 15.21912146272213
+        }
+      },
+      "up_region_bias_by_pitch": {
+        "0": {
+          "up_pixels_per_draw": 91488.0,
+          "z_signed_error_pixel_pooled": 0.19169483735729023,
+          "z_absolute_error_pixel_pooled": 0.21323367789575712
+        },
+        "15": {
+          "up_pixels_per_draw": 267754.0,
+          "z_signed_error_pixel_pooled": 0.11328068615758832,
+          "z_absolute_error_pixel_pooled": 0.13904793050760306
+        },
+        "30": {
+          "up_pixels_per_draw": 507372.0,
+          "z_signed_error_pixel_pooled": 0.05590235719969889,
+          "z_absolute_error_pixel_pooled": 0.10736387891332227
+        },
+        "45": {
+          "up_pixels_per_draw": 384736.0,
+          "z_signed_error_pixel_pooled": 0.054423143222298825,
+          "z_absolute_error_pixel_pooled": 0.10754276008825295
+        },
+        "60": {
+          "up_pixels_per_draw": 97448.0,
+          "z_signed_error_pixel_pooled": 0.18656427403554438,
+          "z_absolute_error_pixel_pooled": 0.20663922361823947
+        }
+      }
+    },
+    "E3_L": {
+      "boundary_primary_angular_mae_deg": {
+        "equal_pitch_object_macro": 17.895747699220482,
+        "by_pitch": {
+          "0": 18.19698884150528,
+          "15": 17.617850431806225,
+          "30": 17.446169582344695,
+          "45": 17.548055094206344,
+          "60": 18.669674546239875
+        }
+      },
+      "boundary_primary_angular_outside_mae_deg": {
+        "equal_pitch_object_macro": 10.516053070455884,
+        "by_pitch": {
+          "0": 11.086545893827537,
+          "15": 9.98902574627691,
+          "30": 10.125807672760086,
+          "45": 10.117764871207667,
+          "60": 11.26112116820722
+        }
+      },
+      "boundary_crease45_angular_plus_silhouette_mae_deg": {
+        "equal_pitch_object_macro": 17.05576561564764,
+        "by_pitch": {
+          "0": 17.36927255831539,
+          "15": 16.719240094675975,
+          "30": 16.552120496985946,
+          "45": 16.711236280637113,
+          "60": 17.926958647623785
+        }
+      },
+      "normal_face_mae_deg": {
+        "equal_pitch_object_macro": 15.347547443479948,
+        "by_pitch": {
+          "0": 15.795248377405102,
+          "15": 14.97650324363536,
+          "30": 14.980854744934756,
+          "45": 15.027502127659595,
+          "60": 15.957628723764929
+        }
+      },
+      "normal_crease45_diagnostic_mae_deg": {
+        "equal_pitch_object_macro": 14.462894133096585,
+        "by_pitch": {
+          "0": 14.909966206857902,
+          "15": 14.06608587085779,
+          "30": 14.072807756072446,
+          "45": 14.131727212021234,
+          "60": 15.133883619673547
+        }
+      },
+      "up_region_bias_by_pitch": {
+        "0": {
+          "up_pixels_per_draw": 91488.0,
+          "z_signed_error_pixel_pooled": 0.2112733391230119,
+          "z_absolute_error_pixel_pooled": 0.22760113117215733
+        },
+        "15": {
+          "up_pixels_per_draw": 267754.0,
+          "z_signed_error_pixel_pooled": 0.14104279664262237,
+          "z_absolute_error_pixel_pooled": 0.15858831917104987
+        },
+        "30": {
+          "up_pixels_per_draw": 507372.0,
+          "z_signed_error_pixel_pooled": 0.07724431124883185,
+          "z_absolute_error_pixel_pooled": 0.11001065523777927
+        },
+        "45": {
+          "up_pixels_per_draw": 384736.0,
+          "z_signed_error_pixel_pooled": 0.07418978799872701,
+          "z_absolute_error_pixel_pooled": 0.1038816259529594
+        },
+        "60": {
+          "up_pixels_per_draw": 97448.0,
+          "z_signed_error_pixel_pooled": 0.2054431590273768,
+          "z_absolute_error_pixel_pooled": 0.21920143418790775
+        }
+      }
+    },
+    "E2_L_direct": {
+      "boundary_primary_angular_mae_deg": {
+        "equal_pitch_object_macro": 17.848579988233954,
+        "by_pitch": {
+          "0": 18.290821158036938,
+          "15": 17.05983096866456,
+          "30": 17.28602824642444,
+          "45": 17.80757806505733,
+          "60": 18.798641502986506
+        }
+      },
+      "boundary_primary_angular_outside_mae_deg": {
+        "equal_pitch_object_macro": 10.915328099372164,
+        "by_pitch": {
+          "0": 11.43458777902838,
+          "15": 9.851114213721761,
+          "30": 10.482996964538273,
+          "45": 10.983290508239772,
+          "60": 11.824651031332634
+        }
+      },
+      "boundary_crease45_angular_plus_silhouette_mae_deg": {
+        "equal_pitch_object_macro": 16.980922688961407,
+        "by_pitch": {
+          "0": 17.395526964890095,
+          "15": 16.19916666530458,
+          "30": 16.432416420330785,
+          "45": 16.94741791924199,
+          "60": 17.93008547503958
+        }
+      },
+      "normal_face_mae_deg": {
+        "equal_pitch_object_macro": 15.583978935758672,
+        "by_pitch": {
+          "0": 15.998808080852305,
+          "15": 14.795170003949485,
+          "30": 15.16153779103122,
+          "45": 15.627623261400139,
+          "60": 16.336755541560215
+        }
+      },
+      "normal_crease45_diagnostic_mae_deg": {
+        "equal_pitch_object_macro": 14.623853232069854,
+        "by_pitch": {
+          "0": 15.018886052346112,
+          "15": 13.794556203314052,
+          "30": 14.16938812142614,
+          "45": 14.682172290873556,
+          "60": 15.454263492389408
+        }
+      },
+      "up_region_bias_by_pitch": {
+        "0": {
+          "up_pixels_per_draw": 91488.0,
+          "z_signed_error_pixel_pooled": 0.18694477496274942,
+          "z_absolute_error_pixel_pooled": 0.21357564833524864
+        },
+        "15": {
+          "up_pixels_per_draw": 267754.0,
+          "z_signed_error_pixel_pooled": 0.1037156006666046,
+          "z_absolute_error_pixel_pooled": 0.14004337942242948
+        },
+        "30": {
+          "up_pixels_per_draw": 507372.0,
+          "z_signed_error_pixel_pooled": 0.061622139379459366,
+          "z_absolute_error_pixel_pooled": 0.10865320860789368
+        },
+        "45": {
+          "up_pixels_per_draw": 384736.0,
+          "z_signed_error_pixel_pooled": 0.07175896815585582,
+          "z_absolute_error_pixel_pooled": 0.11024202219308166
+        },
+        "60": {
+          "up_pixels_per_draw": 97448.0,
+          "z_signed_error_pixel_pooled": 0.20182117860550142,
+          "z_absolute_error_pixel_pooled": 0.21943293227111643
+        }
+      }
+    },
+    "E2_B": {
+      "boundary_primary_angular_mae_deg": {
+        "equal_pitch_object_macro": 19.81958872719007,
+        "by_pitch": {
+          "0": 19.747186988723282,
+          "15": 19.066969800639924,
+          "30": 19.135413112465635,
+          "45": 19.766313700136493,
+          "60": 21.382060033985006
+        }
+      },
+      "boundary_primary_angular_outside_mae_deg": {
+        "equal_pitch_object_macro": 12.819804565250235,
+        "by_pitch": {
+          "0": 12.897904558964994,
+          "15": 11.568474121376811,
+          "30": 12.019183751716989,
+          "45": 13.032955328135799,
+          "60": 14.580505066056581
+        }
+      },
+      "boundary_crease45_angular_plus_silhouette_mae_deg": {
+        "equal_pitch_object_macro": 18.901270696056702,
+        "by_pitch": {
+          "0": 18.837021329064957,
+          "15": 18.157908094956984,
+          "30": 18.188041328078082,
+          "45": 18.83440699844331,
+          "60": 20.488975729740186
+        }
+      },
+      "normal_face_mae_deg": {
+        "equal_pitch_object_macro": 17.26651244245133,
+        "by_pitch": {
+          "0": 17.116649250183553,
+          "15": 16.26497770586265,
+          "30": 16.653187368333125,
+          "45": 17.448669571275,
+          "60": 18.84907831660232
+        }
+      },
+      "normal_crease45_diagnostic_mae_deg": {
+        "equal_pitch_object_macro": 16.42300369521819,
+        "by_pitch": {
+          "0": 16.219676579713333,
+          "15": 15.365317557033363,
+          "30": 15.769454485738049,
+          "45": 16.63859191466867,
+          "60": 18.121977938937523
+        }
+      },
+      "up_region_bias_by_pitch": {
+        "0": {
+          "up_pixels_per_draw": 91488.0,
+          "z_signed_error_pixel_pooled": 0.22423213391728378,
+          "z_absolute_error_pixel_pooled": 0.24377183750142803
+        },
+        "15": {
+          "up_pixels_per_draw": 267754.0,
+          "z_signed_error_pixel_pooled": 0.16390774816165082,
+          "z_absolute_error_pixel_pooled": 0.1853296398515595
+        },
+        "30": {
+          "up_pixels_per_draw": 507372.0,
+          "z_signed_error_pixel_pooled": 0.07939749397362493,
+          "z_absolute_error_pixel_pooled": 0.12366545056124338
+        },
+        "45": {
+          "up_pixels_per_draw": 384736.0,
+          "z_signed_error_pixel_pooled": 0.06216434163857143,
+          "z_absolute_error_pixel_pooled": 0.11597232219323916
+        },
+        "60": {
+          "up_pixels_per_draw": 97448.0,
+          "z_signed_error_pixel_pooled": 0.2179787661329994,
+          "z_absolute_error_pixel_pooled": 0.24211638065921112
+        }
+      }
+    },
+    "E1_L": {
+      "boundary_primary_angular_mae_deg": {
+        "equal_pitch_object_macro": 19.488543634054327,
+        "by_pitch": {
+          "0": 19.50277596190876,
+          "15": 19.193372515795918,
+          "30": 18.871303652147258,
+          "45": 19.469521198410725,
+          "60": 20.405744842008975
+        }
+      },
+      "boundary_primary_angular_outside_mae_deg": {
+        "equal_pitch_object_macro": 11.262380462675925,
+        "by_pitch": {
+          "0": 11.25631773421353,
+          "15": 10.243159680022389,
+          "30": 10.776406294913418,
+          "45": 11.46101471580267,
+          "60": 12.575003888427617
+        }
+      },
+      "boundary_crease45_angular_plus_silhouette_mae_deg": {
+        "equal_pitch_object_macro": 18.481681676570854,
+        "by_pitch": {
+          "0": 18.519574764675117,
+          "15": 18.115835336200853,
+          "30": 17.828831161921784,
+          "45": 18.454119777520994,
+          "60": 19.490047342535522
+        }
+      },
+      "normal_face_mae_deg": {
+        "equal_pitch_object_macro": 16.544440360481882,
+        "by_pitch": {
+          "0": 16.623483764944528,
+          "15": 15.919598040458546,
+          "30": 16.07679444912388,
+          "45": 16.635009073965637,
+          "60": 17.467316473916817
+        }
+      },
+      "normal_crease45_diagnostic_mae_deg": {
+        "equal_pitch_object_macro": 15.643094898201719,
+        "by_pitch": {
+          "0": 15.70278025163015,
+          "15": 14.985486445195024,
+          "30": 15.142829214458398,
+          "45": 15.743043982628063,
+          "60": 16.641334597096957
+        }
+      },
+      "up_region_bias_by_pitch": {
+        "0": {
+          "up_pixels_per_draw": 91488.0,
+          "z_signed_error_pixel_pooled": 0.17787993713601577,
+          "z_absolute_error_pixel_pooled": 0.2124331260231243
+        },
+        "15": {
+          "up_pixels_per_draw": 267754.0,
+          "z_signed_error_pixel_pooled": 0.12143069363003252,
+          "z_absolute_error_pixel_pooled": 0.15409224625203682
+        },
+        "30": {
+          "up_pixels_per_draw": 507372.0,
+          "z_signed_error_pixel_pooled": 0.052358847645604216,
+          "z_absolute_error_pixel_pooled": 0.10454651911079442
+        },
+        "45": {
+          "up_pixels_per_draw": 384736.0,
+          "z_signed_error_pixel_pooled": 0.05324006586532727,
+          "z_absolute_error_pixel_pooled": 0.10688048206034372
+        },
+        "60": {
+          "up_pixels_per_draw": 97448.0,
+          "z_signed_error_pixel_pooled": 0.19594817625608746,
+          "z_absolute_error_pixel_pooled": 0.22292775959794373
+        }
+      }
+    }
+  },
+  "fixed_GT_region_support_by_pitch": {
+    "boundary_primary_angular": {
+      "0": {
+        "all_images": 372,
+        "inside_images": 372,
+        "outside_images": 363,
+        "inside_objects": 93,
+        "outside_objects": 93,
+        "inside_pixels_per_inference_draw": 726963.0,
+        "valid_pixels_per_inference_draw": 1865276.0
+      },
+      "15": {
+        "all_images": 372,
+        "inside_images": 372,
+        "outside_images": 371,
+        "inside_objects": 93,
+        "outside_objects": 93,
+        "inside_pixels_per_inference_draw": 889267.0,
+        "valid_pixels_per_inference_draw": 2086324.0
+      },
+      "30": {
+        "all_images": 372,
+        "inside_images": 372,
+        "outside_images": 372,
+        "inside_objects": 93,
+        "outside_objects": 93,
+        "inside_pixels_per_inference_draw": 1005754.0,
+        "valid_pixels_per_inference_draw": 2298483.0
+      },
+      "45": {
+        "all_images": 372,
+        "inside_images": 372,
+        "outside_images": 372,
+        "inside_objects": 93,
+        "outside_objects": 93,
+        "inside_pixels_per_inference_draw": 1076606.0,
+        "valid_pixels_per_inference_draw": 2401702.0
+      },
+      "60": {
+        "all_images": 372,
+        "inside_images": 372,
+        "outside_images": 372,
+        "inside_objects": 93,
+        "outside_objects": 93,
+        "inside_pixels_per_inference_draw": 1098202.0,
+        "valid_pixels_per_inference_draw": 2392760.0
+      }
+    },
+    "boundary_crease45_angular_plus_silhouette": {
+      "0": {
+        "all_images": 372,
+        "inside_images": 372,
+        "outside_images": 355,
+        "inside_objects": 93,
+        "outside_objects": 91,
+        "inside_pixels_per_inference_draw": 822521.0,
+        "valid_pixels_per_inference_draw": 1865276.0
+      },
+      "15": {
+        "all_images": 372,
+        "inside_images": 372,
+        "outside_images": 369,
+        "inside_objects": 93,
+        "outside_objects": 93,
+        "inside_pixels_per_inference_draw": 998561.0,
+        "valid_pixels_per_inference_draw": 2086324.0
+      },
+      "30": {
+        "all_images": 372,
+        "inside_images": 372,
+        "outside_images": 372,
+        "inside_objects": 93,
+        "outside_objects": 93,
+        "inside_pixels_per_inference_draw": 1122703.0,
+        "valid_pixels_per_inference_draw": 2298483.0
+      },
+      "45": {
+        "all_images": 372,
+        "inside_images": 372,
+        "outside_images": 372,
+        "inside_objects": 93,
+        "outside_objects": 93,
+        "inside_pixels_per_inference_draw": 1191348.0,
+        "valid_pixels_per_inference_draw": 2401702.0
+      },
+      "60": {
+        "all_images": 372,
+        "inside_images": 372,
+        "outside_images": 372,
+        "inside_objects": 93,
+        "outside_objects": 93,
+        "inside_pixels_per_inference_draw": 1203493.0,
+        "valid_pixels_per_inference_draw": 2392760.0
+      }
+    }
+  }
+}

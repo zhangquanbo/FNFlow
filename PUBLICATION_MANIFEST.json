@@ -1,44 +1,86 @@
 {
-  "created_at": "2026-11-06T10:04:48.102199+08:00",
+  "created_at": "2026-11-10T16:53:24.977676+08:00",
   "scan_passed": true,
-  "base_commit": "93affd7ea92ddd61230906cb1faad81416e42edf",
-  "scope": "Completed all-four-model accuracy in the same backend, full8496-row aggregate reconciliation and protocol. Replace explicit prior D2-GSO reference with completed fresh rerun. Preserve unchanged history/files.",
+  "base_commit": "a64446090457c7ab27c364137e010dff5cc14cae",
+  "scope": "Completed six-fit MoGe-2 E-round results, effective recipes and aggregate validation; preserve prior snapshots and history. This is the current export delta only.",
   "files": [
     {
       "path": "README.md",
-      "category": "aggregate_results_protocol_and_validation",
-      "bytes": 20316,
-      "exported_sha256": "9026bb50d231197eead91b23e5c0aafac1dc335552688381285b34ac183c27ad"
+      "category": "completed_aggregate_results_effective_recipes_and_validation",
+      "bytes": 20788,
+      "exported_sha256": "115c22aadfde23b5810e8a1dbce033e0398fb88680873d70ec9a0d6dc153e7bf"
     },
     {
-      "path": "results/moge2_scale_accuracy_20261106/README.md",
-      "category": "aggregate_results_protocol_and_validation",
-      "bytes": 2410,
-      "exported_sha256": "2f876ad31a4824ab6fa851aba3369ebfc167ab34963ef1fab9853c89d0e61deb"
+      "path": "results/moge2_E_round_20261110/README.md",
+      "category": "completed_aggregate_results_effective_recipes_and_validation",
+      "bytes": 6466,
+      "exported_sha256": "bc178f17242f47d2675632af986ee68b9ee65e627695eee6f7f86d4fd6374a07"
     },
     {
-      "path": "results/moge2_scale_accuracy_20261106/export_validation.json",
-      "category": "aggregate_results_protocol_and_validation",
-      "bytes": 512,
-      "exported_sha256": "44fb4a3fa91e317f1bffffd9f1302eadf8a042e5c679206547ab98377ccb6485"
+      "path": "results/moge2_E_round_20261110/accuracy.csv",
+      "category": "completed_aggregate_results_effective_recipes_and_validation",
+      "bytes": 1087,
+      "exported_sha256": "1ad5bffa11eb3d3594f215c2d6ddeda6ec11cde8fa17507e36258d3021dcb1b7"
     },
     {
-      "path": "results/moge2_scale_accuracy_20261106/protocol.json",
-      "category": "aggregate_results_protocol_and_validation",
-      "bytes": 3830,
-      "exported_sha256": "d627cfc8c91fb41f3a3b04b12c638fd109a6eb0a5e2b0e8b74bcdabd449207a7"
+      "path": "results/moge2_E_round_20261110/boundary_and_pitch.json",
+      "category": "completed_aggregate_results_effective_recipes_and_validation",
+      "bytes": 29439,
+      "exported_sha256": "a42c386e28f51b21478f39ba53fe202aa839862b0192f9ee89071bdb043acc20"
     },
     {
-      "path": "results/moge2_scale_accuracy_20261106/summary.json",
-      "category": "aggregate_results_protocol_and_validation",
-      "bytes": 14979,
-      "exported_sha256": "1d87748f271e66fa3b675d3e9189a0fc74704710191e363ae2e4f4e0319613ca"
+      "path": "results/moge2_E_round_20261110/efficiency.csv",
+      "category": "completed_aggregate_results_effective_recipes_and_validation",
+      "bytes": 4424,
+      "exported_sha256": "4608e63fc8c975915c6846a91c7e70e2032dae12fdb69ce2c64109f9be74ea6d"
     },
     {
-      "path": "results/moge2_scale_accuracy_20261106/validation.json",
-      "category": "aggregate_results_protocol_and_validation",
-      "bytes": 496,
-      "exported_sha256": "29bfcb0b2757d1da5896833d8952defa78abae58d4500e5eb691139fd711e6c4"
+      "path": "results/moge2_E_round_20261110/efficiency.json",
+      "category": "completed_aggregate_results_effective_recipes_and_validation",
+      "bytes": 20880,
+      "exported_sha256": "c5fade497b8acc8a42a3b4b79d4feedaf4d2ff9b219000d900a6117c4371639c"
+    },
+    {
+      "path": "results/moge2_E_round_20261110/export_validation.json",
+      "category": "completed_aggregate_results_effective_recipes_and_validation",
+      "bytes": 1076,
+      "exported_sha256": "5d5fa9b612aa68bae269605f7b3fa3e70e08edacef83a5a4f2fbf1274009f958"
+    },
+    {
+      "path": "results/moge2_E_round_20261110/processing_control.json",
+      "category": "completed_aggregate_results_effective_recipes_and_validation",
+      "bytes": 1280,
+      "exported_sha256": "4a46899a7ce402fd65875a7cb9bfbfe90c011ea636a9cae6e3b65e4cac185ddc"
+    },
+    {
+      "path": "results/moge2_E_round_20261110/protocol.json",
+      "category": "completed_aggregate_results_effective_recipes_and_validation",
+      "bytes": 3990,
+      "exported_sha256": "f04df96846649e365a301658ecf8c6fb61db0adeeaa9655fbe7ac7760ff966fb"
+    },
+    {
+      "path": "results/moge2_E_round_20261110/provenance.json",
+      "category": "completed_aggregate_results_effective_recipes_and_validation",
+      "bytes": 8052,
+      "exported_sha256": "6e03fc2456e772354083a3da02e2b32b5ebdad31a7137cd54ed263095acfa4cd"
+    },
+    {
+      "path": "results/moge2_E_round_20261110/recipes.json",
+      "category": "completed_aggregate_results_effective_recipes_and_validation",
+      "bytes": 8835,
+      "exported_sha256": "5898d90cf4884c2d872146610df0f51c23f5d0eda4234dd84f93d8aa93c29c2b"
+    },
+    {
+      "path": "results/moge2_E_round_20261110/summary.json",
+      "category": "completed_aggregate_results_effective_recipes_and_validation",
+      "bytes": 13324,
+      "exported_sha256": "7499812a5acfd637bfcbe3163ec781b9a38f95fef2bb658683613260690d06ce"
+    },
+    {
+      "path": "results/moge2_E_round_20261110/validation.json",
+      "category": "completed_aggregate_results_effective_recipes_and_validation",
+      "bytes": 5210,
+      "exported_sha256": "75dada184ed999e59a188fbb611119717f76fa93ea7fad1eb20d5f480313500a"
     }
   ]
 }

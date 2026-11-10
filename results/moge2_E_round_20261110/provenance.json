@@ -1,0 +1,175 @@
+{
+  "checkpoint_and_config_hashes": {
+    "E1_B": {
+      "config_sha256": "3370a1b96fda9f50221b69c44befecaf70ec72f75c476ba88ecbfe58c4e9db6b",
+      "checkpoint_sha256": "ec13128db5c93d4731964b367b0fb294df716249fa03820194d5ed8f08ab5a66",
+      "fit_registration_sha256": "ebfd2ae6fb493cccbe62bcb5f5bcf50563105660ab87d210794e19f7d0672473",
+      "trainer_sha256": "66b651e2a29b96612bef77b0df9cb5d5354ec98eaf5f90d84597a295890ca2c4"
+    },
+    "E2_L": {
+      "config_sha256": "a956c5c4f4e19b024678a885a7b0f8b83f32a2280b7c1bbe9423085d1d330ba1",
+      "checkpoint_sha256": "d08b5adece48674c269c17cc0b3b5aaa5f5feb02f09f3b5c326f501c1fec90e3",
+      "fit_registration_sha256": "bba3aca5b4d0791de832cf9397d90e309cb2fbce2127f2b654a46cb3b1c43bcb",
+      "trainer_sha256": "956942c5f233962a5b418349f4675b5d654f68a55481a37f0cc60b31525f2921"
+    },
+    "E3_L": {
+      "config_sha256": "19b41b18393189b7329f1bed602e21fc7b5b0fffa5ca1c9011bae32ae4a3d650",
+      "checkpoint_sha256": "6dc6bef9a269d79dcc8e1c33fbe5e4ab4932ab33b8dade709e4f6ad387737e52",
+      "fit_registration_sha256": "3bb9293e0515a39f07cf0fdc365b2a1fc3ea86e7568566908942015a61f55b6d",
+      "trainer_sha256": "222051c1e4820b4865b5d39cb2ecf88c22d2ed80f40073a34e23dc17634fd0d5"
+    },
+    "E2_L_direct": {
+      "config_sha256": "fabfa580059db81cd0405bff704d59272bf8588a7286b432e087817f7437608c",
+      "checkpoint_sha256": "56f44c1340bb88ecc815e88e6ec7cd5edc719f6e1c3bc3c6faeca2125a044bc5",
+      "fit_registration_sha256": "99376b474a5de05df468af7312028569ae6ea0c9842241da3c94647fd71bc4fa",
+      "trainer_sha256": "af4b179e99ecb6743e7e66a08944838fcb37142ad8a53cca05f5b4c38a181399"
+    },
+    "E2_B": {
+      "config_sha256": "9edeaaffe1165ea01424e19494af1d371ee8a0d153be99b085549c74dc2215de",
+      "checkpoint_sha256": "f8995a5ebd732255138bcadf6639360b6c2450a03fd5e96363bb7ec5510eb549",
+      "fit_registration_sha256": "cad13dccd206a1f825da043f4c5aa2bf5096ffa65be23639ff185c9e828951a2",
+      "trainer_sha256": "66b651e2a29b96612bef77b0df9cb5d5354ec98eaf5f90d84597a295890ca2c4"
+    },
+    "E1_L": {
+      "config_sha256": "6452d6c80ef1511a0c97846978333a4cbd3db85dac91831b9716a6e774700e2e",
+      "checkpoint_sha256": "91e75494307438ef499a537b5bb83d8f4df928018c859c18e7f8f6b5c7a4cde0",
+      "fit_registration_sha256": "a2cde1e904ce6824e5c065140718b62dce174f0622cb211a68ac32ec54e6153a",
+      "trainer_sha256": "66b651e2a29b96612bef77b0df9cb5d5354ec98eaf5f90d84597a295890ca2c4"
+    }
+  },
+  "evaluation_registration_hashes": {
+    "legacy": "64760d9b27e80e574e84bd06ec25d7f5c2989e622ef63b205fdec949cb3e9634",
+    "extension": "6807b3c85ae86d5026cf0ae4dbe4e51d832bcc819839842d80be32190c2bdee0",
+    "baseline": "c23f1b5f4763894893c006c20a249d7a8eaf7437f041d9bce7d7c2dad8d67daf"
+  },
+  "manifest_hashes": {
+    "gso_primary": "e94db0b771b3c14f3f2d32480d41a271e5fbdd92edfe537896b46258f0c1bb16",
+    "rose10_diligent": "d6a2cf4ee076973c336ef9f3d7bd77990b2398928174abcd70348b25f9714260",
+    "single_diligent": "676ae7a2ef9d349337f2133b886ef95b56f9392ba607f0632123a1e7fca46092",
+    "single_luces": "a7f3774cbe1d928dedea0de77ea6361c1b2ed546fdfe13fe16e90260c4c8c7dd",
+    "rose10_luces": "759af902ce2a296c4f39f2303cd2b97252060b78022632cee0b616deab6c78a1"
+  },
+  "source_hashes": {
+    "src/e_models_20261106.py": "dd063c4ef62ce050e7a7fa21f5035c93bf09f3553d76ef6a473fcc5e44de642e",
+    "src/moge_bridge_20261106.py": "e1116bbe1e409cf601c75eadfbfb88758132202175b2e0377a06cce4ba9258f5",
+    "scripts/train_E_stage_20261106.py": "66b651e2a29b96612bef77b0df9cb5d5354ec98eaf5f90d84597a295890ca2c4",
+    "scripts/prepare_E2_conditions_20261106.py": "5f8b8c0a3e6d6f0859daeec0482379f5c503525bfe57a15c6550122ddc9104ff",
+    "scripts/evaluate_E_stage_20261106.py": "fbd075555ebd1f468df8c1902256c852ab05d06008e9aac5a553b7184d158d3b",
+    "scripts/run_E_fits_20261106.py": "1626c5541390e4727cdca27b61440e4eeb368c1ae92d601b506a4b6c489943cb",
+    "scripts/check_E_backbones_20261106.py": "f45e7c05c6afb4bc7a07669a61abbe6138d64a23e7438e53a25585adc6086ca6",
+    "scripts/preflight_E_round_20261106.py": "97b8021566d4bd9f4ff4b0e7db1980c8e0280d433c02069b147038427ff5480a",
+    "src/dino_conditioning.py": "02d873839bd89a3dc5bbc05795527c012afa3bcfc75cfd70b07a620db111daf3",
+    "src/dino_canonical_518.py": "0d6a9309e923a52083e7cac5b0cf1763b217ccba2c899989e1be5a53b1664e49",
+    "src/models/model_unet.py": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+    "src/parameterization.py": "3acdcbc77e4afea8f199dff0ca9f45ead18cf7f5f0d1478d965f7a049cf4ec30",
+    "src/noise_protocol.py": "69665648fcabbb16b66b5a034b1e33ba5f63c7cb4f9dd6f60fd84e8b7e26d82f",
+    "scripts/train_parameterization.py": "d8fadf1eedcabd5286faf3fdceeb305e52152a65846727d4c1213c6c66703cc5",
+    "scripts/evaluate_fresh_ab.py": "16a68542cb3c641b38bb6504985f50cd7785d751b8d75bc9e99656efd43ba545",
+    "scripts/evaluate_E_L_extension_20261106.py": "d07f2cb5b54a97a8900fb630dbe6f2d86747fc0f7f50760f36243e2dc8998f0f",
+    "src/e2l_models_20261106.py": "00c83a6b2d5bffda4f5849402dc871c4e1f39029eff182906440c3c7e00e9f31",
+    "src/e2l_direct_models_20261106.py": "0af374bc63855be935c4e1fb154444924e66b56197c39dde93b226cfb9c81927",
+    "scripts/train_E2L_stage_20261106.py": "956942c5f233962a5b418349f4675b5d654f68a55481a37f0cc60b31525f2921",
+    "scripts/prepare_E2L_conditions_20261106.py": "3092ef7c81ce8a1ec2b5a479e795c5609b3c99c2e49e05c2077196900e1a069f",
+    "scripts/train_E3L_head_20261106.py": "222051c1e4820b4865b5d39cb2ecf88c22d2ed80f40073a34e23dc17634fd0d5",
+    "src/e3_native_cache_20261106.py": "1e8784aaad66c66f0694318b4ac911b0e780598ddd4dc50a3cdfb307b7262762",
+    "scripts/train_E2L_direct_stage_20261106.py": "af4b179e99ecb6743e7e66a08944838fcb37142ad8a53cca05f5b4c38a181399"
+  },
+  "MoGe_source_commit": "925b8ed835a7a9cdb7578ba15c658a0afc969030",
+  "public_model_weights": {
+    "MoGe-S": {
+      "matrix_to_common": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "inference_seeds": [
+        42
+      ],
+      "size": "S",
+      "repository": "Ruicheng/moge-2-vits-normal",
+      "revision": "26b477f41595707c5db6770294c0d1721e8ed4ed",
+      "weights_sha256": "79a16621928c2bf0ed04659218c55c01075e950507f40bb3332fb4c873d3e1dc",
+      "parameters_total": 35103656,
+      "effective_num_tokens": 3600,
+      "compute_precision": "float16",
+      "mode": "verified_normal_head_only",
+      "sdpa": true
+    },
+    "MoGe-B": {
+      "matrix_to_common": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "inference_seeds": [
+        42
+      ],
+      "size": "B",
+      "repository": "Ruicheng/moge-2-vitb-normal",
+      "revision": "ca5f0e07ff01d3e5a364c1d954ed12ee1814b368",
+      "weights_sha256": "16b8110e86d5dc5a849db120ca96ef3a223fd30b0c9146d1d81db504073da5f6",
+      "parameters_total": 104743592,
+      "effective_num_tokens": 3600,
+      "compute_precision": "float16",
+      "mode": "verified_normal_head_only",
+      "sdpa": true
+    },
+    "MoGe-L": {
+      "matrix_to_common": [
+        [
+          -1,
+          0,
+          0
+        ],
+        [
+          0,
+          -1,
+          0
+        ],
+        [
+          0,
+          0,
+          -1
+        ]
+      ],
+      "inference_seeds": [
+        42
+      ],
+      "size": "L",
+      "repository": "Ruicheng/moge-2-vitl-normal",
+      "revision": "cb0e8bbd6b1e243589717c78e750b1ba4c093acf",
+      "weights_sha256": "280741fd09bc3f403ccff9967784c2a391b52d2c0742ae3efdb21d9f90cc1a01",
+      "parameters_total": 330901544,
+      "effective_num_tokens": 3600,
+      "compute_precision": "float16",
+      "mode": "verified_normal_head_only",
+      "sdpa": true
+    }
+  },
+  "timing_registration_sha256": "b838673c13f9aeb8e275daa4cb3c9e05c2476f8f80da5fd26d760d4f203e664b",
+  "timing_worker_sha256": "a007b4ad98b4c0e15fc2d02062ad3946ec53430595ae9090d8a9361ceec4908b"
+}

@@ -1,0 +1,119 @@
+{
+  "status": "passed",
+  "all_exact_manifest_ID_sets_verified": true,
+  "row_identity_and_registration_hashes_verified": true,
+  "finite_metrics_verified": true,
+  "metric_rows_reconciled": 21240,
+  "new_fit_metric_rows": 12744,
+  "reference_metric_rows": 8496,
+  "max_absolute_summary_difference_deg": 7.105427357601002e-15,
+  "checkpoint_hashes_verified": {
+    "E1_B": "ec13128db5c93d4731964b367b0fb294df716249fa03820194d5ed8f08ab5a66",
+    "E2_L": "d08b5adece48674c269c17cc0b3b5aaa5f5feb02f09f3b5c326f501c1fec90e3",
+    "E3_L": "6dc6bef9a269d79dcc8e1c33fbe5e4ab4932ab33b8dade709e4f6ad387737e52",
+    "E2_L_direct": "56f44c1340bb88ecc815e88e6ec7cd5edc719f6e1c3bc3c6faeca2125a044bc5",
+    "E2_B": "f8995a5ebd732255138bcadf6639360b6c2450a03fd5e96363bb7ec5510eb549",
+    "E1_L": "91e75494307438ef499a537b5bb83d8f4df928018c859c18e7f8f6b5c7a4cde0"
+  },
+  "source_hashes_verified": {
+    "src/e_models_20261106.py": "dd063c4ef62ce050e7a7fa21f5035c93bf09f3553d76ef6a473fcc5e44de642e",
+    "src/moge_bridge_20261106.py": "e1116bbe1e409cf601c75eadfbfb88758132202175b2e0377a06cce4ba9258f5",
+    "scripts/train_E_stage_20261106.py": "66b651e2a29b96612bef77b0df9cb5d5354ec98eaf5f90d84597a295890ca2c4",
+    "scripts/prepare_E2_conditions_20261106.py": "5f8b8c0a3e6d6f0859daeec0482379f5c503525bfe57a15c6550122ddc9104ff",
+    "scripts/evaluate_E_stage_20261106.py": "fbd075555ebd1f468df8c1902256c852ab05d06008e9aac5a553b7184d158d3b",
+    "scripts/run_E_fits_20261106.py": "1626c5541390e4727cdca27b61440e4eeb368c1ae92d601b506a4b6c489943cb",
+    "scripts/check_E_backbones_20261106.py": "f45e7c05c6afb4bc7a07669a61abbe6138d64a23e7438e53a25585adc6086ca6",
+    "scripts/preflight_E_round_20261106.py": "97b8021566d4bd9f4ff4b0e7db1980c8e0280d433c02069b147038427ff5480a",
+    "src/dino_conditioning.py": "02d873839bd89a3dc5bbc05795527c012afa3bcfc75cfd70b07a620db111daf3",
+    "src/dino_canonical_518.py": "0d6a9309e923a52083e7cac5b0cf1763b217ccba2c899989e1be5a53b1664e49",
+    "src/models/model_unet.py": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+    "src/parameterization.py": "3acdcbc77e4afea8f199dff0ca9f45ead18cf7f5f0d1478d965f7a049cf4ec30",
+    "src/noise_protocol.py": "69665648fcabbb16b66b5a034b1e33ba5f63c7cb4f9dd6f60fd84e8b7e26d82f",
+    "scripts/train_parameterization.py": "d8fadf1eedcabd5286faf3fdceeb305e52152a65846727d4c1213c6c66703cc5",
+    "scripts/evaluate_fresh_ab.py": "16a68542cb3c641b38bb6504985f50cd7785d751b8d75bc9e99656efd43ba545",
+    "scripts/evaluate_E_L_extension_20261106.py": "d07f2cb5b54a97a8900fb630dbe6f2d86747fc0f7f50760f36243e2dc8998f0f",
+    "src/e2l_models_20261106.py": "00c83a6b2d5bffda4f5849402dc871c4e1f39029eff182906440c3c7e00e9f31",
+    "src/e2l_direct_models_20261106.py": "0af374bc63855be935c4e1fb154444924e66b56197c39dde93b226cfb9c81927",
+    "scripts/train_E2L_stage_20261106.py": "956942c5f233962a5b418349f4675b5d654f68a55481a37f0cc60b31525f2921",
+    "scripts/prepare_E2L_conditions_20261106.py": "3092ef7c81ce8a1ec2b5a479e795c5609b3c99c2e49e05c2077196900e1a069f",
+    "scripts/train_E3L_head_20261106.py": "222051c1e4820b4865b5d39cb2ecf88c22d2ed80f40073a34e23dc17634fd0d5",
+    "src/e3_native_cache_20261106.py": "1e8784aaad66c66f0694318b4ac911b0e780598ddd4dc50a3cdfb307b7262762",
+    "scripts/train_E2L_direct_stage_20261106.py": "af4b179e99ecb6743e7e66a08944838fcb37142ad8a53cca05f5b4c38a181399"
+  },
+  "per_model_panel_counts": {
+    "D2": {
+      "gso_primary": 1860,
+      "single_diligent": 10,
+      "single_luces": 14,
+      "rose10_diligent": 100,
+      "rose10_luces": 140
+    },
+    "MoGe-S": {
+      "gso_primary": 1860,
+      "single_diligent": 10,
+      "single_luces": 14,
+      "rose10_diligent": 100,
+      "rose10_luces": 140
+    },
+    "MoGe-B": {
+      "gso_primary": 1860,
+      "single_diligent": 10,
+      "single_luces": 14,
+      "rose10_diligent": 100,
+      "rose10_luces": 140
+    },
+    "MoGe-L": {
+      "gso_primary": 1860,
+      "single_diligent": 10,
+      "single_luces": 14,
+      "rose10_diligent": 100,
+      "rose10_luces": 140
+    },
+    "E1_B": {
+      "gso_primary": 1860,
+      "single_diligent": 10,
+      "single_luces": 14,
+      "rose10_diligent": 100,
+      "rose10_luces": 140
+    },
+    "E2_L": {
+      "gso_primary": 1860,
+      "single_diligent": 10,
+      "single_luces": 14,
+      "rose10_diligent": 100,
+      "rose10_luces": 140
+    },
+    "E3_L": {
+      "gso_primary": 1860,
+      "single_diligent": 10,
+      "single_luces": 14,
+      "rose10_diligent": 100,
+      "rose10_luces": 140
+    },
+    "E2_L_direct": {
+      "gso_primary": 1860,
+      "single_diligent": 10,
+      "single_luces": 14,
+      "rose10_diligent": 100,
+      "rose10_luces": 140
+    },
+    "E2_B": {
+      "gso_primary": 1860,
+      "single_diligent": 10,
+      "single_luces": 14,
+      "rose10_diligent": 100,
+      "rose10_luces": 140
+    },
+    "E1_L": {
+      "gso_primary": 1860,
+      "single_diligent": 10,
+      "single_luces": 14,
+      "rose10_diligent": 100,
+      "rose10_luces": 140
+    }
+  },
+  "failures_or_missing_rows": 0,
+  "test_images_scored": 0,
+  "timing_worker_and_source_hashes_verified": true,
+  "timing_registration_sha256": "b838673c13f9aeb8e275daa4cb3c9e05c2476f8f80da5fd26d760d4f203e664b"
+}
