@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "new_model_panel_rows": 55,
+  "numeric_metric_cells": 385,
+  "training_seed_mean": 16.661373786190204,
+  "training_seed_sample_std_ddof1": 0.04582904721548893,
+  "baseline_protocols_separated": true,
+  "fixed_final_steps": 50000,
+  "test_images_scored": 0,
+  "original_source_checkpoint_and_full_record_coverage": "independently verified in the completed Nov19 snapshot; checkpoint bytes not exported",
+  "compile_full_accuracy_verified": false,
+  "historical_latency_root_cause": "unresolved",
+  "source_vs_exported_hashes_distinct": true,
+  "private_RGB_normals_qualitative_images_manifests_checkpoints_exported": false,
+  "independent_reconciliation": {
+    "status": "passed",
+    "completed_model_panel_rows": 55,
+    "per_image_records_reconciled": 23364,
+    "finite_metric_cells_reconciled": 385,
+    "undefined_empty_region_cells_preserved": 0,
+    "maximum_macro_reaggregation_deviation_deg_or_fraction": 7.105427357601002e-15,
+    "registered_row_signatures_and_common_manifest_counts_pass": true,
+    "public_import_closure_passed": true,
+    "registration_smokes": [
+      "fresh_valid_JSON_and_hashes",
+      "existing_signature_overwrite_rejected",
+      "wrong_external_weight_hash_rejected"
+    ],
+    "no_new_GPU_training_or_test_scoring": true,
+    "checked_at": "2026-11-19T10:44:12.398439+08:00"
+  }
+}

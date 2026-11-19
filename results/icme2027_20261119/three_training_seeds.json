@@ -1,0 +1,26 @@
+{
+  "status": "completed",
+  "seeds": [
+    {
+      "seed": 1247,
+      "GSO_val_MAE_deg": 16.637211055335467,
+      "checkpoint_sha256": "ebf6a113cd9e6a15edba0e1282fd469550f8d33f33012e8818e11b8dcfda9822"
+    },
+    {
+      "seed": 1248,
+      "GSO_val_MAE_deg": 16.632682324919998,
+      "checkpoint_sha256": "707c7d561c5c7bec00959aa35f3ce4bf39ff8545aaf81c9c3822a33b50944d5c"
+    },
+    {
+      "seed": 1249,
+      "GSO_val_MAE_deg": 16.71422797831515,
+      "checkpoint_sha256": "67e547477a30c1ba5745ca37fd7f1e16cef57f426c39e2fcda502c63af6ad29f"
+    }
+  ],
+  "mean_GSO_val_MAE_deg": 16.661373786190204,
+  "sample_std_ddof1_deg": 0.04582904721548893,
+  "final_checkpoint_stays_user_locked_seed1247_ebf6a113": true,
+  "no_best_seed_selection": true,
+  "test_images_scored": 0,
+  "updated_at": "2026-11-19T08:14:36+08:00"
+}

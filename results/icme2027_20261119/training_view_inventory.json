@@ -1,0 +1,66 @@
+{
+  "status": "completed",
+  "training_views": {
+    "selected_views": [
+      0,
+      4,
+      8
+    ],
+    "selected_rows": 29976,
+    "selected_angles_recovered": 29976,
+    "assets": 10000,
+    "all_declared_views_per_asset_histogram": {
+      "12": 10000
+    },
+    "local_RGB_distinct_view_count_histogram": {
+      "3": 10000
+    },
+    "missing_camera_assets": 0,
+    "elevation_bin_edges_deg": [
+      -90,
+      -60,
+      -30,
+      0,
+      30,
+      60,
+      90
+    ],
+    "all_declared_view_bin_counts": {
+      "4": 20053,
+      "2": 20067,
+      "3": 19719,
+      "1": 20004,
+      "5": 20236,
+      "0": 19921
+    },
+    "minimum_elevation_deg": -89.99778234827424,
+    "maximum_elevation_deg": 89.99986327589772
+  },
+  "additional_D1_prepared_cache": {
+    "status": "completed",
+    "D1_views_scanned": 239816,
+    "E1_UIDs_with_D1_prepared_views": 10000,
+    "E1_UIDs_total": 10000,
+    "prepared_views_per_E1_UID_histogram": {
+      "6": 9963,
+      "5": 24,
+      "3": 3,
+      "4": 7,
+      "2": 3,
+      "0": 0
+    },
+    "D1_views_available": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10
+    ],
+    "availability_source": "completed D1 prepared-cache manifest; its256 RGBs are distinct from original512 RGB teacher contract, so they are not silently substituted into teacher inference",
+    "test_images_opened": 0,
+    "updated_at": "2026-11-10T22:23:19+08:00"
+  },
+  "teacher_cache_contract_sha256": "84bab013a7cb47f576ec6b9d1b3bb587be45aed89252856c88f0bca20b68bfd3",
+  "test_images_scored": 0
+}

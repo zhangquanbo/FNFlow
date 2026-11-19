@@ -1,0 +1,116 @@
+{
+  "S1_s1247": {
+    "source_config_sha256": "7cd6108b072657bf379d159ba7618e7010ce0f518367a2f8aa11a019f2ec4d79",
+    "source_registration_sha256": "05bf88d9a64c0a91b4fc3608a3fb7690a00ec9ebd78a492705f49ff6aad7d984",
+    "original_source_sha256": {
+      "src/icme_rplus_20261110.py": "f5ff1eb8292b0b8319bd58ff918d7164a5e8c8b0600fe1553f5f5df6bb4fc2e4",
+      "scripts/train_ICME_Rplus_20261110.py": "0a6cf74ca4936df3b6a5e4d1d2115c230e2b118425a363ffa3e553434a14eca8",
+      "src/e_models_20261106.py": "dd063c4ef62ce050e7a7fa21f5035c93bf09f3553d76ef6a473fcc5e44de642e",
+      "src/dino_conditioning.py": "02d873839bd89a3dc5bbc05795527c012afa3bcfc75cfd70b07a620db111daf3",
+      "src/dino_canonical_518.py": "0d6a9309e923a52083e7cac5b0cf1763b217ccba2c899989e1be5a53b1664e49",
+      "src/models/model_unet.py": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "src/parameterization.py": "3acdcbc77e4afea8f199dff0ca9f45ead18cf7f5f0d1478d965f7a049cf4ec30",
+      "scripts/train_parameterization.py": "d8fadf1eedcabd5286faf3fdceeb305e52152a65846727d4c1213c6c66703cc5",
+      "scripts/evaluate_fresh_ab.py": "16a68542cb3c641b38bb6504985f50cd7785d751b8d75bc9e99656efd43ba545",
+      "src/noise_protocol.py": "69665648fcabbb16b66b5a034b1e33ba5f63c7cb4f9dd6f60fd84e8b7e26d82f"
+    },
+    "checkpoint_sha256": "ebf6a113cd9e6a15edba0e1282fd469550f8d33f33012e8818e11b8dcfda9822",
+    "source_evaluation_summary_sha256": "d2208e15196c94f65002afcde4b689eb5e5249c1c761e5f7d8464e99a88de2e8"
+  },
+  "B1_s1247": {
+    "source_config_sha256": "887a2aba84b102abd6bcc2d155e2c197db849d2c3832f8e4739d2e9bd6fbc71f",
+    "source_registration_sha256": "dd9bb025c47d1b693df50f0a1524eb7309583661986aebad966b5b09d01fea1b",
+    "original_source_sha256": {
+      "src/icme_rplus_20261110.py": "f5ff1eb8292b0b8319bd58ff918d7164a5e8c8b0600fe1553f5f5df6bb4fc2e4",
+      "scripts/train_ICME_Rplus_20261110.py": "0a6cf74ca4936df3b6a5e4d1d2115c230e2b118425a363ffa3e553434a14eca8",
+      "src/e_models_20261106.py": "dd063c4ef62ce050e7a7fa21f5035c93bf09f3553d76ef6a473fcc5e44de642e",
+      "src/dino_conditioning.py": "02d873839bd89a3dc5bbc05795527c012afa3bcfc75cfd70b07a620db111daf3",
+      "src/dino_canonical_518.py": "0d6a9309e923a52083e7cac5b0cf1763b217ccba2c899989e1be5a53b1664e49",
+      "src/models/model_unet.py": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "src/parameterization.py": "3acdcbc77e4afea8f199dff0ca9f45ead18cf7f5f0d1478d965f7a049cf4ec30",
+      "scripts/train_parameterization.py": "d8fadf1eedcabd5286faf3fdceeb305e52152a65846727d4c1213c6c66703cc5",
+      "scripts/evaluate_fresh_ab.py": "16a68542cb3c641b38bb6504985f50cd7785d751b8d75bc9e99656efd43ba545",
+      "src/noise_protocol.py": "69665648fcabbb16b66b5a034b1e33ba5f63c7cb4f9dd6f60fd84e8b7e26d82f"
+    },
+    "checkpoint_sha256": "ebd6dc1f7647a0ba14858bf66e2b5956b79a70d9ff950834a0fd0c0f1b6b94e7",
+    "source_evaluation_summary_sha256": "b729345cb638865cfcfd902bb74c1cc07396efda9bd6b6688ea8d091761a13e3"
+  },
+  "S1_s1248": {
+    "source_config_sha256": "c0c28748470daaccb56dbaef46a62c3780822bae298794fc5655ce0cbd9a23a7",
+    "source_registration_sha256": "d10dfd615df36362f3c9caa404f7c59b283a8ab0733d7456cd3023b5b374d313",
+    "original_source_sha256": {
+      "src/icme_rplus_20261110.py": "f5ff1eb8292b0b8319bd58ff918d7164a5e8c8b0600fe1553f5f5df6bb4fc2e4",
+      "scripts/train_ICME_Rplus_20261110.py": "0a6cf74ca4936df3b6a5e4d1d2115c230e2b118425a363ffa3e553434a14eca8",
+      "src/e_models_20261106.py": "dd063c4ef62ce050e7a7fa21f5035c93bf09f3553d76ef6a473fcc5e44de642e",
+      "src/dino_conditioning.py": "02d873839bd89a3dc5bbc05795527c012afa3bcfc75cfd70b07a620db111daf3",
+      "src/dino_canonical_518.py": "0d6a9309e923a52083e7cac5b0cf1763b217ccba2c899989e1be5a53b1664e49",
+      "src/models/model_unet.py": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "src/parameterization.py": "3acdcbc77e4afea8f199dff0ca9f45ead18cf7f5f0d1478d965f7a049cf4ec30",
+      "scripts/train_parameterization.py": "d8fadf1eedcabd5286faf3fdceeb305e52152a65846727d4c1213c6c66703cc5",
+      "scripts/evaluate_fresh_ab.py": "16a68542cb3c641b38bb6504985f50cd7785d751b8d75bc9e99656efd43ba545",
+      "src/noise_protocol.py": "69665648fcabbb16b66b5a034b1e33ba5f63c7cb4f9dd6f60fd84e8b7e26d82f"
+    },
+    "checkpoint_sha256": "707c7d561c5c7bec00959aa35f3ce4bf39ff8545aaf81c9c3822a33b50944d5c",
+    "source_evaluation_summary_sha256": "61859b15028bc888a15260f16ea3b101709fc993d01daa30d8d7b905d950cd44"
+  },
+  "S1_s1249": {
+    "source_config_sha256": "651190292dd8c554c806c50f9ed4725111ca6b062ed440432bef813dfe396600",
+    "source_registration_sha256": "1266fb182ba0d50d4f478b8d4a59a6056c1bc79346bc672f21ddcd89c662571a",
+    "original_source_sha256": {
+      "src/icme_rplus_20261110.py": "f5ff1eb8292b0b8319bd58ff918d7164a5e8c8b0600fe1553f5f5df6bb4fc2e4",
+      "scripts/train_ICME_Rplus_20261110.py": "0a6cf74ca4936df3b6a5e4d1d2115c230e2b118425a363ffa3e553434a14eca8",
+      "src/e_models_20261106.py": "dd063c4ef62ce050e7a7fa21f5035c93bf09f3553d76ef6a473fcc5e44de642e",
+      "src/dino_conditioning.py": "02d873839bd89a3dc5bbc05795527c012afa3bcfc75cfd70b07a620db111daf3",
+      "src/dino_canonical_518.py": "0d6a9309e923a52083e7cac5b0cf1763b217ccba2c899989e1be5a53b1664e49",
+      "src/models/model_unet.py": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "src/parameterization.py": "3acdcbc77e4afea8f199dff0ca9f45ead18cf7f5f0d1478d965f7a049cf4ec30",
+      "scripts/train_parameterization.py": "d8fadf1eedcabd5286faf3fdceeb305e52152a65846727d4c1213c6c66703cc5",
+      "scripts/evaluate_fresh_ab.py": "16a68542cb3c641b38bb6504985f50cd7785d751b8d75bc9e99656efd43ba545",
+      "src/noise_protocol.py": "69665648fcabbb16b66b5a034b1e33ba5f63c7cb4f9dd6f60fd84e8b7e26d82f"
+    },
+    "checkpoint_sha256": "67e547477a30c1ba5745ca37fd7f1e16cef57f426c39e2fcda502c63af6ad29f",
+    "source_evaluation_summary_sha256": "5198bb38df4ac83c0016cb44f1b146d756b65d08d0871b7bed1ae2f73d419227"
+  },
+  "S1_no_distill_s1247": {
+    "source_config_sha256": "80adb63c97b34f5b4e97e9d736976da95e35406753d38497c23280bf40b2bf6c",
+    "source_registration_sha256": "ee28a33caced2270bdc33c25fb5ceb29aab0c5bad059854e7aca6e0c10f74c0a",
+    "original_source_sha256": {
+      "src/icme_rplus_20261110.py": "f5ff1eb8292b0b8319bd58ff918d7164a5e8c8b0600fe1553f5f5df6bb4fc2e4",
+      "scripts/train_ICME_Rplus_20261110.py": "0a6cf74ca4936df3b6a5e4d1d2115c230e2b118425a363ffa3e553434a14eca8",
+      "src/e_models_20261106.py": "dd063c4ef62ce050e7a7fa21f5035c93bf09f3553d76ef6a473fcc5e44de642e",
+      "src/dino_conditioning.py": "02d873839bd89a3dc5bbc05795527c012afa3bcfc75cfd70b07a620db111daf3",
+      "src/dino_canonical_518.py": "0d6a9309e923a52083e7cac5b0cf1763b217ccba2c899989e1be5a53b1664e49",
+      "src/models/model_unet.py": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "src/parameterization.py": "3acdcbc77e4afea8f199dff0ca9f45ead18cf7f5f0d1478d965f7a049cf4ec30",
+      "scripts/train_parameterization.py": "d8fadf1eedcabd5286faf3fdceeb305e52152a65846727d4c1213c6c66703cc5",
+      "scripts/evaluate_fresh_ab.py": "16a68542cb3c641b38bb6504985f50cd7785d751b8d75bc9e99656efd43ba545",
+      "src/noise_protocol.py": "69665648fcabbb16b66b5a034b1e33ba5f63c7cb4f9dd6f60fd84e8b7e26d82f"
+    },
+    "checkpoint_sha256": "069ed7078b93be9ca303660c4af001277cb1b4a39009153a83dcebb617885a5e",
+    "source_evaluation_summary_sha256": "7bb7ea0450474c9fe2d3386662fe0487dafd61d74cd9f82811ce5b46838bb7af"
+  },
+  "S0_s1247": {
+    "source_config_sha256": "79035e639868dc12cc8087bae70a056b3ede89caabfb7bf4fbe0e3b72fa5df53",
+    "source_registration_sha256": "1312c1586532e75fddebd502bd87a2c480b3d5c7a9581106ac693df5a8f43152",
+    "original_source_sha256": {
+      "src/e_models_20261106.py": "dd063c4ef62ce050e7a7fa21f5035c93bf09f3553d76ef6a473fcc5e44de642e",
+      "src/moge_bridge_20261106.py": "e1116bbe1e409cf601c75eadfbfb88758132202175b2e0377a06cce4ba9258f5",
+      "scripts/train_E_stage_20261106.py": "66b651e2a29b96612bef77b0df9cb5d5354ec98eaf5f90d84597a295890ca2c4",
+      "scripts/prepare_E2_conditions_20261106.py": "5f8b8c0a3e6d6f0859daeec0482379f5c503525bfe57a15c6550122ddc9104ff",
+      "scripts/evaluate_E_stage_20261106.py": "fbd075555ebd1f468df8c1902256c852ab05d06008e9aac5a553b7184d158d3b",
+      "scripts/run_E_fits_20261106.py": "1626c5541390e4727cdca27b61440e4eeb368c1ae92d601b506a4b6c489943cb",
+      "scripts/check_E_backbones_20261106.py": "f45e7c05c6afb4bc7a07669a61abbe6138d64a23e7438e53a25585adc6086ca6",
+      "scripts/preflight_E_round_20261106.py": "97b8021566d4bd9f4ff4b0e7db1980c8e0280d433c02069b147038427ff5480a",
+      "src/dino_conditioning.py": "02d873839bd89a3dc5bbc05795527c012afa3bcfc75cfd70b07a620db111daf3",
+      "src/dino_canonical_518.py": "0d6a9309e923a52083e7cac5b0cf1763b217ccba2c899989e1be5a53b1664e49",
+      "src/models/model_unet.py": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "src/parameterization.py": "3acdcbc77e4afea8f199dff0ca9f45ead18cf7f5f0d1478d965f7a049cf4ec30",
+      "src/noise_protocol.py": "69665648fcabbb16b66b5a034b1e33ba5f63c7cb4f9dd6f60fd84e8b7e26d82f",
+      "scripts/train_parameterization.py": "d8fadf1eedcabd5286faf3fdceeb305e52152a65846727d4c1213c6c66703cc5",
+      "scripts/evaluate_fresh_ab.py": "16a68542cb3c641b38bb6504985f50cd7785d751b8d75bc9e99656efd43ba545",
+      "scripts/train_ICME_E1_replica_20261110.py": "85fb3a5d9381ffba64cbdb9db9e8f3585e08454c5ce9876ef9163d12800b3dba"
+    },
+    "checkpoint_sha256": "1a9377eedda0bac545382666860cc459b99a58251808350825fc2c9faa7010d7",
+    "source_evaluation_summary_sha256": "18e3a76a7b7c0465483d61708b1fe1d667046abdda1a2c9209ec9d0421e2103a"
+  }
+}

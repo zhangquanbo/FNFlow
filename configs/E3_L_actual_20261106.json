@@ -1,0 +1,65 @@
+{
+  "version": "D2_retained_data_frozenB518",
+  "created_at": "2026-10-30 conditional exact recipe frozen before fitting",
+  "groups": {
+    "E3_L": {
+      "method": "direct_head_finetune"
+    }
+  },
+  "training_manifest": "data/arb_scale_c_prepared_fresh_20261026/private_manifest.json",
+  "training_manifest_sha256": "45927fce65c38753936247ba1ae5dfb32e5337cb22ec4087375ca01135d7d4e6",
+  "training_assets": 10000,
+  "training_images": 29976,
+  "validation_assets": 198,
+  "validation_images": 594,
+  "output_root": "outputs/E3_L_train_20261106",
+  "total_updates": 50000,
+  "warmup_updates": 100,
+  "stable_end": 47500,
+  "cooldown_updates": 2500,
+  "seed": 1247,
+  "microbatch": 4,
+  "gradient_accumulation": 16,
+  "effective_batch": 16,
+  "learning_rate": 0.0001,
+  "weight_decay": 0.01,
+  "image_size": 512,
+  "views": [
+    0,
+    4,
+    8
+  ],
+  "pitch_quota": false,
+  "hypersim": false,
+  "historical_manifest_available": false,
+  "exact_historical_reproduction_claimed": false,
+  "validation": "Same198 Arb-val assets/594 views as A/B, curve only, fixed50k final checkpoint; no GSO-test.",
+  "C_training_started": false,
+  "validation_manifest": "data/arb_mixed_formal_v1/private_manifest.json",
+  "validation_manifest_sha256": "40b15201792cc18dd85453ee4abf598419b2fc51136502f01c168270ee65dbd2",
+  "parent_AB_config_sha256": "53e4bf30d372af0952962f6e637875550185feceeb18ff84aedd7194128c2f29",
+  "initialization": "Published MoGe-L normal weights, seed1247, update normal_head only; original non-backbone optimizer LR1e-4, matched50k successful updates/batch16/WSD schedule; no GSO checkpoint selection",
+  "stage": "E3_L",
+  "prior_type": "B_518",
+  "cache_mode": "single_C_256",
+  "training_views": 29976,
+  "registration_path": "provenance/E3_L_fit_registration_20261106.json",
+  "evaluation_registration_path": "provenance/D2_evaluation_registration_20261030.json",
+  "base_weights_sha256": "280741fd09bc3f403ccff9967784c2a391b52d2c0742ae3efdb21d9f90cc1a01",
+  "GT_size": 256,
+  "physical_microbatch": 1,
+  "logical_microbatch": 4,
+  "loss": "masked squared angle in radians; valid-pixel normalization per logical4-image group,4logical groups per update",
+  "trainable_modules": [
+    "normal_head"
+  ],
+  "frozen_modules": [
+    "encoder",
+    "neck",
+    "points_head",
+    "mask_head",
+    "scale_head"
+  ],
+  "sample_order": "Identical scene/view/flip RNG to D2: seed10247,4logical microbatches*4 samples, retained unused dropout draw per logical microbatch.",
+  "training_precision": "FP16 autocast with GradScaler and logged retry of the same batch on overflow"
+}

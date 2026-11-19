@@ -1,0 +1,891 @@
+{
+  "status": "completed",
+  "input_precision_and_scope": "eachcaseexplicit, officialdefaultsteps; batch4unavailable/OOMreportedwithoutfabricatedthroughput",
+  "optimization_rules": "compiledefault/channels_last/bothappliedsymmetricallytoE1_BandMoGe-S; optimizationlatencyonlynotsilentlyusedwithnativeaccuracy",
+  "TF32": false,
+  "warmup": 5,
+  "timed": 30,
+  "pending_cases": [],
+  "failed_cases": [],
+  "test_images_scored": 0,
+  "models": {
+    "E1_B_native_518": {
+      "status": "completed",
+      "model": "E1_B",
+      "variant": "native",
+      "compile_mode": null,
+      "encoder_input_side": 518,
+      "encoder_tokens": 1369,
+      "UNet_side": 256,
+      "raw_input_hw": [
+        256,
+        256
+      ],
+      "compute_precision": "BF16 autocast",
+      "weight_storage_precision": "FP32",
+      "parameters_total": 130400259,
+      "rows": [
+        {
+          "status": "completed",
+          "batch": 1,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 69.22429148107767,
+          "p90_ms": 78.09399683028461,
+          "CUDA_event_median_ms": 69.13228607177734,
+          "images_per_second": 14.445796101406803,
+          "per_image_ms": 69.22429148107767,
+          "peak_allocated_bytes": 885805056,
+          "peak_reserved_bytes": 1191182336
+        },
+        {
+          "status": "completed",
+          "batch": 4,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 129.98507649172097,
+          "p90_ms": 130.29329953715205,
+          "CUDA_event_median_ms": 129.89286041259766,
+          "images_per_second": 30.77276336606817,
+          "per_image_ms": 32.496269122930244,
+          "peak_allocated_bytes": 1862802944,
+          "peak_reserved_bytes": 2875195392
+        }
+      ],
+      "end_to_end": {
+        "median_ms": 128.94021143438295,
+        "p90_ms": 133.41192917432636,
+        "scope": "PNGread/preprocess/predict/common256unitnormal/PNGwrite, excludesmodelinitialization"
+      }
+    },
+    "MoGe-S_native": {
+      "status": "completed",
+      "model": "MoGe-S",
+      "variant": "native",
+      "compile_mode": null,
+      "encoder_input_side": 840,
+      "encoder_tokens": 3600,
+      "UNet_side": null,
+      "raw_input_hw": [
+        256,
+        256
+      ],
+      "compute_precision": "FP16 autocast",
+      "weight_storage_precision": "FP32",
+      "parameters_total": 35103656,
+      "rows": [
+        {
+          "status": "completed",
+          "batch": 1,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 45.09593895636499,
+          "p90_ms": 49.20782935805619,
+          "CUDA_event_median_ms": 45.0437126159668,
+          "images_per_second": 22.174945752157505,
+          "per_image_ms": 45.09593895636499,
+          "peak_allocated_bytes": 1283819008,
+          "peak_reserved_bytes": 1593835520
+        },
+        {
+          "status": "completed",
+          "batch": 4,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 120.46852399362251,
+          "p90_ms": 121.13641898613423,
+          "CUDA_event_median_ms": 120.36351776123047,
+          "images_per_second": 33.203693939271275,
+          "per_image_ms": 30.117130998405628,
+          "peak_allocated_bytes": 4391869440,
+          "peak_reserved_bytes": 5517606912
+        }
+      ],
+      "end_to_end": null
+    },
+    "D2_native": {
+      "status": "completed",
+      "model": "D2",
+      "variant": "native",
+      "compile_mode": null,
+      "encoder_input_side": 518,
+      "encoder_tokens": 1369,
+      "UNet_side": 256,
+      "raw_input_hw": [
+        256,
+        256
+      ],
+      "compute_precision": "BF16 autocast",
+      "weight_storage_precision": "FP32",
+      "parameters_total": 130400259,
+      "rows": [
+        {
+          "status": "completed",
+          "batch": 1,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 75.54572098888457,
+          "p90_ms": 91.54405469307676,
+          "CUDA_event_median_ms": 75.41196823120117,
+          "images_per_second": 13.237017092564848,
+          "per_image_ms": 75.54572098888457,
+          "peak_allocated_bytes": 885805056,
+          "peak_reserved_bytes": 1191182336
+        },
+        {
+          "status": "completed",
+          "batch": 4,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 130.25743456091732,
+          "p90_ms": 130.6257022311911,
+          "CUDA_event_median_ms": 130.15756225585938,
+          "images_per_second": 30.70841993382977,
+          "per_image_ms": 32.56435864022933,
+          "peak_allocated_bytes": 1862802944,
+          "peak_reserved_bytes": 2875195392
+        }
+      ],
+      "end_to_end": null
+    },
+    "MoGe-B_native": {
+      "status": "completed",
+      "model": "MoGe-B",
+      "variant": "native",
+      "compile_mode": null,
+      "encoder_input_side": 840,
+      "encoder_tokens": 3600,
+      "UNet_side": null,
+      "raw_input_hw": [
+        256,
+        256
+      ],
+      "compute_precision": "FP16 autocast",
+      "weight_storage_precision": "FP32",
+      "parameters_total": 104743592,
+      "rows": [
+        {
+          "status": "completed",
+          "batch": 1,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 50.23911641910672,
+          "p90_ms": 50.803061784245074,
+          "CUDA_event_median_ms": 50.18316841125488,
+          "images_per_second": 19.904808668563373,
+          "per_image_ms": 50.23911641910672,
+          "peak_allocated_bytes": 1728549376,
+          "peak_reserved_bytes": 2040528896
+        },
+        {
+          "status": "completed",
+          "batch": 4,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 173.3874364872463,
+          "p90_ms": 174.26921461010352,
+          "CUDA_event_median_ms": 173.29715728759766,
+          "images_per_second": 23.069722241923937,
+          "per_image_ms": 43.346859121811576,
+          "peak_allocated_bytes": 4882461184,
+          "peak_reserved_bytes": 6121586688
+        }
+      ],
+      "end_to_end": null
+    },
+    "MoGe-L_native": {
+      "status": "completed",
+      "model": "MoGe-L",
+      "variant": "native",
+      "compile_mode": null,
+      "encoder_input_side": 840,
+      "encoder_tokens": 3600,
+      "UNet_side": null,
+      "raw_input_hw": [
+        256,
+        256
+      ],
+      "compute_precision": "FP16 autocast",
+      "weight_storage_precision": "FP32",
+      "parameters_total": 330901544,
+      "rows": [
+        {
+          "status": "completed",
+          "batch": 1,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 99.04118097620085,
+          "p90_ms": 99.30894320132211,
+          "CUDA_event_median_ms": 98.93631744384766,
+          "images_per_second": 10.096810136384535,
+          "per_image_ms": 99.04118097620085,
+          "peak_allocated_bytes": 3076167168,
+          "peak_reserved_bytes": 3445620736
+        },
+        {
+          "status": "completed",
+          "batch": 4,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 358.3354519796558,
+          "p90_ms": 359.3930404749699,
+          "CUDA_event_median_ms": 358.21363830566406,
+          "images_per_second": 11.162724698049406,
+          "per_image_ms": 89.58386299491394,
+          "peak_allocated_bytes": 6266758144,
+          "peak_reserved_bytes": 7591690240
+        }
+      ],
+      "end_to_end": null
+    },
+    "DSINE_native": {
+      "status": "completed",
+      "model": "DSINE",
+      "variant": "native",
+      "compute_precision": "FP32",
+      "encoder_tokens": null,
+      "rows": [
+        {
+          "status": "completed",
+          "batch": 1,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 122.59701202856377,
+          "p90_ms": 140.68040701095018,
+          "CUDA_event_median_ms": 122.52671813964844,
+          "images_per_second": 8.156805646837551,
+          "peak_allocated_bytes": 704419328,
+          "peak_reserved_bytes": 1038090240
+        },
+        {
+          "status": "completed",
+          "batch": 4,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 129.53256396576762,
+          "p90_ms": 134.09706383245066,
+          "CUDA_event_median_ms": 129.44332885742188,
+          "images_per_second": 30.88026576125757,
+          "peak_allocated_bytes": 605602304,
+          "peak_reserved_bytes": 740294656
+        }
+      ]
+    },
+    "NiRNE_native": {
+      "status": "completed",
+      "model": "NiRNE",
+      "variant": "native",
+      "compute_precision": "FP16 storedweights andcompute",
+      "encoder_tokens": null,
+      "rows": [
+        {
+          "status": "completed",
+          "batch": 1,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 317.8181194816716,
+          "p90_ms": 329.55852267332375,
+          "CUDA_event_median_ms": 317.69036865234375,
+          "images_per_second": 3.1464537063868363,
+          "peak_allocated_bytes": 4158542848,
+          "peak_reserved_bytes": 5316280320
+        },
+        {
+          "status": "official_batch4_not_supported",
+          "batch": 4
+        }
+      ]
+    },
+    "Lotus-D_native": {
+      "status": "completed",
+      "model": "Lotus-D",
+      "variant": "native",
+      "compute_precision": "FP16 autocast FP32storage",
+      "encoder_tokens": null,
+      "rows": [
+        {
+          "status": "completed",
+          "batch": 1,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 331.77600346971303,
+          "p90_ms": 345.18291944405064,
+          "CUDA_event_median_ms": 331.64134216308594,
+          "images_per_second": 3.014081758602193,
+          "peak_allocated_bytes": 9184206336,
+          "peak_reserved_bytes": 10708058112
+        },
+        {
+          "status": "completed",
+          "batch": 4,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 1401.5276244608685,
+          "p90_ms": 1402.6590694207698,
+          "CUDA_event_median_ms": 1401.417724609375,
+          "images_per_second": 2.8540286542969118,
+          "peak_allocated_bytes": 15621218816,
+          "peak_reserved_bytes": 19847446528
+        }
+      ]
+    },
+    "Lotus-G_native": {
+      "status": "completed",
+      "model": "Lotus-G",
+      "variant": "native",
+      "compute_precision": "FP16 autocast FP32storage",
+      "encoder_tokens": null,
+      "rows": [
+        {
+          "status": "completed",
+          "batch": 1,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 332.40177849074826,
+          "p90_ms": 334.68802153365687,
+          "CUDA_event_median_ms": 332.27110290527344,
+          "images_per_second": 3.008407489696488,
+          "peak_allocated_bytes": 9193163776,
+          "peak_reserved_bytes": 10722738176
+        },
+        {
+          "status": "completed",
+          "batch": 4,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 1403.1914814841002,
+          "p90_ms": 1404.4900870299898,
+          "CUDA_event_median_ms": 1403.0802001953125,
+          "images_per_second": 2.8506444436003546,
+          "peak_allocated_bytes": 15632068608,
+          "peak_reserved_bytes": 19862126592
+        }
+      ]
+    },
+    "MarigoldNormal_native": {
+      "status": "completed",
+      "model": "MarigoldNormal",
+      "variant": "native",
+      "compute_precision": "FP32",
+      "encoder_tokens": null,
+      "rows": [
+        {
+          "status": "completed",
+          "batch": 1,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 1197.262290515937,
+          "p90_ms": 1200.5678254994564,
+          "CUDA_event_median_ms": 1197.1563110351562,
+          "images_per_second": 0.8352388678082139,
+          "peak_allocated_bytes": 7036660224,
+          "peak_reserved_bytes": 9292480512
+        },
+        {
+          "status": "completed",
+          "batch": 4,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 4804.8264375538565,
+          "p90_ms": 4808.162135770544,
+          "CUDA_event_median_ms": 4804.786376953125,
+          "images_per_second": 0.8324962518388916,
+          "peak_allocated_bytes": 12497438720,
+          "peak_reserved_bytes": 23053991936
+        }
+      ]
+    },
+    "E1_B_compile_518": {
+      "status": "completed",
+      "model": "E1_B",
+      "variant": "compile",
+      "compile_mode": "default",
+      "encoder_input_side": 518,
+      "encoder_tokens": 1369,
+      "UNet_side": 256,
+      "raw_input_hw": [
+        256,
+        256
+      ],
+      "compute_precision": "BF16 autocast",
+      "weight_storage_precision": "FP32",
+      "parameters_total": 130400259,
+      "rows": [
+        {
+          "status": "completed",
+          "batch": 1,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 49.62557152612135,
+          "p90_ms": 51.518859749194235,
+          "CUDA_event_median_ms": 49.548288345336914,
+          "images_per_second": 20.15090142535953,
+          "per_image_ms": 49.62557152612135,
+          "peak_allocated_bytes": 701924864,
+          "peak_reserved_bytes": 4466933760
+        },
+        {
+          "status": "completed",
+          "batch": 4,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 71.90695399185643,
+          "p90_ms": 73.78877778537573,
+          "CUDA_event_median_ms": 71.84281539916992,
+          "images_per_second": 55.62744321575638,
+          "per_image_ms": 17.976738497964107,
+          "peak_allocated_bytes": 1156848128,
+          "peak_reserved_bytes": 2875195392
+        }
+      ],
+      "end_to_end": null
+    },
+    "MoGe-S_compile": {
+      "status": "completed",
+      "model": "MoGe-S",
+      "variant": "compile",
+      "compile_mode": "default",
+      "encoder_input_side": 840,
+      "encoder_tokens": 3600,
+      "UNet_side": null,
+      "raw_input_hw": [
+        256,
+        256
+      ],
+      "compute_precision": "FP16 autocast",
+      "weight_storage_precision": "FP32",
+      "parameters_total": 35103656,
+      "rows": [
+        {
+          "status": "completed",
+          "batch": 1,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 35.24454351281747,
+          "p90_ms": 37.612435151822865,
+          "CUDA_event_median_ms": 35.18207931518555,
+          "images_per_second": 28.37318632418455,
+          "per_image_ms": 35.24454351281747,
+          "peak_allocated_bytes": 856477696,
+          "peak_reserved_bytes": 2088763392
+        },
+        {
+          "status": "completed",
+          "batch": 4,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 92.89724152768031,
+          "p90_ms": 93.41820478439331,
+          "CUDA_event_median_ms": 92.79487991333008,
+          "images_per_second": 43.058329119580286,
+          "per_image_ms": 23.224310381920077,
+          "peak_allocated_bytes": 2893763072,
+          "peak_reserved_bytes": 6461325312
+        }
+      ],
+      "end_to_end": null
+    },
+    "E1_B_channels_last_518": {
+      "status": "completed",
+      "model": "E1_B",
+      "variant": "channels_last",
+      "compile_mode": null,
+      "encoder_input_side": 518,
+      "encoder_tokens": 1369,
+      "UNet_side": 256,
+      "raw_input_hw": [
+        256,
+        256
+      ],
+      "compute_precision": "BF16 autocast",
+      "weight_storage_precision": "FP32",
+      "parameters_total": 130400259,
+      "rows": [
+        {
+          "status": "completed",
+          "batch": 1,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 66.54961901949719,
+          "p90_ms": 70.84202987607569,
+          "CUDA_event_median_ms": 66.4801254272461,
+          "images_per_second": 15.026382039948686,
+          "per_image_ms": 66.54961901949719,
+          "peak_allocated_bytes": 987516928,
+          "peak_reserved_bytes": 1289748480
+        },
+        {
+          "status": "completed",
+          "batch": 4,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 145.26450500125065,
+          "p90_ms": 146.38452813960612,
+          "CUDA_event_median_ms": 145.13766479492188,
+          "images_per_second": 27.535976527545817,
+          "per_image_ms": 36.316126250312664,
+          "peak_allocated_bytes": 2262892032,
+          "peak_reserved_bytes": 3284140032
+        }
+      ],
+      "end_to_end": null
+    },
+    "MoGe-S_channels_last": {
+      "status": "completed",
+      "model": "MoGe-S",
+      "variant": "channels_last",
+      "compile_mode": null,
+      "encoder_input_side": 840,
+      "encoder_tokens": 3600,
+      "UNet_side": null,
+      "raw_input_hw": [
+        256,
+        256
+      ],
+      "compute_precision": "FP16 autocast",
+      "weight_storage_precision": "FP32",
+      "parameters_total": 35103656,
+      "rows": [
+        {
+          "status": "completed",
+          "batch": 1,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 55.07502501131967,
+          "p90_ms": 56.94765164516866,
+          "CUDA_event_median_ms": 55.00979042053223,
+          "images_per_second": 18.15705031081635,
+          "per_image_ms": 55.07502501131967,
+          "peak_allocated_bytes": 1225993728,
+          "peak_reserved_bytes": 1593835520
+        },
+        {
+          "status": "completed",
+          "batch": 4,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 154.94711900828406,
+          "p90_ms": 155.38688014494255,
+          "CUDA_event_median_ms": 154.7950897216797,
+          "images_per_second": 25.815258945125304,
+          "per_image_ms": 38.736779752071016,
+          "peak_allocated_bytes": 4158585856,
+          "peak_reserved_bytes": 5530189824
+        }
+      ],
+      "end_to_end": null
+    },
+    "E1_B_compile_channels_last_518": {
+      "status": "completed",
+      "model": "E1_B",
+      "variant": "compile_channels_last",
+      "compile_mode": "default",
+      "encoder_input_side": 518,
+      "encoder_tokens": 1369,
+      "UNet_side": 256,
+      "raw_input_hw": [
+        256,
+        256
+      ],
+      "compute_precision": "BF16 autocast",
+      "weight_storage_precision": "FP32",
+      "parameters_total": 130400259,
+      "rows": [
+        {
+          "status": "completed",
+          "batch": 1,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 47.90454747853801,
+          "p90_ms": 50.29423189116642,
+          "CUDA_event_median_ms": 47.83718299865723,
+          "images_per_second": 20.874844928824675,
+          "per_image_ms": 47.90454747853801,
+          "peak_allocated_bytes": 710762496,
+          "peak_reserved_bytes": 4466933760
+        },
+        {
+          "status": "completed",
+          "batch": 4,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 68.64671147195622,
+          "p90_ms": 69.05457220273092,
+          "CUDA_event_median_ms": 68.56140899658203,
+          "images_per_second": 58.2693608219542,
+          "per_image_ms": 17.161677867989056,
+          "peak_allocated_bytes": 1223403520,
+          "peak_reserved_bytes": 2881486848
+        }
+      ],
+      "end_to_end": null
+    },
+    "MoGe-S_compile_channels_last": {
+      "status": "completed",
+      "model": "MoGe-S",
+      "variant": "compile_channels_last",
+      "compile_mode": "default",
+      "encoder_input_side": 840,
+      "encoder_tokens": 3600,
+      "UNet_side": null,
+      "raw_input_hw": [
+        256,
+        256
+      ],
+      "compute_precision": "FP16 autocast",
+      "weight_storage_precision": "FP32",
+      "parameters_total": 35103656,
+      "rows": [
+        {
+          "status": "completed",
+          "batch": 1,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 34.88701302558184,
+          "p90_ms": 36.35908446740359,
+          "CUDA_event_median_ms": 34.830848693847656,
+          "images_per_second": 28.663961551157254,
+          "per_image_ms": 34.88701302558184,
+          "peak_allocated_bytes": 857781248,
+          "peak_reserved_bytes": 2088763392
+        },
+        {
+          "status": "completed",
+          "batch": 4,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 86.83162345550954,
+          "p90_ms": 87.15522467391565,
+          "CUDA_event_median_ms": 86.74406433105469,
+          "images_per_second": 46.066166228591875,
+          "per_image_ms": 21.707905863877386,
+          "peak_allocated_bytes": 2895336960,
+          "peak_reserved_bytes": 6473908224
+        }
+      ],
+      "end_to_end": null
+    },
+    "E1_B_native_448": {
+      "status": "completed",
+      "model": "E1_B",
+      "variant": "native",
+      "compile_mode": null,
+      "encoder_input_side": 448,
+      "encoder_tokens": 1024,
+      "UNet_side": 256,
+      "raw_input_hw": [
+        256,
+        256
+      ],
+      "compute_precision": "BF16 autocast",
+      "weight_storage_precision": "FP32",
+      "parameters_total": 130400259,
+      "rows": [
+        {
+          "status": "completed",
+          "batch": 1,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 65.77857199590653,
+          "p90_ms": 69.62145316647366,
+          "CUDA_event_median_ms": 65.7151985168457,
+          "images_per_second": 15.202519143502098,
+          "per_image_ms": 65.77857199590653,
+          "peak_allocated_bytes": 885790720,
+          "peak_reserved_bytes": 1075838976
+        },
+        {
+          "status": "completed",
+          "batch": 4,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 109.52461702981964,
+          "p90_ms": 109.90870868554339,
+          "CUDA_event_median_ms": 109.43436813354492,
+          "images_per_second": 36.52146986198493,
+          "per_image_ms": 27.38115425745491,
+          "peak_allocated_bytes": 1857572352,
+          "peak_reserved_bytes": 2455764992
+        }
+      ],
+      "end_to_end": null
+    },
+    "E1_B_native_392": {
+      "status": "completed",
+      "model": "E1_B",
+      "variant": "native",
+      "compile_mode": null,
+      "encoder_input_side": 392,
+      "encoder_tokens": 784,
+      "UNet_side": 256,
+      "raw_input_hw": [
+        256,
+        256
+      ],
+      "compute_precision": "BF16 autocast",
+      "weight_storage_precision": "FP32",
+      "parameters_total": 130400259,
+      "rows": [
+        {
+          "status": "completed",
+          "batch": 1,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 65.36653754301369,
+          "p90_ms": 69.50779483886436,
+          "CUDA_event_median_ms": 65.28460693359375,
+          "images_per_second": 15.298347405076512,
+          "per_image_ms": 65.36653754301369,
+          "peak_allocated_bytes": 884007936,
+          "peak_reserved_bytes": 1040187392
+        },
+        {
+          "status": "completed",
+          "batch": 4,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 82.24945794790983,
+          "p90_ms": 84.68764513963833,
+          "CUDA_event_median_ms": 82.19136047363281,
+          "images_per_second": 48.632539347958705,
+          "per_image_ms": 20.562364486977458,
+          "peak_allocated_bytes": 1854623232,
+          "peak_reserved_bytes": 2392850432
+        }
+      ],
+      "end_to_end": null
+    },
+    "NeuralLightRig_native": {
+      "status": "completed",
+      "model": "NeuralLightRig",
+      "variant": "native",
+      "compute_precision": "FP32 officialstorage/forward, noautocast",
+      "encoder_tokens": null,
+      "rows": [
+        {
+          "status": "completed",
+          "batch": 1,
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 87137.00082851574,
+          "p90_ms": 87292.12431624765,
+          "CUDA_event_median_ms": 87137.65234375,
+          "images_per_second": 0.011476181076830776,
+          "peak_allocated_bytes": 12351888896,
+          "peak_reserved_bytes": 15183380480
+        },
+        {
+          "status": "official_batch4_not_supported",
+          "batch": 4,
+          "reason": "PinnedRefOnlyNoisedUNet.forward asserts sample.shape[0] in[1,2] whenenable_concats; withCFGbatch4requires8. Noarchitecturechangesorsequentialloopfalselyreported asbatch4."
+        }
+      ]
+    }
+  },
+  "critical_S1_B1_and_MoGeS": {
+    "S1": {
+      "status": "completed",
+      "model": "S1",
+      "parameters_total": 65507715,
+      "rows": [
+        {
+          "status": "completed",
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 66.3359229802154,
+          "p90_ms": 72.99633767688647,
+          "CUDA_event_median_ms": 66.27583694458008,
+          "peak_allocated_bytes": 516003328,
+          "peak_reserved_bytes": 618659840,
+          "batch": 1,
+          "images_per_second": 15.074788366150399
+        },
+        {
+          "status": "completed",
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 83.86398252332583,
+          "p90_ms": 84.44148406852037,
+          "CUDA_event_median_ms": 83.80928039550781,
+          "peak_allocated_bytes": 991215616,
+          "peak_reserved_bytes": 1451229184,
+          "batch": 4,
+          "images_per_second": 47.6962800912471
+        }
+      ],
+      "end_to_end": {
+        "median_ms": 127.18725501326844,
+        "p90_ms": 132.05521205672994,
+        "scope": "PNG read/preprocess/predict/common256 normal/PNG write; excludes model load"
+      }
+    },
+    "MoGe-S": {
+      "status": "completed",
+      "model": "MoGe-S",
+      "parameters_total": 35103656,
+      "rows": [
+        {
+          "status": "completed",
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 45.45615392271429,
+          "p90_ms": 49.43250783253461,
+          "CUDA_event_median_ms": 45.41030502319336,
+          "peak_allocated_bytes": 1284066816,
+          "peak_reserved_bytes": 1593835520,
+          "batch": 1,
+          "images_per_second": 21.99922152895349
+        },
+        {
+          "status": "completed",
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 121.0170325357467,
+          "p90_ms": 121.68998353881761,
+          "CUDA_event_median_ms": 120.9349136352539,
+          "peak_allocated_bytes": 4391869440,
+          "peak_reserved_bytes": 5517606912,
+          "batch": 4,
+          "images_per_second": 33.05319851417161
+        }
+      ],
+      "end_to_end": null
+    },
+    "B1": {
+      "status": "completed",
+      "model": "B1",
+      "parameters_total": 130400259,
+      "rows": [
+        {
+          "status": "completed",
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 77.18417252181098,
+          "p90_ms": 79.64776842854917,
+          "CUDA_event_median_ms": 77.11641693115234,
+          "peak_allocated_bytes": 885805056,
+          "peak_reserved_bytes": 1258291200,
+          "batch": 1,
+          "images_per_second": 12.956024108665757
+        },
+        {
+          "status": "completed",
+          "warmup": 5,
+          "timed": 30,
+          "median_ms": 130.2626630058512,
+          "p90_ms": 131.2054284964688,
+          "CUDA_event_median_ms": 130.16268920898438,
+          "peak_allocated_bytes": 1862802944,
+          "peak_reserved_bytes": 3212836864,
+          "batch": 4,
+          "images_per_second": 30.7071873681895
+        }
+      ],
+      "end_to_end": {
+        "median_ms": 129.48847090592608,
+        "p90_ms": 135.9667266253382,
+        "scope": "PNG read/preprocess/predict/common256 normal/PNG write; excludes model load"
+      }
+    }
+  }
+}

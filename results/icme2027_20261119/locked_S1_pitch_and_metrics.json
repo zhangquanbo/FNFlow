@@ -1,0 +1,1875 @@
+{
+  "status": "completed_locked_S1_EMA_full_development_statistics",
+  "model_lock": {
+    "status": "final_model_and_recipe_locked_by_user",
+    "model": "S1",
+    "weights": "EMA",
+    "training_seed": 1247,
+    "final_step": 50000,
+    "checkpoint_relative": "outputs/T5_Rplus/S1/final_50000.pth",
+    "checkpoint_sha256": "ebf6a113cd9e6a15edba0e1282fd469550f8d33f33012e8818e11b8dcfda9822",
+    "configuration_relative": "outputs/T5_Rplus/S1/actual.json",
+    "configuration_sha256": "7cd6108b072657bf379d159ba7618e7010ce0f518367a2f8aa11a019f2ec4d79",
+    "effective_weights": "ck.model plus ck.ema overlay, same loader as evaluatedS1EMA",
+    "effective_state_sha256": "3b3dbdc01b23ea96f6da00f6000db6e4e8dfff909bda1aeb61fda5c516ace5ab",
+    "encoder_input": 518,
+    "tokens": 1369,
+    "UNet_RGB_side": 256,
+    "teacher_network_input": false,
+    "pitch_balancing": false,
+    "original_training_views": 29976,
+    "original_training_assets": 10000,
+    "default_inference": "random42-49 error mean; each outputsingleforward",
+    "source_sha256": {
+      "src/icme_rplus_20261110.py": "f5ff1eb8292b0b8319bd58ff918d7164a5e8c8b0600fe1553f5f5df6bb4fc2e4",
+      "scripts/train_ICME_Rplus_20261110.py": "0a6cf74ca4936df3b6a5e4d1d2115c230e2b118425a363ffa3e553434a14eca8",
+      "src/e_models_20261106.py": "dd063c4ef62ce050e7a7fa21f5035c93bf09f3553d76ef6a473fcc5e44de642e",
+      "src/dino_conditioning.py": "02d873839bd89a3dc5bbc05795527c012afa3bcfc75cfd70b07a620db111daf3",
+      "src/dino_canonical_518.py": "0d6a9309e923a52083e7cac5b0cf1763b217ccba2c899989e1be5a53b1664e49",
+      "src/models/model_unet.py": "be005d556b3a679c2141fe9e5510c0a5e9d53d962c0eff89aff10f6bad04ddb3",
+      "src/parameterization.py": "3acdcbc77e4afea8f199dff0ca9f45ead18cf7f5f0d1478d965f7a049cf4ec30",
+      "scripts/train_parameterization.py": "d8fadf1eedcabd5286faf3fdceeb305e52152a65846727d4c1213c6c66703cc5",
+      "scripts/evaluate_fresh_ab.py": "16a68542cb3c641b38bb6504985f50cd7785d751b8d75bc9e99656efd43ba545",
+      "src/noise_protocol.py": "69665648fcabbb16b66b5a034b1e33ba5f63c7cb4f9dd6f60fd84e8b7e26d82f"
+    },
+    "GSO_test_authorized": false,
+    "recipe_changes_permitted": false,
+    "updated_at": "2026-11-12T15:01:33.217901+08:00"
+  },
+  "all_five_panels": {
+    "gso_primary": {
+      "assets": 93,
+      "images": 1860,
+      "metrics": {
+        "mean_deg": {
+          "mean": 16.637211055335467,
+          "eligible_assets": 93,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 93,
+            "num_clusters": 93,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 16.637211055335467,
+                "lower_95": 15.166621797174852,
+                "upper_95": 18.13281614250675
+              }
+            ]
+          }
+        },
+        "median_deg": {
+          "mean": 13.489853190201309,
+          "eligible_assets": 93,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 93,
+            "num_clusters": 93,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 13.489853190201309,
+                "lower_95": 12.06019739655754,
+                "upper_95": 14.927349882616673
+              }
+            ]
+          }
+        },
+        "fraction_below_11.25": {
+          "mean": 0.49002511961681566,
+          "eligible_assets": 93,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 93,
+            "num_clusters": 93,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 0.49002511961681566,
+                "lower_95": 0.43712376187227314,
+                "upper_95": 0.5426505912375433
+              }
+            ]
+          }
+        },
+        "fraction_below_22.5": {
+          "mean": 0.7438236947850835,
+          "eligible_assets": 93,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 93,
+            "num_clusters": 93,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 0.7438236947850835,
+                "lower_95": 0.7101917034877195,
+                "upper_95": 0.7773365938671009
+              }
+            ]
+          }
+        },
+        "fraction_below_30": {
+          "mean": 0.8376909746774812,
+          "eligible_assets": 93,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 93,
+            "num_clusters": 93,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 0.8376909746774812,
+                "lower_95": 0.8149360412654729,
+                "upper_95": 0.8599963958316822
+              }
+            ]
+          }
+        },
+        "boundary_primary_angular_mae_deg": {
+          "mean": 20.519174271032952,
+          "eligible_assets": 93,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 93,
+            "num_clusters": 93,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 20.519174271032952,
+                "lower_95": 19.411992230906186,
+                "upper_95": 21.668152329981194
+              }
+            ]
+          }
+        },
+        "boundary_primary_angular_outside_mae_deg": {
+          "mean": 12.791887163678082,
+          "eligible_assets": 93,
+          "undefined_empty_region_images": 10,
+          "bootstrap": {
+            "num_images": 93,
+            "num_clusters": 93,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 12.791887163678082,
+                "lower_95": 11.51545829282685,
+                "upper_95": 14.090641799258542
+              }
+            ]
+          }
+        }
+      },
+      "by_pitch": {
+        "0": {
+          "assets": 93,
+          "images": 372,
+          "metrics": {
+            "mean_deg": {
+              "mean": 16.091964843823778,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 16.091964843823778,
+                    "lower_95": 14.458510095207624,
+                    "upper_95": 17.781813700007884
+                  }
+                ]
+              }
+            },
+            "median_deg": {
+              "mean": 13.374777633070291,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 13.374777633070291,
+                    "lower_95": 11.782134227496574,
+                    "upper_95": 15.003351870574113
+                  }
+                ]
+              }
+            },
+            "fraction_below_11.25": {
+              "mean": 0.4972673382990443,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 0.4972673382990443,
+                    "lower_95": 0.43615085635217327,
+                    "upper_95": 0.5570809862961515
+                  }
+                ]
+              }
+            },
+            "fraction_below_22.5": {
+              "mean": 0.7458030065331674,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 0.7458030065331674,
+                    "lower_95": 0.7049874376563403,
+                    "upper_95": 0.7858073344303804
+                  }
+                ]
+              }
+            },
+            "fraction_below_30": {
+              "mean": 0.8441758860421196,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 0.8441758860421196,
+                    "lower_95": 0.8156022529079008,
+                    "upper_95": 0.871262522578076
+                  }
+                ]
+              }
+            },
+            "boundary_primary_angular_mae_deg": {
+              "mean": 20.00944610439486,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 20.00944610439486,
+                    "lower_95": 18.834498675637935,
+                    "upper_95": 21.230573451694948
+                  }
+                ]
+              }
+            },
+            "boundary_primary_angular_outside_mae_deg": {
+              "mean": 12.327303070038527,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 9,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 12.327303070038527,
+                    "lower_95": 10.90040157971527,
+                    "upper_95": 13.803477256409726
+                  }
+                ]
+              }
+            }
+          },
+          "by_pitch": {
+            "0": null
+          }
+        },
+        "15": {
+          "assets": 93,
+          "images": 372,
+          "metrics": {
+            "mean_deg": {
+              "mean": 15.600704125231344,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 15.600704125231344,
+                    "lower_95": 14.11506476129112,
+                    "upper_95": 17.106599295249424
+                  }
+                ]
+              }
+            },
+            "median_deg": {
+              "mean": 12.400276691332582,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 12.400276691332582,
+                    "lower_95": 10.930064859814918,
+                    "upper_95": 13.874045523910276
+                  }
+                ]
+              }
+            },
+            "fraction_below_11.25": {
+              "mean": 0.5161728301037546,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 0.5161728301037546,
+                    "lower_95": 0.4591031539563888,
+                    "upper_95": 0.5721348012763937
+                  }
+                ]
+              }
+            },
+            "fraction_below_22.5": {
+              "mean": 0.7660778337841999,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 0.7660778337841999,
+                    "lower_95": 0.7316967087376351,
+                    "upper_95": 0.7998350061015677
+                  }
+                ]
+              }
+            },
+            "fraction_below_30": {
+              "mean": 0.8563960635922057,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 0.8563960635922057,
+                    "lower_95": 0.8340199648473743,
+                    "upper_95": 0.8775314728013907
+                  }
+                ]
+              }
+            },
+            "boundary_primary_angular_mae_deg": {
+              "mean": 19.960560821021264,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 19.960560821021264,
+                    "lower_95": 18.87871118742758,
+                    "upper_95": 21.058994067516785
+                  }
+                ]
+              }
+            },
+            "boundary_primary_angular_outside_mae_deg": {
+              "mean": 11.735392665907572,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 1,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 11.735392665907572,
+                    "lower_95": 10.370880216689196,
+                    "upper_95": 13.12217189698712
+                  }
+                ]
+              }
+            }
+          },
+          "by_pitch": {
+            "15": null
+          }
+        },
+        "30": {
+          "assets": 93,
+          "images": 372,
+          "metrics": {
+            "mean_deg": {
+              "mean": 16.110412362472523,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 16.110412362472523,
+                    "lower_95": 14.537262541367678,
+                    "upper_95": 17.703146630420587
+                  }
+                ]
+              }
+            },
+            "median_deg": {
+              "mean": 12.82590716798443,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 12.82590716798443,
+                    "lower_95": 11.322777444442783,
+                    "upper_95": 14.355646280658483
+                  }
+                ]
+              }
+            },
+            "fraction_below_11.25": {
+              "mean": 0.50358620869452,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 0.50358620869452,
+                    "lower_95": 0.4479775189315924,
+                    "upper_95": 0.5591576251752823
+                  }
+                ]
+              }
+            },
+            "fraction_below_22.5": {
+              "mean": 0.7560924001715972,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 0.7560924001715972,
+                    "lower_95": 0.721239527958536,
+                    "upper_95": 0.7906136082433413
+                  }
+                ]
+              }
+            },
+            "fraction_below_30": {
+              "mean": 0.8465494570516576,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 0.8465494570516576,
+                    "lower_95": 0.8218884898109147,
+                    "upper_95": 0.8704428655919547
+                  }
+                ]
+              }
+            },
+            "boundary_primary_angular_mae_deg": {
+              "mean": 19.839640904183774,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 19.839640904183774,
+                    "lower_95": 18.58667220987087,
+                    "upper_95": 21.12236654847409
+                  }
+                ]
+              }
+            },
+            "boundary_primary_angular_outside_mae_deg": {
+              "mean": 12.351870393308323,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 12.351870393308323,
+                    "lower_95": 10.918958152816403,
+                    "upper_95": 13.80600937677993
+                  }
+                ]
+              }
+            }
+          },
+          "by_pitch": {
+            "30": null
+          }
+        },
+        "45": {
+          "assets": 93,
+          "images": 372,
+          "metrics": {
+            "mean_deg": {
+              "mean": 16.99539835538656,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 16.99539835538656,
+                    "lower_95": 15.435313291360606,
+                    "upper_95": 18.584663405677706
+                  }
+                ]
+              }
+            },
+            "median_deg": {
+              "mean": 13.722121368638325,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 13.722121368638325,
+                    "lower_95": 12.207337508942532,
+                    "upper_95": 15.266532368755584
+                  }
+                ]
+              }
+            },
+            "fraction_below_11.25": {
+              "mean": 0.4827491011991096,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 0.4827491011991096,
+                    "lower_95": 0.4297921491134644,
+                    "upper_95": 0.5365698882291474
+                  }
+                ]
+              }
+            },
+            "fraction_below_22.5": {
+              "mean": 0.7362813655179923,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 0.7362813655179923,
+                    "lower_95": 0.6994513626173181,
+                    "upper_95": 0.7725836836279184
+                  }
+                ]
+              }
+            },
+            "fraction_below_30": {
+              "mean": 0.8306391376258274,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 0.8306391376258274,
+                    "lower_95": 0.8044532803635113,
+                    "upper_95": 0.856311568811933
+                  }
+                ]
+              }
+            },
+            "boundary_primary_angular_mae_deg": {
+              "mean": 20.602892415147696,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 20.602892415147696,
+                    "lower_95": 19.34164670964778,
+                    "upper_95": 21.91176331020403
+                  }
+                ]
+              }
+            },
+            "boundary_primary_angular_outside_mae_deg": {
+              "mean": 13.160824773251464,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 13.160824773251464,
+                    "lower_95": 11.764241778465681,
+                    "upper_95": 14.602276895490585
+                  }
+                ]
+              }
+            }
+          },
+          "by_pitch": {
+            "45": null
+          }
+        },
+        "60": {
+          "assets": 93,
+          "images": 372,
+          "metrics": {
+            "mean_deg": {
+              "mean": 18.38757558976315,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 18.38757558976315,
+                    "lower_95": 16.62564226513962,
+                    "upper_95": 20.154372517507365
+                  }
+                ]
+              }
+            },
+            "median_deg": {
+              "mean": 15.126183089980904,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 15.126183089980904,
+                    "lower_95": 13.449819071116398,
+                    "upper_95": 16.857476854962595
+                  }
+                ]
+              }
+            },
+            "fraction_below_11.25": {
+              "mean": 0.4503501197876501,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 0.4503501197876501,
+                    "lower_95": 0.3973499789874144,
+                    "upper_95": 0.5042647521947347
+                  }
+                ]
+              }
+            },
+            "fraction_below_22.5": {
+              "mean": 0.7148638679184603,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 0.7148638679184603,
+                    "lower_95": 0.6752185063012915,
+                    "upper_95": 0.7546118631133467
+                  }
+                ]
+              }
+            },
+            "fraction_below_30": {
+              "mean": 0.8106943290755952,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 0.8106943290755952,
+                    "lower_95": 0.7804993366750689,
+                    "upper_95": 0.8403595092647502
+                  }
+                ]
+              }
+            },
+            "boundary_primary_angular_mae_deg": {
+              "mean": 22.183331110417168,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 22.183331110417168,
+                    "lower_95": 20.704218864872022,
+                    "upper_95": 23.72666316354881
+                  }
+                ]
+              }
+            },
+            "boundary_primary_angular_outside_mae_deg": {
+              "mean": 14.384044915884525,
+              "eligible_assets": 93,
+              "undefined_empty_region_images": 0,
+              "bootstrap": {
+                "num_images": 93,
+                "num_clusters": 93,
+                "resamples": 10000,
+                "seed": 20261110,
+                "interval": "95% percentile identity-cluster bootstrap",
+                "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+                "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+                "metrics": [
+                  {
+                    "estimate": 14.384044915884525,
+                    "lower_95": 12.827332418772947,
+                    "upper_95": 16.04984228445727
+                  }
+                ]
+              }
+            }
+          },
+          "by_pitch": {
+            "60": null
+          }
+        }
+      }
+    },
+    "single_diligent": {
+      "assets": 10,
+      "images": 10,
+      "metrics": {
+        "mean_deg": {
+          "mean": 17.567863367020585,
+          "eligible_assets": 10,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 10,
+            "num_clusters": 10,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 17.567863367020585,
+                "lower_95": 14.047035280631455,
+                "upper_95": 21.42258907586306
+              }
+            ]
+          }
+        },
+        "median_deg": {
+          "mean": 14.708713826315469,
+          "eligible_assets": 10,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 10,
+            "num_clusters": 10,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 14.708713826315469,
+                "lower_95": 11.590951590239557,
+                "upper_95": 18.071947545066607
+              }
+            ]
+          }
+        },
+        "fraction_below_11.25": {
+          "mean": 0.39944469881329164,
+          "eligible_assets": 10,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 10,
+            "num_clusters": 10,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 0.39944469881329164,
+                "lower_95": 0.2890832081871019,
+                "upper_95": 0.5148699874824094
+              }
+            ]
+          }
+        },
+        "fraction_below_22.5": {
+          "mean": 0.747388051742959,
+          "eligible_assets": 10,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 10,
+            "num_clusters": 10,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 0.747388051742959,
+                "lower_95": 0.6468574424557092,
+                "upper_95": 0.8380924815673522
+              }
+            ]
+          }
+        },
+        "fraction_below_30": {
+          "mean": 0.8484494149124518,
+          "eligible_assets": 10,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 10,
+            "num_clusters": 10,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 0.8484494149124518,
+                "lower_95": 0.772724699924045,
+                "upper_95": 0.9138733996129772
+              }
+            ]
+          }
+        },
+        "boundary_primary_angular_mae_deg": {
+          "mean": 23.55731156267002,
+          "eligible_assets": 9,
+          "undefined_empty_region_images": 1,
+          "bootstrap": {
+            "num_images": 9,
+            "num_clusters": 9,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 23.55731156267002,
+                "lower_95": 20.639770656014953,
+                "upper_95": 26.65401900038469
+              }
+            ]
+          }
+        },
+        "boundary_primary_angular_outside_mae_deg": {
+          "mean": 14.880428751245711,
+          "eligible_assets": 10,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 10,
+            "num_clusters": 10,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 14.880428751245711,
+                "lower_95": 12.0528698976314,
+                "upper_95": 18.06472285038487
+              }
+            ]
+          }
+        }
+      },
+      "by_pitch": {}
+    },
+    "single_luces": {
+      "assets": 14,
+      "images": 14,
+      "metrics": {
+        "mean_deg": {
+          "mean": 16.448866754536528,
+          "eligible_assets": 14,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 14,
+            "num_clusters": 14,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 16.448866754536528,
+                "lower_95": 12.549955747400569,
+                "upper_95": 20.581273710604737
+              }
+            ]
+          }
+        },
+        "median_deg": {
+          "mean": 13.499028575271694,
+          "eligible_assets": 14,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 14,
+            "num_clusters": 14,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 13.499028575271694,
+                "lower_95": 9.926255307789754,
+                "upper_95": 17.521518654139943
+              }
+            ]
+          }
+        },
+        "fraction_below_11.25": {
+          "mean": 0.47122444030751,
+          "eligible_assets": 14,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 14,
+            "num_clusters": 14,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 0.47122444030751,
+                "lower_95": 0.3384643299716634,
+                "upper_95": 0.6097811347647497
+              }
+            ]
+          }
+        },
+        "fraction_below_22.5": {
+          "mean": 0.7517839066052306,
+          "eligible_assets": 14,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 14,
+            "num_clusters": 14,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 0.7517839066052306,
+                "lower_95": 0.6479878690995928,
+                "upper_95": 0.8502937189218145
+              }
+            ]
+          }
+        },
+        "fraction_below_30": {
+          "mean": 0.8513850357402967,
+          "eligible_assets": 14,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 14,
+            "num_clusters": 14,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 0.8513850357402967,
+                "lower_95": 0.7717903138378818,
+                "upper_95": 0.9172434553209342
+              }
+            ]
+          }
+        },
+        "boundary_primary_angular_mae_deg": {
+          "mean": 27.274000209702017,
+          "eligible_assets": 14,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 14,
+            "num_clusters": 14,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 27.274000209702017,
+                "lower_95": 23.338198472458313,
+                "upper_95": 31.752015619043906
+              }
+            ]
+          }
+        },
+        "boundary_primary_angular_outside_mae_deg": {
+          "mean": 15.566438346562572,
+          "eligible_assets": 14,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 14,
+            "num_clusters": 14,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 15.566438346562572,
+                "lower_95": 11.930353695587916,
+                "upper_95": 19.299851600025708
+              }
+            ]
+          }
+        }
+      },
+      "by_pitch": {}
+    },
+    "rose10_diligent": {
+      "assets": 10,
+      "images": 100,
+      "metrics": {
+        "mean_deg": {
+          "mean": 17.681250173962223,
+          "eligible_assets": 10,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 10,
+            "num_clusters": 10,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 17.681250173962226,
+                "lower_95": 13.474705318456648,
+                "upper_95": 22.06072115717182
+              }
+            ]
+          }
+        },
+        "median_deg": {
+          "mean": 14.802458559807764,
+          "eligible_assets": 10,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 10,
+            "num_clusters": 10,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 14.802458559807764,
+                "lower_95": 11.126807706962637,
+                "upper_95": 18.780297607839646
+              }
+            ]
+          }
+        },
+        "fraction_below_11.25": {
+          "mean": 0.42573161901421475,
+          "eligible_assets": 10,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 10,
+            "num_clusters": 10,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 0.42573161901421486,
+                "lower_95": 0.2867008156951246,
+                "upper_95": 0.5754244964264548
+              }
+            ]
+          }
+        },
+        "fraction_below_22.5": {
+          "mean": 0.7355711169934448,
+          "eligible_assets": 10,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 10,
+            "num_clusters": 10,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 0.7355711169934448,
+                "lower_95": 0.6242011413946914,
+                "upper_95": 0.8411619010813209
+              }
+            ]
+          }
+        },
+        "fraction_below_30": {
+          "mean": 0.8386883937059351,
+          "eligible_assets": 10,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 10,
+            "num_clusters": 10,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 0.8386883937059351,
+                "lower_95": 0.7564913229272892,
+                "upper_95": 0.9131467388114956
+              }
+            ]
+          }
+        },
+        "boundary_primary_angular_mae_deg": {
+          "mean": 24.131883302293975,
+          "eligible_assets": 9,
+          "undefined_empty_region_images": 10,
+          "bootstrap": {
+            "num_images": 9,
+            "num_clusters": 9,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 24.13188330229397,
+                "lower_95": 20.882274213948435,
+                "upper_95": 27.526797562337507
+              }
+            ]
+          }
+        },
+        "boundary_primary_angular_outside_mae_deg": {
+          "mean": 15.043543227578644,
+          "eligible_assets": 10,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 10,
+            "num_clusters": 10,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 15.043543227578644,
+                "lower_95": 11.5998470950179,
+                "upper_95": 18.692193850707486
+              }
+            ]
+          }
+        }
+      },
+      "by_pitch": {}
+    },
+    "rose10_luces": {
+      "assets": 14,
+      "images": 140,
+      "metrics": {
+        "mean_deg": {
+          "mean": 15.721574278577458,
+          "eligible_assets": 14,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 14,
+            "num_clusters": 14,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 15.721574278577455,
+                "lower_95": 12.043169797373942,
+                "upper_95": 19.7410631562347
+              }
+            ]
+          }
+        },
+        "median_deg": {
+          "mean": 13.038083817374789,
+          "eligible_assets": 14,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 14,
+            "num_clusters": 14,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 13.038083817374789,
+                "lower_95": 9.78167703496388,
+                "upper_95": 16.77254002081355
+              }
+            ]
+          }
+        },
+        "fraction_below_11.25": {
+          "mean": 0.4882953509249586,
+          "eligible_assets": 14,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 14,
+            "num_clusters": 14,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 0.4882953509249586,
+                "lower_95": 0.36134490704695055,
+                "upper_95": 0.6163340529674279
+              }
+            ]
+          }
+        },
+        "fraction_below_22.5": {
+          "mean": 0.7823133677053234,
+          "eligible_assets": 14,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 14,
+            "num_clusters": 14,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 0.7823133677053234,
+                "lower_95": 0.681356770899877,
+                "upper_95": 0.8702571142837109
+              }
+            ]
+          }
+        },
+        "fraction_below_30": {
+          "mean": 0.8673775457378318,
+          "eligible_assets": 14,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 14,
+            "num_clusters": 14,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 0.8673775457378318,
+                "lower_95": 0.7902494231551285,
+                "upper_95": 0.9298952475913308
+              }
+            ]
+          }
+        },
+        "boundary_primary_angular_mae_deg": {
+          "mean": 26.358259608871812,
+          "eligible_assets": 14,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 14,
+            "num_clusters": 14,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 26.358259608871816,
+                "lower_95": 22.38457460857776,
+                "upper_95": 30.84314344367794
+              }
+            ]
+          }
+        },
+        "boundary_primary_angular_outside_mae_deg": {
+          "mean": 14.812440133023644,
+          "eligible_assets": 14,
+          "undefined_empty_region_images": 0,
+          "bootstrap": {
+            "num_images": 14,
+            "num_clusters": 14,
+            "resamples": 10000,
+            "seed": 20261110,
+            "interval": "95% percentile identity-cluster bootstrap",
+            "estimand": "macro-image mean; whole clusters resampled with replacement, ratio of summed errors to summed image counts",
+            "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+            "metrics": [
+              {
+                "estimate": 14.812440133023642,
+                "lower_95": 11.486022426222066,
+                "upper_95": 18.38141980947838
+              }
+            ]
+          }
+        }
+      },
+      "by_pitch": {}
+    }
+  },
+  "GSO_pitch_rows": [
+    {
+      "pitch": 0,
+      "images": 372,
+      "assets": 93,
+      "mean_deg": 16.091964843823778,
+      "median_deg": 13.374777633070291,
+      "below_11_25_percent": 49.72673382990443,
+      "below_22_5_percent": 74.58030065331674,
+      "below_30_percent": 84.41758860421196,
+      "boundary_MAE_deg": 20.00944610439486,
+      "outside_boundary_MAE_deg": 12.327303070038527,
+      "paired_minus_MoGe_S": {
+        "estimate": -0.8509843929361856,
+        "lower_95": -1.2547551994639872,
+        "upper_95": -0.4366588157617857
+      }
+    },
+    {
+      "pitch": 15,
+      "images": 372,
+      "assets": 93,
+      "mean_deg": 15.600704125231344,
+      "median_deg": 12.400276691332582,
+      "below_11_25_percent": 51.61728301037546,
+      "below_22_5_percent": 76.60778337842,
+      "below_30_percent": 85.63960635922056,
+      "boundary_MAE_deg": 19.960560821021264,
+      "outside_boundary_MAE_deg": 11.735392665907572,
+      "paired_minus_MoGe_S": {
+        "estimate": -1.8841668641482197,
+        "lower_95": -2.359538106732124,
+        "upper_95": -1.4085807115112563
+      }
+    },
+    {
+      "pitch": 30,
+      "images": 372,
+      "assets": 93,
+      "mean_deg": 16.110412362472523,
+      "median_deg": 12.82590716798443,
+      "below_11_25_percent": 50.358620869452,
+      "below_22_5_percent": 75.60924001715972,
+      "below_30_percent": 84.65494570516576,
+      "boundary_MAE_deg": 19.839640904183774,
+      "outside_boundary_MAE_deg": 12.351870393308323,
+      "paired_minus_MoGe_S": {
+        "estimate": -2.628946914097255,
+        "lower_95": -3.1629356656297922,
+        "upper_95": -2.1064831910533135
+      }
+    },
+    {
+      "pitch": 45,
+      "images": 372,
+      "assets": 93,
+      "mean_deg": 16.99539835538656,
+      "median_deg": 13.722121368638325,
+      "below_11_25_percent": 48.274910119910956,
+      "below_22_5_percent": 73.62813655179923,
+      "below_30_percent": 83.06391376258274,
+      "boundary_MAE_deg": 20.602892415147696,
+      "outside_boundary_MAE_deg": 13.160824773251464,
+      "paired_minus_MoGe_S": {
+        "estimate": -3.7982834157200194,
+        "lower_95": -4.564482671712291,
+        "upper_95": -3.0489196423428915
+      }
+    },
+    {
+      "pitch": 60,
+      "images": 372,
+      "assets": 93,
+      "mean_deg": 18.38757558976315,
+      "median_deg": 15.126183089980904,
+      "below_11_25_percent": 45.03501197876501,
+      "below_22_5_percent": 71.48638679184603,
+      "below_30_percent": 81.06943290755953,
+      "boundary_MAE_deg": 22.183331110417168,
+      "outside_boundary_MAE_deg": 14.384044915884525,
+      "paired_minus_MoGe_S": {
+        "estimate": -4.921796584160563,
+        "lower_95": -5.867466158151444,
+        "upper_95": -3.998118481572784
+      }
+    }
+  ],
+  "paired_minus_MoGe_S": {
+    "gso_primary": {
+      "overall": {
+        "num_images": 93,
+        "num_clusters": 93,
+        "resamples": 10000,
+        "seed": 20261110,
+        "interval": "95% percentile identity-cluster bootstrap",
+        "estimand": "equalobjectmean of new-minusMoGeS; withinobject equalpitchmeans of viewmeans",
+        "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+        "metrics": [
+          {
+            "estimate": -2.816835634212449,
+            "lower_95": -3.2691224638221517,
+            "upper_95": -2.3680825711498996
+          }
+        ],
+        "asset_pairs": 93
+      },
+      "by_pitch": {
+        "0": {
+          "num_images": 93,
+          "num_clusters": 93,
+          "resamples": 10000,
+          "seed": 20261110,
+          "interval": "95% percentile identity-cluster bootstrap",
+          "estimand": "equalobjectmean of new-minusMoGeS; withinobject equalpitchmeans of viewmeans",
+          "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+          "metrics": [
+            {
+              "estimate": -0.8509843929361856,
+              "lower_95": -1.2547551994639872,
+              "upper_95": -0.4366588157617857
+            }
+          ],
+          "asset_pairs": 93
+        },
+        "15": {
+          "num_images": 93,
+          "num_clusters": 93,
+          "resamples": 10000,
+          "seed": 20261110,
+          "interval": "95% percentile identity-cluster bootstrap",
+          "estimand": "equalobjectmean of new-minusMoGeS; withinobject equalpitchmeans of viewmeans",
+          "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+          "metrics": [
+            {
+              "estimate": -1.8841668641482197,
+              "lower_95": -2.359538106732124,
+              "upper_95": -1.4085807115112563
+            }
+          ],
+          "asset_pairs": 93
+        },
+        "30": {
+          "num_images": 93,
+          "num_clusters": 93,
+          "resamples": 10000,
+          "seed": 20261110,
+          "interval": "95% percentile identity-cluster bootstrap",
+          "estimand": "equalobjectmean of new-minusMoGeS; withinobject equalpitchmeans of viewmeans",
+          "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+          "metrics": [
+            {
+              "estimate": -2.628946914097255,
+              "lower_95": -3.1629356656297922,
+              "upper_95": -2.1064831910533135
+            }
+          ],
+          "asset_pairs": 93
+        },
+        "45": {
+          "num_images": 93,
+          "num_clusters": 93,
+          "resamples": 10000,
+          "seed": 20261110,
+          "interval": "95% percentile identity-cluster bootstrap",
+          "estimand": "equalobjectmean of new-minusMoGeS; withinobject equalpitchmeans of viewmeans",
+          "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+          "metrics": [
+            {
+              "estimate": -3.7982834157200194,
+              "lower_95": -4.564482671712291,
+              "upper_95": -3.0489196423428915
+            }
+          ],
+          "asset_pairs": 93
+        },
+        "60": {
+          "num_images": 93,
+          "num_clusters": 93,
+          "resamples": 10000,
+          "seed": 20261110,
+          "interval": "95% percentile identity-cluster bootstrap",
+          "estimand": "equalobjectmean of new-minusMoGeS; withinobject equalpitchmeans of viewmeans",
+          "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+          "metrics": [
+            {
+              "estimate": -4.921796584160563,
+              "lower_95": -5.867466158151444,
+              "upper_95": -3.998118481572784
+            }
+          ],
+          "asset_pairs": 93
+        }
+      }
+    },
+    "single_diligent": {
+      "overall": {
+        "num_images": 10,
+        "num_clusters": 10,
+        "resamples": 10000,
+        "seed": 20261110,
+        "interval": "95% percentile identity-cluster bootstrap",
+        "estimand": "equalobjectmean of new-minusMoGeS; withinobject equalpitchmeans of viewmeans",
+        "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+        "metrics": [
+          {
+            "estimate": -1.4989945440556824,
+            "lower_95": -3.0114663317909307,
+            "upper_95": 0.06527428872676076
+          }
+        ],
+        "asset_pairs": 10
+      },
+      "by_pitch": {}
+    },
+    "single_luces": {
+      "overall": {
+        "num_images": 14,
+        "num_clusters": 14,
+        "resamples": 10000,
+        "seed": 20261110,
+        "interval": "95% percentile identity-cluster bootstrap",
+        "estimand": "equalobjectmean of new-minusMoGeS; withinobject equalpitchmeans of viewmeans",
+        "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+        "metrics": [
+          {
+            "estimate": -1.2939147244676819,
+            "lower_95": -2.2213409936003767,
+            "upper_95": -0.3312410287255917
+          }
+        ],
+        "asset_pairs": 14
+      },
+      "by_pitch": {}
+    },
+    "rose10_diligent": {
+      "overall": {
+        "num_images": 10,
+        "num_clusters": 10,
+        "resamples": 10000,
+        "seed": 20261110,
+        "interval": "95% percentile identity-cluster bootstrap",
+        "estimand": "equalobjectmean of new-minusMoGeS; withinobject equalpitchmeans of viewmeans",
+        "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+        "metrics": [
+          {
+            "estimate": -0.3893758525792112,
+            "lower_95": -1.5998904899205624,
+            "upper_95": 0.8695475660037707
+          }
+        ],
+        "asset_pairs": 10
+      },
+      "by_pitch": {}
+    },
+    "rose10_luces": {
+      "overall": {
+        "num_images": 14,
+        "num_clusters": 14,
+        "resamples": 10000,
+        "seed": 20261110,
+        "interval": "95% percentile identity-cluster bootstrap",
+        "estimand": "equalobjectmean of new-minusMoGeS; withinobject equalpitchmeans of viewmeans",
+        "scope": "conditional on fixed trained weights, inference replicates and observed development-domain cluster population; not a universal generalization guarantee",
+        "metrics": [
+          {
+            "estimate": -0.27716679432186664,
+            "lower_95": -1.023130977560829,
+            "upper_95": 0.4120848276684264
+          }
+        ],
+        "asset_pairs": 14
+      },
+      "by_pitch": {}
+    }
+  },
+  "bootstrap": "10000objectclusterresamplesseed20261110,notinference-draws-asindependentobjects",
+  "inference": "erroraverage42-49;eachoutputoneforward,normalqualfixed42",
+  "source_summary_sha256": "d2208e15196c94f65002afcde4b689eb5e5249c1c761e5f7d8464e99a88de2e8",
+  "paired_source_sha256": "cf9a99b493422e1565dec20e3c1c245c9ed8513433bc62b9a73c86fea8f2cf8b",
+  "model_lock_sha256": "3918b095ed56c7d636531169222a69f19ace9509c748f353ae5c702ae05b86d4",
+  "test_images_scored": 0,
+  "new_GPU_inference": false,
+  "updated_at": "2026-11-12T15:28:50.757850+08:00"
+}

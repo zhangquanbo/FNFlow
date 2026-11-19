@@ -1,0 +1,42 @@
+{
+  "status": "completed_validation_only",
+  "final_step": 50000,
+  "locked_model": {
+    "model": "S1",
+    "weights": "EMA",
+    "training_seed": 1247,
+    "checkpoint_sha256": "ebf6a113cd9e6a15edba0e1282fd469550f8d33f33012e8818e11b8dcfda9822"
+  },
+  "training_seeds": [
+    1247,
+    1248,
+    1249
+  ],
+  "inference": "random42-49 error mean; one forward per output; no best draw selected",
+  "NeuralLightRig_quality": "legacy seed511 reference only, not part of new42-49 main table",
+  "data": {
+    "assets": 10000,
+    "views": 29976,
+    "selected_views": [
+      0,
+      4,
+      8
+    ],
+    "pitch_balanced": false,
+    "teacher": "MoGe-L normal only in training loss; never a model input"
+  },
+  "normal_GT_scope": "Arb shading-normal training labels; GSO smooth geometry normal validation; same fixed masks for all compared methods",
+  "inference_noise_protocol": "image-specific paired seed mapping from src/noise_protocol.py",
+  "aggregation": "within object equal view means and equal pitch means; then equal object means",
+  "bootstrap": {
+    "cluster": "object",
+    "draws": 10000,
+    "seed": 20261110,
+    "interval": "95% percentile; conditional on fixed weights and development objects"
+  },
+  "training_seed_std": "sample standard deviation ddof=1, distinct from object bootstrap and inference Monte Carlo variation",
+  "S0": "single-seed frozen encoder/original E1 objective; no distillation and no EMA",
+  "compiled_accuracy": "full GSO accuracy not yet verified; output-vs-output drift on one input is not GT error",
+  "test_images_scored": 0,
+  "GSO_test_authorized": false
+}
